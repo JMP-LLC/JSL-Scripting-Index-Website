@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 // This command is only valid within a JMP App Module Script
 
 ```
@@ -24,7 +25,13 @@
 
 ```jsl
 
-app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Run Application;modules = app << Get Modules;inst = modules[1] << Create Instance;inst << Get Box;
+
+app = JMP App();
+app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
+app << Run Application;
+modules = app << Get Modules;
+inst = modules[1] << Create Instance;
+inst << Get Box;
 
 ```
 
@@ -36,7 +43,9 @@ app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );ap
 
 ```jsl
 
-app = JMP App();(app << Get Namespace) << Show Contents;
+
+app = JMP App();
+(app << Get Namespace) << Show Contents;
 
 ```
 
@@ -47,6 +56,7 @@ app = JMP App();(app << Get Namespace) << Show Contents;
 **설명:** 모듈 인스턴스와 연결된 사용자 데이터를 반환합니다.
 
 ```jsl
+
 
 // This command is only valid within a JMP App Module Script
 
@@ -59,6 +69,7 @@ app = JMP App();(app << Get Namespace) << Show Contents;
 **설명:** JSL 값을 JMP 앱 모듈에 저장합니다. 값은 숫자, 문자열, 목록, 연관 배열 또는 기타 JSL 유형일 수 있습니다.
 
 ```jsl
+
 
 // This command is only valid within a JMP App Module Script
 

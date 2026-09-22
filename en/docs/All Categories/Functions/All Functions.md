@@ -11,6 +11,7 @@
 ```jsl
 
 
+
 jslPhrase =
 "The JSL to do this is :\[
 a = "hello";
@@ -31,6 +32,7 @@ Show( jslPhrase );
 
 ```jsl
 
+
 Abbrev Date( Today() );
 
 ```
@@ -44,6 +46,7 @@ Abbrev Date( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Abs( -5 );
 
@@ -59,6 +62,7 @@ Abs( -5 );
 
 ```jsl
 
+
 Pi() + 10;
 
 ```
@@ -73,6 +77,7 @@ Pi() + 10;
 
 ```jsl
 
+
 Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}} );
 
 ```
@@ -80,6 +85,7 @@ Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}}
 **Example 2**
 
 ```jsl
+
 
 Add Color Theme(
 	{"Black To Red To White", {"Continuous", "Categorical", "Diverging"}, {{0, 0, 0}, {255, 0,
@@ -98,6 +104,7 @@ Add Color Theme(
 
 ```jsl
 
+
 myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );
 mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );
 Add Custom Functions( {myAdd, mySub} );
@@ -114,6 +121,7 @@ Add Custom Functions( {myAdd, mySub} );
 
 ```jsl
 
+
 ex = 1;
 ex += 2;
 ex;
@@ -127,6 +135,7 @@ ex;
 **JMP Version Added:** 17
 
 ```jsl
+
 
 x = [1, 2, 3, 4];
 y = [5, 6, 7, 8];
@@ -144,6 +153,7 @@ z = Add Vectors BLAS( x, y, alpha );
 **JMP Version Added:** 19
 
 ```jsl
+
 
 
 New Window( "Crosstab",
@@ -177,6 +187,7 @@ New Window( "Crosstab",
 ```jsl
 
 
+
 New Window( "Crosstab",
 	Alignment Grid Box(
 		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),
@@ -206,6 +217,7 @@ New Window( "Crosstab",
 **JMP Version Added:** 19
 
 ```jsl
+
 
 
 New Window( "Alignment MultiBox",
@@ -249,6 +261,7 @@ New Window( "Alignment MultiBox",
 
 ```jsl
 
+
 All( [1 2 3] );
 
 ```
@@ -262,6 +275,7 @@ All( [1 2 3] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 triang = Triangulation( X( :X, :Y ), Y( :POP ) );
@@ -279,6 +293,7 @@ ashape = Alpha Shape( triang );
 
 ```jsl
 
+
 1 < 2 & 3 < 4;
 
 ```
@@ -292,6 +307,7 @@ ashape = Alpha Shape( triang );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 AndMZ( 1 < 2, 3 < 4 );
 
@@ -307,6 +323,7 @@ AndMZ( 1 < 2, 3 < 4 );
 
 ```jsl
 
+
 Any( [1 0 2] );
 
 ```
@@ -320,6 +337,7 @@ Any( [1 0 2] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -339,6 +357,7 @@ New Window( "Example",
 **JMP Version Added:** 14
 
 ```jsl
+
 
 
 dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
@@ -373,6 +392,7 @@ dt << Graph Builder(
 
 ```jsl
 
+
 ArcCosH( 1 );
 
 ```
@@ -386,6 +406,7 @@ ArcCosH( 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ArcCosine( 0.5 );
 
@@ -401,6 +422,7 @@ ArcCosine( 0.5 );
 
 ```jsl
 
+
 ArcCosine( 0.5 );
 
 ```
@@ -414,6 +436,7 @@ ArcCosine( 0.5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ArcSine( 0.5 );
 
@@ -429,6 +452,7 @@ ArcSine( 0.5 );
 
 ```jsl
 
+
 ArcSinH( 1 );
 
 ```
@@ -442,6 +466,7 @@ ArcSinH( 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 4 * ArcTangent( 1 );
 
@@ -457,6 +482,7 @@ ArcSinH( 1 );
 
 ```jsl
 
+
 4 * ArcTangent( 1 );
 
 ```
@@ -471,6 +497,7 @@ ArcSinH( 1 );
 
 ```jsl
 
+
 ArcTanH( 0.5 );
 
 ```
@@ -484,6 +511,7 @@ ArcTanH( 0.5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
@@ -501,6 +529,7 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
+
 // See Example 2 for the deprecated Arg Expr() equivalent
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
@@ -509,6 +538,7 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 **Example 2**
 
 ```jsl
+
 
 // Deprecated
 Arg Expr( Sum( a, b, c ), 2 );
@@ -524,6 +554,7 @@ Arg Expr( Sum( a, b, c ), 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 ARIMA Forecast(
@@ -548,6 +579,7 @@ ARIMA Forecast(
 
 ```jsl
 
+
 Arrhenius( 100 );
 
 ```
@@ -562,6 +594,7 @@ Arrhenius( 100 );
 
 ```jsl
 
+
 Arrhenius Inv( 100 );
 
 ```
@@ -575,6 +608,7 @@ Arrhenius Inv( 100 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -595,6 +629,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ArcSine( 0.5 );
 
 ```
@@ -608,6 +643,7 @@ ArcSine( 0.5 );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 x = 45;
 b = As Boolean( x > 2 );
@@ -625,19 +661,21 @@ Show( b );
 
 ```jsl
 
+
 As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
 
 ### As Column
 
-**Syntax:** y = :name; y = dataTable:name; y = As Column( name ); y = As Column( dataTable, name )
+**Syntax:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **Description:** Accesses the specified column in the specified or current data table. An error is thrown if no such column or data table is found.
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt:height[1] + :height[2] + As Column( "height" )[3];
@@ -656,6 +694,7 @@ exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 ```jsl
 
+
 New Table( "As Constant Demo Table 1",
 	Add Rows( 10 ),
 	New Column( "Non-Constant", Formula( Random Uniform() ) ),
@@ -667,6 +706,7 @@ New Table( "As Constant Demo Table 1",
 **Example 2**
 
 ```jsl
+
 
 New Table( "As Constant Demo Table 2",
 	Add Rows( 1000 ),
@@ -689,6 +729,7 @@ New Table( "As Constant Demo Table 2",
 
 ```jsl
 
+
 For( i = 1, i <= 10, i++,
 	x = 2;
 	y = 100;
@@ -710,6 +751,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
+
 As Date( Today() );
 
 ```
@@ -723,6 +765,7 @@ As Date( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ::ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
@@ -739,6 +782,7 @@ Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
 ```jsl
 
+
 As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -752,6 +796,7 @@ As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
@@ -767,6 +812,7 @@ As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
+
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -780,6 +826,7 @@ As List( [11 22 33, 44 55 66] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:(As Name( "height" ))[3];
@@ -795,6 +842,7 @@ dt:(As Name( "height" ))[3];
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ns = New Namespace(
 	"complex"
@@ -813,6 +861,7 @@ As Namespace( ns );
 
 ```jsl
 
+
 As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -826,6 +875,7 @@ As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 ::: ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
@@ -841,6 +891,7 @@ Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row(
@@ -862,6 +913,7 @@ For Each Row(
 
 ```jsl
 
+
 As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -875,6 +927,7 @@ As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Here:z = 23.5;
 As Scoped( Here, z );
@@ -891,6 +944,7 @@ As Scoped( Here, z );
 
 ```jsl
 
+
 As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 ```
@@ -904,6 +958,7 @@ As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 As Table( [1 2 3, 4 5 6] );
 
@@ -919,6 +974,7 @@ As Table( [1 2 3, 4 5 6] );
 
 ```jsl
 
+
 {ex1, ex2} = {Pi(), 1};
 ex1 + ex1;
 
@@ -926,13 +982,14 @@ ex1 + ex1;
 
 ### Associative Array
 
-**Syntax:** y = Associative Array( {{key1, value1}, ...} ); y = Associative Array( keys, values )
+**Syntax:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Description:** Creates an associative array, which is also known as a dictionary or a hash map. In the two-argument form, keys and values can be a list, matrix, or data table column.
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = Associative Array( {"red", "blue"}, {1, 2} );
 ex["green"] = 3;
@@ -950,6 +1007,7 @@ ex << get contents;
 
 ```jsl
 
+
 4 * ArcTangent( 1 );
 
 ```
@@ -966,6 +1024,7 @@ ex << get contents;
 
 ```jsl
 
+
 B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
 B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
@@ -974,6 +1033,7 @@ B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 **Example 2**
 
 ```jsl
+
 
 xx = (0 :: 10)`;
 yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];
@@ -991,6 +1051,7 @@ Linear Regression( yy, designMat, <<nointercept );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -1011,6 +1072,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Beep();
 
 ```
@@ -1024,6 +1086,7 @@ Beep();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /*Example for Continuous X and Continuous Y*/Best Partition(
 	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],
@@ -1044,6 +1107,7 @@ Beep();
 
 ```jsl
 
+
 Beta( 5, 4 );
 
 ```
@@ -1057,6 +1121,7 @@ Beta( 5, 4 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 p = 0.5;
 n = 25;
@@ -1094,6 +1159,7 @@ New Window( "Example: BetaBinomial Distribution",
 
 ```jsl
 
+
 n = 25;
 p = 0.5;
 delta = 0;
@@ -1130,6 +1196,7 @@ New Window( "Binomial and BetaBinomial Probabilities",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 qbinexp = 0.3;
 qbinexn = 20;
@@ -1193,6 +1260,7 @@ New Window( "Example: BetaBinomial Quantile",
 
 ```jsl
 
+
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Density",
@@ -1219,6 +1287,7 @@ New Window( "Example: Beta Density",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 alpha = 0.5;
 beta = 0.5;
@@ -1247,6 +1316,7 @@ New Window( "Example: Beta Distribution",
 
 ```jsl
 
+
 Beta Quantile( 0.95, 2, 5 );
 
 ```
@@ -1260,6 +1330,7 @@ Beta Quantile( 0.95, 2, 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 p = 0.5;
 n = 30;
@@ -1295,6 +1366,7 @@ New Window( "Example: Binomial Distribution",
 
 ```jsl
 
+
 cltp = 0.03;
 cltn = 30;
 New Window( "Example: Binomial Probability and Central Limit Theorem",
@@ -1326,6 +1398,7 @@ New Window( "Example: Binomial Probability and Central Limit Theorem",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 qbinexp = 0.3;
 qbinexn = 20;
@@ -1381,6 +1454,7 @@ New Window( "Example: Binomial Quantile",
 
 ```jsl
 
+
 Blend Colors( "black", "white", 0.25 );
 
 ```
@@ -1388,6 +1462,7 @@ Blend Colors( "black", "white", 0.25 );
 **Example 2**
 
 ```jsl
+
 
 Blend Colors( "red", "blue", "sRGB" );
 
@@ -1397,6 +1472,7 @@ Blend Colors( "red", "blue", "sRGB" );
 
 ```jsl
 
+
 Blend Colors( "red", "blue", "lRGB" );
 
 ```
@@ -1404,6 +1480,7 @@ Blend Colors( "red", "blue", "lRGB" );
 **Example 4**
 
 ```jsl
+
 
 Blend Colors( "red", "blue", 0.5, "LUV" );
 
@@ -1413,6 +1490,7 @@ Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```jsl
 
+
 Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```
@@ -1420,6 +1498,8 @@ Blend Colors( "red", "blue", 0.75, "HLS" );
 **Example 6**
 
 ```jsl
+
+
 
 c1 = "red";
 c2 = "blue";
@@ -1453,6 +1533,8 @@ New Window( "HLS Radial Color Blending",
 **Example 7**
 
 ```jsl
+
+
 
 c1 = "blue";
 c2 = "red";
@@ -1493,6 +1575,7 @@ New Window( "HCLuv Radial Color Blending",
 
 ```jsl
 
+
 Hex(/* make it printable */ Blob MD5(/* get the hash */
 		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",
 			BLOB/* the result is a BLOB, not a string */
@@ -1513,6 +1596,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ```jsl
 
+
 Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 ```
@@ -1526,6 +1610,7 @@ Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 	Hex To Blob( "436166C3A9" ),
@@ -1544,6 +1629,7 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 
 ```jsl
 
+
 Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ```
@@ -1557,6 +1643,7 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
@@ -1579,6 +1666,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Box Cox Inverse Transform( 3, 2 );
 
 ```
@@ -1593,6 +1681,7 @@ Box Cox Inverse Transform( 3, 2 );
 
 ```jsl
 
+
 Box Cox Transform( 3, 2 );
 
 ```
@@ -1606,6 +1695,7 @@ Box Cox Transform( 3, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Box Plot Seg Example",
 	g = Graph Box( Frame Size( 40, 180 ), Y Scale( 0, 5 ), Box Plot Seg( [1, 2, 3, 4] ) )
@@ -1625,6 +1715,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ```jsl
 
+
 For( i = 1, i <= 10, i++,
 	If( i == 5, Break() );
 	Print( "i=" || Char( i ) );
@@ -1642,6 +1733,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
+
 Build Information();
 
 ```
@@ -1655,6 +1747,7 @@ Build Information();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example", Busy Light( <<automatic ) );
 
@@ -1670,6 +1763,7 @@ New Window( "Example", Busy Light( <<automatic ) );
 
 ```jsl
 
+
 New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 ```
@@ -1683,6 +1777,7 @@ New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Calendar Box Example", Calendar Box() );
 
@@ -1700,6 +1795,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ```jsl
 
+
 Caption(
 	{100, 200},
 	"explanation",
@@ -1716,6 +1812,7 @@ Caption(
 
 ```jsl
 
+
 Caption( "explanation" );
 Wait( 2 );
 Caption( remove );
@@ -1731,6 +1828,7 @@ Caption( remove );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 url = "http://myCasURL";
@@ -1754,6 +1852,7 @@ cas = CAS Connect(
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
 CAS Delete Table( "Casuser", "Big Class" );
@@ -1769,6 +1868,7 @@ CAS Delete Table( "Casuser", "Big Class" );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 url = "http://myCasURL";
@@ -1788,6 +1888,7 @@ CAS Disconnect();
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
@@ -1802,6 +1903,7 @@ CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 cas = Current CAS Connection();
@@ -1825,6 +1927,7 @@ Show( datasets );
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 libraries = CAS Get Libraries();
 Show( libraries );
@@ -1840,6 +1943,7 @@ Show( libraries );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 CAS Connect( Prompt( ifNeeded ) );
@@ -1859,6 +1963,7 @@ CAS Import Data( "Casuser.Big Class" );
 ```jsl
 
 
+
 connected = CAS Is Connected();
 Show( connected );
 
@@ -1873,6 +1978,7 @@ Show( connected );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 CAS Connect( Prompt( ifNeeded ) );
@@ -1890,6 +1996,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 json =
@@ -2122,6 +2229,7 @@ dt = CAS Table To Data Table( json );
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 CAS Terminate Sessions();
 
@@ -2136,6 +2244,7 @@ CAS Terminate Sessions();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example: Cauchy Density",
 	y = Graph Box(
@@ -2159,6 +2268,7 @@ New Window( "Example: Cauchy Density",
 
 ```jsl
 
+
 New Window( "Example: Cauchy Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -2181,6 +2291,7 @@ New Window( "Example: Cauchy Distribution",
 
 ```jsl
 
+
 New Window( "Example: Cauchy Quantile",
 	Graph Box(
 		Y Scale( -6, 6 ),
@@ -2202,6 +2313,7 @@ New Window( "Example: Cauchy Quantile",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* Generate random values, Normal(0,1) */
 Y = J( 150, 1, Random Normal() );
@@ -2238,6 +2350,7 @@ New Window( "Empirical CDF",
 
 ```jsl
 
+
 Ceiling( 1.2 );
 
 ```
@@ -2254,6 +2367,7 @@ Ceiling( 1.2 );
 
 ```jsl
 
+
 Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```
@@ -2262,6 +2376,7 @@ Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```jsl
 
+
 Char( Pi(), 10, 4 );
 
 ```
@@ -2269,6 +2384,7 @@ Char( Pi(), 10, 4 );
 **Use Locale**
 
 ```jsl
+
 
 Char( 2.1, <<Use Locale( 1 ) );
 
@@ -2284,6 +2400,7 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 ```jsl
 
+
 Char To Blob( "Café", "utf-16be" );
 
 ```
@@ -2297,6 +2414,7 @@ Char To Blob( "Café", "utf-16be" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
@@ -2312,6 +2430,7 @@ Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```jsl
 
+
 Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```
@@ -2326,6 +2445,7 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```jsl
 
+
 New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```
@@ -2339,6 +2459,7 @@ New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 If( !Check MATLAB Dependencies(),
@@ -2359,6 +2480,7 @@ If( !Check MATLAB Dependencies(),
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 cdedf = 2;
 New Window( "Example: ChiSquare Density",
@@ -2385,6 +2507,7 @@ New Window( "Example: ChiSquare Density",
 
 ```jsl
 
+
 cdidf = 2;
 New Window( "Example: ChiSquare Distribution",
 	cdiy = Graph Box(
@@ -2409,6 +2532,7 @@ New Window( "Example: ChiSquare Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 clcdidf = 2;
 New Window( "Example: ChiSquare Log CDistribution",
@@ -2435,6 +2559,7 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 ```jsl
 
+
 cldedf = 1;
 New Window( "Example: ChiSquare Log Density",
 	cldey = Graph Box(
@@ -2459,6 +2584,7 @@ New Window( "Example: ChiSquare Log Density",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 cldidf = 2;
 New Window( "Example: ChiSquare Log Distribution",
@@ -2485,6 +2611,7 @@ New Window( "Example: ChiSquare Log Distribution",
 
 ```jsl
 
+
 New Window( "Example: ChiSquare Noncentrality",
 	chincgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -2508,6 +2635,7 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 ```jsl
 
+
 ChiSquare Quantile( 0.15, 5 );
 
 ```
@@ -2521,6 +2649,7 @@ ChiSquare Quantile( 0.15, 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* The inner product of a design matrix */
 exS = [16 1 0 11 -1 12,
@@ -2562,6 +2691,7 @@ Show( exAcholnew );
 
 ```jsl
 
+
 Cholesky( [1 2, 2 13] );
 
 ```
@@ -2575,6 +2705,7 @@ Cholesky( [1 2, 2 13] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
@@ -2616,6 +2747,7 @@ Unmatched strings
 
 ```jsl
 
+
 Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```
@@ -2623,6 +2755,7 @@ Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 **Choose among strings, no edits**
 
 ```jsl
+
 
 Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
@@ -2632,6 +2765,7 @@ Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
 ```jsl
 
+
 Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```
@@ -2639,6 +2773,7 @@ Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 **Unmatched**
 
 ```jsl
+
 
 Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
@@ -2653,6 +2788,7 @@ Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -2683,6 +2819,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -2739,6 +2876,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -2760,6 +2898,7 @@ Clear Global Window Handler();
 
 ```jsl
 
+
 Clear Globals();
 
 ```
@@ -2774,6 +2913,7 @@ Clear Globals();
 
 ```jsl
 
+
 Clear Log();
 
 ```
@@ -2787,6 +2927,7 @@ Clear Log();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Clear Symbols();
 
@@ -2810,6 +2951,7 @@ The second argument is used to save the data table. Use an appropriate file exte
 
 ```jsl
 
+
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 3 );
 Close( exdt, NoSave );
@@ -2830,6 +2972,7 @@ Only windows in the current project (or no project if not running the script in 
 
 ```jsl
 
+
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 Wait( 3 );
@@ -2847,6 +2990,7 @@ Close All( Data Tables, NoSave );
 
 ```jsl
 
+
 Close Database Connection( databaseConnectionHandle );
 
 ```
@@ -2860,6 +3004,7 @@ Close Database Connection( databaseConnectionHandle );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Close Log();
 Show( Is Log Open() );
@@ -2875,6 +3020,7 @@ Show( Is Log Open() );
 **JMP Version Added:** 19
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Lag Height by Sex", Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) ) );
@@ -2892,6 +3038,7 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = New Window( "Example",
 	exx = 1;
@@ -2922,6 +3069,7 @@ dt = New Window( "Example",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Cumulative Sum( :height, :sex );
@@ -2931,6 +3079,7 @@ Col Cumulative Sum( :height, :sex );
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -2953,6 +3102,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );
 dt << New Column( "date30", Formula( :date + 30 ) );
 dt << New Column( "gnp30",
@@ -2973,6 +3123,7 @@ dt << New Column( "gnp30",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelected( 1 ) ) );
 
@@ -2981,6 +3132,7 @@ New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelect
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 2",
@@ -2992,6 +3144,7 @@ New Window( "Col List Box Example 2",
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 3",
@@ -3017,6 +3170,7 @@ New Window( "Col List Box Example 3",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -3026,6 +3180,7 @@ Col Maximum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -3034,6 +3189,7 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
@@ -3045,6 +3201,7 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3067,6 +3224,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -3076,6 +3234,7 @@ Col Maximum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -3084,6 +3243,7 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
@@ -3095,6 +3255,7 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3117,6 +3278,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height );
 
@@ -3125,6 +3287,7 @@ Col Mean( :height );
 **Example 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height, <<Freq( :weight ) );
@@ -3135,6 +3298,7 @@ Col Mean( :height, <<Freq( :weight ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mean( :height, :age ) ) );
 
@@ -3143,6 +3307,7 @@ For Each Row( Show( Col Mean( :height, :age ) ) );
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mean for Each Age and Sex Group",
@@ -3154,6 +3319,7 @@ dt << New Column( "Mean for Each Age and Sex Group",
 **Example 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3176,6 +3342,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Median Height",
 	numeric,
@@ -3194,6 +3361,7 @@ dt << New Column( "Col Median Height by Age",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Median( :height ) );
@@ -3205,6 +3373,7 @@ Show( Col Median( :height, :age ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3227,6 +3396,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -3236,6 +3406,7 @@ Col Minimum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -3244,6 +3415,7 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
@@ -3255,6 +3427,7 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3277,6 +3450,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -3286,6 +3460,7 @@ Col Minimum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -3294,6 +3469,7 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
@@ -3305,6 +3481,7 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3327,6 +3504,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mode( :height );
 
@@ -3336,6 +3514,7 @@ Col Mode( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mode( :height, :age ) ) );
 
@@ -3344,6 +3523,7 @@ For Each Row( Show( Col Mode( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mode for Each Age and Sex Group",
@@ -3355,6 +3535,7 @@ dt << New Column( "Mode for Each Age and Sex Group",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3377,6 +3558,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Moving Average( :height, 1, 5, 0, :sex );
@@ -3386,6 +3568,7 @@ Col Moving Average( :height, 1, 5, 0, :sex );
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3410,6 +3593,7 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col N Missing( :height );
 
@@ -3419,6 +3603,7 @@ Col N Missing( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col N Missing( :height, :age ) ) );
 
@@ -3427,6 +3612,7 @@ For Each Row( Show( Col N Missing( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Missing Values for Each Age and Sex Group",
@@ -3438,6 +3624,7 @@ dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
@@ -3459,6 +3646,7 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "N unique age by sex", Formula( Col N Unique( :age, :sex ) ) );
 New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) );
@@ -3477,6 +3665,7 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Number( :height );
 
@@ -3486,6 +3675,7 @@ Col Number( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Number( :height, :age ) ) );
 
@@ -3494,6 +3684,7 @@ For Each Row( Show( Col Number( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
@@ -3505,6 +3696,7 @@ dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
@@ -3528,6 +3720,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Quantile Height",
 	numeric,
@@ -3546,6 +3739,7 @@ dt << New Column( "Col Quantile Height by Age",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Quantile( :height, 0.5 ) );
@@ -3557,6 +3751,7 @@ Show( Col Quantile( :height, 0.5, :age ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3581,6 +3776,7 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Rank Height", Formula( Col Rank( :height, <<tie( "average" ) ) ) );
 New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
@@ -3590,6 +3786,7 @@ New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3610,6 +3807,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Score Height", Formula( Col Score( :height ) ) );
 New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
@@ -3625,6 +3823,7 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 **JMP Version Added:** 19
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );
@@ -3647,6 +3846,7 @@ New Column( "Row within sex, 60+",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle 1", Numeric, Continuous, Set Formula( Col Shuffle() ) );
 dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() ) );
@@ -3657,6 +3857,7 @@ dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() )
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age ) ) );
 
@@ -3665,6 +3866,7 @@ dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3685,6 +3887,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );
 Row() = 40;
 Col Simple Exponential Smoothing( :Column1, .7 );
@@ -3700,6 +3903,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "test",
 	Table Box(
@@ -3725,6 +3929,7 @@ New Window( "test",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Col Standardize( :height );
@@ -3735,6 +3940,7 @@ Col Standardize( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Standardize( :height, :age ) ) );
 
@@ -3743,6 +3949,7 @@ For Each Row( Show( Col Standardize( :height, :age ) ) );
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3767,6 +3974,7 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Std Dev( :height );
 
@@ -3775,6 +3983,7 @@ Col Std Dev( :height );
 **Example 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age ) ) );
@@ -3785,6 +3994,7 @@ For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
@@ -3793,6 +4003,7 @@ For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Standard Deviation for Each Age and Sex Group",
@@ -3804,6 +4015,7 @@ dt << New Column( "Standard Deviation for Each Age and Sex Group",
 **Example 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3825,6 +4037,7 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Equity.jmp" );
 :JOB << Set Property( "Missing Value Codes", {"Other"} );
@@ -3848,6 +4061,7 @@ Show( y1, y2, y3, y4 );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height );
 
@@ -3856,6 +4070,7 @@ Col Sum( :height );
 **Example 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height, <<Freq( :weight ) );
@@ -3866,6 +4081,7 @@ Col Sum( :height, <<Freq( :weight ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Sum( :height, :age ) ) );
 
@@ -3874,6 +4090,7 @@ For Each Row( Show( Col Sum( :height, :age ) ) );
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Sum for Each Age and Sex Group",
@@ -3885,6 +4102,7 @@ dt << New Column( "Sum for Each Age and Sex Group",
 **Example 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3905,6 +4123,7 @@ dt << New Column( "Col Sum for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -3921,6 +4140,7 @@ Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
+
 Color Difference( "red", "blue" );
 
 ```
@@ -3928,6 +4148,7 @@ Color Difference( "red", "blue" );
 **Example 2**
 
 ```jsl
+
 
 Color Difference( "red", "blue", "sRGB" );
 
@@ -3937,6 +4158,7 @@ Color Difference( "red", "blue", "sRGB" );
 
 ```jsl
 
+
 Color Difference( "red", "blue", "redmean" );
 
 ```
@@ -3944,6 +4166,7 @@ Color Difference( "red", "blue", "redmean" );
 **Example 4**
 
 ```jsl
+
 
 Color Difference( "red", "blue", "CIE76" );
 
@@ -3953,6 +4176,7 @@ Color Difference( "red", "blue", "CIE76" );
 
 ```jsl
 
+
 Color Difference( "red", "blue", "CIE94" );
 
 ```
@@ -3961,6 +4185,7 @@ Color Difference( "red", "blue", "CIE94" );
 
 ```jsl
 
+
 Color Difference( "red", "blue", "CIEDE2000" );
 
 ```
@@ -3968,6 +4193,7 @@ Color Difference( "red", "blue", "CIEDE2000" );
 **Example 7**
 
 ```jsl
+
 
 Color Difference( "red", "blue", "dEok" );
 
@@ -3982,6 +4208,7 @@ Color Difference( "red", "blue", "dEok" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" ) << Color By Column( :height );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -4000,6 +4227,7 @@ Color To RGB( Color Of() );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, 0.5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -4016,6 +4244,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```jsl
 
+
 Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```
@@ -4030,13 +4259,14 @@ Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```jsl
 
+
 Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```
 
 ### Column
 
-**Syntax:** y = Column( name|number ); y = Column( dataTable, name|number, &lt;"formatted"&gt; )
+**Syntax:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Description:** Returns a reference to the specified data table column. The keyword "formatted" allows accessing formatted data, like the value label.
 
@@ -4045,6 +4275,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 **Example 1**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 col4 = Column( 4 );
@@ -4056,6 +4287,7 @@ col4[1] + ht[2];
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << run script( "Set Sex Value Labels" );
@@ -4074,6 +4306,7 @@ Write( "\!nData value returned is the formatted value of row 5." );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 Column Dialog(
@@ -4112,6 +4345,7 @@ Column Dialog(
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Column Name( 4 );
 
@@ -4127,6 +4361,7 @@ Column Name( 4 );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -4141,6 +4376,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) )
@@ -4158,6 +4394,7 @@ New Window( "Example",
 
 ```jsl
 
+
 [1 2] || [3 4] || [5 6];
 
 ```
@@ -4172,6 +4409,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Concat Items( {"www", "jmp", "com"}, "." );
 
 ```
@@ -4185,6 +4423,7 @@ Concat Items( {"www", "jmp", "com"}, "." );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = "hello ";
 ex ||= "world";
@@ -4202,6 +4441,7 @@ ex ||= "world";
 **Example 1**
 
 ```jsl
+
 
 /*Simple Example*/
 f = Expr(
@@ -4222,6 +4462,7 @@ Eval List( {x1, x2, minFun} );
 **Example 2**
 
 ```jsl
+
 
 /*Simple Example with optional parameters included*/ 
 x = [., .];
@@ -4256,6 +4497,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
+
 /*Simple Example*/
 f = Expr(
 	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
@@ -4275,6 +4517,7 @@ Eval List( {x1, x2, minFun} );
 **Example 2**
 
 ```jsl
+
 
 /*Simple Example with optional parameters included*/ 
 x = [., .];
@@ -4307,6 +4550,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
+
 Show( Contains( "redreed", "re", -1 ) );
 Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
@@ -4324,6 +4568,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ```jsl
 
+
 Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```
@@ -4331,6 +4576,7 @@ Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
 dt << New Column( "Cheese",
@@ -4346,6 +4592,7 @@ dt << Distribution( Column( :Cheese ) );
 
 ```jsl
 
+
 //find repeated character c in cdcef
 Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
@@ -4360,6 +4607,7 @@ Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Context Box(
@@ -4381,6 +4629,7 @@ New Window( "Example",
 
 ```jsl
 
+
 For( i = 1, i <= 10, i++,
 	If( i < 2, Continue() );
 	Print( "i=" || Char( i ) );
@@ -4397,6 +4646,7 @@ For( i = 1, i <= 10, i++,
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 New Window( "Example",
@@ -4463,6 +4713,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -4481,6 +4732,7 @@ New Window( "Example",
 **Example 2**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -4506,6 +4758,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
@@ -4535,6 +4788,7 @@ New Window( "Contour Seg Example",
 
 ```jsl
 
+
 For Each( {pv},
 	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS",
 	"SAMPLE_IMAGES", "USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},
@@ -4555,6 +4809,7 @@ For Each( {pv},
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ 
 rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
@@ -4577,6 +4832,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
 
 ```jsl
 
+
 rc0 = File Exists( "$TEMP/x.jmp" );
 rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -4597,6 +4853,7 @@ Char( rc4 );/* 0 1 1 1 0 */
 
 ```jsl
 
+
 Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -4610,6 +4867,7 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Cosine( Pi() / 2 );
 
@@ -4625,6 +4883,7 @@ Cosine( Pi() / 2 );
 
 ```jsl
 
+
 CosH( 1 );
 
 ```
@@ -4639,6 +4898,7 @@ CosH( 1 );
 
 ```jsl
 
+
 Cosine( Pi() / 2 );
 
 ```
@@ -4652,6 +4912,7 @@ Cosine( Pi() / 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Table( "Count Example",
 	Add Rows( 12 ),
@@ -4676,6 +4937,7 @@ For Each Row(
 
 ```jsl
 
+
 Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -4689,6 +4951,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dbc = Create Database Connection(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
@@ -4705,6 +4968,7 @@ dbc = Create Database Connection(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
@@ -4729,6 +4993,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```jsl
 
+
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
@@ -4738,6 +5003,7 @@ Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} 
 **Example 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Abrasion.jmp" );
@@ -4759,6 +5025,7 @@ Create Excel Workbook(
 
 ```jsl
 
+
 Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -4773,6 +5040,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```jsl
 
+
 Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```
@@ -4786,6 +5054,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 connection = Current CAS Connection();
@@ -4806,6 +5075,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Current Data Table() << Get Column Names;
@@ -4830,6 +5100,7 @@ If no current journal exists in the given project, one will be created automatic
 
 ```jsl
 
+
 Current Journal();
 
 ```
@@ -4848,6 +5119,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 ```jsl
 
+
 Current Report();
 
 ```
@@ -4865,6 +5137,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Example Outline",
@@ -4885,6 +5158,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```
@@ -4898,6 +5172,7 @@ Cytometry Logicle( 100, 10000, .15, .45, 0 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
@@ -4914,6 +5189,7 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 ```jsl
 
 
+
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```
@@ -4927,6 +5203,7 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
@@ -4963,6 +5240,7 @@ New Window( "Shared Local Filter",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Selection Filter",
@@ -5005,6 +5283,7 @@ New Window( "Selection Filter",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", x = Data Grid Box() );
 x << Set Data Table( dt );
@@ -5020,6 +5299,7 @@ x << Set Data Table( dt );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
@@ -5037,6 +5317,7 @@ Data Table( 1 );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", Data Table Box( dt ) );
 
@@ -5051,6 +5332,7 @@ New Window( "Example", Data Table Box( dt ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -5069,6 +5351,7 @@ New Window( "Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box( Data Table Plot Col Box( :weight ), Data Table Plot Col Box( :height ) )
@@ -5085,6 +5368,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
@@ -5111,6 +5395,7 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
+
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "start" );
 
 ```
@@ -5119,6 +5404,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```jsl
 
+
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actual" );
 
 ```
@@ -5126,6 +5412,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 **Example 3**
 
 ```jsl
+
 
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "fractional" );
 
@@ -5140,6 +5427,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 As Date( Date DMY( 15, 7, 2000 ) );
 
@@ -5157,6 +5445,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ```jsl
 
+
 Date Increment( Today(), "Month", 100, "start" );
 
 ```
@@ -5165,6 +5454,7 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```jsl
 
+
 Date Increment( Today(), "Month", 100, "actual" );
 
 ```
@@ -5172,6 +5462,7 @@ Date Increment( Today(), "Month", 100, "actual" );
 **Example 3**
 
 ```jsl
+
 
 Date Increment( Today(), "Month", 100, "fractional" );
 
@@ -5187,6 +5478,7 @@ Date Increment( Today(), "Month", 100, "fractional" );
 
 ```jsl
 
+
 As Date( Date MDY( 7, 15, 2000 ) );
 
 ```
@@ -5200,6 +5492,7 @@ As Date( Date MDY( 7, 15, 2000 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Day( Today() );
 
@@ -5215,6 +5508,7 @@ Day( Today() );
 
 ```jsl
 
+
 Day Of Week( Today() );
 
 ```
@@ -5228,6 +5522,7 @@ Day Of Week( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Day Of Year( Today() );
 
@@ -5243,6 +5538,7 @@ Day Of Year( Today() );
 
 ```jsl
 
+
 v = Days In Month( 2016, 2 );
 
 ```
@@ -5256,6 +5552,7 @@ v = Days In Month( 2016, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 // Right-click and select Debug.
 // In the JSL Debugger, click Run.
@@ -5278,6 +5575,7 @@ Show( z );
 ```jsl
 
 
+
 Decode URI( "Foo%20Bar" );
 
 ```
@@ -5291,6 +5589,7 @@ Decode URI( "Foo%20Bar" );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
@@ -5306,6 +5605,7 @@ Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```jsl
 
+
 Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```
@@ -5319,6 +5619,7 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -5373,6 +5674,7 @@ Delete Classes( complex );
 
 ```jsl
 
+
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -5404,6 +5706,7 @@ Show Classes();
 
 ```jsl
 
+
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -5425,6 +5728,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```jsl
 
+
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = File Exists( "$TEMP/x.jmp" );
 rc2 = Delete File( "$TEMP/x.jmp" );
@@ -5443,6 +5747,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /*
 
 ```jsl
 
+
 Delete Globals();
 
 ```
@@ -5456,6 +5761,7 @@ Delete Globals();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 nsaa = New Namespace(
@@ -5486,6 +5792,7 @@ Show Namespaces();
 
 ```jsl
 
+
 Delete Symbols();
 
 ```
@@ -5500,6 +5807,7 @@ Delete Symbols();
 
 ```jsl
 
+
 Derivative( Sin( x ), x );
 
 ```
@@ -5513,6 +5821,7 @@ Derivative( Sin( x ), x );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* example that Design(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
@@ -5541,6 +5850,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* example that Design Last(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
@@ -5577,6 +5887,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
+
 /* example that Design Nom(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Nom( exLevels ) );
@@ -5611,6 +5922,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* example that Design Ord(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
@@ -5647,6 +5959,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
+
 /* example that DesignF(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( DesignF( exLevels ) );
@@ -5682,6 +5995,7 @@ Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
+
 dvec = [0.1 0.9 0.1];
 yvec = [1 5 10];
 New Window( "Desirability",
@@ -5706,6 +6020,7 @@ New Window( "Desirability",
 
 ```jsl
 
+
 Det( [11 22, 33 44] );
 
 ```
@@ -5719,6 +6034,7 @@ Det( [11 22, 33 44] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Diag( [11 22] );
 
@@ -5735,6 +6051,7 @@ Diag( [11 22] );
 **Example 1**
 
 ```jsl
+
 
 // See Example 2 for the deprecated Dialog equivalent
 If(
@@ -5757,6 +6074,7 @@ If(
 **Example 2**
 
 ```jsl
+
 
 // Deprecated
 If(
@@ -5785,6 +6103,7 @@ If(
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Dif( :height, 2 );
@@ -5801,6 +6120,7 @@ Dif( :height, 2 );
 
 ```jsl
 
+
 Digamma( 5 );
 
 ```
@@ -5815,6 +6135,7 @@ Digamma( 5 );
 
 ```jsl
 
+
 Dim( [11 22, 33 44, 55 66] );
 
 ```
@@ -5828,6 +6149,7 @@ Dim( [11 22, 33 44, 55 66] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2, 3 3 3];
@@ -5854,6 +6176,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ```jsl
 
+
 If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 	"ok",
 	"missing!"
@@ -5872,6 +6195,7 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 ```jsl
 
 
+
 Disable JMP Live URL( "*public.jmp.com" );
 
 ```
@@ -5887,6 +6211,7 @@ Disable JMP Live URL( "*public.jmp.com" );
 ```jsl
 
 
+
 Disable Proxy Settings( 1 );
 
 ```
@@ -5900,6 +6225,7 @@ Disable Proxy Settings( 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /*1-D example*/
 exX1 = [1, 2, 3, 4];
@@ -5973,6 +6299,7 @@ Show( exDm == exD );
 
 ```jsl
 
+
 x = Divide( 5 );
 y = 1 / 5;
 Show( x, y );
@@ -5982,6 +6309,7 @@ Show( x, y );
 **Simple**
 
 ```jsl
+
 
 6 / 3 / 2;
 
@@ -5996,6 +6324,7 @@ Show( x, y );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = 1;
 ex /= 2;
@@ -6013,6 +6342,7 @@ ex;
 
 ```jsl
 
+
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -6026,6 +6356,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = [11 33 77];
@@ -6048,6 +6379,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -6068,6 +6400,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = [11 33 77];
@@ -6090,6 +6423,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	exx = [11 33];
 	exy = [88 22];,
@@ -6110,6 +6444,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = [11 33 77];
@@ -6132,6 +6467,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Dunnett P value( 1.67623, 3, 11 );
 
 ```
@@ -6145,6 +6481,7 @@ Dunnett P value( 1.67623, 3, 11 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Dunnett Quantile( 0.95, 3, 11 );
 
@@ -6160,6 +6497,7 @@ Dunnett Quantile( 0.95, 3, 11 );
 
 ```jsl
 
+
 Round( e(), 10 );
 
 ```
@@ -6173,6 +6511,7 @@ Round( e(), 10 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 [11 22 33] :/ [1 2 3];
 
@@ -6188,6 +6527,7 @@ Round( e(), 10 );
 
 ```jsl
 
+
 E Max( [1 22 33], [11 2 3] );
 
 ```
@@ -6201,6 +6541,7 @@ E Max( [1 22 33], [11 2 3] );
 **JMP Version Added:** 16
 
 ```jsl
+
 
 E Min( [1 22 33], [11 2 3] );
 
@@ -6216,6 +6557,7 @@ E Min( [1 22 33], [11 2 3] );
 
 ```jsl
 
+
 [1 2 3] :* [11 22 33];
 
 ```
@@ -6230,6 +6572,7 @@ E Min( [1 22 33], [11 2 3] );
 
 ```jsl
 
+
 X = [11 22, 22 33];
 {M, E} = Eigen( X );
 E * Diag( M ) * E`;
@@ -6243,6 +6586,7 @@ E * Diag( M ) * E`;
 **JMP Version Added:** 17
 
 ```jsl
+
 
 X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 {M1, E1} = Eigen BLAS( X );
@@ -6259,6 +6603,7 @@ X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 
 ```jsl
 
+
 Empty();
 
 ```
@@ -6272,6 +6617,7 @@ Empty();
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 Enable JMP Live URL( "https://public.jmp.com" );
@@ -6289,6 +6635,7 @@ Enable JMP Live URL( "https://public.jmp.com" );
 ```jsl
 
 
+
 Enable Proxy Settings( 0 );
 
 ```
@@ -6302,6 +6649,7 @@ Enable Proxy Settings( 0 );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 
 Encode URI( "Foo Bar" );
@@ -6318,6 +6666,7 @@ Encode URI( "Foo Bar" );
 
 ```jsl
 
+
 Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```
@@ -6331,6 +6680,7 @@ Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Encode64 Double( -1.5831 );
 
@@ -6346,6 +6696,7 @@ Encode64 Double( -1.5831 );
 
 ```jsl
 
+
 Ends With( "http://www.jmp.com", ".com" );
 
 ```
@@ -6360,6 +6711,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ```jsl
 
+
 1 == 1;
 
 ```
@@ -6373,6 +6725,7 @@ Ends With( "http://www.jmp.com", ".com" );
 **JMP Version Added:** 16
 
 ```jsl
+
 
 Estimate Bartlett Factor Score(
 	[2 2 0],
@@ -6402,6 +6755,7 @@ Estimate Bartlett Factor Score(
 
 ```jsl
 
+
 Estimate Factor Score(
 	[7 10 5 2 2 0],
 	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
@@ -6428,6 +6782,7 @@ Estimate Factor Score(
 
 ```jsl
 
+
 Eval( Expr( 1 + 2 ) );
 
 ```
@@ -6441,6 +6796,7 @@ Eval( Expr( 1 + 2 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
@@ -6456,6 +6812,7 @@ Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```jsl
 
+
 Eval Insert( "Today is ^As Date( Today())^" );
 
 ```
@@ -6469,6 +6826,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = "Today is ^As Date( Today())^";
 Eval Insert Into( ex );
@@ -6488,6 +6846,7 @@ ex;
 
 ```jsl
 
+
 Eval List( {1 + 2, 3 + 4} );
 
 ```
@@ -6495,6 +6854,7 @@ Eval List( {1 + 2, 3 + 4} );
 **Example 2**
 
 ```jsl
+
 
 x = 5;
 y = 10;
@@ -6511,6 +6871,7 @@ Eval List( {x, y} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -6561,6 +6922,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -6578,6 +6940,7 @@ Excluded();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
@@ -6597,6 +6960,7 @@ Excluded( Row State( 3 ) );
 
 ```jsl
 
+
 dt = Execute SQL(
 	databaseConnectionHandle,
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -6609,6 +6973,7 @@ dt = Execute SQL(
 
 ```jsl
 
+
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
@@ -6617,6 +6982,7 @@ dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 **Example 3**
 
 ```jsl
+
 
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 resultList = Execute SQL(
@@ -6636,6 +7002,7 @@ resultList = Execute SQL(
 **JMP Version Added:** 18
 
 ```jsl
+
 
 New Window( "Example: ExGaussian Density",
 	y = Graph Box(
@@ -6659,6 +7026,7 @@ New Window( "Example: ExGaussian Density",
 
 ```jsl
 
+
 New Window( "Example: ExGaussian Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6680,6 +7048,7 @@ New Window( "Example: ExGaussian Distribution",
 **JMP Version Added:** 18
 
 ```jsl
+
 
 New Window( "Example: ExGaussian Quantile",
 	Graph Box(
@@ -6703,6 +7072,7 @@ New Window( "Example: ExGaussian Quantile",
 
 ```jsl
 
+
 If(
 	New Window( "Exit() example",
 		<<Type( "Modal" ),
@@ -6723,6 +7093,7 @@ If(
 
 ```jsl
 
+
 Round( Exp( 1 ), 5 );
 
 ```
@@ -6736,6 +7107,7 @@ Round( Exp( 1 ), 5 );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 New Window( "Example: Exp Density",
 	y = Graph Box(
@@ -6759,6 +7131,7 @@ New Window( "Example: Exp Density",
 
 ```jsl
 
+
 New Window( "Example: Exp Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6781,6 +7154,7 @@ New Window( "Example: Exp Distribution",
 
 ```jsl
 
+
 New Window( "Example: Exp Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -6802,6 +7176,7 @@ New Window( "Example: Exp Quantile",
 
 ```jsl
 
+
 Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```
@@ -6815,6 +7190,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 **JMP Version Added:** 17
 
 ```jsl
+
 
 New Window( "Example: Exponential Density",
 	y = Graph Box(
@@ -6838,6 +7214,7 @@ New Window( "Example: Exponential Density",
 
 ```jsl
 
+
 New Window( "Example: Exponential Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6860,6 +7237,7 @@ New Window( "Example: Exponential Distribution",
 
 ```jsl
 
+
 New Window( "Example: Exponential Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -6881,6 +7259,7 @@ New Window( "Example: Exponential Quantile",
 
 ```jsl
 
+
 Expr( x + y );
 
 ```
@@ -6894,6 +7273,7 @@ Expr( x + y );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
@@ -6916,6 +7296,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Extract Expr( a + b * c, Wild() * Wild() );
 
 ```
@@ -6929,6 +7310,7 @@ Extract Expr( a + b * c, Wild() * Wild() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 fdedfn = 2;
 fdedfd = 2;
@@ -6957,6 +7339,7 @@ New Window( "Example: F Density",
 
 ```jsl
 
+
 fdidfn = 5;
 fdidfd = 5;
 New Window( "Example: F Distribution",
@@ -6983,6 +7366,7 @@ New Window( "Example: F Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 flcddfn = 5;
 flcddfd = 5;
@@ -7011,6 +7395,7 @@ New Window( "Example: F Log CDistribution",
 
 ```jsl
 
+
 fldedfn = 1;
 fldedfd = 1;
 New Window( "Example: F Log Density",
@@ -7037,6 +7422,7 @@ New Window( "Example: F Log Density",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 flddfn = 5;
 flddfd = 5;
@@ -7065,6 +7451,7 @@ New Window( "Example: F Log Distribution",
 
 ```jsl
 
+
 New Window( "Example: F Noncentrality",
 	fncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -7087,6 +7474,7 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 alpha = 0.05;
 obs = 25;
@@ -7118,6 +7506,7 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
+
 F Quantile( 0.7, 5, 3 );
 
 ```
@@ -7131,6 +7520,7 @@ F Quantile( 0.7, 5, 3 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 alpha = 0.05;
 pow = 0.6;
@@ -7162,6 +7552,7 @@ New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
+
 Factorial( 5 );
 
 ```
@@ -7175,6 +7566,7 @@ Factorial( 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 A = Faure Quasi Random Sequence( 3, 100 );
 As Table( A );
@@ -7192,6 +7584,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```jsl
 
+
 FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```
@@ -7205,6 +7598,7 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
 A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
@@ -7276,6 +7670,7 @@ Show( fin );
 
 ```jsl
 
+
 If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ok",
 	"missing!"
@@ -7293,6 +7688,7 @@ If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 
 ```jsl
 
+
 File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -7309,6 +7705,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
+
 Files In Directory( "$HOME" );
 
 ```
@@ -7316,6 +7713,7 @@ Files In Directory( "$HOME" );
 **Example 2**
 
 ```jsl
+
 
 Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 	Contains( Lowercase( fn ), "stacked" )
@@ -7332,6 +7730,7 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -7355,6 +7754,7 @@ New Window( "Example",
 ```jsl
 
 
+
 image = New Image( "$SAMPLE_IMAGES/pi.gif" );
 New Window( "Example",
 	Graph Box(
@@ -7368,6 +7768,7 @@ New Window( "Example",
 **Mask**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -7388,6 +7789,7 @@ New Window( "Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 250 ) ) );
 
@@ -7405,6 +7807,7 @@ New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 2
 
 ```jsl
 
+
 values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value > 6 );
 Show( values );
 
@@ -7413,6 +7816,7 @@ Show( values );
 **Expression**
 
 ```jsl
+
 
 values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ), Mod( value, 2 ) == 0 );
 Show( values );
@@ -7423,6 +7827,7 @@ Show( values );
 
 ```jsl
 
+
 values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
 Show( values );
 
@@ -7431,6 +7836,7 @@ Show( values );
 **Matrix**
 
 ```jsl
+
 
 values = Filter Each( {x, i}, 100 :: 120, i > 10 );
 Show( values );
@@ -7452,6 +7858,7 @@ Only windows in the current project (or no project if not running the script in 
 ```jsl
 
 
+
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 windows = Find All( Data Tables );
@@ -7471,6 +7878,7 @@ For( i = 1, i <= N Items( windows ), i++,
 
 ```jsl
 
+
 First( 11, 22 );
 
 ```
@@ -7484,6 +7892,7 @@ First( 11, 22 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 result = Fit Censored(
 	Distribution( "Weibull" ),
@@ -7502,6 +7911,7 @@ Show( result );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 x = [68, 77, 85, 88, 93, 93, 95, 98];
 y = [1, 9, 18, 94, 35, 82, 40, 59];
@@ -7528,6 +7938,7 @@ New Window( "Fit Circle",
 
 ```jsl
 
+
 datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,
 -6.1855986, 2.16525629, -30.990061];
 freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
@@ -7553,6 +7964,7 @@ Show( results );
 
 ```jsl
 
+
 Floor( 1.2 );
 
 ```
@@ -7566,6 +7978,7 @@ Floor( 1.2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 s = "";
 For( i = 1, i < 10, i++,
@@ -7588,6 +8001,7 @@ Trim( s );
 ```jsl
 
 
+
 // Across multiple containers
 x = {1, 3};
 y = {2, 4};
@@ -7602,6 +8016,7 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 **Across - Count**
 
 ```jsl
+
 
 
 list1 = {1, 3, 5, 7, 9};
@@ -7628,6 +8043,7 @@ Try(
 
 ```jsl
 
+
 For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, value, index ) );
 
 ```
@@ -7635,6 +8051,7 @@ For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, val
 **Expression**
 
 ```jsl
+
 
 For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
@@ -7644,6 +8061,7 @@ For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
 ```jsl
 
+
 For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```
@@ -7652,6 +8070,7 @@ For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```jsl
 
+
 For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```
@@ -7659,6 +8078,7 @@ For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 **Matrix - Linear Index**
 
 ```jsl
+
 
 For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
@@ -7674,6 +8094,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( :height = -:height );
 
@@ -7681,7 +8102,7 @@ For Each Row( :height = -:height );
 
 ### Format
 
-**Syntax:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
@@ -7691,6 +8112,7 @@ For Each Row( :height = -:height );
 
 ```jsl
 
+
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
@@ -7698,6 +8120,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 **Format Pattern**
 
 ```jsl
+
 
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
@@ -7707,6 +8130,7 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
+
 Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```
@@ -7714,6 +8138,7 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 **Percent, Currency**
 
 ```jsl
+
 
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
@@ -7723,7 +8148,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Date
 
-**Syntax:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description:** Returns the number in the specified format. Formats include items in the Column Info dialog, such as "Best" and "h:m:s". See Topic Help for other options, including p-value, currency, date and time, and geographic formats.
 
@@ -7733,6 +8158,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
+
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
@@ -7740,6 +8166,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 **Example 2**
 
 ```jsl
+
 
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
@@ -7749,6 +8176,7 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
+
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -7757,13 +8185,14 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Pattern
 
-**Syntax:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;) x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; ) obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
+**Syntax:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Description:** Format Patterns are strings that define a date-time format, such as "<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>". The parts of the pattern in angle brackets are called field descriptors. The field descriptors represent a value (such as "<YYYY>", which is a four-digit year) or other date-time text (such as "</>", which is a locale-specific date separator). A format pattern enables you to build formats that aren&apos;t provided in JMP. These formats can be used for both formatting and inputting data.
 
 **JMP Version Added:** 16
 
 ```jsl
+
 
 s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
@@ -7861,6 +8290,7 @@ Other
 
 ```jsl
 
+
 Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );
 Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 
@@ -7875,6 +8305,7 @@ Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sig = .5;
@@ -7904,6 +8335,7 @@ New Window( "Example: Frechet Density",
 
 ```jsl
 
+
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Distribution",
@@ -7930,6 +8362,7 @@ New Window( "Example: Frechet Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sig = .5;
@@ -7971,6 +8404,7 @@ New Window( "Example: Frechet Quantile",
 
 ```jsl
 
+
 exsqr = Function( {x}, x * x );
 exsqr( 5 );
 
@@ -7979,6 +8413,7 @@ exsqr( 5 );
 **Example 2**
 
 ```jsl
+
 
 // y is an optional argument
 exmul = Function( {x, y = 3}, x * y );
@@ -7991,6 +8426,7 @@ Show( a, b );
 **Example 3**
 
 ```jsl
+
 
 posorneg = Function( {x},
 	{},
@@ -8014,6 +8450,7 @@ posorneg( -5.5 );
 
 ```jsl
 
+
 Future Value( .03, 12, 100, 0, 1 );
 
 ```
@@ -8027,6 +8464,7 @@ Future Value( .03, 12, 100, 0, 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Round( G Inverse( [11 22, 33 44] ), 2 );
 
@@ -8042,6 +8480,7 @@ Round( G Inverse( [11 22, 33 44] ), 2 );
 
 ```jsl
 
+
 Gamma( 5 );
 
 ```
@@ -8055,6 +8494,7 @@ Gamma( 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 gdealpha = Log( 1.5 );
 New Window( "Example: Gamma Density",
@@ -8084,6 +8524,7 @@ New Window( "Example: Gamma Density",
 
 ```jsl
 
+
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -8111,6 +8552,7 @@ New Window( "Example: Gamma Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 glcdialpha = Log( 1.5 );
 New Window( "Example: Gamma Log CDistribution",
@@ -8140,6 +8582,7 @@ New Window( "Example: Gamma Log CDistribution",
 
 ```jsl
 
+
 gldealpha = Log( 1.5 );
 New Window( "Example: Gamma Log Density",
 	gldey = Graph Box(
@@ -8168,6 +8611,7 @@ New Window( "Example: Gamma Log Density",
 
 ```jsl
 
+
 gldialpha = Log( 1.5 );
 New Window( "Example: Gamma Log Distribution",
 	gldiy = Graph Box(
@@ -8195,6 +8639,7 @@ New Window( "Example: Gamma Log Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 lambda = 20;
 sigma = 2;
@@ -8231,6 +8676,7 @@ New Window( "Example: Gamma Poisson Distribution",
 
 ```jsl
 
+
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Gamma Poisson",
@@ -8263,6 +8709,7 @@ New Window( "Poisson and Gamma Poisson",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 qexpl = 20;
 qexps = 2;
@@ -8310,6 +8757,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ```jsl
 
+
 Gamma Quantile( 0.75, 4 );
 
 ```
@@ -8323,6 +8771,7 @@ Gamma Quantile( 0.75, 4 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -8354,6 +8803,7 @@ New Window( "Example: GenGamma Density",
 
 ```jsl
 
+
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -8383,6 +8833,7 @@ New Window( "Example: GenGamma Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -8431,6 +8882,7 @@ New Window( "Example: GenGamma Quantile",
 
 ```jsl
 
+
 addin = Get Addin( "com.mycompany.myaddin" );
 
 ```
@@ -8444,6 +8896,7 @@ addin = Get Addin( "com.mycompany.myaddin" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 addins = Get Addins();
 addin ids = Get Addins() << id;
@@ -8461,6 +8914,7 @@ Show( addins, addin ids );
 
 ```jsl
 
+
 Get Addr Info( "www.jmp.com" )[3][4];
 
 ```
@@ -8474,6 +8928,7 @@ Get Addr Info( "www.jmp.com" )[3][4];
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Define Class(
 	"aa",
@@ -8502,6 +8957,7 @@ Delete Classes( "aa", "bb" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Define Class(
 	"aa",
@@ -8532,6 +8988,7 @@ Delete Classes( "aa", "bb" );
 
 ```jsl
 
+
 Get Clipboard();
 
 ```
@@ -8545,6 +9002,7 @@ Get Clipboard();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Get Color Theme Detail( "JMP Default" );
 
@@ -8562,6 +9020,7 @@ Get Color Theme Detail( "JMP Default" );
 
 ```jsl
 
+
 Get Color Theme Names();
 
 ```
@@ -8569,6 +9028,7 @@ Get Color Theme Names();
 **Example 2**
 
 ```jsl
+
 
 Get Color Theme Names( "sequential" );
 
@@ -8586,6 +9046,7 @@ Get Color Theme Names( "sequential" );
 
 ```jsl
 
+
 Get Custom Functions();
 
 ```
@@ -8593,6 +9054,7 @@ Get Custom Functions();
 **Example 2**
 
 ```jsl
+
 
 Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
@@ -8615,6 +9077,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
@@ -8642,6 +9105,7 @@ To specify a project, use the optional Project() argument with a title, index, d
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table List();
@@ -8651,6 +9115,7 @@ Get Data Table List();
 **Example 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Get Data Table List( Project( project ) );
@@ -8666,6 +9131,7 @@ Get Data Table List( Project( project ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Show( Get Default Directory() );
 Set Default Directory( "$SAMPLE_DATA" );
@@ -8687,6 +9153,7 @@ NOTE: On the Macintosh operating system, the variable name is case-sensitive.
 
 ```jsl
 
+
 Get Environment Variable( "PATH" );
 
 ```
@@ -8700,6 +9167,7 @@ Get Environment Variable( "PATH" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );
 Show( sheetList );
@@ -8716,6 +9184,7 @@ Show( sheetList );
 
 ```jsl
 
+
 Get File Search Path();
 
 ```
@@ -8730,6 +9199,7 @@ Get File Search Path();
 
 ```jsl
 
+
 Get Locale Setting( "Decimal Separator" );
 
 ```
@@ -8743,6 +9213,7 @@ Get Locale Setting( "Decimal Separator" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 all contents = Get Log();
 headcontents = Get Log( 10 );
@@ -8760,6 +9231,7 @@ tailcontents = Get Log( -5 );
 
 ```jsl
 
+
 Get Name Info( "149.173.5.120" )[3][4];
 
 ```
@@ -8773,6 +9245,7 @@ Get Name Info( "149.173.5.120" )[3][4];
 **JMP Version Added:** 14
 
 ```jsl
+
 
 nsaa = New Namespace(
 	"aa",
@@ -8802,6 +9275,7 @@ nsbb << Delete;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 nsaa = New Namespace(
 	"aa",
@@ -8842,6 +9316,7 @@ nsbb << Delete;
 ```jsl
 
 
+
 /*
 https://oauth.net/2/grant-types/
 */
@@ -8855,6 +9330,7 @@ Show( grant_types );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
@@ -8879,6 +9355,7 @@ Show( aa );
 
 ```jsl
 
+
 Get Path Variable( "SAMPLE_DATA" );
 /* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
 See full listing of Path Variables in the other example
@@ -8889,6 +9366,7 @@ See also Convert File Path() and Set Path Variable() */
 **Listing**
 
 ```jsl
+
 
 // Run for a Path Variable listing
 path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME",
@@ -8942,6 +9420,7 @@ New Window( "Path Variables",
 
 ```jsl
 
+
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -8955,6 +9434,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
@@ -8970,6 +9450,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```jsl
 
+
 Get Policies();
 
 ```
@@ -8984,6 +9465,7 @@ Get Policies();
 
 ```jsl
 
+
 Get Preferences( Graph marker size );
 
 ```
@@ -8997,6 +9479,7 @@ Get Preferences( Graph marker size );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Get Preferences( Graph marker size );
 
@@ -9014,6 +9497,7 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
+
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -9024,6 +9508,7 @@ Print( Get Project( 2 ) << Get Window Title() );
 **Example 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
@@ -9041,6 +9526,7 @@ project = Get Project( "Big Class" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Project();
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
@@ -9061,6 +9547,7 @@ Print( Get Project List() << Get Window Title() );
 
 ```jsl
 
+
 Get Punctuation Characters();
 
 ```
@@ -9068,6 +9555,7 @@ Get Punctuation Characters();
 **Example 2**
 
 ```jsl
+
 
 Get Punctuation Characters( Include Chars( "_" ) );
 
@@ -9077,6 +9565,7 @@ Get Punctuation Characters( Include Chars( "_" ) );
 
 ```jsl
 
+
 Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```
@@ -9084,6 +9573,7 @@ Get Punctuation Characters( Exclude Chars( "$[]" ) );
 **Example 4**
 
 ```jsl
+
 
 Collapse Whitespace(
 	Substitute( "This...string..has..dots", Items( Get Punctuation Characters(), "" ), " " )
@@ -9102,6 +9592,7 @@ Collapse Whitespace(
 ```jsl
 
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << RunScript( "Bivariate" );
 Get Session Script( Report( biv ) );
@@ -9117,6 +9608,7 @@ Get Session Script( Report( biv ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Get Whitespace Characters();
 
@@ -9146,6 +9638,7 @@ Use the optional Type() argument with one of "Data Tables", "Journals", "Reports
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA\Big Class.jmp" );
                                         
 window = Get Window( "Big Class" );
@@ -9155,6 +9648,7 @@ window = Get Window( "Big Class" );
 **Example 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
@@ -9186,6 +9680,7 @@ Use the optional Type() argument with one of "Data Tables", "Journals", "Reports
 
 ```jsl
 
+
 Print( Get Window List() << Get Window Title() );
 
 ```
@@ -9193,6 +9688,7 @@ Print( Get Window List() << Get Window Title() );
 **Example 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
@@ -9203,6 +9699,7 @@ Print( Get Window List( Project( project ) ) << Get Window Title() );
 **Example 3**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
@@ -9220,6 +9717,7 @@ Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Windo
 
 ```jsl
 
+
 ex = .6;
 New Window( "Example", Global Box( ex ) );
 
@@ -9234,6 +9732,7 @@ New Window( "Example", Global Box( ex ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -9265,6 +9764,7 @@ New Window( "Example: GLog Density",
 
 ```jsl
 
+
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -9294,6 +9794,7 @@ New Window( "Example: Glog Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -9338,6 +9839,7 @@ New Window( "Example: GLog Quantile",
 
 ```jsl
 
+
 ex1 = 1;
 ex2 = 2;
 
@@ -9352,6 +9854,7 @@ ex2 = 2;
 **JMP Version Added:** 15
 
 ```jsl
+
 
 email = "youremail@gmail.com"; //Replace this with your email
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -9373,6 +9876,7 @@ Google Sheet Export(
 **JMP Version Added:** 15
 
 ```jsl
+
 
 email = "youremail@gmail.com"; //Replace this with your email
 spreadsheet =
@@ -9403,6 +9907,7 @@ Google Sheet Import(
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Gradient Function(
@@ -9427,6 +9932,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -9447,6 +9953,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 x3d = Graph 3D Box(
 	framesize( 300, 300 ),
@@ -9482,6 +9989,7 @@ x3d << AddVector(
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -9503,6 +10011,7 @@ New Window( "Example",
 
 ```jsl
 
+
 3 > 2 > 1;
 
 ```
@@ -9517,6 +10026,7 @@ New Window( "Example",
 
 ```jsl
 
+
 3 >= 2 >= 2;
 
 ```
@@ -9530,6 +10040,7 @@ New Window( "Example",
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Gzip Compress(
 	Char To Blob( "random data does not usually compress well and may get larger" )
@@ -9546,6 +10057,7 @@ Gzip Compress(
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
 	Char To Blob(
@@ -9565,6 +10077,7 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "test",
 	H List Box(
@@ -9592,6 +10105,7 @@ New Window( "test",
 
 ```jsl
 
+
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2];
 exProd = H Direct Product( exA, exB );
@@ -9613,6 +10127,7 @@ Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -9632,6 +10147,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Outline Box( "Picker", H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -9647,6 +10163,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -9675,6 +10192,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -9725,6 +10243,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( H Size() / 20 );
@@ -9743,6 +10262,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Splitter",
 	V Splitter Box(
@@ -9775,6 +10295,7 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
+
 Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ```
@@ -9788,6 +10309,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = 20;
@@ -9816,6 +10338,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Head( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -9832,6 +10355,7 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
+
 // See Example 2 for the deprecated Head Expr() equivalent
 Head( Expr( Sum( a, b, c ) ) );
 
@@ -9840,6 +10364,7 @@ Head( Expr( Sum( a, b, c ) ) );
 **Example 2**
 
 ```jsl
+
 
 // Deprecated
 Head Expr( Sum( a, b, c ) );
@@ -9855,6 +10380,7 @@ Head Expr( Sum( a, b, c ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Head Name( Expr( Sum( a, b, c ) ) );
 
@@ -9872,6 +10398,7 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
+
 // See Example 2 for the deprecated Head Name Expr() equivalent
 Head Name( Expr( Sum( a, b, c ) ) );
 
@@ -9880,6 +10407,7 @@ Head Name( Expr( Sum( a, b, c ) ) );
 **Example 2**
 
 ```jsl
+
 
 // Deprecated
 Head Name Expr( Sum( a, b, c ) );
@@ -9895,6 +10423,7 @@ Head Name Expr( Sum( a, b, c ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Color Bar",
 	Graph(
@@ -9918,6 +10447,7 @@ New Window( "Color Bar",
 
 ```jsl
 
+
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||
 Hex( 11, Base( 2 ), Pad To( 8 ) );
 
@@ -9933,6 +10463,7 @@ Hex( 11, Base( 2 ), Pad To( 8 ) );
 
 ```jsl
 
+
 Hex To Blob( "FF78CE" );
 
 ```
@@ -9946,6 +10477,7 @@ Hex To Blob( "FF78CE" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
@@ -9961,6 +10493,7 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```jsl
 
+
 Hex To Number( "11110000", Base( 2 ) );
 
 ```
@@ -9974,6 +10507,7 @@ Hex To Number( "11110000", Base( 2 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
@@ -9993,6 +10527,7 @@ Hidden();
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -10008,6 +10543,7 @@ Hidden( Row State( 3 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Hier Box(
@@ -10030,6 +10566,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );
 ex = exdt << get as matrix();
@@ -10057,6 +10594,8 @@ exhistory[3, 1];
 
 ```jsl
 
+
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 rows = N Row( xx );
@@ -10081,6 +10620,7 @@ New Window( "Hist Seg Example",
 
 ```jsl
 
+
 New Window( "Color Wheel",
 	Graph(
 		frameSize( 200, 200 ),
@@ -10104,6 +10644,7 @@ New Window( "Color Wheel",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 If( Host is( "Mac" ),
 	Show( "On Mac" ),
@@ -10130,6 +10671,7 @@ If(
 **Example 1**
 
 ```jsl
+
 
 xx = .4;
 yy = .4;
@@ -10168,6 +10710,7 @@ New Window( "Hough Transform Demo 1",
 **Example 2**
 
 ```jsl
+
 
 nRow = 35;
 nCol = 35;
@@ -10288,6 +10831,7 @@ New Window( "Hough Transform Demo 2",
 
 ```jsl
 
+
 Hour( Today() );
 
 ```
@@ -10301,6 +10845,7 @@ Hour( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 bt = HP Time();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -10320,6 +10865,7 @@ Show( it );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -10334,6 +10880,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exhdK = 10;
 exhdn = 10;
@@ -10373,6 +10920,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ```jsl
 
+
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Probability",
@@ -10408,6 +10956,7 @@ New Window( "Example: Hypergeometric Probability",
 
 ```jsl
 
+
 New Window( "Example",
 	ex1 = Icon Box( "Popup" ),
 	ex2 = Icon Box( "Locked" ),
@@ -10426,6 +10975,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```
@@ -10440,6 +10990,7 @@ New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```jsl
 
+
 Identity( 2 );
 
 ```
@@ -10453,6 +11004,7 @@ Identity( 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 If( Random Uniform() < 0.5,
 	"heads",
@@ -10470,6 +11022,7 @@ If( Random Uniform() < 0.5,
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	H List Box(
@@ -10493,6 +11046,7 @@ frenchBox << Set( 1 );
 
 ```jsl
 
+
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example",
 	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
@@ -10509,6 +11063,7 @@ New Window( "Lines Seg Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 TomScore = 45;
 JonScore = 47;
@@ -10527,6 +11082,7 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 ```jsl
 
+
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -10543,6 +11099,7 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 x = 1;
 Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
@@ -10562,6 +11119,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
@@ -10591,6 +11149,7 @@ New Window( "Example: Gamma Distribution",
 
 ```jsl
 
+
 In Days( 1.5 );
 
 ```
@@ -10604,6 +11163,7 @@ In Days( 1.5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 In Hours( 0.5 );
 
@@ -10619,6 +11179,7 @@ In Hours( 0.5 );
 
 ```jsl
 
+
 In Minutes( 1 );
 
 ```
@@ -10632,6 +11193,7 @@ In Minutes( 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 New Window( "Example",
@@ -10662,6 +11224,7 @@ New Window( "Example",
 
 ```jsl
 
+
 In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```
@@ -10675,6 +11238,7 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 In Weeks( 1 );
 
@@ -10690,6 +11254,7 @@ In Weeks( 1 );
 
 ```jsl
 
+
 In Years( 1 );
 
 ```
@@ -10703,6 +11268,7 @@ In Years( 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
@@ -10718,6 +11284,7 @@ Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```jsl
 
+
 y = Include File List();
 
 ```
@@ -10732,13 +11299,14 @@ y = Include File List();
 
 ```jsl
 
+
 1 :: 10;
 
 ```
 
 ### Informat
 
-**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
@@ -10748,6 +11316,7 @@ y = Include File List();
 
 ```jsl
 
+
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -10755,6 +11324,7 @@ Informat( "07152000", "MMDDYYYY" );
 **Example 2**
 
 ```jsl
+
 
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
@@ -10764,6 +11334,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
+
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -10772,6 +11343,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
+
 Informat( "123.45%", "Percent" );
 
 ```
@@ -10779,6 +11351,7 @@ Informat( "123.45%", "Percent" );
 **Example 5**
 
 ```jsl
+
 
 Show(
 	Informat( "1.23e4", "Best" ),
@@ -10797,6 +11370,7 @@ Show(
 
 ```jsl
 
+
 a = [1, 2, 3, -2, 0, -1, 0, 1, 1];
 b = [4, 5, 6, -2, 0, -1, 0, 7, 2];
 y = Inner Product BLAS( a, b );
@@ -10812,6 +11386,7 @@ y = Inner Product BLAS( a, b );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 z = {11, 22, 33};
 z = Insert( z, 99, 2 );
@@ -10830,6 +11405,7 @@ z = Insert( z, 99, 2 );
 
 ```jsl
 
+
 ex = {11, 22, 33};
 Insert Into( ex, 99 );
 ex;
@@ -10840,6 +11416,7 @@ ex;
 
 ```jsl
 
+
 ex = ["a" => 10, "b" => 3, => 0];
 Insert Into( ex, "c", 12 );
 ex;
@@ -10849,6 +11426,7 @@ ex;
 **Example 3**
 
 ```jsl
+
 
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 Wait( 1 );
@@ -10865,6 +11443,7 @@ Insert Into( hlist, Button Box( "c" ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 If( !Check MATLAB Dependencies(),
@@ -10886,6 +11465,7 @@ If( !Check MATLAB Dependencies(),
 
 ```jsl
 
+
 Integrate( Exp( -x ), x, 0, . );
 
 ```
@@ -10893,6 +11473,7 @@ Integrate( Exp( -x ), x, 0, . );
 **Example 2**
 
 ```jsl
+
 
 x = 100;
 Integrate( Normal Density( x - 100 ), x, ., . );
@@ -10909,6 +11490,7 @@ Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```jsl
 
+
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -10924,19 +11506,21 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
 
 ### Internal Rate of Return
 
-**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the internal rate of return for a series of cash flows represented by the numbers in the values argument. Equivalent to the IRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Internal Rate of Return( [-10000, 1000, 900, 950] );
 Internal Rate of Return( .01, -10000, 1000, 900, 950 );
@@ -10945,7 +11529,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ### Interpolate
 
-**Syntax:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2); y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix); z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Syntax:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Description:** Finds the xi arguments that x is between and linearly interpolates the corresponding yi arguments. Note that the xi arguments must be specified in order.
 
@@ -10954,6 +11538,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 **Example 1**
 
 ```jsl
+
 
 
 New Window( "Interpolate",
@@ -10973,6 +11558,7 @@ New Window( "Interpolate",
 
 ```jsl
 
+
 Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -10981,6 +11567,7 @@ Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
+
 Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```
@@ -10988,6 +11575,7 @@ Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 **Example 4**
 
 ```jsl
+
 
 
 xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
@@ -11021,6 +11609,7 @@ New Window( "Interpolated values are blue",
 
 ```jsl
 
+
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -11034,6 +11623,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* Generate a design matrix */
 exX = [1 0 4 2,
@@ -11082,6 +11672,7 @@ Show( Inverse( exX[Index( 1, p ), 0]` * exX[Index( 1, p ), 0] ) );
 
 ```jsl
 
+
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -11095,6 +11686,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Invert Expr( Sqrt( Log( x ) ), x, y );
 
@@ -11112,6 +11704,7 @@ Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 obj = dt << Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5 ), Model( "Logistic 2PL" ) );
 obj << Save Ability Formula;
@@ -11122,6 +11715,7 @@ Column( dt, N Cols( dt ) ) << Get Formula;
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 mth = (dt << get as matrix)[0, Index( 2, 6 )];
@@ -11149,6 +11743,7 @@ mthlst;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11178,6 +11773,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 Is Associative Array( [1 => 2] );
 
 ```
@@ -11191,6 +11787,7 @@ Is Associative Array( [1 => 2] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -11247,6 +11844,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -11274,6 +11872,7 @@ New Window( "Show me the key",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11303,6 +11902,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -11331,6 +11931,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 rc0 = Is Directory( "$SAMPLE_DATA" );
 rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
@@ -11346,6 +11947,7 @@ Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Is Directory Writable( "$SAMPLE_DATA" );
 
@@ -11363,6 +11965,7 @@ Is Directory Writable( "$SAMPLE_DATA" );
 
 ```jsl
 
+
 Is Empty( x );
 
 ```
@@ -11370,6 +11973,7 @@ Is Empty( x );
 **Example 2**
 
 ```jsl
+
 
 x = Empty();
 Is Empty( x );
@@ -11379,6 +11983,7 @@ Is Empty( x );
 **Example 3**
 
 ```jsl
+
 
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -11407,6 +12012,7 @@ If( Is Empty( dt ),
 
 ```jsl
 
+
 Is Expr( Expr( x ) );
 
 ```
@@ -11420,6 +12026,7 @@ Is Expr( Expr( x ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 rc0 = Is File( "$SAMPLE_DATA" );
 rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
@@ -11437,6 +12044,7 @@ Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 ```jsl
 
+
 Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -11450,6 +12058,7 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 url = "http://public.jmp.com";
@@ -11467,6 +12076,7 @@ Show( Is JMP Live URL Enabled( url ) );
 
 ```jsl
 
+
 v = Is Leap Year( 2016 );
 
 ```
@@ -11480,6 +12090,7 @@ v = Is Leap Year( 2016 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Is List( {1, 2, 3} );
 
@@ -11497,6 +12108,7 @@ Is List( {1, 2, 3} );
 
 ```jsl
 
+
 If( Is Log Open(),
 	Close Log()
 );
@@ -11506,6 +12118,7 @@ If( Is Log Open(),
 **Example 2**
 
 ```jsl
+
 
 If( !Is Log Open(),
 	Open Log()
@@ -11523,6 +12136,7 @@ If( !Is Log Open(),
 
 ```jsl
 
+
 Is Matrix( [11 22 33] );
 
 ```
@@ -11536,6 +12150,7 @@ Is Matrix( [11 22 33] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Is Missing( . );
 
@@ -11551,6 +12166,7 @@ Is Missing( . );
 
 ```jsl
 
+
 Is Name( Name Expr( n ) );
 
 ```
@@ -11564,6 +12180,7 @@ Is Name( Name Expr( n ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ns = New Namespace(
 	"complex",
@@ -11607,6 +12224,7 @@ ns << Delete;
 
 ```jsl
 
+
 Is Number( 213 );
 
 ```
@@ -11620,6 +12238,7 @@ Is Number( 213 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11651,6 +12270,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 Is Same Color( "black", 0 );
 
 ```
@@ -11658,6 +12278,7 @@ Is Same Color( "black", 0 );
 **Example 2**
 
 ```jsl
+
 
 Is Same Color( "red", "green", "blue" );
 
@@ -11667,6 +12288,7 @@ Is Same Color( "red", "green", "blue" );
 
 ```jsl
 
+
 Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
@@ -11674,6 +12296,7 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 **Example 4**
 
 ```jsl
+
 
 Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
@@ -11689,6 +12312,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
@@ -11703,6 +12327,7 @@ Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11732,6 +12357,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 Is String( "abc" );
 
 ```
@@ -11745,6 +12371,7 @@ Is String( "abc" );
 **JMP Version Added:** 16
 
 ```jsl
+
 
 ISO Year( Today() );
 
@@ -11762,6 +12389,7 @@ ISO Year( Today() );
 
 ```jsl
 
+
 Item( 5, "http://www.jmp.com", ":/." );
 
 ```
@@ -11769,6 +12397,7 @@ Item( 5, "http://www.jmp.com", ":/." );
 **Example 2**
 
 ```jsl
+
 
 Item( [2 -1], "This is a sentence" );
 
@@ -11778,6 +12407,7 @@ Item( [2 -1], "This is a sentence" );
 
 ```jsl
 
+
 Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
@@ -11785,6 +12415,7 @@ Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() )
 **Example 4**
 
 ```jsl
+
 
 Item( 5, "a b c d", Unmatched( "None" ) );
 
@@ -11794,6 +12425,7 @@ Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```jsl
 
+
 Item( 2, "abcd", "" );
 
 ```
@@ -11801,6 +12433,7 @@ Item( 2, "abcd", "" );
 **Example 6**
 
 ```jsl
+
 
 Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
@@ -11818,6 +12451,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```jsl
 
+
 Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
@@ -11826,6 +12460,7 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```jsl
 
+
 Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -11833,6 +12468,7 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **Example 3**
 
 ```jsl
+
 
 Items(
 	",Apple,Banana Tree,Peach",
@@ -11845,6 +12481,7 @@ Items(
 **Example 4**
 
 ```jsl
+
 
 Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
@@ -11859,6 +12496,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 // Produce a 2x3 matrix, filled with 15.
@@ -11898,6 +12536,7 @@ J(
 
 ```jsl
 
+
 JMP Product Name();
 
 ```
@@ -11912,7 +12551,3726 @@ JMP Product Name();
 
 ```jsl
 
+
 JMP Version();
+
+```
+
+### JMPClinicalReviewAPI:addReport
+
+**Syntax:** JMPClinicalReviewAPI:addReport(reportDefinitionID = "", reportUserCustomizedTitle = ., reportOptionValues = [=&gt;]}, {rb, reportDefinition, ret, templateContent, addedReports, addedReport)
+
+**Description:** Adds a report to Review Builder
+
+ *
+
+ * reportDefinitionID => String: The name/id of the Report to add (e.g. "AdverseEventsDistribution").
+
+ * reportUserCustomizedTitle => String: The user-customized report title (e.g., "My AE Dist").
+
+ *   Specify numeric missing (.) to indicate the title is not customized by the user.
+
+ * reportOptionValues => Associative Array: Internal widget option name-value pairs
+
+ *   (e.g., ["objRefNS:eventcb_AdverseEvents_AE" => "PRE", "objRefNS:TEAECheckBox" => "Yes"]).
+
+ *   Specify [=>] to use all default option values.
+
+ *
+
+ * return - a namespace to the added report
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+
+```
+
+### JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter
+
+**Syntax:** JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter(reportID = .)
+
+**Description:** Applies the subject selection from the specified report in Review Builder to the Review Subject Filter
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 1 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+Wait( 1 );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Unique Subject Identifier" );
+
+```
+
+### JMPClinicalReviewAPI:changeReport
+
+**Syntax:** JMPClinicalReviewAPI:changeReport(reportID = ., reportUserCustomizedTitle = empty(), reportOptionValues = [=&gt;])
+
+**Description:** Renames a report tab and/or changes one or more option values in a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * reportUserCustomizedTitle => String: The new report title.
+
+ *   Specify empty() to make no changes to the report title.
+
+ *   Specify numeric missing (.) to indicate the title is no longer customized by the user (to allow the report to be dynamically named).
+
+ * reportOptionValues => Associative Array: Internal widget option name-value pairs specifying values to change.
+
+ *   (e.g., ["objRefNS:eventcb_AdverseEvents_AE" => "PRE", "objRefNS:TEAECheckBox" => "Yes"]).
+
+ *   Specify [=>] to make no changes to the report option values.
+
+ *   Specify numeric missing (.) to reset the report to its default option values.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+ *   Invalid options and option values are ignored.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:changeReport(
+	.,
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+
+```
+
+### JMPClinicalReviewAPI:changeReportColumnSwitcherSelection
+
+**Syntax:** JMPClinicalReviewAPI:changeReportColumnSwitcherSelection(reportID = ., columnSwitcherIndex = 1, columnToSelect = empty())
+
+**Description:** Changes the column switcher selection in a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * columnSwitcherIndex => Integer: The index of the column switcher within the specified report.
+
+ *   The first (or only) column switcher in a report will have an index of 1. The default value is 1.
+
+ * columnToSelect => String: The column name to select in the column switcher.
+
+ *   Specify numeric missing (.) to reset the column switcher to its default column.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+ *   Invalid column names are ignored.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );
+Wait( 1 );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Glucose (mmol/L)" );
+
+```
+
+### JMPClinicalReviewAPI:changeReportFilterSelection
+
+**Syntax:** JMPClinicalReviewAPI:changeReportFilterSelection(reportID = ., extendWhereStmt = ., indexForMultiple = 1)
+
+**Description:** Changes the current report filter selection in a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * extendWhereStmt => String: The column and values to select. Example: ":Serious Event == {\\!"N\\!"}"
+
+ *   Specify a column without an operator or value to clear the report filter selection. Example: ":Serious Event"
+
+ * indexForMultiple => Integer: If the column specified in the extendWhereStmt is used multiple times,
+
+ *   this index specifies which occurrence to use.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+
+```
+
+### JMPClinicalReviewAPI:changeReportOptions
+
+**Syntax:** JMPClinicalReviewAPI:changeReportOptions(reportID = ., reportOptionValues = [=&gt;])
+
+**Description:** Changes one or more option values in a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * reportOptionValues => Associative Array: Internal widget option name-value pairs specifying values to change
+
+ *   (e.g., ["objRefNS:eventcb_AdverseEvents_AE" => "PRE", "objRefNS:TEAECheckBox" => "Yes"]).
+
+ *   Specify numeric missing (.) to reset the report to its default option values.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+ *   Invalid options and option values are ignored.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:changeReportOptions( ., ["objRefNS:stkcb" => "AESER"] );
+
+```
+
+### JMPClinicalReviewAPI:changeReviewSubjectFilter
+
+**Syntax:** JMPClinicalReviewAPI:changeReviewSubjectFilter(savedFilter = .)
+
+**Description:** Changes the Review Subject Filter in Review Builder
+
+ *
+
+ * savedFilter => String: The filter definition or name of a saved subject filter
+
+ *   Specify empty(), numeric missing (.), "", or " " to reset the filter.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+//JMPClinicalReviewAPI:changeReviewSubjectFilter("My Saved Filter Name");
+Wait( 1 );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter(
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ), Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ), Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+Wait( 1 );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . );
+
+```
+
+### JMPClinicalReviewAPI:changeReviewSubjectFilterSelection
+
+**Syntax:** JMPClinicalReviewAPI:changeReviewSubjectFilterSelection(extendWhereStmt = ., indexForMultiple = 1)
+
+**Description:** Changes the current Review Subject Filter selection in Review Builder
+
+ *
+
+ * extendWhereStmt => String: The column and values to select. Example: ":Sex == {\\!"F\\!"}"
+
+ *   Specify a column without an operator or value to clear the Review Subject Filter selection. Example: ":Sex"
+
+ * indexForMultiple => Integer: If the column specified in the extendWhereStmt is used multiple times,
+
+ *   this index specifies which occurrence to use.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Wait( 1 );
+JMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex" );
+
+```
+
+### JMPClinicalReviewAPI:closeReviewBuilder
+
+**Syntax:** JMPClinicalReviewAPI:closeReviewBuilder()
+
+**Description:** Closes the current Review Builder instance
+
+ *
+
+ * return - N/A
+
+```jsl
+
+
+JMPClinicalReviewAPI:closeReviewBuilder();
+
+```
+
+### JMPClinicalReviewAPI:createLiveReport
+
+**Syntax:** JMPClinicalReviewAPI:createLiveReport(publishOptions = [=&gt;], reportRefs = {})
+
+**Description:** Create a web-based JMP Live version of the Review
+
+ *
+
+ * publishOptions => Associative Array: the keys and values for the following publish options:
+
+ *
+
+ *   "ConnectionName"                   => String: the name of the JMP Live Connection
+
+ *   "Space"                            => String: the title or key of the JMP Live Space to publish to, within the JMP Live Connection
+
+ *   "Folder"                           => String: the title, path, or ID of the JMP Live Folder to publish to, within the JMP Live Space
+
+ *                                         Specify "" to publish to the space root.
+
+ *   "PublishData"                      => Number: 0 = disallow data to be published, 1 = allow data to be published
+
+ *   "PublishOptimization"              => Number: 1 = best interactivity, 2 = best performance
+
+ *   "PublishNotes"                     => Number: 0 = do not include notes, 1 = include notes
+
+ *   "PatientProfilesPublishPopulation" => String: "SELECTED" = publish selected patients only (default), "ALL" = publish all patients
+
+ *   "PatientProfilesPublishGraphs"     => Number: 0 = do not publish graphs, 1 = publish graphs (default)
+
+ *   "PatientProfilesPublishTables"     => Number: 0 = do not publish tables, 1 = publish tables (default)
+
+ *
+
+ *   Omit keys or specify empty() values to use the current interactive Create Live Report dialog default values.
+
+ *   *CAUTION: Key and value omission is offered as a convenience. Publish failure is likely if the
+
+ *      interactive dialog has never been opened. Specify all keys and values to rule out unintended influence
+
+ *      from interactive publish options.
+
+ *
+
+ *   Specify empty() instead of an associative array for the publishOptions argument to surface the interactive
+
+ *     Create Live Report dialog.
+
+ *   *CAUTION: Doing so will pause script execution for user input.
+
+ *
+
+ * reportRefs => List: If not empty list, create for only this list of report references
+
+ *
+
+ * return - a String: URL of the web report
+
+**Batch**
+
+```jsl
+
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+Show( JMPClinicalReviewAPI:getCurrentStudy() );
+// Build a review template
+rn = JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:renameReport(
+	., "AESER Stack Adverse Events Distribution"
+); // . refers to the currently selected report tab
+JMPClinicalReviewAPI:changeReportOptions(
+	rn,
+	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]
+); // Can also use report namespace, reference, index, title, or name
+Show( JMPClinicalReviewAPI:getReportOptions( . ) );
+Show( JMPClinicalReviewAPI:getAllReportReferences() );
+Show(
+	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )
+); // CAUTION: Report names are NOT guaranteed to be unique within a review
+Show(
+	JMPClinicalReviewAPI:getReportIndex(
+		"AESER Stack Adverse Events Distribution"
+	)
+); // Report titles are guaranteed to be unique within a review
+Show( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review 
+Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a review
+JMPClinicalReviewAPI:resetReport( . );
+JMPClinicalReviewAPI:renameReport( ., . );
+JMPClinicalReviewAPI:addReport(
+	"FindingsBoxPlots",
+	"Customized Findings Box Plots",
+	[=> ]
+);
+Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );
+JMPClinicalReviewAPI:changeReport( ., ., . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );
+Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 0 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+JMPClinicalReviewAPI:moveReport(
+	"DemographicsDistribution", "AdverseEventsDistribution"
+);
+JMPClinicalReviewAPI:moveReport( 2, 1 );
+JMPClinicalReviewAPI:duplicateReport( 1 );
+JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:createStaticReportForReport( . );
+JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );
+JMPClinicalReviewAPI:selectReport( 1 );
+JMPClinicalReviewAPI:showReportTables( . );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter( // Change the review subject filter to this definition
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),
+    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filter
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );
+JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );
+JMPClinicalReviewAPI:resetAllReports();
+JMPClinicalReviewAPI:deleteAllReports();
+JMPClinicalReviewAPI:closeReviewBuilder();
+
+// Use an existing review template
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	JMPClinicalReviewAPI:createStaticReport(
+		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,
+		1
+	)
+);
+JMPClinicalReviewAPI:createLiveReport(
+	["ConnectionName" => Empty(),
+	"Space" => "_PERSONAL_",
+	"Folder" => "",
+	"PublishData" => 0,
+	"PublishOptimization" => 1,
+	"PublishNotes" => 0,
+	"PatientProfilesPublishPopulation" => "SELECTED",
+	"PatientProfilesPublishGraphs" => 1,
+	"PatientProfilesPublishTables" => 1]
+);
+JMPClinicalReviewAPI:closeReviewBuilder();
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
+
+```
+
+**Simple**
+
+```jsl
+
+
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+Web(
+	JMPClinicalReviewAPI:createLiveReport(
+		["ConnectionName" => Empty(),
+		"Space" => "_PERSONAL_",
+		"Folder" => "",
+		"PublishData" => 0,
+		"PublishOptimization" => 1,
+		"PublishNotes" => 0,
+		"PatientProfilesPublishPopulation" => "SELECTED",
+		"PatientProfilesPublishGraphs" => 1,
+		"PatientProfilesPublishTables" => 1]
+	)
+);
+
+```
+
+### JMPClinicalReviewAPI:createLiveReportForReport
+
+**Syntax:** JMPClinicalReviewAPI:createLiveReportForReport(reportID = ., publishOptions = [=&gt;])
+
+**Description:** Create a web-based JMP Live version of one report in a Review
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * publishOptions => Associative Array: the keys and values for the following publish options:
+
+ *
+
+ *   "ConnectionName"                   => String: the name of the JMP Live Connection
+
+ *   "Space"                            => String: the title or key of the JMP Live Space to publish to, within the JMP Live Connection
+
+ *   "Folder"                           => String: the title, path, or ID of the JMP Live Folder to publish to, within the JMP Live Space
+
+ *                                         Specify "" to publish to the space root.
+
+ *   "PublishData"                      => Number: 0 = disallow data to be published, 1 = allow data to be published
+
+ *   "PublishOptimization"              => Number: 1 = best interactivity, 2 = best performance
+
+ *   "PublishNotes"                     => Number: 0 = do not include notes, 1 = include notes
+
+ *   "PatientProfilesPublishPopulation" => String: "SELECTED" = publish selected patients only (default), "ALL" = publish all patients
+
+ *   "PatientProfilesPublishGraphs"     => Number: 0 = do not publish graphs, 1 = publish graphs (default)
+
+ *   "PatientProfilesPublishTables"     => Number: 0 = do not publish tables, 1 = publish tables (default)
+
+ *
+
+ *   Omit keys or specify empty() values to use the current interactive Create Live Report dialog default values.
+
+ *   *CAUTION: Key and value omission is offered as a convenience. Publish failure is likely if the
+
+ *      interactive dialog has never been opened. Specify all keys and values to rule out unintended influence
+
+ *      from interactive publish options.
+
+ *
+
+ *   Specify empty() instead of an associative array for the publishOptions argument to surface the interactive
+
+ *     Create Live Report dialog.
+
+ *   *CAUTION: Doing so will pause script execution for user input.
+
+ *
+
+ * return - a String: URL of the web report
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:selectReport( 1 );
+Web( JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] ) );
+
+```
+
+### JMPClinicalReviewAPI:createStaticReport
+
+**Syntax:** JMPClinicalReviewAPI:createStaticReport(type = empty(), includeNotes = empty(), filePath = empty(), patientProfilesPublishPopulation = "SELECTED", patientProfilesPublishGraphs = 1, patientProfilesPublishTables = 1, reportRefs = {})
+
+**Description:** Create a static version (PDF or RTF) of the Review
+
+ *
+
+ * type                             => String: "PDF" or "RTF"
+
+ * includeNotes                     => Number: 0 = do not include notes, 1 = include notes
+
+ * filePath                         => String: full file path where to save report. If not specified, the default 
+
+ *                                       static report location is used - as specified in the configuration as /user/clinical/staticreportpath
+
+ * patientProfilesPublishPopulation => String: "SELECTED" = publish selected patients only (default), "ALL" = publish all patients
+
+ * patientProfilesPublishGraphs     => Number: 0 = do not publish graphs, 1 = publish graphs (default)
+
+ * patientProfilesPublishTables     => Number: 0 = do not publish tables, 1 = publish tables (default)
+
+ * reportRefs                       => List: If not empty list, create for only this list of report references
+
+ *
+
+ * return - a String: Path to the static report
+
+**Batch**
+
+```jsl
+
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+Show( JMPClinicalReviewAPI:getCurrentStudy() );
+// Build a review template
+rn = JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:renameReport(
+	., "AESER Stack Adverse Events Distribution"
+); // . refers to the currently selected report tab
+JMPClinicalReviewAPI:changeReportOptions(
+	rn,
+	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]
+); // Can also use report namespace, reference, index, title, or name
+Show( JMPClinicalReviewAPI:getReportOptions( . ) );
+Show( JMPClinicalReviewAPI:getAllReportReferences() );
+Show(
+	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )
+); // CAUTION: Report names are NOT guaranteed to be unique within a review
+Show(
+	JMPClinicalReviewAPI:getReportIndex(
+		"AESER Stack Adverse Events Distribution"
+	)
+); // Report titles are guaranteed to be unique within a review
+Show( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review 
+Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a review
+JMPClinicalReviewAPI:resetReport( . );
+JMPClinicalReviewAPI:renameReport( ., . );
+JMPClinicalReviewAPI:addReport(
+	"FindingsBoxPlots",
+	"Customized Findings Box Plots",
+	[=> ]
+);
+Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );
+JMPClinicalReviewAPI:changeReport( ., ., . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );
+Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 0 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+JMPClinicalReviewAPI:moveReport(
+	"DemographicsDistribution", "AdverseEventsDistribution"
+);
+JMPClinicalReviewAPI:moveReport( 2, 1 );
+JMPClinicalReviewAPI:duplicateReport( 1 );
+JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:createStaticReportForReport( . );
+JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );
+JMPClinicalReviewAPI:selectReport( 1 );
+JMPClinicalReviewAPI:showReportTables( . );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter( // Change the review subject filter to this definition
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),
+    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filter
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );
+JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );
+JMPClinicalReviewAPI:resetAllReports();
+JMPClinicalReviewAPI:deleteAllReports();
+JMPClinicalReviewAPI:closeReviewBuilder();
+
+// Use an existing review template
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	JMPClinicalReviewAPI:createStaticReport(
+		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,
+		1
+	)
+);
+JMPClinicalReviewAPI:createLiveReport(
+	["ConnectionName" => Empty(),
+	"Space" => "_PERSONAL_",
+	"Folder" => "",
+	"PublishData" => 0,
+	"PublishOptimization" => 1,
+	"PublishNotes" => 0,
+	"PatientProfilesPublishPopulation" => "SELECTED",
+	"PatientProfilesPublishGraphs" => 1,
+	"PatientProfilesPublishTables" => 1]
+);
+JMPClinicalReviewAPI:closeReviewBuilder();
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
+
+```
+
+**Simple**
+
+```jsl
+
+
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Open(
+		JMPClinicalReviewAPI
+		:createStaticReport(
+			"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf",
+			"SELECTED", 1, 1
+		)
+	)
+);
+
+```
+
+### JMPClinicalReviewAPI:createStaticReportForReport
+
+**Syntax:** JMPClinicalReviewAPI:createStaticReportForReport(reportID = ., type = empty(), includeNotes = empty(), filePath = empty(), patientProfilesPublishPopulation = "SELECTED", patientProfilesPublishGraphs = 1, patientProfilesPublishTables = 1)
+
+**Description:** Create a static version (PDF, RTF, PowerPoint) of one report in a Review
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * type                             => String: "PDF", "RTF", or "PowerPoint"
+
+ * includeNotes                     => Number: 0 = do not include notes, 1 = include notes
+
+ * filePath                         => String: full file path where to save report. If not specified, the default 
+
+ *                                       static report location is used - as specified in the configuration as /user/clinical/staticreportpath
+
+ * patientProfilesPublishPopulation => String: "SELECTED" = publish selected patients only (default), "ALL" = publish all patients
+
+ * patientProfilesPublishGraphs     => Number: 0 = do not publish graphs, 1 = publish graphs (default)
+
+ * patientProfilesPublishTables     => Number: 0 = do not publish tables, 1 = publish tables (default)
+
+ *
+
+ * return - a String: Path to the static report
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:selectReport( 1 );
+Open( JMPClinicalReviewAPI:createStaticReportForReport( . ) );
+
+```
+
+### JMPClinicalReviewAPI:deleteAllReports
+
+**Syntax:** JMPClinicalReviewAPI:deleteAllReports()
+
+**Description:** Deletes all report tabs from Review Builder
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:deleteAllReports();
+
+```
+
+### JMPClinicalReviewAPI:deleteReport
+
+**Syntax:** JMPClinicalReviewAPI:deleteReport(reportID = .)
+
+**Description:** Deletes a report tab from Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:deleteReport( . );
+
+```
+
+### JMPClinicalReviewAPI:duplicateReport
+
+**Syntax:** JMPClinicalReviewAPI:duplicateReport(reportID = .)
+
+**Description:** Duplicates a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:duplicateReport( . );
+
+```
+
+### JMPClinicalReviewAPI:getAllReportReferences
+
+**Syntax:** JMPClinicalReviewAPI:getAllReportReferences()
+
+**Description:** Returns a report reference for every report tab in Review Builder
+
+ *
+
+ * return - a list of report references. If the review is empty, an empty list {} is returned.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:getAllReportReferences();
+
+```
+
+### JMPClinicalReviewAPI:getCurrentStudy
+
+**Syntax:** JMPClinicalReviewAPI:getCurrentStudy()
+
+**Description:** Returns the name of the current study.
+
+ *
+
+ * return - if there is a current study, the study name (a string); otherwise Empty().
+
+```jsl
+
+
+JMPClinicalReviewAPI:getCurrentStudy();
+
+```
+
+### JMPClinicalReviewAPI:getReportColumnSwitcherSelection
+
+**Syntax:** JMPClinicalReviewAPI:getReportColumnSwitcherSelection(reportID = ., columnSwitcherIndex = 1)
+
+**Description:** Returns the current column switcher selection in a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * columnSwitcherIndex => Integer: The index of the column switcher within the specified report. 
+
+ *   The first (or only) column switcher in a report will have an index of 1. The default value is 1.
+
+ *
+
+ * return - a String: The currently selected column in the column switcher.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );
+JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 );
+
+```
+
+### JMPClinicalReviewAPI:getReportFilterSelection
+
+**Syntax:** JMPClinicalReviewAPI:getReportFilterSelection(reportID = .)
+
+**Description:** Returns the current report filter selection in a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - a String: The current report filter selection.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI:getReportFilterSelection( . );
+
+```
+
+### JMPClinicalReviewAPI:getReportIndex
+
+**Syntax:** JMPClinicalReviewAPI:getReportIndex(reportID = .)
+
+**Description:** Returns the report index from a report reference in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: The index (position) of the report tab within the review. The first tab will have an index of 1.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportIndex( . );
+
+```
+
+### JMPClinicalReviewAPI:getReportName
+
+**Syntax:** JMPClinicalReviewAPI:getReportName(reportID = .)
+
+**Description:** Returns the report name/id from a report reference in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - a String: The name/id of the report.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportName( . );
+
+```
+
+### JMPClinicalReviewAPI:getReportOptions
+
+**Syntax:** JMPClinicalReviewAPI:getReportOptions(reportID = .)
+
+**Description:** Returns the options and option values from a report reference in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Associative Array: The internal widget option name-value pairs.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportOptions( . );
+
+```
+
+### JMPClinicalReviewAPI:getReportReference
+
+**Syntax:** JMPClinicalReviewAPI:getReportReference(reportID = ., warnInvalidReportReference = 1)
+
+**Description:** Returns a report reference from a report namespace, selected tab, tab index, report title, reference, or report name in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * warnInvalidReportReference => Integer: Specify 1 to warn, or 0 to not warn, about an invalid report reference.
+
+ *
+
+ * return - a reference to the report. If the report reference invalid, empty() is returned.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportReference( . );
+
+```
+
+### JMPClinicalReviewAPI:getReportTitle
+
+**Syntax:** JMPClinicalReviewAPI:getReportTitle(reportID = .)
+
+**Description:** Returns the report title from a report reference in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - a String: The title of the report.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportTitle( . );
+
+```
+
+### JMPClinicalReviewAPI:getReviewBuilder
+
+**Syntax:** JMPClinicalReviewAPI:getReviewBuilder(show=1)
+
+**Description:** Gets an instance of a Review Builder. If an instance doesn&apos;t
+
+ * exist, one will be created.
+
+ *
+
+ * show - 1(default) = show the window, 0 = hide the window, -1 = keep original window visibility
+
+ *
+
+ * return - a reference to the Review Builder object
+
+```jsl
+
+
+JMPClinicalReviewAPI:getReviewBuilder();
+
+```
+
+### JMPClinicalReviewAPI:getReviewSubjectFilterSelection
+
+**Syntax:** JMPClinicalReviewAPI:getReviewSubjectFilterSelection()
+
+**Description:** Returns the current Review Subject Filter selection in Review Builder
+
+ *
+
+ * return - a String: The current Review Subject Filter selection.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+JMPClinicalReviewAPI:getReviewSubjectFilterSelection();
+
+```
+
+### JMPClinicalReviewAPI:moveReport
+
+**Syntax:** JMPClinicalReviewAPI:moveReport(fromReportID = ., toReportID = .)
+
+**Description:** Moves a report tab from its starting index to a new index in Review Builder
+
+ *
+
+ * fromReportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * toReportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+r1 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" )
+);
+r2 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "DemographicsDistribution" )
+);
+Wait( 1 );
+JMPClinicalReviewAPI:moveReport( r1, r2 );
+
+```
+
+### JMPClinicalReviewAPI:openReviewTemplate
+
+**Syntax:** JMPClinicalReviewAPI:openReviewTemplate(templatePath, useNewReviewBuilder=1, returnType=0, toleratePre17Template=1, closeReportsWithInexactOptionValueMatches=0)
+
+**Description:** Open a Review Template
+
+ *
+
+ * templatePath => String: path to the Review Template to open
+
+ * useNewReviewBuilder => Number: 
+
+ *   0 = reuse a Review Builder instance if one exists, otherwise open a new one
+
+ *   1 = close any existing Review Builder instance and open a new one (default)
+
+ * returnType => Number:
+
+ *   0 = return a success code (1 if successful, 0 or missing (.) if unsuccessful or cancelled) (default)
+
+ *   1 = return a reference to the Review Builder object (behavior prior to JMP Clinical 18.2)
+
+ * toleratePre17Template => Number: 
+
+ *   0 = abort the template run if the template predates JMP Clinical 17
+
+ *   1 = run the template to the extent possible regardless of template version (default)
+
+ * closeReportsWithInexactOptionValueMatches => Number:
+
+ *   0 = keep all reports (default)
+
+ *   1 = close all reports with inexact option value matches
+
+ *
+
+ * return:
+
+ *   if returnType = 0, 1 if successful, 0 or missing (.) if unsuccessful or cancelled
+
+ *   if returnType = 1, a reference to the Review Builder object
+
+**Batch**
+
+```jsl
+
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+Show( JMPClinicalReviewAPI:getCurrentStudy() );
+// Build a review template
+rn = JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:renameReport(
+	., "AESER Stack Adverse Events Distribution"
+); // . refers to the currently selected report tab
+JMPClinicalReviewAPI:changeReportOptions(
+	rn,
+	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]
+); // Can also use report namespace, reference, index, title, or name
+Show( JMPClinicalReviewAPI:getReportOptions( . ) );
+Show( JMPClinicalReviewAPI:getAllReportReferences() );
+Show(
+	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )
+); // CAUTION: Report names are NOT guaranteed to be unique within a review
+Show(
+	JMPClinicalReviewAPI:getReportIndex(
+		"AESER Stack Adverse Events Distribution"
+	)
+); // Report titles are guaranteed to be unique within a review
+Show( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review 
+Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a review
+JMPClinicalReviewAPI:resetReport( . );
+JMPClinicalReviewAPI:renameReport( ., . );
+JMPClinicalReviewAPI:addReport(
+	"FindingsBoxPlots",
+	"Customized Findings Box Plots",
+	[=> ]
+);
+Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );
+JMPClinicalReviewAPI:changeReport( ., ., . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );
+Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 0 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+JMPClinicalReviewAPI:moveReport(
+	"DemographicsDistribution", "AdverseEventsDistribution"
+);
+JMPClinicalReviewAPI:moveReport( 2, 1 );
+JMPClinicalReviewAPI:duplicateReport( 1 );
+JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:createStaticReportForReport( . );
+JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );
+JMPClinicalReviewAPI:selectReport( 1 );
+JMPClinicalReviewAPI:showReportTables( . );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter( // Change the review subject filter to this definition
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),
+    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filter
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );
+JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );
+JMPClinicalReviewAPI:resetAllReports();
+JMPClinicalReviewAPI:deleteAllReports();
+JMPClinicalReviewAPI:closeReviewBuilder();
+
+// Use an existing review template
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	JMPClinicalReviewAPI:createStaticReport(
+		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,
+		1
+	)
+);
+JMPClinicalReviewAPI:createLiveReport(
+	["ConnectionName" => Empty(),
+	"Space" => "_PERSONAL_",
+	"Folder" => "",
+	"PublishData" => 0,
+	"PublishOptimization" => 1,
+	"PublishNotes" => 0,
+	"PatientProfilesPublishPopulation" => "SELECTED",
+	"PatientProfilesPublishGraphs" => 1,
+	"PatientProfilesPublishTables" => 1]
+);
+JMPClinicalReviewAPI:closeReviewBuilder();
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
+
+```
+
+**Simple**
+
+```jsl
+
+
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+
+```
+
+### JMPClinicalReviewAPI:renameReport
+
+**Syntax:** JMPClinicalReviewAPI:renameReport(reportID = ., reportUserCustomizedTitle = .)
+
+**Description:** Renames a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ * reportUserCustomizedTitle => String: The new report title.
+
+ *   Specify numeric missing (.) to indicate the title is no longer customized by the user (to allow the report to be dynamically named).
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	.,
+	["objRefNS:stkcb" => "AESER"]
+);
+Wait( 1 );
+JMPClinicalReviewAPI:renameReport(
+	., "Customized Adverse Events Distribution"
+);
+Wait( 1 );
+JMPClinicalReviewAPI:renameReport( ., . );
+
+```
+
+### JMPClinicalReviewAPI:resetAllReports
+
+**Syntax:** JMPClinicalReviewAPI:resetAllReports()
+
+**Description:** Resets option values in all report tabs in Review Builder
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Glucose (mmol/L)" );
+Wait( 1 );
+JMPClinicalReviewAPI:resetAllReports();
+
+```
+
+### JMPClinicalReviewAPI:resetReport
+
+**Syntax:** JMPClinicalReviewAPI:resetReport(reportID = .)
+
+**Description:** Resets option values in a report tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *  Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+Wait( 1 );
+JMPClinicalReviewAPI:resetReport( . );
+
+```
+
+### JMPClinicalReviewAPI:saveReviewTemplate
+
+**Syntax:** JMPClinicalReviewAPI:saveReviewTemplate(reviewTemplatePath = "", allowOverwrite = 0)
+
+**Description:** Saves a review template
+
+ *
+
+ * reviewTemplatePath => String: The full path (including the filename) of the review template.
+
+ *   Specify a filename without a drive or folder to use the default review templates folder.
+
+ *   Specify "" to use the default path.
+
+ * allowOverwrite => Integer: If the specified review template file already exists, 
+
+ *   1 allows overwrites, 0 prevents overwrites.
+
+ *
+
+ * return - a String: The path to the saved review template file (if successful), or "" (if unsuccessful).
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:saveReviewTemplate( "ScriptingIndexExample", 1 );
+
+```
+
+### JMPClinicalReviewAPI:selectReport
+
+**Syntax:** JMPClinicalReviewAPI:selectReport(reportID = .)
+
+**Description:** Makes the specified report tab the currently selected tab in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+r1 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" )
+);
+r2 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "DemographicsDistribution" )
+);
+Wait( 1 );
+JMPClinicalReviewAPI:selectReport( r1 );
+
+```
+
+### JMPClinicalReviewAPI:setCurrentStudy
+
+**Syntax:** JMPClinicalReviewAPI:setCurrentStudy(study)
+
+**Description:** Sets the current study to the one specified.
+
+ *
+
+ * study - a string containing the name of the study to set as the current study,
+
+ * or Empty() to set the current study to <None>
+
+ *
+
+ * return - if the current study was succesfully set, 1; otherwise 0.
+
+```jsl
+
+
+JMPClinicalReviewAPI:setCurrentStudy( "Nicardipine" );
+
+```
+
+### JMPClinicalReviewAPI:showReportTables
+
+**Syntax:** JMPClinicalReviewAPI:showReportTables(reportID = .)
+
+**Description:** Shows (or hides if already shown) tables for the specified report in Review Builder
+
+ *
+
+ * reportID => Namespace, Numeric Missing, Integer, or String: The namespace, selected tab, tab index, report title, reference, or report name* corresponding to a report.
+
+ *   Specify numeric missing (.) to refer to the currently selected report tab.
+
+ *   *CAUTION: Although report titles are guaranteed to be unique within a review, report names are not. If using the
+
+ *      report name as the reportID and multiple copies of that report exist in a review, the FIRST match will be used.
+
+ *
+
+ * return - an Integer: 1 if successful, 0 if unsuccessful.
+
+```jsl
+
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:showReportTables( . );
+
+```
+
+### JMPClinicalStudyManagerAPI:addStudies
+
+**Syntax:** JMPClinicalStudyManagerAPI:addStudies(listOfAddStudyArgumentLists = {})
+
+**Description:** Adds the studies to current configuration (use the JMPClinicalBatchConfiguration environment variable).
+
+ *
+
+ * listOfAddStudyArgumentLists - List - Each element of this list is a list corresponding to the arguments to pass to JMPClinicalStudyManagerAPI:addStudy().
+
+ *   See JMPClinicalStudyManagerAPI:addStudy() for more details.
+
+ * 
+
+ * return - N/A
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:addStudies(
+	{{"Nicardipine",
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{},
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+	{}, 1}, {"NicardipineAbbr",
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{}, "", {}, 1}}
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:addStudy
+
+**Syntax:** JMPClinicalStudyManagerAPI:addStudy(studyName="", SDTMFolder="", selectedSDTMDomains = {}, ADaMFolder="", selectedADaMDomains = {}, makeCurrentStudy=1, testResultsLoadOnly = "STANDARD", partialDatesStartDateImputationMethod = "FIRST", partialDatesEndDateImputationMethod = "LAST", studyDayValueDerivation = "MISSING", studyDayAnchorDateForStudyDayCalculation = "TREATMENT_START")
+
+**Description:** Adds the study to current configuration (use the JMPClinicalBatchConfiguration environment variable).
+
+ *
+
+ * studyName - String - name of the study
+
+ * SDTMFolder - String - path to the SDTM data folder. Use "" if no SDTM data (at least one of SDTMFolder or ADaM must be specified)
+
+ * selectedSDTMDomains - List - list of the selected domains for the SDTM folder. Use {} to take all possible domains
+
+ * ADaMFolder - String - path to the ADaM data folder. Use "" if no ADaM data (at least one of SDTMFolder or ADaM must be specified)
+
+ * selectedADaMDomains - List - list of the selected domains for the ADaM folder. Use {} to take all possible domains
+
+ * makeCurrentStudy - Integer (0|1) - Use 1 to set the current study to studyName
+
+ * testResultsLoadOnly - String ("STANDARD"|"ORIGINAL")
+
+ * partialDatesStartDateImputationMethod - String ("FIRST"|"LAST")
+
+ * partialDatesEndDateImputationMethod - String ("FIRST"|"LAST")
+
+ * studyDayValueDerivation - String ("ALL"|"MISSING")
+
+ * studyDayAnchorDateForStudyDayCalculation - String ("TREATMENT_START"|"REFERENCE_START")
+
+ * 
+
+ * 
+
+ * return - N/A
+
+**Batch**
+
+```jsl
+
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:addStudy(
+	"APIStudyName",
+	Convert File Path( "$CLINICAL_HOME" || "/Sample Data/Nicardipine/SDTM" ),
+	{},
+	Convert File Path( "$CLINICAL_HOME" || "/Sample Data/Nicardipine/ADaM" ),
+	{},
+	1
+);
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
+
+```
+
+**Simple**
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:addStudy(
+	"Nicardipine",
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{},
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+	{}, 1
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:addValueOrderDomain
+
+**Syntax:** JMPClinicalStudyManagerAPI:addValueOrderDomain(studies, domain}, {default local)
+
+**Description:** Registers a domain with the custom value order and color system, for the given studies and domain.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain to add
+
+ *
+
+ * return - none
+
+ *
+
+ * CAUTION: Be sure that the domain name is valid. All custom domains registered with this function
+
+ *   will be unregistered the next time the study is refreshed or updated with a new snapshot.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:addValueOrderDomain( "Nicardipine", "ZZ" );
+JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
+
+```
+
+### JMPClinicalStudyManagerAPI:addValueOrderVariable
+
+**Syntax:** JMPClinicalStudyManagerAPI:addValueOrderVariable(studies, domain, variable, values = {})
+
+**Description:** Registers a variable with the custom value order and color system, for the given studies and domain.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable to add
+
+ * values (optional) - list - names of the values to add
+
+ *
+
+ * return - none
+
+ *
+
+ * CAUTION: Be sure that the domain name, its variables, and its values are all valid. All
+
+ *   custom domains, variables, and values registered with this function will be unregistered
+
+ *   the next time the study is refreshed or updated with a new snapshot.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:addValueOrderVariable(
+	"Nicardipine",
+	"ZZ",
+	"ZZVAR",
+	{"ZZ VALUE 1", "ZZ VALUE 2"}
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderDomainVariables( "Nicardipine", "ZZ" );
+
+```
+
+### JMPClinicalStudyManagerAPI:applyAllTreatmentValueOrder
+
+**Syntax:** JMPClinicalStudyManagerAPI:applyAllTreatmentValueOrder(studies, domain, variable, applyOrder = 0, applyColor = 1)
+
+**Description:** Copies the value order preferences from one treatment variable to all, in variables registered by the custom value order and color system.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain from which to copy from
+
+ * variable - String - name of the variable from which to copy from
+
+ * applyOrder - integer - specifies (0) do not copy order preferences, (1) copy order preferences
+
+ * applyColor - integer - specifies (0) do not copy color preferences, (1) copy color preferences
+
+ *
+
+ * return - none
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:applyAllTreatmentValueOrder( "Nicardipine", "ADSL", "ARM", 1, 1 );
+Show(
+	JMPClinicalStudyManagerAPI
+	:getValueOrderVariableLegendPreview( "Nicardipine", "ADSL", "ARM", 2 ),
+	JMPClinicalStudyManagerAPI
+	:getValueOrderVariableLegendPreview(
+		"Nicardipine", "ADSL", "TRT01P", 2
+	)
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:deleteStudies
+
+**Syntax:** JMPClinicalStudyManagerAPI:deleteStudies(studyNames, keepOnDelete="PREF"}, {default local)
+
+**Description:** Deletes the studies from the current configuration (use the JMPClinicalBatchConfiguration environment variable).
+
+ *
+
+ * studyNames - String, or List of Strings - name of the study, or names of the studies, to delete
+
+ * keepOnDelete - String - "PREF" (default) honor the preference for keeping notes even after delete, "NO" override the preference and do not keep notes, "YES" override the preference and keep notes
+
+ *
+
+ * return - N/A
+
+**Batch**
+
+```jsl
+
+
+/*
+ * Use the following environment variables to control elements of the batch execution 
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:deleteStudies( {"APIStudyName"} );
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
+
+```
+
+**Simple**
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:deleteStudies( "Nicardipine" );
+
+```
+
+### JMPClinicalStudyManagerAPI:deleteValueOrderDomain
+
+**Syntax:** JMPClinicalStudyManagerAPI:deleteValueOrderDomain(studies, domain}, {default local)
+
+**Description:** Unregisters a domain with the custom value order and color system, for the given studies and domain.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain to delete
+
+ *
+
+ * return - none
+
+ *
+
+ * CAUTION: Be sure that the domain name is valid. All factory domains unregistered with this
+
+ *   function will be registered the next time the study is refreshed or updated with a new
+
+ *   snapshot.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:deleteValueOrderDomain( "Nicardipine", "ZZ" );
+JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
+
+```
+
+### JMPClinicalStudyManagerAPI:deleteValueOrderVariable
+
+**Syntax:** JMPClinicalStudyManagerAPI:deleteValueOrderVariable(studies, domain, variable, values = {})
+
+**Description:** Unregisters a variable with the custom value order and color system, for the given studies and domain.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable to delete
+
+ * values (optional) - list - names of the values to delete (if any values are specified, only these values (and not the variable) will be deleted)
+
+ *
+
+ * return - none
+
+ *
+
+ * CAUTION: Be sure that the domain name, its variables, and its values are all valid. All
+
+ *   factory domains, variables, and values unregistered with this function will be registered
+
+ *   the next time the study is refreshed or updated with a new snapshot.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:deleteValueOrderVariable( "Nicardipine", "ZZ", "ZZVAR" );
+JMPClinicalStudyManagerAPI
+:getValueOrderDomainVariables( "Nicardipine", "ZZ" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getADaMFolder
+
+**Syntax:** JMPClinicalStudyManagerAPI:getADaMFolder(study)
+
+**Description:** Returns the path of the ADaM folder for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the path for the ADaM folder
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getADaMFolder(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getAllStudyPreferences
+
+**Syntax:** JMPClinicalStudyManagerAPI:getAllStudyPreferences(study)
+
+**Description:** Returns all study preferences for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - an associative arrays of all preferences for the given study
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getAllStudyPreferences( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+```
+
+### JMPClinicalStudyManagerAPI:getCreatedBy
+
+**Syntax:** JMPClinicalStudyManagerAPI:getCreatedBy(study)
+
+**Description:** Returns the userid that created the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the userid that added the study
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getCreatedBy(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getCurrentStudy
+
+**Syntax:** JMPClinicalStudyManagerAPI:getCurrentStudy()
+
+**Description:** Returns the name of the current study.
+
+ *
+
+ * return - if there is a current study, the study name (a string); otherwise Empty().
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getCurrentStudy();
+
+```
+
+### JMPClinicalStudyManagerAPI:getDomainList
+
+**Syntax:** JMPClinicalStudyManagerAPI:getDomainList(study)
+
+**Description:** Returns the list of domains for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a list of Strings of the domains
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getDomainList(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getInitialDate
+
+**Syntax:** JMPClinicalStudyManagerAPI:getInitialDate(study)
+
+**Description:** Returns the numeric date the given study was added.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a Number (date). Use asDate(...) to get date representation
+
+```jsl
+
+
+As Date(
+	JMPClinicalStudyManagerAPI:getInitialDate(
+		JMPClinicalStudyManagerAPI:getCurrentStudy()
+	)
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getLastUpdatedBy
+
+**Syntax:** JMPClinicalStudyManagerAPI:getLastUpdatedBy(study)
+
+**Description:** Returns the userid that last updated the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the userid that last updated the study
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getLastUpdatedBy(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getLastUpdatedDate
+
+**Syntax:** JMPClinicalStudyManagerAPI:getLastUpdatedDate(study)
+
+**Description:** Returns the numeric date the given study was last modified.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a Number (date). Use asDate(...) to get date representation
+
+```jsl
+
+
+As Date(
+	JMPClinicalStudyManagerAPI
+	:getLastUpdatedDate( JMPClinicalStudyManagerAPI:getCurrentStudy() )
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getPartialDatesEndDateImputationMethod
+
+**Syntax:** JMPClinicalStudyManagerAPI:getPartialDatesEndDateImputationMethod(study)
+
+**Description:** Returns the advanced option.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the advanced option
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getPartialDatesEndDateImputationMethod(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getPartialDatesStartDateImputationMethod
+
+**Syntax:** JMPClinicalStudyManagerAPI:getPartialDatesStartDateImputationMethod(study)
+
+**Description:** Returns the advanced option.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the advanced option
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getPartialDatesStartDateImputationMethod(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getSDTMFolder
+
+**Syntax:** JMPClinicalStudyManagerAPI:getSDTMFolder(study)
+
+**Description:** Returns the path of the SDTM folder for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the path for the SDTM folder
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getSDTMFolder(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getSelectedADaMDomains
+
+**Syntax:** JMPClinicalStudyManagerAPI:getSelectedADaMDomains(study)
+
+**Description:** Returns the list of selected ADaM domains for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a List of the selected domains for the ADaM folder
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getSelectedADaMDomains( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+```
+
+### JMPClinicalStudyManagerAPI:getSelectedSDTMDomains
+
+**Syntax:** JMPClinicalStudyManagerAPI:getSelectedSDTMDomains(study)
+
+**Description:** Returns the list of selected SDTM domains for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a List of the selected domains for the SDTM folder
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getSelectedSDTMDomains( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+```
+
+### JMPClinicalStudyManagerAPI:getSizeOnDisk
+
+**Syntax:** JMPClinicalStudyManagerAPI:getSizeOnDisk(study)
+
+**Description:** Returns the number of MB on disk for all domains registered for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a number that is the number of MB used by the data files on disk for the given study
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getSizeOnDisk(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getSnapshotNumber
+
+**Syntax:** JMPClinicalStudyManagerAPI:getSnapshotNumber(study)
+
+**Description:** Returns number for the snapshot of the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a number of the snapshot. If snapshots aren&apos;t enabled, 0 is returned.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getSnapshotNumber(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getStudyDayAnchorDateForStudyDayCalculation
+
+**Syntax:** JMPClinicalStudyManagerAPI:getStudyDayAnchorDateForStudyDayCalculation(study)
+
+**Description:** Returns the advanced option.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the advanced option
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getStudyDayAnchorDateForStudyDayCalculation(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getStudyDayValueDerivation
+
+**Syntax:** JMPClinicalStudyManagerAPI:getStudyDayValueDerivation(study)
+
+**Description:** Returns the advanced option.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the advanced option
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getStudyDayValueDerivation( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+```
+
+### JMPClinicalStudyManagerAPI:getStudyExists
+
+**Syntax:** JMPClinicalStudyManagerAPI:getStudyExists(study)
+
+**Description:** Returns >=1 if study exists, 0 otherwise.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - an integer
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getStudyExists( "Nicardipine" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getStudyList
+
+**Syntax:** JMPClinicalStudyManagerAPI:getStudyList()
+
+**Description:** Gets the list of studies for the current configuration (use the JMPClinicalBatchConfiguration environment variable)
+
+ *
+
+ * return - a List of the names of the studies
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getStudyList();
+
+```
+
+### JMPClinicalStudyManagerAPI:getStudyPreference
+
+**Syntax:** JMPClinicalStudyManagerAPI:getStudyPreference(study, preference)
+
+**Description:** Returns the given study preference for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ * preference - String - name of the preference
+
+ *
+
+ * return - a <variable type> of the given preference for the given study
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getStudyPreference(
+	"Nicardipine", "objRefNS:treatcb"
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getTestResultsLoadOnly
+
+**Syntax:** JMPClinicalStudyManagerAPI:getTestResultsLoadOnly(study)
+
+**Description:** Returns the advanced option.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a String of the advanced option
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getTestResultsLoadOnly( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderDomainLabel
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderDomainLabel(study, domain)
+
+**Description:** Returns the domain label registered by the custom value order and color system, for the given study and domain.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ *
+
+ * return - a String of the domain label
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getValueOrderDomainLabel( "Nicardipine", "LB" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderDomains
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderDomains(study)
+
+**Description:** Returns the list of domains registered by the custom value order and color system, for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - a list of domains
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderDomainVariables
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderDomainVariables(study, domain)
+
+**Description:** Returns the list of variables registered by the custom value order and color system, for the given study and domain.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ *
+
+ * return - a list of variables
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderDomainVariables( "Nicardipine", "LB" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderValueColorOverride
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderValueColorOverride(study, domain, variable, value, returnRGB = 0)
+
+**Description:** Returns any value color override of the value of the variable registered by the custom value order and color system, for the given study, domain, variable, and value.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ * value - String - name of the value
+
+ * returnRGB - integer - if 0 (default), returns JMP internal color value (integer); if 1, returns RGB ({red, green, blue}) color values (three numbers) in the 0-to-1 range; if 2, returns RGB in the 0-to-255 range
+
+ *
+
+ * return - a number of the color override for the value (if an override does not exist for the value, missing (.) is returned)
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderValueColorOverride(
+	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderVariableColorOverrides
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderVariableColorOverrides(study, domain, variable, returnRGB = 0)
+
+**Description:** Returns the value color overrides of the variable registered by the custom value order and color system, for the given study, domain, and variable.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ * returnRGB - integer - if 0 (default), returns JMP internal color values (single integers); if 1, returns RGB ({red, green, blue}) color values (three numbers) in the 0-to-1 range; if 2, returns RGB in the 0-to-255 range
+
+ *
+
+ * return - an associative array (variable value (String), color (number)) of the color overrides
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorOverrides( "Nicardipine", "ADSL", "TRT01P", 2 );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderVariableColorTheme
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderVariableColorTheme(study, domain, variable)
+
+**Description:** Returns the value color theme of the variable registered by the custom value order and color system, for the given study, domain, and variable.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ *
+
+ * return - a String of the color theme name
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorTheme( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderVariableLabel
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderVariableLabel(study, domain, variable)
+
+**Description:** Returns the variable label registered by the custom value order and color system, for the given study, domain, and variable.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ *
+
+ * return - a String of the variable label
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLabel( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderVariableLegendPreview
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderVariableLegendPreview(study, domain, variable, returnRGB = 0)
+
+**Description:** Returns the value order and colors of the variable registered by the custom value order and color system, for the given study, domain, and variable.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ * returnRGB - integer - if 0 (default), returns JMP internal color value (integer); if 1, returns RGB ({red, green, blue}) color values (three numbers) in the 0-to-1 range; if 2, returns RGB in the 0-to-255 range
+
+ *
+
+ * return - an ordered list (according to value order) of associative arrays specifying color (variable value (String), color (number))
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLegendPreview( "Nicardipine", "LB", "JMPC_ANRIND", 2 );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderVariableSortState
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderVariableSortState(study, domain, variable)
+
+**Description:** Returns the sort state of value order of the variable registered by the custom value order and color system, for the given study, domain, and variable.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ *
+
+ * return - a String of the value order sort state
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableSortState( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:getValueOrderVariableValueOrder
+
+**Syntax:** JMPClinicalStudyManagerAPI:getValueOrderVariableValueOrder(study, domain, variable)
+
+**Description:** Returns the value order of the variable registered by the custom value order and color system, for the given study, domain, and variable.
+
+ *
+
+ * study - String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ *
+
+ * return - a list of the value order
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableValueOrder( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:loadStudyADSLDataTable
+
+**Syntax:** JMPClinicalStudyManagerAPI:loadStudyADSLDataTable(study)
+
+**Description:** Loads the ADSL table into memory.
+
+ *
+
+ * study - String - name of the study
+
+ *
+
+ * return - Table Reference - data table reference for the ADSL table for the study
+
+ *
+
+ * throws - exception if study specified doesn&apos;t exist
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:loadStudyADSLDataTable( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+```
+
+### JMPClinicalStudyManagerAPI:refreshStudies
+
+**Syntax:** JMPClinicalStudyManagerAPI:refreshStudies(studyNames = {})
+
+**Description:** Refreshes the metadata of the studies in the current configuration (use the JMPClinicalBatchConfiguration environment variable).
+
+ *
+
+ * studyNames - String, or List of Strings - name of the study, or names of the studies, to refresh
+
+ *
+
+ * return - N/A
+
+**Batch**
+
+```jsl
+
+
+/*
+ * Use the following environment variables to control elements of the batch execution 
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:refreshStudies( {"APIStudyName"} );
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
+
+```
+
+**Simple**
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:refreshStudies( {"Nicardipine"} );
+
+```
+
+### JMPClinicalStudyManagerAPI:resetAllValueOrderInfo
+
+**Syntax:** JMPClinicalStudyManagerAPI:resetAllValueOrderInfo(studies)
+
+**Description:** Resets all information in the custom value order and color system, for the given studies.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ *
+
+ * return - none
+
+ *
+
+ * CAUTION: All custom value order and color settings for the specified studies will be reset
+
+ *   to factory defaults.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:resetAllValueOrderInfo( "Nicardipine" );
+
+```
+
+### JMPClinicalStudyManagerAPI:setAllStudyPreferences
+
+**Syntax:** JMPClinicalStudyManagerAPI:setAllStudyPreferences(study, preferenceValueAssociation)
+
+**Description:** Sets all preferences for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ * preferenceValueAssociation - Associative Array - names and values of preferences
+
+ *
+
+ * return - N/A
+
+```jsl
+
+
+studyPreferences = JMPClinicalStudyManagerAPI
+:getAllStudyPreferences( "Nicardipine" );
+JMPClinicalStudyManagerAPI
+:setAllStudyPreferences( "Nicardipine", studyPreferences );
+
+```
+
+### JMPClinicalStudyManagerAPI:setCurrentStudy
+
+**Syntax:** JMPClinicalStudyManagerAPI:setCurrentStudy(study)
+
+**Description:** Sets the current study to the one specified.
+
+ *
+
+ * study - a string containing the name of the study to set as the current study,
+
+ * or Empty() to set the current study to <None>
+
+ *
+
+ * return - if the current study was succesfully set, 1; otherwise 0.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:setCurrentStudy( "Nicardipine" );
+JMPClinicalStudyManagerAPI:getCurrentStudy();
+
+```
+
+### JMPClinicalStudyManagerAPI:setStudyPreference
+
+**Syntax:** JMPClinicalStudyManagerAPI:setStudyPreference(study, preference, value)
+
+**Description:** Sets the given study preference to the given value for the given study.
+
+ *
+
+ * study - String - name of the study
+
+ * preference - String - name of the preference
+
+ * value - <variable type> - value of the preference
+
+ *
+
+ * return - N/A
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:setStudyPreference(
+	"Nicardipine", "objRefNS:treatcb", "ARM"
+);
+JMPClinicalStudyManagerAPI:getStudyPreference(
+	"Nicardipine", "objRefNS:treatcb"
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:setValueOrderDomainLabel
+
+**Syntax:** JMPClinicalStudyManagerAPI:setValueOrderDomainLabel(studies, domain, newDomainLabel)
+
+**Description:** Sets the domain label registered by the custom value order and color system, for the given studies and domain.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain
+
+ * newDomainLabel - String - new label of the domain
+
+ *
+
+ * return - none
+
+ *
+
+ * CAUTION: This function should only be used when registering custom domains to the value
+
+ *   order and color system. Be sure that the domain name is valid and the new domain label
+
+ *   is correct.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:setValueOrderDomainLabel( "Nicardipine", "LB", "Labs" );
+JMPClinicalStudyManagerAPI:getValueOrderDomainLabel( "Nicardipine", "LB" );
+
+```
+
+### JMPClinicalStudyManagerAPI:setValueOrderValueColorOverride
+
+**Syntax:** JMPClinicalStudyManagerAPI:setValueOrderValueColorOverride(studies, domain, variable, value, override)
+
+**Description:** Sets the value color override of the value of the variable registered by the custom value order and color system, for the given studies, domain, variable, and value.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ * value - String - name of the value
+
+ * override - number - the color value of the specified level value (either internal value (integer) or RGB (list of three numbers) or color name (String))
+
+ 
+
+ * return - none
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:setValueOrderValueColorOverride(
+	"Nicardipine",
+	"ADSL",
+	"TRT01P",
+	"Placebo",
+	{200, 0, 0}
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderValueColorOverride(
+	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
+);
+
+```
+
+### JMPClinicalStudyManagerAPI:setValueOrderVariableColorOverrides
+
+**Syntax:** JMPClinicalStudyManagerAPI:setValueOrderVariableColorOverrides(studies, domain, variable, overrides)
+
+**Description:** Sets the value color overrides of the variable registered by the custom value order and color system, for the given studies, domain, and variable.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain -OR- "_All_" to specify all domains and variables in each specified study
+
+ * variable - String - name of the variable (ignored if domain argument = 1)
+
+ * overrides - associative array - level names (keys) and color values (values) of the level color overrides (either internal values (integer) or RGB (list of three numbers) or color name (String)) -OR- String specifying a special action: "_Clear_" clear (no overrides), "_Reset_" reset to default, "_All_" mark all existing level colors as overrides
+
+ *
+
+ * return - none
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableColorOverrides(
+	"Nicardipine",
+	"ADSL",
+	"TRT01P",
+	["Placebo" => {200, 0, 0}]
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorOverrides( "Nicardipine", "ADSL", "TRT01P", 2 );
+
+```
+
+### JMPClinicalStudyManagerAPI:setValueOrderVariableColorTheme
+
+**Syntax:** JMPClinicalStudyManagerAPI:setValueOrderVariableColorTheme(studies, domain, variable, theme)
+
+**Description:** Sets the value color theme of the variable registered by the custom value order and color system, for the given studies, domain, and variable.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain -OR- "_All_" to specify all domains and variables in each specified study
+
+ * variable - String - name of the variable (ignored if domain argument = "_All_")
+
+ * theme - String - name of the color theme -OR- a special action: "_Reset_": reset to default
+
+ *
+
+ * return - none
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableColorTheme(
+	"Nicardipine", "LB", "JMPC_ANRIND", "JMP Dark"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorTheme( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:setValueOrderVariableLabel
+
+**Syntax:** JMPClinicalStudyManagerAPI:setValueOrderVariableLabel(studies, domain, variable, newVariableLabel)
+
+**Description:** Sets the variable label registered by the custom value order and color system, for the given studies domain, and variable.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ * newVariableLabel - String - new label of the variable
+
+ *
+
+ * return - none
+
+ *
+
+ * CAUTION: This function should only be used when registering custom domains and variables
+
+ *   to the value order and color system. Be sure that the domain and variable names are valid
+
+ *   and the new variable label is correct.
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableLabel(
+	"Nicardipine", "LB", "JMPC_ANRIND", "Indicator for Reference Range"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLabel( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:setValueOrderVariableSortState
+
+**Syntax:** JMPClinicalStudyManagerAPI:setValueOrderVariableSortState(studies, domain, variable, sortstate)
+
+**Description:** Sets the sort state of value order of the variable registered by the custom value order and color system, for the given studies, domain, and variable.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain -OR- "_All_" to specify all domains and variables in each specified study
+
+ * variable - String - name of the variable (ignored if domain argument = 1)
+
+ * sortstate - String - name of the value order sort state -OR- a special action: "_Reset_" reset to default
+
+ 
+
+ * return - none
+
+ * side effect - also sorts the level values accordingly
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableSortState(
+	"Nicardipine", "LB", "JMPC_ANRIND", "Natural Descending"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableSortState( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:setValueOrderVariableValueOrder
+
+**Syntax:** JMPClinicalStudyManagerAPI:setValueOrderVariableValueOrder(studies, domain, variable, valueorder)
+
+**Description:** Sets the value order of the variable registered by the custom value order and color system, for the given studies, domain, and variable.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ * valueorder - list - level names of the variable in any specified order (all levels must be present and must match case exactly)
+
+ 
+
+ * return - none
+
+ * side effect - also sets the sort state to "Ad Hoc"
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableValueOrder(
+	"Nicardipine",
+	"LB",
+	"JMPC_ANRIND",
+	{"HIGH", "NORMAL", "LOW"}
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableValueOrder( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+```
+
+### JMPClinicalStudyManagerAPI:swapValueColor
+
+**Syntax:** JMPClinicalStudyManagerAPI:swapValueColor(studies, domain, variable, value1, value2)
+
+**Description:** Swaps the value color of two levels within a variable registered by the custom value order and color system, for the given studies, domain, and variable.
+
+ *
+
+ * studies - list - names (Strings) of the studies -OR- String - name of the study
+
+ * domain - String - name of the domain
+
+ * variable - String - name of the variable
+
+ * value1 - String - name of one value
+
+ * value2 - String - name of another value
+
+ *
+
+ * return - none
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:swapValueColor(
+	"Nicardipine", "LB", "JMPC_ANRIND", "LOW", "HIGH"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLegendPreview( "Nicardipine", "LB", "JMPC_ANRIND", 2 );
+
+```
+
+### JMPClinicalStudyManagerAPI:updateSnapStudy
+
+**Syntax:** JMPClinicalStudyManagerAPI:updateSnapStudy(selectedStudy="", snapshotNumber=., newSdtmSourceDataFolder="", newSelectedSDTMDomains={}, newAdamSourceDataFolder="", newSelectedADaMDomains={}, cb_trt_val=1, cb_spid_val=1, cb_seq_val=1, cb_dom_val=1, cb_grp_val=1, cb_ref_val=1, cb_lnk_val=1, cb_lnkg_val=1)
+
+**Description:** Update the snapshot of the study in the current configuration (use the JMPClinicalBatchConfiguration environment variable).
+
+ *
+
+ * selectedStudy - String - name of the study
+
+ * snapshotNumber - integer - the new snapshot number
+
+ * newSdtmSourceDataFolder - String - path to the new SDTM data folder. Use "" if no SDTM data (at least one of newSdtmSourceDataFolder or newAdamSourceDataFolder must be specified)
+
+ * newSelectedSDTMDomains - List - list of the selected domains for the new SDTM folder. Use {} to take all possible domains
+
+ * newAdamSourceDataFolder - String - path to the new ADaM data folder. Use "" if no ADaM data (at least one of newSdtmSourceDataFolder or newAdamSourceDataFolder must be specified)
+
+ * newSelectedADaMDomains - List - list of the selected domains for the new ADaM folder. Use {} to take all possible domains
+
+ * cb_trt_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Treatment Variables"
+
+ * cb_spid_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Sponsor-Defined Identifier"
+
+ * cb_seq_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Sequence Number"
+
+ * cb_dom_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Domain"
+
+ * cb_grp_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Group ID"
+
+ * cb_ref_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Reference ID"
+
+ * cb_lnk_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Link ID"
+
+ * cb_lnkg_val - integer - the checkbox state (1 = checked, 0 = unchecked) of "Exclude comparisons of Link Group ID"
+
+ *
+
+ * return - N/A
+
+**Batch**
+
+```jsl
+
+
+/*
+ * Use the following environment variables to control elements of the batch execution 
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:updateSnapStudy(
+	"APIStudyName",
+	JMPClinicalStudyManagerAPI:getSnapshotNumber( "APIStudyName" ) + 1,
+	Convert File Path(
+		"$CLINICAL_HOME" || "/Sample Data/NicardipineAbbr/SDTM"
+	),
+	{},
+	"",
+	{}
+);
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
+
+```
+
+**Simple**
+
+```jsl
+
+
+JMPClinicalStudyManagerAPI:updateSnapStudy(
+	"Nicardipine",
+	JMPClinicalStudyManagerAPI:getSnapshotNumber( "Nicardipine" ) + 1,
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{},
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+	{}, 1
+);
 
 ```
 
@@ -11925,6 +16283,7 @@ JMP Version();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 0.5;
@@ -11967,6 +16326,7 @@ New Window( "Example: Johnson Sb Density",
 
 ```jsl
 
+
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -12008,6 +16368,7 @@ New Window( "Example: Johnson Sb Distribution",
 
 ```jsl
 
+
 Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -12021,6 +16382,7 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 1;
@@ -12066,6 +16428,7 @@ New Window( "Example: Johnson Sl Density",
 
 ```jsl
 
+
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -12110,6 +16473,7 @@ New Window( "Example: Johnson Sl Distribution",
 
 ```jsl
 
+
 Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -12123,6 +16487,7 @@ Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 1;
@@ -12165,6 +16530,7 @@ New Window( "Example: Johnson Su Density",
 
 ```jsl
 
+
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -12206,6 +16572,7 @@ New Window( "Example: Johnson Su Distribution",
 
 ```jsl
 
+
 Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -12219,6 +16586,7 @@ Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sample = Distribution( Y( :height ) );
@@ -12240,6 +16608,7 @@ New Window( "Distribution of Height",
 
 ```jsl
 
+
 JSL Encrypted(
 	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
 );
@@ -12255,6 +16624,7 @@ JSL Encrypted(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 x = JSL Quote(/* Begin quote. */
@@ -12279,6 +16649,7 @@ New Window( "editor", Script Box( x ) );
 ```jsl
 
 
+
 myJSON =
 "{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
 parsed = Parse JSON( myJSON );
@@ -12301,6 +16672,7 @@ If( x == JSON Literal( true ),
 
 ```jsl
 
+
 dt = JSON To Data Table(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -12316,6 +16688,7 @@ dt = JSON To Data Table(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 l = JSON To List(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
@@ -12333,6 +16706,7 @@ Show( l );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 // generate sample dataset from a mixture of 3 normal distributions
 ndata3 = 25;
@@ -12403,6 +16777,7 @@ dt << Graph Builder(
 
 ```jsl
 
+
 tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, 1 );
 "2 nearest rows to row 1 are " || Char( rows );
@@ -12418,6 +16793,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
@@ -12437,6 +16813,7 @@ Labeled();
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -12452,6 +16829,7 @@ Labeled( Row State( 3 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
@@ -12469,6 +16847,7 @@ Lag( :height, 2 );
 
 ```jsl
 
+
 Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -12482,6 +16861,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /*Simple Linear Regression*/
 y = [3, 5, 7, 5];
@@ -12500,6 +16880,7 @@ X = [1, 2, 3, 4];
 
 ```jsl
 
+
 exurl = "http://www.jmp.com";
 Left( exurl, Contains( exurl, ":" ) - 1 );
 
@@ -12517,6 +16898,7 @@ Left( exurl, Contains( exurl, ":" ) - 1 );
 
 ```jsl
 
+
 Length( "Café" );
 
 ```
@@ -12524,6 +16906,7 @@ Length( "Café" );
 **Example 2**
 
 ```jsl
+
 
 Length( {1, 2 + 3, [11 22]} );
 
@@ -12533,6 +16916,7 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
+
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -12540,6 +16924,7 @@ Length( ["a" => 10, "b" => 3, => 0] );
 **Example 4**
 
 ```jsl
+
 
 Length( Char To Blob( "Café" ) );
 
@@ -12555,6 +16940,7 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
+
 Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```
@@ -12568,6 +16954,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 [1 1 1] < [0 1 2];
 
@@ -12583,6 +16970,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```jsl
 
+
 1 < 2 <= 2;
 
 ```
@@ -12596,6 +16984,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 1 <= 2 <= 2;
 
@@ -12611,6 +17000,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```jsl
 
+
 2 <= 2 < 3;
 
 ```
@@ -12624,6 +17014,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 10;
 sig = 5;
@@ -12653,6 +17044,7 @@ New Window( "Example: LEV Density",
 
 ```jsl
 
+
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Distribution",
@@ -12679,6 +17071,7 @@ New Window( "Example: LEV Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 10;
 sig = 5;
@@ -12718,6 +17111,7 @@ New Window( "Example: LEV Quantile",
 
 ```jsl
 
+
 New Window( "Color Bar",
 	Graph(
 		For( x = 1, x <= 100, x += 5,
@@ -12739,6 +17133,7 @@ New Window( "Color Bar",
 
 ```jsl
 
+
 LGamma( 5 );
 
 ```
@@ -12754,6 +17149,7 @@ LGamma( 5 );
 **Constrained smoothing**
 
 ```jsl
+
 
 New Window( "Constrained smoothing",
 	Graph Box(
@@ -12775,6 +17171,7 @@ New Window( "Constrained smoothing",
 
 ```jsl
 
+
 New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 
 ```
@@ -12782,6 +17179,7 @@ New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 **Smoothing**
 
 ```jsl
+
 
 New Window( "Smoothing",
 	Graph Box(
@@ -12805,6 +17203,7 @@ New Window( "Smoothing",
 
 ```jsl
 
+
 New Window( "Interpolate in value space",
 	Graph Box(
 		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
@@ -12827,6 +17226,7 @@ New Window( "Interpolate in value space",
 
 ```jsl
 
+
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
@@ -12838,6 +17238,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
@@ -12851,6 +17252,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
@@ -12872,6 +17274,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Line Style Example",
 	Graph Box(
@@ -12902,6 +17305,7 @@ New Window( "Line Style Example",
 
 ```jsl
 
+
 /*Simple Linear Regression: y = intercept + beta * x + error*/
 y = [3, 5, 7, 5];
 X = [1, 2, 3, 4];
@@ -12919,6 +17323,7 @@ RSquare Adj = Diagnostics["RSquare Adj"];
 
 ```jsl
 
+
 /*Model: y = beta_1*x + beta_2*x^2 + error*/
 y = [3, 5, 7, 5];
 X = [1 1, 2 4, 3 9, 4 16];
@@ -12929,6 +17334,7 @@ X = [1 1, 2 4, 3 9, 4 16];
 **Example 3**
 
 ```jsl
+
 
 /*Categorical Variable Example*/
 /*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/
@@ -12955,6 +17361,7 @@ designMat = Design( gender ) || x;
 
 ```jsl
 
+
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );
 frame = g[FrameBox( 1 )];
@@ -12971,6 +17378,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
@@ -12992,6 +17400,7 @@ New Window( "Example",
 **JMP Version Added:** 16
 
 ```jsl
+
 
 
 New Window( "Lineup Ruler",
@@ -13030,6 +17439,7 @@ New Window( "Lineup Ruler",
 
 ```jsl
 
+
 {1, 2 + 3, [11 22]};
 
 ```
@@ -13046,6 +17456,7 @@ New Window( "Lineup Ruler",
 
 ```jsl
 
+
 New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 ) ) );
 
 ```
@@ -13053,6 +17464,7 @@ New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 
 **Example 2**
 
 ```jsl
+
 
 New Window( "Example",
 	lb = List Box(
@@ -13075,6 +17487,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Ln( Exp( 2 ) );
 
 ```
@@ -13091,6 +17504,7 @@ Ln( Exp( 2 ) );
 
 ```jsl
 
+
 dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
 // Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
 // Declarations for "irr" and "npv" are auto-loaded
@@ -13103,6 +17517,7 @@ dll << UnloadDLL();
 **Windows only**
 
 ```jsl
+
 
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
@@ -13123,6 +17538,7 @@ If( Host is( "Windows" ),
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = Load Text File(
 	Get Path Variable( "sample_import_data" ) || "/animals.txt"
@@ -13146,6 +17562,7 @@ Word( 4, ex, " \!t\!n\!r" );
 
 ```jsl
 
+
 /*more examples, above*/
 Show( Loc( [1 0 1 0 1 0] ) );
 Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );
@@ -13157,6 +17574,7 @@ Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
 
 ```jsl
 
+
 Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 
 ```
@@ -13164,6 +17582,7 @@ Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 **Example 3**
 
 ```jsl
+
 
 Loc( [5, 7, 5, ., 5], 5 );
 
@@ -13173,6 +17592,7 @@ Loc( [5, 7, 5, ., 5], 5 );
 
 ```jsl
 
+
 Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 
 ```
@@ -13180,6 +17600,7 @@ Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 **Example 5**
 
 ```jsl
+
 
 Loc( {"a", "fred", "b", "fred"}, "fred" );
 
@@ -13195,6 +17616,7 @@ Loc( {"a", "fred", "b", "fred"}, "fred" );
 
 ```jsl
 
+
 Loc Max( [11 22 33 22 33 11] );
 
 ```
@@ -13208,6 +17630,7 @@ Loc Max( [11 22 33 22 33 11] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Loc Min( [11 22 33 22 33 11] );
 
@@ -13223,6 +17646,7 @@ Loc Min( [11 22 33 22 33 11] );
 
 ```jsl
 
+
 Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 ```
@@ -13236,6 +17660,7 @@ Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Show(
 	Loc Sorted( [11 22 33 44 55], [11 33 55] ),
@@ -13255,6 +17680,7 @@ Show(
 
 ```jsl
 
+
 Local( {a = 1, b},
 	b = 2;
 	a + b;
@@ -13271,6 +17697,7 @@ Local( {a = 1, b},
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 y = Local Here(
 	a = 1;
@@ -13290,6 +17717,7 @@ y = Local Here(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exalpha = 0.05;
 exdelta = 0.5;
@@ -13316,6 +17744,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -13341,6 +17770,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 Log( 256, 2 );
 
 ```
@@ -13354,6 +17784,7 @@ Log( 256, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 "captured:" || Log Capture(
 	For( i = 1, i <= 3, i++,
@@ -13374,6 +17805,7 @@ Log( 256, 2 );
 
 ```jsl
 
+
 Log10( 100 );
 
 ```
@@ -13388,6 +17820,7 @@ Log10( 100 );
 
 ```jsl
 
+
 Log1P( 1e-6 );
 
 ```
@@ -13401,6 +17834,7 @@ Log1P( 1e-6 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -13432,6 +17866,7 @@ New Window( "Example: LogGenGamma Density",
 
 ```jsl
 
+
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -13461,6 +17896,7 @@ New Window( "Example: LogGenGamma Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -13509,6 +17945,7 @@ New Window( "Example: LogGenGamma Quantile",
 
 ```jsl
 
+
 Logist( 2 );
 
 ```
@@ -13523,6 +17960,7 @@ Logist( 2 );
 
 ```jsl
 
+
 Logist Percent( 10 );
 
 ```
@@ -13536,6 +17974,7 @@ Logist Percent( 10 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13565,6 +18004,7 @@ New Window( "Example: Logistic Density",
 
 ```jsl
 
+
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Distribution",
@@ -13591,6 +18031,7 @@ New Window( "Example: Logistic Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13630,6 +18071,7 @@ New Window( "Example: Logistic Quantile",
 
 ```jsl
 
+
 Logit( 0.95 );
 
 ```
@@ -13644,6 +18086,7 @@ Logit( 0.95 );
 
 ```jsl
 
+
 Logit Percent( 95.0 );
 
 ```
@@ -13657,6 +18100,7 @@ Logit Percent( 95.0 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13686,6 +18130,7 @@ New Window( "Example: Loglogistic Density",
 
 ```jsl
 
+
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Distribution",
@@ -13712,6 +18157,7 @@ New Window( "Example: Loglogistic Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13751,6 +18197,7 @@ New Window( "Example: Loglogistic Quantile",
 
 ```jsl
 
+
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Density",
@@ -13779,6 +18226,7 @@ New Window( "Example: Lognormal Density",
 
 ```jsl
 
+
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Distribution",
@@ -13805,6 +18253,7 @@ New Window( "Example: Lognormal Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 0;
 sig = 1;
@@ -13844,6 +18293,7 @@ New Window( "Example: Lognormal Quantile",
 
 ```jsl
 
+
 Long Date( Today() );
 
 ```
@@ -13855,6 +18305,7 @@ Long Date( Today() );
 **JMP Version Added:** 17
 
 ```jsl
+
 
 A = [2 0, 0 2];
 U = [2 4, 3 5];
@@ -13873,6 +18324,7 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ```jsl
 
+
 Lowercase( "CAFÉ #23" );
 
 ```
@@ -13886,6 +18338,7 @@ Lowercase( "CAFÉ #23" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 A = [5 -2 6, 2 4 0, 3 8 -4];
 b = [17, 19, 14];
@@ -13907,6 +18360,7 @@ Show( x, z );
 
 ```jsl
 
+
 Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -13923,6 +18377,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ```jsl
 
+
 Main Menu( "Sample Index" );
 
 ```
@@ -13930,6 +18385,7 @@ Main Menu( "Sample Index" );
 **Example 2**
 
 ```jsl
+
 
 Main Menu( "Help:Sample Index" );
 
@@ -13947,6 +18403,7 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "KFold Validation",
 	"Numeric",
@@ -13959,6 +18416,7 @@ dt << New Column( "KFold Validation",
 **Example 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Stratified KFold",
@@ -13983,6 +18441,7 @@ dt << New Column( "Stratified KFold",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -13997,6 +18456,7 @@ dt << New Column( "Validation",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -14010,6 +18470,7 @@ dt << New Column( "Validation",
 **Example 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << New Column( "Validation",
@@ -14037,6 +18498,7 @@ dt << New Column( "Validation",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 grid = 50;
 rmax = 0/*zero for smooth*/;
@@ -14090,6 +18552,7 @@ g << Set Y Axis(
 
 ```jsl
 
+
 Map Value( "celry", {"celry", "celery"} );
 
 ```
@@ -14097,6 +18560,7 @@ Map Value( "celry", {"celry", "celery"} );
 **Example 2**
 
 ```jsl
+
 
 Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
@@ -14106,6 +18570,7 @@ Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```jsl
 
+
 Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```
@@ -14113,6 +18578,7 @@ Map Value( 10, {10, "celery", 11, "banana"} );
 **Example 4**
 
 ```jsl
+
 
 Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
@@ -14128,6 +18594,7 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```jsl
 
+
 New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) ) );
 
 ```
@@ -14141,6 +18608,7 @@ New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
@@ -14161,6 +18629,7 @@ Marker Of();
 **Example 1**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
@@ -14186,6 +18655,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -14204,6 +18674,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -14221,6 +18692,7 @@ New Window( "Marker Seg Example",
 **Example 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
@@ -14243,6 +18715,7 @@ New Window( "Marker Seg Example",
 **Example 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
@@ -14275,6 +18748,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Marker Size( 5 );
@@ -14294,6 +18768,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -14310,6 +18785,7 @@ Marker Of( Row State( 3 ) );
 
 ```jsl
 
+
 Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -14324,6 +18800,7 @@ Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```jsl
 
+
 MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -14337,6 +18814,7 @@ MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 MATLABConnection = MATLAB Connect();
 x = MatlabConnection << Is Connected;
@@ -14353,6 +18831,7 @@ Show( x );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 MATLAB Init( Echo( true ) );
@@ -14378,6 +18857,7 @@ MATLAB Term();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 MATLAB Init();
 a = "abcdef";
@@ -14409,6 +18889,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 x1 = [1, 2, 3];
 MATLAB Send( x1 );
@@ -14433,6 +18914,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 ml = MATLAB Submit( "\[
 plot(1:10)
@@ -14455,6 +18937,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 version = MATLAB Get Version();
 Show( version );
@@ -14471,6 +18954,7 @@ MATLAB Term();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 MATLAB Init();
 MATLAB Submit( "\[
@@ -14492,6 +18976,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 x = MATLAB Is Connected();
 Show( x );
@@ -14508,6 +18993,7 @@ MATLAB Term();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 MATLAB Init();
 MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );
@@ -14526,6 +19012,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 // if .mat file contained: x = 40; y = 'hello';
 vars = MATLAB Load( "path/to/.mat" );
@@ -14543,6 +19030,7 @@ MATLAB Term();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 MATLAB Init();
 x = [1, 2, 3];
@@ -14566,6 +19054,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );
 MATLAB Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -14584,6 +19073,7 @@ MATLAB Term();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 MATLAB Init();
 MATLAB Submit( "\[
@@ -14607,6 +19097,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 MATLAB Submit File( "file containing MATLAB source.m" );
 MATLAB Term();
@@ -14623,6 +19114,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 MATLAB Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog';
@@ -14635,7 +19127,7 @@ MATLAB Term();
 
 ### Matrix
 
-**Syntax:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} ) y = Matrix( {x1, ..., xn} ) y = Matrix( n, m )
+**Syntax:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
 
 **Description:** Constructs an n-by-m matrix. If you specify a list of n lists that each contain m row values, the matrix is formed by vertically concatenating the evaluated lists. If you specify a single list of n items, the return value is an n-by-1 column vector. If you specify two integer arguments, the return value is a matrix of zeros that contains n rows and m columns.
 
@@ -14645,6 +19137,7 @@ MATLAB Term();
 
 ```jsl
 
+
 Matrix( {{11, 22, 33}, {44, 55, 66}} );
 
 ```
@@ -14652,6 +19145,7 @@ Matrix( {{11, 22, 33}, {44, 55, 66}} );
 **Example 2**
 
 ```jsl
+
 
 Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
@@ -14661,6 +19155,7 @@ Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
 ```jsl
 
+
 Matrix( {2, 3 + 7} );
 
 ```
@@ -14668,6 +19163,7 @@ Matrix( {2, 3 + 7} );
 **Example 4**
 
 ```jsl
+
 
 Matrix( 2, 3 );
 
@@ -14683,6 +19179,7 @@ Matrix( 2, 3 );
 
 ```jsl
 
+
 New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) ) );
 
 ```
@@ -14696,6 +19193,7 @@ New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "S
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
@@ -14719,6 +19217,7 @@ Show( exMatM3 );
 
 ```jsl
 
+
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
 exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
@@ -14735,6 +19234,7 @@ exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
 
 ```jsl
 
+
 Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 
 ```
@@ -14748,6 +19248,7 @@ Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
@@ -14763,13 +19264,14 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```jsl
 
+
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
 
 ### Maximize
 
-**Syntax:** Maximize( expr, {x1, x2, ...} ); Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntax:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that maximize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a concave function, Maximize might find a local maximum rather than the global maximum. If this is a concern, try multiple starting values. Also, Maximize works best for functions with a continuous second derivative. Additional arguments for the Maximize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
@@ -14778,6 +19280,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 **Example 1**
 
 ```jsl
+
 
 /*Simple example*/ 
 x = 0;
@@ -14790,6 +19293,7 @@ Eval List( {x, y, maxf} );
 **Example 2**
 
 ```jsl
+
 
 /*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
 x = [3 4 5]; /* observed values*/ 
@@ -14811,6 +19315,7 @@ sigSq = 1;/*initial values*/
 **Example 3**
 
 ```jsl
+
 
 /*Simple example with all optional arguments*/ 
 x = 0;
@@ -14835,6 +19340,7 @@ y = 0;
 
 ```jsl
 
+
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -14848,6 +19354,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 MDYHMS( Today() );
 
@@ -14863,6 +19370,7 @@ MDYHMS( Today() );
 
 ```jsl
 
+
 Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```
@@ -14877,6 +19385,7 @@ Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```jsl
 
+
 Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```
@@ -14890,6 +19399,7 @@ Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -14944,13 +19454,14 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
 
 ### Minimize
 
-**Syntax:** Minimize( expr, {x1, x2, ...} ); Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntax:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description:** Finds values for the function&apos;s arguments, given in the list {x1, x2, ...}, that minimize the expr expression. You can specify lower and upper bounds for each argument in parentheses following the argument&apos;s name. If expr is not a convex function, Minimize might find a local minimum rather than the global minimum. If this is a concern, try multiple starting values. Also, Minimize works best for functions with a continuous second derivative. Additional arguments for the Minimize function enable you to set the maximum number of iterations, tolerance for convergence, and view more details about the optimization. Click the Topic Help button for more information about the optional arguments.
 
@@ -14959,6 +19470,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 **Example 1**
 
 ```jsl
+
 
 /*Simple Example*/
 x = 0;
@@ -14971,6 +19483,7 @@ Eval List( {x, y, minFun} );
 **Example 2**
 
 ```jsl
+
 
 /*Nonlinear Sums of Squares Example*/
 x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
@@ -14993,6 +19506,7 @@ b2 = 5;
 
 ```jsl
 
+
 /*Simple example with some optional arguments*/
 x = 0;
 y = 0;
@@ -15009,6 +19523,7 @@ y = 0;
 **Example 4**
 
 ```jsl
+
 
 /*Example with gradient, hessian, and method(nr) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
@@ -15049,6 +19564,7 @@ Minimize(
 
 ```jsl
 
+
 /*Example with usNumericDeriv and method(sr1) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -15078,6 +19594,7 @@ b2 = 5;
 
 ```jsl
 
+
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -15091,6 +19608,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 -Pi();
 
@@ -15106,6 +19624,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```jsl
 
+
 Minute( Today() );
 
 ```
@@ -15119,6 +19638,7 @@ Minute( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Modulo( 10, 3 );
 
@@ -15134,19 +19654,21 @@ Modulo( 10, 3 );
 
 ```jsl
 
+
 Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the modified internal rate of return for a series of periodic cash flows, taking into account both the cost of the investment and the interest received on reinvestment of cash. Equivalent to the MIRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
 Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
@@ -15163,6 +19685,7 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```jsl
 
+
 Modulo( 10, 3 );
 
 ```
@@ -15177,6 +19700,7 @@ Modulo( 10, 3 );
 
 ```jsl
 
+
 Month( Today() );
 
 ```
@@ -15190,6 +19714,7 @@ Month( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	MouseBox(/*first sibling*/Text Box( "drag from here" ),
@@ -15242,6 +19767,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -15267,6 +19793,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Delete Directory( "$TEMP/subB" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -15290,6 +19817,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 If( File Exists( "$TEMP/y.jmp" ),
 	Delete File( "$TEMP/y.jmp" )
@@ -15317,6 +19845,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 report = dt << Run Script( "Bivariate" );
                               
@@ -15329,6 +19858,7 @@ Move to Project( destination( project ), windows( {report} ) );
 **Example 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Move to Project( Source( project ) );
@@ -15345,6 +19875,7 @@ project << Close Window();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Eval List(
 	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),
@@ -15367,6 +19898,7 @@ Eval List(
 
 ```jsl
 
+
 // use the save-script-to-script-window button 
 // in the MFI dialog to see more messages
 // for filtering files and controlling the import
@@ -15381,6 +19913,7 @@ Multiple File Import(
 **Scripting example**
 
 ```jsl
+
 
 
 mfi = Multiple File Import();
@@ -15401,6 +19934,7 @@ tables = mfi << Import Data();
 
 ```jsl
 
+
 2 * Pi();
 
 ```
@@ -15414,6 +19948,7 @@ tables = mfi << Import Data();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = 3;
 ex *= 2;
@@ -15430,6 +19965,7 @@ ex;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,
 . -0.687720061441453 0.29665732536624 -1.94898001941576,
@@ -15455,6 +19991,7 @@ Print( mat );
 
 ```jsl
 
+
 Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "March" )} );
 
 ```
@@ -15468,6 +20005,7 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 N Arg( Expr( Sum( a, b, c ) ) );
 
@@ -15485,6 +20023,7 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
+
 // See Example 2 for the deprecated N Arg Expr() equivalent
 N Arg( Expr( Sum( a, b, c ) ) );
 
@@ -15493,6 +20032,7 @@ N Arg( Expr( Sum( a, b, c ) ) );
 **Example 2**
 
 ```jsl
+
 
 // Deprecated
 N Arg Expr( Sum( a, b, c ) );
@@ -15509,6 +20049,7 @@ N Arg Expr( Sum( a, b, c ) );
 
 ```jsl
 
+
 N Choose K( 5, 3 );
 
 ```
@@ -15523,6 +20064,7 @@ N Choose K( 5, 3 );
 
 ```jsl
 
+
 N Col( [11 22, 33 44] );
 
 ```
@@ -15536,6 +20078,7 @@ N Col( [11 22, 33 44] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 N Col( [11 22, 33 44] );
 
@@ -15553,6 +20096,7 @@ N Col( [11 22, 33 44] );
 
 ```jsl
 
+
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
@@ -15561,6 +20105,7 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
+
 N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -15568,6 +20113,7 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 **Example 3**
 
 ```jsl
+
 
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 N Items( hlist );
@@ -15584,6 +20130,7 @@ N Items( hlist );
 
 ```jsl
 
+
 N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```
@@ -15598,6 +20145,7 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```jsl
 
+
 N Row( [11 22, 33 44] );
 
 ```
@@ -15611,6 +20159,7 @@ N Row( [11 22, 33 44] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 N Rows( [11 22, 33 44] );
 
@@ -15628,6 +20177,7 @@ N Rows( [11 22, 33 44] );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 N Table();
 
@@ -15636,6 +20186,7 @@ N Table();
 **Example 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
@@ -15658,6 +20209,7 @@ d;
 
 ```jsl
 
+
 Name( "taxable income(2011)" ) = 456000;
 tax = .25;
 Print( tax * Name( "taxable income(2011)" ) );
@@ -15674,6 +20226,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ```jsl
 
+
 ex = Expr( 1 + 2 );
 Eval List( {ex, Name Expr( ex )} );
 
@@ -15689,6 +20242,7 @@ Eval List( {ex, Name Expr( ex )} );
 
 ```jsl
 
+
 /* Variable x will be stored in the Here: namespace by default */x = 1;
 Show( x );
 
@@ -15703,6 +20257,7 @@ Show( x );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Namespace(
 	"complex",
@@ -15746,6 +20301,7 @@ ns << Delete;
 
 ```jsl
 
+
 ns = New Namespace(
 	"complex",
 	{
@@ -15788,6 +20344,7 @@ ns << Delete;
 
 ```jsl
 
+
 Print( NChooseK Matrix( 5, 3 ) );
 
 ```
@@ -15801,6 +20358,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exnbdp = 0.5;
 exnbdn = 10;
@@ -15840,6 +20398,7 @@ New Window( "Example: Neg Binomial Distribution",
 
 ```jsl
 
+
 exnbpp = 0.5;
 exnbpn = 10;
 New Window( "Example: Neg Binomial Probability",
@@ -15868,6 +20427,7 @@ New Window( "Example: Neg Binomial Probability",
 **JMP Version Added:** 19
 
 ```jsl
+
 
 lambda = 20;
 sigma = 2;
@@ -15904,6 +20464,7 @@ New Window( "Example: Negative Binomial Distribution",
 
 ```jsl
 
+
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Negative Binomial",
@@ -15936,6 +20497,7 @@ New Window( "Poisson and Negative Binomial",
 **JMP Version Added:** 19
 
 ```jsl
+
 
 qexpl = 20;
 qexps = 2;
@@ -15975,13 +20537,14 @@ New Window( "Example: Negative Binomial Quantile",
 
 ### Net Present Value
 
-**Syntax:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the net present value of an investment by using a discount rate and a series of future payments (negative values) and income (positive values). The values argument is a one dimensional matrix. Equivalent to the NPV function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Net Present Value( .05, [-10000, 1000, 900, 9500] );
 Net Present Value( .05, -10000, 1000, 900, 9500 );
@@ -15997,6 +20560,7 @@ Net Present Value( .05, -10000, 1000, 900, 9500 );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 echo = [=> ];
@@ -16016,6 +20580,7 @@ action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 cas = Current CAS Connection();
@@ -16043,6 +20608,7 @@ cas << Submit( action );
 ```jsl
 
 
+
 url = "http://myCasURL";
 cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
@@ -16060,6 +20626,7 @@ cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "like name", Like( :name ) );
 
@@ -16068,6 +20635,7 @@ New Column( "like name", Like( :name ) );
 **Simple**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
@@ -16083,6 +20651,7 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 **JMP Version Added:** 16
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
 New Column by Text Matching(
@@ -16106,6 +20675,7 @@ New Column by Text Matching(
 
 ```jsl
 
+
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 
 ```
@@ -16113,6 +20683,7 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 **Example 2**
 
 ```jsl
+
 
 /*Create a custom function that can be used as a format*/
 Add Custom Functions(
@@ -16132,6 +20703,7 @@ Add Custom Functions(
 **Example 3**
 
 ```jsl
+
 
 /*Create a custom function that can be used as a transform*/
 Add Custom Functions(
@@ -16161,6 +20733,7 @@ Add Custom Functions(
 ```jsl
 
 
+
 // Create a data connector from scratch
 dc = New Data Connector( Type( "ODBC" ), Database( "foo" ), Server( "bar.example.com" ) );
 Show( dc << Get( Database ) );  // Overridden database value "foo"
@@ -16174,6 +20747,7 @@ Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 **Example 2**
 
 ```jsl
+
 
 
 // Launch Query Builder from a SQL Server data source
@@ -16198,6 +20772,7 @@ New SQL Query( Connection( dc ) ) << Modify;
 **JMP Version Added:** 16
 
 ```jsl
+
 
 
 nx = 20; // data is this size
@@ -16245,6 +20820,7 @@ New Window( "small and big",
 **JMP Version Added:** 14
 
 ```jsl
+
 
 
 getSentiment = Function( {text},
@@ -16301,7 +20877,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ### New Image
 
-**Syntax:** img = New Image() img = New Image( width, height ) img = New Image( pathname ) img = New Image( picture ) img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Syntax:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Description:** Returns a new image which can then be edited through JSL commands. If a path is specified to an existing image file, the file should be a .JPG, .PNG, .GIF, .BMP or .TIF file.
 
@@ -16310,6 +20886,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 **Example 1**
 
 ```jsl
+
 
 image = New Image( "$SAMPLE_IMAGES/windmap.png" );
 New Window( "new image", image );
@@ -16320,6 +20897,7 @@ New Window( "new image", image );
 
 ```jsl
 
+
 pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
 image2 = New Image( pic );
 New Window( "new image", image2 );
@@ -16329,6 +20907,7 @@ New Window( "new image", image2 );
 **Example 3**
 
 ```jsl
+
 
 image3 = New Image();
 mat = J( 256, 256 );
@@ -16353,6 +20932,7 @@ New Window( "image", image3 );
 **Example 1**
 
 ```jsl
+
 
 /* Import actual (raw) data */
 /* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
@@ -16379,6 +20959,7 @@ importer << Run;
 **Example 2**
 
 ```jsl
+
 
 /* Import interpolated data */
 /* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
@@ -16415,6 +20996,7 @@ importer << Run;
 
 ```jsl
 
+
 jmplive = New JMP Live();
 
 ```
@@ -16423,6 +21005,7 @@ jmplive = New JMP Live();
 
 ```jsl
 
+
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
@@ -16430,6 +21013,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 **Example 3**
 
 ```jsl
+
 
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
@@ -16457,6 +21041,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ```jsl
 
+
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -16483,6 +21068,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
+
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -16506,6 +21092,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
+
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -16522,6 +21109,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 **Example 4**
 
 ```jsl
+
 
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
@@ -16549,6 +21137,7 @@ jmpliveresult = liveconnection << Publish( imageContent, Folder( folder ) );
 **JMP Version Added:** 17
 
 ```jsl
+
 
 
 requests = New Multi HTTP Request();
@@ -16587,6 +21176,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ns = New Namespace(
 	"complex",
@@ -16628,6 +21218,7 @@ ns << Delete;
 **JMP Version Added:** 15
 
 ```jsl
+
 
 
 /*
@@ -16679,6 +21270,7 @@ data = request << Send;
 
 ```jsl
 
+
 token = New OAuth2 Token(
 	Account( "jmpgoogldev@gmail.com" ),
 	Client ID( "test" ),
@@ -16698,6 +21290,7 @@ token = New OAuth2 Token(
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -16754,6 +21347,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -16780,6 +21374,7 @@ importer << Run;
 
 ```jsl
 
+
 /* Import plot data using Kerberos for authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -16800,6 +21395,7 @@ importer << Run;
 **Example 3**
 
 ```jsl
+
 
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
@@ -16833,6 +21429,7 @@ importer << Run;
 
 ```jsl
 
+
 project = New Project();
 
 ```
@@ -16840,6 +21437,7 @@ project = New Project();
 **Example 2**
 
 ```jsl
+
 
 project = New Project(
 	Run Script(
@@ -16853,6 +21451,7 @@ project = New Project(
 **Example 3**
 
 ```jsl
+
 
 project = New Project(
 	Run Script(
@@ -16868,6 +21467,7 @@ project = New Project(
 **Example 4**
 
 ```jsl
+
 
 project = New Project(
 	Set Bookmarks(
@@ -16886,6 +21486,7 @@ project = New Project(
 **Example 5**
 
 ```jsl
+
 
 project = New Project(
 	Run Script( Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script ) ),
@@ -16915,6 +21516,7 @@ project = New Project(
 ```jsl
 
 
+
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
 	Select(),
@@ -16932,6 +21534,7 @@ obj = New SQL Query(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Table( "Little Class",
 	Add Rows( 3 ),
@@ -16951,6 +21554,7 @@ New Table( "Little Class",
 **JMP Version Added:** 14
 
 ```jsl
+
 
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
@@ -16993,6 +21597,7 @@ If( !Is Empty( file ),
 
 ```jsl
 
+
 // Compare settings for toolbars and menus
 // Suppress AutoHide is Windows only
 g = Graph Box(
@@ -17017,6 +21622,7 @@ New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 ```jsl
 
 
+
 ex = New Window( "Dialog example",
 	<<Type( "Dialog" ),
 	V List Box(
@@ -17032,6 +21638,7 @@ ex = New Window( "Dialog example",
 **Invisible**
 
 ```jsl
+
 
 
 g = Graph Box(
@@ -17051,6 +21658,7 @@ New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 **Modal Dialog**
 
 ```jsl
+
 
 
 ex = New Window( "Modal Dialog example",
@@ -17090,6 +21698,7 @@ If(
 
 ```jsl
 
+
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
 ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), pyscript );
@@ -17099,6 +21708,7 @@ ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), p
 **Report**
 
 ```jsl
+
 
 g = Graph Box(
 	Frame Size( 300, 300 ),
@@ -17113,6 +21723,7 @@ New Window( "My Window's Title", g );
 **Script**
 
 ```jsl
+
 
 script = JSL Quote(Names Default To Here(1);
 dt=Open("$SAMPLE_DATA/Big Class.jmp");
@@ -17132,6 +21743,7 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 
 ```jsl
 
+
 Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```
@@ -17145,6 +21757,7 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -17173,6 +21786,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example: Normal Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -17194,6 +21808,7 @@ New Window( "Example: Normal Density",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example: Normal Distribution",
 	y = Graph Box(
@@ -17217,6 +21832,7 @@ New Window( "Example: Normal Distribution",
 
 ```jsl
 
+
 Normal Integrate(
 	J( 3, 1, 0 ),
 	Identity( 3 ),
@@ -17237,6 +21853,7 @@ Normal Integrate(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example: Normal Log CDistribution",
 	nlcdiy = Graph Box(
@@ -17260,6 +21877,7 @@ New Window( "Example: Normal Log CDistribution",
 
 ```jsl
 
+
 New Window( "Example: Normal Log Density",
 	nldey = Graph Box(
 		Y Scale( -9, 0.05 ),
@@ -17282,6 +21900,7 @@ New Window( "Example: Normal Log Density",
 
 ```jsl
 
+
 New Window( "Example: Normal Log Distribution",
 	nldiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -17303,6 +21922,7 @@ New Window( "Example: Normal Log Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu1 = -2;
 mu2 = 2;
@@ -17352,6 +21972,7 @@ New Window( "Univariate Normal Mixture Density",
 
 ```jsl
 
+
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -17393,6 +22014,7 @@ New Window( "Univariate Normal Mixture Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 extqdf = 1;
 extqqq = 0.5;
@@ -17441,6 +22063,7 @@ New Window( "Example: Normal Mixture Quantile",
 
 ```jsl
 
+
 Normal Quantile( 0.9 );
 
 ```
@@ -17454,6 +22077,7 @@ Normal Quantile( 0.9 );
 **JMP Version Added:** 19
 
 ```jsl
+
 
 n = 15;
 New Window( "Example: Tolerance Factor()",
@@ -17481,6 +22105,7 @@ New Window( "Example: Tolerance Factor()",
 
 ```jsl
 
+
 !(1 < 2);
 
 ```
@@ -17494,6 +22119,7 @@ New Window( "Example: Tolerance Factor()",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 1 != 2 != 1;
 
@@ -17517,6 +22143,7 @@ New Window( "Example: Tolerance Factor()",
 
 ```jsl
 
+
 Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```
@@ -17533,6 +22160,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```jsl
 
+
 Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```
@@ -17540,6 +22168,7 @@ Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 **Example 2**
 
 ```jsl
+
 
 Show(
 	Num( "3.1e6", <<Restrict ),
@@ -17560,6 +22189,7 @@ Show(
 
 ```jsl
 
+
 f = Function( {x, y}, x ^ 2 + y );
 Num Deriv( f( 2, 1 ) );
 Num Deriv( f( 2, 1 ), 2 );
@@ -17576,6 +22206,7 @@ Num Deriv( f( 2, 1 ), 2 );
 
 ```jsl
 
+
 f = Function( {x}, x ^ 3 );
 Num Deriv2( f( 2 ) );
 
@@ -17591,6 +22222,7 @@ Num Deriv2( f( 2 ) );
 
 ```jsl
 
+
 Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 ```
@@ -17604,6 +22236,7 @@ Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -17627,6 +22260,7 @@ New Window( "Example",
 
 ```jsl
 
+
 x = y = z = 0;
 New Window( "Example",
 	Modal,
@@ -17646,6 +22280,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example", neb = Number Edit Box( 5 ) );
 x = neb << get;
 
@@ -17660,6 +22295,7 @@ x = neb << get;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Number of Periods( .05 / 12, -2000, 100000 );
 
@@ -17677,6 +22313,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
+
 /* Installing Add-In:
 Open( Add-In to open,
     <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
@@ -17688,6 +22325,7 @@ Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 
 **Data Table**
 
 ```jsl
+
 
 /* Data tables, other JMP files, external files:
    Open( filePath,
@@ -17711,6 +22349,7 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 **Excel**
 
 ```jsl
+
 
 /* Excel files imported into a data table:
    Open( excelFilePath,
@@ -17751,6 +22390,7 @@ dt = Open(
 
 ```jsl
 
+
 /* Open of folder launches file browser */
 Open( "$SAMPLE_DATA" );
 
@@ -17759,6 +22399,7 @@ Open( "$SAMPLE_DATA" );
 **Other**
 
 ```jsl
+
 
 /* Other options:
    SAS File imported as a data table:
@@ -17819,6 +22460,7 @@ Open(
 
 ```jsl
 
+
 /* PDF file imported as one or multiple data tables
 open(pdfFilePath,
     PDF Tables(Table(<Name(name)>, Add Rows(Page(n | {page list}), <Header Rows(n)>, Rect(top, left, right, bottom), <RowBorders(n, ...)>, <Column Borders(n, ....)>), ...)) |
@@ -17841,6 +22483,7 @@ pdftable2 = Open(
 
 ```jsl
 
+
 /* Picture file imported as a picture object */
 pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
 New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
@@ -17850,6 +22493,7 @@ New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 **Text**
 
 ```jsl
+
 
 /* Text files imported into a data table:
    Open( textFilePath,
@@ -17889,6 +22533,7 @@ dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0
 
 ```jsl
 
+
 Open Database(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -17906,6 +22551,7 @@ Open Database(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
@@ -17932,6 +22578,7 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
+
 Open Help( "Help" );
 
 ```
@@ -17939,6 +22586,7 @@ Open Help( "Help" );
 **Example 2**
 
 ```jsl
+
 
 Open Help(
 	"Scripting Index",
@@ -17951,6 +22599,7 @@ Open Help(
 **Example 3**
 
 ```jsl
+
 
 Open Help(
 	"Scripting Index",
@@ -17976,6 +22625,7 @@ Open Help(
 
 ```jsl
 
+
 Open Log();
 Show( Is Log Open() );
 
@@ -17984,6 +22634,7 @@ Show( Is Log Open() );
 **Example 2**
 
 ```jsl
+
 
 /* Bring Log Windows to the Top */
 Open Log( 1 );
@@ -18001,6 +22652,7 @@ Show( Is Log Open() );
 
 ```jsl
 
+
 1 < 2 | 3 < 2;
 
 ```
@@ -18014,6 +22666,7 @@ Show( Is Log Open() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 OrMZ( 1 < 2, 3 < 2 );
 
@@ -18029,6 +22682,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ```jsl
 
+
 Ortho( [1 1, 1 -1] );
 
 ```
@@ -18043,6 +22697,7 @@ Ortho( [1 1, 1 -1] );
 
 ```jsl
 
+
 Ortho Poly( 1 :: 10, 2 );
 
 ```
@@ -18056,6 +22711,7 @@ Ortho Poly( 1 :: 10, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -18075,6 +22731,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -18098,6 +22755,7 @@ New Window( "Example",
 
 ```jsl
 
+
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
@@ -18112,6 +22770,7 @@ P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -18141,6 +22800,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -18162,6 +22822,7 @@ New Window( "Example",
 
 ```jsl
 
+
 m = J( 3, 2, -1 );
 If( Parallel Assign( {/*no locals */ }, m[a/* 1,2,3 */, b/* 1,2 */ ] = a * a + b ) == 0,
 	Throw( "thread failed" )
@@ -18180,6 +22841,7 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ```jsl
 
+
 Parameter( {a = 1}, a + 1 );
 
 ```
@@ -18194,13 +22856,14 @@ Parameter( {a = 1}, a + 1 );
 
 ```jsl
 
+
 Parse( "x+y" );
 
 ```
 
 ### Parse Date
 
-**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description:** Parses a string of a given format. If the format is a date-time format, the value is expressed as if surrounded by As Date(), returning the date in ddMonyyyy format. The optional <<Restrict used with the "Best" formatString only allows conversion using integer, decimal, and scientific formats.
 
@@ -18210,6 +22873,7 @@ Parse( "x+y" );
 
 ```jsl
 
+
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -18217,6 +22881,7 @@ Informat( "07152000", "MMDDYYYY" );
 **Example 2**
 
 ```jsl
+
 
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
@@ -18226,6 +22891,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
+
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -18234,6 +22900,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
+
 Informat( "123.45%", "Percent" );
 
 ```
@@ -18241,6 +22908,7 @@ Informat( "123.45%", "Percent" );
 **Example 5**
 
 ```jsl
+
 
 Show(
 	Informat( "1.23e4", "Best" ),
@@ -18261,6 +22929,7 @@ Show(
 
 ```jsl
 
+
 l = Parse JSON(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -18280,6 +22949,7 @@ Show( l );
 
 ```jsl
 
+
 /*See example two for more details*/
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -18296,6 +22966,7 @@ Parse XML( ex,
 **Example 2**
 
 ```jsl
+
 
 
 doc =
@@ -18356,6 +23027,7 @@ Show( docname, doctext, records, NestLevel );
 
 ```jsl
 
+
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -18380,6 +23052,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
+
 Pat Match(
 	"123456789",
 	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >> result
@@ -18398,6 +23071,7 @@ result;
 
 ```jsl
 
+
 operators = Pat Any( "*+-/" );
 text = "abc+def";
 Pat Match( text, operators >> op );
@@ -18414,6 +23088,7 @@ op;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Pat Match(
 	"123nonnumeric456",
@@ -18433,6 +23108,7 @@ result;
 
 ```jsl
 
+
 Pat Match(
 	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
 	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" ) >> c
@@ -18451,6 +23127,7 @@ Pat Match(
 
 ```jsl
 
+
 Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
 result;
 
@@ -18465,6 +23142,7 @@ result;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 b = "- ";
 Pat Match( "one two three-", Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) ) );
@@ -18481,6 +23159,7 @@ word;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 num = Pat Break( "," );
 sep = ",";
@@ -18499,6 +23178,7 @@ result;
 
 ```jsl
 
+
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
@@ -18515,6 +23195,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 source = "xxxxx";
 n = 0;
@@ -18540,6 +23221,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
+
 rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3" );
 "rc=" || Char( rc ) || " result=" || result;
 
@@ -18554,6 +23236,7 @@ rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 a = "unchanged";
 b = "unchanged";
@@ -18572,6 +23255,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 ```jsl
 
+
 Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
 result;
 
@@ -18589,6 +23273,7 @@ result;
 
 ```jsl
 
+
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -18604,6 +23289,7 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
+
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -18618,6 +23304,7 @@ While( /* repeat the match until it fails */Pat Match(
 **Example 3**
 
 ```jsl
+
 
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
@@ -18645,6 +23332,7 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
+
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -18658,6 +23346,7 @@ While( /* repeat the match until it fails */Pat Match(
 **Example 2**
 
 ```jsl
+
 
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
@@ -18673,6 +23362,7 @@ While( /* repeat the match until it fails */Pat Match(
 **Example 3**
 
 ```jsl
+
 
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
@@ -18698,6 +23388,7 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
+
 string = "John Smith";
 Pat Match(
 	string,
@@ -18718,6 +23409,7 @@ string;
 
 ```jsl
 
+
 delimiter = ";,-";
 text = "fish,dog,cat,";
 Pat Match( text, Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter ) );
@@ -18734,6 +23426,7 @@ word;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Pat Match(
 	"ab3defghi",
@@ -18754,6 +23447,7 @@ result;
 
 ```jsl
 
+
 Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -18769,6 +23463,7 @@ result;
 
 ```jsl
 
+
 Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
 result;
 
@@ -18783,6 +23478,7 @@ result;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 string = "John Smith";
 Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
@@ -18800,6 +23496,7 @@ string;
 
 ```jsl
 
+
 Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -18814,6 +23511,7 @@ result;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Pat Match(
 	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
@@ -18833,6 +23531,7 @@ Pat Match(
 
 ```jsl
 
+
 sp = Pat Span( "0123456789.-" );
 Pat Match( "junk=-33.44e33", sp >> result );
 result;
@@ -18848,6 +23547,7 @@ result;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 x = Pat String( "a" || "b" );
 Pat Match(
@@ -18867,6 +23567,7 @@ Pat Match(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 source = "xxxxx";
 n = 0;
@@ -18892,6 +23593,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
+
 Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
 result;
 
@@ -18906,6 +23608,7 @@ result;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 nCats = 0;
 whichCat = 3;
@@ -18932,6 +23635,7 @@ string;
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -18952,6 +23656,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```
@@ -18965,6 +23670,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
@@ -18981,6 +23687,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```
@@ -18994,6 +23701,7 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19014,6 +23722,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -19033,6 +23742,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Char( Pi(), 5 );
 
 ```
@@ -19046,6 +23756,7 @@ Char( Pi(), 5 );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 pickedColor = Pick Color( "Pick a Line Color", "Red" );
 New Window( "Example",
@@ -19072,6 +23783,7 @@ New Window( "Example",
 ```jsl
 
 
+
 theme = Pick Color Theme( "Choose a color theme", Type( "Bad to Good" ) );
 dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
 gb = dt << Graph Builder(
@@ -19088,6 +23800,7 @@ item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 **Row Legend**
 
 ```jsl
+
 
 
 pickedTheme = Pick Color Theme( "Pick a Color Theme" );
@@ -19108,6 +23821,7 @@ Report( biv )[FrameBox( 1 )] << Row Legend( "age", Color Theme( pickedTheme ) );
 
 ```jsl
 
+
 Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```
@@ -19115,6 +23829,7 @@ Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 **Simple**
 
 ```jsl
+
 
 Pick Directory( "Select a directory" );
 
@@ -19132,6 +23847,7 @@ Pick Directory( "Select a directory" );
 
 ```jsl
 
+
 Pick File(
 	"Select JMP File",
 	"$DOCUMENTS",
@@ -19146,6 +23862,7 @@ Pick File(
 **Example 2**
 
 ```jsl
+
 
 Files = Pick File(
 	"Select JMP File",
@@ -19165,6 +23882,7 @@ For( i = 1, i <= N Items( Files ), i++,
 **Example 3**
 
 ```jsl
+
 
 filename = Pick File(
 	"Save As Text",
@@ -19193,6 +23911,7 @@ If( Is Missing( filename ),
 
 ```jsl
 
+
 New Window( "Example",
 	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) )
 );
@@ -19202,6 +23921,7 @@ New Window( "Example",
 **Example 2**
 
 ```jsl
+
 
 pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
 New Window( "Example", Picture Box( pict ) );
@@ -19217,6 +23937,7 @@ New Window( "Example", Picture Box( pict ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19236,6 +23957,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
@@ -19257,6 +23979,7 @@ New Window( "Pie Seg",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19283,6 +24006,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -19308,6 +24032,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -19332,6 +24057,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19374,6 +24100,7 @@ New Window( "Example",
 ```jsl
 
 
+
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 10, 80 ); // in axis coordinates
@@ -19402,6 +24129,7 @@ New Window( "Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Platform example",
 	H List Box(
@@ -19428,6 +24156,7 @@ New Window( "Platform example",
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -19442,6 +24171,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -19455,6 +24185,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -19477,6 +24208,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 lambda = 4;
 New Window( "Example: Poisson Distribution",
@@ -19510,6 +24242,7 @@ New Window( "Example: Poisson Distribution",
 
 ```jsl
 
+
 lambda = 4;
 New Window( "Example: Poisson Probability",
 	pdy = Graph Box(
@@ -19536,6 +24269,7 @@ New Window( "Example: Poisson Probability",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 qexpl = 20;
 qexpn = 40;
@@ -19582,6 +24316,7 @@ New Window( "Example: Poisson Quantile",
 
 ```jsl
 
+
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
@@ -19600,6 +24335,7 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "gray" );
@@ -19612,7 +24348,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**Syntax:** area = Polygon Area( {x1, y1}, {x2, y2}, ... ); area = Polygon Area( xMatrix, yMatrix )
+**Syntax:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
 
 **Description:** Calculates the area of the specified polygon.
 
@@ -19622,6 +24358,7 @@ New Window( "Example",
 
 ```jsl
 
+
 area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -19630,13 +24367,14 @@ area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```jsl
 
+
 area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```
 
 ### Polygon Centroid
 
-**Syntax:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... ); centroid = Polygon Centroid( xMatrix, yMatrix )
+**Syntax:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **Description:** Calculates the centroid of the specified polygon.
 
@@ -19646,6 +24384,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```jsl
 
+
 {cx, cy} = Polygon Centroid( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -19653,6 +24392,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 **Example 2**
 
 ```jsl
+
 
 centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
@@ -19670,6 +24410,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "cyan" );
@@ -19686,6 +24427,7 @@ New Window( "Example",
 **Multiple polygons**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );
 rows = Where( dt, 4 <= :Shape <= 7 );
@@ -19746,6 +24488,7 @@ New Window( "Parishes",
 
 ```jsl
 
+
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
@@ -19774,6 +24517,7 @@ Show( "see new window for example output" );
 **Example 2**
 
 ```jsl
+
 
 
 A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
@@ -19819,6 +24563,7 @@ dt = As Table( points );
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -19840,6 +24585,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ex = 1;
 ex--;
 ex;
@@ -19855,6 +24601,7 @@ ex;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = 1;
 ex++;
@@ -19872,6 +24619,7 @@ ex;
 
 ```jsl
 
+
 Power( 2, 5 );
 
 ```
@@ -19885,6 +24633,7 @@ Power( 2, 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -19900,6 +24649,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19913,6 +24663,7 @@ Preferences( Graph marker size( "Large" ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -19928,6 +24679,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19942,6 +24694,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```
@@ -19955,6 +24708,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
@@ -19971,6 +24725,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 Print( 355 / 113, Pi() );
 
 ```
@@ -19984,6 +24739,7 @@ Print( 355 / 113, Pi() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];
 Print Matrix( A );
@@ -20009,6 +24765,7 @@ Print Matrix(
 
 ```jsl
 
+
 Normal Quantile( 0.9 );
 
 ```
@@ -20023,6 +24780,7 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
+
 2 * Product( i = 1, 10000, 4 * i * i / (2 * i - 1) / (2 * i + 1) );
 
 ```
@@ -20036,6 +24794,7 @@ Normal Quantile( 0.9 );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
@@ -20055,6 +24814,7 @@ Show( version );
 
 ```jsl
 
+
 Python Create JPIP CMD();
 
 ```
@@ -20062,6 +24822,7 @@ Python Create JPIP CMD();
 **Example 2**
 
 ```jsl
+
 
 
 conn = Python Connect();
@@ -20080,6 +24841,7 @@ conn << Create JPIP CMD();
 **Example 1**
 
 ```jsl
+
 
 
 a = "abcdef";
@@ -20109,6 +24871,7 @@ Show( v, m, ml, x, z, a, d );
 **Example 2**
 
 ```jsl
+
 
 
 x1 = 1;
@@ -20158,6 +24921,7 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 ```jsl
 
 
+
 date1 = As Date( Today() );
 Python Send( date1 );
 date2 = Python Get( date1 );
@@ -20170,6 +24934,7 @@ Show( date1, date2 );
 ```jsl
 
 
+
 x1 = {1, 2, 3};
 Python Send( x1 );
 x2 = Python Get( x1 );
@@ -20180,6 +24945,7 @@ Show( x1, x2 );
 **numpy.datetime64**
 
 ```jsl
+
 
 
 Python Install Packages( "numpy" );
@@ -20200,6 +24966,7 @@ Show( numpy_datetime );
 
 ```jsl
 
+
 version = Python Get Version();
 Show( version );
 
@@ -20218,6 +24985,7 @@ Show( version );
 ```jsl
 
 
+
 Python Init();
 Python Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog';
@@ -20230,6 +24998,7 @@ Show( getStr );
 **Example 2**
 
 ```jsl
+
 
 
 PythonConnection = Python Init();
@@ -20253,6 +25022,7 @@ Show( getStr );
 
 ```jsl
 
+
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
@@ -20262,6 +25032,7 @@ Python Install Packages( "numpy pandas" );
 
 ```jsl
 
+
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
@@ -20270,6 +25041,7 @@ Python Install Packages( {"numpy", "pandas"} );
 **Example 3**
 
 ```jsl
+
 
 // install numpy and pandas packages
 conn = Python Connect();
@@ -20287,6 +25059,7 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
+
 x = Python Is Connected();
 Show( x );
 
@@ -20302,6 +25075,7 @@ Show( x );
 
 ```jsl
 
+
 Python name = Python JMP Name to Python Name( a b c );
 Show( Python name );
 
@@ -20316,6 +25090,7 @@ Show( Python name );
 **JMP Version Added:** 19
 
 ```jsl
+
 
 pi = 3.1415927;
 Python Send( pi );
@@ -20339,6 +25114,7 @@ Python Submit( "print(pi)" );
 ```jsl
 
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
 Python Submit( "print(dt_weight)" );
@@ -20348,6 +25124,7 @@ Python Submit( "print(dt_weight)" );
 **Data Table**
 
 ```jsl
+
 
 
 x = {1, 2, 3};
@@ -20362,6 +25139,7 @@ Python Submit( "print(dt)" );
 **Date**
 
 ```jsl
+
 
 
 date = As Date( Today() );
@@ -20381,6 +25159,7 @@ Python Submit( "print(date)" );
 ```jsl
 
 
+
 Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
 Python Submit( "print(Big_Class)" );
@@ -20397,6 +25176,7 @@ Python Submit( "print(Baseball)" );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Python Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog'
@@ -20416,6 +25196,7 @@ Show( getStr, getNum );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Python Submit File( "some_Python_source.py" );
 
@@ -20439,6 +25220,7 @@ Python Submit File( "some_Python_source.py" );
 
 ```jsl
 
+
 QR( [11 22, 33 44] );
 
 ```
@@ -20453,6 +25235,7 @@ QR( [11 22, 33 44] );
 
 ```jsl
 
+
 QR LAPACK( [11 22, 33 44] );
 
 ```
@@ -20464,6 +25247,7 @@ QR LAPACK( [11 22, 33 44] );
 **JMP Version Added:** 17
 
 ```jsl
+
 
 A = [2 0, 0 2];
 x = [2, 3];
@@ -20480,6 +25264,7 @@ y = Quadratic Form BLAS( A, x );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Eval List(
 	{Quantile( 0.75, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 ),
@@ -20498,6 +25283,7 @@ Eval List(
 
 ```jsl
 
+
 Quarter( Today() );
 
 ```
@@ -20511,6 +25297,7 @@ Quarter( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Query( dt, "SELECT name, age, height FROM 'Big Class'
@@ -20549,6 +25336,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```jsl
 
+
 If(
 	New Window( "Quit() example",
 		<<Type( "Modal" ),
@@ -20569,6 +25357,7 @@ If(
 
 ```jsl
 
+
 RConnection = R Connect();
 
 ```
@@ -20582,6 +25371,7 @@ RConnection = R Connect();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 R Init( Echo( true ) );
 R Control( Echo( false ) );
@@ -20598,6 +25388,7 @@ R Submit( "Add R code" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 R Init();
 a = "abcdef";
@@ -20624,6 +25415,7 @@ Show( v, m, rc, x, z, a, d );
 
 ```jsl
 
+
 R Init();
 x1 = [1, 2, 3];
 R Send( x1 );
@@ -20646,13 +25438,23 @@ Close( dt1, No Save );
 
 ```jsl
 
+
 R Init();
-img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
-R Execute( {img_path}, {}, "\[
-png(img_path)
+tmp_path = Get Path Variable( "TEMP" );
+If( Host is( "Windows" ),
+	tmp_path = Substr( tmp_path, 2 )
+);  // remove leading '/' from path
+R Execute(
+	{tmp_path},
+	{},
+	"\[
+output_path <- file.path(tmp_path, "r_plot.png")
+png(filename=output_path)
 plot(1:10)
 dev.off()
-]\" );
+]\"
+);
+img_path = tmp_path || "r_plot.png";
 plot = Open( img_path );
 rc = Delete File( img_path );
 
@@ -20667,6 +25469,7 @@ rc = Delete File( img_path );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 R Init();
 version = R Get Version();
@@ -20684,6 +25487,7 @@ Show( version );
 
 ```jsl
 
+
 R Init();
 
 ```
@@ -20697,6 +25501,7 @@ R Init();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 R Init();
 connected = R Is Connected();
@@ -20712,6 +25517,7 @@ connected = R Is Connected();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 R name = R JMP Name to R Name( a b c );
 
@@ -20729,6 +25535,7 @@ R name = R JMP Name to R Name( a b c );
 
 ```jsl
 
+
 R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
@@ -20740,6 +25547,7 @@ w = R Get( "dt.weight" );
 **Data Table**
 
 ```jsl
+
 
 R Init();
 x = [1, 2, 3];
@@ -20762,6 +25570,7 @@ R Submit( "dt" );
 
 ```jsl
 
+
 R Init();
 R Send File( "$SAMPLE_DATA/Big Class.jmp" );
 R Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -20779,6 +25588,7 @@ R Submit( "Baseball" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 R Init();
@@ -20814,6 +25624,7 @@ rc = Delete File( img_path );
 ```jsl
 
 
+
 R Init();
 file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";
 R Submit File( file_path );
@@ -20830,6 +25641,7 @@ R Submit File( file_path );
 
 ```jsl
 
+
 R Init();
 R Term();
 
@@ -20844,6 +25656,7 @@ R Term();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) )
@@ -20860,6 +25673,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -20882,6 +25696,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Beta Binomial( 14, .5, .2 );
 //produce a vector of random numbers
@@ -20900,6 +25715,7 @@ Show( x, v );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exrbinp = 0.5;
 exrbinn = 40;
@@ -20964,6 +25780,7 @@ New Window( "Example: Random Binomial and Empirical Distribution",
 
 ```jsl
 
+
 Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```
@@ -20977,6 +25794,7 @@ Random Category( .2, "A", .3, "B", .4, "C", "D" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -20999,6 +25817,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random ChiSquare( 2 );
 //produce a vector of random numbers
@@ -21017,6 +25836,7 @@ Show( x, v );
 **JMP Version Added:** 18
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21039,6 +25859,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Exp();
 //produce a vector of random numbers
@@ -21057,6 +25878,7 @@ Show( x, v );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21079,6 +25901,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Frechet( 10, 5 );
 //produce a vector of random numbers
@@ -21097,6 +25920,7 @@ Show( x, v );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21119,6 +25943,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Gamma Poisson( 3, 2 );
 //produce a vector of random numbers
@@ -21139,6 +25964,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random GenGamma( 2, 1.25 );
 //produce a vector of random numbers
@@ -21157,6 +25983,7 @@ Show( x, v );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exrgeop = 0.1;
 exrgeolsz = Log( 300 );
@@ -21209,6 +26036,7 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 ```jsl
 
 
+
 //produce a single random number
 x = Random GLog( 4, 1, 0.1 );
 //produce a vector of random numbers
@@ -21228,6 +26056,7 @@ Show( x, v );
 
 ```jsl
 
+
 Random Index( 100, 5 );
 
 ```
@@ -21241,6 +26070,7 @@ Random Index( 100, 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21263,6 +26093,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Johnson Sb( 0.5, 1, 1, 1 );
 //produce a vector of random numbers
@@ -21281,6 +26112,7 @@ Show( x, v );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21303,6 +26135,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Johnson Su( 0.5, 1, 1, 1 );
 //produce a vector of random numbers
@@ -21321,6 +26154,7 @@ Show( x, v );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21343,6 +26177,7 @@ Show( x, v );
 **Example 1**
 
 ```jsl
+
 
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
@@ -21372,6 +26207,7 @@ Show( "see new window for example output" );
 **Example 2**
 
 ```jsl
+
 
   
 A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
@@ -21418,6 +26254,7 @@ dt = As Table( points );
 ```jsl
 
 
+
 //produce a single random number
 x = Random LogGenGamma( 2, 1.25 );
 //produce a vector of random numbers
@@ -21438,6 +26275,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Logistic( 15, 1 );
 //produce a vector of random numbers
@@ -21456,6 +26294,7 @@ Show( x, v );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21480,6 +26319,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Lognormal( -1, 1.5 );
 //produce a vector of random numbers
@@ -21492,6 +26332,7 @@ Show( x, v );
 **Example 2**
 
 ```jsl
+
 
 exrlnn = 30;
 New Window( "Example: Random Lognormal and Empirical Distribution",
@@ -21528,6 +26369,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ```jsl
 
+
 meanvec = 1 :: 3;
 covar = [1 .6 .6, .6 1 .6, .6 .6 1];
 randmvnRow = Random Multivariate Normal( meanvec, covar );
@@ -21544,6 +26386,7 @@ randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exnbpp = 0.3;
 exnbpn = 20;
@@ -21592,6 +26435,7 @@ New Window( "Example: Neg Binomial Probability",
 ```jsl
 
 
+
 //produce a single random number
 x = Random Normal();
 //produce a vector of random numbers
@@ -21604,6 +26448,7 @@ Show( x, v );
 **Example 2**
 
 ```jsl
+
 
 exGcoordX = J( 50, 1, . );
 exGcoordY = J( 50, 1, . );
@@ -21650,6 +26495,7 @@ New Window( "Random Normal, Linear Regression, and Outlier",
 
 ```jsl
 
+
 dt = New Table( "Example",
 	New Column( "Rand NM",
 		set formula( Random Normal Mixture( [-3, 3], [1, 1], [.3, .7] ) )
@@ -21669,6 +26515,7 @@ Distribution( Continuous Distribution( Column( :Rand NM ), Vertical( 0 ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exrpoilambda = 20;
 exrpoilsz = Log( 300 );
@@ -21728,6 +26575,7 @@ New Window( "Example: Random Poisson and Empirical Distribution",
 
 ```jsl
 
+
 Random Reset( 1 );
 Random Normal();
 
@@ -21743,6 +26591,7 @@ Random Normal();
 
 ```jsl
 
+
 r = Random Seed State();
 Random Seed State( r );
 
@@ -21757,6 +26606,7 @@ Random Seed State( r );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21781,6 +26631,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random SHASH( 0, 1, 0, 1 );
 //produce a vector of random numbers
@@ -21793,6 +26644,7 @@ Show( x, v );
 **SHASH Transformation**
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -21815,6 +26667,7 @@ Show( result1, result2 );
 
 ```jsl
 
+
 exA = [1 2 6, 3 5 8];
 Random Shuffle( exA );
 
@@ -21829,6 +26682,7 @@ Random Shuffle( exA );
 **JMP Version Added:** 17
 
 ```jsl
+
 
 Random SVD( [11 22, 33 44], 1 );
 
@@ -21845,6 +26699,7 @@ Random SVD( [11 22, 33 44], 1 );
 ```jsl
 
 
+
 //produce a single random number
 x = Random t( 2 );
 //produce a vector of random numbers
@@ -21856,13 +26711,14 @@ Show( x, v );
 
 ### Random Triangular
 
-**Syntax:** y = Random Triangular( a, b, c ); y = Random Triangular( b, c ); y = Random Triangular( b )
+**Syntax:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **Description:** Returns a random number from a triangular distribution with lower limit a, mode b, and upper limit c. Random Triangular(b,c) is equivalent to Random Triangular(0,b,c). Random Triangular(b) is equivalent to Random Triangular(0,b,1).
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Random Reset( 13579 );
 x = Random Triangular( 0.8 );
@@ -21885,6 +26741,7 @@ Show( x, y );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Uniform( 1, 10 );
 //produce a vector of random numbers
@@ -21897,6 +26754,7 @@ Show( x, v );
 **Example 2**
 
 ```jsl
+
 
 Random Uniform( 1, 10 );
 
@@ -21911,6 +26769,7 @@ Random Uniform( 1, 10 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21933,6 +26792,7 @@ Show( x, v );
 **Example 1**
 
 ```jsl
+
 
 exnbpp = 0.3;
 exnbpn = 20;
@@ -21980,6 +26840,7 @@ New Window( "Example: Zero Inflated Negative Binomial",
 
 ```jsl
 
+
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );
 Column( 1 ) << set name( "Random ZiNB" );
@@ -22005,6 +26866,7 @@ dt << Distribution(
 **Example 1**
 
 ```jsl
+
 
 exnbpp = 0.3;
 exnbpn = 20;
@@ -22044,6 +26906,7 @@ New Window( "Example: Zero Inflated Poisson",
 
 ```jsl
 
+
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );
 Column( 1 ) << set name( "Random ZIP" );
@@ -22068,6 +26931,7 @@ dt << Distribution(
 
 ```jsl
 
+
 Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```
@@ -22081,6 +26945,7 @@ Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 sliderLowerValue = .5;
 sliderUpperValue = .7;
@@ -22111,6 +26976,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Rank( [33, 22, 44, 11, ., 33] );
 
 ```
@@ -22124,6 +26990,7 @@ Rank( [33, 22, 44, 11, ., 33] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Rank Index( [33, 22, 44, 11, ., 33] );
 
@@ -22139,6 +27006,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ```jsl
 
+
 Ranking( [33, 22, 44, 11, 33] );
 Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
@@ -22153,6 +27021,7 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Ranking Tie( [33, 22, 44, 11, 33] );
 
@@ -22176,6 +27045,7 @@ Special JSL variables are populated during the execution of the command:
 
 ```jsl
 
+
 Recode(
 	"27513-0000",
 	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )}
@@ -22186,6 +27056,7 @@ Recode(
 **Example 2**
 
 ```jsl
+
 
 Recode(
 	"A B C",
@@ -22204,6 +27075,7 @@ Recode(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -22227,6 +27099,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ex rev = Function( {s},
 	If( Length( s ) <= 1,
 		s,
@@ -22247,6 +27120,7 @@ ex rev( "abcd" );
 
 ```jsl
 
+
 Regex(
 	"   Are you there Alice?, asked Jerry.",
 	" (here|there) (\w+).+(said|asked) (\w+)\.",
@@ -22264,6 +27138,7 @@ Regex(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 source = "believe";
@@ -22301,6 +27176,7 @@ Show( source, matches );
 
 ```jsl
 
+
 Register Addin(
 	"com.mycompany.myaddin",
 	"$DOCUMENTS/myaddin",
@@ -22319,6 +27195,7 @@ Register Addin(
 
 ```jsl
 
+
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```
@@ -22333,6 +27210,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```jsl
 
+
 Remove Color Theme( "Yellow To Blue" );
 
 ```
@@ -22346,6 +27224,7 @@ Remove Color Theme( "Yellow To Blue" );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
@@ -22363,6 +27242,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```jsl
 
+
 ex = {11, 22, 33, 44, 55};
 Remove From( ex, 3, 2 );
 ex;
@@ -22373,6 +27253,7 @@ ex;
 
 ```jsl
 
+
 ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
 Remove From( ex, "c" );
 ex;
@@ -22382,6 +27263,7 @@ ex;
 **Example 3**
 
 ```jsl
+
 
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
@@ -22400,6 +27282,7 @@ Remove From( hlist, 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Delete Directory( "$TEMP/subD" );
 Delete Directory( "$TEMP/Loss Function Templates" );
@@ -22424,6 +27307,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
+
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -22445,6 +27329,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
+
 Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```
@@ -22458,6 +27343,7 @@ Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
@@ -22473,6 +27359,7 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Freq", numeric, formula( Resample Freq() ) );
@@ -22501,6 +27388,7 @@ theBox << CloseWindow;
 
 ```jsl
 
+
 vr = Function( {},
 	x = 2;
 	y = 4;
@@ -22527,6 +27415,7 @@ Show( vrv, lvrv, nrv );
 
 ```jsl
 
+
 f = Function( {a, b},
 	Return( a - b, a + b )
 );
@@ -22546,6 +27435,7 @@ Show( f( 7, 15 ) );
 
 ```jsl
 
+
 Reverse( {11, 22, 33, 44, 55} );
 
 ```
@@ -22562,6 +27452,7 @@ Reverse( {11, 22, 33, 44, 55} );
 
 ```jsl
 
+
 ex = {11, 22, 33, 44, 55};
 Reverse Into( ex );
 ex;
@@ -22571,6 +27462,7 @@ ex;
 **Example 2**
 
 ```jsl
+
 
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
@@ -22590,6 +27482,7 @@ Reverse Into( hlist );
 
 ```jsl
 
+
 /* Reverts menus back to factory default settings. */
 
 ```
@@ -22603,6 +27496,7 @@ Reverse Into( hlist );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "RGB Color Example", 
     /* 1 through 16 are good */ 
@@ -22642,6 +27536,7 @@ New Window( "RGB Color Example",
 
 ```jsl
 
+
 Right( "http://www.jmp.com", 3 );
 
 ```
@@ -22655,6 +27550,7 @@ Right( "http://www.jmp.com", 3 );
 **JMP Version Added:** 16
 
 ```jsl
+
 
 X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1, 4 5 -4 -3 1];
 X[2, 3] += 15;
@@ -22672,6 +27568,7 @@ Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 ```jsl
 
+
 Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```
@@ -22685,6 +27582,7 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Round( 213, -1 );
 
@@ -22702,6 +27600,7 @@ Round( 213, -1 );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( 5 );
 Show( Row() );
@@ -22712,6 +27611,7 @@ Row() = 0;
 **Set Row**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
@@ -22729,6 +27629,7 @@ Row() = 3;
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, .5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -22737,7 +27638,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Run Program
 
-**Syntax:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt; )
+**Syntax:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **Description:** Control an external program using stdin and stdout.
 
@@ -22746,6 +27647,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 **Example 1**
 
 ```jsl
+
 
 RP = Run Program(
 	Executable( "PING.EXE"/*path probably not needed*/ ),
@@ -22759,6 +27661,7 @@ RP = Run Program(
 
 ```jsl
 
+
 RP = Run Program(
 	Executable( "CMD.EXE"/*path probably not needed*/ ),
 	Options( {"/a", "/q", "/c dir"} ),
@@ -22770,6 +27673,7 @@ RP = Run Program(
 **Example 3**
 
 ```jsl
+
 
 commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};
 icommand = 0;
@@ -22793,6 +27697,37 @@ RP = Run Program(
 
 ```
 
+**Example 4**
+
+```jsl
+
+
+
+/* /u instructs CMD to produce Unicode output which we decode. */
+RP = Run Program(
+	Executable( "cmd.exe" ),
+	Options( "\[/u /c echo こんにちは]\" ),
+	Read Function( "blob" )
+);
+Show( Blob To Char( RP, "utf-16le" ) );
+
+```
+
+**Example 5**
+
+```jsl
+
+
+/*This example assumes a Japanese OS. 'blob' is used as 'text' assumes ASCII output.*/
+RP = Run Program(
+	Executable( "cmd.exe" ),
+	Options( "\[/c echo こんにちは]\" ),
+	Read Function( "blob" )
+);
+Show( Blob To Char( RP, "shift_jis" ) );
+
+```
+
 ### SAS Name
 
 **Syntax:** sasName = SAS Name( string|namelist )
@@ -22802,6 +27737,7 @@ RP = Run Program(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 SAS Name( {"x 1", "x 2"} );
 
@@ -22817,6 +27753,7 @@ SAS Name( {"x 1", "x 2"} );
 
 ```jsl
 
+
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```
@@ -22830,6 +27767,7 @@ SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Save Log( "$TEMP/log.txt" );
 exlogText = Load Text File( "$TEMP/log.txt" );
@@ -22847,6 +27785,7 @@ Substr( exlogText, 1, 30 );
 
 ```jsl
 
+
 Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
 Load Text File( "$TEMP/DeleteMe.txt" );
 
@@ -22862,6 +27801,7 @@ Load Text File( "$TEMP/DeleteMe.txt" );
 
 ```jsl
 
+
 SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -22876,6 +27816,7 @@ SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
+
 Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -22889,6 +27830,7 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Scene = Scene Box( 600, 600 );
 Scene << backgroundcolor( 0 );
@@ -22914,6 +27856,7 @@ Scene << update;
 
 ```jsl
 
+
 ex = Scene Display List();
 ex << color( .9, .9, .9 );
 ex << Text( center, middle, .3, "Hello World" );
@@ -22938,6 +27881,7 @@ exScene << update;
 
 ```jsl
 
+
 Schedule(
 	10,
 	Beep();
@@ -22956,6 +27900,7 @@ Schedule(
 
 ```jsl
 
+
 Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```
@@ -22969,6 +27914,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 Scoring Impute(
 	[1 2 3 . 4 .],
@@ -22991,6 +27937,7 @@ Scoring Impute(
 
 ```jsl
 
+
 Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
 New Window( "This is a script box", Script );
 
@@ -22999,6 +27946,7 @@ New Window( "This is a script box", Script );
 **Python script**
 
 ```jsl
+
 
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
@@ -23016,6 +27964,7 @@ New Window( "This is a python script box", Script );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -23045,6 +27994,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Second( Today() );
 
 ```
@@ -23058,6 +28008,7 @@ Second( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
@@ -23077,6 +28028,7 @@ Selected();
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -23093,6 +28045,7 @@ Selected( Row State( 3 ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
@@ -23107,6 +28060,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Row() = 3;
 Sequence( 1, 9, 2 );
@@ -23123,6 +28077,7 @@ Sequence( 1, 9, 2 );
 
 ```jsl
 
+
 Set Clipboard( "example" );
 
 ```
@@ -23136,6 +28091,7 @@ Set Clipboard( "example" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Set Default Directory( "$SAMPLE_DATA" );
 Open( "Big Class.jmp" );
@@ -23151,6 +28107,7 @@ Open( "Big Class.jmp" );
 **JMP Version Added:** 19
 
 ```jsl
+
 
 Show( Set Difference( {1, 3}, {3, 2} ) );
 Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
@@ -23171,6 +28128,7 @@ NOTE: On the Macintosh operating system, the variable name is case-sensitive.
 
 ```jsl
 
+
 Set Environment Variable( "PATH", "some path to a directory" );
 
 ```
@@ -23184,6 +28142,7 @@ Set Environment Variable( "PATH", "some path to a directory" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Set File Search Path(
 	{Convert File Path( "$SAMPLE_DATA/" ), Convert File Path( "$SAMPLE_DATA/Time Series/" )}
@@ -23204,6 +28163,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 **JMP Version Added:** 17
 
 ```jsl
+
 
 Set Global Window Handler(
 	Function( {window},
@@ -23226,6 +28186,7 @@ Clear Global Window Handler();
 
 ```jsl
 
+
 Show( Set Intersection( {1, 3}, {3, 2} ) );
 Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -23243,6 +28204,7 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
+
 Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```
@@ -23256,6 +28218,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
@@ -23271,6 +28234,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -23285,6 +28249,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -23298,6 +28263,7 @@ Preferences( Graph marker size( "Large" ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -23314,6 +28280,7 @@ Returns 1 if successful, 0 if unsuccessful.
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 // Make the Analyze toolbar visible in Script windows
@@ -23340,6 +28307,7 @@ Set Toolbar Visibility( Default, All );
 
 ```jsl
 
+
 Show( Set Union( {1, 3}, {3, 2} ) );
 Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 all = {};
@@ -23360,6 +28328,7 @@ Show( all );
 
 ```jsl
 
+
 Show( Set Unique( {1, 3, 2} ) );
 Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -23377,6 +28346,7 @@ Show( Set Unique( :sports ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 50;
 sig = 5;
@@ -23406,6 +28376,7 @@ New Window( "Example: SEV Density",
 
 ```jsl
 
+
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Distribution",
@@ -23432,6 +28403,7 @@ New Window( "Example: SEV Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 mu = 50;
 sig = 5;
@@ -23471,6 +28443,7 @@ New Window( "Example: SEV Quantile",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -23485,6 +28458,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Eval List(
 	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ), Shape( [11 22, 33 44], ., 4 )
@@ -23502,6 +28476,7 @@ Eval List(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Shape Seg Example",
 	Graph Box(
@@ -23526,6 +28501,7 @@ New Window( "Shape Seg Example",
 
 ```jsl
 
+
 SHASH Density( 0, -1, 2, -2, 3 );
 
 ```
@@ -23533,6 +28509,7 @@ SHASH Density( 0, -1, 2, -2, 3 );
 **SHASH Transformation**
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -23556,6 +28533,7 @@ Show( result1, result2 );
 **Example 1**
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 1;
@@ -23592,6 +28570,7 @@ New Window( "Example: SHASH Distribution",
 
 ```jsl
 
+
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -23615,6 +28594,7 @@ Show( result1, result2 );
 
 ```jsl
 
+
 SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```
@@ -23622,6 +28602,7 @@ SHASH Quantile( .5, 1, 2, 3, 1 );
 **SHASH Transformation**
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -23643,6 +28624,7 @@ Show( result1, result2 );
 **JMP Version Added:** 14
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -23666,6 +28648,7 @@ Show( x1, x2 );
 
 ```jsl
 
+
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -23686,6 +28669,7 @@ Show( result1, result2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -23736,6 +28720,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```
@@ -23752,6 +28737,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```jsl
 
+
 ex = {11, 22, 33, 44, 55};
 Shift Into( ex, -2 );
 ex;
@@ -23761,6 +28747,7 @@ ex;
 **Example 2**
 
 ```jsl
+
 
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
@@ -23780,6 +28767,7 @@ Shift Into( hlist, -2 );
 
 ```jsl
 
+
 Short Date( Today() );
 
 ```
@@ -23793,6 +28781,7 @@ Short Date( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );
 common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),
@@ -23815,6 +28804,7 @@ common;
 
 ```jsl
 
+
 Show( 355 / 113, Pi() );
 
 ```
@@ -23828,6 +28818,7 @@ Show( 355 / 113, Pi() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Show Addin Builder Dialog();
 
@@ -23843,6 +28834,7 @@ Show Addin Builder Dialog();
 
 ```jsl
 
+
 Show Addins Dialog();
 
 ```
@@ -23856,6 +28848,7 @@ Show Addins Dialog();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -23908,6 +28901,7 @@ Show Classes();
 
 ```jsl
 
+
 Show Commands();
 
 ```
@@ -23922,6 +28916,7 @@ Show Commands();
 
 ```jsl
 
+
 Show Globals();
 
 ```
@@ -23935,6 +28930,7 @@ Show Globals();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Namespace(
 	"complex",
@@ -23977,6 +28973,7 @@ Delete Namespaces( "complex" );
 
 ```jsl
 
+
 Show Preferences();
 
 ```
@@ -23990,6 +28987,7 @@ Show Preferences();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Show Properties( Current Data Table() );
 
@@ -24005,6 +29003,7 @@ Show Properties( Current Data Table() );
 
 ```jsl
 
+
 Show Symbols();
 
 ```
@@ -24018,6 +29017,7 @@ Show Symbols();
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
@@ -24033,6 +29033,7 @@ Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
 ```jsl
 
+
 Sine( Pi() / 6 );
 
 ```
@@ -24046,6 +29047,7 @@ Sine( Pi() / 6 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Sine( Pi() / 6 );
 
@@ -24061,6 +29063,7 @@ Sine( Pi() / 6 );
 
 ```jsl
 
+
 SinH( 1 );
 
 ```
@@ -24074,6 +29077,7 @@ SinH( 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 sliderValue = .6;
 New Window( "Example",
@@ -24100,6 +29104,7 @@ New Window( "Example",
 
 ```jsl
 
+
 SlInv( 1.96, 1.5, 2, 1 );
 
 ```
@@ -24114,6 +29119,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ```jsl
 
+
 Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```
@@ -24122,11 +29128,12 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 **Syntax:** points = Sobol Quasi Random Sequence(nDim, nRow)
 
-**Description:** Generate a sequence of space filling quasi-random numbers using the Sobol sequence in up to 4000 dimensions.
+**Description:** Generates a sequence of space filling quasi-random numbers using the Sobol sequence in up to 21,201 dimensions.
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 A = Sobol Quasi Random Sequence( 3, 100 );
 As Table( A );
@@ -24143,6 +29150,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 // see the socket's OBJECT messages in the scripting index for better examples
@@ -24188,6 +29196,7 @@ If( rc[2] == "ok",
 
 ```jsl
 
+
 Solve( [1 1, -1 4], [11, 14] );
 
 ```
@@ -24201,6 +29210,7 @@ Solve( [1 1, -1 4], [11, 14] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Sort Ascending( {111, 212, 133, 114, 55} );
 
@@ -24216,6 +29226,7 @@ Sort Ascending( {111, 212, 133, 114, 55} );
 
 ```jsl
 
+
 Sort Descending( {111, 212, 133, 114, 55} );
 
 ```
@@ -24230,6 +29241,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 ```jsl
 
+
 Sort List( {111, 212, 133, 114, 55} );
 
 ```
@@ -24243,6 +29255,7 @@ Sort List( {111, 212, 133, 114, 55} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = {111, 212, 133, 114, 55};
 Sort List Into( ex );
@@ -24259,6 +29272,7 @@ ex;
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 3 ),
@@ -24282,6 +29296,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ```
@@ -24296,6 +29311,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ```jsl
 
+
 Speak( "Hello" );
 
 ```
@@ -24309,6 +29325,7 @@ Speak( "Hello" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box(
@@ -24331,6 +29348,7 @@ nb << Set Increment( 1 );
 
 ```jsl
 
+
 Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ```
@@ -24344,6 +29362,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 
 New Window( "Spline Fit",
@@ -24379,6 +29398,7 @@ New Window( "Spline Fit",
 
 ```jsl
 
+
 Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ```
@@ -24392,6 +29412,7 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Round( Sqrt( 2 ), 4 );
 
@@ -24407,6 +29428,7 @@ Round( Sqrt( 2 ), 4 );
 
 ```jsl
 
+
 Squash( 10 );
 
 ```
@@ -24420,6 +29442,7 @@ Squash( 10 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Logist( 2 );
 
@@ -24435,6 +29458,7 @@ Logist( 2 );
 
 ```jsl
 
+
 Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```
@@ -24448,6 +29472,7 @@ Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Starts With( "http://www.jmp.com", "http:" );
 
@@ -24463,6 +29488,7 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ```jsl
 
+
 Status Msg( "calculating..." );
 
 ```
@@ -24477,19 +29503,21 @@ Status Msg( "calculating..." );
 
 ```jsl
 
+
 Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```
 
 ### Step
 
-**Syntax:** y = Step( x, x1, y1, x2, y2, ... ) y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Syntax:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Description:** Returns the yi argument corresponding to the largest xi value which satisfies xi less than or equal to the x argument. Note that the xi arguments must be specified in order.
 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Step( 2.5, [1 2 3], [15, 20, 30] );
 
@@ -24505,6 +29533,7 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
+
 STK:ArchSpiral( 3, 1, 1 );
 
 ```
@@ -24512,6 +29541,7 @@ STK:ArchSpiral( 3, 1, 1 );
 **Example 2**
 
 ```jsl
+
 
 For Each( {v, i}, 1 :: 30, Show( STK:ArchSpiral( v ) ) );
 
@@ -24527,6 +29557,7 @@ For Each( {v, i}, 1 :: 30, Show( STK:ArchSpiral( v ) ) );
 
 ```jsl
 
+
 STK:arctan2( 3, 4 );
 
 ```
@@ -24534,6 +29565,7 @@ STK:arctan2( 3, 4 );
 **Example 2**
 
 ```jsl
+
 
 STK:arctan2( 3, 4 );
 
@@ -24549,6 +29581,7 @@ STK:arctan2( 3, 4 );
 
 ```jsl
 
+
 STK:Cart2Polar( 3, 4 );
 
 ```
@@ -24556,6 +29589,8 @@ STK:Cart2Polar( 3, 4 );
 **Example 2**
 
 ```jsl
+
+
 
 
 x = [1, -1, 1, -1];
@@ -24575,6 +29610,7 @@ For Each( {{a, b}, index}, Across( x, y ), Show( STK:Cart2Polar( a, b ) ) );
 
 ```jsl
 
+
 STK:deg2rad( 45 );
 
 ```
@@ -24582,6 +29618,7 @@ STK:deg2rad( 45 );
 **Example 2**
 
 ```jsl
+
 
 STK:um2mm( 45 );
 
@@ -24597,6 +29634,7 @@ STK:um2mm( 45 );
 
 ```jsl
 
+
 STK:DieIndex( 3, 4 );
 
 ```
@@ -24604,6 +29642,7 @@ STK:DieIndex( 3, 4 );
 **Example 2**
 
 ```jsl
+
 
 Example;
 
@@ -24623,6 +29662,7 @@ NOTE: This simulator is entirely empirical and for demonstration, teaching, or t
 
 ```jsl
 
+
 STK:LPCVDSim( 0, 0 );
 
 ```
@@ -24630,6 +29670,7 @@ STK:LPCVDSim( 0, 0 );
 **Example 2**
 
 ```jsl
+
 
 STK:LPCVDSim( 0, 0, 100 );
 
@@ -24645,6 +29686,7 @@ STK:LPCVDSim( 0, 0, 100 );
 
 ```jsl
 
+
 STK:mm2um( 3 );
 
 ```
@@ -24652,6 +29694,7 @@ STK:mm2um( 3 );
 **Example 2**
 
 ```jsl
+
 
 STK:mm2um( 3 );
 
@@ -24667,6 +29710,7 @@ STK:mm2um( 3 );
 
 ```jsl
 
+
 STK:MShape( J( 13, 20 ) );
 
 ```
@@ -24674,6 +29718,7 @@ STK:MShape( J( 13, 20 ) );
 **Example 2**
 
 ```jsl
+
 
 STK:MShape( J( 13, 20 ) );
 
@@ -24689,6 +29734,7 @@ STK:MShape( J( 13, 20 ) );
 
 ```jsl
 
+
 STK:Polar2Cart( 1, Pi() / 4 );
 
 ```
@@ -24696,6 +29742,8 @@ STK:Polar2Cart( 1, Pi() / 4 );
 **Example 2**
 
 ```jsl
+
+
 
 
 x = [1, -1, 1, -1];
@@ -24719,6 +29767,7 @@ For Each( {{a, b}, index}, Across( x, y ),
 
 ```jsl
 
+
 STK:ProcessSim( 13 );
 
 ```
@@ -24727,6 +29776,7 @@ STK:ProcessSim( 13 );
 
 ```jsl
 
+
 STK:ProcessSim( 13, 150 );
 
 ```
@@ -24734,6 +29784,7 @@ STK:ProcessSim( 13, 150 );
 **Example 3**
 
 ```jsl
+
 
 STK:ProcessSim( 100, 150, "Std Dev", "full" );
 
@@ -24749,6 +29800,7 @@ STK:ProcessSim( 100, 150, "Std Dev", "full" );
 
 ```jsl
 
+
 STK:rad2deg( 0.79 );
 
 ```
@@ -24756,6 +29808,7 @@ STK:rad2deg( 0.79 );
 **Example 2**
 
 ```jsl
+
 
 STK:um2mm( 0.79 );
 
@@ -24771,6 +29824,7 @@ STK:um2mm( 0.79 );
 
 ```jsl
 
+
 STK:Radius( 3, 4 );
 
 ```
@@ -24778,6 +29832,7 @@ STK:Radius( 3, 4 );
 **Example 2**
 
 ```jsl
+
 
 STK:Radius( 3, 4 );
 
@@ -24793,6 +29848,7 @@ STK:Radius( 3, 4 );
 
 ```jsl
 
+
 STK:Theta( 3, 4 );
 
 ```
@@ -24800,6 +29856,7 @@ STK:Theta( 3, 4 );
 **Example 2**
 
 ```jsl
+
 
 STK:Theta( 3, 4 );
 
@@ -24815,6 +29872,7 @@ STK:Theta( 3, 4 );
 
 ```jsl
 
+
 STK:um2mm( 3 );
 
 ```
@@ -24822,6 +29880,7 @@ STK:um2mm( 3 );
 **Example 2**
 
 ```jsl
+
 
 STK:um2mm( 3 );
 
@@ -24837,6 +29896,7 @@ STK:um2mm( 3 );
 
 ```jsl
 
+
 STK:xCart( 1, Pi() / 4 );
 
 ```
@@ -24844,6 +29904,7 @@ STK:xCart( 1, Pi() / 4 );
 **Example 2**
 
 ```jsl
+
 
 STK:xCart( 1, Pi() / 4 );
 
@@ -24859,6 +29920,7 @@ STK:xCart( 1, Pi() / 4 );
 
 ```jsl
 
+
 STK:yCart( 1, Pi() / 4 );
 
 ```
@@ -24866,6 +29928,7 @@ STK:yCart( 1, Pi() / 4 );
 **Example 2**
 
 ```jsl
+
 
 STK:yCart( 1, Pi() / 4 );
 
@@ -24880,6 +29943,7 @@ STK:yCart( 1, Pi() / 4 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 For( i = 1, i <= 10, i++,
 	If( i == 7, Stop() );
@@ -24898,6 +29962,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
+
 Straight Line Depreciation( 1000, 100, 3 );
 
 ```
@@ -24911,6 +29976,7 @@ Straight Line Depreciation( 1000, 100, 3 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -24934,6 +30000,7 @@ New Window( "Example",
 
 ```jsl
 
+
 a = b = c = "";
 New Window( "Example",
 	Modal,
@@ -24952,6 +30019,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 tdedf = 1;
 New Window( "Example: Students t Density",
@@ -24987,6 +30055,7 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
+
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -25011,6 +30080,7 @@ New Window( "Example: Students t Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 extqdf = 1;
 extqqq = 0.5;
@@ -25044,6 +30114,7 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
+
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -25065,6 +30136,7 @@ Close( dt );
 **Example 2**
 
 ```jsl
+
 
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
@@ -25093,13 +30165,14 @@ dt << setname( "xxx" );
 
 ```jsl
 
+
 {11, 12, 13}[2];
 
 ```
 
 ### Substitute
 
-**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Returns a copy of string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -25109,6 +30182,7 @@ dt << setname( "xxx" );
 
 ```jsl
 
+
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
@@ -25117,6 +30191,7 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```jsl
 
+
 Substitute( "All things considered", "All", "Some" );
 
 ```
@@ -25124,6 +30199,7 @@ Substitute( "All things considered", "All", "Some" );
 **Example 3**
 
 ```jsl
+
 
 lst = {"a", "b", "c"};
 Substitute( lst, "a", "A" );
@@ -25134,6 +30210,7 @@ Substitute( lst, "a", "A" );
 
 ```jsl
 
+
 Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
@@ -25141,6 +30218,7 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 **Example 5**
 
 ```jsl
+
 
 Substitute( "Apple,orange,banana-grape",
 	Items( Get Punctuation Characters() || "-'", "" ), " "
@@ -25152,13 +30230,14 @@ Substitute( "Apple,orange,banana-grape",
 
 ```jsl
 
+
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
 
 ### Substitute Into
 
-**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Modifies string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. Note that the x argument must be a variable. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -25167,6 +30246,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 **Example 1**
 
 ```jsl
+
 
 ex = Expr( a + Sqrt( a ) );
 Substitute Into( ex, Expr( a ), Expr( b ) );
@@ -25178,6 +30258,7 @@ Name Expr( ex );
 
 ```jsl
 
+
 ex = "All things considered";
 Substitute Into( ex, "All", "Some" );
 Show( ex );
@@ -25188,6 +30269,7 @@ Show( ex );
 
 ```jsl
 
+
 lst = {"a", "b", "c"};
 Substitute Into( lst, "a", "A" );
 Show( lst );
@@ -25197,6 +30279,7 @@ Show( lst );
 **Example 4**
 
 ```jsl
+
 
 s = "Apple,APPLE,apple";
 Substitute Into( s, "apple", "orange", <<IGNORECASE );
@@ -25214,6 +30297,7 @@ Show( s );
 
 ```jsl
 
+
 Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```
@@ -25228,6 +30312,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```jsl
 
+
 6 - 2 - 1;
 
 ```
@@ -25241,6 +30326,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex = 1;
 ex -= 2;
@@ -25258,6 +30344,7 @@ ex;
 
 ```jsl
 
+
 SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -25271,6 +30358,7 @@ SuInv( 1.96, 1.5, 2, 1, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
@@ -25286,6 +30374,7 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```jsl
 
+
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ```
@@ -25299,6 +30388,7 @@ Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( exg = By( :sex ), exm = Mean( :height ) );
@@ -25316,6 +30406,7 @@ Eval List( {exg, Round( exm, 1 )} );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
@@ -25331,6 +30422,7 @@ Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
 ```jsl
 
+
 Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ```
@@ -25344,6 +30436,7 @@ Summation( i = 0, 10, 1 / Factorial( i ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Suppress Formula Eval( 1 );
 
@@ -25359,6 +30452,7 @@ Suppress Formula Eval( 1 );
 
 ```jsl
 
+
 Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -25372,6 +30466,7 @@ Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 SVD( [11 22, 33 44] );
 
@@ -25387,6 +30482,7 @@ SVD( [11 22, 33 44] );
 
 ```jsl
 
+
 SVD LAPACK( [11 22, 33 44] );
 
 ```
@@ -25400,6 +30496,7 @@ SVD LAPACK( [11 22, 33 44] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 exMatswp = Sweep( exMat, [1, 2, 3, 4] );
@@ -25419,6 +30516,7 @@ Show( exMatinv );
 
 ```jsl
 
+
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatA = exMatA` * exMatA;
 exMatB = [1 2, 1 2, 1 2];
@@ -25435,6 +30533,7 @@ exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 tdedf = 1;
 New Window( "Example: Students t Density",
@@ -25470,6 +30569,7 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
+
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -25494,6 +30594,7 @@ New Window( "Example: Students t Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 tlcdidf = 1;
 New Window( "Example: Students t Log CDistribution",
@@ -25520,6 +30621,7 @@ New Window( "Example: Students t Log CDistribution",
 
 ```jsl
 
+
 tldedf = 1;
 New Window( "Example: Students t Log Density",
 	tldegr = Graph Box(
@@ -25544,6 +30646,7 @@ New Window( "Example: Students t Log Density",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 tldidf = 1;
 New Window( "Example: Students t Log Distribution",
@@ -25570,6 +30673,7 @@ New Window( "Example: Students t Log Distribution",
 
 ```jsl
 
+
 New Window( "Example: t Noncentrality",
 	tncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -25592,6 +30696,7 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 extqdf = 1;
 extqqq = 0.5;
@@ -25623,6 +30728,7 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -25644,6 +30750,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		tp = Tab Page Box( Title( "alpha" ), Panel Box( "panel", Text Box( "text" ) ) ),
@@ -25662,6 +30769,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -25685,6 +30793,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Tangent( Pi() / 4 );
 
 ```
@@ -25698,6 +30807,7 @@ Tangent( Pi() / 4 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Tangent( Pi() / 4 );
 
@@ -25713,13 +30823,14 @@ Tangent( Pi() / 4 );
 
 ```jsl
 
+
 TanH( 1 );
 
 ```
 
 ### Text
 
-**Syntax:** Text( &lt;properties&gt;, {x, y}, text, ... ) Text( {left, top, right, bottom}, text )
+**Syntax:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
 
 **Description:** Moves to the {x, y} position and draws text specified by the text argument. Named property arguments include Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. The position arguments, named arguments, and strings can be mixed in any order. You can also use four x, y coordinates to describe a box within which to draw the text. In that case, properties are not used.
 
@@ -25728,6 +30839,7 @@ TanH( 1 );
 **Example 1**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -25741,6 +30853,7 @@ New Window( "Example",
 **Example 2**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -25760,6 +30873,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Justification Example",
 	Outline Box( "text",
@@ -25799,6 +30913,7 @@ New Window( "Justification Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -25817,6 +30932,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example: Text Edit Box",
 	Outline Box( "Picker Example",
@@ -25844,6 +30960,7 @@ New Window( "Example: Text Edit Box",
 **JMP Version Added:** 15
 
 ```jsl
+
 
 New Window( "Degrees",
 	Graph Box(
@@ -25876,6 +30993,7 @@ New Window( "Degrees",
 
 ```jsl
 
+
 score = Text Score(
 	"over the lazy dogs back",
 	["lazy" => 1, "dogs" => 2],
@@ -25894,6 +31012,7 @@ Show( score );
 
 ```jsl
 
+
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom left" ) );
 
@@ -25908,6 +31027,7 @@ w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom l
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -25927,6 +31047,7 @@ New Window( "Example",
 **JMP Version Added:** 14
 
 ```jsl
+
 
 If(
 	Is Empty( This Project() ), Print( "Project: (none)" ),
@@ -25948,6 +31069,7 @@ If(
 ```jsl
 
 
+
 Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );
 Print( "AFTER TRY message not reached" );
 
@@ -25957,6 +31079,7 @@ Print( "AFTER TRY message not reached" );
 
 ```jsl
 
+
 Throw( "A line number is included in this error", 1 );
 
 ```
@@ -25964,6 +31087,7 @@ Throw( "A line number is included in this error", 1 );
 **Try-Catch**
 
 ```jsl
+
 
 Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
@@ -25978,6 +31102,7 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 t1 = Tick Seconds();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -25996,6 +31121,7 @@ Round( t2 - t1, 3 );
 
 ```jsl
 
+
 Format( Time Of Day( Today() ), "h:m:s" );
 
 ```
@@ -26009,6 +31135,7 @@ Format( Time Of Day( Today() ), "h:m:s" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Titlecase( "The dog crossed the road" );
 
@@ -26026,6 +31153,7 @@ Titlecase( "The dog crossed the road" );
 
 ```jsl
 
+
 To Color Space( "red", "LMS" );
 
 ```
@@ -26034,6 +31162,7 @@ To Color Space( "red", "LMS" );
 
 ```jsl
 
+
 To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```
@@ -26041,6 +31170,7 @@ To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 **Example 3**
 
 ```jsl
+
 
 To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
@@ -26056,6 +31186,7 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ```jsl
 
+
 As Date( Today() );
 
 ```
@@ -26069,6 +31200,7 @@ As Date( Today() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Trace( [11 22, 33 44] );
 
@@ -26086,6 +31218,7 @@ Trace( [11 22, 33 44] );
 
 ```jsl
 
+
 values = Transform Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value + 1 );
 Show( values );
 
@@ -26095,6 +31228,7 @@ Show( values );
 
 ```jsl
 
+
 ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
 Show( ex );
 
@@ -26103,6 +31237,7 @@ Show( ex );
 **Expression 2**
 
 ```jsl
+
 
 // Find Functions defined in a script
 parsedScript = Include( "$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl", <<ParseOnly );
@@ -26127,6 +31262,7 @@ Show( functionNames );
 
 ```jsl
 
+
 values = Transform Each( {value}, {10, 20, 30}, value + 5 );
 Show( values );
 
@@ -26136,6 +31272,7 @@ Show( values );
 
 ```jsl
 
+
 values = Transform Each( {element}, 10 :: 15, element + 5 );
 Show( values );
 
@@ -26144,6 +31281,7 @@ Show( values );
 **Output**
 
 ```jsl
+
 
 
 Write( "\!N===List===" );
@@ -26174,6 +31312,7 @@ Show( ex );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Frame Size( 500, 500 ),
@@ -26199,6 +31338,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ```
@@ -26212,6 +31352,7 @@ Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
@@ -26239,6 +31380,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
@@ -26269,6 +31411,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
@@ -26277,6 +31420,7 @@ tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 **Example 2**
 
 ```jsl
+
 
 tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
@@ -26292,6 +31436,7 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```jsl
 
+
 Trigamma( 5 );
 
 ```
@@ -26305,6 +31450,7 @@ Trigamma( 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Trim( " title   ", both );
 
@@ -26320,6 +31466,7 @@ Trim( " title   ", both );
 
 ```jsl
 
+
 Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -26333,6 +31480,7 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 TripleS Import(); //To get a file dialog to select the XML file
 TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
@@ -26351,6 +31499,7 @@ TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
 ```jsl
 
+
 Try( Sqrt( "s" ), "invalid" );
 
 ```
@@ -26358,6 +31507,7 @@ Try( Sqrt( "s" ), "invalid" );
 **Example 2**
 
 ```jsl
+
 
 Try( Sqrt( "s" ), exception_msg );
 
@@ -26377,6 +31527,7 @@ Note that q is Tukey&apos;s adjusted critical value, which is the quantile of Tu
 
 ```jsl
 
+
 Tukey HSD P value( 3.73, 6, 34 );
 
 ```
@@ -26394,6 +31545,7 @@ Note that q is Tukey&apos;s adjusted critical value, which is the quantile of Tu
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 alpha = 0.05;
 dfe = 5;
@@ -26425,6 +31577,7 @@ New Window( "Example: Tukey HSD Quantile",
 
 ```jsl
 
+
 Type( [1 2 3] );
 
 ```
@@ -26438,6 +31591,7 @@ Type( [1 2 3] );
 **JMP Version Added:** 16
 
 ```jsl
+
 
 New Window( "unlineup",
 	Lineup Box( N Col( 2 ),
@@ -26461,6 +31615,7 @@ New Window( "unlineup",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exalpha = 0.05;
 exdelta = 0.5;
@@ -26487,6 +31642,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -26512,6 +31668,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 Unregister Addin( "com.mycompany.myaddin" );
 
 ```
@@ -26527,6 +31684,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 **Example 1**
 
 ```jsl
+
 
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
@@ -26551,6 +31709,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 **Example 2**
 
 ```jsl
+
 
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
@@ -26585,6 +31744,7 @@ Close( dt );
 ```jsl
 
 
+
 If( Check MATLAB Dependencies(),
 	Update MATLAB Dependencies(),
 	Print( "Dependencies are updated" )
@@ -26602,6 +31762,7 @@ If( Check MATLAB Dependencies(),
 
 ```jsl
 
+
 Uppercase( "Café #23" );
 
 ```
@@ -26615,6 +31776,7 @@ Uppercase( "Café #23" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "test",
 	H List Box(
@@ -26642,6 +31804,7 @@ New Window( "test",
 
 ```jsl
 
+
 [11 22] |/ [33 44];
 
 ```
@@ -26655,6 +31818,7 @@ New Window( "test",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exA = [1 2, 3 4];
 exB = [5 6, 7 8, 9 10];
@@ -26677,6 +31841,7 @@ Show( exA, exB, exC, exD, exE );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -26696,6 +31861,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Outline Box( "Picker", V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -26712,6 +31878,7 @@ New Window( "Example",
 
 ```jsl
 
+
 V Max( [11 22, 33 44, 55 66] );
 
 ```
@@ -26725,6 +31892,7 @@ V Max( [11 22, 33 44, 55 66] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 V Mean( [11 22, 33 44, 55 66] );
 
@@ -26740,6 +31908,7 @@ V Mean( [11 22, 33 44, 55 66] );
 
 ```jsl
 
+
 V Median( [11 22, 33 44, 35 46, 55 66] );
 
 ```
@@ -26753,6 +31922,7 @@ V Median( [11 22, 33 44, 35 46, 55 66] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 V Min( [11 22, 33 44, 55 66] );
 
@@ -26768,6 +31938,7 @@ V Min( [11 22, 33 44, 55 66] );
 
 ```jsl
 
+
 V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ```
@@ -26782,6 +31953,7 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ```jsl
 
+
 V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 ```
@@ -26795,6 +31967,7 @@ V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -26825,6 +31998,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -26875,6 +32049,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Text Size( V Size() / 4 );
@@ -26893,6 +32068,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Splitter",
 	V Splitter Box(
@@ -26925,6 +32101,7 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
+
 V Standardize( [11 22, 33 44, 55 66] );
 
 ```
@@ -26938,6 +32115,7 @@ V Standardize( [11 22, 33 44, 55 66] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 V Std( [11 22, 33 44, 55 66] );
 
@@ -26953,6 +32131,7 @@ V Std( [11 22, 33 44, 55 66] );
 
 ```jsl
 
+
 V Sum( [11 22, 33 44, 55 66] );
 
 ```
@@ -26966,6 +32145,7 @@ V Sum( [11 22, 33 44, 55 66] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Varimax( [1.2 .4, .9 1.5] );
 
@@ -26981,6 +32161,7 @@ Varimax( [1.2 .4, .9 1.5] );
 
 ```jsl
 
+
 Vec Diag( [11 22, 33 44] );
 
 ```
@@ -26994,6 +32175,7 @@ Vec Diag( [11 22, 33 44] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exS = [1 3 5, 3 2 6, 5 6 1];
 exX = [1 3 5, 2 4 6];
@@ -27010,6 +32192,7 @@ Vec Quadratic( exS, exX );
 **JMP Version Added:** 16
 
 ```jsl
+
 
 tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
@@ -27029,6 +32212,7 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ```jsl
 
+
 Wait( 0 ); // Wait for OS events and callbacks
 
 ```
@@ -27037,6 +32221,7 @@ Wait( 0 ); // Wait for OS events and callbacks
 
 ```jsl
 
+
 Wait( -1 ); // Wait for OS events
 
 ```
@@ -27044,6 +32229,7 @@ Wait( -1 ); // Wait for OS events
 **Simple**
 
 ```jsl
+
 
 Wait( 1.5 );
 
@@ -27058,6 +32244,7 @@ Wait( 1.5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 x = 1;
 y = 2;
@@ -27082,6 +32269,7 @@ w << close Window();
 
 ```jsl
 
+
 Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 ```
@@ -27097,6 +32285,7 @@ Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 **Event Handler**
 
 ```jsl
+
 
 //Making a clickable link show up in a formula column
 New Table( "Example",
@@ -27125,6 +32314,7 @@ New Table( "Example",
 
 ```jsl
 
+
 Web( "http://www.jmp.com/" );
 
 ```
@@ -27138,6 +32328,7 @@ Web( "http://www.jmp.com/" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example", wb = Web Browser Box() );
 wb << Navigate( "http://www.jmp.com" );
@@ -27158,6 +32349,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ```jsl
 
+
 Week Of Year( Today() );
 
 ```
@@ -27165,6 +32357,7 @@ Week Of Year( Today() );
 **Example 2**
 
 ```jsl
+
 
 Show(
 	Week Of Year( 01jan2012, 1 ),
@@ -27183,6 +32376,7 @@ Show(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 shape = 0.5;
 New Window( "Example: Weibull Density",
@@ -27209,6 +32403,7 @@ New Window( "Example: Weibull Density",
 
 ```jsl
 
+
 shape = 2;
 New Window( "Example: Weibull Distribution",
 	y = Graph Box(
@@ -27233,6 +32428,7 @@ New Window( "Example: Weibull Distribution",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 exwqbeta = 2;
 exwqqq = 0.5;
@@ -27271,6 +32467,7 @@ New Window( "Example: Weibull Quantile",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );
 dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
@@ -27280,6 +32477,7 @@ dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) 
 **Columns**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Get Rows Where( :sex == "M" );
@@ -27291,6 +32489,7 @@ Where( dt, :sex == "M" );
 **Matrix/List**
 
 ```jsl
+
 
 xs = [10 20 30 . 50];
 xs[Where( xs >= 20 )];
@@ -27304,6 +32503,7 @@ ys[Where( ys >= 20 )];
 
 ```jsl
 
+
 xs = [10 20 30 . 50];
 ys = [0 0 0 1 1];
 Where( xs > 20 & ys );
@@ -27316,6 +32516,7 @@ Where( xs[1] < 18 );
 **Row States**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [2 4 6] ) << Exclude( 1 );
@@ -27333,6 +32534,7 @@ Where( !Excluded() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 i = 1;
 s = "";
@@ -27354,6 +32556,7 @@ s;
 
 ```jsl
 
+
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -27371,6 +32574,7 @@ Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
@@ -27390,6 +32594,7 @@ Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 
 ```jsl
 
+
 Window( "Big Class" );
 
 ```
@@ -27403,6 +32608,7 @@ Window( "Big Class" );
 **JMP Version Added:** 17
 
 ```jsl
+
 
 With Window Handler(
 	New Window( "My Window" ),
@@ -27426,6 +32632,7 @@ With Window Handler(
 
 ```jsl
 
+
 Word( 3, "http://www.jmp.com", ":/." );
 
 ```
@@ -27433,6 +32640,7 @@ Word( 3, "http://www.jmp.com", ":/." );
 **Example 2**
 
 ```jsl
+
 
 Word( [2 -1], "This is a sentence" );
 
@@ -27442,6 +32650,7 @@ Word( [2 -1], "This is a sentence" );
 
 ```jsl
 
+
 Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
@@ -27450,6 +32659,7 @@ Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() )
 
 ```jsl
 
+
 Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```
@@ -27457,6 +32667,7 @@ Word( 5, "a b c d", Unmatched( "None" ) );
 **Example 5**
 
 ```jsl
+
 
 Word( 2, "abcd", "" );
 
@@ -27474,6 +32685,7 @@ Word( 2, "abcd", "" );
 
 ```jsl
 
+
 Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
@@ -27482,6 +32694,7 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```jsl
 
+
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -27489,6 +32702,7 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **Example 3**
 
 ```jsl
+
 
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
@@ -27503,6 +32717,7 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "WrapListBox",
 	Wrap List Box(
@@ -27525,6 +32740,7 @@ New Window( "WrapListBox",
 
 ```jsl
 
+
 Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```
@@ -27538,6 +32754,7 @@ Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -27557,6 +32774,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -27583,6 +32801,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -27607,6 +32826,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* Default value for X Scale() is (0,100). */
 New Window( "Example",
@@ -27635,6 +32855,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -27657,6 +32878,7 @@ Parse XML( ex,
 
 ```jsl
 
+
 text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;" );
 
 ```
@@ -27671,6 +32893,7 @@ text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&qu
 
 ```jsl
 
+
 textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```
@@ -27684,6 +32907,7 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -27707,6 +32931,7 @@ Parse XML( ex,
 
 ```jsl
 
+
 result = XPath Query(
 	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
 	"//color/text()"
@@ -27723,6 +32948,7 @@ result = XPath Query(
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Spiral",
 	Graph Box(
@@ -27757,6 +32983,7 @@ New Window( "Spiral",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -27775,6 +33002,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -27801,6 +33029,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -27825,6 +33054,7 @@ New Window( "Example",
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 /* Default value for Y Scale() is (0,100).*/
 New Window( "Example",
@@ -27853,6 +33083,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Year( Today() );
 
 ```
@@ -27867,6 +33098,7 @@ Year( Today() );
 
 ```jsl
 
+
 Zero Or Missing( 1 < 2 );
 
 ```
@@ -27880,6 +33112,7 @@ Zero Or Missing( 1 < 2 );
 **JMP Version Added:** 19
 
 ```jsl
+
 
 lambda = 4;
 sigma = .5;
@@ -27922,6 +33155,7 @@ New Window( "Example: Zero Inflated Negative Binomial Distribution",
 
 ```jsl
 
+
 lambda = 4;
 sigma = .5;
 p = .1;
@@ -27956,6 +33190,7 @@ New Window( "Example: Zero Inflated Negative Binomial Probability",
 **JMP Version Added:** 19
 
 ```jsl
+
 
 qexpl = 20;
 qexpsig = .5;
@@ -28017,6 +33252,7 @@ New Window( "Example: ZI Negative Binomial Quantile",
 
 ```jsl
 
+
 lambda = 4;
 p = .2;
 New Window( "Example: Zero Inflated Poisson Distribution",
@@ -28055,6 +33291,7 @@ New Window( "Example: Zero Inflated Poisson Distribution",
 
 ```jsl
 
+
 lambda = 4;
 p = .2;
 New Window( "Example: Poisson Probability",
@@ -28087,6 +33324,7 @@ New Window( "Example: Poisson Probability",
 **JMP Version Added:** 19
 
 ```jsl
+
 
 qexpl = 20;
 qexpp = .2;

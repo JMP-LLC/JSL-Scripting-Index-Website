@@ -12,7 +12,9 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -26,7 +28,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -38,7 +43,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_freqcol"
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -50,7 +57,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -62,7 +71,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -74,7 +85,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -88,7 +101,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -100,7 +116,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_weightco
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -112,7 +130,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -126,7 +146,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -150,7 +172,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Compare( AUC( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Compare( AUC( 1 ) );
 
 ```
 
@@ -164,7 +189,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ```
 
@@ -184,7 +211,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Redo Analysis;
 
 ```
 
@@ -198,7 +228,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Relaunch Analysis;
 
 ```
 
@@ -212,7 +245,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Set( Epochs( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Set( Epochs( 5 ) ) );
 
 ```
 
@@ -226,7 +261,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 ```
 
@@ -240,7 +277,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -256,7 +299,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -264,7 +311,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -272,7 +323,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -284,7 +342,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Copy ByGroup Script;
 
 ```
 
@@ -296,7 +362,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Copy Script;
 
 ```
 
@@ -310,7 +379,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -322,7 +394,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -336,7 +417,11 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -344,7 +429,28 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -356,7 +462,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -368,7 +478,11 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -380,7 +494,11 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -392,7 +510,11 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -404,7 +526,11 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -418,7 +544,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -430,7 +560,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -444,19 +581,27 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report; Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -468,7 +613,15 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -480,7 +633,15 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -492,7 +653,15 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -504,7 +673,15 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -514,19 +691,17 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-**Ejemplo 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Ejemplo 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -538,7 +713,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << New Column( "_bycol",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -550,7 +728,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Save Script to Journal;
 
 ```
 
@@ -562,7 +743,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Save Script to Report;
 
 ```
 
@@ -574,7 +758,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Save Script to Script Window;
 
 ```
 
@@ -586,7 +773,16 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -598,7 +794,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -610,7 +820,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -622,7 +838,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+obj << Title( "My Platform" );
 
 ```
 
@@ -634,7 +853,12 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -646,7 +870,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Torch Deep Learning( Y
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -898,7 +1125,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Torch Deep Learning(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Fit);obj << (fit[1] << Confusion Matrices( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Torch Deep Learning(
+	Y( :Species ),
+	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Fit
+);
+obj << (fit[1] << Confusion Matrices( 1 ));
 
 ```
 
@@ -998,7 +1232,9 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Torch Deep Learning(	Y( :Spec
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activation( "ReLU" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activation( "ReLU" ) ) );
 
 ```
 
@@ -1012,7 +1248,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activations( "ReLU" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activations( "ReLU" ) ) );
 
 ```
 
@@ -1026,7 +1264,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Anchor Scale( "16" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Anchor Scale( "16" ) ) );
 
 ```
 
@@ -1040,7 +1280,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Aspect Sigma( 0.0 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Aspect Sigma( 0.0 ) ) );
 
 ```
 
@@ -1054,7 +1296,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Attention Heads( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Attention Heads( 1 ) ) );
 
 ```
 
@@ -1068,7 +1312,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Base Activation( "GELU" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Base Activation( "GELU" ) ) );
 
 ```
 
@@ -1082,7 +1328,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :sex ),	X( :height, :weight ),	Fit( Tabular Model( "RadialBasisMachine" ), Basis Function( "Gaussian" ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning(
+	Y( :sex ),
+	X( :height, :weight ),
+	Fit( Tabular Model( "RadialBasisMachine" ), Basis Function( "Gaussian" ) )
+);
 
 ```
 
@@ -1096,7 +1348,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :se
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Batch Size( 128 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Batch Size( 128 ) ) );
 
 ```
 
@@ -1110,7 +1364,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Binary Loss( "BCE" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Binary Loss( "BCE" ) ) );
 
 ```
 
@@ -1124,7 +1380,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Blur Max Sigma( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Blur Max Sigma( 1 ) ) );
 
 ```
 
@@ -1138,7 +1396,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Class Loss Weight( 4.0 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Class Loss Weight( 4.0 ) ) );
 
 ```
 
@@ -1152,7 +1412,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Confidence Threshold( 0.05 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Confidence Threshold( 0.05 ) ) );
 
 ```
 
@@ -1166,7 +1428,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) ) );
 
 ```
 
@@ -1188,7 +1452,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :wei
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :sex ),	X( :height, :weight ),	Fit( Tabular Model( "MixedModel" ), Covariance Structure( "DotProduct" ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning(
+	Y( :sex ),
+	X( :height, :weight ),
+	Fit( Tabular Model( "MixedModel" ), Covariance Structure( "DotProduct" ) )
+);
 
 ```
 
@@ -1202,7 +1472,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :se
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Data Threads( 0 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Data Threads( 0 ) ) );
 
 ```
 
@@ -1216,7 +1488,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Device( "cpu" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Device( "cpu" ) ) );
 
 ```
 
@@ -1230,7 +1504,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dilations( "1" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dilations( "1" ) ) );
 
 ```
 
@@ -1244,7 +1520,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dropout Probs( "0.1" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dropout Probs( "0.1" ) ) );
 
 ```
 
@@ -1258,7 +1536,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Epochs( 100 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Epochs( 100 ) ) );
 
 ```
 
@@ -1272,7 +1552,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :sex ),	X( :height, :weight ),	Fit( Factorization Machine Layers( "1" ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning(
+	Y( :sex ),
+	X( :height, :weight ),
+	Fit( Factorization Machine Layers( "1" ) )
+);
 
 ```
 
@@ -1286,7 +1572,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :se
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex, :height ), X( :picture ), Fit( Model Ys Separately( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex, :height ), X( :picture ), Fit( Model Ys Separately( 1 ) ) );
 
 ```
 
@@ -1300,7 +1588,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Fixed Effects( 0 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Fixed Effects( 0 ) ) );
 
 ```
 
@@ -1314,7 +1604,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Folder( "" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Folder( "" ) ) );
 
 ```
 
@@ -1328,7 +1620,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
 
 ```
 
@@ -1350,7 +1644,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Grid Size( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Grid Size( 5 ) ) );
 
 ```
 
@@ -1364,7 +1660,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( HFlip Prob( 0.3 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( HFlip Prob( 0.3 ) ) );
 
 ```
 
@@ -1378,7 +1676,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Highway Layers( "1" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Highway Layers( "1" ) ) );
 
 ```
 
@@ -1392,7 +1692,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Model( "LeNet5" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Model( "LeNet5" ) ) );
 
 ```
 
@@ -1406,7 +1708,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Size( 28 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Size( 28 ) ) );
 
 ```
 
@@ -1420,7 +1724,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Kernel Sizes( "3" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Kernel Sizes( "3" ) ) );
 
 ```
 
@@ -1434,7 +1740,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( L1 Penalty( 0.0001 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( L1 Penalty( 0.0001 ) ) );
 
 ```
 
@@ -1448,7 +1756,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Layer Sizes( "16" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Layer Sizes( "16" ) ) );
 
 ```
 
@@ -1462,7 +1772,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Learning Rate( 0.001 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Learning Rate( 0.001 ) ) );
 
 ```
 
@@ -1476,7 +1788,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Margin( 1.0 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Margin( 1.0 ) ) );
 
 ```
 
@@ -1490,7 +1804,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Max Boxes( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Max Boxes( 5 ) ) );
 
 ```
 
@@ -1504,7 +1820,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Chips.jmp" );Torch Deep Learning(	Y( :Buy again? ),	X( :Potato Chip Product Review ),	Fit( Max Seq Length( 512 ) ));
+
+dt = Open( "$SAMPLE_DATA/Chips.jmp" );
+Torch Deep Learning(
+	Y( :Buy again? ),
+	X( :Potato Chip Product Review ),
+	Fit( Max Seq Length( 512 ) )
+);
 
 ```
 
@@ -1518,7 +1840,9 @@ dt = Open( "$SAMPLE_DATA/Chips.jmp" );Torch Deep Learning(	Y( :Buy again? ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Mixup Portion( 0.5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Mixup Portion( 0.5 ) ) );
 
 ```
 
@@ -1532,7 +1856,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( NMS Threshold( 0.5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( NMS Threshold( 0.5 ) ) );
 
 ```
 
@@ -1546,7 +1872,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Noise Max Sigma( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Noise Max Sigma( 1 ) ) );
 
 ```
 
@@ -1560,7 +1888,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Image Threshold( 10 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Image Threshold( 10 ) ) );
 
 ```
 
@@ -1574,7 +1904,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Loss( "NLL" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Loss( "NLL" ) ) );
 
 ```
 
@@ -1588,7 +1920,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm( "Batch" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm( "Batch" ) ) );
 
 ```
 
@@ -1602,7 +1936,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm First( "Batch" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm First( "Batch" ) ) );
 
 ```
 
@@ -1616,7 +1952,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Num Linear( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Num Linear( 1 ) ) );
 
 ```
 
@@ -1630,7 +1968,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Optimizer( "AdamW" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Optimizer( "AdamW" ) ) );
 
 ```
 
@@ -1644,7 +1984,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Pitch Sigma( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Pitch Sigma( 5 ) ) );
 
 ```
 
@@ -1658,7 +2000,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pooling Layers( "Max" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pooling Layers( "Max" ) ) );
 
 ```
 
@@ -1672,7 +2016,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pretrained Tabular( "None" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pretrained Tabular( "None" ) ) );
 
 ```
 
@@ -1686,7 +2032,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Quantiles( "0.9" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Quantiles( "0.9" ) ) );
 
 ```
 
@@ -1700,7 +2048,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( RPN NMS Threshold( 0.7 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( RPN NMS Threshold( 0.7 ) ) );
 
 ```
 
@@ -1714,7 +2064,15 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Torch Deep Learning(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Fit);Wait( 2 );obj << (Fit[1] << Remove All But This Fit);
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Torch Deep Learning(
+	Y( :Species ),
+	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Fit
+);
+Wait( 2 );
+obj << (Fit[1] << Remove All But This Fit);
 
 ```
 
@@ -1728,7 +2086,15 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Torch Deep Learning(	Y( :Spec
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Torch Deep Learning(	Y( :Species ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Fit);Wait( 2 );obj << (Fit[1] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Torch Deep Learning(
+	Y( :Species ),
+	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Fit
+);
+Wait( 2 );
+obj << (Fit[1] << Remove Fit);
 
 ```
 
@@ -1742,7 +2108,9 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Torch Deep Learning(	Y( :Spec
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Restore From( "" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Restore From( "" ) ) );
 
 ```
 
@@ -1756,7 +2124,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 ```
 
@@ -1802,7 +2172,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :sex ),	X( :picture ),	Fit( Screening Method( "ResponseScreening" ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning(
+	Y( :sex ),
+	X( :picture ),
+	Fit( Screening Method( "ResponseScreening" ) )
+);
 
 ```
 
@@ -1816,7 +2192,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :se
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Screening Threshold( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Screening Threshold( 1 ) ) );
 
 ```
 
@@ -1830,7 +2208,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Seed( 0 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Seed( 0 ) ) );
 
 ```
 
@@ -1844,7 +2224,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/segmentation.jmp" );Torch Deep Learning( Y( :Mask ), X( :Picture ), Sett( Segmentation Model( "VGG11_BN" ) ) );
+
+dt = Open( "$SAMPLE_DATA/segmentation.jmp" );
+Torch Deep Learning( Y( :Mask ), X( :Picture ), Sett( Segmentation Model( "VGG11_BN" ) ) );
 
 ```
 
@@ -1858,7 +2240,9 @@ dt = Open( "$SAMPLE_DATA/segmentation.jmp" );Torch Deep Learning( Y( :Mask ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Spline Order( 3 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Spline Order( 3 ) ) );
 
 ```
 
@@ -1872,7 +2256,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Strides( "1" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Strides( "1" ) ) );
 
 ```
 
@@ -1886,7 +2272,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :sex ),	X( :picture ),	Fit( Tabular Model( "MultiLayerPerceptron" ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning(
+	Y( :sex ),
+	X( :picture ),
+	Fit( Tabular Model( "MultiLayerPerceptron" ) )
+);
 
 ```
 
@@ -1900,7 +2292,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :se
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Chips.jmp" );Torch Deep Learning(	Y( :Buy again? ),	X( :Potato Chip Product Review ),	Fit( Text Model( "BERT" ) ));
+
+dt = Open( "$SAMPLE_DATA/Chips.jmp" );
+Torch Deep Learning(
+	Y( :Buy again? ),
+	X( :Potato Chip Product Review ),
+	Fit( Text Model( "BERT" ) )
+);
 
 ```
 
@@ -1914,7 +2312,9 @@ dt = Open( "$SAMPLE_DATA/Chips.jmp" );Torch Deep Learning(	Y( :Buy again? ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Triplet Loss Weight( 0.5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Triplet Loss Weight( 0.5 ) ) );
 
 ```
 
@@ -1928,7 +2328,13 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :sex, :height ),	X( :picture ),	Fit( Tabular Model( "Radial Basis Machine" ), Use Data As Knots( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning(
+	Y( :sex, :height ),
+	X( :picture ),
+	Fit( Tabular Model( "Radial Basis Machine" ), Use Data As Knots( 1 ) )
+);
 
 ```
 
@@ -1942,7 +2348,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning(	Y( :se
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( VFlip Prob( 0.2 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( VFlip Prob( 0.2 ) ) );
 
 ```
 
@@ -1956,7 +2364,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Weight Decay( 0.0001 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Weight Decay( 0.0001 ) ) );
 
 ```
 
@@ -1970,7 +2380,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Worker Count( 0 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Worker Count( 0 ) ) );
 
 ```
 
@@ -1984,7 +2396,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( X Slide Sigma( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( X Slide Sigma( 5 ) ) );
 
 ```
 
@@ -1998,7 +2412,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Y Slide Sigma( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Y Slide Sigma( 5 ) ) );
 
 ```
 
@@ -2012,7 +2428,9 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Yaw Sigma( 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Yaw Sigma( 5 ) ) );
 
 ```
 

@@ -14,7 +14,16 @@
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;framebox = rbiv[frame box( 1 )];framebox << Add Graphics Script(	Transparency( 0.5 );	Fill Color( {1.0, 0.5, 0.0} );	Polygon( [60, 72, 57], [75, 120, 120] ););
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+framebox = rbiv[frame box( 1 )];
+framebox << Add Graphics Script(
+	Transparency( 0.5 );
+	Fill Color( {1.0, 0.5, 0.0} );
+	Polygon( [60, 72, 57], [75, 120, 120] );
+);
 
 ```
 
@@ -22,7 +31,25 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-gbox = Graph Box(	Frame Size( 300, 300 ),	X Axis( Scale ID( 1 ), Side( 1 ), Min( 1 ), Max( 100 ), Inc( 5 ) ),	X Axis( Scale ID( 2 ), Side( 2 ), Min( 4 ), Max( 50 ), Inc( 3 ) ),	Y Axis( Scale ID( 3 ), Min( -100 ), Max( 200 ) ),	Y Axis( Scale ID( 4 ), Side( 2 ), Min( 1 ), Max( 10 ), Inc( 1 ) ), );fbox = gbox[frame box( 1 )];fbox << Add Graphics Script(	Scale IDs( 1, 4 ), //use scale ID's 1 and 4 for this graphics script	Pen Color( "Green" );	Line( [20 50 80], [4 3 6] ););New Window( "Example", gbox );
+
+
+gbox = Graph Box(
+	Frame Size( 300, 300 ),
+	X Axis( Scale ID( 1 ), Side( 1 ), Min( 1 ), Max( 100 ), Inc( 5 ) ),
+	X Axis( Scale ID( 2 ), Side( 2 ), Min( 4 ), Max( 50 ), Inc( 3 ) ),
+	Y Axis( Scale ID( 3 ), Min( -100 ), Max( 200 ) ),
+	Y Axis( Scale ID( 4 ), Side( 2 ), Min( 1 ), Max( 10 ), Inc( 1 ) ), 
+
+);
+
+fbox = gbox[frame box( 1 )];
+
+fbox << Add Graphics Script(
+	Scale IDs( 1, 4 ), //use scale ID's 1 and 4 for this graphics script
+	Pen Color( "Green" );
+	Line( [20 50 80], [4 3 6] );
+);
+New Window( "Example", gbox );
 
 ```
 
@@ -30,7 +57,28 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-table = New Table( "test table",	Add Rows( 150000 ),	<<New Column( "X", "Numeric", <<Set Each Value( Random Normal() ) ),	<<New Column( "Y", "Numeric", <<Set Each Value( Random Normal() ) ));b = Bivariate( X( :x ), Y( :y ) );table << select rows( 1 :: 10000 );Report( b )[Frame Box( 1 )] << Add Graphics Script(	Description( "Red Line Above Selected" ),	"selected layer",	Pen Color( "Red" );	Pen Size( 5 );	Line( [-5, 5], [-5, 5] ););Report( b )[Frame Box( 1 )] << Add Graphics Script(	Description( "Green Line Below Selected Above Unselected" ),	Pen Color( "Green" );	Pen Size( 3 );	Line( [5, -5], [-5, 5] ););
+
+
+table = New Table( "test table",
+	Add Rows( 150000 ),
+	<<New Column( "X", "Numeric", <<Set Each Value( Random Normal() ) ),
+	<<New Column( "Y", "Numeric", <<Set Each Value( Random Normal() ) )
+);
+b = Bivariate( X( :x ), Y( :y ) );
+table << select rows( 1 :: 10000 );
+Report( b )[Frame Box( 1 )] << Add Graphics Script(
+	Description( "Red Line Above Selected" ),
+	"selected layer",
+	Pen Color( "Red" );
+	Pen Size( 5 );
+	Line( [-5, 5], [-5, 5] );
+);
+Report( b )[Frame Box( 1 )] << Add Graphics Script(
+	Description( "Green Line Below Selected Above Unselected" ),
+	Pen Color( "Green" );
+	Pen Size( 3 );
+	Line( [5, -5], [-5, 5] );
+);
 
 ```
 
@@ -48,7 +96,19 @@ Si può fare riferimento a una immagine esistente (già creata con un comando ne
 
 ```jsl
 
-img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",	Graph Box(		FrameSize( 500, 500 ),		X Scale( 0, 100 ),		Y Scale( 0, 100 ),		<<Add Image(			image( img ),			bounds( top( 90 ), Left( 10 ), bottom( 10 ), Right( 90 ) )		)	));
+
+img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );
+w = New Window( "View Image",
+	Graph Box(
+		FrameSize( 500, 500 ),
+		X Scale( 0, 100 ),
+		Y Scale( 0, 100 ),
+		<<Add Image(
+			image( img ),
+			bounds( top( 90 ), Left( 10 ), bottom( 10 ), Right( 90 ) )
+		)
+	)
+);
 
 ```
 
@@ -60,7 +120,12 @@ img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ```
 
@@ -72,7 +137,28 @@ img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :weight ),	X( :height ),	SendToReport(		Dispatch( {}, "Bivar Plot", FrameBox,			Add Pin Annotation(				Seg( Marker Seg( 1 ) ),				Index( 17 ),				Index Row( 17 ),				UniqueID( -960001792 ),				FoundPt( {238, 219} ),				Origin( {64.9765625, 142} ),				Offset( {-174, -40} ),				Tag Line( 1 ),				Font( "Helvetica", 11, "Plain" )			)		)	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	SendToReport(
+		Dispatch( {}, "Bivar Plot", FrameBox,
+			Add Pin Annotation(
+				Seg( Marker Seg( 1 ) ),
+				Index( 17 ),
+				Index Row( 17 ),
+				UniqueID( -960001792 ),
+				FoundPt( {238, 219} ),
+				Origin( {64.9765625, 142} ),
+				Offset( {-174, -40} ),
+				Tag Line( 1 ),
+				Font( "Helvetica", 11, "Plain" )
+			)
+		)
+	)
+);
 
 ```
 
@@ -84,7 +170,16 @@ img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Polygon Annotation(	Points( {210, 80}, {230, 70}, {280, 115}, {240, 120} ),	Color( "Red" ),	Closed( 1 ));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Polygon Annotation(
+	Points( {210, 80}, {230, 70}, {280, 115}, {240, 120} ),
+	Color( "Red" ),
+	Closed( 1 )
+);
 
 ```
 
@@ -96,7 +191,13 @@ img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Simple Shape Annotation( Oval( 210, 100, 250, 75 ) );rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Simple Shape Annotation( Oval( 210, 100, 250, 75 ) );
+rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ```
 
@@ -108,7 +209,15 @@ img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Text Annotation(	Text( "We need to discuss this at the next meeting." ),	Text Box( {65, 35, 200, 77} ));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Text Annotation(
+	Text( "We need to discuss this at the next meeting." ),
+	Text Box( {65, 35, 200, 77} )
+);
 
 ```
 
@@ -120,7 +229,12 @@ img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << append( Text Box( "=== below ===" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << append( Text Box( "=== below ===" ) );
 
 ```
 
@@ -132,13 +246,20 @@ img = Open( "$SAMPLE_IMAGES/windmap.png", "png" );w = New Window( "View Image",
 
 ```jsl
 
-x = [20, 40, 60, 80];New Window( "Example",	Graph Box( Frame Size( 300, 120 ), Append Seg( Marker Seg( x, x ), Line Seg( x, x ) ) ),	Graph Box( Frame Size( 300, 120 ) ));gb2 = Current Report()[FrameBox( 2 )];gb2 << append seg( Current Report()[FrameBox( 1 )] << find seg( Marker Seg( 1 ) ) );
+
+x = [20, 40, 60, 80];
+New Window( "Example",
+	Graph Box( Frame Size( 300, 120 ), Append Seg( Marker Seg( x, x ), Line Seg( x, x ) ) ),
+	Graph Box( Frame Size( 300, 120 ) )
+);
+gb2 = Current Report()[FrameBox( 2 )];
+gb2 << append seg( Current Report()[FrameBox( 1 )] << find seg( Marker Seg( 1 ) ) );
 
 ```
 
 ### Background Color
 
-**Sintassi:** obj &lt;&lt; Background Color( color ); color = obj &lt;&lt; Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -146,7 +267,15 @@ x = [20, 40, 60, 80];New Window( "Example",	Graph Box( Frame Size( 300, 120 ),
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Background Color );Wait( 2 );tb << Background Color( "Yellow" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Background Color );
+Wait( 2 );
+tb << Background Color( "Yellow" );
 
 ```
 
@@ -164,25 +293,54 @@ Le immagini sono mappe rasterizzate e supportano la trasparenza. I limiti sono m
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hurricanes.jmp" );plot = Bubble Plot(	X( :Longitude ),	Y( :Latitude ),	Sizes( :"Wind (Knots)"n ),	Time( :Date ),	Coloring( :Landfall in USA ),	ID( :Name and ID ),	Speed( 1 ),	Time Index( 2117.70195 ),	Trail Bubbles( 1 ),	All Labels( 0 ),	No Labels( 0 ),	Title Position( -88.679, 59.73 ));rplot = plot << report;framebox = rplot[Frame Box( 1 )];framebox << Background Map(	Images( "Simple Earth", Transparency( 0.7 ) ),	Boundaries( "World" ));
+
+dt = Open( "$SAMPLE_DATA/Hurricanes.jmp" );
+plot = Bubble Plot(
+	X( :Longitude ),
+	Y( :Latitude ),
+	Sizes( :"Wind (Knots)"n ),
+	Time( :Date ),
+	Coloring( :Landfall in USA ),
+	ID( :Name and ID ),
+	Speed( 1 ),
+	Time Index( 2117.70195 ),
+	Trail Bubbles( 1 ),
+	All Labels( 0 ),
+	No Labels( 0 ),
+	Title Position( -88.679, 59.73 )
+);
+rplot = plot << report;
+framebox = rplot[Frame Box( 1 )];
+framebox << Background Map(
+	Images( "Simple Earth", Transparency( 0.7 ) ),
+	Boundaries( "World" )
+);
 
 ```
 
 ### Border
 
-**Sintassi:** obj &lt;&lt; Border( sides ); sides = obj &lt;&lt; Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Border );Wait( 1 );tb << Border( 1 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Border );
+Wait( 1 );
+tb << Border( 1 );
 
 ```
 
 ### Border Color
 
-**Sintassi:** obj &lt;&lt; Border Color( color ); color = obj &lt;&lt; Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -190,7 +348,15 @@ dt = Open( "$SAMPLE_DATA/Hurricanes.jmp" );plot = Bubble Plot(	X( :Longitude )
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Wait( 2 );tb << Border( 1 );tb << Border Color( "Light Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Wait( 2 );
+tb << Border( 1 );
+tb << Border Color( "Light Red" );
 
 ```
 
@@ -202,7 +368,12 @@ dt = Open( "$SAMPLE_DATA/Hurricanes.jmp" );plot = Bubble Plot(	X( :Longitude )
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Bottom( 0 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Bottom( 0 );
 
 ```
 
@@ -214,7 +385,11 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Run Script( "Bivariate" );w << Bring Window To Front;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Run Script( "Bivariate" );
+w << Bring Window To Front;
 
 ```
 
@@ -226,7 +401,15 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisParent = axisbox << parent();axisChild = axisParent << child();Print( axisChild << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisParent = axisbox << parent();
+axisChild = axisParent << child();
+Print( axisChild << Class Name() );
 
 ```
 
@@ -238,7 +421,11 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;rbiv[Frame Box( 1 )] << Child Seg();
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+rbiv[Frame Box( 1 )] << Child Seg();
 
 ```
 
@@ -250,7 +437,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisbox << Class Name();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisbox << Class Name();
 
 ```
 
@@ -262,7 +455,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << append( Text Box( "=== below ===" ) );clonedBox = rbiv << Clone Box();rbiv << append( clonedBox );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << append( Text Box( "=== below ===" ) );
+clonedBox = rbiv << Clone Box();
+rbiv << append( clonedBox );
 
 ```
 
@@ -274,7 +474,11 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Close Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Close Window;
 
 ```
 
@@ -286,7 +490,17 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv1 = biv << report;rbiv2 = rbiv1 << Clone Box;rbiv1 << append( rbiv2 );framebox1 = rbiv1[Frame Box( 1 )];framebox2 = rbiv2[Frame Box( 1 )];framebox1 << Marker Drawing Mode( outlined );framebox1 << Copy Customizations;framebox2 << Paste Customizations;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv1 = biv << report;
+rbiv2 = rbiv1 << Clone Box;
+rbiv1 << append( rbiv2 );
+framebox1 = rbiv1[Frame Box( 1 )];
+framebox2 = rbiv2[Frame Box( 1 )];
+framebox1 << Marker Drawing Mode( outlined );
+framebox1 << Copy Customizations;
+framebox2 << Paste Customizations;
 
 ```
 
@@ -298,7 +512,9 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
+
+New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );
+mat << CopyData;
 
 ```
 
@@ -310,7 +526,17 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv1 = biv << report;rbiv2 = rbiv1 << Clone Box;rbiv1 << append( rbiv2 );framebox1 = rbiv1[Frame Box( 1 )];framebox2 = rbiv2[Frame Box( 1 )];biv << Fit Line;framebox1 << Copy Frame Contents;framebox2 << Paste Frame Contents;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv1 = biv << report;
+rbiv2 = rbiv1 << Clone Box;
+rbiv1 << append( rbiv2 );
+framebox1 = rbiv1[Frame Box( 1 )];
+framebox2 = rbiv2[Frame Box( 1 )];
+biv << Fit Line;
+framebox1 << Copy Frame Contents;
+framebox2 << Paste Frame Contents;
 
 ```
 
@@ -322,7 +548,17 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv1 = biv << report;rbiv2 = rbiv1 << Clone Box;rbiv1 << append( rbiv2 );framebox1 = rbiv1[Frame Box( 1 )];framebox2 = rbiv2[Frame Box( 1 )];framebox1 << Background Color( "Green" );framebox1 << Copy Frame Settings;framebox2 << Paste Frame Settings;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv1 = biv << report;
+rbiv2 = rbiv1 << Clone Box;
+rbiv1 << append( rbiv2 );
+framebox1 = rbiv1[Frame Box( 1 )];
+framebox2 = rbiv2[Frame Box( 1 )];
+framebox1 << Background Color( "Green" );
+framebox1 << Copy Frame Settings;
+framebox2 << Paste Frame Settings;
 
 ```
 
@@ -334,7 +570,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;(rbiv[FrameBox( 1 )]) << Copy Graph();"paste into a paint program";
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+(rbiv[FrameBox( 1 )]) << Copy Graph();
+"paste into a paint program";
 
 ```
 
@@ -346,7 +588,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Copy Picture();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Copy Picture();
 
 ```
 
@@ -358,7 +605,16 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];pa = framebox << Add Polygon Annotation(	Points( {144, 53}, {182, 30}, {213, 80}, {181, 95} ));pa << Closed( 1 );framebox << Copy Polygons;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+pa = framebox << Add Polygon Annotation(
+	Points( {144, 53}, {182, 30}, {213, 80}, {181, 95} )
+);
+pa << Closed( 1 );
+framebox << Copy Polygons;
 
 ```
 
@@ -370,7 +626,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Customize;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Customize;
 
 ```
 
@@ -382,7 +643,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisbox << Delete Box();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisbox << Delete Box();
 
 ```
 
@@ -394,7 +661,21 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsselected = 0;New Window( "Example",	ex = Button Box( "Press Me",		selected = !selected;		refresh;	));refresh = Function( {},	If( selected,		ex << Select,		ex << Deselect	));
+
+//This message applies to all display box objects
+selected = 0;
+New Window( "Example",
+	ex = Button Box( "Press Me",
+		selected = !selected;
+		refresh;
+	)
+);
+refresh = Function( {},
+	If( selected,
+		ex << Select,
+		ex << Deselect
+	)
+);
 
 ```
 
@@ -406,7 +687,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ```
 
@@ -426,7 +712,21 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );Distribution(	Continuous Distribution( Column( :weight ), Fit Distribution( Normal ) ),	Nominal Distribution( Column( :age ) ),	SendToReport(		Dispatch( {"weight"}, "Distrib Histogram", FrameBox,			{DispatchSeg(				Hist Seg( 1 ),				{Line Style( "Dotted" ), Fill Color( {0, 128, 0} ), Histogram Color( -32768 )				}			), DispatchSeg( Line Seg( 1 ), {Line Color( {0, 0, 255} ), Line Width( 5 )} )}		)	));
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Distribution(
+	Continuous Distribution( Column( :weight ), Fit Distribution( Normal ) ),
+	Nominal Distribution( Column( :age ) ),
+	SendToReport(
+		Dispatch( {"weight"}, "Distrib Histogram", FrameBox,
+			{DispatchSeg(
+				Hist Seg( 1 ),
+				{Line Style( "Dotted" ), Fill Color( {0, 128, 0} ), Histogram Color( -32768 )
+				}
+			), DispatchSeg( Line Seg( 1 ), {Line Color( {0, 0, 255} ), Line Width( 5 )} )}
+		)
+	)
+);
 
 ```
 
@@ -438,19 +738,49 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );Distribution(	Continuous Distribution( Co
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;framebox = rbiv[frame box( 1 )];framebox << Add Graphics Script(	Transparency( 0.5 );	Fill Color( {1.0, 0.5, 0.0} );	Polygon( [60, 72, 57], [75, 120, 120] ););framebox << Edit Graphics Script;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+framebox = rbiv[frame box( 1 )];
+framebox << Add Graphics Script(
+	Transparency( 0.5 );
+	Fill Color( {1.0, 0.5, 0.0} );
+	Polygon( [60, 72, 57], [75, 120, 120] );
+);
+framebox << Edit Graphics Script;
 
 ```
 
 ### Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -464,7 +794,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distribution( Column( :height ) ), Histograms Only );rdist = dist << report;dt << Select Where( dt:age == 12 );framebox = rdist[Frame Box( 1 )];framebox << Fill Selection Mode( "Selected Darker" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dist = Distribution( Continuous Distribution( Column( :height ) ), Histograms Only );
+rdist = dist << report;
+dt << Select Where( dt:age == 12 );
+framebox = rdist[Frame Box( 1 )];
+framebox << Fill Selection Mode( "Selected Darker" );
 
 ```
 
@@ -476,7 +812,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv << Find( axis box( 1 ) );axisbox << Delete();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv << Find( axis box( 1 ) );
+axisbox << Delete();
 
 ```
 
@@ -486,7 +828,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distr
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;ms = rbiv[Frame Box( 1 )] << Find Seg( Marker Seg( 1 ) );ms << delete;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+ms = rbiv[Frame Box( 1 )] << Find Seg( Marker Seg( 1 ) );
+ms << delete;
 
 ```
 
@@ -504,7 +851,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Frame Size( 300, 300 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Frame Size( 300, 300 );
 
 ```
 
@@ -516,13 +868,23 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Text Annotation(	Text( "We need to discuss this at the next meeting." ),	Text Box( {65, 35, 200, 77} ));annotation = rbiv << Get Annotation;annotation << delete;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Text Annotation(
+	Text( "We need to discuss this at the next meeting." ),
+	Text Box( {65, 35, 200, 77} )
+);
+annotation = rbiv << Get Annotation;
+annotation << delete;
 
 ```
 
 ### Get Background Color
 
-**Sintassi:** obj &lt;&lt; Background Color( color ); color = obj &lt;&lt; Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -530,7 +892,15 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Background Color );Wait( 2 );tb << Background Color( "Yellow" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Background Color );
+Wait( 2 );
+tb << Background Color( "Yellow" );
 
 ```
 
@@ -542,25 +912,44 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];//Set background colorframebox << Background Color( "red" );//Wait to see the color changeWait( 1 );//Turn off background fill colorframebox << Set Background Fill( 0 );val1 = framebox << Get Background Fill;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( weight ), x( height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+//Set background color
+framebox << Background Color( "red" );
+//Wait to see the color change
+Wait( 1 );
+//Turn off background fill color
+framebox << Set Background Fill( 0 );
+val1 = framebox << Get Background Fill;
 
 ```
 
 ### Get Border
 
-**Sintassi:** obj &lt;&lt; Border( sides ); sides = obj &lt;&lt; Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Border );Wait( 1 );tb << Border( 1 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Border );
+Wait( 1 );
+tb << Border( 1 );
 
 ```
 
 ### Get Border Color
 
-**Sintassi:** obj &lt;&lt; Border Color( color ); color = obj &lt;&lt; Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -568,7 +957,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Wait( 2 );tb << Border( 1 );tb << Border Color( "Light Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Wait( 2 );
+tb << Border( 1 );
+tb << Border Color( "Light Red" );
 
 ```
 
@@ -580,7 +977,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Content Size();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Content Size();
+Show( c );
 
 ```
 
@@ -594,7 +995,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );rpt = Report( biv );xpath expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Expr( Report( biv ) ) ); // Make Number Col Box(9) more robustShow( xpath expr );xpath expr << Select;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+rpt = Report( biv );
+xpath expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Expr( Report( biv ) ) ); // Make Number Col Box(9) more robust
+Show( xpath expr );
+xpath expr << Select;
 
 ```
 
@@ -602,19 +1010,46 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );rpt = Report( biv );subscript expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Mode( "Subscript" ) ); // Make Number Col Box(9) more robustShow( subscript expr );subscript expr << Select;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+rpt = Report( biv );
+subscript expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Mode( "Subscript" ) ); // Make Number Col Box(9) more robust
+Show( subscript expr );
+subscript expr << Select;
 
 ```
 
 ### Get Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -628,7 +1063,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distribution( Column( :height ) ), Histograms Only );rdist = dist << report;dt << Select Where( dt:age == 12 );framebox = rdist[Frame Box( 1 )];framebox << Fill Selection Mode( "Selected Darker" );framebox << Get Fill Selection Mode;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dist = Distribution( Continuous Distribution( Column( :height ) ), Histograms Only );
+rdist = dist << report;
+dt << Select Where( dt:age == 12 );
+framebox = rdist[Frame Box( 1 )];
+framebox << Fill Selection Mode( "Selected Darker" );
+framebox << Get Fill Selection Mode;
 
 ```
 
@@ -642,7 +1084,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distr
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get HTML );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get HTML );
 
 ```
 
@@ -650,7 +1095,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );Save Text File( "$TEMP/Oneway.html", obj << Get HTML( "svg" ) ); // Prefer <<Save HTMLWeb( "$TEMP/Oneway.html", JMPWindow );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
+Save Text File( "$TEMP/Oneway.html", obj << Get HTML( "svg" ) ); // Prefer <<Save HTML
+Web( "$TEMP/Oneway.html", JMPWindow );
 
 ```
 
@@ -662,19 +1112,33 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Height;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Height;
 
 ```
 
 ### Get Horizontal Alignment
 
-**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" ); "Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Border( 1 );Wait( 2 );lb << Horizontal Alignment( "Right" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Horizontal Alignment( "Right" );
 
 ```
 
@@ -686,7 +1150,25 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dist = Distribution( Continuous Distr
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Animals.jmp" );op = Overlay Plot( X( :subject ), Y( :miles ), Separate Axes( 1 ) );opr = op << report;fb = opr[Frame Box( 1 )];fb << Add Image(	Open( Convert File Path( "$SAMPLE_IMAGES/black rhino footprint.jpg" ) ),	Transparency( 0.9 ),	Rotate( 90 ),	Bounds(		Left( 0.135416666666667 ),		Right( 3.26041666666667 ),		Top( 11.8333333333333 ),		Bottom( -1 )	),	SetSize( {300, 210} ));fb << Marker Size( 8 );Print( fb << Get Image );
+
+Open( "$SAMPLE_DATA/Animals.jmp" );
+op = Overlay Plot( X( :subject ), Y( :miles ), Separate Axes( 1 ) );
+opr = op << report;
+fb = opr[Frame Box( 1 )];
+fb << Add Image(
+	Open( Convert File Path( "$SAMPLE_IMAGES/black rhino footprint.jpg" ) ),
+	Transparency( 0.9 ),
+	Rotate( 90 ),
+	Bounds(
+		Left( 0.135416666666667 ),
+		Right( 3.26041666666667 ),
+		Top( 11.8333333333333 ),
+		Bottom( -1 )
+	),
+	SetSize( {300, 210} )
+);
+fb << Marker Size( 8 );
+Print( fb << Get Image );
 
 ```
 
@@ -698,19 +1180,33 @@ Open( "$SAMPLE_DATA/Animals.jmp" );op = Overlay Plot( X( :subject ), Y( :miles 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;Print( rbiv << Get Journal );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+Print( rbiv << Get Journal );
 
 ```
 
 ### Get Margin
 
-**Sintassi:** obj &lt;&lt; Margin( sides ); sides = obj &lt;&lt; Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Margin );tb << Border( 1 );Wait( 2 );tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Margin );
+tb << Border( 1 );
+Wait( 2 );
+tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -722,7 +1218,14 @@ Open( "$SAMPLE_DATA/Animals.jmp" );op = Overlay Plot( X( :subject ), Y( :miles 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Marker Selection Mode( "Selected Haloed" );framebox << Get Marker Selection Mode;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Marker Selection Mode( "Selected Haloed" );
+framebox << Get Marker Selection Mode;
 
 ```
 
@@ -734,7 +1237,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Marker Size( 4 );Print( framebox << Get Marker Size() );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Marker Size( 4 );
+Print( framebox << Get Marker Size() );
 
 ```
 
@@ -746,7 +1255,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Max Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Max Size;
 
 ```
 
@@ -758,7 +1273,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Min Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Min Size;
 
 ```
 
@@ -770,7 +1291,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
+
+//This message applies to all display objects
+x = 1;
+w = New Window( "Test", b = Button Box( "Press me" ) );
+b:x = 2;
+ns = b << GetNamespace();
+Show( ns:x, x );
 
 ```
 
@@ -782,19 +1309,41 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);Show( w << Get On Close );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
+Show( w << Get On Close );
 
 ```
 
 ### Get Padding
 
-**Sintassi:** obj &lt;&lt; Padding( sides ); sides = obj &lt;&lt; Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Padding );tb << Border( 1 );Wait( 1 );tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Padding );
+tb << Border( 1 );
+Wait( 1 );
+tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -806,7 +1355,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Page Setup Test" ) );w << get page setup();
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Page Setup Test" ) );
+w << get page setup();
 
 ```
 
@@ -820,7 +1372,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;New Window( "Example", rbiv << Get Picture );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+New Window( "Example", rbiv << Get Picture );
 
 ```
 
@@ -828,7 +1385,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
 
 ```
 
@@ -836,7 +1399,24 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate(	Y( :weight ),	X( :height ),	Fit Line( {Line Color( {212, 73, 88} )} ),	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),	Kernel Smoother( 1, 1, 0.5, 0 ));rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );New Window( "Example",	H List Box(		rbiv << Get Picture( View( "Screen" ), Appearance( "Current" ) ),		rbiv << Get Picture( View( "Print" ), Appearance( "Default" ) )	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	Fit Line( {Line Color( {212, 73, 88} )} ),
+	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),
+	Kernel Smoother( 1, 1, 0.5, 0 )
+);
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+New Window( "Example",
+	H List Box(
+		rbiv << Get Picture( View( "Screen" ), Appearance( "Current" ) ),
+		rbiv << Get Picture( View( "Print" ), Appearance( "Default" ) )
+	)
+);
 
 ```
 
@@ -848,7 +1428,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];pa = framebox << Add Polygon Annotation(	Points( {144, 53}, {182, 30}, {213, 80}, {181, 95} ));pa << Closed( 1 );Print( framebox << Get Polygons );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+pa = framebox << Add Polygon Annotation(
+	Points( {144, 53}, {182, 30}, {213, 80}, {181, 95} )
+);
+pa << Closed( 1 );
+Print( framebox << Get Polygons );
 
 ```
 
@@ -862,7 +1451,11 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Project();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Project();
+Show( c );
 
 ```
 
@@ -874,7 +1467,9 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Properties;
 
 ```
 
@@ -886,7 +1481,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property( "Enabled" );
 
 ```
 
@@ -898,7 +1495,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property List;
 
 ```
 
@@ -912,7 +1511,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get RTF );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get RTF );
 
 ```
 
@@ -920,7 +1522,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );Save Text File( "$TEMP/Oneway.rtf", obj << Get RTF( "png" ) ); // Prefer <<Save RTFOpen( "$TEMP/Oneway.rtf" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
+Save Text File( "$TEMP/Oneway.rtf", obj << Get RTF( "png" ) ); // Prefer <<Save RTF
+Open( "$TEMP/Oneway.rtf" );
 
 ```
 
@@ -934,7 +1541,43 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filter Context Box(		H List Box(			dt << Data Filter(				Local,				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )			),			V List Box(				t = Text Box( "0 Rows Excluded" ),				Distribution(					Continuous Distribution( Column( :weight ) ),					Nominal Distribution( Column( :age ) )				)			)		)	));updatetext = Function( {},	rs = t << Get Row States( dt );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = t << Make Row State Handler( dt, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	Data Filter Context Box(
+		H List Box(
+			dt << Data Filter(
+				Local,
+				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+			),
+			V List Box(
+				t = Text Box( "0 Rows Excluded" ),
+				Distribution(
+					Continuous Distribution( Column( :weight ) ),
+					Nominal Distribution( Column( :age ) )
+				)
+			)
+		)
+	)
+);
+updatetext = Function( {},
+	rs = t << Get Row States( dt );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = t << Make Row State Handler( dt, rsupdate );
+updatetext();
 
 ```
 
@@ -942,7 +1585,38 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text Box( "0 Rows Excluded" ),	dist = Distribution(		Continuous Distribution( Column( :weight ) ),		Nominal Distribution( Column( :age ) ),		Local Data Filter(			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )		),		Where( :sex == "F" )	));subset = dist << Get Data Table();updatetext = Function( {},	rs = Report( dist ) << Get Row States( subset );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	t = Text Box( "0 Rows Excluded" ),
+	dist = Distribution(
+		Continuous Distribution( Column( :weight ) ),
+		Nominal Distribution( Column( :age ) ),
+		Local Data Filter(
+			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+		),
+		Where( :sex == "F" )
+	)
+);
+subset = dist << Get Data Table();
+updatetext = Function( {},
+	rs = Report( dist ) << Get Row States( subset );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );
+updatetext();
 
 ```
 
@@ -954,7 +1628,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );Print( w << Get Show Window() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+Print( w << Get Show Window() );
 
 ```
 
@@ -966,7 +1646,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];Print( fb << Get Size );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+Print( fb << Get Size );
 
 ```
 
@@ -980,7 +1666,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Stretch",	V List Box(		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),		spacer = Spacer Box(			Size( 20, 20 ),			Color( "Light Red" ),			<<Set Stretch( "Fill", "Off" )		)	));spacer << Get Stretch();
+
+//This message applies to all display box objects
+New Window( "Stretch",
+	V List Box(
+		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),
+		spacer = Spacer Box(
+			Size( 20, 20 ),
+			Color( "Light Red" ),
+			<<Set Stretch( "Fill", "Off" )
+		)
+	)
+);
+spacer << Get Stretch();
 
 ```
 
@@ -992,13 +1690,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get Text );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get Text );
 
 ```
 
 ### Get Text Color
 
-**Sintassi:** obj &lt;&lt; Text Color( color ); color = obj &lt;&lt; Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -1006,47 +1707,99 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Text Color );Wait( 2 );tb << Text Color( "Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Text Color );
+Wait( 2 );
+tb << Text Color( "Red" );
 
 ```
 
 ### Get UI Only
 
-**Sintassi:** obj &lt;&lt; UI Only( state=0|1 ); state = obj &lt;&lt; Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**Sintassi:** obj &lt;&lt; User Resizable; obj &lt;&lt; Get User Resizable
+**Sintassi:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descrizione:** Se il riquadro è ridimensionabile dall&apos;utente, il cursore cambierà in prossimità dei bordi inferiore e destro per consentire di ridimensionare il riquadro in modalità drag-and-drop.
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );New Window( "resize",	H Splitter Box(		Size( 600, 200 ),		tree = Tree Box( {root1, root2} ),		scroll = Scroll Box(			Size( 300, 200 ),			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )		)	));tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );Wait( 2 );tree << User Resizable( {0, 0} );scroll << User Resizable( {0, 0} );
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+New Window( "resize",
+	H Splitter Box(
+		Size( 600, 200 ),
+		tree = Tree Box( {root1, root2} ),
+		scroll = Scroll Box(
+			Size( 300, 200 ),
+			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )
+		)
+	)
+);
+tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+Wait( 2 );
+tree << User Resizable( {0, 0} );
+scroll << User Resizable( {0, 0} );
 
 ```
 
 ### Get Vertical Alignment
 
-**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" ); "Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Set Horizontal( 1 );lb = r[List Box( 7 )];lb << Border( 1 );Wait( 2 );lb << Vertical Alignment( "Bottom" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Set Horizontal( 1 );
+lb = r[List Box( 7 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Vertical Alignment( "Bottom" );
 
 ```
 
 ### Get Visibility
 
-**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" ); "Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Visibility );Wait( 1 );tb << Visibility( "Collapse" );Show( tb << Get Visibility );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Visibility );
+Wait( 1 );
+tb << Visibility( "Collapse" );
+Show( tb << Get Visibility );
 
 ```
 
@@ -1058,7 +1811,11 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -1070,7 +1827,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Width;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Width;
 
 ```
 
@@ -1082,7 +1845,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Icon;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Icon;
+Show( t );
 
 ```
 
@@ -1094,7 +1861,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );p = w << Get Window Position();Show( p );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+p = w << Get Window Position();
+Show( p );
 
 ```
 
@@ -1106,7 +1877,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );s = w << Get Window Size();Show( s );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+s = w << Get Window Size();
+Show( s );
 
 ```
 
@@ -1118,7 +1893,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Title;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Title;
+Show( t );
 
 ```
 
@@ -1130,7 +1909,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Print( w << Get Window View() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Print( w << Get Window View() );
 
 ```
 
@@ -1142,7 +1924,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "test", a = Text Box( "my test" ) );a << set text( win << get xml );
+
+//This message applies to all display box objects
+win = New Window( "test", a = Text Box( "my test" ) );
+a << set text( win << get xml );
 
 ```
 
@@ -1154,7 +1939,40 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size( 3 );			Y Function( -3 + 100 / 2 * (1 + Sin( (2 * Pi() * (x + .3)) / 100 )), x );		),		<<settrackenable( 1 ) // put the mouse box to work, watching "tracking"	,		<<settrack( // events from the mouse (movement, with button up or down)			Function( {this, pt}, // parameters: this is the mousebox, pt is mouse x,y				{fb, offset, t, off, size}, // local variables				// recalulate offset and size each time, the values can change				fb = this[framebox( 1 )]; // the framebox in the graph 				offset = [0, 0]; // accumulator to sum up the offset between framebox and mousebox				t = fb; // a temporary box that starts at the frame 				While( t != this, // and walks up to the mousebox					off = t << getOffset; // ask each box for its offset to the immediate parent					offset += Matrix( off ); // convert list answer to matrix so + will work					t = t << parent; // crawl up to the mousebox, one box at a time				);				size = Matrix( fb << getSize ); // the frame knows its size				If( // over the frame box					offset[1] < pt[1] < offset[1] + size[1] & offset[2] < pt[2] < offset[2]					 + size[2]				,					fb << setbackgroundcolor( "red" ),					fb << setbackgroundcolor( "blue" )				);			)		)	));
+
+New Window( "example",
+	MouseBox(
+		Graph Box(
+			title( "title" ),
+			Pen Size( 3 );
+			Y Function( -3 + 100 / 2 * (1 + Sin( (2 * Pi() * (x + .3)) / 100 )), x );
+		),
+		<<settrackenable( 1 ) // put the mouse box to work, watching "tracking"
+	,
+		<<settrack( // events from the mouse (movement, with button up or down)
+			Function( {this, pt}, // parameters: this is the mousebox, pt is mouse x,y
+				{fb, offset, t, off, size}, // local variables
+				// recalulate offset and size each time, the values can change
+				fb = this[framebox( 1 )]; // the framebox in the graph 
+				offset = [0, 0]; // accumulator to sum up the offset between framebox and mousebox
+				t = fb; // a temporary box that starts at the frame 
+				While( t != this, // and walks up to the mousebox
+					off = t << getOffset; // ask each box for its offset to the immediate parent
+					offset += Matrix( off ); // convert list answer to matrix so + will work
+					t = t << parent; // crawl up to the mousebox, one box at a time
+				);
+				size = Matrix( fb << getSize ); // the frame knows its size
+				If( // over the frame box
+					offset[1] < pt[1] < offset[1] + size[1] & offset[2] < pt[2] < offset[2]
+					 + size[2]
+				,
+					fb << setbackgroundcolor( "red" ),
+					fb << setbackgroundcolor( "blue" )
+				);
+			)
+		)
+	)
+);
 
 ```
 
@@ -1166,19 +1984,34 @@ New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;rbiv[axis box( 1 )] << Add Ref Line( 90, "Solid", blue );rbiv[axis box( 2 )] << Show Major Grid( 1 );framebox = rbiv[frame box( 1 )];framebox << Grid Line Order( 1 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+rbiv[axis box( 1 )] << Add Ref Line( 90, "Solid", blue );
+rbiv[axis box( 2 )] << Show Major Grid( 1 );
+framebox = rbiv[frame box( 1 )];
+framebox << Grid Line Order( 1 );
 
 ```
 
 ### Horizontal Alignment
 
-**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" ); "Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Border( 1 );Wait( 2 );lb << Horizontal Alignment( "Right" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Horizontal Alignment( "Right" );
 
 ```
 
@@ -1198,7 +2031,37 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "Inval example",	Button Box( "red",		color = "red";		g1 << inval; /* tell the oval to redraw */		g2 << inval; /* tell the rectangle to redraw */		g1 << updateWindow; /* tell the window to update immediately */		// this is a busy-wait to help demonstrate the various behaviors...		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );	),	Button Box( "blue",		color = "blue";		g1 << inval; /* same comments */		g2 << inval;		g1 << updateWindow;		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 );	),	g1 = Graph Box(/* the graph does NOT watch for the color variable to change                       but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	),	g2 = Graph Box(		Fill Color( color );		Rect( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "Inval example",
+	Button Box( "red",
+		color = "red";
+		g1 << inval; /* tell the oval to redraw */
+		g2 << inval; /* tell the rectangle to redraw */
+		g1 << updateWindow; /* tell the window to update immediately */
+		// this is a busy-wait to help demonstrate the various behaviors...
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );
+	),
+	Button Box( "blue",
+		color = "blue";
+		g1 << inval; /* same comments */
+		g2 << inval;
+		g1 << updateWindow;
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 );
+	),
+	g1 = Graph Box(/* the graph does NOT watch for the color variable to change 
+                      but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	),
+	g2 = Graph Box(
+		Fill Color( color );
+		Rect( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
@@ -1212,7 +2075,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );Show( ww << Is Dirty );ww << Set Dirty( 0 );Show( ww << Is Dirty );
+
+
+ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
+Show( ww << Is Dirty );
+ww << Set Dirty( 0 );
+Show( ww << Is Dirty );
 
 ```
 
@@ -1224,7 +2092,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},		Print( win << Is Modal Dialog() );		win << close window();	));
+
+With Window Handler(
+	New Window( "Modal Window", <<Modal ),
+	Function( {win},
+		Print( win << Is Modal Dialog() );
+		win << close window();
+	)
+);
 
 ```
 
@@ -1236,7 +2111,12 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << journal;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << journal;
 
 ```
 
@@ -1248,7 +2128,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Main Window", Text Box( "Main JMP Window" ) );w << Journal Window;
+
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Journal Window;
 
 ```
 
@@ -1260,7 +2143,17 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsOpen( "$SAMPLE_DATA/Big Class.jmp" );New Window( "example",	ob1 = Outline Box( "treemap launcher" ),	ob2 = Outline Box( "bivariate partial" ),	ob3 = Outline Box( "bivariate launched" ));ob1 << launch( Treemap() );ob2 << launch( Bivariate( Y( :height ) ) );ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
+
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "example",
+	ob1 = Outline Box( "treemap launcher" ),
+	ob2 = Outline Box( "bivariate partial" ),
+	ob3 = Outline Box( "bivariate launched" )
+);
+ob1 << launch( Treemap() );
+ob2 << launch( Bivariate( Y( :height ) ) );
+ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ```
 
@@ -1272,7 +2165,12 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Left( 0 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Left( 0 );
 
 ```
 
@@ -1284,7 +2182,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ), FitLine );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Line Width Scale( 2.0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ), FitLine );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Line Width Scale( 2.0 );
 
 ```
 
@@ -1298,7 +2201,43 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filter Context Box(		H List Box(			dt << Data Filter(				Local,				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )			),			V List Box(				t = Text Box( "0 Rows Excluded" ),				Distribution(					Continuous Distribution( Column( :weight ) ),					Nominal Distribution( Column( :age ) )				)			)		)	));updatetext = Function( {},	rs = t << Get Row States( dt );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = t << Make Row State Handler( dt, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	Data Filter Context Box(
+		H List Box(
+			dt << Data Filter(
+				Local,
+				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+			),
+			V List Box(
+				t = Text Box( "0 Rows Excluded" ),
+				Distribution(
+					Continuous Distribution( Column( :weight ) ),
+					Nominal Distribution( Column( :age ) )
+				)
+			)
+		)
+	)
+);
+updatetext = Function( {},
+	rs = t << Get Row States( dt );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = t << Make Row State Handler( dt, rsupdate );
+updatetext();
 
 ```
 
@@ -1306,7 +2245,38 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text Box( "0 Rows Excluded" ),	dist = Distribution(		Continuous Distribution( Column( :weight ) ),		Nominal Distribution( Column( :age ) ),		Local Data Filter(			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )		),		Where( :sex == "F" )	));subset = dist << Get Data Table();updatetext = Function( {},	rs = Report( dist ) << Get Row States( subset );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	t = Text Box( "0 Rows Excluded" ),
+	dist = Distribution(
+		Continuous Distribution( Column( :weight ) ),
+		Nominal Distribution( Column( :age ) ),
+		Local Data Filter(
+			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+		),
+		Where( :sex == "F" )
+	)
+);
+subset = dist << Get Data Table();
+updatetext = Function( {},
+	rs = Report( dist ) << Get Row States( subset );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );
+updatetext();
 
 ```
 
@@ -1318,13 +2288,22 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ### Margin
 
-**Sintassi:** obj &lt;&lt; Margin( sides ); sides = obj &lt;&lt; Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Margin );tb << Border( 1 );Wait( 2 );tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Margin );
+tb << Border( 1 );
+Wait( 2 );
+tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -1336,7 +2315,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Marker Drawing Mode( "outlined" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Marker Drawing Mode( "outlined" );
 
 ```
 
@@ -1354,7 +2338,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Marker Selection Mode( "Selected Haloed" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Marker Selection Mode( "Selected Haloed" );
 
 ```
 
@@ -1366,7 +2356,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Marker Size( 4 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Marker Size( 4 );
 
 ```
 
@@ -1378,7 +2373,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Maximize Window( 1 );Wait( 1 );w << Maximize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Maximize Window( 1 );
+Wait( 1 );
+w << Maximize Window( 0 );
 
 ```
 
@@ -1392,7 +2393,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Minimize Window( 1 );Wait( 1 );w << Minimize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Minimize Window( 1 );
+Wait( 1 );
+w << Minimize Window( 0 );
 
 ```
 
@@ -1404,7 +2411,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Move Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Move Window( 500, 500 );
 
 ```
 
@@ -1416,7 +2427,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Rows( 1 );dt:(Column( 2 )) << Set Selected( 1 );framebox = rbiv[Frame Box( 1 )];framebox << Select Matching Cells;framebox << Name Selection in Column;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Rows( 1 );
+dt:(Column( 2 )) << Set Selected( 1 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Select Matching Cells;
+framebox << Name Selection in Column;
 
 ```
 
@@ -1428,7 +2447,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;next = rbiv << Next();Print( next << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+next = rbiv << Next();
+Print( next << Class Name() );
 
 ```
 
@@ -1442,7 +2467,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	Function( {this},         // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled		New Window( "Are you sure?",			<<modal,			V List Box(				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )			)		)["button"] == 1	));
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	Function( {this}, 
+        // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled
+		New Window( "Are you sure?",
+			<<modal,
+			V List Box(
+				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),
+				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+			)
+		)["button"] == 1
+	)
+);
 
 ```
 
@@ -1450,7 +2489,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
 
 ```
 
@@ -1464,7 +2515,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to Data Table objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Optimize Display;
+
+//This message applies to Data Table objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Optimize Display;
 
 ```
 
@@ -1476,19 +2530,33 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );r = d << report;r << Pad Window( 0 );
+
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+r = d << report;
+r << Pad Window( 0 );
 
 ```
 
 ### Padding
 
-**Sintassi:** obj &lt;&lt; Padding( sides ); sides = obj &lt;&lt; Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Padding );tb << Border( 1 );Wait( 1 );tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Padding );
+tb << Border( 1 );
+Wait( 1 );
+tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -1500,7 +2568,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example",	ob = Outline Box( "Outline Box",		V List Box(			ob2 = Outline Box( "Outline Box 2",				H List Box( Text Edit Box( "Top Left" ), Text Edit Box( "Top Right" ) )			),			ob3 = Outline Box( "Outline Box",				H List Box( Text Edit Box( "Bottom Left" ), Text Edit Box( "Bottom Right" ) )			)		)	));ob3 << Page Break;
+
+//This message applies to all display box objects
+New Window( "Example",
+	ob = Outline Box( "Outline Box",
+		V List Box(
+			ob2 = Outline Box( "Outline Box 2",
+				H List Box( Text Edit Box( "Top Left" ), Text Edit Box( "Top Right" ) )
+			),
+			ob3 = Outline Box( "Outline Box",
+				H List Box( Text Edit Box( "Bottom Left" ), Text Edit Box( "Bottom Right" ) )
+			)
+		)
+	)
+);
+ob3 << Page Break;
 
 ```
 
@@ -1512,7 +2594,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisParent = axisbox << parent();Print( axisParent << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisParent = axisbox << parent();
+Print( axisParent << Class Name() );
 
 ```
 
@@ -1524,7 +2613,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Animals.jmp" );op = Overlay Plot( X( :subject ), Y( :miles ), Separate Axes( 1 ) );opr1 = op << report;opr2 = opr1 << Clone Box;opr1 << append( opr2 );fb1 = opr1[Frame Box( 1 )];fb1 << Add Image(	Open( Convert File Path( "$SAMPLE_IMAGES/black rhino footprint.jpg" ) ),	Transparency( 0.9 ),	Rotate( 90 ),	Bounds(		Left( 0.135416666666667 ),		Right( 3.26041666666667 ),		Top( 11.8333333333333 ),		Bottom( -1 )	),	SetSize( {300, 210} ));fb1 << Copy Picture;fb2 = opr2[Frame Box( 1 )];fb2 << Paste Background Image;
+
+Open( "$SAMPLE_DATA/Animals.jmp" );
+op = Overlay Plot( X( :subject ), Y( :miles ), Separate Axes( 1 ) );
+opr1 = op << report;
+opr2 = opr1 << Clone Box;
+opr1 << append( opr2 );
+fb1 = opr1[Frame Box( 1 )];
+fb1 << Add Image(
+	Open( Convert File Path( "$SAMPLE_IMAGES/black rhino footprint.jpg" ) ),
+	Transparency( 0.9 ),
+	Rotate( 90 ),
+	Bounds(
+		Left( 0.135416666666667 ),
+		Right( 3.26041666666667 ),
+		Top( 11.8333333333333 ),
+		Bottom( -1 )
+	),
+	SetSize( {300, 210} )
+);
+fb1 << Copy Picture;
+fb2 = opr2[Frame Box( 1 )];
+fb2 << Paste Background Image;
 
 ```
 
@@ -1536,7 +2646,17 @@ Open( "$SAMPLE_DATA/Animals.jmp" );op = Overlay Plot( X( :subject ), Y( :miles 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv1 = biv << report;rbiv2 = rbiv1 << Clone Box;rbiv1 << append( rbiv2 );framebox1 = rbiv1[Frame Box( 1 )];framebox2 = rbiv2[Frame Box( 1 )];framebox1 << Marker Drawing Mode( outlined );framebox1 << Copy Customizations;framebox2 << Paste Customizations;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv1 = biv << report;
+rbiv2 = rbiv1 << Clone Box;
+rbiv1 << append( rbiv2 );
+framebox1 = rbiv1[Frame Box( 1 )];
+framebox2 = rbiv2[Frame Box( 1 )];
+framebox1 << Marker Drawing Mode( outlined );
+framebox1 << Copy Customizations;
+framebox2 << Paste Customizations;
 
 ```
 
@@ -1548,7 +2668,17 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv1 = biv << report;rbiv2 = rbiv1 << Clone Box;rbiv1 << append( rbiv2 );framebox1 = rbiv1[Frame Box( 1 )];framebox2 = rbiv2[Frame Box( 1 )];biv << Fit Line;framebox1 << Copy Frame Contents;framebox2 << Paste Frame Contents;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv1 = biv << report;
+rbiv2 = rbiv1 << Clone Box;
+rbiv1 << append( rbiv2 );
+framebox1 = rbiv1[Frame Box( 1 )];
+framebox2 = rbiv2[Frame Box( 1 )];
+biv << Fit Line;
+framebox1 << Copy Frame Contents;
+framebox2 << Paste Frame Contents;
 
 ```
 
@@ -1560,7 +2690,17 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv1 = biv << report;rbiv2 = rbiv1 << Clone Box;rbiv1 << append( rbiv2 );framebox1 = rbiv1[Frame Box( 1 )];framebox2 = rbiv2[Frame Box( 1 )];framebox1 << Background Color( "Green" );framebox1 << Copy Frame Settings;framebox2 << Paste Frame Settings;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv1 = biv << report;
+rbiv2 = rbiv1 << Clone Box;
+rbiv1 << append( rbiv2 );
+framebox1 = rbiv1[Frame Box( 1 )];
+framebox2 = rbiv2[Frame Box( 1 )];
+framebox1 << Background Color( "Green" );
+framebox1 << Copy Frame Settings;
+framebox2 << Paste Frame Settings;
 
 ```
 
@@ -1574,7 +2714,40 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );gb = dt << Graph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :weight ) ),	Elements( Bar( X, Y, Legend( 7 ) ) ));Set Clipboard(JSLQuote(Bivariate(                             Y( :height ),                             X( :weight ),                             Histogram Borders( 1 ),                             Fit Robust( {Line Color( {212, 73, 88} )} ),                             Fit Cauchy( {Line Color( {61, 174, 70} )} ),                             SendToReport(                                 Dispatch(                                     {},                                     "Bivar Plot",                                     FrameBox,                                     {Grid Line Order( 1 ), Reference Line Order( 2 )}                                 )                             )                         )));frame = (gb << report)[FrameBox( 1 )];frame << Paste Graphlet();gpin = frame << Add Pin Annotation(	Seg( BarSeg( 1 ) ),	Index( {0, 0} ),	Index Row( {0, 0} ),	UniqueID( 1513503376 ),	FoundPt( {107, 211} ),	Origin( {0.00867052023121384, 96.6870397553517} ),	Tag Line( 1 ));gpin << Launch Graphlet;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+gb = dt << Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :age ), Y( :weight ) ),
+	Elements( Bar( X, Y, Legend( 7 ) ) )
+);
+Set Clipboard(JSLQuote(Bivariate(
+                             Y( :height ),
+                             X( :weight ),
+                             Histogram Borders( 1 ),
+                             Fit Robust( {Line Color( {212, 73, 88} )} ),
+                             Fit Cauchy( {Line Color( {61, 174, 70} )} ),
+                             SendToReport(
+                                 Dispatch(
+                                     {},
+                                     "Bivar Plot",
+                                     FrameBox,
+                                     {Grid Line Order( 1 ), Reference Line Order( 2 )}
+                                 )
+                             )
+                         )));
+frame = (gb << report)[FrameBox( 1 )];
+frame << Paste Graphlet();
+gpin = frame << Add Pin Annotation(
+	Seg( BarSeg( 1 ) ),
+	Index( {0, 0} ),
+	Index Row( {0, 0} ),
+	UniqueID( 1513503376 ),
+	FoundPt( {107, 211} ),
+	Origin( {0.00867052023121384, 96.6870397553517} ),
+	Tag Line( 1 )
+);
+gpin << Launch Graphlet;
 
 ```
 
@@ -1586,7 +2759,12 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );gb = dt << Graph Builder(	S
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << prepend( Text Box( "=== above ===" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << prepend( Text Box( "=== above ===" ) );
 
 ```
 
@@ -1600,7 +2778,14 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );gb = dt << Graph Builder(	S
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 2 )];axisSibling = axisbox << Prev Sib();Print( axisSibling << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 2 )];
+axisSibling = axisbox << Prev Sib();
+Print( axisSibling << Class Name() );
 
 ```
 
@@ -1612,7 +2797,10 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );gb = dt << Graph Builder(	S
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Print Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Print Window;
 
 ```
 
@@ -1624,7 +2812,14 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );gb = dt << Graph Builder(	S
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;rbiv[axis box( 1 )] << Add Ref Line( 90, "Solid", blue );rbiv[axis box( 2 )] << Show Major Grid( 1 );framebox = rbiv[frame box( 1 )];framebox << Reference Line Order( 1 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+rbiv[axis box( 1 )] << Add Ref Line( 90, "Solid", blue );
+rbiv[axis box( 2 )] << Show Major Grid( 1 );
+framebox = rbiv[frame box( 1 )];
+framebox << Reference Line Order( 1 );
 
 ```
 
@@ -1636,7 +2831,23 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;framebox = rbiv[frame box( 1 )];framebox << Add Graphics Script(	Transparency( 0.5 );	Fill Color( {1.0, 0.5, 0.0} );	Polygon( [60, 72, 57], [75, 120, 120] ););framebox << Add Graphics Script(	Transparency( 0.5 );	Fill Color( {0.0, 0.5, 1.0} );	Polygon( [60, 72, 57], [150, 120, 120] ););Wait( 2 );framebox << Remove Graphics Script( 2 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+framebox = rbiv[frame box( 1 )];
+framebox << Add Graphics Script(
+	Transparency( 0.5 );
+	Fill Color( {1.0, 0.5, 0.0} );
+	Polygon( [60, 72, 57], [75, 120, 120] );
+);
+framebox << Add Graphics Script(
+	Transparency( 0.5 );
+	Fill Color( {0.0, 0.5, 1.0} );
+	Polygon( [60, 72, 57], [150, 120, 120] );
+);
+Wait( 2 );
+framebox << Remove Graphics Script( 2 );
 
 ```
 
@@ -1650,7 +2861,23 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-Open( "$sample_data\big class.jmp" );gb = Graph Builder(	Size( 534, 456 ),	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 6 ) ), Bar( X, Y, Legend( 7 ) ) ),	SendToReport(		Dispatch( {}, "weight", ScaleBox,			{Label Row( {Show Major Grid( 1 ), Show Minor Grid( 1 )} )}		)	));For( blink = 1, blink < 4, blink++,	Wait( .5 );	(gb << report)[FrameBox( 1 )] << reorder segs( {4, 3, 2, 1} ););
+
+Open( "$sample_data\big class.jmp" );
+gb = Graph Builder(
+	Size( 534, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 6 ) ), Bar( X, Y, Legend( 7 ) ) ),
+	SendToReport(
+		Dispatch( {}, "weight", ScaleBox,
+			{Label Row( {Show Major Grid( 1 ), Show Minor Grid( 1 )} )}
+		)
+	)
+);
+For( blink = 1, blink < 4, blink++,
+	Wait( .5 );
+	(gb << report)[FrameBox( 1 )] << reorder segs( {4, 3, 2, 1} );
+);
 
 ```
 
@@ -1662,7 +2889,24 @@ Open( "$sample_data\big class.jmp" );gb = Graph Builder(	Size( 534, 456 ),	Sh
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "Reshow example",	Button Box( "red",		color = "red";		g << reshow/* tell the graph that something changed */;	),	Button Box( "blue",		color = "blue";		g << reshow/* tell the graph that something changed */;	),	g = Graph Box(/* the graph does NOT watch for the color variable to change                     but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "Reshow example",
+	Button Box( "red",
+		color = "red";
+		g << reshow/* tell the graph that something changed */;
+	),
+	Button Box( "blue",
+		color = "blue";
+		g << reshow/* tell the graph that something changed */;
+	),
+	g = Graph Box(/* the graph does NOT watch for the color variable to change
+                     but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
@@ -1674,7 +2918,12 @@ Open( "$sample_data\big class.jmp" );gb = Graph Builder(	Size( 534, 456 ),	Sh
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Right( 0 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Right( 0 );
 
 ```
 
@@ -1688,7 +2937,19 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :height ), Y( :weight, Position( 1 ), Side( "Right" ) ) ),	Elements(		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )	));gbr = gb << report;fb = gbr[Frame Box( 1 )];fb << Right Y Axis;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :age ), Y( :height ), Y( :weight, Position( 1 ), Side( "Right" ) ) ),
+	Elements(
+		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),
+		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )
+	)
+);
+gbr = gb << report;
+fb = gbr[Frame Box( 1 )];
+fb << Right Y Axis;
 
 ```
 
@@ -1696,7 +2957,26 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Control Panel( 0 ),	Variables(		X( :age, Size( 23 ) ),		Y( :height, Size( 37 ) ),		Y( :weight, Position( 1 ), Size( 37 ), Side( "Right" ) )	),	Elements(		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )	));framebox = Report( gb )[framebox( 1 )];framebox << Right Y Axis(	Rotated Labels( "Angled" ),	Scale( "Log" ),	Add Ref Line( 125, dashed, "red" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = dt << Graph Builder(
+	Show Control Panel( 0 ),
+	Variables(
+		X( :age, Size( 23 ) ),
+		Y( :height, Size( 37 ) ),
+		Y( :weight, Position( 1 ), Size( 37 ), Side( "Right" ) )
+	),
+	Elements(
+		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),
+		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )
+	)
+);
+framebox = Report( gb )[framebox( 1 )];
+framebox << Right Y Axis(
+	Rotated Labels( "Angled" ),
+	Scale( "Log" ),
+	Add Ref Line( 125, dashed, "red" )
+);
 
 ```
 
@@ -1708,7 +2988,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Row Colors( "Red" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Colors( "Red" );
 
 ```
 
@@ -1720,7 +3006,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Row Editor;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Editor;
 
 ```
 
@@ -1732,7 +3023,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Row Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Exclude( 1 );
 
 ```
 
@@ -1744,7 +3041,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Row Hide( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Hide( 1 );
 
 ```
 
@@ -1756,7 +3059,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Row Hide and Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Hide and Exclude( 1 );
 
 ```
 
@@ -1768,7 +3077,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Row Label( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Label( 1 );
 
 ```
 
@@ -1780,7 +3095,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Row Legend( "age", color( 1 ), Marker( 1 ) );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Legend( "age", color( 1 ), Marker( 1 ) );
 
 ```
 
@@ -1792,7 +3112,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Where( dt:age == 12 );framebox = rbiv[Frame Box( 1 )];framebox << Row Markers( 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Where( dt:age == 12 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Row Markers( 3 );
 
 ```
 
@@ -1804,7 +3130,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ```
 
@@ -1816,7 +3147,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save HTML( "$TEMP/jmp_example.html" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ```
 
@@ -1828,7 +3164,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ```
 
@@ -1840,7 +3181,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ```
 
@@ -1852,7 +3198,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ```
 
@@ -1864,7 +3215,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ```
 
@@ -1878,7 +3234,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ```
 
@@ -1886,7 +3247,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );rbiv << Save Picture( "$TEMP/jmp_example_scale.png", "png", Scale( 1.5 ) );New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+rbiv << Save Picture( "$TEMP/jmp_example_scale.png", "png", Scale( 1.5 ) );
+New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
 
 ```
 
@@ -1894,7 +3262,35 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate(	Y( :weight ),	X( :height ),	Fit Line( {Line Color( {212, 73, 88} )} ),	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),	Kernel Smoother( 1, 1, 0.5, 0 ));rbiv = biv << report;rbiv << Save Picture(	"$TEMP/jmp_example_screen.png",	"png",	View( "Screen" ),	Appearance( "Current" ));rbiv << Save Picture(	"$TEMP/jmp_example_print.png",	"png",	View( "Print" ),	Appearance( "Default" ));New Window( "Example",	H List Box(		New Image( "$TEMP/jmp_example_screen.png" ),		New Image( "$TEMP/jmp_example_print.png" )	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	Fit Line( {Line Color( {212, 73, 88} )} ),
+	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),
+	Kernel Smoother( 1, 1, 0.5, 0 )
+);
+rbiv = biv << report;
+rbiv << Save Picture(
+	"$TEMP/jmp_example_screen.png",
+	"png",
+	View( "Screen" ),
+	Appearance( "Current" )
+);
+rbiv << Save Picture(
+	"$TEMP/jmp_example_print.png",
+	"png",
+	View( "Print" ),
+	Appearance( "Default" )
+);
+New Window( "Example",
+	H List Box(
+		New Image( "$TEMP/jmp_example_screen.png" ),
+		New Image( "$TEMP/jmp_example_print.png" )
+	)
+);
 
 ```
 
@@ -1906,7 +3302,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Presentation( "$TEMP/jmp_example.pptx" );Open( "$TEMP/jmp_example.pptx" );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Presentation( "$TEMP/jmp_example.pptx" );
+Open( "$TEMP/jmp_example.pptx" );
 
 ```
 
@@ -1918,7 +3319,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ```
 
@@ -1930,7 +3336,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << save text( "$TEMP/jmp_example.txt" );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << save text( "$TEMP/jmp_example.txt" );
 
 ```
 
@@ -1944,7 +3353,11 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message can be sent to any display box object but will be applied to the report windowOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
+
+//This message can be sent to any display box object but will be applied to the report window
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ```
 
@@ -1956,7 +3369,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( height ), FitLine );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Scale with Font;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( weight ), x( height ), FitLine );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Scale with Font;
 
 ```
 
@@ -1970,7 +3388,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowfm << scroll window( Absolute( "End", "End" ) );Wait( 1 );fm << scroll window( Absolute( 0, 300 ) );Wait( 1 );
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+fm << scroll window( Absolute( "End", "End" ) );
+Wait( 1 );
+fm << scroll window( Absolute( 0, 300 ) );
+Wait( 1 );
 
 ```
 
@@ -1978,7 +3409,24 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowFor( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 second	fm << scroll window( Report( fm )[framebox( 2 )] );	Wait( .5 );	fm << scroll window( Report( fm )[framebox( 3 )] );	Wait( .5 );	fm << scroll window( Report( fm )[framebox( 1 )] );	Wait( .5 ););
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+For( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 second
+	fm << scroll window( Report( fm )[framebox( 2 )] );
+	Wait( .5 );
+	fm << scroll window( Report( fm )[framebox( 3 )] );
+	Wait( .5 );
+	fm << scroll window( Report( fm )[framebox( 1 )] );
+	Wait( .5 );
+);
 
 ```
 
@@ -1986,7 +3434,22 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowfm << scroll window( Relative( 300 ) );Wait( 1 );fm << scroll window( Relative( -50 ) );Wait( 1 );fm << scroll window( Relative( "Start" ) );Wait( 1 );
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+fm << scroll window( Relative( 300 ) );
+Wait( 1 );
+fm << scroll window( Relative( -50 ) );
+Wait( 1 );
+fm << scroll window( Relative( "Start" ) );
+Wait( 1 );
 
 ```
 
@@ -1996,7 +3459,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height ), FitLine );rbiv = biv << report;rbiv[Frame Box( 1 )] << Seg Count( MarkerSeg );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = Bivariate( Y( :weight ), X( :height ), FitLine );
+rbiv = biv << report;
+rbiv[Frame Box( 1 )] << Seg Count( MarkerSeg );
 
 ```
 
@@ -2008,7 +3475,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example", ex = Button Box( "Press Me" ) );ex << Select;
+
+//This message applies to all display box objects
+New Window( "Example", ex = Button Box( "Press Me" ) );
+ex << Select;
 
 ```
 
@@ -2020,7 +3490,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = Bivariate( Y( :weight ), X( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Rows( 1 );dt:(Column( 2 )) << Set Selected( 1 );framebox = rbiv[Frame Box( 1 )];framebox << Select Matching Cells;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Rows( 1 );
+dt:(Column( 2 )) << Set Selected( 1 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Select Matching Cells;
 
 ```
 
@@ -2032,7 +3509,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;dt << Select Rows( 1 );dt:(Column( 3 )) << Set Selected( 1 );framebox = rbiv[Frame Box( 1 )];framebox << Select Similar;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+dt << Select Rows( 1 );
+dt:(Column( 3 )) << Set Selected( 1 );
+framebox = rbiv[Frame Box( 1 )];
+framebox << Select Similar;
 
 ```
 
@@ -2044,7 +3528,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :he
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];//Set background colorframebox << Background Color( "red" );//Wait to see the color changeWait( 1 );//Turn off background fill colorframebox << Set Background Fill( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( weight ), x( height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+//Set background color
+framebox << Background Color( "red" );
+//Wait to see the color change
+Wait( 1 );
+//Turn off background fill color
+framebox << Set Background Fill( 0 );
 
 ```
 
@@ -2056,7 +3550,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Test",	lb = List Box( {"a", "b", "c", "d"} ),	Button Box( "Enable 2nd item",		lb << enable item( 2, 1 );		Show( lb << item enabled( 2 ) );	),	Button Box( "Disable 2nd item",		lb << enable item( 2, 0 );		Show( lb << item enabled( 2 ) );	));Wait( 2 );w << Set Content Size( 400, 300 );
+
+//This message applies to all display box objects
+w = New Window( "Test",
+	lb = List Box( {"a", "b", "c", "d"} ),
+	Button Box( "Enable 2nd item",
+		lb << enable item( 2, 1 );
+		Show( lb << item enabled( 2 ) );
+	),
+	Button Box( "Disable 2nd item",
+		lb << enable item( 2, 0 );
+		Show( lb << item enabled( 2 ) );
+	)
+);
+Wait( 2 );
+w << Set Content Size( 400, 300 );
 
 ```
 
@@ -2070,7 +3578,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );Show( ww << Is Dirty );ww << Set Dirty( 0 );Show( ww << Is Dirty );
+
+
+ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
+Show( ww << Is Dirty );
+ww << Set Dirty( 0 );
+Show( ww << Is Dirty );
 
 ```
 
@@ -2086,7 +3599,40 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( weight ), x( heig
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),	Elements( Points( X, Y, Legend( 2 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Graphlet(	Picture(		local:img_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/" ||		Match( local:_Species,			"versicolor", "2/27/Blue_Flag%2C_Ottawa.jpg/240px-Blue_Flag%2C_Ottawa.jpg",			"virginica", "f/f8/Iris_virginica_2.jpg/240px-Iris_virginica_2.jpg",			"setosa",				"5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg/180px-Kosaciec_szczecinkowaty_Iris_setosa.jpg"		);		Open( local:img_url );	),	Click( Web( "https://en.wikipedia.org/wiki/Iris_" || local:_Species ) ),	Title( "External Image" ),	Reapply( 1 ));gpin = frame << Add Pin Annotation(	Seg( Marker Seg( 1 ) ),	Index( 18 ),	Index Row( 18 ),	UniqueID( 1441114818 ),	FoundPt( {123, 293} ),	Origin( {1.70752129817444, 5.66359183673469} ),	Tag Line( 1 ));gpin << Launch Graphlet;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+gb = dt << Graph Builder(
+	Size( 531, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),
+	Elements( Points( X, Y, Legend( 2 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Graphlet(
+	Picture(
+		local:img_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/" ||
+		Match( local:_Species,
+			"versicolor", "2/27/Blue_Flag%2C_Ottawa.jpg/240px-Blue_Flag%2C_Ottawa.jpg",
+			"virginica", "f/f8/Iris_virginica_2.jpg/240px-Iris_virginica_2.jpg",
+			"setosa",
+				"5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg/180px-Kosaciec_szczecinkowaty_Iris_setosa.jpg"
+		);
+		Open( local:img_url );
+	),
+	Click( Web( "https://en.wikipedia.org/wiki/Iris_" || local:_Species ) ),
+	Title( "External Image" ),
+	Reapply( 1 )
+);
+gpin = frame << Add Pin Annotation(
+	Seg( Marker Seg( 1 ) ),
+	Index( 18 ),
+	Index Row( 18 ),
+	UniqueID( 1441114818 ),
+	FoundPt( {123, 293} ),
+	Origin( {1.70752129817444, 5.66359183673469} ),
+	Tag Line( 1 )
+);
+gpin << Launch Graphlet;
 
 ```
 
@@ -2094,7 +3640,33 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );gb = dt << Graph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :weight ) ),	Elements( Bar( X, Y, Legend( 7 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Graphlet(	Picture(		loader = Include( "$BUILTIN_SCRIPTS/hllib.jsl" );		hlp = loader:lazyLoad( "hllPresets" );		hlp:launchPie();	),	Title( "Pie Preset" ),	Reapply( 1 ));gpin = frame << Add Pin Annotation(	Seg( BarSeg( 1 ) ),	Index( {0, 0} ),	Index Row( {0, 0} ),	UniqueID( 1513503376 ),	FoundPt( {107, 211} ),	Origin( {0.00867052023121384, 96.6870397553517} ),	Tag Line( 1 ));gpin << Launch Graphlet;
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+gb = dt << Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :age ), Y( :weight ) ),
+	Elements( Bar( X, Y, Legend( 7 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Graphlet(
+	Picture(
+		loader = Include( "$BUILTIN_SCRIPTS/hllib.jsl" );
+		hlp = loader:lazyLoad( "hllPresets" );
+		hlp:launchPie();
+	),
+	Title( "Pie Preset" ),
+	Reapply( 1 )
+);
+gpin = frame << Add Pin Annotation(
+	Seg( BarSeg( 1 ) ),
+	Index( {0, 0} ),
+	Index Row( {0, 0} ),
+	UniqueID( 1513503376 ),
+	FoundPt( {107, 211} ),
+	Origin( {0.00867052023121384, 96.6870397553517} ),
+	Tag Line( 1 )
+);
+gpin << Launch Graphlet;
 
 ```
 
@@ -2110,7 +3682,31 @@ dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );gb = dt << Graph Builder(	S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),	Elements( Points( X, Y, Legend( 2 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Gridlet(	Expunge( {{Matcher( "Species" )}} ),	Annex(		{{Matcher( "Species@Wikipedia" ), value( local:_Species ),		click( Web( "https://wikipedia.com/wiki/Iris_" || local:_Species ) )}}	));frame << Add Pin Annotation(	Seg( Marker Seg( 1 ) ),	Index( 133 ),	Index Row( 133 ),	UniqueID( 1441114933 ),	FoundPt( {384, 228} ),	Origin( {5.08093306288033, 6.30828571428571} ),	Tag Line( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+gb = dt << Graph Builder(
+	Size( 531, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),
+	Elements( Points( X, Y, Legend( 2 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Gridlet(
+	Expunge( {{Matcher( "Species" )}} ),
+	Annex(
+		{{Matcher( "Species@Wikipedia" ), value( local:_Species ),
+		click( Web( "https://wikipedia.com/wiki/Iris_" || local:_Species ) )}}
+	)
+);
+frame << Add Pin Annotation(
+	Seg( Marker Seg( 1 ) ),
+	Index( 133 ),
+	Index Row( 133 ),
+	UniqueID( 1441114933 ),
+	FoundPt( {384, 228} ),
+	Origin( {5.08093306288033, 6.30828571428571} ),
+	Tag Line( 1 )
+);
 
 ```
 
@@ -2118,7 +3714,25 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),	Elements( Points( X, Y, Legend( 2 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Gridlet( Expunge( {{Matcher( "Row" )}} ) );frame << Add Pin Annotation(	Seg( Marker Seg( 1 ) ),	Index( 133 ),	Index Row( 133 ),	UniqueID( 1441114933 ),	FoundPt( {384, 228} ),	Origin( {5.08093306288033, 6.30828571428571} ),	Tag Line( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+gb = dt << Graph Builder(
+	Size( 531, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),
+	Elements( Points( X, Y, Legend( 2 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Gridlet( Expunge( {{Matcher( "Row" )}} ) );
+frame << Add Pin Annotation(
+	Seg( Marker Seg( 1 ) ),
+	Index( 133 ),
+	Index Row( 133 ),
+	UniqueID( 1441114933 ),
+	FoundPt( {384, 228} ),
+	Origin( {5.08093306288033, 6.30828571428571} ),
+	Tag Line( 1 )
+);
 
 ```
 
@@ -2126,7 +3740,30 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),	Elements( Points( X, Y, Legend( 2 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Gridlet(	Reformat(		{{Matcher( "Petal length" ), Format( "Scientific", 80 ), 80},		{Matcher( "Sepal length" ), Format( "Scientific", 80 ), 80}}	));frame << Add Pin Annotation(	Seg( Marker Seg( 1 ) ),	Index( 133 ),	Index Row( 133 ),	UniqueID( 1441114933 ),	FoundPt( {384, 228} ),	Origin( {5.08093306288033, 6.30828571428571} ),	Tag Line( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+gb = dt << Graph Builder(
+	Size( 531, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),
+	Elements( Points( X, Y, Legend( 2 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Gridlet(
+	Reformat(
+		{{Matcher( "Petal length" ), Format( "Scientific", 80 ), 80},
+		{Matcher( "Sepal length" ), Format( "Scientific", 80 ), 80}}
+	)
+);
+frame << Add Pin Annotation(
+	Seg( Marker Seg( 1 ) ),
+	Index( 133 ),
+	Index Row( 133 ),
+	UniqueID( 1441114933 ),
+	FoundPt( {384, 228} ),
+	Origin( {5.08093306288033, 6.30828571428571} ),
+	Tag Line( 1 )
+);
 
 ```
 
@@ -2134,7 +3771,25 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),	Elements( Points( X, Y, Legend( 2 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Gridlet( Rename( {{Matcher( "Row" ), value( "Observation" )}} ) );frame << Add Pin Annotation(	Seg( Marker Seg( 1 ) ),	Index( 133 ),	Index Row( 133 ),	UniqueID( 1441114933 ),	FoundPt( {384, 228} ),	Origin( {5.08093306288033, 6.30828571428571} ),	Tag Line( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+gb = dt << Graph Builder(
+	Size( 531, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),
+	Elements( Points( X, Y, Legend( 2 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Gridlet( Rename( {{Matcher( "Row" ), value( "Observation" )}} ) );
+frame << Add Pin Annotation(
+	Seg( Marker Seg( 1 ) ),
+	Index( 133 ),
+	Index Row( 133 ),
+	UniqueID( 1441114933 ),
+	FoundPt( {384, 228} ),
+	Origin( {5.08093306288033, 6.30828571428571} ),
+	Tag Line( 1 )
+);
 
 ```
 
@@ -2142,7 +3797,30 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),	Elements( Points( X, Y, Legend( 2 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Gridlet(	Style(		{{Matcher( "Species" ), Text Color( "Red" ), Background Color( "Light Yellow" ),		Justification( "Center" ), "Font"("Times New Roman", 14, "Italic")}}	));frame << Add Pin Annotation(	Seg( Marker Seg( 1 ) ),	Index( 133 ),	Index Row( 133 ),	UniqueID( 1441114933 ),	FoundPt( {384, 228} ),	Origin( {5.08093306288033, 6.30828571428571} ),	Tag Line( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+gb = dt << Graph Builder(
+	Size( 531, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),
+	Elements( Points( X, Y, Legend( 2 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Gridlet(
+	Style(
+		{{Matcher( "Species" ), Text Color( "Red" ), Background Color( "Light Yellow" ),
+		Justification( "Center" ), "Font"("Times New Roman", 14, "Italic")}}
+	)
+);
+frame << Add Pin Annotation(
+	Seg( Marker Seg( 1 ) ),
+	Index( 133 ),
+	Index Row( 133 ),
+	UniqueID( 1441114933 ),
+	FoundPt( {384, 228} ),
+	Origin( {5.08093306288033, 6.30828571428571} ),
+	Tag Line( 1 )
+);
 
 ```
 
@@ -2154,7 +3832,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Height( 150 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Height( 150 );
 
 ```
 
@@ -2166,7 +3850,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Main Window", Text Box( "Main JMP Window" ) );w << Set Main Window;
+
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Set Main Window;
 
 ```
 
@@ -2178,7 +3865,14 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Max Size( 500, 500 );fb << Get Max Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Max Size( 500, 500 );
+fb << Get Max Size;
 
 ```
 
@@ -2190,7 +3884,14 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Min Size( 30, 30 );fb << Get Min Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Min Size( 30, 30 );
+fb << Get Min Size;
 
 ```
 
@@ -2202,7 +3903,17 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );w << Set page setup(	margins( 1, 1, 1, 1 ),	scale( 1 ),	portrait( 1 ),	paper size( "Letter" ),	Table of Contents( "always" ));w << Save pdf( "$DOCUMENTS\test.pdf" );
+
+//This message applies to all display box objects
+w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
+w << Set page setup(
+	margins( 1, 1, 1, 1 ),
+	scale( 1 ),
+	portrait( 1 ),
+	paper size( "Letter" ),
+	Table of Contents( "always" )
+);
+w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```
 
@@ -2214,7 +3925,14 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Footer Test" ) );w << Set Print Footers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Footer Test" ) );
+w << Set Print Footers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -2226,7 +3944,14 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Header Test" ) );w << Set Print Headers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Header Test" ) );
+w << Set Print Headers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -2238,7 +3963,9 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -2250,7 +3977,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Set Report Title( "New Title" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Set Report Title( "New Title" );
 
 ```
 
@@ -2266,7 +3998,24 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example",	H List Box(		tv = Text Box( "V+V", <<rotate text( left ) ),		V List Box(			Text Box( "resize the containing window" ),			th = Text Box( "H+H" ),			ts = Spacer Box( <<Size( 10, 30 ), <<Color( "blue" ) )		)	));tv << Vertical Alignment( "Center" );th << Horizontal Alignment( "Center" );th << Set Stretch( "Window", "Off" );ts << Set Min Size( 5, 20 );ts << Set Max Size( 100000, 100 );ts << Set Stretch( "Window", "Window" );
+
+//This message applies to all display box objects
+New Window( "Example",
+	H List Box(
+		tv = Text Box( "V+V", <<rotate text( left ) ),
+		V List Box(
+			Text Box( "resize the containing window" ),
+			th = Text Box( "H+H" ),
+			ts = Spacer Box( <<Size( 10, 30 ), <<Color( "blue" ) )
+		)
+	)
+);
+tv << Vertical Alignment( "Center" );
+th << Horizontal Alignment( "Center" );
+th << Set Stretch( "Window", "Off" );
+ts << Set Min Size( 5, 20 );
+ts << Set Max Size( 100000, 100 );
+ts << Set Stretch( "Window", "Window" );
 
 ```
 
@@ -2274,7 +4023,14 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Stretch",	V List Box(		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),		Spacer Box( Size( 20, 20 ), Color( "Light Red" ), <<Set Stretch( "Fill", "Off" ) )	));
+
+//This message applies to all display box objects
+New Window( "Stretch",
+	V List Box(
+		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),
+		Spacer Box( Size( 20, 20 ), Color( "Light Red" ), <<Set Stretch( "Fill", "Off" ) )
+	)
+);
 
 ```
 
@@ -2286,7 +4042,14 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );d << Report View( "Summary" );r = d << Report;tb = r[Table Box( 1 )];tb << Set Summary Behavior( "Visible" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+d << Report View( "Summary" );
+r = d << Report;
+tb = r[Table Box( 1 )];
+tb << Set Summary Behavior( "Visible" );
 
 ```
 
@@ -2300,7 +4063,38 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This example uses hardcoded content from Wikipedia// For a complete example that uses dynamic, data-driven content, please see// https://community.jmp.com/t5/JMP-Scripts/WikiReader-Augmenting-Hover-Labels-with-web-data-and-images/ta-p/237488dt = Open( "$SAMPLE_DATA/Iris.jmp" );gb = dt << Graph Builder(	Size( 531, 456 ),	Show Control Panel( 0 ),	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),	Elements( Points( X, Y, Legend( 2 ) ) ));frame = (gb << report)[FrameBox( 1 )];frame << Set Textlet(	Setup(		local:description =		"Iris virginica, with the common name Virginia iris, is a perennial species of flowering plant, native to eastern North America.";		local:text = Substr( local:description, 1, 140 ) || "...";	),	Markup(		"<background color='white'><i><font family='Arial' size='12'>{local:text}</font></i></background>"	),	Width( 320 ));gpin = frame << Add Pin Annotation(	Seg( Marker Seg( 1 ) ),	Index( 133 ),	Index Row( 133 ),	UniqueID( 1441114933 ),	FoundPt( {384, 228} ),	Origin( {5.08093306288033, 6.30828571428571} ),	Tag Line( 1 ));
+
+//This example uses hardcoded content from Wikipedia
+// For a complete example that uses dynamic, data-driven content, please see
+// https://community.jmp.com/t5/JMP-Scripts/WikiReader-Augmenting-Hover-Labels-with-web-data-and-images/ta-p/237488
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+gb = dt << Graph Builder(
+	Size( 531, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Petal length ), Y( :Sepal length ), Color( :Species ) ),
+	Elements( Points( X, Y, Legend( 2 ) ) )
+);
+frame = (gb << report)[FrameBox( 1 )];
+frame << Set Textlet(
+	Setup(
+		local:description =
+		"Iris virginica, with the common name Virginia iris, is a perennial species of flowering plant, native to eastern North America.";
+		local:text = Substr( local:description, 1, 140 ) || "...";
+	),
+	Markup(
+		"<background color='white'><i><font family='Arial' size='12'>{local:text}</font></i></background>"
+	),
+	Width( 320 )
+);
+gpin = frame << Add Pin Annotation(
+	Seg( Marker Seg( 1 ) ),
+	Index( 133 ),
+	Index Row( 133 ),
+	UniqueID( 1441114933 ),
+	FoundPt( {384, 228} ),
+	Origin( {5.08093306288033, 6.30828571428571} ),
+	Tag Line( 1 )
+);
 
 ```
 
@@ -2312,7 +4106,13 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Width( 400 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Width( 400 );
 
 ```
 
@@ -2324,7 +4124,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Example", ex = Button Box( "New Analysis" ) );w << Set Window Icon( "Scatter3D" );
+
+//This message applies to all display box objects
+w = New Window( "Example", ex = Button Box( "New Analysis" ) );
+w << Set Window Icon( "Scatter3D" );
 
 ```
 
@@ -2336,7 +4139,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 800, 1200 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 800, 1200 );
 
 ```
 
@@ -2348,7 +4154,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Set Window Title( "New Title" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Set Window Title( "New Title" );
 
 ```
 
@@ -2360,7 +4171,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Show Properties();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Show Properties();
 
 ```
 
@@ -2372,7 +4188,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Show Tree Structure();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Show Tree Structure();
 
 ```
 
@@ -2384,7 +4205,13 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );w << Show Window( 1 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+w << Show Window( 1 );
 
 ```
 
@@ -2396,7 +4223,14 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisSibling = axisbox << sib();Print( axisSibling << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisSibling = axisbox << sib();
+Print( axisSibling << Class Name() );
 
 ```
 
@@ -2408,7 +4242,17 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r()[framebox( 1 )];fb << sib append(	Text Box( "============ after ==============", Rotate Text( "Right" ) ),	"Horizontal");fb << sib append( Text Box( "=== below ===" ), "Vertical" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r()[framebox( 1 )];
+fb << sib append(
+	Text Box( "============ after ==============", Rotate Text( "Right" ) ),
+	"Horizontal"
+);
+fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ```
 
@@ -2420,7 +4264,17 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << sib prepend(	Text Box( "    ============ before ==============", Rotate Text( "Right" ) ),	"Horizontal");fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << sib prepend(
+	Text Box( "    ============ before ==============", Rotate Text( "Right" ) ),
+	"Horizontal"
+);
+fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ```
 
@@ -2432,7 +4286,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Size Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Size Window( 500, 500 );
 
 ```
 
@@ -2444,7 +4301,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Size To Isometric;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Size To Isometric;
 
 ```
 
@@ -2474,7 +4336,7 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ### Text Color
 
-**Sintassi:** obj &lt;&lt; Text Color( color ); color = obj &lt;&lt; Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -2482,7 +4344,15 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Text Color );Wait( 2 );tb << Text Color( "Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Text Color );
+Wait( 2 );
+tb << Text Color( "Red" );
 
 ```
 
@@ -2494,7 +4364,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Top( 0 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Top( 0 );
 
 ```
 
@@ -2506,7 +4381,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rootParent = rbiv << Top Parent();Print( rootParent << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rootParent = rbiv << Top Parent();
+Print( rootParent << Class Name() );
 
 ```
 
@@ -2518,13 +4399,18 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;framebox = rbiv[Frame Box( 1 )];framebox << Transparency( 0.5 );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+framebox = rbiv[Frame Box( 1 )];
+framebox << Transparency( 0.5 );
 
 ```
 
 ### UI Only
 
-**Sintassi:** obj &lt;&lt; UI Only( state=0|1 ); state = obj &lt;&lt; Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
@@ -2534,43 +4420,127 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "UpdateWindow example",	Button Box( "red",		color = "red";        // try commenting out each of the 4 lines that follow, run the script,		// click the buttons, and resize the windows (for example) to force a		// redraw.  All 4 lines are important, though the last two may be		// slightly different on Windows and Mac OSs.		g1 << inval; /* tell the oval to redraw */		g2 << inval; /* tell the rectangle to redraw */		g1 << updateWindow; /* tell the oval window to update immediately */		g2 << updateWindow; /* tell the rect window to update immediately */		// this is a busy-wait to help demonstrate the various behaviors...		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );	),	Button Box( "blue",		color = "blue";		g1 << inval; /* same comments */		g2 << inval;		g1 << updateWindow;		g2 << updateWindow;		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 );	));New Window( "oval",	g1 = Graph Box(/* the graph does NOT watch for the color variable to change                      but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	));New Window( "rect",	g2 = Graph Box(		Fill Color( color );		Rect( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "UpdateWindow example",
+	Button Box( "red",
+		color = "red";
+        // try commenting out each of the 4 lines that follow, run the script,
+		// click the buttons, and resize the windows (for example) to force a
+		// redraw.  All 4 lines are important, though the last two may be
+		// slightly different on Windows and Mac OSs.
+		g1 << inval; /* tell the oval to redraw */
+		g2 << inval; /* tell the rectangle to redraw */
+		g1 << updateWindow; /* tell the oval window to update immediately */
+		g2 << updateWindow; /* tell the rect window to update immediately */
+		// this is a busy-wait to help demonstrate the various behaviors...
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );
+	),
+	Button Box( "blue",
+		color = "blue";
+		g1 << inval; /* same comments */
+		g2 << inval;
+		g1 << updateWindow;
+		g2 << updateWindow;
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 );
+	)
+);
+New Window( "oval",
+	g1 = Graph Box(/* the graph does NOT watch for the color variable to change
+                      but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	)
+);
+New Window( "rect",
+	g2 = Graph Box(
+		Fill Color( color );
+		Rect( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
 ### User Resizable
 
-**Sintassi:** obj &lt;&lt; User Resizable; obj &lt;&lt; Get User Resizable
+**Sintassi:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descrizione:** Se il riquadro è ridimensionabile dall&apos;utente, il cursore cambierà in prossimità dei bordi inferiore e destro per consentire di ridimensionare il riquadro in modalità drag-and-drop.
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );New Window( "resize",	H Splitter Box(		Size( 600, 200 ),		tree = Tree Box( {root1, root2} ),		scroll = Scroll Box(			Size( 300, 200 ),			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )		)	));tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );Wait( 2 );tree << User Resizable( {0, 0} );scroll << User Resizable( {0, 0} );
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+New Window( "resize",
+	H Splitter Box(
+		Size( 600, 200 ),
+		tree = Tree Box( {root1, root2} ),
+		scroll = Scroll Box(
+			Size( 300, 200 ),
+			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )
+		)
+	)
+);
+tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+Wait( 2 );
+tree << User Resizable( {0, 0} );
+scroll << User Resizable( {0, 0} );
 
 ```
 
 ### Vertical Alignment
 
-**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" ); "Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Set Horizontal( 1 );lb = r[List Box( 7 )];lb << Border( 1 );Wait( 2 );lb << Vertical Alignment( "Bottom" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Set Horizontal( 1 );
+lb = r[List Box( 7 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Vertical Alignment( "Bottom" );
 
 ```
 
 ### Visibility
 
-**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" ); "Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Visibility );Wait( 1 );tb << Visibility( "Collapse" );Show( tb << Get Visibility );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Visibility );
+Wait( 1 );
+tb << Visibility( "Collapse" );
+Show( tb << Get Visibility );
 
 ```
 
@@ -2582,7 +4552,13 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;Show( biv << Window Class Name() );Show( rbiv << Window Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+Show( biv << Window Class Name() );
+Show( rbiv << Window Class Name() );
 
 ```
 
@@ -2596,7 +4572,19 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :height ), Y( :weight, Position( 1 ), Side( "Right" ) ) ),	Elements(		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )	));gbr = gb << report;fb = gbr[Frame Box( 1 )];fb << X Axis;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :age ), Y( :height ), Y( :weight, Position( 1 ), Side( "Right" ) ) ),
+	Elements(
+		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),
+		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )
+	)
+);
+gbr = gb << report;
+fb = gbr[Frame Box( 1 )];
+fb << X Axis;
 
 ```
 
@@ -2604,7 +4592,28 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Control Panel( 0 ),	Variables(		X( :age, Size( 23 ) ),		Y( :height, Size( 37 ) ),		Y( :weight, Position( 1 ), Size( 37 ), Side( "Right" ) )	),	Elements(		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )	));framebox = Report( gb )[framebox( 1 )];framebox << X Axis(	Min( -2 ),	Max( 7 ),	Inc( 1 ),	Add Ref Line( 5, "Solid", "Blue" ),	Rotated Labels( "Vertical" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = dt << Graph Builder(
+	Show Control Panel( 0 ),
+	Variables(
+		X( :age, Size( 23 ) ),
+		Y( :height, Size( 37 ) ),
+		Y( :weight, Position( 1 ), Size( 37 ), Side( "Right" ) )
+	),
+	Elements(
+		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),
+		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )
+	)
+);
+framebox = Report( gb )[framebox( 1 )];
+framebox << X Axis(
+	Min( -2 ),
+	Max( 7 ),
+	Inc( 1 ),
+	Add Ref Line( 5, "Solid", "Blue" ),
+	Rotated Labels( "Vertical" )
+);
 
 ```
 
@@ -2618,7 +4627,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[@isOpen='false']" )) << Close( 0 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[@isOpen='false']" )) << Close( 0 );
 
 ```
 
@@ -2626,7 +4639,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//TextEditBox" )) << Text Color( "Green" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//TextEditBox" )) << Text Color( "Green" );
 
 ```
 
@@ -2634,7 +4651,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[text()='Summary of Fit']/TableBox" )) <<Make Into Data Table;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[text()='Summary of Fit']/TableBox" )) <<
+Make Into Data Table;
 
 ```
 
@@ -2642,7 +4664,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//NumberColBoxItem[text()='40']/parent::*" )) <<Text Color( "Green" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//NumberColBoxItem[text()='40']/parent::*" )) <<
+Text Color( "Green" );
 
 ```
 
@@ -2650,7 +4677,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//MarkerSeg" )) << Set Marker( "Square" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//MarkerSeg" )) << Set Marker( "Square" );
 
 ```
 
@@ -2658,7 +4689,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[text()='Parameter Estimates']" )) << Close;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[text()='Parameter Estimates']" )) << Close;
 
 ```
 
@@ -2672,7 +4707,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :age ), Y( :height ), Y( :weight, Position( 1 ), Side( "Right" ) ) ),	Elements(		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )	));gbr = gb << report;fb = gbr[Frame Box( 1 )];fb << Y Axis;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :age ), Y( :height ), Y( :weight, Position( 1 ), Side( "Right" ) ) ),
+	Elements(
+		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),
+		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )
+	)
+);
+gbr = gb << report;
+fb = gbr[Frame Box( 1 )];
+fb << Y Axis;
 
 ```
 
@@ -2680,7 +4727,28 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Control Panel( 0 ),	Variables(		X( :age, Size( 23 ) ),		Y( :height, Size( 37 ) ),		Y( :weight, Position( 1 ), Size( 37 ), Side( "Right" ) )	),	Elements(		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )	));framebox = Report( gb )[framebox( 1 )];framebox << Y Axis(	Add Ref Line( 61.25, "Solid", "Medium Dark Green" ),	Show Major Grid( 1 ),	Show Minor Grid( 1 ),	Format( "Fixed Dec", 5, 2 ),	Rotated Labels( "Perpendicular" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = dt << Graph Builder(
+	Show Control Panel( 0 ),
+	Variables(
+		X( :age, Size( 23 ) ),
+		Y( :height, Size( 37 ) ),
+		Y( :weight, Position( 1 ), Size( 37 ), Side( "Right" ) )
+	),
+	Elements(
+		Points( X, Y( 1 ), Legend( 1 ), Jitter( 1 ) ),
+		Points( X, Y( 2 ), Legend( 3 ), Jitter( 1 ) )
+	)
+);
+framebox = Report( gb )[framebox( 1 )];
+framebox << Y Axis(
+	Add Ref Line( 61.25, "Solid", "Medium Dark Green" ),
+	Show Major Grid( 1 ),
+	Show Minor Grid( 1 ),
+	Format( "Fixed Dec", 5, 2 ),
+	Rotated Labels( "Perpendicular" )
+);
 
 ```
 
@@ -2692,7 +4760,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = dt << Graph Builder(	Show Contr
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 80, 120 );Wait( 2 );w << Zoom Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 80, 120 );
+Wait( 2 );
+w << Zoom Window;
 
 ```
 

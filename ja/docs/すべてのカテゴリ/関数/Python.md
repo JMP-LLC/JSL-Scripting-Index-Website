@@ -12,7 +12,10 @@
 
 ```jsl
 
-PythonConnection = Python Connect();version = PythonConnection << Get Version;Show( version );
+
+PythonConnection = Python Connect();
+version = PythonConnection << Get Version;
+Show( version );
 
 ```
 
@@ -28,6 +31,7 @@ PythonConnection = Python Connect();version = PythonConnection << Get Version;
 
 ```jsl
 
+
 Python Create JPIP CMD();
 
 ```
@@ -36,7 +40,10 @@ Python Create JPIP CMD();
 
 ```jsl
 
-conn = Python Connect();conn << Create JPIP CMD();
+
+
+conn = Python Connect();
+conn << Create JPIP CMD();
 
 ```
 
@@ -52,7 +59,29 @@ Python Create JPIP CMD();
 
 ```jsl
 
-a = "abcdef";d = 3.141;x = 0;z = 0;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m, a, d},	{x, z, a, d},	"\[import numpy as npa = np.multiply(v, m) # matrix productd = np.divide(v, m) # matrix divisionz = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left divisionx = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division]\");Show( v, m, ml, x, z, a, d );
+
+
+a = "abcdef";
+d = 3.141;
+x = 0;
+z = 0;
+v = [1 0 0, 0 1 0, 0 0 1];
+// pi, e, phi, c, Plank's, Faraday, 345 triangle
+m = [3.141 2.718 1.618,
+2.997 6.626 9.648,
+3 4 5];
+ml = Python Execute(
+	{v, m, a, d},
+	{x, z, a, d},
+	"\[
+import numpy as np
+a = np.multiply(v, m) # matrix product
+d = np.divide(v, m) # matrix division
+z = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left division
+x = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division
+]\"
+);
+Show( v, m, ml, x, z, a, d );
 
 ```
 
@@ -60,7 +89,39 @@ Python Create JPIP CMD();
 
 ```jsl
 
-x1 = 1;x2 = 2;y1 = 1;y2 = 2;z1 = 1;z2 = 2;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m},	{x1, x2, y1, y2, z1, z2},	"\[import numpy as npx1 = np.multiply(v, m) # matrix productprint('x1=', x1)x2 = np.divide(v, m) # matrix divisionprint('x2=', x2)y1 = np.dot(v, m) # dot product of v and mprint('y1=', y1)y2 = np.dot(m, v) # dot product of m and vprint('y2=', y2)z1 = np.inner(v, m) # inner product of v and mprint('z1=', z1)z2 = np.inner(m, v) # innder product of m and vprint('z2=', z2)]\");Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
+
+
+x1 = 1;
+x2 = 2;
+y1 = 1;
+y2 = 2;
+z1 = 1;
+z2 = 2;
+v = [1 0 0, 0 1 0, 0 0 1];
+// pi, e, phi, c, Plank's, Faraday, 345 triangle
+m = [3.141 2.718 1.618,
+2.997 6.626 9.648,
+3 4 5];
+ml = Python Execute(
+	{v, m},
+	{x1, x2, y1, y2, z1, z2},
+	"\[
+import numpy as np
+x1 = np.multiply(v, m) # matrix product
+print('x1=', x1)
+x2 = np.divide(v, m) # matrix division
+print('x2=', x2)
+y1 = np.dot(v, m) # dot product of v and m
+print('y1=', y1)
+y2 = np.dot(m, v) # dot product of m and v
+print('y2=', y2)
+z1 = np.inner(v, m) # inner product of v and m
+print('z1=', z1)
+z2 = np.inner(m, v) # innder product of m and v
+print('z2=', z2)
+]\"
+);
+Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```
 
@@ -76,7 +137,12 @@ Python Create JPIP CMD();
 
 ```jsl
 
-date1 = As Date( Today() );Python Send( date1 );date2 = Python Get( date1 );Show( date1, date2 );
+
+
+date1 = As Date( Today() );
+Python Send( date1 );
+date2 = Python Get( date1 );
+Show( date1, date2 );
 
 ```
 
@@ -84,7 +150,13 @@ Python Create JPIP CMD();
 
 ```jsl
 
-Python Install Packages( "numpy" );Python Submit( "import numpy as np" );Python Submit( "datetime64 = np.datetime64('1989-10-05')" );numpy_datetime = Python Get( datetime64 );Show( numpy_datetime );
+
+
+Python Install Packages( "numpy" );
+Python Submit( "import numpy as np" );
+Python Submit( "datetime64 = np.datetime64('1989-10-05')" );
+numpy_datetime = Python Get( datetime64 );
+Show( numpy_datetime );
 
 ```
 
@@ -92,7 +164,12 @@ Python Create JPIP CMD();
 
 ```jsl
 
-x1 = {1, 2, 3};Python Send( x1 );x2 = Python Get( x1 );Show( x1, x2 );
+
+
+x1 = {1, 2, 3};
+Python Send( x1 );
+x2 = Python Get( x1 );
+Show( x1, x2 );
 
 ```
 
@@ -106,7 +183,9 @@ Python Create JPIP CMD();
 
 ```jsl
 
-version = Python Get Version();Show( version );
+
+version = Python Get Version();
+Show( version );
 
 ```
 
@@ -122,7 +201,14 @@ version = Python Get Version();Show( version );
 
 ```jsl
 
-Python Init();Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
+
+
+Python Init();
+Python Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = Python Get( str );
+Show( getStr );
 
 ```
 
@@ -130,7 +216,14 @@ version = Python Get Version();Show( version );
 
 ```jsl
 
-PythonConnection = Python Init();PythonConnection << Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = Python Get( str );Show( getStr );
+
+
+PythonConnection = Python Init();
+PythonConnection << Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = Python Get( str );
+Show( getStr );
 
 ```
 
@@ -146,7 +239,9 @@ version = Python Get Version();Show( version );
 
 ```jsl
 
-// install numpy and pandas packagesPython Install Packages( "numpy pandas" );
+
+// install numpy and pandas packages
+Python Install Packages( "numpy pandas" );
 
 ```
 
@@ -154,7 +249,9 @@ version = Python Get Version();Show( version );
 
 ```jsl
 
-// install numpy and pandas packagesPython Install Packages( {"numpy", "pandas"} );
+
+// install numpy and pandas packages
+Python Install Packages( {"numpy", "pandas"} );
 
 ```
 
@@ -162,7 +259,10 @@ version = Python Get Version();Show( version );
 
 ```jsl
 
-// install numpy and pandas packagesconn = Python Connect();conn << Install Packages( "numpy pandas" );
+
+// install numpy and pandas packages
+conn = Python Connect();
+conn << Install Packages( "numpy pandas" );
 
 ```
 
@@ -176,7 +276,9 @@ version = Python Get Version();Show( version );
 
 ```jsl
 
-x = Python Is Connected();Show( x );
+
+x = Python Is Connected();
+Show( x );
 
 ```
 
@@ -190,7 +292,9 @@ x = Python Is Connected();Show( x );
 
 ```jsl
 
-Python name = Python JMP Name to Python Name( a b c );Show( Python name );
+
+Python name = Python JMP Name to Python Name( a b c );
+Show( Python name );
 
 ```
 
@@ -204,7 +308,13 @@ Python name = Python JMP Name to Python Name( a b c );Show( Python name );
 
 ```jsl
 
-pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();// will show error, pi not definedPython Submit( "print(pi)" );
+
+pi = 3.1415927;
+Python Send( pi );
+Python Submit( "print(pi)" );
+Python Reset();
+// will show error, pi not defined
+Python Submit( "print(pi)" );
 
 ```
 
@@ -220,7 +330,14 @@ pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();
 
 ```jsl
 
-x = {1, 2, 3};Python Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt );Python Submit( "print(x)" );Python Submit( "print(dt)" );
+
+
+x = {1, 2, 3};
+Python Send( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Python Send( dt );
+Python Submit( "print(x)" );
+Python Submit( "print(dt)" );
 
 ```
 
@@ -228,7 +345,11 @@ pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Python Send( dt:weight );Python Submit( "print(dt_weight)" );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Python Send( dt:weight );
+Python Submit( "print(dt_weight)" );
 
 ```
 
@@ -236,7 +357,11 @@ pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();
 
 ```jsl
 
-date = As Date( Today() );Python Send( date );Python Submit( "print(date)" );
+
+
+date = As Date( Today() );
+Python Send( date );
+Python Submit( "print(date)" );
 
 ```
 
@@ -250,7 +375,12 @@ pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();
 
 ```jsl
 
-Python Send File( "$SAMPLE_DATA/Big Class.jmp" );Python Send File( "$SAMPLE_DATA/Baseball.jmp" );Python Submit( "print(Big_Class)" );Python Submit( "print(Baseball)" );
+
+
+Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
+Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
+Python Submit( "print(Big_Class)" );
+Python Submit( "print(Baseball)" );
 
 ```
 
@@ -264,7 +394,13 @@ pi = 3.1415927;Python Send( pi );Python Submit( "print(pi)" );Python Reset();
 
 ```jsl
 
-Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog'a = 200]\" );getStr = Python Get( str );getNum = Python Get( a );Show( getStr, getNum );
+
+Python Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog'
+a = 200]\" );
+getStr = Python Get( str );
+getNum = Python Get( a );
+Show( getStr, getNum );
 
 ```
 
@@ -277,6 +413,7 @@ Python Submit( "\[str = 'The quick brown fox jumps over the lazy dog'a = 200]\
 **JMP追加されたバージョン:** 14
 
 ```jsl
+
 
 Python Submit File( "some_Python_source.py" );
 

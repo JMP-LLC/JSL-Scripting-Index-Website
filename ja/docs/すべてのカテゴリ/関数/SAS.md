@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -25,6 +26,7 @@ As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
@@ -40,6 +42,7 @@ As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
+
 As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -53,6 +56,7 @@ As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
@@ -68,6 +72,7 @@ As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
+
 As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -82,6 +87,7 @@ As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
+
 SAS Name( {"x 1", "x 2"} );
 
 ```
@@ -95,6 +101,7 @@ SAS Name( {"x 1", "x 2"} );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 

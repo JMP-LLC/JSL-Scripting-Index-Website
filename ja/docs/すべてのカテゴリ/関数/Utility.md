@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Pi() + 10;
 
 ```
@@ -25,6 +26,7 @@ Pi() + 10;
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Beep();
 
@@ -40,7 +42,14 @@ Beep();
 
 ```jsl
 
-Hex(/* make it printable */ Blob MD5(/* get the hash */		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",			BLOB/* the result is a BLOB, not a string */		)	)) == "763D3C9F5F3E92951B3A3DC965084DAC" /* benchmark hash value */ /* the result is 1 if the benchmark matches */;
+
+Hex(/* make it printable */ Blob MD5(/* get the hash */
+		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",
+			BLOB/* the result is a BLOB, not a string */
+		)
+	)
+) == "763D3C9F5F3E92951B3A3DC965084DAC" /* benchmark hash value */ /* the result is 1 if the benchmark matches */
+;
 
 ```
 
@@ -53,6 +62,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */		Load Text File(/* a fi
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
@@ -67,6 +77,7 @@ Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Build Information();
 
@@ -84,7 +95,10 @@ Build Information();
 
 ```jsl
 
-Caption( "explanation" );Wait( 2 );Caption( remove );
+
+Caption( "explanation" );
+Wait( 2 );
+Caption( remove );
 
 ```
 
@@ -92,7 +106,16 @@ Caption( "explanation" );Wait( 2 );Caption( remove );
 
 ```jsl
 
-Caption(	{100, 200},	"explanation",	Font( "Arial Black" ),	Font Size( 16 ),	Text Color( "blue" ),	Back Color( "yellow" ),	Spoken( 1 ));
+
+Caption(
+	{100, 200},
+	"explanation",
+	Font( "Arial Black" ),
+	Font Size( 16 ),
+	Text Color( "blue" ),
+	Back Color( "yellow" ),
+	Spoken( 1 )
+);
 
 ```
 
@@ -114,6 +137,7 @@ Caption(	{100, 200},	"explanation",	Font( "Arial Black" ),	Font Size( 16 ),
 
 ```jsl
 
+
 Current Journal();
 
 ```
@@ -128,7 +152,9 @@ Current Journal();
 
 ```jsl
 
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
+
+
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```
 
@@ -142,7 +168,17 @@ Current Journal();
 
 ```jsl
 
-exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/	Set Script(		ex = exfeed << getLine;		Show( ex );	));For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/	exfeed << Queue Line( Char( exi ) );	Wait( .5 ););
+
+exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
+	Set Script(
+		ex = exfeed << getLine;
+		Show( ex );
+	)
+);
+For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/
+	exfeed << Queue Line( Char( exi ) );
+	Wait( .5 );
+);
 
 ```
 
@@ -156,7 +192,14 @@ exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),
 
 ```jsl
 
-// Right-click and select Debug.// In the JSL Debugger, click Run.x = 5;y = 8;Debug Break();z = x + yy;Show( z );
+
+// Right-click and select Debug.
+// In the JSL Debugger, click Run.
+x = 5;
+y = 8;
+Debug Break();
+z = x + yy;
+Show( z );
 
 ```
 
@@ -170,7 +213,9 @@ exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),
 
 ```jsl
 
-Decode URI( "Foo%20Bar" );
+
+
+Decode URI( "Foo%20Bar" );
 
 ```
 
@@ -183,6 +228,7 @@ exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),
 **JMP追加されたバージョン:** 14
 
 ```jsl
+
 
 Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
@@ -198,6 +244,7 @@ Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```jsl
 
+
 Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```
@@ -212,7 +259,9 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```jsl
 
-Disable JMP Live URL( "*public.jmp.com" );
+
+
+Disable JMP Live URL( "*public.jmp.com" );
 
 ```
 
@@ -226,7 +275,9 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```jsl
 
-Disable Proxy Settings( 1 );
+
+
+Disable Proxy Settings( 1 );
 
 ```
 
@@ -242,6 +293,7 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```jsl
 
+
 6 / 3 / 2;
 
 ```
@@ -250,7 +302,10 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```jsl
 
-x = Divide( 5 );y = 1 / 5;Show( x, y );
+
+x = Divide( 5 );
+y = 1 / 5;
+Show( x, y );
 
 ```
 
@@ -263,6 +318,7 @@ x = Divide( 5 );y = 1 / 5;Show( x, y );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Empty();
 
@@ -278,7 +334,9 @@ Empty();
 
 ```jsl
 
-Enable JMP Live URL( "https://public.jmp.com" );
+
+
+Enable JMP Live URL( "https://public.jmp.com" );
 
 ```
 
@@ -292,7 +350,9 @@ Empty();
 
 ```jsl
 
-Enable Proxy Settings( 0 );
+
+
+Enable Proxy Settings( 0 );
 
 ```
 
@@ -306,7 +366,9 @@ Empty();
 
 ```jsl
 
-Encode URI( "Foo Bar" );
+
+
+Encode URI( "Foo Bar" );
 
 ```
 
@@ -319,6 +381,7 @@ Empty();
 **JMP追加されたバージョン:** 14
 
 ```jsl
+
 
 Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
@@ -334,6 +397,7 @@ Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```jsl
 
+
 Encode64 Double( -1.5831 );
 
 ```
@@ -348,13 +412,16 @@ Encode64 Double( -1.5831 );
 
 ```jsl
 
-A = Faure Quasi Random Sequence( 3, 100 );As Table( A );Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
+
+A = Faure Quasi Random Sequence( 3, 100 );
+As Table( A );
+Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```
 
 ### Format Pattern
 
-**構文:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;) x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; ) obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
+**構文:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **説明:** Format Patternsは、日付時間形式を定義する"<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>"のような文字列。山括弧に囲まれた部分をフィールド記述子という。フィールド記述子は、値(たとえば、4桁の年を表す"<YYYY>")または他の日付時間テキスト(たとえば、ロケール固有の日付区切り文字、"</>")を示す。形式パターンを使うと、JMPに用意されていない形式を作成できる。これらの形式は、データの書式設定とデータの入力の両方に使用できる。
 
@@ -362,7 +429,69 @@ A = Faure Quasi Random Sequence( 3, 100 );As Table( A );Scatterplot 3D( Y( :Co
 
 ```jsl
 
-s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );Show( s, x );                                                /*フィールド記述子日付(時間の長さのフィールド記述子とともに使うことはできません)================================================================================<YYYY>        4桁の年。(入力時は1～4桁を受け入れる。)<YY>          2桁の年<yyyy>        ISO形式の4桁の年。ISOの週に対応している。(入力時は1～4桁を受け入れる。)<yy>          ISO形式の2桁の年。ISOの週に対応している。<YYYY.>       小数点以下の値を持つ年。日時を完全に表す。<M>           月(1～12)<MM>          2桁の月、1桁の場合は前にゼロをつける(01～12)。<Month>       月名<Mmm>         短い形式の月名<MMM>         短い形式の月名。3文字に統一。<WW1>         2桁の週。1桁の場合は前にゼロをつける。年の最初の日曜日に第2週が始まる。第1週は、最初の日曜日に先立つ6日間以下の週。(01～54)<WW2>         2桁の週。1桁の場合は前にゼロをつける。年の最初の日曜日に第1週が始まる。第0週は、最初の日曜日に先立つ6日間以下の週。(00～53)<ww>          ISO形式の2桁の週。1桁の場合は前にゼロをつける。月曜日を週の始まりとする。第1週は、年の初めの4日以上の週。年をまたぐ週は、日数が多い方の年に属するものとされる。(01～53)<D>           月の中の日(1～31)<DD>          2桁の、月の中の日。1桁の場合は前にゼロをつける(01～31)。<Q>           四半期(1～4)<Q#>          Q記号に続く四半期(1～4)<DayOfWeek>   曜日名<DW>          曜日番号。1は日曜日で、7は土曜日。<dw>          曜日番号。1は月曜日で、7は日曜日。</>           ロケールの日付区切り文字。(入力時は一般的な区切り文字を受け入れる。)<->           ISOの日付区切り文字(-)。(入力時は一般的な区切りを受け入れる。)</?>          日付の入力時に使用するオプションの日付区切り文字。出力時には使用されない。<'T'>         ISO日付形式の「T」記号時間(時間の長さのフィールド記述子とともに使えるものもあります)================================================================================<hh>          現在のロケールの時間形式。              <ampm>記述子が存在する場合、ロケールにより12時間形式または24時間形式を使用する。<AMPM>記述子が存在する場合、12時間形式を使用する。それ以外の場合、24時間形式を使用する。(時間の長さのフィールド記述子とともに使うことはできない。)<zhh>         現在のロケールの時間形式。1桁の場合は前にゼロを付ける。              <ampm>記述子が存在する場合、ロケールにより12時間形式または24時間形式を使用する。<AMPM>記述子が存在する場合、12時間形式を使用する。それ以外の場合、24時間形式を使用する              (時間の長さのフィールド記述子とともに使うことはできない)。<hh24>        2桁の24時間形式の時間。1桁の場合は前にゼロをつける(00～23)。<mm>          2桁の分。1桁の場合は前にゼロをつける(00～59)。<ss>          2桁で統一した秒。1桁の場合は前にゼロをつける(00～59)。<ampm>        現在のロケールのAM/PM記号。(時間の長さのフィールド記述子とともに使うことはできない。)<AMPM>        ロケールに依存しないAM/PM記号「AM」または「PM」(時間の長さのフィールド記述子とともに使うことはできない)。<:>           ロケールの時間の区切り文字。<::>          ISOの時間の区切り文字(:)。(入力時はロケールの時間区切り文字も受け入れる。)<:?>          日付の入力時に使用するオプションの時間区切り文字。出力時には使用されない。時間の長さ(日付のフィールド記述子とともに使うことはできません)================================================================================<Day>         日数。時間の長さにおいて最も重要なフィールド。他の「数(カウント)」とともに使うことはできない。<Hour>        時間数。時間の長さにおいて最も重要なフィールド。他の「数 (カウント)」とともに使うことはできない。<Minute>      分数。時間の長さにおいて最も重要なフィールド。他の「数 (カウント)」とともに使うことはできない。その他================================================================================<<>           <で置換される。*/
+
+s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
+x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
+Show( s, x );
+                                                /*
+フィールド記述子
+
+日付
+(時間の長さのフィールド記述子とともに使うことはできません)
+================================================================================
+<YYYY>        4桁の年。(入力時は1～4桁を受け入れる。)
+<YY>          2桁の年
+<yyyy>        ISO形式の4桁の年。ISOの週に対応している。(入力時は1～4桁を受け入れる。)
+<yy>          ISO形式の2桁の年。ISOの週に対応している。
+<YYYY.>       小数点以下の値を持つ年。日時を完全に表す。
+<M>           月(1～12)
+<MM>          2桁の月、1桁の場合は前にゼロをつける(01～12)。
+<Month>       月名
+<Mmm>         短い形式の月名
+<MMM>         短い形式の月名。3文字に統一。
+<WW1>         2桁の週。1桁の場合は前にゼロをつける。年の最初の日曜日に第2週が始まる。第1週は、最初の日曜日に先立つ6日間以下の週。(01～54)
+<WW2>         2桁の週。1桁の場合は前にゼロをつける。年の最初の日曜日に第1週が始まる。第0週は、最初の日曜日に先立つ6日間以下の週。(00～53)
+<ww>          ISO形式の2桁の週。1桁の場合は前にゼロをつける。月曜日を週の始まりとする。第1週は、年の初めの4日以上の週。年をまたぐ週は、日数が多い方の年に属するものとされる。(01～53)
+<D>           月の中の日(1～31)
+<DD>          2桁の、月の中の日。1桁の場合は前にゼロをつける(01～31)。
+<Q>           四半期(1～4)
+<Q#>          Q記号に続く四半期(1～4)
+<DayOfWeek>   曜日名
+<DW>          曜日番号。1は日曜日で、7は土曜日。
+<dw>          曜日番号。1は月曜日で、7は日曜日。
+</>           ロケールの日付区切り文字。(入力時は一般的な区切り文字を受け入れる。)
+<->           ISOの日付区切り文字(-)。(入力時は一般的な区切りを受け入れる。)
+</?>          日付の入力時に使用するオプションの日付区切り文字。出力時には使用されない。
+<'T'>         ISO日付形式の「T」記号
+
+時間
+(時間の長さのフィールド記述子とともに使えるものもあります)
+================================================================================
+<hh>          現在のロケールの時間形式。
+              <ampm>記述子が存在する場合、ロケールにより12時間形式または24時間形式を使用する。<AMPM>記述子が存在する場合、12時間形式を使用する。それ以外の場合、24時間形式を使用する。(時間の長さのフィールド記述子とともに使うことはできない。)
+<zhh>         現在のロケールの時間形式。1桁の場合は前にゼロを付ける。
+              <ampm>記述子が存在する場合、ロケールにより12時間形式または24時間形式を使用する。<AMPM>記述子が存在する場合、12時間形式を使用する。それ以外の場合、24時間形式を使用する
+              (時間の長さのフィールド記述子とともに使うことはできない)。
+<hh24>        2桁の24時間形式の時間。1桁の場合は前にゼロをつける(00～23)。
+<mm>          2桁の分。1桁の場合は前にゼロをつける(00～59)。
+<ss>          2桁で統一した秒。1桁の場合は前にゼロをつける(00～59)。
+<ampm>        現在のロケールのAM/PM記号。(時間の長さのフィールド記述子とともに使うことはできない。)
+<AMPM>        ロケールに依存しないAM/PM記号「AM」または「PM」(時間の長さのフィールド記述子とともに使うことはできない)。
+<:>           ロケールの時間の区切り文字。
+<::>          ISOの時間の区切り文字(:)。(入力時はロケールの時間区切り文字も受け入れる。)
+<:?>          日付の入力時に使用するオプションの時間区切り文字。出力時には使用されない。
+
+時間の長さ
+(日付のフィールド記述子とともに使うことはできません)
+================================================================================
+<Day>         日数。時間の長さにおいて最も重要なフィールド。他の「数(カウント)」とともに使うことはできない。
+<Hour>        時間数。時間の長さにおいて最も重要なフィールド。他の「数 (カウント)」とともに使うことはできない。
+<Minute>      分数。時間の長さにおいて最も重要なフィールド。他の「数 (カウント)」とともに使うことはできない。
+
+その他
+================================================================================
+<<>           <で置換される。
+*/
 
 ```
 
@@ -375,6 +504,7 @@ s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );x
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 addin = Get Addin( "com.mycompany.myaddin" );
 
@@ -390,7 +520,10 @@ addin = Get Addin( "com.mycompany.myaddin" );
 
 ```jsl
 
-addins = Get Addins();addin ids = Get Addins() << id;Show( addins, addin ids );
+
+addins = Get Addins();
+addin ids = Get Addins() << id;
+Show( addins, addin ids );
 
 ```
 
@@ -403,6 +536,7 @@ addins = Get Addins();addin ids = Get Addins() << id;Show( addins, addin ids )
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Get Addr Info( "www.jmp.com" )[3][4];
 
@@ -418,6 +552,7 @@ Get Addr Info( "www.jmp.com" )[3][4];
 
 ```jsl
 
+
 Get Clipboard();
 
 ```
@@ -431,6 +566,7 @@ Get Clipboard();
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Get Name Info( "149.173.5.120" )[3][4];
 
@@ -454,7 +590,13 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 ```jsl
 
-/*https://oauth.net/2/grant-types/*/grant_types = Get OAuth2 Grant Types();Show( grant_types );
+
+
+/*
+https://oauth.net/2/grant-types/
+*/
+grant_types = Get OAuth2 Grant Types();
+Show( grant_types );
 
 ```
 
@@ -464,7 +606,11 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 ```jsl
 
-url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";aa = Get OpenID Connect Discovery( url );Show( aa );
+
+
+url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
+aa = Get OpenID Connect Discovery( url );
+Show( aa );
 
 ```
 
@@ -482,6 +628,7 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 ```jsl
 
+
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -495,6 +642,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
@@ -510,6 +658,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```jsl
 
+
 Get Policies();
 
 ```
@@ -523,6 +672,7 @@ Get Policies();
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Get Preferences( Graph marker size );
 
@@ -538,6 +688,7 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
+
 Get Preferences( Graph marker size );
 
 ```
@@ -552,7 +703,9 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
-ex1 = 1;ex2 = 2;
+
+ex1 = 1;
+ex2 = 2;
 
 ```
 
@@ -566,7 +719,10 @@ ex1 = 1;ex2 = 2;
 
 ```jsl
 
-Gzip Compress(	Char To Blob( "random data does not usually compress well and may get larger" ));
+
+Gzip Compress(
+	Char To Blob( "random data does not usually compress well and may get larger" )
+);
 
 ```
 
@@ -580,7 +736,13 @@ Gzip Compress(	Char To Blob( "random data does not usually compress well and ma
 
 ```jsl
 
-Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/	Char To Blob(		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",		"ascii~hex"	));
+
+Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
+	Char To Blob(
+		"~1F~8B~08~00~00~00~00~00~00~0A~0D~CA~C1~0D~00~21~08~04~C0V~B6~B5~CDA~FC~80~5C~00c~EC^~E7=~C9)~E1~106~21~A1~85~19~8DU~8Bf~07_~F8~9FZ~85~ADfx~13~CE~83~A1~0Dc~0E~CD~0B~94*~16~1E=~00~00~00",
+		"ascii~hex"
+	)
+);
 
 ```
 
@@ -594,7 +756,18 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 
 ```jsl
 
-If( Host is( "Mac" ),	Show( "On Mac" ),	Show( "Not on Mac" ));If( Host is( "Bits64" ),	Show( "64 bit" ));If(	Host is( "x86_64" ), Show( "On x86_64" ),	Host is( "arm64" ), Show( "On arm64" ));
+
+If( Host is( "Mac" ),
+	Show( "On Mac" ),
+	Show( "Not on Mac" )
+);
+If( Host is( "Bits64" ),
+	Show( "64 bit" )
+);
+If(
+	Host is( "x86_64" ), Show( "On x86_64" ),
+	Host is( "arm64" ), Show( "On arm64" )
+);
 
 ```
 
@@ -608,7 +781,22 @@ If( Host is( "Mac" ),	Show( "On Mac" ),	Show( "Not on Mac" ));If( Host is( "
 
 ```jsl
 
-New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Control Key(),			Text( {60, 50}, "Control Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
+
+New Window( "Show me the key",
+	Graph Box(
+		Rect( 45, 55, 55, 45, 1 );
+		If( Is Shift Key(),
+			Text( {50, 60}, "Shift Key" )
+		);
+		If( Is Control Key(),
+			Text( {60, 50}, "Control Key" )
+		);
+		If( Is Alt Key(),
+			Text( {50, 35}, "Alt Key" )
+		);
+		Mousetrap( {} );
+	)
+);
 
 ```
 
@@ -622,7 +810,22 @@ New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is
 
 ```jsl
 
-New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Command Key(),			Text( {60, 50}, "Command Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
+
+New Window( "Show me the key",
+	Graph Box(
+		Rect( 45, 55, 55, 45, 1 );
+		If( Is Shift Key(),
+			Text( {50, 60}, "Shift Key" )
+		);
+		If( Is Command Key(),
+			Text( {60, 50}, "Command Key" )
+		);
+		If( Is Alt Key(),
+			Text( {50, 35}, "Alt Key" )
+		);
+		Mousetrap( {} );
+	)
+);
 
 ```
 
@@ -636,7 +839,22 @@ New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is
 
 ```jsl
 
-New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Context Key(),			Text( {60, 50}, "Context Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
+
+New Window( "Show me the key",
+	Graph Box(
+		Rect( 45, 55, 55, 45, 1 );
+		If( Is Shift Key(),
+			Text( {50, 60}, "Shift Key" )
+		);
+		If( Is Context Key(),
+			Text( {60, 50}, "Context Key" )
+		);
+		If( Is Alt Key(),
+			Text( {50, 35}, "Alt Key" )
+		);
+		Mousetrap( {} );
+	)
+);
 
 ```
 
@@ -650,7 +868,22 @@ New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is
 
 ```jsl
 
-New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Control Key(),			Text( {60, 50}, "Control Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
+
+New Window( "Show me the key",
+	Graph Box(
+		Rect( 45, 55, 55, 45, 1 );
+		If( Is Shift Key(),
+			Text( {50, 60}, "Shift Key" )
+		);
+		If( Is Control Key(),
+			Text( {60, 50}, "Control Key" )
+		);
+		If( Is Alt Key(),
+			Text( {50, 35}, "Alt Key" )
+		);
+		Mousetrap( {} );
+	)
+);
 
 ```
 
@@ -664,7 +897,10 @@ New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is
 
 ```jsl
 
-url = "http://public.jmp.com";Show( Is JMP Live URL Enabled( url ) );
+
+
+url = "http://public.jmp.com";
+Show( Is JMP Live URL Enabled( url ) );
 
 ```
 
@@ -678,7 +914,22 @@ New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is
 
 ```jsl
 
-New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Option Key(),			Text( {60, 50}, "Option Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
+
+New Window( "Show me the key",
+	Graph Box(
+		Rect( 45, 55, 55, 45, 1 );
+		If( Is Shift Key(),
+			Text( {50, 60}, "Shift Key" )
+		);
+		If( Is Option Key(),
+			Text( {60, 50}, "Option Key" )
+		);
+		If( Is Alt Key(),
+			Text( {50, 35}, "Alt Key" )
+		);
+		Mousetrap( {} );
+	)
+);
 
 ```
 
@@ -692,7 +943,22 @@ New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is
 
 ```jsl
 
-New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is Shift Key(),			Text( {50, 60}, "Shift Key" )		);		If( Is Control Key(),			Text( {60, 50}, "Control Key" )		);		If( Is Alt Key(),			Text( {50, 35}, "Alt Key" )		);		Mousetrap( {} );	));
+
+New Window( "Show me the key",
+	Graph Box(
+		Rect( 45, 55, 55, 45, 1 );
+		If( Is Shift Key(),
+			Text( {50, 60}, "Shift Key" )
+		);
+		If( Is Control Key(),
+			Text( {60, 50}, "Control Key" )
+		);
+		If( Is Alt Key(),
+			Text( {50, 35}, "Alt Key" )
+		);
+		Mousetrap( {} );
+	)
+);
 
 ```
 
@@ -705,6 +971,7 @@ New Window( "Show me the key",	Graph Box(		Rect( 45, 55, 55, 45, 1 );		If( Is
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 JMP Product Name();
 
@@ -720,6 +987,7 @@ JMP Product Name();
 
 ```jsl
 
+
 JMP Version();
 
 ```
@@ -734,7 +1002,10 @@ JMP Version();
 
 ```jsl
 
-JSL Encrypted(	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*");
+
+JSL Encrypted(
+	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
+);
 
 ```
 
@@ -748,7 +1019,16 @@ JSL Encrypted(	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FO
 
 ```jsl
 
-x = JSL Quote(/* Begin quote. */    For (i = 1, i <= 5, i++,        // Print the value of i.        Print(i);    );    // End expression.);New Window( "editor", Script Box( x ) );
+
+
+x = JSL Quote(/* Begin quote. */
+    For (i = 1, i <= 5, i++,
+        // Print the value of i.
+        Print(i);
+    );
+    // End expression.
+);
+New Window( "editor", Script Box( x ) );
 
 ```
 
@@ -764,7 +1044,13 @@ JSL Encrypted(	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FO
 
 ```jsl
 
-dll = Load DLL( Base Name( "/path/to/dll/financial" ) );// Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac// Declarations for "irr" and "npv" are auto-loadedmyirr = dll << irr( 0.1, -51000, 1000, 900, 950 );mynpv = dll << npv( 0.05, -51000, 1000, 900, 9500 );dll << UnloadDLL();
+
+dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
+// Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
+// Declarations for "irr" and "npv" are auto-loaded
+myirr = dll << irr( 0.1, -51000, 1000, 900, 950 );
+mynpv = dll << npv( 0.05, -51000, 1000, 900, 9500 );
+dll << UnloadDLL();
 
 ```
 
@@ -772,7 +1058,14 @@ dll = Load DLL( Base Name( "/path/to/dll/financial" ) );// Loads "financial.dll
 
 ```jsl
 
-If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	dll << CallDLL( "MessageBeep", "n", 0 );	Wait( 1 );	dll << CallDLL( "MessageBeep", "n", 0 );	dll << UnloadDLL(););
+
+If( Host is( "Windows" ),
+	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	Wait( 1 );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	dll << UnloadDLL();
+);
 
 ```
 
@@ -785,6 +1078,7 @@ If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class.jmp" );
 
@@ -802,6 +1096,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ```jsl
 
+
 Main Menu( "Sample Index" );
 
 ```
@@ -809,6 +1104,7 @@ Main Menu( "Sample Index" );
 **例 2**
 
 ```jsl
+
 
 Main Menu( "Help:Sample Index" );
 
@@ -823,6 +1119,7 @@ Main Menu( "Help:Sample Index" );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 -Pi();
 
@@ -840,7 +1137,15 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
-// use the save-script-to-script-window button // in the MFI dialog to see more messages// for filtering files and controlling the importMultiple File Import(	<<Set Folder( "$DESKTOP" ),	<<Set Name Filter( "*.csv;" ),	<<Set Name Enable( 1 )) << Create Window;
+
+// use the save-script-to-script-window button 
+// in the MFI dialog to see more messages
+// for filtering files and controlling the import
+Multiple File Import(
+	<<Set Folder( "$DESKTOP" ),
+	<<Set Name Filter( "*.csv;" ),
+	<<Set Name Enable( 1 )
+) << Create Window;
 
 ```
 
@@ -848,7 +1153,13 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
-mfi = Multiple File Import();mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );mfi << Set Name Filter( "*.txt" );mfi << Set Name Enable( 1 );tables = mfi << Import Data();
+
+
+mfi = Multiple File Import();
+mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
+mfi << Set Name Filter( "*.txt" );
+mfi << Set Name Enable( 1 );
+tables = mfi << Import Data();
 
 ```
 
@@ -861,6 +1172,7 @@ Main Menu( "Help:Sample Index" );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 2 * Pi();
 
@@ -876,7 +1188,10 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
-Name( "taxable income(2011)" ) = 456000;tax = .25;Print( tax * Name( "taxable income(2011)" ) );
+
+Name( "taxable income(2011)" ) = 456000;
+tax = .25;
+Print( tax * Name( "taxable income(2011)" ) );
 
 ```
 
@@ -890,7 +1205,57 @@ Name( "taxable income(2011)" ) = 456000;tax = .25;Print( tax * Name( "taxable 
 
 ```jsl
 
-getSentiment = Function( {text},	{Default Local},	fields = Associative Array();	fields["text"] = text;	s = New HTTP Request(		URL( "http://text-processing.com/api/sentiment/" ),		Method( "POST" ),		Form( Fields( fields ) ),		Headers( {"Accept: application/json"} )	) << Send;	sAsList = Parse JSON( s );	retval = Associative Array();	retval["pos"] = sAsList["probability"]["pos"];	retval["neg"] = sAsList["probability"]["neg"];	retval["neutral"] = sAsList["probability"]["neutral"];	retval["label"] = sAsList["label"];	retval;);                         addSentimentColumns = Function( {dt, colname, bLabel, bValues},	{Default Local},	col = Column( dt, colname );	colLabel = "Sentiment_Label(" || colname || ")";	colValPos = "Sentiment_Pos(" || colname || ")";	colValNeg = "Sentiment_Neg(" || colname || ")";	colValNeutral = "Sentiment_Neutral(" || colname || ")";	If( bLabel,		dt << New Column( colLabel, Character )	);	If( bValues,		dt << New Column( colValPos, Numeric );		dt << New Column( colValNeg, Numeric );		dt << New Column( colValNeutral, Numeric );	);	For( i = 1, i <= N Rows( dt ), i++,		sentiment = getSentiment( col[i] );		If( bLabel,			Column( dt, colLabel )[i] = sentiment["label"]		);		If( bValues,			Column( dt, colValPos )[i] = sentiment["pos"];			Column( dt, colValNeg )[i] = sentiment["neg"];			Column( dt, colValNeutral )[i] = sentiment["neutral"];		);	););                         dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );addSentimentColumns( dt2, "Name", 1, 1 );
+
+
+getSentiment = Function( {text},
+	{Default Local},
+	fields = Associative Array();
+	fields["text"] = text;
+	s = New HTTP Request(
+		URL( "http://text-processing.com/api/sentiment/" ),
+		Method( "POST" ),
+		Form( Fields( fields ) ),
+		Headers( {"Accept: application/json"} )
+	) << Send;
+	sAsList = Parse JSON( s );
+	retval = Associative Array();
+	retval["pos"] = sAsList["probability"]["pos"];
+	retval["neg"] = sAsList["probability"]["neg"];
+	retval["neutral"] = sAsList["probability"]["neutral"];
+	retval["label"] = sAsList["label"];
+	retval;
+);
+                         
+addSentimentColumns = Function( {dt, colname, bLabel, bValues},
+	{Default Local},
+	col = Column( dt, colname );
+	colLabel = "Sentiment_Label(" || colname || ")";
+	colValPos = "Sentiment_Pos(" || colname || ")";
+	colValNeg = "Sentiment_Neg(" || colname || ")";
+	colValNeutral = "Sentiment_Neutral(" || colname || ")";
+	If( bLabel,
+		dt << New Column( colLabel, Character )
+	);
+	If( bValues,
+		dt << New Column( colValPos, Numeric );
+		dt << New Column( colValNeg, Numeric );
+		dt << New Column( colValNeutral, Numeric );
+	);
+	For( i = 1, i <= N Rows( dt ), i++,
+		sentiment = getSentiment( col[i] );
+		If( bLabel,
+			Column( dt, colLabel )[i] = sentiment["label"]
+		);
+		If( bValues,
+			Column( dt, colValPos )[i] = sentiment["pos"];
+			Column( dt, colValNeg )[i] = sentiment["neg"];
+			Column( dt, colValNeutral )[i] = sentiment["neutral"];
+		);
+	);
+);
+                         
+dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );
+addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```
 
@@ -904,7 +1269,32 @@ Name( "taxable income(2011)" ) = 456000;tax = .25;Print( tax * Name( "taxable 
 
 ```jsl
 
-requests = New Multi HTTP Request();requests << Add(	New HTTP Request(		Method( "GET" ),		URL(			"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso"		)	));requests << Add(	New HTTP Request(		Method( "GET" ),		URL(			"http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso"		)	));data = requests << Download( "show progress", "detailed" );http_requests = requests << Get Requests();For( i = 1, i <= N Items( http_requests ), i++,	Show( http_requests[i] << Get Mime Type() ));
+
+
+requests = New Multi HTTP Request();
+requests << Add(
+	New HTTP Request(
+		Method( "GET" ),
+		URL(
+			"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso"
+		)
+	)
+);
+
+requests << Add(
+	New HTTP Request(
+		Method( "GET" ),
+		URL(
+			"http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso"
+		)
+	)
+);
+
+data = requests << Download( "show progress", "detailed" );
+http_requests = requests << Get Requests();
+For( i = 1, i <= N Items( http_requests ), i++,
+	Show( http_requests[i] << Get Mime Type() )
+);
 
 ```
 
@@ -918,7 +1308,44 @@ Name( "taxable income(2011)" ) = 456000;tax = .25;Print( tax * Name( "taxable 
 
 ```jsl
 
-/*https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";redirect_url = "http://localhost/myapp/";client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";client_secret = "JqQX2PNo9bpM0uEihUPzyrh";scope = "openid offline_access https://graph.microsoft.com/user.read";auth_fields = [=> ];token_fields = [=> ];                                          oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );                                          auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;                                          oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );                                          auth_header = oauth2 << Get Auth Header();request = New HTTP Request(	URL( "https://graph.microsoft.com/v1.0/me" ),	Headers( {auth_header} ),	Method( "GET" ));data = request << Send;
+
+
+/*
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";
+client_secret = "JqQX2PNo9bpM0uEihUPzyrh";
+scope = "openid offline_access https://graph.microsoft.com/user.read";
+auth_fields = [=> ];
+token_fields = [=> ];
+                                          
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+                                          
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+                                          
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+                                          
+auth_header = oauth2 << Get Auth Header();
+request = New HTTP Request(
+	URL( "https://graph.microsoft.com/v1.0/me" ),
+	Headers( {auth_header} ),
+	Method( "GET" )
+);
+data = request << Send;
 
 ```
 
@@ -932,7 +1359,14 @@ Name( "taxable income(2011)" ) = 456000;tax = .25;Print( tax * Name( "taxable 
 
 ```jsl
 
-token = New OAuth2 Token(	Account( "jmpgoogldev@gmail.com" ),	Client ID( "test" ),	Client Secret( "test 2" ),	Refresh Token( "" ),	Token URL( "" ));
+
+token = New OAuth2 Token(
+	Account( "jmpgoogldev@gmail.com" ),
+	Client ID( "test" ),
+	Client Secret( "test 2" ),
+	Refresh Token( "" ),
+	Token URL( "" )
+);
 
 ```
 
@@ -946,7 +1380,33 @@ token = New OAuth2 Token(	Account( "jmpgoogldev@gmail.com" ),	Client ID( "test
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );webreport = New Web Report(	Add Report(		Distribution(			Continuous Distribution( Column( :weight ) ),			Nominal Distribution( Column( :age ) )		),		Title( "Distribution Web Report" ),		Description( "This report was created with the sample found in the Scripting Index" )	),	Add Report(		Bivariate(			Y( :weight ),			X( :height ),			Automatic Recalc( 1 ),			Fit Line( {Line Color( {213, 72, 87} )} ),			Local Data Filter( Add Filter( columns( :sex ) ) )		)	));webreport << Index( Title( "Big Class Report" ) );file = webreport << Save( "$TEMP" );If( !Is Empty( file ),	Web( file ));
+
+
+Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
+webreport = New Web Report(
+	Add Report(
+		Distribution(
+			Continuous Distribution( Column( :weight ) ),
+			Nominal Distribution( Column( :age ) )
+		),
+		Title( "Distribution Web Report" ),
+		Description( "This report was created with the sample found in the Scripting Index" )
+	),
+	Add Report(
+		Bivariate(
+			Y( :weight ),
+			X( :height ),
+			Automatic Recalc( 1 ),
+			Fit Line( {Line Color( {213, 72, 87} )} ),
+			Local Data Filter( Add Filter( columns( :sex ) ) )
+		)
+	)
+);
+webreport << Index( Title( "Big Class Report" ) );
+file = webreport << Save( "$TEMP" );
+If( !Is Empty( file ),
+	Web( file )
+);
 
 ```
 
@@ -968,7 +1428,17 @@ token = New OAuth2 Token(	Account( "jmpgoogldev@gmail.com" ),	Client ID( "test
 
 ```jsl
 
-exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/	Set Script(		ex = exfeed << getLine;		Show( ex );	));For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/	exfeed << Queue Line( Char( exi ) );	Wait( .5 ););
+
+exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
+	Set Script(
+		ex = exfeed << getLine;
+		Show( ex );
+	)
+);
+For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real data source is not available...*/
+	exfeed << Queue Line( Char( exi ) );
+	Wait( .5 );
+);
 
 ```
 
@@ -984,6 +1454,7 @@ exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),
 
 ```jsl
 
+
 Open Help( "Help" );
 
 ```
@@ -992,7 +1463,12 @@ Open Help( "Help" );
 
 ```jsl
 
-Open Help(	"Scripting Index",	Search( Term( "Open" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),	IndexContext( Category( "Functions" ) ));
+
+Open Help(
+	"Scripting Index",
+	Search( Term( "Open" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
+	IndexContext( Category( "Functions" ) )
+);
 
 ```
 
@@ -1000,7 +1476,16 @@ Open Help(	"Scripting Index",	Search( Term( "Open" ), Match( {"Contains Terms"
 
 ```jsl
 
-Open Help(	"Scripting Index",	Search( Term( "alpha" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),	IndexContext(		Category( "All Categories" ),		Object( "Search results" ),		Method( "Get Alpha" )	));
+
+Open Help(
+	"Scripting Index",
+	Search( Term( "alpha" ), Match( {"Contains Terms", "Match All Terms", "Ignore Case"} ) ),
+	IndexContext(
+		Category( "All Categories" ),
+		Object( "Search results" ),
+		Method( "Get Alpha" )
+	)
+);
 
 ```
 
@@ -1016,7 +1501,17 @@ Open Help(	"Scripting Index",	Search( Term( "alpha" ), Match( {"Contains Terms
 
 ```jsl
 
-/*See example two for more details*/ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";Parse XML( ex,	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),	On Element(		"col",		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )	));
+
+/*See example two for more details*/
+ex =
+"<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
+Parse XML( ex,
+	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),
+	On Element(
+		"col",
+		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )
+	)
+);
 
 ```
 
@@ -1024,7 +1519,53 @@ Open Help(	"Scripting Index",	Search( Term( "alpha" ), Match( {"Contains Terms
 
 ```jsl
 
-doc ="<a title='one'>    WWWa    <b>BB<c>ZZZ</c>B1</b>    XXXa    <b>BBB2</b>    YYYa    <c>CCC</c></a>";// doc, above, has tags a, b, and c. The c tags are not handled by the parser, below,// to show why text should be collected by Text(...) and then processed by EndTag(...)// Text(...) captures the BB ZZZ B1 while using EndTag(...) only captures the final snippet.docname = "undefined";doctext = "";recordtext = "";records = {};NestLevel = 0; // not really used here, but shows how to use Start/End Tag to track nesting levelParse XML( doc,	On Element(		"a",		Start Tag(			docname = XML Attr( "title" );			NestLevel++;		),         // decide here to trim the CRLF and blanks and use a single blank		Text( doctext = doctext || Trim( XML Text() ) || " " ),		End Tag( NestLevel-- )	),	On Element(		"b",		Start Tag( NestLevel++ ),         // comment out the next line and...		Text( recordtext = recordtext || Trim( XML Text() ) || " " ),		End Tag(            // ...uncomment the next line and observe the "B1" vs "BB ZZZ B1 " value in records			// recordtext = XMLText();			Insert Into( records, recordtext );			recordtext = "";			NestLevel--;		)	));Show( docname, doctext, records, NestLevel );
+
+
+doc =
+"
+<a title='one'>
+    WWWa
+    <b>BB<c>ZZZ</c>B1</b>
+    XXXa
+    <b>BBB2</b>
+    YYYa
+    <c>CCC</c>
+</a>";
+// doc, above, has tags a, b, and c. The c tags are not handled by the parser, below,
+// to show why text should be collected by Text(...) and then processed by EndTag(...)
+// Text(...) captures the BB ZZZ B1 while using EndTag(...) only captures the final snippet.
+docname = "undefined";
+doctext = "";
+recordtext = "";
+records = {};
+NestLevel = 0; // not really used here, but shows how to use Start/End Tag to track nesting level
+Parse XML( doc,
+	On Element(
+		"a",
+		Start Tag(
+			docname = XML Attr( "title" );
+			NestLevel++;
+		), 
+        // decide here to trim the CRLF and blanks and use a single blank
+		Text( doctext = doctext || Trim( XML Text() ) || " " ),
+		End Tag( NestLevel-- )
+	),
+	On Element(
+		"b",
+		Start Tag( NestLevel++ ), 
+        // comment out the next line and...
+		Text( recordtext = recordtext || Trim( XML Text() ) || " " ),
+		End Tag(
+            // ...uncomment the next line and observe the "B1" vs "BB ZZZ B1 " value in records
+			// recordtext = XMLText();
+			Insert Into( records, recordtext );
+			recordtext = "";
+			NestLevel--;
+		)
+	)
+);
+
+Show( docname, doctext, records, NestLevel );
 
 ```
 
@@ -1037,6 +1578,7 @@ Open Help(	"Scripting Index",	Search( Term( "alpha" ), Match( {"Contains Terms
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
@@ -1052,6 +1594,7 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1065,6 +1608,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
@@ -1080,6 +1624,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1093,6 +1638,7 @@ Preferences( Graph marker size( "Large" ) );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -1108,6 +1654,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1122,6 +1669,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1130,13 +1678,18 @@ Preferences( Graph marker size( "Large" ) );
 
 **構文:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;AutoLoad(0|1)&gt; )
 
-**説明:** Register an add-in. An Autoload value of 1 forces the add-in to load when registered. A value of 0 leaves the add-in unloaded. If AutoLoad is not specified the addin.def setting will be used if found otherwise the default will be for the add-in to be loaded.
+**説明:** アドインを登録する。AutoLoadの値を1に設定すると、登録時に必ずアドインがロードされる。0に設定すると、アドインはロードされない。AutoLoadを指定しなかった場合は、addin.defの設定が使われるか、設定が見つからない場合はデフォルトでアドインがロードされる。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-Register Addin(	"com.mycompany.myaddin",	"$DOCUMENTS/myaddin",	displayname( "Sample Addin" ));
+
+Register Addin(
+	"com.mycompany.myaddin",
+	"$DOCUMENTS/myaddin",
+	displayname( "Sample Addin" )
+);
 
 ```
 
@@ -1150,13 +1703,14 @@ Register Addin(	"com.mycompany.myaddin",	"$DOCUMENTS/myaddin",	displayname( "
 
 ```jsl
 
+
 /* Reverts menus back to factory default settings. */
 
 ```
 
 ### Run Program
 
-**構文:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt; )
+**構文:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **説明:** 標準入力(stdin)と標準出力(stdout)を使って外部プログラムを実行する。
 
@@ -1166,7 +1720,12 @@ Register Addin(	"com.mycompany.myaddin",	"$DOCUMENTS/myaddin",	displayname( "
 
 ```jsl
 
-RP = Run Program(	Executable( "PING.EXE"/*path probably not needed*/ ),	Options( {"-n 5", "localhost"} ),	ReadFunction( Function( {this}, Write( this << read ) ) ));
+
+RP = Run Program(
+	Executable( "PING.EXE"/*path probably not needed*/ ),
+	Options( {"-n 5", "localhost"} ),
+	ReadFunction( Function( {this}, Write( this << read ) ) )
+);
 
 ```
 
@@ -1174,7 +1733,12 @@ RP = Run Program(	Executable( "PING.EXE"/*path probably not needed*/ ),	Option
 
 ```jsl
 
-RP = Run Program(	Executable( "CMD.EXE"/*path probably not needed*/ ),	Options( {"/a", "/q", "/c dir"} ),	ReadFunction( Function( {this}, Write( this << read ) ) ));
+
+RP = Run Program(
+	Executable( "CMD.EXE"/*path probably not needed*/ ),
+	Options( {"/a", "/q", "/c dir"} ),
+	ReadFunction( Function( {this}, Write( this << read ) ) )
+);
 
 ```
 
@@ -1182,7 +1746,57 @@ RP = Run Program(	Executable( "CMD.EXE"/*path probably not needed*/ ),	Options
 
 ```jsl
 
-commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};icommand = 0;RP = Run Program(	Executable( "CMD.EXE" ),	Options( {"/a", "/q"} ),	ReadFunction( Function( {this}, Write( this << Read ) ) ),	WriteFunction(		Function( {this},			icommand++;			If( icommand <= N Items( commands ),				this << Write( commands[icommand] );				Show( commands[icommand] );			,				this << WriteEOF;				Show( this << CanRead, this << CanWrite, this << isReadEOF );			);		)	));
+
+commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};
+icommand = 0;
+RP = Run Program(
+	Executable( "CMD.EXE" ),
+	Options( {"/a", "/q"} ),
+	ReadFunction( Function( {this}, Write( this << Read ) ) ),
+	WriteFunction(
+		Function( {this},
+			icommand++;
+			If( icommand <= N Items( commands ),
+				this << Write( commands[icommand] );
+				Show( commands[icommand] );
+			,
+				this << WriteEOF;
+				Show( this << CanRead, this << CanWrite, this << isReadEOF );
+			);
+		)
+	)
+);
+
+```
+
+**例 4**
+
+```jsl
+
+
+
+/* /u instructs CMD to produce Unicode output which we decode. */
+RP = Run Program(
+	Executable( "cmd.exe" ),
+	Options( "\[/u /c echo こんにちは]\" ),
+	Read Function( "blob" )
+);
+Show( Blob To Char( RP, "utf-16le" ) );
+
+```
+
+**例 5**
+
+```jsl
+
+
+/*This example assumes a Japanese OS. 'blob' is used as 'text' assumes ASCII output.*/
+RP = Run Program(
+	Executable( "cmd.exe" ),
+	Options( "\[/c echo こんにちは]\" ),
+	Read Function( "blob" )
+);
+Show( Blob To Char( RP, "shift_jis" ) );
 
 ```
 
@@ -1196,7 +1810,12 @@ commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};icom
 
 ```jsl
 
-Schedule(	10,	Beep();	Print( "Time's up!" ););
+
+Schedule(
+	10,
+	Beep();
+	Print( "Time's up!" );
+);
 
 ```
 
@@ -1209,6 +1828,7 @@ Schedule(	10,	Beep();	Print( "Time's up!" ););
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Set Clipboard( "example" );
 
@@ -1224,6 +1844,7 @@ Set Clipboard( "example" );
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -1237,6 +1858,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
@@ -1252,6 +1874,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -1265,6 +1888,7 @@ Preferences( Graph marker size( "Large" ) );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -1282,7 +1906,19 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-// Make the Analyze toolbar visible in Script windowsSet Toolbar Visibility( "Analyze", Script, true );// Make the Analyze toolbar visible in all classes of windowsSet Toolbar Visibility( "Analyze", All, true );// Revert Script windows to the default toolbar set for Script windowsSet Toolbar Visibility( Default, Script );// Revert all windows to their default toolbar setSet Toolbar Visibility( Default, All );
+
+
+// Make the Analyze toolbar visible in Script windows
+Set Toolbar Visibility( "Analyze", Script, true );
+
+// Make the Analyze toolbar visible in all classes of windows
+Set Toolbar Visibility( "Analyze", All, true );
+
+// Revert Script windows to the default toolbar set for Script windows
+Set Toolbar Visibility( Default, Script );
+
+// Revert all windows to their default toolbar set
+Set Toolbar Visibility( Default, All );
 
 ```
 
@@ -1296,7 +1932,15 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
-editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),	i++,	If( editList[i][1] == "Common", /* or Insert or Remove */common = common || editList[i][2		] /* the snippet */	));common;
+
+editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );
+common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),
+	i++,
+	If( editList[i][1] == "Common", /* or Insert or Remove */common = common || editList[i][2
+		] /* the snippet */
+	)
+);
+common;
 
 ```
 
@@ -1309,6 +1953,7 @@ editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Show Addin Builder Dialog();
 
@@ -1324,6 +1969,7 @@ Show Addin Builder Dialog();
 
 ```jsl
 
+
 Show Addins Dialog();
 
 ```
@@ -1337,6 +1983,7 @@ Show Addins Dialog();
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Show Commands();
 
@@ -1352,6 +1999,7 @@ Show Commands();
 
 ```jsl
 
+
 Show Preferences();
 
 ```
@@ -1366,6 +2014,7 @@ Show Preferences();
 
 ```jsl
 
+
 Show Properties( Current Data Table() );
 
 ```
@@ -1374,13 +2023,16 @@ Show Properties( Current Data Table() );
 
 **構文:** points = Sobol Quasi Random Sequence(nDim, nRow)
 
-**説明:** Sobol列を用いてSpace Fillingの一連の疑似乱数(最大4000次元)を生成する。
+**説明:** Sobol列を用いてSpace Fillingの一連の疑似乱数(最大21.201次元)を生成する。
 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
 
-A = Sobol Quasi Random Sequence( 3, 100 );As Table( A );Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
+
+A = Sobol Quasi Random Sequence( 3, 100 );
+As Table( A );
+Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```
 
@@ -1394,7 +2046,38 @@ A = Sobol Quasi Random Sequence( 3, 100 );As Table( A );Scatterplot 3D( Y( :Co
 
 ```jsl
 
-// see the socket's OBJECT messages in the scripting index for better examplestCall = Socket();tcall << Ioctl( FIONBIO, 1 );rc = tCall << connect( "www.jmp.com", "80" );If( rc[2] == "ok",	tCall << <<Char To Blob(		"GET /en_us/home.html HTTP/1.1~0d~0aHost: www.jmp.com~0d~0aConnection: Close~0d~0a~0d~0a",		"ASCII~HEX"	);	While( 1,		tMessage = tCall << Recv( 100000 );		If(			tMessage[2] == "ok",				Show( Length( tMessage[3] ) ); //typically about six chunks of around 5-20K bytes		,			Starts With( tMessage[2], "WOULDBLOCK" ),				Show( "waiting" ) // sometimes data might not be available yet		,			Starts With( tMessage[2], "CLOSED" ),				Break(); // this is the desired result		, // else			Show( tMessage );			Stop();		);	);	tCall << Close();// done, // else	Show( rc );	Stop(););
+
+
+// see the socket's OBJECT messages in the scripting index for better examples
+tCall = Socket();
+tcall << Ioctl( FIONBIO, 1 );
+rc = tCall << connect( "www.jmp.com", "80" );
+If( rc[2] == "ok",
+	tCall << <<Char To Blob(
+		"GET /en_us/home.html HTTP/1.1~0d~0aHost: www.jmp.com~0d~0aConnection: Close~0d~0a~0d~0a",
+		"ASCII~HEX"
+	);
+	While( 1,
+		tMessage = tCall << Recv( 100000 );
+		If(
+			tMessage[2] == "ok",
+				Show( Length( tMessage[3] ) ); //typically about six chunks of around 5-20K bytes
+		,
+			Starts With( tMessage[2], "WOULDBLOCK" ),
+				Show( "waiting" ) // sometimes data might not be available yet
+		,
+			Starts With( tMessage[2], "CLOSED" ),
+				Break(); // this is the desired result
+		, // else
+			Show( tMessage );
+			Stop();
+		);
+	);
+	tCall << Close();// done
+, // else
+	Show( rc );
+	Stop();
+);
 
 ```
 
@@ -1407,6 +2090,7 @@ A = Sobol Quasi Random Sequence( 3, 100 );As Table( A );Scatterplot 3D( Y( :Co
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Speak( "Hello" );
 
@@ -1422,6 +2106,7 @@ Speak( "Hello" );
 
 ```jsl
 
+
 Status Msg( "calculating..." );
 
 ```
@@ -1436,6 +2121,7 @@ Status Msg( "calculating..." );
 
 ```jsl
 
+
 6 - 2 - 1;
 
 ```
@@ -1449,6 +2135,7 @@ Status Msg( "calculating..." );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Unregister Addin( "com.mycompany.myaddin" );
 
@@ -1466,13 +2153,34 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ```jsl
 
-//Making a clickable link show up in a formula columnNew Table( "Example",	Add Rows( 2 ),	New Column( "URL",		"Character",		"Nominal",		Formula( "https://www.jmp.com/" || :Page ),		Set Property(			"Event Handler",			Event Handler(				Click( JSL Quote( Function( {dt, col, row}, Web( dt:col[row] ) ) ) )			)		)	),	New Column( "Page",		"Character",		"Nominal",		Set Values( {"support/knowledge_base.shtml", "en_us/about.html"} )	));
+
+//Making a clickable link show up in a formula column
+New Table( "Example",
+	Add Rows( 2 ),
+	New Column( "URL",
+		"Character",
+		"Nominal",
+		Formula( "https://www.jmp.com/" || :Page ),
+		Set Property(
+			"Event Handler",
+			Event Handler(
+				Click( JSL Quote( Function( {dt, col, row}, Web( dt:col[row] ) ) ) )
+			)
+		)
+	),
+	New Column( "Page",
+		"Character",
+		"Nominal",
+		Set Values( {"support/knowledge_base.shtml", "en_us/about.html"} )
+	)
+);
 
 ```
 
 **単純な例**
 
 ```jsl
+
 
 Web( "http://www.jmp.com/" );
 
@@ -1488,7 +2196,16 @@ Web( "http://www.jmp.com/" );
 
 ```jsl
 
-ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";Parse XML( ex,	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),	On Element(		"col",		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )	));
+
+ex =
+"<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
+Parse XML( ex,
+	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),
+	On Element(
+		"col",
+		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )
+	)
+);
 
 ```
 
@@ -1501,6 +2218,7 @@ ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]<
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;" );
 
@@ -1516,6 +2234,7 @@ text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&qu
 
 ```jsl
 
+
 textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```
@@ -1530,7 +2249,16 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```jsl
 
-ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";Parse XML( ex,	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),	On Element(		"col",		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )	));
+
+ex =
+"<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
+Parse XML( ex,
+	On Element( "table", Start Tag( New Table( XML Attr( "name" ) ) ) ),
+	On Element(
+		"col",
+		End Tag( New Column( XML Attr( "name" ), Set Values( Parse( XML Text() ) ) ) )
+	)
+);
 
 ```
 
@@ -1544,7 +2272,15 @@ ex ="<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]<
 
 ```jsl
 
-jslPhrase ="The JSL to do this is :\[a = "hello";b = a|| " world.";show(b);]\ and you use the Submit command to run it.";Show( jslPhrase );
+
+
+jslPhrase =
+"The JSL to do this is :\[
+a = "hello";
+b = a|| " world.";
+show(b);
+]\ and you use the Submit command to run it.";
+Show( jslPhrase );
 
 ```
 

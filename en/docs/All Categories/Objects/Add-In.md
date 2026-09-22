@@ -12,7 +12,12 @@
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Auto Load( 1 ),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << Auto Load( 1 ),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 
@@ -26,7 +31,9 @@ addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin <
 
 ```jsl
 
-addins = Get Addins();addins << Display Name();
+
+addins = Get Addins();
+addins << Display Name();
 
 ```
 
@@ -34,7 +41,12 @@ addins = Get Addins();addins << Display Name();
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Display Name(),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << Display Name(),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 
@@ -48,7 +60,9 @@ addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin <
 
 ```jsl
 
-addins = Get Addins();addins << Home Folder();
+
+addins = Get Addins();
+addins << Home Folder();
 
 ```
 
@@ -56,7 +70,12 @@ addins = Get Addins();addins << Home Folder();
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Home Folder(),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << Home Folder(),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 
@@ -70,7 +89,9 @@ addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin <
 
 ```jsl
 
-addins = Get Addins();addins << ID();
+
+addins = Get Addins();
+addins << ID();
 
 ```
 
@@ -78,7 +99,12 @@ addins = Get Addins();addins << ID();
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << ID(),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << ID(),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 
@@ -92,7 +118,9 @@ addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin <
 
 ```jsl
 
-addins = Get Addins();addins << Is Loaded();
+
+addins = Get Addins();
+addins << Is Loaded();
 
 ```
 
@@ -100,7 +128,12 @@ addins = Get Addins();addins << Is Loaded();
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Is Loaded(),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << Is Loaded(),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 
@@ -112,7 +145,12 @@ addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin <
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Load(),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << Load(),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 
@@ -124,7 +162,12 @@ addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin <
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Unload(),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << Unload(),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 
@@ -138,7 +181,9 @@ addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin <
 
 ```jsl
 
-addins = Get Addins();addins << Version();
+
+addins = Get Addins();
+addins << Version();
 
 ```
 
@@ -146,7 +191,12 @@ addins = Get Addins();addins << Version();
 
 ```jsl
 
-addin = Get Addin( "com.mycompany.myaddin" );If( !Is Missing( addin ),	addin << Version(),	Print( "Add-In ID Not Found" ));
+
+addin = Get Addin( "com.mycompany.myaddin" );
+If( !Is Missing( addin ),
+	addin << Version(),
+	Print( "Add-In ID Not Found" )
+);
 
 ```
 

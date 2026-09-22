@@ -14,7 +14,18 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(		columns( :age, :sex, :height, :weight ),		Where( :sex == "F" ),		Where( :height >= 55 & :height <= 65 )	),	Mode( Select ));Wait( 1 );fav1 = df << add favorites( "FemaleAverageHt" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+df = dt << Data Filter(
+	Add Filter(
+		columns( :age, :sex, :height, :weight ),
+		Where( :sex == "F" ),
+		Where( :height >= 55 & :height <= 65 )
+	),
+	Mode( Select )
+);
+Wait( 1 );
+fav1 = df << add favorites( "FemaleAverageHt" );
 
 ```
 
@@ -22,7 +33,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter( columns( :age, :sex, :height, :weight ), Where( :sex == "F" ) ),	Mode( Select ));Wait( 1 );fav1 = df << add favorites();Show( fav1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+df = dt << Data Filter(
+	Add Filter( columns( :age, :sex, :height, :weight ), Where( :sex == "F" ) ),
+	Mode( Select )
+);
+Wait( 1 );
+fav1 = df << add favorites();
+Show( fav1 );
 
 ```
 
@@ -34,7 +53,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter();obj << Add Filter( columns( :POP ) );obj << Add Filter(	columns( :Region, :State, :City ),	Where( :Region == "S" ),	Where( :State == {"SC", "NC"} ));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter();
+obj << Add Filter( columns( :POP ) );
+obj << Add Filter(
+	columns( :Region, :State, :City ),
+	Where( :Region == "S" ),
+	Where( :State == {"SC", "NC"} )
+);
 
 ```
 
@@ -46,7 +73,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter();obj << Add Fi
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Columns( :Region );obj << Animation( Animate Column( :Region ), Bounce );//Now press the play button.
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Columns( :Region );
+obj << Animation( Animate Column( :Region ), Bounce );
+//Now press the play button.
 
 ```
 
@@ -58,7 +93,23 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(		columns( :age, :sex, :height, :weight ),		Where( :sex == "F" ),		Where( :height >= 55 & :height <= 65 )	),	Mode( Select ));a = "FemaleAverageHt";b = "Female";df << add favorites( a );df << Match( Where( :sex == "F" ) );df << add favorites( b );Wait( 1 );df << apply favorites( "FemaleAverageHt" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+df = dt << Data Filter(
+	Add Filter(
+		columns( :age, :sex, :height, :weight ),
+		Where( :sex == "F" ),
+		Where( :height >= 55 & :height <= 65 )
+	),
+	Mode( Select )
+);
+a = "FemaleAverageHt";
+b = "Female";
+df << add favorites( a );
+df << Match( Where( :sex == "F" ) );
+df << add favorites( b );
+Wait( 1 );
+df << apply favorites( "FemaleAverageHt" );
 
 ```
 
@@ -70,7 +121,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter;obj << Auto Clear( 1 );obj << Add Filter( columns( :age, :sex ), Where( :age == {13, 14} ) );Wait( 1 );obj << (filter column( :sex ) << Where( :sex == "M" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Data Filter;
+obj << Auto Clear( 1 );
+obj << Add Filter( columns( :age, :sex ), Where( :age == {13, 14} ) );
+Wait( 1 );
+obj << (filter column( :sex ) << Where( :sex == "M" ));
 
 ```
 
@@ -82,7 +139,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter;obj << Auto 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );Wait( 1 );obj << Clear;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
+Wait( 1 );
+obj << Clear;
 
 ```
 
@@ -94,7 +156,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );Wait( 1 );obj << (Filter Column( :Region ) << Clear Selection);
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );
+Wait( 1 );
+obj << (Filter Column( :Region ) << Clear Selection);
 
 ```
 
@@ -106,7 +172,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Col
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );obj << Close;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+obj << Close;
 
 ```
 
@@ -118,7 +191,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );obj = dt << Data Filter( Add Filter( columns( :Region, :State ) ) );obj << (Filter Column( :Region ) << Where( :Region == {"South"} ));Wait( 1 );obj << conditional( 1 );
+
+dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
+obj = dt << Data Filter( Add Filter( columns( :Region, :State ) ) );
+obj << (Filter Column( :Region ) << Where( :Region == {"South"} ));
+Wait( 1 );
+obj << conditional( 1 );
 
 ```
 
@@ -132,7 +210,16 @@ dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );obj = dt << Data Filter( Add Filter( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -144,7 +231,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Copy Script;
 
 ```
 
@@ -160,7 +253,20 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Data Filter(	Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),	Add Filter( columns( :sex ), Where( :sex == "F" ) ));Distribution(	Automatic Recalc( 1 ),	Continuous Distribution( Column( :weight ) ),	Local Data Filter(		Count Excluded Rows( 0 ),		Add Filter( columns( :age ), Where( :age == 12 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Data Filter(
+	Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter( columns( :sex ), Where( :sex == "F" ) )
+);
+Distribution(
+	Automatic Recalc( 1 ),
+	Continuous Distribution( Column( :weight ) ),
+	Local Data Filter(
+		Count Excluded Rows( 0 ),
+		Add Filter( columns( :age ), Where( :age == 12 ) )
+	)
+);
 
 ```
 
@@ -168,7 +274,35 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Data Filter(	Mode( Select( 0 )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Data Filter(	Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),	Add Filter( columns( :sex ), Where( :sex == "F" ) ));New Window( "Hierarchical Data Filter",	V List Box(		Data Filter Context Box(			H List Box(				Filter Ref Sub 1 = dt << Data Filter(					Local,					Add Filter( columns( :age ), Where( :age == 12 ) )				),				Platform( Current Data Table(), Distribution( Column( :weight ) ) )			)		),		Data Filter Context Box(			H List Box(				Filter Ref Sub 2 = dt << Data Filter(					Local,					Count Excluded Rows( 0 ),					Add Filter( columns( :age ), Where( :age == 12 ) )				),				Platform( Current Data Table(), Distribution( Column( :weight ) ) )			)		)	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Data Filter(
+	Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter( columns( :sex ), Where( :sex == "F" ) )
+);
+New Window( "Hierarchical Data Filter",
+	V List Box(
+		Data Filter Context Box(
+			H List Box(
+				Filter Ref Sub 1 = dt << Data Filter(
+					Local,
+					Add Filter( columns( :age ), Where( :age == 12 ) )
+				),
+				Platform( Current Data Table(), Distribution( Column( :weight ) ) )
+			)
+		),
+		Data Filter Context Box(
+			H List Box(
+				Filter Ref Sub 2 = dt << Data Filter(
+					Local,
+					Count Excluded Rows( 0 ),
+					Add Filter( columns( :age ), Where( :age == 12 ) )
+				),
+				Platform( Current Data Table(), Distribution( Column( :weight ) ) )
+			)
+		)
+	)
+);
 
 ```
 
@@ -180,7 +314,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Data Filter(	Mode( Select( 0 )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Data Table Window;
 
 ```
 
@@ -194,7 +334,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Columns( :Region, :SO2, :CO, :State );Wait( 1 );obj << Delete( {:State} );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Columns( :Region, :SO2, :CO, :State );
+Wait( 1 );
+obj << Delete( {:State} );
 
 ```
 
@@ -202,7 +350,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Columns( :Region, :SO2, :CO, :State );Wait( 1 );obj << (Filter Column( :State ) << delete);
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Columns( :Region, :SO2, :CO, :State );
+Wait( 1 );
+obj << (Filter Column( :State ) << delete);
 
 ```
 
@@ -214,7 +370,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Columns( :Region, :SO2, :CO, :State );Wait( 2 );obj << Delete All;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Columns( :Region, :SO2, :CO, :State );
+Wait( 2 );
+obj << Delete All;
 
 ```
 
@@ -226,7 +390,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );obj << Display( :Region, N Items( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+obj << Display( :Region, N Items( 4 ) );
 
 ```
 
@@ -238,7 +409,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );Wait( 1 );obj << (Filter Column( :Region ) << Extend Where( :Region = "W" ));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );
+Wait( 1 );
+obj << (Filter Column( :Region ) << Extend Where( :Region = "W" ));
 
 ```
 
@@ -252,7 +427,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Col
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionfilter = obj << Get Data Table();
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionfilter = obj << Get Data Table();
 
 ```
 
@@ -266,7 +448,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionfilter = obj << Get Filter Column( :Region );regionfilter << Invert Selection;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionfilter = obj << Get Filter Column( :Region );
+regionfilter << Invert Selection;
 
 ```
 
@@ -278,7 +468,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Get Filtered Rows;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Get Filtered Rows;
 
 ```
 
@@ -290,7 +486,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));txt = obj << Get Script;Show( txt );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+txt = obj << Get Script;
+Show( txt );
 
 ```
 
@@ -302,7 +505,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Columns( :Region, :Lead ) ) );Wait( 1 );obj << (Filter Column( :Lead ) << Where( :Lead >= .4 & :Lead <= 1.4 ));txt = obj << get where clause;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter( Add( Filter Columns( :Region, :Lead ) ) );
+Wait( 1 );
+obj << (Filter Column( :Lead ) << Where( :Lead >= .4 & :Lead <= 1.4 ));
+txt = obj << get where clause;
 
 ```
 
@@ -320,7 +528,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Col
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );obj << Inverse( 1 );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+obj << Inverse( 1 );
 
 ```
 
@@ -332,7 +547,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );Wait( 1 );obj << (Filter Column( :Region ) << invert selection);
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter( Add( Filter Columns( :Region ), Where( :Region = {"N", "S"} ) ) );
+Wait( 1 );
+obj << (Filter Column( :Region ) << invert selection);
 
 ```
 
@@ -346,7 +565,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Col
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Automatic Recalc( 1 ), Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ) ) );f = Function( {a}, Print( a ) );rs = filter << Make Filter Change Handler( f );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Automatic Recalc( 1 ), Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter( Add Filter( columns( :Region ) ) );
+f = Function( {a}, Print( a ) );
+rs = filter << Make Filter Change Handler( f );
 
 ```
 
@@ -358,7 +582,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Automatic Recalc( 1
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );obj = dt << Data Filter(	Add Filter( columns( :BP 8W, :BP 6M ) ),	Add Filter( columns( :BP 12M ) ));Wait( 1 );obj << Match( Filter Columns( :BP 8W, :BP 6M ), Where( :BP 8W > 174.8 & :BP 8W < 184.2 ) );obj << Match( Filter Columns( :BP 12M ), Where( :BP 12M > 181.9 & :BP 12M < 192.1 ) );
+
+dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :BP 8W, :BP 6M ) ),
+	Add Filter( columns( :BP 12M ) )
+);
+Wait( 1 );
+obj << Match( Filter Columns( :BP 8W, :BP 6M ), Where( :BP 8W > 174.8 & :BP 8W < 184.2 ) );
+obj << Match( Filter Columns( :BP 12M ), Where( :BP 12M > 181.9 & :BP 12M < 192.1 ) );
 
 ```
 
@@ -370,7 +602,11 @@ dt = Open( "$SAMPLE_DATA/Blood Pressure.jmp" );obj = dt << Data Filter(	Add Fi
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );
+obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
 
 ```
 
@@ -382,7 +618,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Mode( In
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter;df = obj << Add Filter( columns( :age, :sex ), Where( :age == {13, 14} ) );obj << OnClear( Function( {}, df << Mode( Include( 0 ), Select( 1 ), Show( 0 ) ) ) );Wait( 1 );df << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Data Filter;
+df = obj << Add Filter( columns( :age, :sex ), Where( :age == {13, 14} ) );
+obj << OnClear( Function( {}, df << Mode( Include( 0 ), Select( 1 ), Show( 0 ) ) ) );
+Wait( 1 );
+df << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );
 
 ```
 
@@ -396,7 +639,21 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Mode( In
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(		columns( :age, :sex, :height, :weight ),		Where( :sex == "F" ),		Where( :height >= 55 & :height <= 65 )	),	Mode( Select ));df << add favorites( "FemaleAverageHt" );df << Match( Where( :sex == "F" ) );df << add favorites( "Female" );Wait( 1 );df << remove favorites( "FemaleAverageHt" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+df = dt << Data Filter(
+	Add Filter(
+		columns( :age, :sex, :height, :weight ),
+		Where( :sex == "F" ),
+		Where( :height >= 55 & :height <= 65 )
+	),
+	Mode( Select )
+);
+df << add favorites( "FemaleAverageHt" );
+df << Match( Where( :sex == "F" ) );
+df << add favorites( "Female" );
+Wait( 1 );
+df << remove favorites( "FemaleAverageHt" );
 
 ```
 
@@ -404,7 +661,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(		columns( :age, :sex, :height, :weight ),		Where( :sex == "F" ),		Where( :height >= 55 & :height <= 65 )	),	Mode( Select ));df << add favorites( "FemaleAverageHt" );df << Match( Where( :sex == "F" ) );df << add favorites( "Female" );Wait( 1 );df << remove favorites();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+df = dt << Data Filter(
+	Add Filter(
+		columns( :age, :sex, :height, :weight ),
+		Where( :sex == "F" ),
+		Where( :height >= 55 & :height <= 65 )
+	),
+	Mode( Select )
+);
+df << add favorites( "FemaleAverageHt" );
+df << Match( Where( :sex == "F" ) );
+df << add favorites( "Female" );
+Wait( 1 );
+df << remove favorites();
 
 ```
 
@@ -416,7 +687,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );df = dt << Data Filter(	Add Filter(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Add Filter( columns( :POP ) );obj << Add Filter(	columns( :Region, :State, :City ),	Where( :Region == "S" ),	Where( :State == {"SC", "NC"} ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Add Filter( columns( :POP ) );
+obj << Add Filter(
+	columns( :Region, :State, :City ),
+	Where( :Region == "S" ),
+	Where( :State == {"SC", "NC"} )
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -428,7 +713,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Save Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Save Script to Data Table;
 
 ```
 
@@ -440,7 +731,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -452,7 +749,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -464,7 +767,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );obj << Save Where Clause To Clipboard;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
+obj << Save Where Clause To Clipboard;
 
 ```
 
@@ -476,7 +783,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );obj << Save Where Clause To Data Table;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
+obj << Save Where Clause To Data Table;
 
 ```
 
@@ -490,7 +801,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );obj << Save Where Clause To Formula Column;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
+obj << Save Where Clause To Formula Column;
 
 ```
 
@@ -502,7 +817,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );obj << Save Where Clause To Journal;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
+obj << Save Where Clause To Journal;
 
 ```
 
@@ -514,7 +833,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );obj << Save Where Clause To Row State Column;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
+obj << Save Where Clause To Row State Column;
 
 ```
 
@@ -526,7 +849,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );obj << Save Where Clause To Script Window;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Lead ), Where( :Lead >= .4 & :Lead <= 2.0 ) );
+obj << Save Where Clause To Script Window;
 
 ```
 
@@ -538,7 +865,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Save and Restore Current Row States( 1 ),	Add Filter( Columns( :Region ), Where( :Region == "N" ) ));Wait( 1 );obj << Close;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Save and Restore Current Row States( 1 ),
+	Add Filter( Columns( :Region ), Where( :Region == "N" ) )
+);
+Wait( 1 );
+obj << Close;
 
 ```
 
@@ -550,7 +884,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Save and Resto
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Columns( :CO ), Where( :CO >= 9 & :CO < 15 ) ) );Wait( 1 );obj << (Filter Column( :CO ) << Select Missing);
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter( Add( Filter Columns( :CO ), Where( :CO >= 9 & :CO < 15 ) ) );
+Wait( 1 );
+obj << (Filter Column( :CO ) << Select Missing);
 
 ```
 
@@ -562,7 +900,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Col
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );obj << set Include( 1 );Wait( 1 );obj << set Include( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );
+obj << set Include( 1 );
+Wait( 1 );
+obj << set Include( 0 );
 
 ```
 
@@ -574,7 +917,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter( Add Filter( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );obj << set select( 1 );Wait( 1 );obj << set select( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );
+obj << set select( 1 );
+Wait( 1 );
+obj << set select( 0 );
 
 ```
 
@@ -586,7 +934,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter( Add Filter( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );obj << set Show( 1 );Wait( 1 );obj << set Show( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Data Filter( Add Filter( columns( :age, :sex ) ) );
+obj << set Show( 1 );
+Wait( 1 );
+obj << set Show( 0 );
 
 ```
 
@@ -600,7 +953,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Data Filter( Add Filter( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );obj << Show Controls( 0 );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+obj << Show Controls( 0 );
 
 ```
 
@@ -620,7 +980,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ));Wait( 1 );obj << Show Histograms and Bars( 0 );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) )
+);
+Wait( 1 );
+obj << Show Histograms and Bars( 0 );
 
 ```
 
@@ -634,7 +1000,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );obj << Show Modes( 0 );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+obj << Show Modes( 0 );
 
 ```
 
@@ -646,7 +1019,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );obj << Show Subset;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
+obj << Show Subset;
 
 ```
 
@@ -660,7 +1037,41 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Add Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Shared Local Filter",	Data Filter Context Box(		H Splitter Box(			Size( 1200, 500 ),			V Scroll Box(				dt << Data Filter(					Local,					Stretch Width( "Window" ),					Add Filter( columns( :sex ), Where( :sex == "F" ) )				),				<<Set Stretch( "Off", "Fill" )			),			H Splitter Box(				dt << Bubble Plot(					X( :weight ),					Y( :height ),					Fit To Window( "On" ),					Sizes( :age ),					Title Position( 0, 0 )				),				dt << Graph Builder(					Size( 525, 456 ),					Show Control Panel( 0 ),					Fit To Window( "On" ),					Variables( X( :weight ), Y( :age ) ),					Elements( Box Plot( X, Y, Legend( 4 ) ) ),				),			)		)	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "Shared Local Filter",
+	Data Filter Context Box(
+		H Splitter Box(
+			Size( 1200, 500 ),
+			V Scroll Box(
+				dt << Data Filter(
+					Local,
+					Stretch Width( "Window" ),
+					Add Filter( columns( :sex ), Where( :sex == "F" ) )
+				),
+				<<Set Stretch( "Off", "Fill" )
+			),
+			H Splitter Box(
+				dt << Bubble Plot(
+					X( :weight ),
+					Y( :height ),
+					Fit To Window( "On" ),
+					Sizes( :age ),
+					Title Position( 0, 0 )
+				),
+				dt << Graph Builder(
+					Size( 525, 456 ),
+					Show Control Panel( 0 ),
+					Fit To Window( "On" ),
+					Variables( X( :weight ), Y( :age ) ),
+					Elements( Box Plot( X, Y, Legend( 4 ) ) ),
+
+				),
+
+			)
+		)
+	)
+);
 
 ```
 
@@ -682,7 +1093,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "Shared Local Filter",	D
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Use Floating Window;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter;
+obj << Use Floating Window;
 
 ```
 
@@ -694,7 +1108,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter;obj << Use Floa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Columns( :Region, :Lead ) ) );Wait( 1 );obj << (Filter Column( :Lead ) << Where( :Lead >= .4 & :Lead <= 1.4 ));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter( Add( Filter Columns( :Region, :Lead ) ) );
+Wait( 1 );
+obj << (Filter Column( :Lead ) << Where( :Lead >= .4 & :Lead <= 1.4 ));
 
 ```
 
@@ -706,7 +1124,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter( Add( Filter Col
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Columns( :Region, :SO2, :CO, :State );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Columns( :Region, :SO2, :CO, :State );
 
 ```
 
@@ -720,7 +1144,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Add Filter Columns( :State );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Add Filter Columns( :State );
 
 ```
 
@@ -732,7 +1162,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );obj << Filter Column( :State );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+obj << Filter Column( :State );
 
 ```
 
@@ -744,7 +1181,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));obj << Filter Columns( :State, :OZONE );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+obj << Filter Columns( :State, :OZONE );
 
 ```
 
@@ -754,7 +1197,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
 
 ```
 
@@ -768,7 +1216,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
 
 ```
 
@@ -784,7 +1237,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Blocks Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Blocks Display;
 
 ```
 
@@ -796,7 +1259,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Check Box Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Check Box Display;
 
 ```
 
@@ -814,7 +1287,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Clear Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Clear Selection;
 
 ```
 
@@ -832,7 +1314,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Delete;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Delete;
 
 ```
 
@@ -844,7 +1335,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Extend Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Extend Where( :Region == {"MW"} );
 
 ```
 
@@ -858,7 +1358,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Find( Set Text( "w" ) );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Find( Set Text( "w" ) );
 
 ```
 
@@ -882,7 +1391,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Invert Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Invert Selection;
 
 ```
 
@@ -894,7 +1412,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "Check Box Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << List Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "Check Box Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << List Display;
 
 ```
 
@@ -920,7 +1448,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Order by Count;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Order by Count;
 
 ```
 
@@ -934,7 +1471,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Radio Box Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Radio Box Display;
 
 ```
 
@@ -946,7 +1493,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );popobj = obj << Get Filter Column( :POP );popobj << Select Filter Item;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+popobj = obj << Get Filter Column( :POP );
+popobj << Select Filter Item;
 
 ```
 
@@ -958,7 +1514,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Single Category Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Single Category Display;
 
 ```
 
@@ -976,7 +1542,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Where( :Region == {"MW"} );
 
 ```
 
@@ -992,7 +1567,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Clear Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Clear Selection;
 
 ```
 
@@ -1010,7 +1594,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Delete;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Delete;
 
 ```
 
@@ -1022,7 +1615,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Extend Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Extend Where( :Region == {"MW"} );
 
 ```
 
@@ -1034,7 +1636,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Invert Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Invert Selection;
 
 ```
 
@@ -1060,7 +1671,27 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/Air.jmp" );gb = dt << Graph Builder(	Size( 522, 492 ),	Show Control Panel( 0 ),	Variables(		X( :month ),		Y( :Ozone Concentration ),		Group X( :Summer Months Intervention )	),	Elements( Points( X, Y, Legend( 10 ) ), Smoother( X, Y, Legend( 11 ) ) ),     );ldf = gb << Local Data Filter(	Add Filter( columns( :date ), Where( :date >= 16Oct1965 & :date <= 31Aug1968 ) ));fc = ldf << Get Filter Column( :date );fc << Zoom to Selection;Wait( 1 );fc << Reset Zoom;
+
+
+dt = Open( "$SAMPLE_DATA/Time Series/Air.jmp" );
+gb = dt << Graph Builder(
+	Size( 522, 492 ),
+	Show Control Panel( 0 ),
+	Variables(
+		X( :month ),
+		Y( :Ozone Concentration ),
+		Group X( :Summer Months Intervention )
+	),
+	Elements( Points( X, Y, Legend( 10 ) ), Smoother( X, Y, Legend( 11 ) ) ), 
+    
+);
+ldf = gb << Local Data Filter(
+	Add Filter( columns( :date ), Where( :date >= 16Oct1965 & :date <= 31Aug1968 ) )
+);
+fc = ldf << Get Filter Column( :date );
+fc << Zoom to Selection;
+Wait( 1 );
+fc << Reset Zoom;
 
 ```
 
@@ -1072,7 +1703,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );popobj = obj << Get Filter Column( :POP );popobj << Select Filter Item;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+popobj = obj << Get Filter Column( :POP );
+popobj << Select Filter Item;
 
 ```
 
@@ -1086,7 +1726,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Location( {2098, 120} ),	Mode( Select( 0 ), Include( 1 ) ),	Add Filter( columns( :OZONE ), Where( :OZONE >= 0.1 & :OZONE <= 0.2 ) ));Wait( 1 );ozoneobj = obj << Get Filter Column( :OZONE );ozoneobj << Select Missing;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Location( {2098, 120} ),
+	Mode( Select( 0 ), Include( 1 ) ),
+	Add Filter( columns( :OZONE ), Where( :OZONE >= 0.1 & :OZONE <= 0.2 ) )
+);
+Wait( 1 );
+ozoneobj = obj << Get Filter Column( :OZONE );
+ozoneobj << Select Missing;
 
 ```
 
@@ -1104,7 +1754,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Where( :Region == {"MW"} );
 
 ```
 
@@ -1118,7 +1777,26 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/Air.jmp" );gb = dt << Graph Builder(	Size( 522, 492 ),	Show Control Panel( 0 ),	Variables(		X( :month ),		Y( :Ozone Concentration ),		Group X( :Summer Months Intervention )	),	Elements( Points( X, Y, Legend( 10 ) ), Smoother( X, Y, Legend( 11 ) ) ),     );ldf = gb << Local Data Filter(	Add Filter( columns( :date ), Where( :date >= 16Oct1965 & :date <= 31Aug1968 ) ));fc = ldf << Get Filter Column( :date );Wait( 1 );fc << Zoom to Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Time Series/Air.jmp" );
+gb = dt << Graph Builder(
+	Size( 522, 492 ),
+	Show Control Panel( 0 ),
+	Variables(
+		X( :month ),
+		Y( :Ozone Concentration ),
+		Group X( :Summer Months Intervention )
+	),
+	Elements( Points( X, Y, Legend( 10 ) ), Smoother( X, Y, Legend( 11 ) ) ), 
+    
+);
+ldf = gb << Local Data Filter(
+	Add Filter( columns( :date ), Where( :date >= 16Oct1965 & :date <= 31Aug1968 ) )
+);
+fc = ldf << Get Filter Column( :date );
+Wait( 1 );
+fc << Zoom to Selection;
 
 ```
 
@@ -1134,7 +1812,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Blocks Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Blocks Display;
 
 ```
 
@@ -1146,7 +1834,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Check Box Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Check Box Display;
 
 ```
 
@@ -1164,7 +1862,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Clear Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Clear Selection;
 
 ```
 
@@ -1182,7 +1889,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Delete;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Delete;
 
 ```
 
@@ -1194,7 +1910,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Extend Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Extend Where( :Region == {"MW"} );
 
 ```
 
@@ -1208,7 +1933,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Find( Set Text( "w" ) );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Find( Set Text( "w" ) );
 
 ```
 
@@ -1232,7 +1966,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Invert Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Invert Selection;
 
 ```
 
@@ -1244,7 +1987,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "Check Box Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << List Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "Check Box Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << List Display;
 
 ```
 
@@ -1256,7 +2009,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match All;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match All;
 
 ```
 
@@ -1268,7 +2033,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Any;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Any;
 
 ```
 
@@ -1280,7 +2057,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match At Least( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match At Least( 1 );
 
 ```
 
@@ -1292,7 +2081,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match At Most( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match At Most( 1 );
 
 ```
 
@@ -1304,7 +2105,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Between( 1, 2 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Between( 1, 2 );
 
 ```
 
@@ -1316,7 +2129,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Exactly;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Exactly;
 
 ```
 
@@ -1328,7 +2153,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match None;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match None;
 
 ```
 
@@ -1340,7 +2177,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Only;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Only;
 
 ```
 
@@ -1366,7 +2215,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Order by Count;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Order by Count;
 
 ```
 
@@ -1380,7 +2238,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Radio Box Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Radio Box Display;
 
 ```
 
@@ -1392,7 +2260,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );popobj = obj << Get Filter Column( :POP );popobj << Select Filter Item;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+popobj = obj << Get Filter Column( :POP );
+popobj << Select Filter Item;
 
 ```
 
@@ -1404,7 +2281,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Single Category Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Single Category Display;
 
 ```
 
@@ -1422,7 +2309,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Where( :Region == {"MW"} );
 
 ```
 
@@ -1440,7 +2336,25 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :sibling ages ) ),	Elements( Bar( X, Legend( 3 ) ) ));df = obj << Local Data Filter(	Add Filter(		columns( :reported illnesses ),		Unstructured Text( Column( :reported illnesses ), Add Filter Text( "head" ) ),		Match Any( Where( Contains( :reported illnesses, "head" ) ) ),	));Wait( 1 );illness_obj = df << Get Filter Column( :reported illnesses );illness_obj << Add Missing;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :sibling ages ) ),
+	Elements( Bar( X, Legend( 3 ) ) )
+);
+df = obj << Local Data Filter(
+	Add Filter(
+		columns( :reported illnesses ),
+		Unstructured Text( Column( :reported illnesses ), Add Filter Text( "head" ) ),
+		Match Any( Where( Contains( :reported illnesses, "head" ) ) ),
+
+	)
+);
+Wait( 1 );
+illness_obj = df << Get Filter Column( :reported illnesses );
+illness_obj << Add Missing;
 
 ```
 
@@ -1452,7 +2366,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Blocks Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Blocks Display;
 
 ```
 
@@ -1464,7 +2388,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Check Box Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Check Box Display;
 
 ```
 
@@ -1478,7 +2412,25 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :sibling ages ) ),	Elements( Bar( X, Legend( 3 ) ) ));df = obj << Local Data Filter(	Add Filter(		columns( :reported illnesses ),		Unstructured Text( Column( :reported illnesses ), Add Filter Text( "head" ) ),		Match Any( Where( Contains( :reported illnesses, "head" ) ) ),	));Wait( 1 );illness_obj = df << Get Filter Column( :reported illnesses );illness_obj << Clear Filter Texts List;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :sibling ages ) ),
+	Elements( Bar( X, Legend( 3 ) ) )
+);
+df = obj << Local Data Filter(
+	Add Filter(
+		columns( :reported illnesses ),
+		Unstructured Text( Column( :reported illnesses ), Add Filter Text( "head" ) ),
+		Match Any( Where( Contains( :reported illnesses, "head" ) ) ),
+
+	)
+);
+Wait( 1 );
+illness_obj = df << Get Filter Column( :reported illnesses );
+illness_obj << Clear Filter Texts List;
 
 ```
 
@@ -1490,7 +2442,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Clear Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Clear Selection;
 
 ```
 
@@ -1508,7 +2469,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Delete;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Delete;
 
 ```
 
@@ -1520,7 +2490,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Extend Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Extend Where( :Region == {"MW"} );
 
 ```
 
@@ -1544,7 +2523,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Invert Selection;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Invert Selection;
 
 ```
 
@@ -1556,7 +2544,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "Check Box Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << List Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "Check Box Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << List Display;
 
 ```
 
@@ -1568,7 +2566,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match All;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match All;
 
 ```
 
@@ -1580,7 +2590,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Any;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Any;
 
 ```
 
@@ -1592,7 +2614,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match At Least( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match At Least( 1 );
 
 ```
 
@@ -1604,7 +2638,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match At Most( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match At Most( 1 );
 
 ```
 
@@ -1616,7 +2662,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Between( 1, 2 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Between( 1, 2 );
 
 ```
 
@@ -1628,7 +2686,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Exactly;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Exactly;
 
 ```
 
@@ -1640,7 +2710,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match None;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match None;
 
 ```
 
@@ -1652,7 +2734,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Data Filter(	Add Filter(		columns( :Sports ),		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )	),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );sportsobj = obj << Get Filter Column( :Sports );sportsobj << Match Only;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Data Filter(
+	Add Filter(
+		columns( :Sports ),
+		Match Any( Where( :sports == {"Basketball", "Tennis"} ) )
+	),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+sportsobj = obj << Get Filter Column( :Sports );
+sportsobj << Match Only;
 
 ```
 
@@ -1678,7 +2772,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Order by Count;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Order by Count;
 
 ```
 
@@ -1692,7 +2795,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Radio Box Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Radio Box Display;
 
 ```
 
@@ -1704,7 +2817,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );popobj = obj << Get Filter Column( :POP );popobj << Select Filter Item;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+popobj = obj << Get Filter Column( :POP );
+popobj << Select Filter Item;
 
 ```
 
@@ -1718,7 +2840,25 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :sibling ages ) ),	Elements( Bar( X, Legend( 3 ) ) ));df = obj << Local Data Filter(	Add Filter(		columns( :reported illnesses ),		Unstructured Text( Column( :reported illnesses ), Add Filter Text( "head" ) ),		Match Any( Where( Contains( :reported illnesses, "head" ) ) ),	));Wait( 1 );illness_obj = df << Get Filter Column( :reported illnesses );illness_obj << Show Filter Text Edit Box( 0 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :sibling ages ) ),
+	Elements( Bar( X, Legend( 3 ) ) )
+);
+df = obj << Local Data Filter(
+	Add Filter(
+		columns( :reported illnesses ),
+		Unstructured Text( Column( :reported illnesses ), Add Filter Text( "head" ) ),
+		Match Any( Where( Contains( :reported illnesses, "head" ) ) ),
+
+	)
+);
+Wait( 1 );
+illness_obj = df << Get Filter Column( :reported illnesses );
+illness_obj << Show Filter Text Edit Box( 0 );
 
 ```
 
@@ -1730,7 +2870,17 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Display( :Region, "List Display" ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Single Category Display;
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Display( :Region, "List Display" ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Single Category Display;
 
 ```
 
@@ -1748,7 +2898,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Data Filter(	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ));Wait( 1 );regionobj = obj << Get Filter Column( :Region );regionobj << Where( :Region == {"MW"} );
+
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Data Filter(
+	Add Filter( columns( :Region, :POP ), Where( :Region == {"C", "N"} ) ),
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) )
+);
+Wait( 1 );
+regionobj = obj << Get Filter Column( :Region );
+regionobj << Where( :Region == {"MW"} );
 
 ```
 

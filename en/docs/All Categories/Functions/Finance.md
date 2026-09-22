@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -25,6 +26,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Future Value( .03, 12, 100, 0, 1 );
 
@@ -40,7 +42,9 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -54,13 +58,14 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
 
 ### Internal Rate of Return
 
-**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the internal rate of return for a series of cash flows represented by the numbers in the values argument. Equivalent to the IRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
@@ -68,13 +73,15 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```jsl
 
-Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .01, -10000, 1000, 900, 950 );
+
+Internal Rate of Return( [-10000, 1000, 900, 950] );
+Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the modified internal rate of return for a series of periodic cash flows, taking into account both the cost of the investment and the interest received on reinvestment of cash. Equivalent to the MIRR function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
@@ -82,13 +89,15 @@ Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .0
 
 ```jsl
 
-Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
+
+Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
+Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```
 
 ### Net Present Value
 
-**Syntax:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Syntax:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description:** Returns the net present value of an investment by using a discount rate and a series of future payments (negative values) and income (positive values). The values argument is a one dimensional matrix. Equivalent to the NPV function in Microsoft Excel. The second prototype of the function accepts all scalar arguments.
 
@@ -96,7 +105,9 @@ Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified
 
 ```jsl
 
-Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10000, 1000, 900, 9500 );
+
+Net Present Value( .05, [-10000, 1000, 900, 9500] );
+Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```
 
@@ -109,6 +120,7 @@ Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Number of Periods( .05 / 12, -2000, 100000 );
 
@@ -124,7 +136,9 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -137,6 +151,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Present Value( .05 / 12, 30 * 12, 1000 );
 
@@ -152,7 +167,9 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -165,6 +182,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Straight Line Depreciation( 1000, 100, 3 );
 
@@ -179,6 +197,7 @@ Straight Line Depreciation( 1000, 100, 3 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 

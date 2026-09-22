@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Char( Pi(), 5 );
 
 ```
@@ -25,6 +26,7 @@ Char( Pi(), 5 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Round( e(), 10 );
 

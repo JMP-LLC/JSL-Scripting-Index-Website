@@ -12,7 +12,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -28,7 +34,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -36,7 +49,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -44,7 +61,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -56,7 +77,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -68,7 +95,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Copy Script;
 
 ```
 
@@ -80,7 +110,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Data Table Window;
 
 ```
 
@@ -94,7 +127,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -108,7 +144,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -116,7 +173,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -128,7 +189,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -140,7 +205,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -152,7 +221,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -164,7 +237,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -176,7 +253,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -190,7 +271,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -202,7 +287,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -214,7 +306,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -228,7 +328,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -240,7 +343,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -252,7 +364,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Redo Analysis;
 
 ```
 
@@ -264,7 +379,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -276,7 +394,15 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -288,19 +414,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**语法:** obj &lt;&lt; Report; Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -312,7 +453,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -324,7 +468,15 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -334,19 +486,17 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Mixture Profiler(	Y( :Pred Formula Y ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**示例 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Mixture Profiler(	Y( :Pred Formula Y ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -358,7 +508,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );dt << New Column( "_bycol",	Charac
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -370,7 +523,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -382,7 +538,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Save Script to Report;
 
 ```
 
@@ -394,7 +553,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -406,7 +568,16 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -418,7 +589,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -430,7 +615,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -442,7 +633,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -454,7 +650,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -466,7 +665,12 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -478,7 +682,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -492,7 +699,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ```
 
@@ -500,7 +709,7 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ### Noise Factors
 
-**语法:** obj = Mixture Profiler(...&lt;Noise Factors( column(s) )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Mixture Profiler(...&lt;Noise Factors( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定噪声因子，这些噪声因子必须是作为公式列成分的列。噪声因子用于研究与这些因子的传递变异相关的稳健性（或平稳性）。生成的刻画器包括公式对噪声因子的导数。
 
@@ -508,7 +717,15 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+obj = dt << Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	),
+	Noise Factors( :SILANE )
+);
 
 ```
 
@@ -516,7 +733,15 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred For
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Custom Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+obj = dt << Custom Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	),
+	Noise Factors( :SILANE )
+);
 
 ```
 
@@ -524,7 +749,9 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Custom Profiler(	Y(		:P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Noise Factors( :p1 ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Noise Factors( :p1 ) );
 
 ```
 
@@ -532,31 +759,43 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Contour Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Noise Factors( :SILANE ));
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+obj = dt << Contour Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	),
+	Noise Factors( :SILANE )
+);
 
 ```
 
 ### Prediction Formula
 
-**语法:** obj = Mixture Profiler(...Prediction Formula( column(s) )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Mixture Profiler(...Prediction Formula( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含公式的响应列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ```
 
 ### Y
 
-**语法:** obj = Mixture Profiler(...Y( column(s) )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Mixture Profiler(...Y( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含公式的响应列。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ```
 
@@ -572,7 +811,12 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Animation( Tour Type( "Sequential" ), Go );Wait( 3 );obj << Animation( "Stop" );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Animation( Tour Type( "Sequential" ), Go );
+Wait( 3 );
+obj << Animation( "Stop" );
 
 ```
 
@@ -584,7 +828,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Append Settings to Table;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Append Settings to Table;
 
 ```
 
@@ -598,7 +845,23 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	),	Desirability Functions( 1 ),	Term Value(		SILICA( 1.75, Lock( 0 ), Show( 1 ) ),		SILANE( 45.2, Lock( 0 ), Show( 1 ) ),		SULFUR( 2.45, Lock( 0 ), Show( 1 ) )	));obj << Contour Profiler( 1 );Wait( 1 );obj << Broadcast Factor Settings;
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+obj = dt << Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	),
+	Desirability Functions( 1 ),
+	Term Value(
+		SILICA( 1.75, Lock( 0 ), Show( 1 ) ),
+		SILANE( 45.2, Lock( 0 ), Show( 1 ) ),
+		SULFUR( 2.45, Lock( 0 ), Show( 1 ) )
+	)
+);
+obj << Contour Profiler( 1 );
+Wait( 1 );
+obj << Broadcast Factor Settings;
 
 ```
 
@@ -610,7 +873,11 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred For
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 1 );obj << Contour Grid( 5, 20, 3, :PredFormula Y );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 1 );
+obj << Contour Grid( 5, 20, 3, :PredFormula Y );
 
 ```
 
@@ -622,7 +889,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Contour Profiler( 1 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Contour Profiler( 1 );
 
 ```
 
@@ -634,7 +904,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Contour Value( Pred Formula Y( 18.167, Min( 5 ), Max( 20 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Contour Value( Pred Formula Y( 18.167, Min( 5 ), Max( 20 ) ) );
 
 ```
 
@@ -646,7 +919,24 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Set to Data in Row( 4 );obj << Copy Settings Script;obj2 = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));Wait( 1 );obj2 << Paste Settings Script;
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+obj = dt << Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	)
+);
+obj << Set to Data in Row( 4 );
+obj << Copy Settings Script;
+obj2 = dt << Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	)
+);
+Wait( 1 );
+obj2 << Paste Settings Script;
 
 ```
 
@@ -658,7 +948,10 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred For
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Custom Profiler( 1 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Custom Profiler( 1 );
 
 ```
 
@@ -670,7 +963,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Formulas for OPTMODEL;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Formulas for OPTMODEL;
 
 ```
 
@@ -682,7 +978,13 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Profiler(	Y( :Pred Formula Y ),	Profiler( 1, Profile at Boundary( "Stop at Boundaries" ), ));obj << Get Constraints;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Profiler(
+	Y( :Pred Formula Y ),
+	Profiler( 1, Profile at Boundary( "Stop at Boundaries" ), )
+);
+obj << Get Constraints;
 
 ```
 
@@ -694,7 +996,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Profiler(	Y( :Pred For
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Get Factor Settings;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Get Factor Settings;
 
 ```
 
@@ -706,7 +1011,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Get Factor Settings Script;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Get Factor Settings Script;
 
 ```
 
@@ -718,7 +1026,23 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Simulator(	1,	Factors(		SILICA << Random( Normal( 1.25, 0.3266 ) ), SILANE << Fixed( 50 ),		SULFUR << Fixed( 2.25 )	),	Responses(		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,		Pred Formula ELONG << Add Random Noise( 1 ),		Pred Formula HARDNESS << Add Random Weighted Noise( 1 )	));obj2 = obj << Get Simulator;obj2 << Simulation Experiment;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Simulator(
+	1,
+	Factors(
+		SILICA << Random( Normal( 1.25, 0.3266 ) ), SILANE << Fixed( 50 ),
+		SULFUR << Fixed( 2.25 )
+	),
+	Responses(
+		Pred Formula ABRASION << No Noise, Pred Formula MODULUS << No Noise,
+		Pred Formula ELONG << Add Random Noise( 1 ),
+		Pred Formula HARDNESS << Add Random Weighted Noise( 1 )
+	)
+);
+obj2 = obj << Get Simulator;
+obj2 << Simulation Experiment;
 
 ```
 
@@ -730,7 +1054,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 1 );obj << Left Factor( :p1 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 1 );
+obj << Left Factor( :p1 );
 
 ```
 
@@ -742,19 +1070,30 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Prediction Profiler( 1 );obj << Contour Profiler( 1 );obj << Link Profilers( 1 );Wait( 1 );obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Prediction Profiler( 1 );
+obj << Contour Profiler( 1 );
+obj << Link Profilers( 1 );
+Wait( 1 );
+obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ```
 
 ### Number of Grid Points
 
-**语法:** obj = Mixture Profiler(...Number of Grid Points( number )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Mixture Profiler(...Number of Grid Points( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定三个轴的每个轴上用于计算等高线的网格点数。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Number of Grid Points( 100 ) );Wait( 1 );obj << Number of Grid Points( 140 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Number of Grid Points( 100 ) );
+Wait( 1 );
+obj << Number of Grid Points( 140 );
 
 ```
 
@@ -766,7 +1105,24 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Set to Data in Row( 4 );obj << Copy Settings Script;obj2 = Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));Wait( 1 );obj2 << Paste Settings Script;
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+obj = dt << Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	)
+);
+obj << Set to Data in Row( 4 );
+obj << Copy Settings Script;
+obj2 = Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	)
+);
+Wait( 1 );
+obj2 << Paste Settings Script;
 
 ```
 
@@ -778,7 +1134,15 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred For
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );dt2 = dt << Subset(	All rows,	columns( :SILICA, :SILANE, :SULFUR ),	Output Table( "Subset" ));obj << Predict For Another Table( dt2 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+dt2 = dt << Subset(
+	All rows,
+	columns( :SILICA, :SILANE, :SULFUR ),
+	Output Table( "Subset" )
+);
+obj << Predict For Another Table( dt2 );
 
 ```
 
@@ -790,7 +1154,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Prediction Profiler( 1 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Prediction Profiler( 1 );
 
 ```
 
@@ -802,7 +1169,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Remember Settings;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Remember Settings;
 
 ```
 
@@ -814,7 +1184,12 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Contour Grid( 5, 20, 3, :PredFormula Y );Wait( 1 );obj << Remove Contour Grid;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Contour Grid( 5, 20, 3, :PredFormula Y );
+Wait( 1 );
+obj << Remove Contour Grid;
 
 ```
 
@@ -826,7 +1201,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = Mixture Profiler( Y( :Pred Formula Y ) );obj << Term Value( :p1( 0.804905315083495 ), :p2( 0.0286246849165042 ), :p3( 0.15647 ) );obj << Reset;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Term Value( :p1( 0.804905315083495 ), :p2( 0.0286246849165042 ), :p3( 0.15647 ) );
+obj << Reset;
 
 ```
 
@@ -838,7 +1217,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = Mixture Profiler( Y( :Pred Fo
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 1 );obj << Right Factor( :p2 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 1 );
+obj << Right Factor( :p2 );
 
 ```
 
@@ -850,7 +1233,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );obj << Save Expanded Formulas;
+
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );
+obj = dt << Profiler( Y( :GP Fit, :NL Fit, :Difference ), Expand, Contour Profiler( 1 ) );
+obj << Save Expanded Formulas;
 
 ```
 
@@ -862,7 +1248,12 @@ dt = Open( "$SAMPLE_DATA/Nonlinear Examples/CES Production Function.jmp" );obj 
 
 ```jsl
 
-ProfileCallbackLog = Function( {arg}, Show( arg ) );dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Set Script( ProfileCallbackLog );obj << Term Value( :Silica( 1 ) );
+
+ProfileCallbackLog = Function( {arg}, Show( arg ) );
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Set Script( ProfileCallbackLog );
+obj << Term Value( :Silica( 1 ) );
 
 ```
 
@@ -874,7 +1265,11 @@ ProfileCallbackLog = Function( {arg}, Show( arg ) );dt = Open( "$SAMPLE_DATA/Pl
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 2 );obj << Set to Data in Row( 4 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 2 );
+obj << Set to Data in Row( 4 );
 
 ```
 
@@ -886,7 +1281,12 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );dt << New Property( "Constraint", {:p2 + :p3 <= :p1} );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 1 );obj << Show Constraints( 0 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+dt << New Property( "Constraint", {:p2 + :p3 <= :p1} );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 1 );
+obj << Show Constraints( 0 );
 
 ```
 
@@ -898,7 +1298,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );dt << New Property( "Constraint", {
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Show Current Value( 0 ) );Wait( 1 );obj << Show Current Value( 1 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Show Current Value( 0 ) );
+Wait( 1 );
+obj << Show Current Value( 1 );
 
 ```
 
@@ -910,7 +1314,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Show Formulas;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Show Formulas;
 
 ```
 
@@ -922,7 +1329,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Show Points( 0 ) );Wait( 1 );obj << Show Points( 1 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Show Points( 0 ) );
+Wait( 1 );
+obj << Show Points( 1 );
 
 ```
 
@@ -934,7 +1345,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Specify Factor Values;
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Specify Factor Values;
 
 ```
 
@@ -946,7 +1360,10 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );obj << Surface Profiler( 1 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+obj << Surface Profiler( 1 );
 
 ```
 
@@ -958,7 +1375,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 1 );obj << Term Value( :p1( 0.804905315083495 ), :p2( 0.0386246849165042 ), :p3( 0.15647 ) );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 1 );
+obj << Term Value( :p1( 0.804905315083495 ), :p2( 0.0386246849165042 ), :p3( 0.15647 ) );
 
 ```
 
@@ -970,7 +1391,11 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 1 );obj << Top Factor( :p3 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 1 );
+obj << Top Factor( :p3 );
 
 ```
 
@@ -982,7 +1407,17 @@ dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,		:Pred Formula HARDNESS	));obj << Desirability Functions( 1 );obj << Unthreaded( 1 );obj << Maximize Desirability;
+
+dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
+obj = dt << Profiler(
+	Y(
+		:Pred Formula ABRASION, :Pred Formula MODULUS, :Pred Formula ELONG,
+		:Pred Formula HARDNESS
+	)
+);
+obj << Desirability Functions( 1 );
+obj << Unthreaded( 1 );
+obj << Maximize Desirability;
 
 ```
 
@@ -994,7 +1429,11 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );obj = dt << Profiler(	Y(		:Pred For
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );Wait( 1 );obj << Up Dots( 0 );
+
+dt = Open( "$SAMPLE_DATA/Plasticizer.jmp" );
+obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
+Wait( 1 );
+obj << Up Dots( 0 );
 
 ```
 

@@ -12,7 +12,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -28,7 +34,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -36,7 +46,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -44,7 +61,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -56,7 +77,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -70,7 +104,10 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -82,7 +119,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```
 
@@ -94,7 +134,26 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -106,7 +165,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_byco
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Copy Script;
 
 ```
 
@@ -118,7 +189,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Data Table Window;
 
 ```
 
@@ -132,7 +215,10 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -144,7 +230,27 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -158,7 +264,20 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_byco
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -166,7 +285,28 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -178,7 +318,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -190,7 +343,12 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -202,7 +360,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -214,7 +385,20 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -226,7 +410,20 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -238,7 +435,11 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -252,7 +453,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -264,7 +469,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -276,7 +488,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -290,7 +510,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -302,7 +525,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -314,7 +544,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Redo Analysis;
 
 ```
 
@@ -326,7 +568,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -338,7 +592,12 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -350,19 +609,43 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**구문:** obj &lt;&lt; Report; Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -374,7 +657,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -386,7 +681,26 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -398,7 +712,26 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_byco
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -410,7 +743,26 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_byco
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -422,7 +774,12 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_byco
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box( biv = dt << Run Script( "Bivariate" ), dist = dt << Run Script( "Distribution" ) )
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -432,19 +789,14 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-**예제 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**예제 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box( biv = dt << Run Script( "Bivariate" ), dist = dt << Run Script( "Distribution" ) )
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -456,7 +808,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_byco
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -468,7 +832,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -480,7 +856,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Save Script to Report;
 
 ```
 
@@ -492,7 +880,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -500,11 +900,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 **구문:** SendToByGroup( {":Column == level"}, command );
 
-**설명:** 기준 그룹의 각 수준으로 플랫폼 명령을 보내거나 사용자 정의 명령을 표시합니다.
+**설명:** 기준 그룹의 각 수준에 플랫폼 명령 또는 표시 사용자 정의 명령을 보냅니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -516,7 +922,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -528,7 +947,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -540,7 +965,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -552,7 +982,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -564,7 +1006,21 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -580,7 +1036,12 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -592,19 +1053,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**구문:** obj = Degradation(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Degradation(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -618,7 +1089,18 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
 
 ```
 
@@ -630,7 +1112,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );obj = dt << Degradation(	Y( :Strength ),	Time( :Weeks ),	Censor( :Censor ),	X( :Degrees ),	Application( Destructive Degradation ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );
+obj = dt << Degradation(
+	Y( :Strength ),
+	Time( :Weeks ),
+	Censor( :Censor ),
+	X( :Degrees ),
+	Application( Destructive Degradation )
+);
 
 ```
 
@@ -642,7 +1132,20 @@ dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );obj = dt << Degradati
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	),	Freq( :_freqcol ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	),
+	Freq( :_freqcol )
+);
 
 ```
 
@@ -652,7 +1155,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );dt << New Column( "_freq
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	X( :Batch ),	Application( "Repeated Measures Degradation" ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	X( :Batch ),
+	Application( "Repeated Measures Degradation" )
+);
 
 ```
 
@@ -662,7 +1173,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	X( :Batch ),	Application( "Repeated Measures Degradation" ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	X( :Batch ),
+	Application( "Repeated Measures Degradation" )
+);
 
 ```
 
@@ -672,7 +1191,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	X( :Batch ),	Application( "Repeated Measures Degradation" ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	X( :Batch ),
+	Application( "Repeated Measures Degradation" )
+);
 
 ```
 
@@ -682,7 +1209,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	X( :Batch ),	Application( "Repeated Measures Degradation" ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	X( :Batch ),
+	Application( "Repeated Measures Degradation" )
+);
 
 ```
 
@@ -692,7 +1227,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	X( :Batch ),	Application( "Repeated Measures Degradation" ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	X( :Batch ),
+	Application( "Repeated Measures Degradation" )
+);
 
 ```
 
@@ -702,7 +1245,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	X( :Batch ),	Application( "Repeated Measures Degradation" ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	X( :Batch ),
+	Application( "Repeated Measures Degradation" )
+);
 
 ```
 
@@ -710,13 +1261,22 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ### Censor Code
 
-**구문:** obj = Degradation(...Censor Code( value=1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Degradation(...Censor Code( value=1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 오른쪽 중도절단된 관측값을 지정하는 중도절단 열의 값을 식별합니다. 기본값은 "1"입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );obj = dt << Degradation(	Y( :Strength ),	Time( :Weeks ),	X( :Degrees ),	Censor( :Censor ),	Censor Code( "Right" ),	Application( "Destructive Degradation" ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );
+obj = dt << Degradation(
+	Y( :Strength ),
+	Time( :Weeks ),
+	X( :Degrees ),
+	Censor( :Censor ),
+	Censor Code( "Right" ),
+	Application( "Destructive Degradation" )
+);
 
 ```
 
@@ -728,7 +1288,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/Adhesive Bond.jmp" );obj = dt << Degradati
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Connect Data Markers( 0 ));Wait( 1 );obj << Connect Data Markers( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Connect Data Markers( 0 )
+);
+Wait( 1 );
+obj << Connect Data Markers( 1 );
 
 ```
 
@@ -740,7 +1310,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Show Curve Interval( "Prediction Interval" );Wait( 1 );obj << Curve Interval Alpha( .01 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Show Curve Interval( "Prediction Interval" );
+Wait( 1 );
+obj << Curve Interval Alpha( .01 );
 
 ```
 
@@ -752,7 +1332,18 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Lower Spec Limit( 0 );obj << Set Upper Spec Limit( 6 );obj << Set Censoring Time( 6 );dt1 = obj << Generate Pseudo Failure Data( 1, .05 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Lower Spec Limit( 0 );
+obj << Set Upper Spec Limit( 6 );
+obj << Set Censoring Time( 6 );
+dt1 = obj << Generate Pseudo Failure Data( 1, .05 );
 
 ```
 
@@ -764,7 +1355,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));Wait( 1 );obj << Generate Report for Current Model;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+Wait( 1 );
+obj << Generate Report for Current Model;
 
 ```
 
@@ -776,7 +1376,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 10 );obj << Get Inverse Prediction Results;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 10 );
+obj << Get Inverse Prediction Results;
 
 ```
 
@@ -788,7 +1397,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Longitudinal Prediction Time( 4500 );obj << Get Prediction Results;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Longitudinal Prediction Time( 4500 );
+obj << Get Prediction Results;
 
 ```
 
@@ -800,7 +1418,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Get Residuals;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Get Residuals;
 
 ```
 
@@ -812,7 +1438,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Generate Report for Current Model;obj << Get Results;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Generate Report for Current Model;
+obj << Get Results;
 
 ```
 
@@ -824,7 +1459,21 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 6 );obj << Show Curve Interval( "Prediction Interval" );obj << Show Residual Plot( 0 );obj << No Tab List( 1 );obj << Inverse Prediction Interval( "Prediction Interval" );Wait( 1 );obj << Inverse Prediction Alpha( .01 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << Show Curve Interval( "Prediction Interval" );
+obj << Show Residual Plot( 0 );
+obj << No Tab List( 1 );
+obj << Inverse Prediction Interval( "Prediction Interval" );
+Wait( 1 );
+obj << Inverse Prediction Alpha( .01 );
 
 ```
 
@@ -836,7 +1485,20 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 6 );obj << Show Curve Interval( "Prediction Interval" );obj << Show Residual Plot( 0 );obj << No Tab List( 1 );Wait( 1 );obj << Inverse Prediction Interval( "Prediction Interval" );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << Show Curve Interval( "Prediction Interval" );
+obj << Show Residual Plot( 0 );
+obj << No Tab List( 1 );
+Wait( 1 );
+obj << Inverse Prediction Interval( "Prediction Interval" );
 
 ```
 
@@ -848,7 +1510,21 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 6 );obj << Show Curve Interval( "Prediction Interval" );obj << No Tab List( 1 );obj << Show Residual Plot( 0 );obj << Inverse Prediction Interval( "Prediction Interval" );Wait( 1 );obj << Inverse Prediction Side( "Lower One Sided" );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << Show Curve Interval( "Prediction Interval" );
+obj << No Tab List( 1 );
+obj << Show Residual Plot( 0 );
+obj << Inverse Prediction Interval( "Prediction Interval" );
+Wait( 1 );
+obj << Inverse Prediction Side( "Lower One Sided" );
 
 ```
 
@@ -860,7 +1536,23 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 6 );obj << Show Curve Interval( "Prediction Interval" );obj << No Tab List( 1 );obj << Show Residual Plot( 0 );obj << Show Inverse Prediction Plot( 0 );obj << Longitudinal Prediction Interval( "Prediction Interval" );obj << Longitudinal Prediction Time( 4500 );Wait( 1 );obj << Longitudinal Prediction Alpha( .01 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << Show Curve Interval( "Prediction Interval" );
+obj << No Tab List( 1 );
+obj << Show Residual Plot( 0 );
+obj << Show Inverse Prediction Plot( 0 );
+obj << Longitudinal Prediction Interval( "Prediction Interval" );
+obj << Longitudinal Prediction Time( 4500 );
+Wait( 1 );
+obj << Longitudinal Prediction Alpha( .01 );
 
 ```
 
@@ -872,7 +1564,22 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 6 );obj << Show Curve Interval( "Prediction Interval" );obj << No Tab List( 1 );obj << Show Residual Plot( 0 );obj << Show Inverse Prediction Plot( 0 );obj << Longitudinal Prediction Time( 4500 );Wait( 1 );obj << Longitudinal Prediction Interval( "Prediction Interval" );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << Show Curve Interval( "Prediction Interval" );
+obj << No Tab List( 1 );
+obj << Show Residual Plot( 0 );
+obj << Show Inverse Prediction Plot( 0 );
+obj << Longitudinal Prediction Time( 4500 );
+Wait( 1 );
+obj << Longitudinal Prediction Interval( "Prediction Interval" );
 
 ```
 
@@ -884,7 +1591,22 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 6 );obj << Show Curve Interval( "Prediction Interval" );obj << No Tab List( 1 );obj << Show Residual Plot( 0 );obj << Show Inverse Prediction Plot( 0 );obj << Longitudinal Prediction Interval( "Prediction Interval" );Wait( 1 );obj << Longitudinal Prediction Time( 3000 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << Show Curve Interval( "Prediction Interval" );
+obj << No Tab List( 1 );
+obj << Show Residual Plot( 0 );
+obj << Show Inverse Prediction Plot( 0 );
+obj << Longitudinal Prediction Interval( "Prediction Interval" );
+Wait( 1 );
+obj << Longitudinal Prediction Time( 3000 );
 
 ```
 
@@ -896,7 +1618,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));Wait( 1 );obj << No Tab List( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+Wait( 1 );
+obj << No Tab List( 1 );
 
 ```
 
@@ -908,7 +1639,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));Wait( 1 );obj << Nonlinear Path;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+Wait( 1 );
+obj << Nonlinear Path;
 
 ```
 
@@ -920,7 +1660,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));Wait( 0 );obj << Prediction Settings;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+Wait( 0 );
+obj << Prediction Settings;
 
 ```
 
@@ -934,7 +1683,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Residual Plot( Jittering( 1 ), Jittering Scale( 0.5 ) );Wait( 1 );obj << Residual Plot( Jittering Scale( 1.5 ) );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Residual Plot( Jittering( 1 ), Jittering Scale( 0.5 ) );
+Wait( 1 );
+obj << Residual Plot( Jittering Scale( 1.5 ) );
 
 ```
 
@@ -942,7 +1701,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );obj = dt << Degradation(	Y( :Power Drop ),	Time( :Hours ),	Label( :Device ),	X( :Degrees C ),	Application( "Repeated Measures Degradation" ));Wait( 1 );obj << Residual Plot( Jittering( 1 ), Separate Groups( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );
+obj = dt << Degradation(
+	Y( :Power Drop ),
+	Time( :Hours ),
+	Label( :Device ),
+	X( :Degrees C ),
+	Application( "Repeated Measures Degradation" )
+);
+Wait( 1 );
+obj << Residual Plot( Jittering( 1 ), Separate Groups( 1 ) );
 
 ```
 
@@ -954,7 +1723,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );obj = dt << Degradation(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Save Crossing Time;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Save Crossing Time;
 
 ```
 
@@ -966,7 +1747,20 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Longitudinal Prediction Time( 4500 );obj << Save Predictions;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Longitudinal Prediction Time( 4500 );
+obj << Save Predictions;
 
 ```
 
@@ -978,7 +1772,19 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Upper Spec Limit( 10 ),	Model Report(		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )	));obj << Save Residuals;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Upper Spec Limit( 10 ),
+	Model Report(
+		Simple Linear Path( X Scale( Linear ), Y Scale( Linear ), Intercept( Common ), Slope( Different ) )
+	)
+);
+obj << Save Residuals;
 
 ```
 
@@ -986,11 +1792,47 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 **구문:** obj &lt;&lt; Set Baseline( number )
 
-**설명:** 비선형 열화 경로에서 설명 변수에 대한 정상 사용 조건을 지정합니다. 기준 값은 중첩 그림에 검은색 선으로 나타납니다.
+**설명:** 비선형 열화 경로에서 설명 변수에 대한 정상 사용 조건을 지정합니다. 기준값은 중첩 그림에 검은색 선으로 표시됩니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );obj = dt << Degradation(	Y( :Power Drop ),	Time( :Hours ),	Label( :Device ),	X( :Degrees C ),	Application( "Repeated Measures Degradation" ),	Show Fitted Lines( 1 ),	Path Specifications(		Nonlinear Path(			Add Formula(				Formula Name( "Reaction Rate 1" ),				Formula(					Parameter(						{DInf = -1.4423, Ru = 0.000526206474198, Ea = 0.816981438481622},						DInf * (1 - Exp(							-Ru * Exp(								Ea * (11604.5181215503 / (193.5 + 273.15) - 11604.5181215503 / (Degrees C								+273.15))							) * Hours						))					)				),				Initial Values( [-1.4423, 0.000526206474198, 0.816981438481622] ),				Lower( [-1.58653, 0.0004735858267782, 0.73528329463346] ),				Upper( [-1.29807, 0.0005788271216178, 0.898679582329784] ),				Fitting Method( Newton ),				Fixed( [0, 0, 0] )			),			Select Formula( "Reaction Rate 1" )		)	),	Nonlinear Path( 1 ));Wait( 1 );obj << Set Baseline( 130 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );
+obj = dt << Degradation(
+	Y( :Power Drop ),
+	Time( :Hours ),
+	Label( :Device ),
+	X( :Degrees C ),
+	Application( "Repeated Measures Degradation" ),
+	Show Fitted Lines( 1 ),
+	Path Specifications(
+		Nonlinear Path(
+			Add Formula(
+				Formula Name( "Reaction Rate 1" ),
+				Formula(
+					Parameter(
+						{DInf = -1.4423, Ru = 0.000526206474198, Ea = 0.816981438481622},
+						DInf * (1 - Exp(
+							-Ru * Exp(
+								Ea * (11604.5181215503 / (193.5 + 273.15) - 11604.5181215503 / (Degrees C
+								+273.15))
+							) * Hours
+						))
+					)
+				),
+				Initial Values( [-1.4423, 0.000526206474198, 0.816981438481622] ),
+				Lower( [-1.58653, 0.0004735858267782, 0.73528329463346] ),
+				Upper( [-1.29807, 0.0005788271216178, 0.898679582329784] ),
+				Fitting Method( Newton ),
+				Fixed( [0, 0, 0] )
+			),
+			Select Formula( "Reaction Rate 1" )
+		)
+	),
+	Nonlinear Path( 1 )
+);
+Wait( 1 );
+obj << Set Baseline( 130 );
 
 ```
 
@@ -1002,7 +1844,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );obj = dt << Degradation(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Show Fitted Lines( 1 );Wait( 1 );obj << Set Censoring Time( 3800 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Show Fitted Lines( 1 );
+Wait( 1 );
+obj << Set Censoring Time( 3800 );
 
 ```
 
@@ -1014,7 +1866,18 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );obj = dt << Degradation(	Y( :Power Drop ),	Time( :Hours ),	Label( :Device ),	X( :Degrees C ),	Application( "Repeated Measures Degradation" ));obj << Show Fitted Lines( 1 );Wait( 1 );obj << Set Lower Spec Limit( -1.5 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );
+obj = dt << Degradation(
+	Y( :Power Drop ),
+	Time( :Hours ),
+	Label( :Device ),
+	X( :Degrees C ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Show Fitted Lines( 1 );
+Wait( 1 );
+obj << Set Lower Spec Limit( -1.5 );
 
 ```
 
@@ -1026,7 +1889,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/Device B.jmp" );obj = dt << Degradation(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Show Fitted Lines( 1 );Wait( 1 );obj << Set Upper Spec Limit( 6 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Show Fitted Lines( 1 );
+Wait( 1 );
+obj << Set Upper Spec Limit( 6 );
 
 ```
 
@@ -1038,7 +1911,16 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));Wait( 1 );obj << Show Curve Interval( "Prediction Interval" );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+Wait( 1 );
+obj << Show Curve Interval( "Prediction Interval" );
 
 ```
 
@@ -1050,7 +1932,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Show Fitted Lines( 0 ));Wait( 1 );obj << Show Fitted Lines( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Show Fitted Lines( 0 )
+);
+Wait( 1 );
+obj << Show Fitted Lines( 1 );
 
 ```
 
@@ -1062,7 +1954,20 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Show Residual Plot( 0 ),	Show Inverse Prediction Plot( 0 ));obj << Set Upper Spec Limit( 6 );obj << No Tab List( 1 );Wait( 1 );obj << Show Inverse Prediction Plot( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Show Residual Plot( 0 ),
+	Show Inverse Prediction Plot( 0 )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << No Tab List( 1 );
+Wait( 1 );
+obj << Show Inverse Prediction Plot( 1 );
 
 ```
 
@@ -1074,7 +1979,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Show Legend( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Show Legend( 1 );
 
 ```
 
@@ -1086,7 +1999,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ),	Show Residual Plot( 0 ));Wait( 1 );obj << Show Residual Plot( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" ),
+	Show Residual Plot( 0 )
+);
+Wait( 1 );
+obj << Show Residual Plot( 1 );
 
 ```
 
@@ -1098,7 +2021,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Set Upper Spec Limit( 7.5 ),	Application( "Repeated Measures Degradation" ));Wait( 1 );obj << Show Spec Limits( 0 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Set Upper Spec Limit( 7.5 ),
+	Application( "Repeated Measures Degradation" )
+);
+Wait( 1 );
+obj << Show Spec Limits( 0 );
 
 ```
 
@@ -1110,7 +2043,17 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Nonlinear Path;Wait( 1 );obj << Simple Linear Path;
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Nonlinear Path;
+Wait( 1 );
+obj << Simple Linear Path;
 
 ```
 
@@ -1124,7 +2067,46 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$sample_data/reliability/Device B.jmp" );obj = dt << Degradation(	Y( :Power Drop ),	Time( :Hours ),	Label( :Device ),	X( :Degrees C ),	Nonlinear Path( 1 ),	Mean Path( 1 ),	Application( "Repeated Measures Degradation" ));obj << Specify and Fit Path(	Formula Name( "Reaction Rate 1" ),	Formula( Model Type( "Reaction Rate" ), Temperature Unit( "Celsius" ), Baseline Temperature( . ) ), //Illustration of using builtin models in script without going through UI interaction to setup.	Fit by System ID());obj << Generate Report for Current Model();obj << Specify and Fit Path(	Formula Name( "Reaction Rate 2" ),	Formula( Model Type( "Reaction Rate" ), Temperature Unit( "Celsius" ), Baseline Temperature( 100 ) ), //Illustration of using builtin models in script without going through UI interaction to setup.	Fit by System ID());obj << Generate Report for Current Model();obj << Specify and Fit Path(	Formula Name( "Reaction Rate Type I 1" ),	Formula( Model Type( "Reaction Rate Type I" ), Temperature Unit( "Celsius" ), Baseline Temperature( . ) ), //Illustration of using builtin models in script without going through UI interaction to setup. This is not a proper model for the data. For illustration purpose only.	Fit by System ID());obj << Generate Report for Current Model();obj << Specify and Fit Path(	Formula Name( "Constant Rate 1" ),	Formula(		Model Type( "Constant Rate" ),		Path Transformation( "No Transformation" ),		Rate Transformation( "Arrhenius Celsius" ),		Time Transformation( Custom( "Function({x}, x^(1/3))" ) )	), //Illustration of using builtin models in script without going through UI interaction to setup. This is not a proper model for the data. For illustration purpose only.	Fit Model());obj << Generate Report for Current Model();
+
+dt = Open( "$sample_data/reliability/Device B.jmp" );
+obj = dt << Degradation(
+	Y( :Power Drop ),
+	Time( :Hours ),
+	Label( :Device ),
+	X( :Degrees C ),
+	Nonlinear Path( 1 ),
+	Mean Path( 1 ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Specify and Fit Path(
+	Formula Name( "Reaction Rate 1" ),
+	Formula( Model Type( "Reaction Rate" ), Temperature Unit( "Celsius" ), Baseline Temperature( . ) ), //Illustration of using builtin models in script without going through UI interaction to setup.
+	Fit by System ID()
+);
+obj << Generate Report for Current Model();
+obj << Specify and Fit Path(
+	Formula Name( "Reaction Rate 2" ),
+	Formula( Model Type( "Reaction Rate" ), Temperature Unit( "Celsius" ), Baseline Temperature( 100 ) ), //Illustration of using builtin models in script without going through UI interaction to setup.
+	Fit by System ID()
+);
+obj << Generate Report for Current Model();
+obj << Specify and Fit Path(
+	Formula Name( "Reaction Rate Type I 1" ),
+	Formula( Model Type( "Reaction Rate Type I" ), Temperature Unit( "Celsius" ), Baseline Temperature( . ) ), //Illustration of using builtin models in script without going through UI interaction to setup. This is not a proper model for the data. For illustration purpose only.
+	Fit by System ID()
+);
+obj << Generate Report for Current Model();
+obj << Specify and Fit Path(
+	Formula Name( "Constant Rate 1" ),
+	Formula(
+		Model Type( "Constant Rate" ),
+		Path Transformation( "No Transformation" ),
+		Rate Transformation( "Arrhenius Celsius" ),
+		Time Transformation( Custom( "Function({x}, x^(1/3))" ) )
+	), //Illustration of using builtin models in script without going through UI interaction to setup. This is not a proper model for the data. For illustration purpose only.
+	Fit Model()
+);
+obj << Generate Report for Current Model();
 
 ```
 
@@ -1132,7 +2114,22 @@ dt = Open( "$sample_data/reliability/Device B.jmp" );obj = dt << Degradation(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Specify and Fit Path(	Formula Name( "custom linear model 1" ),	Formula(		Model Type( "Custom Linear" ),		Parameter( {b0 = 0, b1 = 0, b2 = 0}, b0 + b1 * Hours + b2 * Hours ^ 2 )	),	Fit Model() //Illustration of using Fit Model in script for custom linear models);
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Specify and Fit Path(
+	Formula Name( "custom linear model 1" ),
+	Formula(
+		Model Type( "Custom Linear" ),
+		Parameter( {b0 = 0, b1 = 0, b2 = 0}, b0 + b1 * Hours + b2 * Hours ^ 2 )
+	),
+	Fit Model() //Illustration of using Fit Model in script for custom linear models
+);
 
 ```
 
@@ -1140,7 +2137,22 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Specify and Fit Path(	Formula Name( "custom linear model 1" ),	Formula(		Model Type( "Custom Linear" ),		Parameter( {b0 = 0, b1 = 0, b2 = 0}, b0 + b1 * Hours + b2 * Hours ^ 2 )	),	Fit by System ID() //Illustration of using Fit by System ID in script for custom linear models.);
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Specify and Fit Path(
+	Formula Name( "custom linear model 1" ),
+	Formula(
+		Model Type( "Custom Linear" ),
+		Parameter( {b0 = 0, b1 = 0, b2 = 0}, b0 + b1 * Hours + b2 * Hours ^ 2 )
+	),
+	Fit by System ID() //Illustration of using Fit by System ID in script for custom linear models.
+);
 
 ```
 
@@ -1152,7 +2164,15 @@ dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );obj = dt << Degradation(	Y( :"Concentration (mg/Kg)"n ),	Time( :Time ),	Label( :Batch Number ),	Set Lower Spec Limit( 99 ));obj << Test Stability;
+
+dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );
+obj = dt << Degradation(
+	Y( :"Concentration (mg/Kg)"n ),
+	Time( :Time ),
+	Label( :Batch Number ),
+	Set Lower Spec Limit( 99 )
+);
+obj << Test Stability;
 
 ```
 
@@ -1164,19 +2184,41 @@ dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );obj = dt << Degradation(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );obj = dt << Degradation(	Y( :Current ),	Time( :Hours ),	Label( :Unit ),	Application( "Repeated Measures Degradation" ));obj << Set Upper Spec Limit( 6 );obj << Show Curve Interval( "Prediction Interval" );obj << Show Residual Plot( 0 );obj << No Tab List( 1 );Wait( 1 );obj << Use Interpolation through Data( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/GaAs Laser.jmp" );
+obj = dt << Degradation(
+	Y( :Current ),
+	Time( :Hours ),
+	Label( :Unit ),
+	Application( "Repeated Measures Degradation" )
+);
+obj << Set Upper Spec Limit( 6 );
+obj << Show Curve Interval( "Prediction Interval" );
+obj << Show Residual Plot( 0 );
+obj << No Tab List( 1 );
+Wait( 1 );
+obj << Use Interpolation through Data( 1 );
 
 ```
 
 ### Use Pooled MSE for Nonpoolable Model
 
-**구문:** obj = Degradation(...Use Pooled MSE for Nonpoolable Model( state=0 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Degradation(...Use Pooled MSE for Nonpoolable Model( state=0 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 안정성 분석의 첫 번째 모형이 합동 MSE(평균 제곱 오차)와 함께 모형을 사용하여 가장 빠른 교차 시간을 계산하도록 지정합니다. 기본값은 "0"입니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );obj = dt << Degradation(	Y( :"Concentration (mg/Kg)"n ),	Time( :Time ),	Label( :Batch Number ),	Application( "Stability Test" ),	Set Lower Spec Limit( 99 ),	Use Pooled MSE for Nonpoolable Model( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Reliability/Stability.jmp" );
+obj = dt << Degradation(
+	Y( :"Concentration (mg/Kg)"n ),
+	Time( :Time ),
+	Label( :Batch Number ),
+	Application( "Stability Test" ),
+	Set Lower Spec Limit( 99 ),
+	Use Pooled MSE for Nonpoolable Model( 1 )
+);
 
 ```
 

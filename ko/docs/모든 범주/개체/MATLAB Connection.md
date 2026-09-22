@@ -12,7 +12,13 @@
 
 ```jsl
 
-conn = MATLAB Connect();conn << Control( Echo( 0 ) );conn << Submit( "\[ a = 'hello'; ]\" ); // no echoconn << Control( Echo( 1 ) );conn << Submit( "\[ a = 'hello'; ]\" ); // echo
+
+
+conn = MATLAB Connect();
+conn << Control( Echo( 0 ) );
+conn << Submit( "\[ a = 'hello'; ]\" ); // no echo
+conn << Control( Echo( 1 ) );
+conn << Submit( "\[ a = 'hello'; ]\" ); // echo
 
 ```
 
@@ -24,7 +30,9 @@
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+MATLABConnection << Disconnect;
 
 ```
 
@@ -36,7 +44,24 @@ MATLABConnection = MATLAB Connect();MATLABConnection << Disconnect;
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();a = "abcdef";d = 3.141;v = [9 8 7, 6 5 4, 3 2 1];m = [1 2 3, 4 5 6, 7 8 9];MATLABConnection << Execute(	{v, m, a, d},	{x, z, a, d},	"\[a = v * m; % matrix productd = v / m; % = v * inv(m) called Right divisionz = m \ v; % = m * inv(v)	called Left divisionx = m .* v; % element-wise product]\");Show( v, m, x, z, a, d );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+a = "abcdef";
+d = 3.141;
+v = [9 8 7, 6 5 4, 3 2 1];
+m = [1 2 3, 4 5 6, 7 8 9];
+MATLABConnection << Execute(
+	{v, m, a, d},
+	{x, z, a, d},
+	"\[
+a = v * m; % matrix product
+d = v / m; % = v * inv(m) called Right division
+z = m \ v; % = m * inv(v)	called Left division
+x = m .* v; % element-wise product
+]\"
+);
+Show( v, m, x, z, a, d );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -48,7 +73,18 @@ MATLABConnection = MATLAB Connect();a = "abcdef";d = 3.141;v = [9 8 7, 6 5 4,
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();x1 = [1, 2, 3];MATLABConnection << Set( x1 );x2 = MATLABConnection << Get( x1 );Show( x1, x2 );dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );MATLABConnection << Set( dt1 );dt2 = MATLABConnection << Get( dt1 );dt2 << New Data View;Close( dt1 );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+x1 = [1, 2, 3];
+MATLABConnection << Set( x1 );
+x2 = MATLABConnection << Get( x1 );
+Show( x1, x2 );
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLABConnection << Set( dt1 );
+dt2 = MATLABConnection << Get( dt1 );
+dt2 << New Data View;
+Close( dt1 );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -60,7 +96,16 @@ MATLABConnection = MATLAB Connect();x1 = [1, 2, 3];MATLABConnection << Set( x1
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();ml = MATLABConnection << Submit( "\[x = 0:pi/100:2*pi;y = sin(x);plot(x,y)]\" );plot = MATLABConnection << Get Graphics( png );New Window( "Plot", Picture Box( plot ) );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+ml = MATLABConnection << Submit( "\[
+x = 0:pi/100:2*pi;
+y = sin(x);
+plot(x,y)
+]\" );
+plot = MATLABConnection << Get Graphics( png );
+New Window( "Plot", Picture Box( plot ) );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -72,7 +117,11 @@ MATLABConnection = MATLAB Connect();ml = MATLABConnection << Submit( "\[x = 0:
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();version = MATLABConnection << Get Version;Show( version );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+version = MATLABConnection << Get Version;
+Show( version );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -84,7 +133,11 @@ MATLABConnection = MATLAB Connect();version = MATLABConnection << Get Version;
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();x = MATLABConnection << Is Connected;Show( x );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+x = MATLABConnection << Is Connected;
+Show( x );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -96,7 +149,11 @@ MATLABConnection = MATLAB Connect();x = MATLABConnection << Is Connected;Show(
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();MATLAB Name = MATLABConnection << JMP Name To MATLAB Name( a b c );Show( MATLAB Name );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+MATLAB Name = MATLABConnection << JMP Name To MATLAB Name( a b c );
+Show( MATLAB Name );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -108,7 +165,12 @@ MATLABConnection = MATLAB Connect();MATLAB Name = MATLABConnection << JMP Name 
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();// .mat file has x, y variables with valuesvars = MATLABConnection << Load( "path/to/matfile.mat" );Show( vars << Get Value( "x" ), vars << Get Value( "y" ) );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+// .mat file has x, y variables with values
+vars = MATLABConnection << Load( "path/to/matfile.mat" );
+Show( vars << Get Value( "x" ), vars << Get Value( "y" ) );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -120,7 +182,16 @@ MATLABConnection = MATLAB Connect();// .mat file has x, y variables with values
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();x = [1, 2, 3];MATLABConnection << Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );MATLABConnection << Send( dt );Close( dt );MATLABConnection << Submit( "x" );MATLABConnection << Submit( "dt" );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+x = [1, 2, 3];
+MATLABConnection << Send( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLABConnection << Send( dt );
+Close( dt );
+MATLABConnection << Submit( "x" );
+MATLABConnection << Submit( "dt" );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -132,7 +203,14 @@ MATLABConnection = MATLAB Connect();x = [1, 2, 3];MATLABConnection << Send( x 
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();MATLABConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );dtname = "$SAMPLE_DATA/Baseball.jmp";MATLABConnection << Send File( dtname );MATLABConnection << Submit( "BigClass" );MATLABConnection << Submit( "Baseball" );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+MATLABConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );
+dtname = "$SAMPLE_DATA/Baseball.jmp";
+MATLABConnection << Send File( dtname );
+MATLABConnection << Submit( "BigClass" );
+MATLABConnection << Submit( "Baseball" );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -144,7 +222,16 @@ MATLABConnection = MATLAB Connect();MATLABConnection << Send File( "$SAMPLE_DAT
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();x = [1, 2, 3];MATLABConnection << Set( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );MATLABConnection << Set( dt );Close( dt );MATLABConnection << Submit( "x" );MATLABConnection << Submit( "dt" );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+x = [1, 2, 3];
+MATLABConnection << Set( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLABConnection << Set( dt );
+Close( dt );
+MATLABConnection << Submit( "x" );
+MATLABConnection << Submit( "dt" );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -156,7 +243,16 @@ MATLABConnection = MATLAB Connect();x = [1, 2, 3];MATLABConnection << Set( x )
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();MATLABConnection << Submit( "\[str = 'The quick brown fox jumps over the lazy dog';a = 200;]\" );getStr = MATLABConnection << Get( str );getNum = MATLABConnection << Get( a );Show( getStr, getNum );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+MATLABConnection << Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+a = 200;
+]\" );
+getStr = MATLABConnection << Get( str );
+getNum = MATLABConnection << Get( a );
+Show( getStr, getNum );
+MATLABConnection << Disconnect;
 
 ```
 
@@ -168,7 +264,10 @@ MATLABConnection = MATLAB Connect();MATLABConnection << Submit( "\[str = 'The 
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();MATLABConnection << Submit File( "file containing MATLAB source." );MATLABConnection << Disconnect;
+
+MATLABConnection = MATLAB Connect();
+MATLABConnection << Submit File( "file containing MATLAB source." );
+MATLABConnection << Disconnect;
 
 ```
 

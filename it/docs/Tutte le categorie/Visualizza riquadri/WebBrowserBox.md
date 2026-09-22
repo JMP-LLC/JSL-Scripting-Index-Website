@@ -14,7 +14,11 @@
 
 ```jsl
 
-New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Window", "Window" );wb << Set Max Size( 10000, 10000 );
+
+New Window( "Example", wb = Web Browser Box() );
+wb << Navigate( "http://www.jmp.com" );
+wb << Set Stretch( "Window", "Window" );
+wb << Set Max Size( 10000, 10000 );
 
 ```
 
@@ -28,7 +32,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ```
 
@@ -40,7 +49,28 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :weight ),	X( :height ),	SendToReport(		Dispatch( {}, "Bivar Plot", FrameBox,			Add Pin Annotation(				Seg( Marker Seg( 1 ) ),				Index( 17 ),				Index Row( 17 ),				UniqueID( -960001792 ),				FoundPt( {238, 219} ),				Origin( {64.9765625, 142} ),				Offset( {-174, -40} ),				Tag Line( 1 ),				Font( "Helvetica", 11, "Plain" )			)		)	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	SendToReport(
+		Dispatch( {}, "Bivar Plot", FrameBox,
+			Add Pin Annotation(
+				Seg( Marker Seg( 1 ) ),
+				Index( 17 ),
+				Index Row( 17 ),
+				UniqueID( -960001792 ),
+				FoundPt( {238, 219} ),
+				Origin( {64.9765625, 142} ),
+				Offset( {-174, -40} ),
+				Tag Line( 1 ),
+				Font( "Helvetica", 11, "Plain" )
+			)
+		)
+	)
+);
 
 ```
 
@@ -52,7 +82,16 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Polygon Annotation(	Points( {210, 80}, {230, 70}, {280, 115}, {240, 120} ),	Color( "Red" ),	Closed( 1 ));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Polygon Annotation(
+	Points( {210, 80}, {230, 70}, {280, 115}, {240, 120} ),
+	Color( "Red" ),
+	Closed( 1 )
+);
 
 ```
 
@@ -64,7 +103,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Simple Shape Annotation( Oval( 210, 100, 250, 75 ) );rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Simple Shape Annotation( Oval( 210, 100, 250, 75 ) );
+rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ```
 
@@ -76,7 +121,15 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Text Annotation(	Text( "We need to discuss this at the next meeting." ),	Text Box( {65, 35, 200, 77} ));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Text Annotation(
+	Text( "We need to discuss this at the next meeting." ),
+	Text Box( {65, 35, 200, 77} )
+);
 
 ```
 
@@ -88,13 +141,18 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << append( Text Box( "=== below ===" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << append( Text Box( "=== below ===" ) );
 
 ```
 
 ### Background Color
 
-**Sintassi:** obj &lt;&lt; Background Color( color ); color = obj &lt;&lt; Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -102,25 +160,41 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Background Color );Wait( 2 );tb << Background Color( "Yellow" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Background Color );
+Wait( 2 );
+tb << Background Color( "Yellow" );
 
 ```
 
 ### Border
 
-**Sintassi:** obj &lt;&lt; Border( sides ); sides = obj &lt;&lt; Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Border );Wait( 1 );tb << Border( 1 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Border );
+Wait( 1 );
+tb << Border( 1 );
 
 ```
 
 ### Border Color
 
-**Sintassi:** obj &lt;&lt; Border Color( color ); color = obj &lt;&lt; Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -128,7 +202,15 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Wait( 2 );tb << Border( 1 );tb << Border Color( "Light Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Wait( 2 );
+tb << Border( 1 );
+tb << Border Color( "Light Red" );
 
 ```
 
@@ -140,7 +222,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Run Script( "Bivariate" );w << Bring Window To Front;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Run Script( "Bivariate" );
+w << Bring Window To Front;
 
 ```
 
@@ -152,7 +238,15 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisParent = axisbox << parent();axisChild = axisParent << child();Print( axisChild << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisParent = axisbox << parent();
+axisChild = axisParent << child();
+Print( axisChild << Class Name() );
 
 ```
 
@@ -164,7 +258,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisbox << Class Name();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisbox << Class Name();
 
 ```
 
@@ -176,7 +276,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << append( Text Box( "=== below ===" ) );clonedBox = rbiv << Clone Box();rbiv << append( clonedBox );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << append( Text Box( "=== below ===" ) );
+clonedBox = rbiv << Clone Box();
+rbiv << append( clonedBox );
 
 ```
 
@@ -188,7 +295,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Close Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Close Window;
 
 ```
 
@@ -200,7 +311,9 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
+
+New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );
+mat << CopyData;
 
 ```
 
@@ -212,7 +325,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;(rbiv[FrameBox( 1 )]) << Copy Graph();"paste into a paint program";
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+(rbiv[FrameBox( 1 )]) << Copy Graph();
+"paste into a paint program";
 
 ```
 
@@ -224,7 +343,12 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Copy Picture();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Copy Picture();
 
 ```
 
@@ -236,7 +360,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisbox << Delete Box();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisbox << Delete Box();
 
 ```
 
@@ -248,7 +378,21 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsselected = 0;New Window( "Example",	ex = Button Box( "Press Me",		selected = !selected;		refresh;	));refresh = Function( {},	If( selected,		ex << Select,		ex << Deselect	));
+
+//This message applies to all display box objects
+selected = 0;
+New Window( "Example",
+	ex = Button Box( "Press Me",
+		selected = !selected;
+		refresh;
+	)
+);
+refresh = Function( {},
+	If( selected,
+		ex << Select,
+		ex << Deselect
+	)
+);
 
 ```
 
@@ -260,19 +404,44 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ```
 
 ### Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -288,7 +457,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Window", "Window" );wb << Set Max Size( 10000, 10000 );Wait( 2 );wb << Execute Script( "document.title = \!"New Title\!"" );
+
+New Window( "Example", wb = Web Browser Box() );
+wb << Navigate( "http://www.jmp.com" );
+wb << Set Stretch( "Window", "Window" );
+wb << Set Max Size( 10000, 10000 );
+Wait( 2 );
+wb << Execute Script( "document.title = \!"New Title\!"" );
 
 ```
 
@@ -296,7 +471,38 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-// Example illustrating navigating Web Browser Box to a URL and retrieve the page HTML source.New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Window", "Window" );wb << Set Max Size( 10000, 10000 );Wait( 2 );Process Content = Function( {promise, response},	content = response;// Possibly remove outer double-quotes	If(		Length( content ) >= 2 & Substr( content, 1, 1 ) == "\!"" & Substr( content, -1, 1 )		 == "\!"",		content = Substr( content, 2, Length( content ) - 2 )	);// Fix up some escaped characters.	content = Substitute( content,		"\n", "\!n", 	// Line feeds		"\t", "\!t", 	// Tabs		"\\!"", "\!"", 	// Double-quotes		"\u003C", "<",		"\u003E", ">"	);	// Print HTML source to Log.	Print( content ););p = wb << Execute Script( "document.documentElement.outerHTML" );p << On Result( Process Content );
+
+// Example illustrating navigating Web Browser Box to a URL and retrieve the page HTML source.
+New Window( "Example", wb = Web Browser Box() );
+wb << Navigate( "http://www.jmp.com" );
+wb << Set Stretch( "Window", "Window" );
+wb << Set Max Size( 10000, 10000 );
+Wait( 2 );
+Process Content = Function( {promise, response},
+	content = response;
+
+// Possibly remove outer double-quotes
+	If(
+		Length( content ) >= 2 & Substr( content, 1, 1 ) == "\!"" & Substr( content, -1, 1 )
+		 == "\!"",
+		content = Substr( content, 2, Length( content ) - 2 )
+	);
+
+// Fix up some escaped characters.
+	content = Substitute( content,
+		"\n", "\!n", 	// Line feeds
+		"\t", "\!t", 	// Tabs
+		"\\!"", "\!"", 	// Double-quotes
+		"\u003C", "<",
+		"\u003E", ">"
+	);	
+
+// Print HTML source to Log.
+	Print( content );
+);
+
+p = wb << Execute Script( "document.documentElement.outerHTML" );
+p << On Result( Process Content );
 
 ```
 
@@ -308,7 +514,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv << Find( axis box( 1 ) );axisbox << Delete();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv << Find( axis box( 1 ) );
+axisbox << Delete();
 
 ```
 
@@ -320,13 +532,23 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Text Annotation(	Text( "We need to discuss this at the next meeting." ),	Text Box( {65, 35, 200, 77} ));annotation = rbiv << Get Annotation;annotation << delete;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Text Annotation(
+	Text( "We need to discuss this at the next meeting." ),
+	Text Box( {65, 35, 200, 77} )
+);
+annotation = rbiv << Get Annotation;
+annotation << delete;
 
 ```
 
 ### Get Background Color
 
-**Sintassi:** obj &lt;&lt; Background Color( color ); color = obj &lt;&lt; Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -334,25 +556,41 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Background Color );Wait( 2 );tb << Background Color( "Yellow" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Background Color );
+Wait( 2 );
+tb << Background Color( "Yellow" );
 
 ```
 
 ### Get Border
 
-**Sintassi:** obj &lt;&lt; Border( sides ); sides = obj &lt;&lt; Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Border );Wait( 1 );tb << Border( 1 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Border );
+Wait( 1 );
+tb << Border( 1 );
 
 ```
 
 ### Get Border Color
 
-**Sintassi:** obj &lt;&lt; Border Color( color ); color = obj &lt;&lt; Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -360,7 +598,15 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Wait( 2 );tb << Border( 1 );tb << Border Color( "Light Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Wait( 2 );
+tb << Border( 1 );
+tb << Border Color( "Light Red" );
 
 ```
 
@@ -372,7 +618,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Content Size();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Content Size();
+Show( c );
 
 ```
 
@@ -386,7 +636,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );rpt = Report( biv );xpath expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Expr( Report( biv ) ) ); // Make Number Col Box(9) more robustShow( xpath expr );xpath expr << Select;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+rpt = Report( biv );
+xpath expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Expr( Report( biv ) ) ); // Make Number Col Box(9) more robust
+Show( xpath expr );
+xpath expr << Select;
 
 ```
 
@@ -394,19 +651,46 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );rpt = Report( biv );subscript expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Mode( "Subscript" ) ); // Make Number Col Box(9) more robustShow( subscript expr );subscript expr << Select;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+rpt = Report( biv );
+subscript expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Mode( "Subscript" ) ); // Make Number Col Box(9) more robust
+Show( subscript expr );
+subscript expr << Select;
 
 ```
 
 ### Get Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -420,7 +704,10 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get HTML );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get HTML );
 
 ```
 
@@ -428,7 +715,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );Save Text File( "$TEMP/Oneway.html", obj << Get HTML( "svg" ) ); // Prefer <<Save HTMLWeb( "$TEMP/Oneway.html", JMPWindow );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
+Save Text File( "$TEMP/Oneway.html", obj << Get HTML( "svg" ) ); // Prefer <<Save HTML
+Web( "$TEMP/Oneway.html", JMPWindow );
 
 ```
 
@@ -440,19 +732,33 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Height;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Height;
 
 ```
 
 ### Get Horizontal Alignment
 
-**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" ); "Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Border( 1 );Wait( 2 );lb << Horizontal Alignment( "Right" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Horizontal Alignment( "Right" );
 
 ```
 
@@ -464,19 +770,33 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;Print( rbiv << Get Journal );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+Print( rbiv << Get Journal );
 
 ```
 
 ### Get Margin
 
-**Sintassi:** obj &lt;&lt; Margin( sides ); sides = obj &lt;&lt; Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Margin );tb << Border( 1 );Wait( 2 );tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Margin );
+tb << Border( 1 );
+Wait( 2 );
+tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -488,7 +808,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Max Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Max Size;
 
 ```
 
@@ -500,7 +826,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Min Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Min Size;
 
 ```
 
@@ -512,7 +844,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
+
+//This message applies to all display objects
+x = 1;
+w = New Window( "Test", b = Button Box( "Press me" ) );
+b:x = 2;
+ns = b << GetNamespace();
+Show( ns:x, x );
 
 ```
 
@@ -524,19 +862,41 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);Show( w << Get On Close );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
+Show( w << Get On Close );
 
 ```
 
 ### Get Padding
 
-**Sintassi:** obj &lt;&lt; Padding( sides ); sides = obj &lt;&lt; Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Padding );tb << Border( 1 );Wait( 1 );tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Padding );
+tb << Border( 1 );
+Wait( 1 );
+tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -548,7 +908,10 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Page Setup Test" ) );w << get page setup();
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Page Setup Test" ) );
+w << get page setup();
 
 ```
 
@@ -562,7 +925,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;New Window( "Example", rbiv << Get Picture );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+New Window( "Example", rbiv << Get Picture );
 
 ```
 
@@ -570,7 +938,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
 
 ```
 
@@ -578,7 +952,24 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate(	Y( :weight ),	X( :height ),	Fit Line( {Line Color( {212, 73, 88} )} ),	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),	Kernel Smoother( 1, 1, 0.5, 0 ));rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );New Window( "Example",	H List Box(		rbiv << Get Picture( View( "Screen" ), Appearance( "Current" ) ),		rbiv << Get Picture( View( "Print" ), Appearance( "Default" ) )	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	Fit Line( {Line Color( {212, 73, 88} )} ),
+	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),
+	Kernel Smoother( 1, 1, 0.5, 0 )
+);
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+New Window( "Example",
+	H List Box(
+		rbiv << Get Picture( View( "Screen" ), Appearance( "Current" ) ),
+		rbiv << Get Picture( View( "Print" ), Appearance( "Default" ) )
+	)
+);
 
 ```
 
@@ -592,7 +983,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Project();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Project();
+Show( c );
 
 ```
 
@@ -604,7 +999,9 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Properties;
 
 ```
 
@@ -616,7 +1013,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property( "Enabled" );
 
 ```
 
@@ -628,7 +1027,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property List;
 
 ```
 
@@ -642,7 +1043,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get RTF );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get RTF );
 
 ```
 
@@ -650,7 +1054,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );Save Text File( "$TEMP/Oneway.rtf", obj << Get RTF( "png" ) ); // Prefer <<Save RTFOpen( "$TEMP/Oneway.rtf" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
+Save Text File( "$TEMP/Oneway.rtf", obj << Get RTF( "png" ) ); // Prefer <<Save RTF
+Open( "$TEMP/Oneway.rtf" );
 
 ```
 
@@ -664,7 +1073,43 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filter Context Box(		H List Box(			dt << Data Filter(				Local,				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )			),			V List Box(				t = Text Box( "0 Rows Excluded" ),				Distribution(					Continuous Distribution( Column( :weight ) ),					Nominal Distribution( Column( :age ) )				)			)		)	));updatetext = Function( {},	rs = t << Get Row States( dt );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = t << Make Row State Handler( dt, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	Data Filter Context Box(
+		H List Box(
+			dt << Data Filter(
+				Local,
+				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+			),
+			V List Box(
+				t = Text Box( "0 Rows Excluded" ),
+				Distribution(
+					Continuous Distribution( Column( :weight ) ),
+					Nominal Distribution( Column( :age ) )
+				)
+			)
+		)
+	)
+);
+updatetext = Function( {},
+	rs = t << Get Row States( dt );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = t << Make Row State Handler( dt, rsupdate );
+updatetext();
 
 ```
 
@@ -672,7 +1117,38 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text Box( "0 Rows Excluded" ),	dist = Distribution(		Continuous Distribution( Column( :weight ) ),		Nominal Distribution( Column( :age ) ),		Local Data Filter(			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )		),		Where( :sex == "F" )	));subset = dist << Get Data Table();updatetext = Function( {},	rs = Report( dist ) << Get Row States( subset );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	t = Text Box( "0 Rows Excluded" ),
+	dist = Distribution(
+		Continuous Distribution( Column( :weight ) ),
+		Nominal Distribution( Column( :age ) ),
+		Local Data Filter(
+			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+		),
+		Where( :sex == "F" )
+	)
+);
+subset = dist << Get Data Table();
+updatetext = Function( {},
+	rs = Report( dist ) << Get Row States( subset );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );
+updatetext();
 
 ```
 
@@ -684,7 +1160,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );Print( w << Get Show Window() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+Print( w << Get Show Window() );
 
 ```
 
@@ -696,7 +1178,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];Print( fb << Get Size );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+Print( fb << Get Size );
 
 ```
 
@@ -710,7 +1198,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Stretch",	V List Box(		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),		spacer = Spacer Box(			Size( 20, 20 ),			Color( "Light Red" ),			<<Set Stretch( "Fill", "Off" )		)	));spacer << Get Stretch();
+
+//This message applies to all display box objects
+New Window( "Stretch",
+	V List Box(
+		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),
+		spacer = Spacer Box(
+			Size( 20, 20 ),
+			Color( "Light Red" ),
+			<<Set Stretch( "Fill", "Off" )
+		)
+	)
+);
+spacer << Get Stretch();
 
 ```
 
@@ -722,13 +1222,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get Text );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get Text );
 
 ```
 
 ### Get Text Color
 
-**Sintassi:** obj &lt;&lt; Text Color( color ); color = obj &lt;&lt; Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -736,13 +1239,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Text Color );Wait( 2 );tb << Text Color( "Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Text Color );
+Wait( 2 );
+tb << Text Color( "Red" );
 
 ```
 
 ### Get UI Only
 
-**Sintassi:** obj &lt;&lt; UI Only( state=0|1 ); state = obj &lt;&lt; Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get URL
 
@@ -754,31 +1265,56 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Window", "Window" );wb << Set Max Size( 10000, 10000 );Wait( 2 );Print( wb << Get URL() );
+
+New Window( "Example", wb = Web Browser Box() );
+wb << Navigate( "http://www.jmp.com" );
+wb << Set Stretch( "Window", "Window" );
+wb << Set Max Size( 10000, 10000 );
+Wait( 2 );
+Print( wb << Get URL() );
 
 ```
 
 ### Get Vertical Alignment
 
-**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" ); "Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Set Horizontal( 1 );lb = r[List Box( 7 )];lb << Border( 1 );Wait( 2 );lb << Vertical Alignment( "Bottom" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Set Horizontal( 1 );
+lb = r[List Box( 7 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Vertical Alignment( "Bottom" );
 
 ```
 
 ### Get Visibility
 
-**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" ); "Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Visibility );Wait( 1 );tb << Visibility( "Collapse" );Show( tb << Get Visibility );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Visibility );
+Wait( 1 );
+tb << Visibility( "Collapse" );
+Show( tb << Get Visibility );
 
 ```
 
@@ -790,7 +1326,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -802,7 +1342,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Width;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Width;
 
 ```
 
@@ -814,7 +1360,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Icon;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Icon;
+Show( t );
 
 ```
 
@@ -826,7 +1376,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );p = w << Get Window Position();Show( p );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+p = w << Get Window Position();
+Show( p );
 
 ```
 
@@ -838,7 +1392,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );s = w << Get Window Size();Show( s );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+s = w << Get Window Size();
+Show( s );
 
 ```
 
@@ -850,7 +1408,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Title;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Title;
+Show( t );
 
 ```
 
@@ -862,7 +1424,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Print( w << Get Window View() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Print( w << Get Window View() );
 
 ```
 
@@ -874,7 +1439,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "test", a = Text Box( "my test" ) );a << set text( win << get xml );
+
+//This message applies to all display box objects
+win = New Window( "test", a = Text Box( "my test" ) );
+a << set text( win << get xml );
 
 ```
 
@@ -886,19 +1454,60 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size( 3 );			Y Function( -3 + 100 / 2 * (1 + Sin( (2 * Pi() * (x + .3)) / 100 )), x );		),		<<settrackenable( 1 ) // put the mouse box to work, watching "tracking"	,		<<settrack( // events from the mouse (movement, with button up or down)			Function( {this, pt}, // parameters: this is the mousebox, pt is mouse x,y				{fb, offset, t, off, size}, // local variables				// recalulate offset and size each time, the values can change				fb = this[framebox( 1 )]; // the framebox in the graph 				offset = [0, 0]; // accumulator to sum up the offset between framebox and mousebox				t = fb; // a temporary box that starts at the frame 				While( t != this, // and walks up to the mousebox					off = t << getOffset; // ask each box for its offset to the immediate parent					offset += Matrix( off ); // convert list answer to matrix so + will work					t = t << parent; // crawl up to the mousebox, one box at a time				);				size = Matrix( fb << getSize ); // the frame knows its size				If( // over the frame box					offset[1] < pt[1] < offset[1] + size[1] & offset[2] < pt[2] < offset[2]					 + size[2]				,					fb << setbackgroundcolor( "red" ),					fb << setbackgroundcolor( "blue" )				);			)		)	));
+
+New Window( "example",
+	MouseBox(
+		Graph Box(
+			title( "title" ),
+			Pen Size( 3 );
+			Y Function( -3 + 100 / 2 * (1 + Sin( (2 * Pi() * (x + .3)) / 100 )), x );
+		),
+		<<settrackenable( 1 ) // put the mouse box to work, watching "tracking"
+	,
+		<<settrack( // events from the mouse (movement, with button up or down)
+			Function( {this, pt}, // parameters: this is the mousebox, pt is mouse x,y
+				{fb, offset, t, off, size}, // local variables
+				// recalulate offset and size each time, the values can change
+				fb = this[framebox( 1 )]; // the framebox in the graph 
+				offset = [0, 0]; // accumulator to sum up the offset between framebox and mousebox
+				t = fb; // a temporary box that starts at the frame 
+				While( t != this, // and walks up to the mousebox
+					off = t << getOffset; // ask each box for its offset to the immediate parent
+					offset += Matrix( off ); // convert list answer to matrix so + will work
+					t = t << parent; // crawl up to the mousebox, one box at a time
+				);
+				size = Matrix( fb << getSize ); // the frame knows its size
+				If( // over the frame box
+					offset[1] < pt[1] < offset[1] + size[1] & offset[2] < pt[2] < offset[2]
+					 + size[2]
+				,
+					fb << setbackgroundcolor( "red" ),
+					fb << setbackgroundcolor( "blue" )
+				);
+			)
+		)
+	)
+);
 
 ```
 
 ### Horizontal Alignment
 
-**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" ); "Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Border( 1 );Wait( 2 );lb << Horizontal Alignment( "Right" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Horizontal Alignment( "Right" );
 
 ```
 
@@ -910,7 +1519,37 @@ New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size(
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "Inval example",	Button Box( "red",		color = "red";		g1 << inval; /* tell the oval to redraw */		g2 << inval; /* tell the rectangle to redraw */		g1 << updateWindow; /* tell the window to update immediately */		// this is a busy-wait to help demonstrate the various behaviors...		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );	),	Button Box( "blue",		color = "blue";		g1 << inval; /* same comments */		g2 << inval;		g1 << updateWindow;		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 );	),	g1 = Graph Box(/* the graph does NOT watch for the color variable to change                       but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	),	g2 = Graph Box(		Fill Color( color );		Rect( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "Inval example",
+	Button Box( "red",
+		color = "red";
+		g1 << inval; /* tell the oval to redraw */
+		g2 << inval; /* tell the rectangle to redraw */
+		g1 << updateWindow; /* tell the window to update immediately */
+		// this is a busy-wait to help demonstrate the various behaviors...
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );
+	),
+	Button Box( "blue",
+		color = "blue";
+		g1 << inval; /* same comments */
+		g2 << inval;
+		g1 << updateWindow;
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 );
+	),
+	g1 = Graph Box(/* the graph does NOT watch for the color variable to change 
+                      but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	),
+	g2 = Graph Box(
+		Fill Color( color );
+		Rect( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
@@ -924,7 +1563,12 @@ New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size(
 
 ```jsl
 
-ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );Show( ww << Is Dirty );ww << Set Dirty( 0 );Show( ww << Is Dirty );
+
+
+ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
+Show( ww << Is Dirty );
+ww << Set Dirty( 0 );
+Show( ww << Is Dirty );
 
 ```
 
@@ -936,7 +1580,14 @@ New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size(
 
 ```jsl
 
-With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},		Print( win << Is Modal Dialog() );		win << close window();	));
+
+With Window Handler(
+	New Window( "Modal Window", <<Modal ),
+	Function( {win},
+		Print( win << Is Modal Dialog() );
+		win << close window();
+	)
+);
 
 ```
 
@@ -948,7 +1599,12 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << journal;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << journal;
 
 ```
 
@@ -960,7 +1616,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Main Window", Text Box( "Main JMP Window" ) );w << Journal Window;
+
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Journal Window;
 
 ```
 
@@ -972,7 +1631,17 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsOpen( "$SAMPLE_DATA/Big Class.jmp" );New Window( "example",	ob1 = Outline Box( "treemap launcher" ),	ob2 = Outline Box( "bivariate partial" ),	ob3 = Outline Box( "bivariate launched" ));ob1 << launch( Treemap() );ob2 << launch( Bivariate( Y( :height ) ) );ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
+
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "example",
+	ob1 = Outline Box( "treemap launcher" ),
+	ob2 = Outline Box( "bivariate partial" ),
+	ob3 = Outline Box( "bivariate launched" )
+);
+ob1 << launch( Treemap() );
+ob2 << launch( Bivariate( Y( :height ) ) );
+ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ```
 
@@ -986,7 +1655,43 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filter Context Box(		H List Box(			dt << Data Filter(				Local,				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )			),			V List Box(				t = Text Box( "0 Rows Excluded" ),				Distribution(					Continuous Distribution( Column( :weight ) ),					Nominal Distribution( Column( :age ) )				)			)		)	));updatetext = Function( {},	rs = t << Get Row States( dt );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = t << Make Row State Handler( dt, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	Data Filter Context Box(
+		H List Box(
+			dt << Data Filter(
+				Local,
+				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+			),
+			V List Box(
+				t = Text Box( "0 Rows Excluded" ),
+				Distribution(
+					Continuous Distribution( Column( :weight ) ),
+					Nominal Distribution( Column( :age ) )
+				)
+			)
+		)
+	)
+);
+updatetext = Function( {},
+	rs = t << Get Row States( dt );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = t << Make Row State Handler( dt, rsupdate );
+updatetext();
 
 ```
 
@@ -994,19 +1699,59 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text Box( "0 Rows Excluded" ),	dist = Distribution(		Continuous Distribution( Column( :weight ) ),		Nominal Distribution( Column( :age ) ),		Local Data Filter(			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )		),		Where( :sex == "F" )	));subset = dist << Get Data Table();updatetext = Function( {},	rs = Report( dist ) << Get Row States( subset );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	t = Text Box( "0 Rows Excluded" ),
+	dist = Distribution(
+		Continuous Distribution( Column( :weight ) ),
+		Nominal Distribution( Column( :age ) ),
+		Local Data Filter(
+			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+		),
+		Where( :sex == "F" )
+	)
+);
+subset = dist << Get Data Table();
+updatetext = Function( {},
+	rs = Report( dist ) << Get Row States( subset );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );
+updatetext();
 
 ```
 
 ### Margin
 
-**Sintassi:** obj &lt;&lt; Margin( sides ); sides = obj &lt;&lt; Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Margin );tb << Border( 1 );Wait( 2 );tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Margin );
+tb << Border( 1 );
+Wait( 2 );
+tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -1018,7 +1763,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Maximize Window( 1 );Wait( 1 );w << Maximize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Maximize Window( 1 );
+Wait( 1 );
+w << Maximize Window( 0 );
 
 ```
 
@@ -1032,7 +1783,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Minimize Window( 1 );Wait( 1 );w << Minimize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Minimize Window( 1 );
+Wait( 1 );
+w << Minimize Window( 0 );
 
 ```
 
@@ -1044,7 +1801,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Move Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Move Window( 500, 500 );
 
 ```
 
@@ -1058,7 +1819,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Window", "Window" );wb << Set Max Size( 10000, 10000 );
+
+New Window( "Example", wb = Web Browser Box() );
+wb << Navigate( "http://www.jmp.com" );
+wb << Set Stretch( "Window", "Window" );
+wb << Set Max Size( 10000, 10000 );
 
 ```
 
@@ -1070,7 +1835,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;next = rbiv << Next();Print( next << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+next = rbiv << Next();
+Print( next << Class Name() );
 
 ```
 
@@ -1084,7 +1855,21 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	Function( {this},         // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled		New Window( "Are you sure?",			<<modal,			V List Box(				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )			)		)["button"] == 1	));
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	Function( {this}, 
+        // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled
+		New Window( "Are you sure?",
+			<<modal,
+			V List Box(
+				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),
+				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+			)
+		)["button"] == 1
+	)
+);
 
 ```
 
@@ -1092,7 +1877,19 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
 
 ```
 
@@ -1106,7 +1903,10 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to Data Table objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Optimize Display;
+
+//This message applies to Data Table objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Optimize Display;
 
 ```
 
@@ -1118,19 +1918,33 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );r = d << report;r << Pad Window( 0 );
+
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+r = d << report;
+r << Pad Window( 0 );
 
 ```
 
 ### Padding
 
-**Sintassi:** obj &lt;&lt; Padding( sides ); sides = obj &lt;&lt; Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Padding );tb << Border( 1 );Wait( 1 );tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Padding );
+tb << Border( 1 );
+Wait( 1 );
+tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -1142,7 +1956,21 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example",	ob = Outline Box( "Outline Box",		V List Box(			ob2 = Outline Box( "Outline Box 2",				H List Box( Text Edit Box( "Top Left" ), Text Edit Box( "Top Right" ) )			),			ob3 = Outline Box( "Outline Box",				H List Box( Text Edit Box( "Bottom Left" ), Text Edit Box( "Bottom Right" ) )			)		)	));ob3 << Page Break;
+
+//This message applies to all display box objects
+New Window( "Example",
+	ob = Outline Box( "Outline Box",
+		V List Box(
+			ob2 = Outline Box( "Outline Box 2",
+				H List Box( Text Edit Box( "Top Left" ), Text Edit Box( "Top Right" ) )
+			),
+			ob3 = Outline Box( "Outline Box",
+				H List Box( Text Edit Box( "Bottom Left" ), Text Edit Box( "Bottom Right" ) )
+			)
+		)
+	)
+);
+ob3 << Page Break;
 
 ```
 
@@ -1154,7 +1982,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisParent = axisbox << parent();Print( axisParent << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisParent = axisbox << parent();
+Print( axisParent << Class Name() );
 
 ```
 
@@ -1166,7 +2001,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << prepend( Text Box( "=== above ===" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << prepend( Text Box( "=== above ===" ) );
 
 ```
 
@@ -1180,7 +2020,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 2 )];axisSibling = axisbox << Prev Sib();Print( axisSibling << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 2 )];
+axisSibling = axisbox << Prev Sib();
+Print( axisSibling << Class Name() );
 
 ```
 
@@ -1192,7 +2039,10 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Print Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Print Window;
 
 ```
 
@@ -1204,7 +2054,24 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "Reshow example",	Button Box( "red",		color = "red";		g << reshow/* tell the graph that something changed */;	),	Button Box( "blue",		color = "blue";		g << reshow/* tell the graph that something changed */;	),	g = Graph Box(/* the graph does NOT watch for the color variable to change                     but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "Reshow example",
+	Button Box( "red",
+		color = "red";
+		g << reshow/* tell the graph that something changed */;
+	),
+	Button Box( "blue",
+		color = "blue";
+		g << reshow/* tell the graph that something changed */;
+	),
+	g = Graph Box(/* the graph does NOT watch for the color variable to change
+                     but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
@@ -1216,7 +2083,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ```
 
@@ -1228,7 +2100,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save HTML( "$TEMP/jmp_example.html" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ```
 
@@ -1240,7 +2117,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ```
 
@@ -1252,7 +2134,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ```
 
@@ -1264,7 +2151,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ```
 
@@ -1276,7 +2168,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ```
 
@@ -1290,7 +2187,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ```
 
@@ -1298,7 +2200,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );rbiv << Save Picture( "$TEMP/jmp_example_scale.png", "png", Scale( 1.5 ) );New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+rbiv << Save Picture( "$TEMP/jmp_example_scale.png", "png", Scale( 1.5 ) );
+New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
 
 ```
 
@@ -1306,7 +2215,35 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate(	Y( :weight ),	X( :height ),	Fit Line( {Line Color( {212, 73, 88} )} ),	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),	Kernel Smoother( 1, 1, 0.5, 0 ));rbiv = biv << report;rbiv << Save Picture(	"$TEMP/jmp_example_screen.png",	"png",	View( "Screen" ),	Appearance( "Current" ));rbiv << Save Picture(	"$TEMP/jmp_example_print.png",	"png",	View( "Print" ),	Appearance( "Default" ));New Window( "Example",	H List Box(		New Image( "$TEMP/jmp_example_screen.png" ),		New Image( "$TEMP/jmp_example_print.png" )	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	Fit Line( {Line Color( {212, 73, 88} )} ),
+	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),
+	Kernel Smoother( 1, 1, 0.5, 0 )
+);
+rbiv = biv << report;
+rbiv << Save Picture(
+	"$TEMP/jmp_example_screen.png",
+	"png",
+	View( "Screen" ),
+	Appearance( "Current" )
+);
+rbiv << Save Picture(
+	"$TEMP/jmp_example_print.png",
+	"png",
+	View( "Print" ),
+	Appearance( "Default" )
+);
+New Window( "Example",
+	H List Box(
+		New Image( "$TEMP/jmp_example_screen.png" ),
+		New Image( "$TEMP/jmp_example_print.png" )
+	)
+);
 
 ```
 
@@ -1318,7 +2255,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Presentation( "$TEMP/jmp_example.pptx" );Open( "$TEMP/jmp_example.pptx" );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Presentation( "$TEMP/jmp_example.pptx" );
+Open( "$TEMP/jmp_example.pptx" );
 
 ```
 
@@ -1330,7 +2272,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ```
 
@@ -1342,7 +2289,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << save text( "$TEMP/jmp_example.txt" );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << save text( "$TEMP/jmp_example.txt" );
 
 ```
 
@@ -1356,7 +2306,11 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message can be sent to any display box object but will be applied to the report windowOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
+
+//This message can be sent to any display box object but will be applied to the report window
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ```
 
@@ -1370,7 +2324,20 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowfm << scroll window( Absolute( "End", "End" ) );Wait( 1 );fm << scroll window( Absolute( 0, 300 ) );Wait( 1 );
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+fm << scroll window( Absolute( "End", "End" ) );
+Wait( 1 );
+fm << scroll window( Absolute( 0, 300 ) );
+Wait( 1 );
 
 ```
 
@@ -1378,7 +2345,24 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowFor( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 second	fm << scroll window( Report( fm )[framebox( 2 )] );	Wait( .5 );	fm << scroll window( Report( fm )[framebox( 3 )] );	Wait( .5 );	fm << scroll window( Report( fm )[framebox( 1 )] );	Wait( .5 ););
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+For( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 second
+	fm << scroll window( Report( fm )[framebox( 2 )] );
+	Wait( .5 );
+	fm << scroll window( Report( fm )[framebox( 3 )] );
+	Wait( .5 );
+	fm << scroll window( Report( fm )[framebox( 1 )] );
+	Wait( .5 );
+);
 
 ```
 
@@ -1386,7 +2370,22 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowfm << scroll window( Relative( 300 ) );Wait( 1 );fm << scroll window( Relative( -50 ) );Wait( 1 );fm << scroll window( Relative( "Start" ) );Wait( 1 );
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+fm << scroll window( Relative( 300 ) );
+Wait( 1 );
+fm << scroll window( Relative( -50 ) );
+Wait( 1 );
+fm << scroll window( Relative( "Start" ) );
+Wait( 1 );
 
 ```
 
@@ -1398,7 +2397,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example", ex = Button Box( "Press Me" ) );ex << Select;
+
+//This message applies to all display box objects
+New Window( "Example", ex = Button Box( "Press Me" ) );
+ex << Select;
 
 ```
 
@@ -1410,7 +2412,21 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Test",	lb = List Box( {"a", "b", "c", "d"} ),	Button Box( "Enable 2nd item",		lb << enable item( 2, 1 );		Show( lb << item enabled( 2 ) );	),	Button Box( "Disable 2nd item",		lb << enable item( 2, 0 );		Show( lb << item enabled( 2 ) );	));Wait( 2 );w << Set Content Size( 400, 300 );
+
+//This message applies to all display box objects
+w = New Window( "Test",
+	lb = List Box( {"a", "b", "c", "d"} ),
+	Button Box( "Enable 2nd item",
+		lb << enable item( 2, 1 );
+		Show( lb << item enabled( 2 ) );
+	),
+	Button Box( "Disable 2nd item",
+		lb << enable item( 2, 0 );
+		Show( lb << item enabled( 2 ) );
+	)
+);
+Wait( 2 );
+w << Set Content Size( 400, 300 );
 
 ```
 
@@ -1424,7 +2440,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );Show( ww << Is Dirty );ww << Set Dirty( 0 );Show( ww << Is Dirty );
+
+
+ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
+Show( ww << Is Dirty );
+ww << Set Dirty( 0 );
+Show( ww << Is Dirty );
 
 ```
 
@@ -1436,7 +2457,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Height( 150 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Height( 150 );
 
 ```
 
@@ -1448,7 +2475,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Main Window", Text Box( "Main JMP Window" ) );w << Set Main Window;
+
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Set Main Window;
 
 ```
 
@@ -1460,7 +2490,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Max Size( 500, 500 );fb << Get Max Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Max Size( 500, 500 );
+fb << Get Max Size;
 
 ```
 
@@ -1472,7 +2509,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Min Size( 30, 30 );fb << Get Min Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Min Size( 30, 30 );
+fb << Get Min Size;
 
 ```
 
@@ -1484,7 +2528,17 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );w << Set page setup(	margins( 1, 1, 1, 1 ),	scale( 1 ),	portrait( 1 ),	paper size( "Letter" ),	Table of Contents( "always" ));w << Save pdf( "$DOCUMENTS\test.pdf" );
+
+//This message applies to all display box objects
+w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
+w << Set page setup(
+	margins( 1, 1, 1, 1 ),
+	scale( 1 ),
+	portrait( 1 ),
+	paper size( "Letter" ),
+	Table of Contents( "always" )
+);
+w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```
 
@@ -1496,7 +2550,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Footer Test" ) );w << Set Print Footers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Footer Test" ) );
+w << Set Print Footers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -1508,7 +2569,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Header Test" ) );w << Set Print Headers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Header Test" ) );
+w << Set Print Headers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -1520,7 +2588,9 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -1532,7 +2602,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Set Report Title( "New Title" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Set Report Title( "New Title" );
 
 ```
 
@@ -1544,7 +2619,11 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp.com" );wb << Set Stretch( "Off", "Off" );wb << Set Size( 100, 100 );
+
+New Window( "Example", wb = Web Browser Box() );
+wb << Navigate( "http://www.jmp.com" );
+wb << Set Stretch( "Off", "Off" );
+wb << Set Size( 100, 100 );
 
 ```
 
@@ -1560,7 +2639,24 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example",	H List Box(		tv = Text Box( "V+V", <<rotate text( left ) ),		V List Box(			Text Box( "resize the containing window" ),			th = Text Box( "H+H" ),			ts = Spacer Box( <<Size( 10, 30 ), <<Color( "blue" ) )		)	));tv << Vertical Alignment( "Center" );th << Horizontal Alignment( "Center" );th << Set Stretch( "Window", "Off" );ts << Set Min Size( 5, 20 );ts << Set Max Size( 100000, 100 );ts << Set Stretch( "Window", "Window" );
+
+//This message applies to all display box objects
+New Window( "Example",
+	H List Box(
+		tv = Text Box( "V+V", <<rotate text( left ) ),
+		V List Box(
+			Text Box( "resize the containing window" ),
+			th = Text Box( "H+H" ),
+			ts = Spacer Box( <<Size( 10, 30 ), <<Color( "blue" ) )
+		)
+	)
+);
+tv << Vertical Alignment( "Center" );
+th << Horizontal Alignment( "Center" );
+th << Set Stretch( "Window", "Off" );
+ts << Set Min Size( 5, 20 );
+ts << Set Max Size( 100000, 100 );
+ts << Set Stretch( "Window", "Window" );
 
 ```
 
@@ -1568,7 +2664,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Stretch",	V List Box(		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),		Spacer Box( Size( 20, 20 ), Color( "Light Red" ), <<Set Stretch( "Fill", "Off" ) )	));
+
+//This message applies to all display box objects
+New Window( "Stretch",
+	V List Box(
+		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),
+		Spacer Box( Size( 20, 20 ), Color( "Light Red" ), <<Set Stretch( "Fill", "Off" ) )
+	)
+);
 
 ```
 
@@ -1580,7 +2683,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );d << Report View( "Summary" );r = d << Report;tb = r[Table Box( 1 )];tb << Set Summary Behavior( "Visible" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+d << Report View( "Summary" );
+r = d << Report;
+tb = r[Table Box( 1 )];
+tb << Set Summary Behavior( "Visible" );
 
 ```
 
@@ -1592,7 +2702,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Width( 400 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Width( 400 );
 
 ```
 
@@ -1604,7 +2720,10 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Example", ex = Button Box( "New Analysis" ) );w << Set Window Icon( "Scatter3D" );
+
+//This message applies to all display box objects
+w = New Window( "Example", ex = Button Box( "New Analysis" ) );
+w << Set Window Icon( "Scatter3D" );
 
 ```
 
@@ -1616,7 +2735,10 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 800, 1200 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 800, 1200 );
 
 ```
 
@@ -1628,7 +2750,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Set Window Title( "New Title" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Set Window Title( "New Title" );
 
 ```
 
@@ -1640,7 +2767,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Show Properties();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Show Properties();
 
 ```
 
@@ -1652,7 +2784,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Show Tree Structure();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Show Tree Structure();
 
 ```
 
@@ -1664,7 +2801,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );w << Show Window( 1 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+w << Show Window( 1 );
 
 ```
 
@@ -1676,7 +2819,14 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisSibling = axisbox << sib();Print( axisSibling << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisSibling = axisbox << sib();
+Print( axisSibling << Class Name() );
 
 ```
 
@@ -1688,7 +2838,17 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r()[framebox( 1 )];fb << sib append(	Text Box( "============ after ==============", Rotate Text( "Right" ) ),	"Horizontal");fb << sib append( Text Box( "=== below ===" ), "Vertical" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r()[framebox( 1 )];
+fb << sib append(
+	Text Box( "============ after ==============", Rotate Text( "Right" ) ),
+	"Horizontal"
+);
+fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ```
 
@@ -1700,7 +2860,17 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << sib prepend(	Text Box( "    ============ before ==============", Rotate Text( "Right" ) ),	"Horizontal");fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << sib prepend(
+	Text Box( "    ============ before ==============", Rotate Text( "Right" ) ),
+	"Horizontal"
+);
+fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ```
 
@@ -1712,13 +2882,16 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Size Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Size Window( 500, 500 );
 
 ```
 
 ### Text Color
 
-**Sintassi:** obj &lt;&lt; Text Color( color ); color = obj &lt;&lt; Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -1726,7 +2899,15 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Text Color );Wait( 2 );tb << Text Color( "Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Text Color );
+Wait( 2 );
+tb << Text Color( "Red" );
 
 ```
 
@@ -1738,13 +2919,19 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rootParent = rbiv << Top Parent();Print( rootParent << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rootParent = rbiv << Top Parent();
+Print( rootParent << Class Name() );
 
 ```
 
 ### UI Only
 
-**Sintassi:** obj &lt;&lt; UI Only( state=0|1 ); state = obj &lt;&lt; Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
@@ -1754,31 +2941,90 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "UpdateWindow example",	Button Box( "red",		color = "red";        // try commenting out each of the 4 lines that follow, run the script,		// click the buttons, and resize the windows (for example) to force a		// redraw.  All 4 lines are important, though the last two may be		// slightly different on Windows and Mac OSs.		g1 << inval; /* tell the oval to redraw */		g2 << inval; /* tell the rectangle to redraw */		g1 << updateWindow; /* tell the oval window to update immediately */		g2 << updateWindow; /* tell the rect window to update immediately */		// this is a busy-wait to help demonstrate the various behaviors...		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );	),	Button Box( "blue",		color = "blue";		g1 << inval; /* same comments */		g2 << inval;		g1 << updateWindow;		g2 << updateWindow;		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 );	));New Window( "oval",	g1 = Graph Box(/* the graph does NOT watch for the color variable to change                      but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	));New Window( "rect",	g2 = Graph Box(		Fill Color( color );		Rect( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "UpdateWindow example",
+	Button Box( "red",
+		color = "red";
+        // try commenting out each of the 4 lines that follow, run the script,
+		// click the buttons, and resize the windows (for example) to force a
+		// redraw.  All 4 lines are important, though the last two may be
+		// slightly different on Windows and Mac OSs.
+		g1 << inval; /* tell the oval to redraw */
+		g2 << inval; /* tell the rectangle to redraw */
+		g1 << updateWindow; /* tell the oval window to update immediately */
+		g2 << updateWindow; /* tell the rect window to update immediately */
+		// this is a busy-wait to help demonstrate the various behaviors...
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );
+	),
+	Button Box( "blue",
+		color = "blue";
+		g1 << inval; /* same comments */
+		g2 << inval;
+		g1 << updateWindow;
+		g2 << updateWindow;
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 );
+	)
+);
+New Window( "oval",
+	g1 = Graph Box(/* the graph does NOT watch for the color variable to change
+                      but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	)
+);
+New Window( "rect",
+	g2 = Graph Box(
+		Fill Color( color );
+		Rect( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
 ### Vertical Alignment
 
-**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" ); "Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Set Horizontal( 1 );lb = r[List Box( 7 )];lb << Border( 1 );Wait( 2 );lb << Vertical Alignment( "Bottom" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Set Horizontal( 1 );
+lb = r[List Box( 7 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Vertical Alignment( "Bottom" );
 
 ```
 
 ### Visibility
 
-**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" ); "Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Visibility );Wait( 1 );tb << Visibility( "Collapse" );Show( tb << Get Visibility );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Visibility );
+Wait( 1 );
+tb << Visibility( "Collapse" );
+Show( tb << Get Visibility );
 
 ```
 
@@ -1790,7 +3036,13 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;Show( biv << Window Class Name() );Show( rbiv << Window Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+Show( biv << Window Class Name() );
+Show( rbiv << Window Class Name() );
 
 ```
 
@@ -1804,7 +3056,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[@isOpen='false']" )) << Close( 0 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[@isOpen='false']" )) << Close( 0 );
 
 ```
 
@@ -1812,7 +3068,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//TextEditBox" )) << Text Color( "Green" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//TextEditBox" )) << Text Color( "Green" );
 
 ```
 
@@ -1820,7 +3080,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[text()='Summary of Fit']/TableBox" )) <<Make Into Data Table;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[text()='Summary of Fit']/TableBox" )) <<
+Make Into Data Table;
 
 ```
 
@@ -1828,7 +3093,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//NumberColBoxItem[text()='40']/parent::*" )) <<Text Color( "Green" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//NumberColBoxItem[text()='40']/parent::*" )) <<
+Text Color( "Green" );
 
 ```
 
@@ -1836,7 +3106,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//MarkerSeg" )) << Set Marker( "Square" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//MarkerSeg" )) << Set Marker( "Square" );
 
 ```
 
@@ -1844,7 +3118,11 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[text()='Parameter Estimates']" )) << Close;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[text()='Parameter Estimates']" )) << Close;
 
 ```
 
@@ -1856,7 +3134,12 @@ New Window( "Example", wb = Web Browser Box() );wb << Navigate( "http://www.jmp
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 80, 120 );Wait( 2 );w << Zoom Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 80, 120 );
+Wait( 2 );
+w << Zoom Window;
 
 ```
 

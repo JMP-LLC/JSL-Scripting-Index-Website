@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 // This command is only valid within a JMP App Module Script
 
 ```
@@ -24,7 +25,13 @@
 
 ```jsl
 
-app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );app << Run Application;modules = app << Get Modules;inst = modules[1] << Create Instance;inst << Get Box;
+
+app = JMP App();
+app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );
+app << Run Application;
+modules = app << Get Modules;
+inst = modules[1] << Create Instance;
+inst << Get Box;
 
 ```
 
@@ -36,7 +43,9 @@ app = JMP App();app << Open File( "$SAMPLE_APPS/Instant App.jmpappsource" );ap
 
 ```jsl
 
-app = JMP App();(app << Get Namespace) << Show Contents;
+
+app = JMP App();
+(app << Get Namespace) << Show Contents;
 
 ```
 
@@ -47,6 +56,7 @@ app = JMP App();(app << Get Namespace) << Show Contents;
 **Descrizione:** Restituisce i dati utente associati all&apos;istanza del modulo.
 
 ```jsl
+
 
 // This command is only valid within a JMP App Module Script
 
@@ -59,6 +69,7 @@ app = JMP App();(app << Get Namespace) << Show Contents;
 **Descrizione:** Memorizza un valore JSL nell&apos;istanza del modulo della app JMP; il valore può essere un numero, una stringa, un elenco, un array associativo o un altro tipo di JSL.
 
 ```jsl
+
 
 // This command is only valid within a JMP App Module Script
 

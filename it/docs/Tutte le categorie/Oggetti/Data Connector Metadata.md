@@ -14,7 +14,9 @@
 
 ```jsl
 
-description = metadata << Get Description();
+
+
+description = metadata << Get Description();
 
 ```
 
@@ -28,7 +30,9 @@
 
 ```jsl
 
-type = metadata << Get Driver();
+
+
+type = metadata << Get Driver();
 
 ```
 
@@ -42,7 +46,9 @@
 
 ```jsl
 
-name = metadata << Get Name();
+
+
+name = metadata << Get Name();
 
 ```
 
@@ -56,7 +62,9 @@
 
 ```jsl
 
-path = metadata << Get Path();
+
+
+path = metadata << Get Path();
 
 ```
 
@@ -70,7 +78,9 @@
 
 ```jsl
 
-type = metadata << Get Type();
+
+
+type = metadata << Get Type();
 
 ```
 
@@ -84,7 +94,9 @@
 
 ```jsl
 
-metadata << Set Description( "My frequently used SQL Server connection." );
+
+
+metadata << Set Description( "My frequently used SQL Server connection." );
 
 ```
 
@@ -98,7 +110,9 @@
 
 ```jsl
 
-metadata << Set Name( "A new Name" );
+
+
+metadata << Set Name( "A new Name" );
 
 ```
 

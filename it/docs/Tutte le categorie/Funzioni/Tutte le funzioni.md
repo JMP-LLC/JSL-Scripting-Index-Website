@@ -11,6 +11,7 @@
 ```jsl
 
 
+
 jslPhrase =
 "The JSL to do this is :\[
 a = "hello";
@@ -31,6 +32,7 @@ Show( jslPhrase );
 
 ```jsl
 
+
 Abbrev Date( Today() );
 
 ```
@@ -44,6 +46,7 @@ Abbrev Date( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Abs( -5 );
 
@@ -59,6 +62,7 @@ Abs( -5 );
 
 ```jsl
 
+
 Pi() + 10;
 
 ```
@@ -73,6 +77,7 @@ Pi() + 10;
 
 ```jsl
 
+
 Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}} );
 
 ```
@@ -80,6 +85,7 @@ Add Color Theme( {"Yellow To Blue", 0, {{255, 255, 0}, {0, 0, 255}}, {0.0, 1.0}}
 **Esempio 2**
 
 ```jsl
+
 
 Add Color Theme(
 	{"Black To Red To White", {"Continuous", "Categorical", "Diverging"}, {{0, 0, 0}, {255, 0,
@@ -98,6 +104,7 @@ Add Color Theme(
 
 ```jsl
 
+
 myAdd = New Custom Function( "custom", "Add", Function( {x, y}, x + y - 1 ) );
 mySub = New Custom Function( "custom", "Sub", Function( {x, y}, x - y + 1 ) );
 Add Custom Functions( {myAdd, mySub} );
@@ -114,6 +121,7 @@ Add Custom Functions( {myAdd, mySub} );
 
 ```jsl
 
+
 ex = 1;
 ex += 2;
 ex;
@@ -127,6 +135,7 @@ ex;
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 x = [1, 2, 3, 4];
 y = [5, 6, 7, 8];
@@ -144,6 +153,7 @@ z = Add Vectors BLAS( x, y, alpha );
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 
 New Window( "Crosstab",
@@ -177,6 +187,7 @@ New Window( "Crosstab",
 ```jsl
 
 
+
 New Window( "Crosstab",
 	Alignment Grid Box(
 		Alignment Cell Box( 0, 1, 1, 1, ColSpan( [3] ), {"sex"} ),
@@ -206,6 +217,7 @@ New Window( "Crosstab",
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 
 New Window( "Alignment MultiBox",
@@ -249,6 +261,7 @@ New Window( "Alignment MultiBox",
 
 ```jsl
 
+
 All( [1 2 3] );
 
 ```
@@ -262,6 +275,7 @@ All( [1 2 3] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 triang = Triangulation( X( :X, :Y ), Y( :POP ) );
@@ -279,6 +293,7 @@ ashape = Alpha Shape( triang );
 
 ```jsl
 
+
 1 < 2 & 3 < 4;
 
 ```
@@ -292,6 +307,7 @@ ashape = Alpha Shape( triang );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 AndMZ( 1 < 2, 3 < 4 );
 
@@ -307,6 +323,7 @@ AndMZ( 1 < 2, 3 < 4 );
 
 ```jsl
 
+
 Any( [1 0 2] );
 
 ```
@@ -320,6 +337,7 @@ Any( [1 0 2] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -339,6 +357,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 
 dt = Open( "$SAMPLE_DATA/Wafer Stacked.jmp" );
@@ -373,6 +392,7 @@ dt << Graph Builder(
 
 ```jsl
 
+
 ArcCosH( 1 );
 
 ```
@@ -386,6 +406,7 @@ ArcCosH( 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ArcCosine( 0.5 );
 
@@ -401,6 +422,7 @@ ArcCosine( 0.5 );
 
 ```jsl
 
+
 ArcCosine( 0.5 );
 
 ```
@@ -414,6 +436,7 @@ ArcCosine( 0.5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ArcSine( 0.5 );
 
@@ -429,6 +452,7 @@ ArcSine( 0.5 );
 
 ```jsl
 
+
 ArcSinH( 1 );
 
 ```
@@ -442,6 +466,7 @@ ArcSinH( 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 4 * ArcTangent( 1 );
 
@@ -457,6 +482,7 @@ ArcSinH( 1 );
 
 ```jsl
 
+
 4 * ArcTangent( 1 );
 
 ```
@@ -471,6 +497,7 @@ ArcSinH( 1 );
 
 ```jsl
 
+
 ArcTanH( 0.5 );
 
 ```
@@ -484,6 +511,7 @@ ArcTanH( 0.5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
@@ -501,6 +529,7 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
+
 // See Example 2 for the deprecated Arg Expr() equivalent
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
@@ -509,6 +538,7 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 **Esempio 2**
 
 ```jsl
+
 
 // Deprecated
 Arg Expr( Sum( a, b, c ), 2 );
@@ -524,6 +554,7 @@ Arg Expr( Sum( a, b, c ), 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Time Series/Steel Shipments.jmp" );
 ARIMA Forecast(
@@ -548,6 +579,7 @@ ARIMA Forecast(
 
 ```jsl
 
+
 Arrhenius( 100 );
 
 ```
@@ -562,6 +594,7 @@ Arrhenius( 100 );
 
 ```jsl
 
+
 Arrhenius Inv( 100 );
 
 ```
@@ -575,6 +608,7 @@ Arrhenius Inv( 100 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -595,6 +629,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ArcSine( 0.5 );
 
 ```
@@ -608,6 +643,7 @@ ArcSine( 0.5 );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 x = 45;
 b = As Boolean( x > 2 );
@@ -625,19 +661,21 @@ Show( b );
 
 ```jsl
 
+
 As C Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
 
 ### As Column
 
-**Sintassi:** y = :name; y = dataTable:name; y = As Column( name ); y = As Column( dataTable, name )
+**Sintassi:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **Descrizione:** Accede alla colonna specifica nella tabella di dati specificata o corrente. Viene generato un errore se non viene trovata la colonna o la tabella di dati.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt:height[1] + :height[2] + As Column( "height" )[3];
@@ -656,6 +694,7 @@ exdt:height[1] + :height[2] + As Column( "height" )[3];
 
 ```jsl
 
+
 New Table( "As Constant Demo Table 1",
 	Add Rows( 10 ),
 	New Column( "Non-Constant", Formula( Random Uniform() ) ),
@@ -667,6 +706,7 @@ New Table( "As Constant Demo Table 1",
 **Esempio 2**
 
 ```jsl
+
 
 New Table( "As Constant Demo Table 2",
 	Add Rows( 1000 ),
@@ -689,6 +729,7 @@ New Table( "As Constant Demo Table 2",
 
 ```jsl
 
+
 For( i = 1, i <= 10, i++,
 	x = 2;
 	y = 100;
@@ -710,6 +751,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
+
 As Date( Today() );
 
 ```
@@ -723,6 +765,7 @@ As Date( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ::ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
@@ -739,6 +782,7 @@ Local( {ex = 12}, Eval List( {ex, ::ex, As Global( "ex" )} ) );
 
 ```jsl
 
+
 As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -752,6 +796,7 @@ As JavaScript Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
@@ -767,6 +812,7 @@ As JSON Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```jsl
 
+
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -780,6 +826,7 @@ As List( [11 22 33, 44 55 66] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:(As Name( "height" ))[3];
@@ -795,6 +842,7 @@ dt:(As Name( "height" ))[3];
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ns = New Namespace(
 	"complex"
@@ -813,6 +861,7 @@ As Namespace( ns );
 
 ```jsl
 
+
 As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -826,6 +875,7 @@ As Python Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 ::: ex = 23;
 Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
@@ -841,6 +891,7 @@ Local( {ex = 12}, Eval List( {ex, ::: ex, As Global( "ex" )} ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row(
@@ -862,6 +913,7 @@ For Each Row(
 
 ```jsl
 
+
 As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 
 ```
@@ -875,6 +927,7 @@ As SAS Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Here:z = 23.5;
 As Scoped( Here, z );
@@ -891,6 +944,7 @@ As Scoped( Here, z );
 
 ```jsl
 
+
 As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 
 ```
@@ -904,6 +958,7 @@ As SQL Expr( Expr( Match( sex, 1, "Male", 2, "Female", "Other" ) ), "MySQL" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 As Table( [1 2 3, 4 5 6] );
 
@@ -919,6 +974,7 @@ As Table( [1 2 3, 4 5 6] );
 
 ```jsl
 
+
 {ex1, ex2} = {Pi(), 1};
 ex1 + ex1;
 
@@ -926,13 +982,14 @@ ex1 + ex1;
 
 ### Associative Array
 
-**Sintassi:** y = Associative Array( {{key1, value1}, ...} ); y = Associative Array( keys, values )
+**Sintassi:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Descrizione:** Crea un array associativo, noto anche come dizionario o mappa hash. Nel form a due argomenti, chiavi e valori devono essere un elenco, una matrice o una colonna di una tabella di dati.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = Associative Array( {"red", "blue"}, {1, 2} );
 ex["green"] = 3;
@@ -950,6 +1007,7 @@ ex << get contents;
 
 ```jsl
 
+
 4 * ArcTangent( 1 );
 
 ```
@@ -966,6 +1024,7 @@ ex << get contents;
 
 ```jsl
 
+
 B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
 B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
@@ -974,6 +1033,7 @@ B Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 **Esempio 2**
 
 ```jsl
+
 
 xx = (0 :: 10)`;
 yy = [0, 1, 0, -1, 0, 1, 0, -1, 0, 1, 0];
@@ -991,6 +1051,7 @@ Linear Regression( yy, designMat, <<nointercept );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -1011,6 +1072,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Beep();
 
 ```
@@ -1024,6 +1086,7 @@ Beep();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /*Example for Continuous X and Continuous Y*/Best Partition(
 	[1.2, 2.2, 3.5, 4.4, 5.6, 7.8],
@@ -1044,6 +1107,7 @@ Beep();
 
 ```jsl
 
+
 Beta( 5, 4 );
 
 ```
@@ -1057,6 +1121,7 @@ Beta( 5, 4 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 p = 0.5;
 n = 25;
@@ -1094,6 +1159,7 @@ New Window( "Example: BetaBinomial Distribution",
 
 ```jsl
 
+
 n = 25;
 p = 0.5;
 delta = 0;
@@ -1130,6 +1196,7 @@ New Window( "Binomial and BetaBinomial Probabilities",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 qbinexp = 0.3;
 qbinexn = 20;
@@ -1193,6 +1260,7 @@ New Window( "Example: BetaBinomial Quantile",
 
 ```jsl
 
+
 alpha = 0.5;
 beta = 0.5;
 New Window( "Example: Beta Density",
@@ -1219,6 +1287,7 @@ New Window( "Example: Beta Density",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 alpha = 0.5;
 beta = 0.5;
@@ -1247,6 +1316,7 @@ New Window( "Example: Beta Distribution",
 
 ```jsl
 
+
 Beta Quantile( 0.95, 2, 5 );
 
 ```
@@ -1260,6 +1330,7 @@ Beta Quantile( 0.95, 2, 5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 p = 0.5;
 n = 30;
@@ -1295,6 +1366,7 @@ New Window( "Example: Binomial Distribution",
 
 ```jsl
 
+
 cltp = 0.03;
 cltn = 30;
 New Window( "Example: Binomial Probability and Central Limit Theorem",
@@ -1326,6 +1398,7 @@ New Window( "Example: Binomial Probability and Central Limit Theorem",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 qbinexp = 0.3;
 qbinexn = 20;
@@ -1381,6 +1454,7 @@ New Window( "Example: Binomial Quantile",
 
 ```jsl
 
+
 Blend Colors( "black", "white", 0.25 );
 
 ```
@@ -1388,6 +1462,7 @@ Blend Colors( "black", "white", 0.25 );
 **Esempio 2**
 
 ```jsl
+
 
 Blend Colors( "red", "blue", "sRGB" );
 
@@ -1397,6 +1472,7 @@ Blend Colors( "red", "blue", "sRGB" );
 
 ```jsl
 
+
 Blend Colors( "red", "blue", "lRGB" );
 
 ```
@@ -1404,6 +1480,7 @@ Blend Colors( "red", "blue", "lRGB" );
 **Esempio 4**
 
 ```jsl
+
 
 Blend Colors( "red", "blue", 0.5, "LUV" );
 
@@ -1413,6 +1490,7 @@ Blend Colors( "red", "blue", 0.5, "LUV" );
 
 ```jsl
 
+
 Blend Colors( "red", "blue", 0.75, "HLS" );
 
 ```
@@ -1420,6 +1498,8 @@ Blend Colors( "red", "blue", 0.75, "HLS" );
 **Esempio 6**
 
 ```jsl
+
+
 
 c1 = "red";
 c2 = "blue";
@@ -1453,6 +1533,8 @@ New Window( "HLS Radial Color Blending",
 **Esempio 7**
 
 ```jsl
+
+
 
 c1 = "blue";
 c2 = "red";
@@ -1493,6 +1575,7 @@ New Window( "HCLuv Radial Color Blending",
 
 ```jsl
 
+
 Hex(/* make it printable */ Blob MD5(/* get the hash */
 		Load Text File(/* a file from the samples */ "$SAMPLE_IMPORT_DATA/animals.txt",
 			BLOB/* the result is a BLOB, not a string */
@@ -1513,6 +1596,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ```jsl
 
+
 Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 
 ```
@@ -1526,6 +1610,7 @@ Blob Peek( Char To Blob( "Quick Bob, eat your lunch!" ), 6 /*Zero based!*/, 3 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 	Hex To Blob( "436166C3A9" ),
@@ -1544,6 +1629,7 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 
 ```jsl
 
+
 Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ```
@@ -1557,6 +1643,7 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
@@ -1579,6 +1666,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Box Cox Inverse Transform( 3, 2 );
 
 ```
@@ -1593,6 +1681,7 @@ Box Cox Inverse Transform( 3, 2 );
 
 ```jsl
 
+
 Box Cox Transform( 3, 2 );
 
 ```
@@ -1606,6 +1695,7 @@ Box Cox Transform( 3, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Box Plot Seg Example",
 	g = Graph Box( Frame Size( 40, 180 ), Y Scale( 0, 5 ), Box Plot Seg( [1, 2, 3, 4] ) )
@@ -1625,6 +1715,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ```jsl
 
+
 For( i = 1, i <= 10, i++,
 	If( i == 5, Break() );
 	Print( "i=" || Char( i ) );
@@ -1642,6 +1733,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
+
 Build Information();
 
 ```
@@ -1655,6 +1747,7 @@ Build Information();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example", Busy Light( <<automatic ) );
 
@@ -1670,6 +1763,7 @@ New Window( "Example", Busy Light( <<automatic ) );
 
 ```jsl
 
+
 New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 
 ```
@@ -1683,6 +1777,7 @@ New Window( "Example", Button Box( "Press Me", Print( "Pressed." ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Calendar Box Example", Calendar Box() );
 
@@ -1700,6 +1795,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ```jsl
 
+
 Caption(
 	{100, 200},
 	"explanation",
@@ -1716,6 +1812,7 @@ Caption(
 
 ```jsl
 
+
 Caption( "explanation" );
 Wait( 2 );
 Caption( remove );
@@ -1731,6 +1828,7 @@ Caption( remove );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 url = "http://myCasURL";
@@ -1754,6 +1852,7 @@ cas = CAS Connect(
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
 CAS Delete Table( "Casuser", "Big Class" );
@@ -1769,6 +1868,7 @@ CAS Delete Table( "Casuser", "Big Class" );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 url = "http://myCasURL";
@@ -1788,6 +1888,7 @@ CAS Disconnect();
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
@@ -1802,6 +1903,7 @@ CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 cas = Current CAS Connection();
@@ -1825,6 +1927,7 @@ Show( datasets );
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 libraries = CAS Get Libraries();
 Show( libraries );
@@ -1840,6 +1943,7 @@ Show( libraries );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 CAS Connect( Prompt( ifNeeded ) );
@@ -1859,6 +1963,7 @@ CAS Import Data( "Casuser.Big Class" );
 ```jsl
 
 
+
 connected = CAS Is Connected();
 Show( connected );
 
@@ -1873,6 +1978,7 @@ Show( connected );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 CAS Connect( Prompt( ifNeeded ) );
@@ -1890,6 +1996,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 json =
@@ -2122,6 +2229,7 @@ dt = CAS Table To Data Table( json );
 ```jsl
 
 
+
 CAS Connect( Prompt( ifNeeded ) );
 CAS Terminate Sessions();
 
@@ -2136,6 +2244,7 @@ CAS Terminate Sessions();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example: Cauchy Density",
 	y = Graph Box(
@@ -2159,6 +2268,7 @@ New Window( "Example: Cauchy Density",
 
 ```jsl
 
+
 New Window( "Example: Cauchy Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -2181,6 +2291,7 @@ New Window( "Example: Cauchy Distribution",
 
 ```jsl
 
+
 New Window( "Example: Cauchy Quantile",
 	Graph Box(
 		Y Scale( -6, 6 ),
@@ -2202,6 +2313,7 @@ New Window( "Example: Cauchy Quantile",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* Generate random values, Normal(0,1) */
 Y = J( 150, 1, Random Normal() );
@@ -2238,6 +2350,7 @@ New Window( "Empirical CDF",
 
 ```jsl
 
+
 Ceiling( 1.2 );
 
 ```
@@ -2254,6 +2367,7 @@ Ceiling( 1.2 );
 
 ```jsl
 
+
 Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```
@@ -2262,6 +2376,7 @@ Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ```jsl
 
+
 Char( Pi(), 10, 4 );
 
 ```
@@ -2269,6 +2384,7 @@ Char( Pi(), 10, 4 );
 **Usa locale**
 
 ```jsl
+
 
 Char( 2.1, <<Use Locale( 1 ) );
 
@@ -2284,6 +2400,7 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 ```jsl
 
+
 Char To Blob( "Café", "utf-16be" );
 
 ```
@@ -2297,6 +2414,7 @@ Char To Blob( "Café", "utf-16be" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
@@ -2312,6 +2430,7 @@ Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" );
 
 ```jsl
 
+
 Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```
@@ -2326,6 +2445,7 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ```jsl
 
+
 New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 
 ```
@@ -2339,6 +2459,7 @@ New Window( "Example", cb = Check Box( {"Good"}, Show( cb << Get() ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 If( !Check MATLAB Dependencies(),
@@ -2359,6 +2480,7 @@ If( !Check MATLAB Dependencies(),
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 cdedf = 2;
 New Window( "Example: ChiSquare Density",
@@ -2385,6 +2507,7 @@ New Window( "Example: ChiSquare Density",
 
 ```jsl
 
+
 cdidf = 2;
 New Window( "Example: ChiSquare Distribution",
 	cdiy = Graph Box(
@@ -2409,6 +2532,7 @@ New Window( "Example: ChiSquare Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 clcdidf = 2;
 New Window( "Example: ChiSquare Log CDistribution",
@@ -2435,6 +2559,7 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 ```jsl
 
+
 cldedf = 1;
 New Window( "Example: ChiSquare Log Density",
 	cldey = Graph Box(
@@ -2459,6 +2584,7 @@ New Window( "Example: ChiSquare Log Density",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 cldidf = 2;
 New Window( "Example: ChiSquare Log Distribution",
@@ -2485,6 +2611,7 @@ New Window( "Example: ChiSquare Log Distribution",
 
 ```jsl
 
+
 New Window( "Example: ChiSquare Noncentrality",
 	chincgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -2508,6 +2635,7 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 ```jsl
 
+
 ChiSquare Quantile( 0.15, 5 );
 
 ```
@@ -2521,6 +2649,7 @@ ChiSquare Quantile( 0.15, 5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* The inner product of a design matrix */
 exS = [16 1 0 11 -1 12,
@@ -2562,6 +2691,7 @@ Show( exAcholnew );
 
 ```jsl
 
+
 Cholesky( [1 2, 2 13] );
 
 ```
@@ -2575,6 +2705,7 @@ Cholesky( [1 2, 2 13] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Choose( Random Integer( 1, 5 ), "red", "blue", "other" );
 
@@ -2616,6 +2747,7 @@ Stringhe non associate
 
 ```jsl
 
+
 Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 
 ```
@@ -2623,6 +2755,7 @@ Choose Closest( "MARTA", {"MARTHA"}, Max Edit Count( 2 ) );
 **Mantieni punteggiatura**
 
 ```jsl
+
 
 Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
@@ -2632,6 +2765,7 @@ Choose Closest( "MARTHA_", {"MARTHA"}, Ignore Punctuation( 0 ) );
 
 ```jsl
 
+
 Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 
 ```
@@ -2639,6 +2773,7 @@ Choose Closest( "MARTHA", {"Martha"}, Ignore Case( 0 ), Unmatched() );
 **Scegli tra le stringhe, nessuna modifica**
 
 ```jsl
+
 
 Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 
@@ -2653,6 +2788,7 @@ Choose Closest( "MARTHA_", {"Martha", "MARY"} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -2683,6 +2819,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -2739,6 +2876,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 Set Global Window Handler(
 	Function( {window},
 		Print( window << get window title() );
@@ -2760,6 +2898,7 @@ Clear Global Window Handler();
 
 ```jsl
 
+
 Clear Globals();
 
 ```
@@ -2774,6 +2913,7 @@ Clear Globals();
 
 ```jsl
 
+
 Clear Log();
 
 ```
@@ -2787,6 +2927,7 @@ Clear Log();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Clear Symbols();
 
@@ -2810,6 +2951,7 @@ Il secondo argomento è utilizzato per salvare la tabella di dati. Utilizzare un
 
 ```jsl
 
+
 exdt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Wait( 3 );
 Close( exdt, NoSave );
@@ -2830,6 +2972,7 @@ Saranno chiuse solo le finestre nel progetto corrente (o in nessun progetto se n
 
 ```jsl
 
+
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 Wait( 3 );
@@ -2847,6 +2990,7 @@ Close All( Data Tables, NoSave );
 
 ```jsl
 
+
 Close Database Connection( databaseConnectionHandle );
 
 ```
@@ -2860,6 +3004,7 @@ Close Database Connection( databaseConnectionHandle );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Close Log();
 Show( Is Log Open() );
@@ -2875,6 +3020,7 @@ Show( Is Log Open() );
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Lag Height by Sex", Formula( Col At( :height, -1, :sex, <<relative( 1 ) ) ) );
@@ -2892,6 +3038,7 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = New Window( "Example",
 	exx = 1;
@@ -2922,6 +3069,7 @@ dt = New Window( "Example",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Cumulative Sum( :height, :sex );
@@ -2931,6 +3079,7 @@ Col Cumulative Sum( :height, :sex );
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -2953,6 +3102,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Time Series/GNP.jmp" );
 dt << New Column( "date30", Formula( :date + 30 ) );
 dt << New Column( "gnp30",
@@ -2973,6 +3123,7 @@ dt << New Column( "gnp30",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelected( 1 ) ) );
 
@@ -2981,6 +3132,7 @@ New Window( "Col List Box Example 1", Col List Box( all, width( 250 ), maxSelect
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 2",
@@ -2992,6 +3144,7 @@ New Window( "Col List Box Example 2",
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example 3",
@@ -3017,6 +3170,7 @@ New Window( "Col List Box Example 3",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -3026,6 +3180,7 @@ Col Maximum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -3034,6 +3189,7 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
@@ -3045,6 +3201,7 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3067,6 +3224,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Maximum( :height );
 
@@ -3076,6 +3234,7 @@ Col Maximum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Maximum( :height, :age ) ) );
 
@@ -3084,6 +3243,7 @@ For Each Row( Show( Col Maximum( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Maximum Value for Each Age and Sex Group",
@@ -3095,6 +3255,7 @@ dt << New Column( "Maximum Value for Each Age and Sex Group",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3117,6 +3278,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height );
 
@@ -3125,6 +3287,7 @@ Col Mean( :height );
 **Esempio 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mean( :height, <<Freq( :weight ) );
@@ -3135,6 +3298,7 @@ Col Mean( :height, <<Freq( :weight ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mean( :height, :age ) ) );
 
@@ -3143,6 +3307,7 @@ For Each Row( Show( Col Mean( :height, :age ) ) );
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mean for Each Age and Sex Group",
@@ -3154,6 +3319,7 @@ dt << New Column( "Mean for Each Age and Sex Group",
 **Esempio 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3176,6 +3342,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Median Height",
 	numeric,
@@ -3194,6 +3361,7 @@ dt << New Column( "Col Median Height by Age",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Median( :height ) );
@@ -3205,6 +3373,7 @@ Show( Col Median( :height, :age ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3227,6 +3396,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -3236,6 +3406,7 @@ Col Minimum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -3244,6 +3415,7 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
@@ -3255,6 +3427,7 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3277,6 +3450,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Minimum( :height );
 
@@ -3286,6 +3460,7 @@ Col Minimum( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Minimum( :height, :age ) ) );
 
@@ -3294,6 +3469,7 @@ For Each Row( Show( Col Minimum( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Minimum Value for Each Age and Sex Group",
@@ -3305,6 +3481,7 @@ dt << New Column( "Minimum Value for Each Age and Sex Group",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3327,6 +3504,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Mode( :height );
 
@@ -3336,6 +3514,7 @@ Col Mode( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Mode( :height, :age ) ) );
 
@@ -3344,6 +3523,7 @@ For Each Row( Show( Col Mode( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Mode for Each Age and Sex Group",
@@ -3355,6 +3535,7 @@ dt << New Column( "Mode for Each Age and Sex Group",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3377,6 +3558,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 40;
 Col Moving Average( :height, 1, 5, 0, :sex );
@@ -3386,6 +3568,7 @@ Col Moving Average( :height, 1, 5, 0, :sex );
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3410,6 +3593,7 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col N Missing( :height );
 
@@ -3419,6 +3603,7 @@ Col N Missing( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col N Missing( :height, :age ) ) );
 
@@ -3427,6 +3612,7 @@ For Each Row( Show( Col N Missing( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Missing Values for Each Age and Sex Group",
@@ -3438,6 +3624,7 @@ dt << New Column( "Number of Missing Values for Each Age and Sex Group",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
@@ -3459,6 +3646,7 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "N unique age by sex", Formula( Col N Unique( :age, :sex ) ) );
 New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) );
@@ -3477,6 +3665,7 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Number( :height );
 
@@ -3486,6 +3675,7 @@ Col Number( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Number( :height, :age ) ) );
 
@@ -3494,6 +3684,7 @@ For Each Row( Show( Col Number( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
@@ -3505,6 +3696,7 @@ dt << New Column( "Number of Nonmissing Values for Each Age and Sex Group",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt:height[10] = .;
@@ -3528,6 +3720,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Col Quantile Height",
 	numeric,
@@ -3546,6 +3739,7 @@ dt << New Column( "Col Quantile Height by Age",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Show( Col Quantile( :height, 0.5 ) );
@@ -3557,6 +3751,7 @@ Show( Col Quantile( :height, 0.5, :age ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3581,6 +3776,7 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Rank Height", Formula( Col Rank( :height, <<tie( "average" ) ) ) );
 New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
@@ -3590,6 +3786,7 @@ New Column( "Rank Height by age", Formula( Col Rank( :height, :age ) ) );
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3610,6 +3807,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Score Height", Formula( Col Score( :height ) ) );
 New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
@@ -3625,6 +3823,7 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Row within sex", Formula( Col Sequence( :sex ) ) );
@@ -3647,6 +3846,7 @@ New Column( "Row within sex, 60+",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle 1", Numeric, Continuous, Set Formula( Col Shuffle() ) );
 dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() ) );
@@ -3657,6 +3857,7 @@ dt << New Column( "Shuffle 2", Numeric, Continuous, Set Formula( Col Shuffle() )
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age ) ) );
 
@@ -3665,6 +3866,7 @@ dt << New Column( "Shuffle", Numeric, Continuous, Set Formula( Col Shuffle( :age
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3685,6 +3887,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Time Series/Seriesa.jmp" );
 Row() = 40;
 Col Simple Exponential Smoothing( :Column1, .7 );
@@ -3700,6 +3903,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "test",
 	Table Box(
@@ -3725,6 +3929,7 @@ New Window( "test",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 1;
 Col Standardize( :height );
@@ -3735,6 +3940,7 @@ Col Standardize( :height );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Standardize( :height, :age ) ) );
 
@@ -3743,6 +3949,7 @@ For Each Row( Show( Col Standardize( :height, :age ) ) );
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3767,6 +3974,7 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Std Dev( :height );
 
@@ -3775,6 +3983,7 @@ Col Std Dev( :height );
 **Esempio 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age ) ) );
@@ -3785,6 +3994,7 @@ For Each Row( Show( Col Std Dev( :height, :age ) ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 
@@ -3793,6 +4003,7 @@ For Each Row( Show( Col Std Dev( :height, :age, <<Freq( :weight ) ) ) );
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Standard Deviation for Each Age and Sex Group",
@@ -3804,6 +4015,7 @@ dt << New Column( "Standard Deviation for Each Age and Sex Group",
 **Esempio 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3825,6 +4037,7 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Equity.jmp" );
 :JOB << Set Property( "Missing Value Codes", {"Other"} );
@@ -3848,6 +4061,7 @@ Show( y1, y2, y3, y4 );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height );
 
@@ -3856,6 +4070,7 @@ Col Sum( :height );
 **Esempio 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Col Sum( :height, <<Freq( :weight ) );
@@ -3866,6 +4081,7 @@ Col Sum( :height, <<Freq( :weight ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( Show( Col Sum( :height, :age ) ) );
 
@@ -3874,6 +4090,7 @@ For Each Row( Show( Col Sum( :height, :age ) ) );
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Sum for Each Age and Sex Group",
@@ -3885,6 +4102,7 @@ dt << New Column( "Sum for Each Age and Sex Group",
 **Esempio 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Row States << Select Rows( Index( 1, 10 ) ) << Exclude;
@@ -3905,6 +4123,7 @@ dt << New Column( "Col Sum for each Sex grouped by Excluded",
 
 ```jsl
 
+
 Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -3921,6 +4140,7 @@ Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ```jsl
 
+
 Color Difference( "red", "blue" );
 
 ```
@@ -3928,6 +4148,7 @@ Color Difference( "red", "blue" );
 **Esempio 2**
 
 ```jsl
+
 
 Color Difference( "red", "blue", "sRGB" );
 
@@ -3937,6 +4158,7 @@ Color Difference( "red", "blue", "sRGB" );
 
 ```jsl
 
+
 Color Difference( "red", "blue", "redmean" );
 
 ```
@@ -3944,6 +4166,7 @@ Color Difference( "red", "blue", "redmean" );
 **Esempio 4**
 
 ```jsl
+
 
 Color Difference( "red", "blue", "CIE76" );
 
@@ -3953,6 +4176,7 @@ Color Difference( "red", "blue", "CIE76" );
 
 ```jsl
 
+
 Color Difference( "red", "blue", "CIE94" );
 
 ```
@@ -3961,6 +4185,7 @@ Color Difference( "red", "blue", "CIE94" );
 
 ```jsl
 
+
 Color Difference( "red", "blue", "CIEDE2000" );
 
 ```
@@ -3968,6 +4193,7 @@ Color Difference( "red", "blue", "CIEDE2000" );
 **Esempio 7**
 
 ```jsl
+
 
 Color Difference( "red", "blue", "dEok" );
 
@@ -3982,6 +4208,7 @@ Color Difference( "red", "blue", "dEok" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" ) << Color By Column( :height );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -4000,6 +4227,7 @@ Color To RGB( Color Of() );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, 0.5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -4016,6 +4244,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ```jsl
 
+
 Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```
@@ -4030,13 +4259,14 @@ Color To HLS( RGB Color( 1.0, 0.5, 0.5 ) );
 
 ```jsl
 
+
 Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ```
 
 ### Column
 
-**Sintassi:** y = Column( name|number ); y = Column( dataTable, name|number, &lt;"formatted"&gt; )
+**Sintassi:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Descrizione:** Restituisce un riferimento alla colonna della tabella di dati specificata. La parola chiave "formattato" consente l&apos;accesso ai dati formattati, come l’etichetta del valore.
 
@@ -4045,6 +4275,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 **Esempio 1**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 col4 = Column( 4 );
@@ -4056,6 +4287,7 @@ col4[1] + ht[2];
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << run script( "Set Sex Value Labels" );
@@ -4074,6 +4306,7 @@ Write( "\!nData value returned is the formatted value of row 5." );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
 Column Dialog(
@@ -4112,6 +4345,7 @@ Column Dialog(
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Column Name( 4 );
 
@@ -4127,6 +4361,7 @@ Column Name( 4 );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -4141,6 +4376,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	cb = Combo Box( {"single", "double", "triple"("tool tip")}, Show( cb << Get() ) )
@@ -4158,6 +4394,7 @@ New Window( "Example",
 
 ```jsl
 
+
 [1 2] || [3 4] || [5 6];
 
 ```
@@ -4172,6 +4409,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Concat Items( {"www", "jmp", "com"}, "." );
 
 ```
@@ -4185,6 +4423,7 @@ Concat Items( {"www", "jmp", "com"}, "." );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = "hello ";
 ex ||= "world";
@@ -4202,6 +4441,7 @@ ex ||= "world";
 **Esempio 1**
 
 ```jsl
+
 
 /*Simple Example*/
 f = Expr(
@@ -4222,6 +4462,7 @@ Eval List( {x1, x2, minFun} );
 **Esempio 2**
 
 ```jsl
+
 
 /*Simple Example with optional parameters included*/ 
 x = [., .];
@@ -4256,6 +4497,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
+
 /*Simple Example*/
 f = Expr(
 	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
@@ -4275,6 +4517,7 @@ Eval List( {x1, x2, minFun} );
 **Esempio 2**
 
 ```jsl
+
 
 /*Simple Example with optional parameters included*/ 
 x = [., .];
@@ -4307,6 +4550,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ```jsl
 
+
 Show( Contains( "redreed", "re", -1 ) );
 Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
@@ -4324,6 +4568,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ```jsl
 
+
 Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 
 ```
@@ -4331,6 +4576,7 @@ Show( Contains Item( "A, 2, C, D, C", "C", ", " ) );
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Food Journal.jmp" );
 dt << New Column( "Cheese",
@@ -4346,6 +4592,7 @@ dt << Distribution( Column( :Cheese ) );
 
 ```jsl
 
+
 //find repeated character c in cdcef
 Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 
@@ -4360,6 +4607,7 @@ Contains Item( "abcde,bcdef,cdcef", Pat Regex( "(.).*?\1" ), "," );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Context Box(
@@ -4381,6 +4629,7 @@ New Window( "Example",
 
 ```jsl
 
+
 For( i = 1, i <= 10, i++,
 	If( i < 2, Continue() );
 	Print( "i=" || Char( i ) );
@@ -4397,6 +4646,7 @@ For( i = 1, i <= 10, i++,
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 New Window( "Example",
@@ -4463,6 +4713,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Contour Function(
@@ -4481,6 +4732,7 @@ New Window( "Example",
 **Esempio 2**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -4506,6 +4758,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
@@ -4535,6 +4788,7 @@ New Window( "Contour Seg Example",
 
 ```jsl
 
+
 For Each( {pv},
 	{"HOME", "DOCUMENTS", "SAMPLE_DATA", "SAMPLE_IMPORT_DATA", "SAMPLE_SCRIPTS",
 	"SAMPLE_IMAGES", "USER_APPDATA", "USER_JMPDATA", "MAPS", "USER_JMPDATA_ALL", "TEMP"},
@@ -4555,6 +4809,7 @@ For Each( {pv},
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );/* creates $TEMP/Loss Function Templates */ 
 rc1 = File Exists( "$TEMP/Loss Function Templates/Normal.jmp" );
@@ -4577,6 +4832,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 1 0 1 0 */
 
 ```jsl
 
+
 rc0 = File Exists( "$TEMP/x.jmp" );
 rc1 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -4597,6 +4853,7 @@ Char( rc4 );/* 0 1 1 1 0 */
 
 ```jsl
 
+
 Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -4610,6 +4867,7 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Cosine( Pi() / 2 );
 
@@ -4625,6 +4883,7 @@ Cosine( Pi() / 2 );
 
 ```jsl
 
+
 CosH( 1 );
 
 ```
@@ -4639,6 +4898,7 @@ CosH( 1 );
 
 ```jsl
 
+
 Cosine( Pi() / 2 );
 
 ```
@@ -4652,6 +4912,7 @@ Cosine( Pi() / 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Table( "Count Example",
 	Add Rows( 12 ),
@@ -4676,6 +4937,7 @@ For Each Row(
 
 ```jsl
 
+
 Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ```
@@ -4689,6 +4951,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dbc = Create Database Connection(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;"
@@ -4705,6 +4968,7 @@ dbc = Create Database Connection(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
@@ -4729,6 +4993,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```jsl
 
+
 dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt2 = Open( "$SAMPLE_DATA/Abrasion.jmp" );
 Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} );
@@ -4738,6 +5003,7 @@ Create Excel Workbook( "$TEMP/MyWorkbook.xlsx", {dt1, dt2}, {"Big", "Abrasive"} 
 **Esempio 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Abrasion.jmp" );
@@ -4759,6 +5025,7 @@ Create Excel Workbook(
 
 ```jsl
 
+
 Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -4773,6 +5040,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```jsl
 
+
 Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ```
@@ -4786,6 +5054,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 connection = Current CAS Connection();
@@ -4806,6 +5075,7 @@ Per specificare un progetto, usare l&apos;argomento facoltativo Progetto() con u
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Current Data Table() << Get Column Names;
@@ -4830,6 +5100,7 @@ Se non esiste alcun journal corrente nel progetto specificato, ne verrà creato 
 
 ```jsl
 
+
 Current Journal();
 
 ```
@@ -4848,6 +5119,7 @@ Per specificare un progetto, usare l&apos;argomento facoltativo Progetto() con u
 
 ```jsl
 
+
 Current Report();
 
 ```
@@ -4865,6 +5137,7 @@ Per specificare un progetto, usare l&apos;argomento facoltativo Progetto() con u
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Example Outline",
@@ -4885,6 +5158,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```
@@ -4898,6 +5172,7 @@ Cytometry Logicle( 100, 10000, .15, .45, 0 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
@@ -4914,6 +5189,7 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 ```jsl
 
 
+
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ```
@@ -4927,6 +5203,7 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Shared Local Filter",
@@ -4963,6 +5240,7 @@ New Window( "Shared Local Filter",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Selection Filter",
@@ -5005,6 +5283,7 @@ New Window( "Selection Filter",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", x = Data Grid Box() );
 x << Set Data Table( dt );
@@ -5020,6 +5299,7 @@ x << Set Data Table( dt );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
@@ -5037,6 +5317,7 @@ Data Table( 1 );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example", Data Table Box( dt ) );
 
@@ -5051,6 +5332,7 @@ New Window( "Example", Data Table Box( dt ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -5069,6 +5351,7 @@ New Window( "Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
 	Table Box( Data Table Plot Col Box( :weight ), Data Table Plot Col Box( :height ) )
@@ -5085,6 +5368,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
@@ -5111,6 +5395,7 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
+
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "start" );
 
 ```
@@ -5119,6 +5404,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "star
 
 ```jsl
 
+
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actual" );
 
 ```
@@ -5126,6 +5412,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "actu
 **Esempio 3**
 
 ```jsl
+
 
 Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "fractional" );
 
@@ -5140,6 +5427,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 As Date( Date DMY( 15, 7, 2000 ) );
 
@@ -5157,6 +5445,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ```jsl
 
+
 Date Increment( Today(), "Month", 100, "start" );
 
 ```
@@ -5165,6 +5454,7 @@ Date Increment( Today(), "Month", 100, "start" );
 
 ```jsl
 
+
 Date Increment( Today(), "Month", 100, "actual" );
 
 ```
@@ -5172,6 +5462,7 @@ Date Increment( Today(), "Month", 100, "actual" );
 **Esempio 3**
 
 ```jsl
+
 
 Date Increment( Today(), "Month", 100, "fractional" );
 
@@ -5187,6 +5478,7 @@ Date Increment( Today(), "Month", 100, "fractional" );
 
 ```jsl
 
+
 As Date( Date MDY( 7, 15, 2000 ) );
 
 ```
@@ -5200,6 +5492,7 @@ As Date( Date MDY( 7, 15, 2000 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Day( Today() );
 
@@ -5215,6 +5508,7 @@ Day( Today() );
 
 ```jsl
 
+
 Day Of Week( Today() );
 
 ```
@@ -5228,6 +5522,7 @@ Day Of Week( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Day Of Year( Today() );
 
@@ -5243,6 +5538,7 @@ Day Of Year( Today() );
 
 ```jsl
 
+
 v = Days In Month( 2016, 2 );
 
 ```
@@ -5256,6 +5552,7 @@ v = Days In Month( 2016, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 // Right-click and select Debug.
 // In the JSL Debugger, click Run.
@@ -5278,6 +5575,7 @@ Show( z );
 ```jsl
 
 
+
 Decode URI( "Foo%20Bar" );
 
 ```
@@ -5291,6 +5589,7 @@ Decode URI( "Foo%20Bar" );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
@@ -5306,6 +5605,7 @@ Decode64 Blob( "dGhlIHF1aWNrIGJyb3duIGZveA==" );
 
 ```jsl
 
+
 Decode64 Double( "P/lUWYIBG9Q=" );
 
 ```
@@ -5319,6 +5619,7 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -5373,6 +5674,7 @@ Delete Classes( complex );
 
 ```jsl
 
+
 Define Class(
 	"aa",
 	{_init_ = Method( {} ), x = 1, m1 = Method( {a, b}, a * b )}
@@ -5404,6 +5706,7 @@ Show Classes();
 
 ```jsl
 
+
 Delete Directory( "$TEMP/sub1" );
 rc0 = Create Directory( "$TEMP/sub1/sub2/sub3" );
 Save Text File( "$TEMP/sub1/sub2/sub3/temp.txt", "example text" );
@@ -5425,6 +5728,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ```jsl
 
+
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = File Exists( "$TEMP/x.jmp" );
 rc2 = Delete File( "$TEMP/x.jmp" );
@@ -5443,6 +5747,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " " || Char( rc3 ) /*
 
 ```jsl
 
+
 Delete Globals();
 
 ```
@@ -5456,6 +5761,7 @@ Delete Globals();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 nsaa = New Namespace(
@@ -5486,6 +5792,7 @@ Show Namespaces();
 
 ```jsl
 
+
 Delete Symbols();
 
 ```
@@ -5500,6 +5807,7 @@ Delete Symbols();
 
 ```jsl
 
+
 Derivative( Sin( x ), x );
 
 ```
@@ -5513,6 +5821,7 @@ Derivative( Sin( x ), x );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* example that Design(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
@@ -5541,6 +5850,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* example that Design Last(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
@@ -5577,6 +5887,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
+
 /* example that Design Nom(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( Design Nom( exLevels ) );
@@ -5611,6 +5922,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* example that Design Ord(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
@@ -5647,6 +5959,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
+
 /* example that DesignF(...) takes one argument */
 exLevels = [1, 2, 3, 2, 1];
 Show( DesignF( exLevels ) );
@@ -5682,6 +5995,7 @@ Show( DesignF( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ```jsl
 
+
 dvec = [0.1 0.9 0.1];
 yvec = [1 5 10];
 New Window( "Desirability",
@@ -5706,6 +6020,7 @@ New Window( "Desirability",
 
 ```jsl
 
+
 Det( [11 22, 33 44] );
 
 ```
@@ -5719,6 +6034,7 @@ Det( [11 22, 33 44] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Diag( [11 22] );
 
@@ -5735,6 +6051,7 @@ Diag( [11 22] );
 **Esempio 1**
 
 ```jsl
+
 
 // See Example 2 for the deprecated Dialog equivalent
 If(
@@ -5757,6 +6074,7 @@ If(
 **Esempio 2**
 
 ```jsl
+
 
 // Deprecated
 If(
@@ -5785,6 +6103,7 @@ If(
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 Dif( :height, 2 );
@@ -5801,6 +6120,7 @@ Dif( :height, 2 );
 
 ```jsl
 
+
 Digamma( 5 );
 
 ```
@@ -5815,6 +6135,7 @@ Digamma( 5 );
 
 ```jsl
 
+
 Dim( [11 22, 33 44, 55 66] );
 
 ```
@@ -5828,6 +6149,7 @@ Dim( [11 22, 33 44, 55 66] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2, 3 3 3];
@@ -5854,6 +6176,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ```jsl
 
+
 If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 	"ok",
 	"missing!"
@@ -5872,6 +6195,7 @@ If( Directory Exists( "$SAMPLE_DATA/Loss Function Templates" ),
 ```jsl
 
 
+
 Disable JMP Live URL( "*public.jmp.com" );
 
 ```
@@ -5887,6 +6211,7 @@ Disable JMP Live URL( "*public.jmp.com" );
 ```jsl
 
 
+
 Disable Proxy Settings( 1 );
 
 ```
@@ -5900,6 +6225,7 @@ Disable Proxy Settings( 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /*1-D example*/
 exX1 = [1, 2, 3, 4];
@@ -5973,6 +6299,7 @@ Show( exDm == exD );
 
 ```jsl
 
+
 x = Divide( 5 );
 y = 1 / 5;
 Show( x, y );
@@ -5982,6 +6309,7 @@ Show( x, y );
 **Semplici**
 
 ```jsl
+
 
 6 / 3 / 2;
 
@@ -5996,6 +6324,7 @@ Show( x, y );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = 1;
 ex /= 2;
@@ -6013,6 +6342,7 @@ ex;
 
 ```jsl
 
+
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -6026,6 +6356,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = [11 33 77];
@@ -6048,6 +6379,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	exx = [11 33 77];
 	exy = [88 22 44];,
@@ -6068,6 +6400,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = [11 33 77];
@@ -6090,6 +6423,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	exx = [11 33];
 	exy = [88 22];,
@@ -6110,6 +6444,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = [11 33 77];
@@ -6132,6 +6467,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Dunnett P value( 1.67623, 3, 11 );
 
 ```
@@ -6145,6 +6481,7 @@ Dunnett P value( 1.67623, 3, 11 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Dunnett Quantile( 0.95, 3, 11 );
 
@@ -6160,6 +6497,7 @@ Dunnett Quantile( 0.95, 3, 11 );
 
 ```jsl
 
+
 Round( e(), 10 );
 
 ```
@@ -6173,6 +6511,7 @@ Round( e(), 10 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 [11 22 33] :/ [1 2 3];
 
@@ -6188,6 +6527,7 @@ Round( e(), 10 );
 
 ```jsl
 
+
 E Max( [1 22 33], [11 2 3] );
 
 ```
@@ -6201,6 +6541,7 @@ E Max( [1 22 33], [11 2 3] );
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 E Min( [1 22 33], [11 2 3] );
 
@@ -6216,6 +6557,7 @@ E Min( [1 22 33], [11 2 3] );
 
 ```jsl
 
+
 [1 2 3] :* [11 22 33];
 
 ```
@@ -6230,6 +6572,7 @@ E Min( [1 22 33], [11 2 3] );
 
 ```jsl
 
+
 X = [11 22, 22 33];
 {M, E} = Eigen( X );
 E * Diag( M ) * E`;
@@ -6243,6 +6586,7 @@ E * Diag( M ) * E`;
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 {M1, E1} = Eigen BLAS( X );
@@ -6259,6 +6603,7 @@ X = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 
 ```jsl
 
+
 Empty();
 
 ```
@@ -6272,6 +6617,7 @@ Empty();
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 Enable JMP Live URL( "https://public.jmp.com" );
@@ -6289,6 +6635,7 @@ Enable JMP Live URL( "https://public.jmp.com" );
 ```jsl
 
 
+
 Enable Proxy Settings( 0 );
 
 ```
@@ -6302,6 +6649,7 @@ Enable Proxy Settings( 0 );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 
 Encode URI( "Foo Bar" );
@@ -6318,6 +6666,7 @@ Encode URI( "Foo Bar" );
 
 ```jsl
 
+
 Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 
 ```
@@ -6331,6 +6680,7 @@ Encode64 Blob( Char To Blob( "the quick brown fox" ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Encode64 Double( -1.5831 );
 
@@ -6346,6 +6696,7 @@ Encode64 Double( -1.5831 );
 
 ```jsl
 
+
 Ends With( "http://www.jmp.com", ".com" );
 
 ```
@@ -6360,6 +6711,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ```jsl
 
+
 1 == 1;
 
 ```
@@ -6373,6 +6725,7 @@ Ends With( "http://www.jmp.com", ".com" );
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 Estimate Bartlett Factor Score(
 	[2 2 0],
@@ -6402,6 +6755,7 @@ Estimate Bartlett Factor Score(
 
 ```jsl
 
+
 Estimate Factor Score(
 	[7 10 5 2 2 0],
 	[1.66 0.45 0.58 -0.58 -0.44 -0.5 0.59 -0.58,
@@ -6428,6 +6782,7 @@ Estimate Factor Score(
 
 ```jsl
 
+
 Eval( Expr( 1 + 2 ) );
 
 ```
@@ -6441,6 +6796,7 @@ Eval( Expr( 1 + 2 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
@@ -6456,6 +6812,7 @@ Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```jsl
 
+
 Eval Insert( "Today is ^As Date( Today())^" );
 
 ```
@@ -6469,6 +6826,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = "Today is ^As Date( Today())^";
 Eval Insert Into( ex );
@@ -6488,6 +6846,7 @@ ex;
 
 ```jsl
 
+
 Eval List( {1 + 2, 3 + 4} );
 
 ```
@@ -6495,6 +6854,7 @@ Eval List( {1 + 2, 3 + 4} );
 **Esempio 2**
 
 ```jsl
+
 
 x = 5;
 y = 10;
@@ -6511,6 +6871,7 @@ Eval List( {x, y} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -6561,6 +6922,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
 Excluded( Row State( 3 ) );
@@ -6578,6 +6940,7 @@ Excluded();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Excluded State( 1 );
@@ -6597,6 +6960,7 @@ Excluded( Row State( 3 ) );
 
 ```jsl
 
+
 dt = Execute SQL(
 	databaseConnectionHandle,
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -6609,6 +6973,7 @@ dt = Execute SQL(
 
 ```jsl
 
+
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 
@@ -6617,6 +6982,7 @@ dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
 **Esempio 3**
 
 ```jsl
+
 
 dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 resultList = Execute SQL(
@@ -6636,6 +7002,7 @@ resultList = Execute SQL(
 **JMP Versione aggiunta:** 18
 
 ```jsl
+
 
 New Window( "Example: ExGaussian Density",
 	y = Graph Box(
@@ -6659,6 +7026,7 @@ New Window( "Example: ExGaussian Density",
 
 ```jsl
 
+
 New Window( "Example: ExGaussian Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6680,6 +7048,7 @@ New Window( "Example: ExGaussian Distribution",
 **JMP Versione aggiunta:** 18
 
 ```jsl
+
 
 New Window( "Example: ExGaussian Quantile",
 	Graph Box(
@@ -6703,6 +7072,7 @@ New Window( "Example: ExGaussian Quantile",
 
 ```jsl
 
+
 If(
 	New Window( "Exit() example",
 		<<Type( "Modal" ),
@@ -6723,6 +7093,7 @@ If(
 
 ```jsl
 
+
 Round( Exp( 1 ), 5 );
 
 ```
@@ -6736,6 +7107,7 @@ Round( Exp( 1 ), 5 );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 New Window( "Example: Exp Density",
 	y = Graph Box(
@@ -6759,6 +7131,7 @@ New Window( "Example: Exp Density",
 
 ```jsl
 
+
 New Window( "Example: Exp Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6781,6 +7154,7 @@ New Window( "Example: Exp Distribution",
 
 ```jsl
 
+
 New Window( "Example: Exp Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -6802,6 +7176,7 @@ New Window( "Example: Exp Quantile",
 
 ```jsl
 
+
 Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```
@@ -6815,6 +7190,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 New Window( "Example: Exponential Density",
 	y = Graph Box(
@@ -6838,6 +7214,7 @@ New Window( "Example: Exponential Density",
 
 ```jsl
 
+
 New Window( "Example: Exponential Distribution",
 	y = Graph Box(
 		Y Scale( 0, 1 ),
@@ -6860,6 +7237,7 @@ New Window( "Example: Exponential Distribution",
 
 ```jsl
 
+
 New Window( "Example: Exponential Quantile",
 	y = Graph Box(
 		Y Scale( 0, 4 ),
@@ -6881,6 +7259,7 @@ New Window( "Example: Exponential Quantile",
 
 ```jsl
 
+
 Expr( x + y );
 
 ```
@@ -6894,6 +7273,7 @@ Expr( x + y );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
@@ -6916,6 +7296,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Extract Expr( a + b * c, Wild() * Wild() );
 
 ```
@@ -6929,6 +7310,7 @@ Extract Expr( a + b * c, Wild() * Wild() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 fdedfn = 2;
 fdedfd = 2;
@@ -6957,6 +7339,7 @@ New Window( "Example: F Density",
 
 ```jsl
 
+
 fdidfn = 5;
 fdidfd = 5;
 New Window( "Example: F Distribution",
@@ -6983,6 +7366,7 @@ New Window( "Example: F Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 flcddfn = 5;
 flcddfd = 5;
@@ -7011,6 +7395,7 @@ New Window( "Example: F Log CDistribution",
 
 ```jsl
 
+
 fldedfn = 1;
 fldedfd = 1;
 New Window( "Example: F Log Density",
@@ -7037,6 +7422,7 @@ New Window( "Example: F Log Density",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 flddfn = 5;
 flddfd = 5;
@@ -7065,6 +7451,7 @@ New Window( "Example: F Log Distribution",
 
 ```jsl
 
+
 New Window( "Example: F Noncentrality",
 	fncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -7087,6 +7474,7 @@ F Noncentrality( 3, 2, 5, F Distribution( 3, 2, 5, 0.4 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 alpha = 0.05;
 obs = 25;
@@ -7118,6 +7506,7 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
+
 F Quantile( 0.7, 5, 3 );
 
 ```
@@ -7131,6 +7520,7 @@ F Quantile( 0.7, 5, 3 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 alpha = 0.05;
 pow = 0.6;
@@ -7162,6 +7552,7 @@ New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
 
 ```jsl
 
+
 Factorial( 5 );
 
 ```
@@ -7175,6 +7566,7 @@ Factorial( 5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 A = Faure Quasi Random Sequence( 3, 100 );
 As Table( A );
@@ -7192,6 +7584,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ```jsl
 
+
 FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ```
@@ -7205,6 +7598,7 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
 A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
@@ -7276,6 +7670,7 @@ Show( fin );
 
 ```jsl
 
+
 If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 	"ok",
 	"missing!"
@@ -7293,6 +7688,7 @@ If( File Exists( "$SAMPLE_DATA/Big Class.jmp" ),
 
 ```jsl
 
+
 File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -7309,6 +7705,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```jsl
 
+
 Files In Directory( "$HOME" );
 
 ```
@@ -7316,6 +7713,7 @@ Files In Directory( "$HOME" );
 **Esempio 2**
 
 ```jsl
+
 
 Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 	Contains( Lowercase( fn ), "stacked" )
@@ -7332,6 +7730,7 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -7355,6 +7754,7 @@ New Window( "Example",
 ```jsl
 
 
+
 image = New Image( "$SAMPLE_IMAGES/pi.gif" );
 New Window( "Example",
 	Graph Box(
@@ -7368,6 +7768,7 @@ New Window( "Example",
 **Maschera**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -7388,6 +7789,7 @@ New Window( "Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 250 ) ) );
 
@@ -7405,6 +7807,7 @@ New Window( "Col List Box Example", fontobj = lb = Filter Col Selector( width( 2
 
 ```jsl
 
+
 values = Filter Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value > 6 );
 Show( values );
 
@@ -7413,6 +7816,7 @@ Show( values );
 **Expression**
 
 ```jsl
+
 
 values = Filter Each( {value}, Expr( MyExpr( 1, 2, 3, 4 ) ), Mod( value, 2 ) == 0 );
 Show( values );
@@ -7423,6 +7827,7 @@ Show( values );
 
 ```jsl
 
+
 values = Filter Each( {x}, {0, -5, 2, -10, 4}, x > 0 );
 Show( values );
 
@@ -7431,6 +7836,7 @@ Show( values );
 **Matrix**
 
 ```jsl
+
 
 values = Filter Each( {x, i}, 100 :: 120, i > 10 );
 Show( values );
@@ -7452,6 +7858,7 @@ Saranno comprese solo le finestre nel progetto corrente (o in nessun progetto se
 ```jsl
 
 
+
 exdt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
 exdt2 = Open( "$SAMPLE_DATA/Animals.jmp" );
 windows = Find All( Data Tables );
@@ -7471,6 +7878,7 @@ For( i = 1, i <= N Items( windows ), i++,
 
 ```jsl
 
+
 First( 11, 22 );
 
 ```
@@ -7484,6 +7892,7 @@ First( 11, 22 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 result = Fit Censored(
 	Distribution( "Weibull" ),
@@ -7502,6 +7911,7 @@ Show( result );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 x = [68, 77, 85, 88, 93, 93, 95, 98];
 y = [1, 9, 18, 94, 35, 82, 40, 59];
@@ -7528,6 +7938,7 @@ New Window( "Fit Circle",
 
 ```jsl
 
+
 datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,
 -6.1855986, 2.16525629, -30.990061];
 freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
@@ -7553,6 +7964,7 @@ Show( results );
 
 ```jsl
 
+
 Floor( 1.2 );
 
 ```
@@ -7566,6 +7978,7 @@ Floor( 1.2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 s = "";
 For( i = 1, i < 10, i++,
@@ -7588,6 +8001,7 @@ Trim( s );
 ```jsl
 
 
+
 // Across multiple containers
 x = {1, 3};
 y = {2, 4};
@@ -7602,6 +8016,7 @@ For Each( {{a, b}, index}, Across( xy ), Show( a, b, index ) );
 **Across - Count**
 
 ```jsl
+
 
 
 list1 = {1, 3, 5, 7, 9};
@@ -7628,6 +8043,7 @@ Try(
 
 ```jsl
 
+
 For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, value, index ) );
 
 ```
@@ -7635,6 +8051,7 @@ For Each( {{key, value}, index}, ["A" => 8, "B" => 6, "C" => 10], Show( key, val
 **Expression**
 
 ```jsl
+
 
 For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
@@ -7644,6 +8061,7 @@ For Each( {value, index}, Expr( MyExpr( 10, 20, 30 ) ), Show( value ) );
 
 ```jsl
 
+
 For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```
@@ -7652,6 +8070,7 @@ For Each( {value, index}, {10, 20, 30}, Show( value, index ) );
 
 ```jsl
 
+
 For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ```
@@ -7659,6 +8078,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 **Matrix**
 
 ```jsl
+
 
 For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
@@ -7674,6 +8094,7 @@ For Each( {element, {row, col}}, 10 :: 15, Show( element, row, col ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 For Each Row( :height = -:height );
 
@@ -7681,7 +8102,7 @@ For Each Row( :height = -:height );
 
 ### Format
 
-**Sintassi:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Sintassi:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descrizione:** Restituisce il numero nel formato specificato. I formati comprendono elementi nella finestra di dialogo Informazioni sulla colonna, come "Migliore" e "h:m:s". Vedere la Guida su un argomento per ulteriori opzioni, tra cui p-value, valuta, data e ora e formati geografici.
 
@@ -7691,6 +8112,7 @@ For Each Row( :height = -:height );
 
 ```jsl
 
+
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
@@ -7699,6 +8121,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```jsl
 
+
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
 ```
@@ -7706,6 +8129,7 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 **Percentuale, Valuta**
 
 ```jsl
+
 
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
@@ -7717,13 +8141,14 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ```jsl
 
+
 Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```
 
 ### Format Date
 
-**Sintassi:** s = Format( x, formatString, &lt;options&gt; ) s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
+**Sintassi:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descrizione:** Restituisce il numero nel formato specificato. I formati comprendono elementi nella finestra di dialogo Informazioni sulla colonna, come "Migliore" e "h:m:s". Vedere la Guida su un argomento per ulteriori opzioni, tra cui p-value, valuta, data e ora e formati geografici.
 
@@ -7733,6 +8158,7 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ```jsl
 
+
 Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 
 ```
@@ -7740,6 +8166,7 @@ Print( Format( Today(), "yyyyQq" ), Format( Today(), "m/d/y h:m" ) );
 **Esempio 2**
 
 ```jsl
+
 
 Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:><ss>" ) );
 
@@ -7749,6 +8176,7 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ```jsl
 
+
 pct = Format( 0.123, "Percent", 2 );
 amt = Format( 123.4567, "Currency", "EUR", 2 );
 result = "Revenue increase: " || amt || " or " || pct || ".";
@@ -7757,13 +8185,14 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Pattern
 
-**Sintassi:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;) x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; ) obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
+**Sintassi:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Descrizione:** I pattern di formato sono stringhe che definiscono un formato di data e ora come, ad esempio, “<AAAA></><MM></><GG> <hh><:><mm><:><ss><ampm>". Le parti del pattern tra parentesi angolari sono dette descrittori di campo. I descrittori di campo rappresentano un valore (come "<AAAA>", che è un anno a quattro cifre) o un altro testo di data e ora (come "</>", che è un separatore di data specifico locale). Un pattern di formato permette di costruire formati che non sono forniti da JMP. Questi formati possono essere utilizzati sia per la formattazione sia per l&apos;input dei dati.
 
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 s = Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
 x = Informat( "2020/02/10 14:54", "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm>" );
@@ -7867,6 +8296,7 @@ Altro
 
 ```jsl
 
+
 Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2 );
 Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 
@@ -7881,6 +8311,7 @@ Fourier Basis Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] / 10, 2, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sig = .5;
@@ -7910,6 +8341,7 @@ New Window( "Example: Frechet Density",
 
 ```jsl
 
+
 mu = 0;
 sig = .5;
 New Window( "Example: Frechet Distribution",
@@ -7936,6 +8368,7 @@ New Window( "Example: Frechet Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sig = .5;
@@ -7977,6 +8410,7 @@ New Window( "Example: Frechet Quantile",
 
 ```jsl
 
+
 exsqr = Function( {x}, x * x );
 exsqr( 5 );
 
@@ -7985,6 +8419,7 @@ exsqr( 5 );
 **Esempio 2**
 
 ```jsl
+
 
 // y is an optional argument
 exmul = Function( {x, y = 3}, x * y );
@@ -7997,6 +8432,7 @@ Show( a, b );
 **Esempio 3**
 
 ```jsl
+
 
 posorneg = Function( {x},
 	{},
@@ -8020,6 +8456,7 @@ posorneg( -5.5 );
 
 ```jsl
 
+
 Future Value( .03, 12, 100, 0, 1 );
 
 ```
@@ -8033,6 +8470,7 @@ Future Value( .03, 12, 100, 0, 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Round( G Inverse( [11 22, 33 44] ), 2 );
 
@@ -8048,6 +8486,7 @@ Round( G Inverse( [11 22, 33 44] ), 2 );
 
 ```jsl
 
+
 Gamma( 5 );
 
 ```
@@ -8061,6 +8500,7 @@ Gamma( 5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 gdealpha = Log( 1.5 );
 New Window( "Example: Gamma Density",
@@ -8090,6 +8530,7 @@ New Window( "Example: Gamma Density",
 
 ```jsl
 
+
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
 	gdiy = Graph Box(
@@ -8117,6 +8558,7 @@ New Window( "Example: Gamma Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 glcdialpha = Log( 1.5 );
 New Window( "Example: Gamma Log CDistribution",
@@ -8146,6 +8588,7 @@ New Window( "Example: Gamma Log CDistribution",
 
 ```jsl
 
+
 gldealpha = Log( 1.5 );
 New Window( "Example: Gamma Log Density",
 	gldey = Graph Box(
@@ -8174,6 +8617,7 @@ New Window( "Example: Gamma Log Density",
 
 ```jsl
 
+
 gldialpha = Log( 1.5 );
 New Window( "Example: Gamma Log Distribution",
 	gldiy = Graph Box(
@@ -8201,6 +8645,7 @@ New Window( "Example: Gamma Log Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 lambda = 20;
 sigma = 2;
@@ -8237,6 +8682,7 @@ New Window( "Example: Gamma Poisson Distribution",
 
 ```jsl
 
+
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Gamma Poisson",
@@ -8269,6 +8715,7 @@ New Window( "Poisson and Gamma Poisson",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 qexpl = 20;
 qexps = 2;
@@ -8316,6 +8763,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ```jsl
 
+
 Gamma Quantile( 0.75, 4 );
 
 ```
@@ -8329,6 +8777,7 @@ Gamma Quantile( 0.75, 4 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -8360,6 +8809,7 @@ New Window( "Example: GenGamma Density",
 
 ```jsl
 
+
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -8389,6 +8839,7 @@ New Window( "Example: GenGamma Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -8437,6 +8888,7 @@ New Window( "Example: GenGamma Quantile",
 
 ```jsl
 
+
 addin = Get Addin( "com.mycompany.myaddin" );
 
 ```
@@ -8450,6 +8902,7 @@ addin = Get Addin( "com.mycompany.myaddin" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 addins = Get Addins();
 addin ids = Get Addins() << id;
@@ -8467,6 +8920,7 @@ Show( addins, addin ids );
 
 ```jsl
 
+
 Get Addr Info( "www.jmp.com" )[3][4];
 
 ```
@@ -8480,6 +8934,7 @@ Get Addr Info( "www.jmp.com" )[3][4];
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Define Class(
 	"aa",
@@ -8508,6 +8963,7 @@ Delete Classes( "aa", "bb" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Define Class(
 	"aa",
@@ -8538,6 +8994,7 @@ Delete Classes( "aa", "bb" );
 
 ```jsl
 
+
 Get Clipboard();
 
 ```
@@ -8551,6 +9008,7 @@ Get Clipboard();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Get Color Theme Detail( "JMP Default" );
 
@@ -8568,6 +9026,7 @@ Get Color Theme Detail( "JMP Default" );
 
 ```jsl
 
+
 Get Color Theme Names();
 
 ```
@@ -8575,6 +9034,7 @@ Get Color Theme Names();
 **Esempio 2**
 
 ```jsl
+
 
 Get Color Theme Names( "sequential" );
 
@@ -8592,6 +9052,7 @@ Get Color Theme Names( "sequential" );
 
 ```jsl
 
+
 Get Custom Functions();
 
 ```
@@ -8599,6 +9060,7 @@ Get Custom Functions();
 **Esempio 2**
 
 ```jsl
+
 
 Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
@@ -8621,6 +9083,7 @@ Per specificare un progetto, usare l&apos;argomento facoltativo Progetto() con u
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
@@ -8648,6 +9111,7 @@ Per specificare un progetto, usare l&apos;argomento facoltativo Progetto() con u
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
 Get Data Table List();
@@ -8657,6 +9121,7 @@ Get Data Table List();
 **Esempio 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Get Data Table List( Project( project ) );
@@ -8672,6 +9137,7 @@ Get Data Table List( Project( project ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Show( Get Default Directory() );
 Set Default Directory( "$SAMPLE_DATA" );
@@ -8693,6 +9159,7 @@ Nota: sul sistema operativo Macintosh il nome della variabile fa distinzione tra
 
 ```jsl
 
+
 Get Environment Variable( "PATH" );
 
 ```
@@ -8706,6 +9173,7 @@ Get Environment Variable( "PATH" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 sheetList = Get Excel Worksheets( "$SAMPLE_IMPORT_DATA\Team Results.xlsx" );
 Show( sheetList );
@@ -8722,6 +9190,7 @@ Show( sheetList );
 
 ```jsl
 
+
 Get File Search Path();
 
 ```
@@ -8736,6 +9205,7 @@ Get File Search Path();
 
 ```jsl
 
+
 Get Locale Setting( "Decimal Separator" );
 
 ```
@@ -8749,6 +9219,7 @@ Get Locale Setting( "Decimal Separator" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 all contents = Get Log();
 headcontents = Get Log( 10 );
@@ -8766,6 +9237,7 @@ tailcontents = Get Log( -5 );
 
 ```jsl
 
+
 Get Name Info( "149.173.5.120" )[3][4];
 
 ```
@@ -8779,6 +9251,7 @@ Get Name Info( "149.173.5.120" )[3][4];
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 nsaa = New Namespace(
 	"aa",
@@ -8808,6 +9281,7 @@ nsbb << Delete;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 nsaa = New Namespace(
 	"aa",
@@ -8848,6 +9322,7 @@ nsbb << Delete;
 ```jsl
 
 
+
 /*
 https://oauth.net/2/grant-types/
 */
@@ -8861,6 +9336,7 @@ Show( grant_types );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration";
@@ -8884,6 +9360,7 @@ Show( aa );
 **Elenco**
 
 ```jsl
+
 
 // Run for a Path Variable listing
 path vars = {"SAMPLE_DATA", "DESKTOP", "DOCUMENTS", "DOWNLOADS", "TEMP", "HOME",
@@ -8931,6 +9408,7 @@ New Window( "Path Variables",
 
 ```jsl
 
+
 Get Path Variable( "SAMPLE_DATA" );
 /* try: SAMPLE_DATA, SAMPLE_IMPORT_DATA, SAMPLE_SCRIPTS
 See full listing of Path Variables in the other example
@@ -8948,6 +9426,7 @@ See also Convert File Path() and Set Path Variable() */
 
 ```jsl
 
+
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```
@@ -8961,6 +9440,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
@@ -8976,6 +9456,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ```jsl
 
+
 Get Policies();
 
 ```
@@ -8990,6 +9471,7 @@ Get Policies();
 
 ```jsl
 
+
 Get Preferences( Graph marker size );
 
 ```
@@ -9003,6 +9485,7 @@ Get Preferences( Graph marker size );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Get Preferences( Graph marker size );
 
@@ -9020,6 +9503,7 @@ Get Preferences( Graph marker size );
 
 ```jsl
 
+
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
                              
@@ -9030,6 +9514,7 @@ Print( Get Project( 2 ) << Get Window Title() );
 **Esempio 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
 Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
@@ -9047,6 +9532,7 @@ project = Get Project( "Big Class" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Project();
 Open( "$SAMPLE_PROJECTS/Big Class.jmpprj" );
@@ -9067,6 +9553,7 @@ Print( Get Project List() << Get Window Title() );
 
 ```jsl
 
+
 Get Punctuation Characters();
 
 ```
@@ -9074,6 +9561,7 @@ Get Punctuation Characters();
 **Esempio 2**
 
 ```jsl
+
 
 Get Punctuation Characters( Include Chars( "_" ) );
 
@@ -9083,6 +9571,7 @@ Get Punctuation Characters( Include Chars( "_" ) );
 
 ```jsl
 
+
 Get Punctuation Characters( Exclude Chars( "$[]" ) );
 
 ```
@@ -9090,6 +9579,7 @@ Get Punctuation Characters( Exclude Chars( "$[]" ) );
 **Esempio 4**
 
 ```jsl
+
 
 Collapse Whitespace(
 	Substitute( "This...string..has..dots", Items( Get Punctuation Characters(), "" ), " " )
@@ -9108,6 +9598,7 @@ Collapse Whitespace(
 ```jsl
 
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 biv = dt << RunScript( "Bivariate" );
 Get Session Script( Report( biv ) );
@@ -9123,6 +9614,7 @@ Get Session Script( Report( biv ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Get Whitespace Characters();
 
@@ -9152,6 +9644,7 @@ Usare l&apos;argomento facoltativo Tipo() con un&apos;opzione tra "Tabelle di da
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA\Big Class.jmp" );
                                         
 window = Get Window( "Big Class" );
@@ -9161,6 +9654,7 @@ window = Get Window( "Big Class" );
 **Esempio 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
@@ -9192,6 +9686,7 @@ Usare l&apos;argomento facoltativo Tipo() con un&apos;opzione tra "Tabelle di da
 
 ```jsl
 
+
 Print( Get Window List() << Get Window Title() );
 
 ```
@@ -9199,6 +9694,7 @@ Print( Get Window List() << Get Window Title() );
 **Esempio 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
@@ -9209,6 +9705,7 @@ Print( Get Window List( Project( project ) ) << Get Window Title() );
 **Esempio 3**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS\Big Class.jmpprj" );
                              
@@ -9226,6 +9723,7 @@ Print( Get Window List( Project( project ), Type( "Data Tables" ) ) << Get Windo
 
 ```jsl
 
+
 ex = .6;
 New Window( "Example", Global Box( ex ) );
 
@@ -9240,6 +9738,7 @@ New Window( "Example", Global Box( ex ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -9271,6 +9770,7 @@ New Window( "Example: GLog Density",
 
 ```jsl
 
+
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -9300,6 +9800,7 @@ New Window( "Example: Glog Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -9344,6 +9845,7 @@ New Window( "Example: GLog Quantile",
 
 ```jsl
 
+
 ex1 = 1;
 ex2 = 2;
 
@@ -9358,6 +9860,7 @@ ex2 = 2;
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 email = "youremail@gmail.com"; //Replace this with your email
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -9379,6 +9882,7 @@ Google Sheet Export(
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 email = "youremail@gmail.com"; //Replace this with your email
 spreadsheet =
@@ -9409,6 +9913,7 @@ Google Sheet Import(
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Gradient Function(
@@ -9433,6 +9938,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -9453,6 +9959,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 x3d = Graph 3D Box(
 	framesize( 300, 300 ),
@@ -9488,6 +9995,7 @@ x3d << AddVector(
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Frame Size( 300, 300 ),
@@ -9509,6 +10017,7 @@ New Window( "Example",
 
 ```jsl
 
+
 3 > 2 > 1;
 
 ```
@@ -9523,6 +10032,7 @@ New Window( "Example",
 
 ```jsl
 
+
 3 >= 2 >= 2;
 
 ```
@@ -9536,6 +10046,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Gzip Compress(
 	Char To Blob( "random data does not usually compress well and may get larger" )
@@ -9552,6 +10063,7 @@ Gzip Compress(
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Gzip Uncompress(/*typically this data might come from GzipCompress() but might also come from a .gz file using loadTextFile with the blob option*/
 	Char To Blob(
@@ -9571,6 +10083,7 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "test",
 	H List Box(
@@ -9598,6 +10111,7 @@ New Window( "test",
 
 ```jsl
 
+
 exA = [1 2, 3 4];
 exB = [1 1 1, 2 2 2];
 exProd = H Direct Product( exA, exB );
@@ -9619,6 +10133,7 @@ Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -9638,6 +10153,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Outline Box( "Picker", H List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -9653,6 +10169,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -9681,6 +10198,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -9731,6 +10249,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( H Size() / 20 );
@@ -9749,6 +10268,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Splitter",
 	V Splitter Box(
@@ -9781,6 +10301,7 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
+
 Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ```
@@ -9794,6 +10315,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	exx = 20;
@@ -9822,6 +10344,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Head( Expr( Sum( a, b, c ) ) );
 
 ```
@@ -9838,6 +10361,7 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
+
 // See Example 2 for the deprecated Head Expr() equivalent
 Head( Expr( Sum( a, b, c ) ) );
 
@@ -9846,6 +10370,7 @@ Head( Expr( Sum( a, b, c ) ) );
 **Esempio 2**
 
 ```jsl
+
 
 // Deprecated
 Head Expr( Sum( a, b, c ) );
@@ -9861,6 +10386,7 @@ Head Expr( Sum( a, b, c ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Head Name( Expr( Sum( a, b, c ) ) );
 
@@ -9878,6 +10404,7 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
+
 // See Example 2 for the deprecated Head Name Expr() equivalent
 Head Name( Expr( Sum( a, b, c ) ) );
 
@@ -9886,6 +10413,7 @@ Head Name( Expr( Sum( a, b, c ) ) );
 **Esempio 2**
 
 ```jsl
+
 
 // Deprecated
 Head Name Expr( Sum( a, b, c ) );
@@ -9901,6 +10429,7 @@ Head Name Expr( Sum( a, b, c ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Color Bar",
 	Graph(
@@ -9924,6 +10453,7 @@ New Window( "Color Bar",
 
 ```jsl
 
+
 Hex( 1024, "integer" ) || " " || Hex( "Café", "utf-16be" ) || " " ||
 Hex( 11, Base( 2 ), Pad To( 8 ) );
 
@@ -9939,6 +10469,7 @@ Hex( 11, Base( 2 ), Pad To( 8 ) );
 
 ```jsl
 
+
 Hex To Blob( "FF78CE" );
 
 ```
@@ -9952,6 +10483,7 @@ Hex To Blob( "FF78CE" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
@@ -9967,6 +10499,7 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ```jsl
 
+
 Hex To Number( "11110000", Base( 2 ) );
 
 ```
@@ -9980,6 +10513,7 @@ Hex To Number( "11110000", Base( 2 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
@@ -9999,6 +10533,7 @@ Hidden();
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Hidden State( 1 );
 Hidden( Row State( 3 ) );
@@ -10014,6 +10549,7 @@ Hidden( Row State( 3 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Hier Box(
@@ -10036,6 +10572,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exdt = Open( "$SAMPLE_DATA/Body Measurements.jmp" );
 ex = exdt << get as matrix();
@@ -10063,6 +10600,8 @@ exhistory[3, 1];
 
 ```jsl
 
+
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
 rows = N Row( xx );
@@ -10087,6 +10626,7 @@ New Window( "Hist Seg Example",
 
 ```jsl
 
+
 New Window( "Color Wheel",
 	Graph(
 		frameSize( 200, 200 ),
@@ -10110,6 +10650,7 @@ New Window( "Color Wheel",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 If( Host is( "Mac" ),
 	Show( "On Mac" ),
@@ -10136,6 +10677,7 @@ If(
 **Esempio 1**
 
 ```jsl
+
 
 xx = .4;
 yy = .4;
@@ -10174,6 +10716,7 @@ New Window( "Hough Transform Demo 1",
 **Esempio 2**
 
 ```jsl
+
 
 nRow = 35;
 nCol = 35;
@@ -10294,6 +10837,7 @@ New Window( "Hough Transform Demo 2",
 
 ```jsl
 
+
 Hour( Today() );
 
 ```
@@ -10307,6 +10851,7 @@ Hour( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 bt = HP Time();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -10326,6 +10871,7 @@ Show( it );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -10340,6 +10886,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exhdK = 10;
 exhdn = 10;
@@ -10379,6 +10926,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ```jsl
 
+
 exhdK = 10;
 exhdn = 10;
 New Window( "Example: Hypergeometric Probability",
@@ -10414,6 +10962,7 @@ New Window( "Example: Hypergeometric Probability",
 
 ```jsl
 
+
 New Window( "Example",
 	ex1 = Icon Box( "Popup" ),
 	ex2 = Icon Box( "Locked" ),
@@ -10432,6 +10981,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```
@@ -10446,6 +10996,7 @@ New Window( "Example with Path", ex = Icon Box( "$SAMPLE_IMAGES/pi.gif" ) );
 
 ```jsl
 
+
 Identity( 2 );
 
 ```
@@ -10459,6 +11010,7 @@ Identity( 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 If( Random Uniform() < 0.5,
 	"heads",
@@ -10476,6 +11028,7 @@ If( Random Uniform() < 0.5,
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	H List Box(
@@ -10499,6 +11052,7 @@ frenchBox << Set( 1 );
 
 ```jsl
 
+
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example",
 	g = Graph Box( If Seg( true, <<append( Lines Seg( lines ) ) ) )
@@ -10515,6 +11069,7 @@ New Window( "Lines Seg Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 TomScore = 45;
 JonScore = 47;
@@ -10533,6 +11088,7 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 ```jsl
 
+
 TomScore = 45;
 JonScore = 47;
 TimScore = 46;
@@ -10549,6 +11105,7 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 x = 1;
 Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
@@ -10568,6 +11125,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 gdialpha = Log( 1.5 );
 New Window( "Example: Gamma Distribution",
@@ -10597,6 +11155,7 @@ New Window( "Example: Gamma Distribution",
 
 ```jsl
 
+
 In Days( 1.5 );
 
 ```
@@ -10610,6 +11169,7 @@ In Days( 1.5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 In Hours( 0.5 );
 
@@ -10625,6 +11185,7 @@ In Hours( 0.5 );
 
 ```jsl
 
+
 In Minutes( 1 );
 
 ```
@@ -10638,6 +11199,7 @@ In Minutes( 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 New Window( "Example",
@@ -10668,6 +11230,7 @@ New Window( "Example",
 
 ```jsl
 
+
 In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ```
@@ -10681,6 +11244,7 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 In Weeks( 1 );
 
@@ -10696,6 +11260,7 @@ In Weeks( 1 );
 
 ```jsl
 
+
 In Years( 1 );
 
 ```
@@ -10709,6 +11274,7 @@ In Years( 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
@@ -10724,6 +11290,7 @@ Include( "$SAMPLE_SCRIPTS/chaosGame.jsl" );
 
 ```jsl
 
+
 y = Include File List();
 
 ```
@@ -10738,13 +11305,14 @@ y = Include File List();
 
 ```jsl
 
+
 1 :: 10;
 
 ```
 
 ### Informat
 
-**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descrizione:** Analizza una stringa di un dato formato. Se si tratta di un formato di data e ora, il valore è espresso come se fosse racchiuso in Come data(), restituendo la data nel formato ggmmmaaaa. L&apos;opzione facoltativa <<Restrict utilizzata con il formatString "migliore" consente solo la conversione usando formati interi, decimali e scientifici.
 
@@ -10754,6 +11322,7 @@ y = Include File List();
 
 ```jsl
 
+
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -10761,6 +11330,7 @@ Informat( "07152000", "MMDDYYYY" );
 **Esempio 2**
 
 ```jsl
+
 
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
@@ -10770,6 +11340,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
+
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -10778,6 +11349,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
+
 Informat( "123.45%", "Percent" );
 
 ```
@@ -10785,6 +11357,7 @@ Informat( "123.45%", "Percent" );
 **Esempio 5**
 
 ```jsl
+
 
 Show(
 	Informat( "1.23e4", "Best" ),
@@ -10803,6 +11376,7 @@ Show(
 
 ```jsl
 
+
 a = [1, 2, 3, -2, 0, -1, 0, 1, 1];
 b = [4, 5, 6, -2, 0, -1, 0, 7, 2];
 y = Inner Product BLAS( a, b );
@@ -10818,6 +11392,7 @@ y = Inner Product BLAS( a, b );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 z = {11, 22, 33};
 z = Insert( z, 99, 2 );
@@ -10836,6 +11411,7 @@ z = Insert( z, 99, 2 );
 
 ```jsl
 
+
 ex = {11, 22, 33};
 Insert Into( ex, 99 );
 ex;
@@ -10846,6 +11422,7 @@ ex;
 
 ```jsl
 
+
 ex = ["a" => 10, "b" => 3, => 0];
 Insert Into( ex, "c", 12 );
 ex;
@@ -10855,6 +11432,7 @@ ex;
 **Esempio 3**
 
 ```jsl
+
 
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 Wait( 1 );
@@ -10871,6 +11449,7 @@ Insert Into( hlist, Button Box( "c" ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 If( !Check MATLAB Dependencies(),
@@ -10892,6 +11471,7 @@ If( !Check MATLAB Dependencies(),
 
 ```jsl
 
+
 Integrate( Exp( -x ), x, 0, . );
 
 ```
@@ -10899,6 +11479,7 @@ Integrate( Exp( -x ), x, 0, . );
 **Esempio 2**
 
 ```jsl
+
 
 x = 100;
 Integrate( Normal Density( x - 100 ), x, ., . );
@@ -10915,6 +11496,7 @@ Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```jsl
 
+
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
@@ -10930,19 +11512,21 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
 
 ### Internal Rate of Return
 
-**Sintassi:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il tasso di ritorno interno per una serie di flussi di cassa rappresentati dai numeri nell&apos;argomento values. Equivalente alla funzione IRR in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Internal Rate of Return( [-10000, 1000, 900, 950] );
 Internal Rate of Return( .01, -10000, 1000, 900, 950 );
@@ -10951,7 +11535,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ### Interpolate
 
-**Sintassi:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2); y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix); z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Sintassi:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Descrizione:** Trova gli argomenti xi tra i quali si trova x e interpola linearmente i corrispondenti argomenti yi. Nota: gli argomenti xi devono essere specificati in ordine.
 
@@ -10960,6 +11544,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 **Esempio 1**
 
 ```jsl
+
 
 
 New Window( "Interpolate",
@@ -10979,6 +11564,7 @@ New Window( "Interpolate",
 
 ```jsl
 
+
 Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```
@@ -10987,6 +11573,7 @@ Interpolate( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
+
 Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 
 ```
@@ -10994,6 +11581,7 @@ Interpolate( {.5, .8}, [0 1], [0 1], [10 20, 12 18] );
 **Esempio 4**
 
 ```jsl
+
 
 
 xd = Transpose( Index( 1, 6 * Pi(), 0.3 ) );
@@ -11027,6 +11615,7 @@ New Window( "Interpolated values are blue",
 
 ```jsl
 
+
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -11040,6 +11629,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* Generate a design matrix */
 exX = [1 0 4 2,
@@ -11088,6 +11678,7 @@ Show( Inverse( exX[Index( 1, p ), 0]` * exX[Index( 1, p ), 0] ) );
 
 ```jsl
 
+
 Round( Inverse( [11 22, 33 44] ), 2 );
 
 ```
@@ -11101,6 +11692,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Invert Expr( Sqrt( Log( x ) ), x, y );
 
@@ -11118,6 +11710,7 @@ Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 obj = dt << Item Analysis( Y( :Q1, :Q2, :Q3, :Q4, :Q5 ), Model( "Logistic 2PL" ) );
 obj << Save Ability Formula;
@@ -11128,6 +11721,7 @@ Column( dt, N Cols( dt ) ) << Get Formula;
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
 mth = (dt << get as matrix)[0, Index( 2, 6 )];
@@ -11155,6 +11749,7 @@ mthlst;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11184,6 +11779,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 Is Associative Array( [1 => 2] );
 
 ```
@@ -11197,6 +11793,7 @@ Is Associative Array( [1 => 2] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -11253,6 +11850,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -11280,6 +11878,7 @@ New Window( "Show me the key",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11309,6 +11908,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 New Window( "Show me the key",
 	Graph Box(
 		Rect( 45, 55, 55, 45, 1 );
@@ -11337,6 +11937,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 rc0 = Is Directory( "$SAMPLE_DATA" );
 rc1 = Is Directory( "$SAMPLE_DATA/Big Class.jmp" );
 Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
@@ -11352,6 +11953,7 @@ Char( rc0 ) || " " || Char( rc1 );/* 1 0 */
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Is Directory Writable( "$SAMPLE_DATA" );
 
@@ -11369,6 +11971,7 @@ Is Directory Writable( "$SAMPLE_DATA" );
 
 ```jsl
 
+
 Is Empty( x );
 
 ```
@@ -11376,6 +11979,7 @@ Is Empty( x );
 **Esempio 2**
 
 ```jsl
+
 
 x = Empty();
 Is Empty( x );
@@ -11385,6 +11989,7 @@ Is Empty( x );
 **Esempio 3**
 
 ```jsl
+
 
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -11413,6 +12018,7 @@ If( Is Empty( dt ),
 
 ```jsl
 
+
 Is Expr( Expr( x ) );
 
 ```
@@ -11426,6 +12032,7 @@ Is Expr( Expr( x ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 rc0 = Is File( "$SAMPLE_DATA" );
 rc1 = Is File( "$SAMPLE_DATA/Big Class.jmp" );
@@ -11443,6 +12050,7 @@ Char( rc0 ) || " " || Char( rc1 );/* 0 1 */
 
 ```jsl
 
+
 Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -11456,6 +12064,7 @@ Is File Writable( "$SAMPLE_DATA/Big Class.jmp" );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 url = "http://public.jmp.com";
@@ -11473,6 +12082,7 @@ Show( Is JMP Live URL Enabled( url ) );
 
 ```jsl
 
+
 v = Is Leap Year( 2016 );
 
 ```
@@ -11486,6 +12096,7 @@ v = Is Leap Year( 2016 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Is List( {1, 2, 3} );
 
@@ -11503,6 +12114,7 @@ Is List( {1, 2, 3} );
 
 ```jsl
 
+
 If( Is Log Open(),
 	Close Log()
 );
@@ -11512,6 +12124,7 @@ If( Is Log Open(),
 **Esempio 2**
 
 ```jsl
+
 
 If( !Is Log Open(),
 	Open Log()
@@ -11529,6 +12142,7 @@ If( !Is Log Open(),
 
 ```jsl
 
+
 Is Matrix( [11 22 33] );
 
 ```
@@ -11542,6 +12156,7 @@ Is Matrix( [11 22 33] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Is Missing( . );
 
@@ -11557,6 +12172,7 @@ Is Missing( . );
 
 ```jsl
 
+
 Is Name( Name Expr( n ) );
 
 ```
@@ -11570,6 +12186,7 @@ Is Name( Name Expr( n ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ns = New Namespace(
 	"complex",
@@ -11613,6 +12230,7 @@ ns << Delete;
 
 ```jsl
 
+
 Is Number( 213 );
 
 ```
@@ -11626,6 +12244,7 @@ Is Number( 213 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11657,6 +12276,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 Is Same Color( "black", 0 );
 
 ```
@@ -11664,6 +12284,7 @@ Is Same Color( "black", 0 );
 **Esempio 2**
 
 ```jsl
+
 
 Is Same Color( "red", "green", "blue" );
 
@@ -11673,6 +12294,7 @@ Is Same Color( "red", "green", "blue" );
 
 ```jsl
 
+
 Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
@@ -11680,6 +12302,7 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 **Esempio 4**
 
 ```jsl
+
 
 Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
@@ -11695,6 +12318,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 
@@ -11709,6 +12333,7 @@ Is Scriptable( Bivariate( Y( :weight ), X( :height ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Show me the key",
 	Graph Box(
@@ -11738,6 +12363,7 @@ New Window( "Show me the key",
 
 ```jsl
 
+
 Is String( "abc" );
 
 ```
@@ -11751,6 +12377,7 @@ Is String( "abc" );
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 ISO Year( Today() );
 
@@ -11768,6 +12395,7 @@ ISO Year( Today() );
 
 ```jsl
 
+
 Item( 5, "http://www.jmp.com", ":/." );
 
 ```
@@ -11775,6 +12403,7 @@ Item( 5, "http://www.jmp.com", ":/." );
 **Esempio 2**
 
 ```jsl
+
 
 Item( [2 -1], "This is a sentence" );
 
@@ -11784,6 +12413,7 @@ Item( [2 -1], "This is a sentence" );
 
 ```jsl
 
+
 Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
@@ -11791,6 +12421,7 @@ Item( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() )
 **Esempio 4**
 
 ```jsl
+
 
 Item( 5, "a b c d", Unmatched( "None" ) );
 
@@ -11800,6 +12431,7 @@ Item( 5, "a b c d", Unmatched( "None" ) );
 
 ```jsl
 
+
 Item( 2, "abcd", "" );
 
 ```
@@ -11807,6 +12439,7 @@ Item( 2, "abcd", "" );
 **Esempio 6**
 
 ```jsl
+
 
 Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
@@ -11824,6 +12457,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ```jsl
 
+
 Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
@@ -11832,6 +12466,7 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```jsl
 
+
 Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -11839,6 +12474,7 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **Esempio 3**
 
 ```jsl
+
 
 Items(
 	",Apple,Banana Tree,Peach",
@@ -11851,6 +12487,7 @@ Items(
 **Esempio 4**
 
 ```jsl
+
 
 Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
@@ -11865,6 +12502,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 // Produce a 2x3 matrix, filled with 15.
@@ -11904,6 +12542,7 @@ J(
 
 ```jsl
 
+
 JMP Product Name();
 
 ```
@@ -11918,6 +12557,7 @@ JMP Product Name();
 
 ```jsl
 
+
 JMP Version();
 
 ```
@@ -11931,6 +12571,7 @@ JMP Version();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 0.5;
@@ -11973,6 +12614,7 @@ New Window( "Example: Johnson Sb Density",
 
 ```jsl
 
+
 gamma = 0.5;
 delta = 0.5;
 theta = 0.5;
@@ -12014,6 +12656,7 @@ New Window( "Example: Johnson Sb Distribution",
 
 ```jsl
 
+
 Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -12027,6 +12670,7 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 1;
@@ -12072,6 +12716,7 @@ New Window( "Example: Johnson Sl Density",
 
 ```jsl
 
+
 gamma = 0.5;
 delta = 1;
 theta = 0;
@@ -12116,6 +12761,7 @@ New Window( "Example: Johnson Sl Distribution",
 
 ```jsl
 
+
 Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -12129,6 +12775,7 @@ Johnson Sl Quantile( 0.5, 0.5, 1, 1, 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 1;
@@ -12171,6 +12818,7 @@ New Window( "Example: Johnson Su Density",
 
 ```jsl
 
+
 gamma = 0.5;
 delta = 1;
 theta = 1;
@@ -12212,6 +12860,7 @@ New Window( "Example: Johnson Su Distribution",
 
 ```jsl
 
+
 Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ```
@@ -12225,6 +12874,7 @@ Johnson Su Quantile( 0.5, 0.5, 1, 1, 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 sample = Distribution( Y( :height ) );
@@ -12246,6 +12896,7 @@ New Window( "Distribution of Height",
 
 ```jsl
 
+
 JSL Encrypted(
 	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
 );
@@ -12261,6 +12912,7 @@ JSL Encrypted(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 x = JSL Quote(/* Begin quote. */
@@ -12285,6 +12937,7 @@ New Window( "editor", Script Box( x ) );
 ```jsl
 
 
+
 myJSON =
 "{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
 parsed = Parse JSON( myJSON );
@@ -12307,6 +12960,7 @@ If( x == JSON Literal( true ),
 
 ```jsl
 
+
 dt = JSON To Data Table(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -12322,6 +12976,7 @@ dt = JSON To Data Table(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 l = JSON To List(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
@@ -12339,6 +12994,7 @@ Show( l );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 // generate sample dataset from a mixture of 3 normal distributions
 ndata3 = 25;
@@ -12409,6 +13065,7 @@ dt << Graph Builder(
 
 ```jsl
 
+
 tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, 1 );
 "2 nearest rows to row 1 are " || Char( rows );
@@ -12424,6 +13081,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
@@ -12443,6 +13101,7 @@ Labeled();
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Labeled State( 1 );
 Labeled( Row State( 3 ) );
@@ -12458,6 +13117,7 @@ Labeled( Row State( 3 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
@@ -12475,6 +13135,7 @@ Lag( :height, 2 );
 
 ```jsl
 
+
 Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ```
@@ -12488,6 +13149,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /*Simple Linear Regression*/
 y = [3, 5, 7, 5];
@@ -12506,6 +13168,7 @@ X = [1, 2, 3, 4];
 
 ```jsl
 
+
 exurl = "http://www.jmp.com";
 Left( exurl, Contains( exurl, ":" ) - 1 );
 
@@ -12523,6 +13186,7 @@ Left( exurl, Contains( exurl, ":" ) - 1 );
 
 ```jsl
 
+
 Length( "Café" );
 
 ```
@@ -12530,6 +13194,7 @@ Length( "Café" );
 **Esempio 2**
 
 ```jsl
+
 
 Length( {1, 2 + 3, [11 22]} );
 
@@ -12539,6 +13204,7 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
+
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -12546,6 +13212,7 @@ Length( ["a" => 10, "b" => 3, => 0] );
 **Esempio 4**
 
 ```jsl
+
 
 Length( Char To Blob( "Café" ) );
 
@@ -12561,6 +13228,7 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
+
 Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```
@@ -12574,6 +13242,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 [1 1 1] < [0 1 2];
 
@@ -12589,6 +13258,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```jsl
 
+
 1 < 2 <= 2;
 
 ```
@@ -12602,6 +13272,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 1 <= 2 <= 2;
 
@@ -12617,6 +13288,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 
 ```jsl
 
+
 2 <= 2 < 3;
 
 ```
@@ -12630,6 +13302,7 @@ Eval List( {LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 10;
 sig = 5;
@@ -12659,6 +13332,7 @@ New Window( "Example: LEV Density",
 
 ```jsl
 
+
 mu = 10;
 sig = 5;
 New Window( "Example: LEV Distribution",
@@ -12685,6 +13359,7 @@ New Window( "Example: LEV Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 10;
 sig = 5;
@@ -12724,6 +13399,7 @@ New Window( "Example: LEV Quantile",
 
 ```jsl
 
+
 New Window( "Color Bar",
 	Graph(
 		For( x = 1, x <= 100, x += 5,
@@ -12745,6 +13421,7 @@ New Window( "Color Bar",
 
 ```jsl
 
+
 LGamma( 5 );
 
 ```
@@ -12760,6 +13437,7 @@ LGamma( 5 );
 **Constrained smoothing**
 
 ```jsl
+
 
 New Window( "Constrained smoothing",
 	Graph Box(
@@ -12781,6 +13459,7 @@ New Window( "Constrained smoothing",
 
 ```jsl
 
+
 New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 
 ```
@@ -12788,6 +13467,7 @@ New Window( "Example", Graph Box( Line( [10 30 90], [88 22 44] ) ) );
 **Smoothing**
 
 ```jsl
+
 
 New Window( "Smoothing",
 	Graph Box(
@@ -12811,6 +13491,7 @@ New Window( "Smoothing",
 
 ```jsl
 
+
 New Window( "Interpolate in value space",
 	Graph Box(
 		XAxis( Scale( "Log" ), Min( 10 ), Max( 100 ) ),
@@ -12833,6 +13514,7 @@ New Window( "Interpolate in value space",
 
 ```jsl
 
+
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Line Seg Example", g = Graph Box( Line Seg( x, y ) ) );
@@ -12844,6 +13526,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
@@ -12857,6 +13540,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 x = [10, 50, 90];
@@ -12878,6 +13562,7 @@ seg = (frame << Find Seg( "Line Seg" ));
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Line Style Example",
 	Graph Box(
@@ -12908,6 +13593,7 @@ New Window( "Line Style Example",
 
 ```jsl
 
+
 /*Simple Linear Regression: y = intercept + beta * x + error*/
 y = [3, 5, 7, 5];
 X = [1, 2, 3, 4];
@@ -12925,6 +13611,7 @@ RSquare Adj = Diagnostics["RSquare Adj"];
 
 ```jsl
 
+
 /*Model: y = beta_1*x + beta_2*x^2 + error*/
 y = [3, 5, 7, 5];
 X = [1 1, 2 4, 3 9, 4 16];
@@ -12935,6 +13622,7 @@ X = [1 1, 2 4, 3 9, 4 16];
 **Esempio 3**
 
 ```jsl
+
 
 /*Categorical Variable Example*/
 /*Model: y = beta_1*boy + beta_2*girl + beta_3*x + error*/
@@ -12961,6 +13649,7 @@ designMat = Design( gender ) || x;
 
 ```jsl
 
+
 lines = [30 20 80 70, 10 90 90 10, 40 20 60 30];
 New Window( "Lines Seg Example", g = Graph Box( Lines Seg( lines ) ) );
 frame = g[FrameBox( 1 )];
@@ -12977,6 +13666,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 1 ), spacing( 10 ),
@@ -12998,6 +13688,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 
 New Window( "Lineup Ruler",
@@ -13036,6 +13727,7 @@ New Window( "Lineup Ruler",
 
 ```jsl
 
+
 {1, 2 + 3, [11 22]};
 
 ```
@@ -13052,6 +13744,7 @@ New Window( "Lineup Ruler",
 
 ```jsl
 
+
 New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 ) ) );
 
 ```
@@ -13059,6 +13752,7 @@ New Window( "Example", b = List Box( {"single", "double", "triple"}, nlines( 10 
 **Esempio 2**
 
 ```jsl
+
 
 New Window( "Example",
 	lb = List Box(
@@ -13081,6 +13775,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Ln( Exp( 2 ) );
 
 ```
@@ -13097,6 +13792,7 @@ Ln( Exp( 2 ) );
 
 ```jsl
 
+
 dll = Load DLL( Base Name( "/path/to/dll/financial" ) );
 // Loads "financial.dll" on Windows and "libfinancial.dylib" on Mac
 // Declarations for "irr" and "npv" are auto-loaded
@@ -13109,6 +13805,7 @@ dll << UnloadDLL();
 **Windows only**
 
 ```jsl
+
 
 If( Host is( "Windows" ),
 	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
@@ -13129,6 +13826,7 @@ If( Host is( "Windows" ),
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = Load Text File(
 	Get Path Variable( "sample_import_data" ) || "/animals.txt"
@@ -13152,6 +13850,7 @@ Word( 4, ex, " \!t\!n\!r" );
 
 ```jsl
 
+
 /*more examples, above*/
 Show( Loc( [1 0 1 0 1 0] ) );
 Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, 2 ) );
@@ -13163,6 +13862,7 @@ Show( Loc( {"A", 2, 3, 2, 5, 2, 4, [1 5]}, [1 5] ) );
 
 ```jsl
 
+
 Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 
 ```
@@ -13170,6 +13870,7 @@ Loc( [0, -2, 3, 0, 5, ., -7, ., 9] ) /*missing is not zero or non-zero*/;
 **Esempio 3**
 
 ```jsl
+
 
 Loc( [5, 7, 5, ., 5], 5 );
 
@@ -13179,6 +13880,7 @@ Loc( [5, 7, 5, ., 5], 5 );
 
 ```jsl
 
+
 Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 
 ```
@@ -13186,6 +13888,7 @@ Loc( [5, 7, 5, ., 5] == 5 ) /*[5,7,5, . ,5]==5   ==>   [1, 0, 1, ., 1]*/;
 **Esempio 5**
 
 ```jsl
+
 
 Loc( {"a", "fred", "b", "fred"}, "fred" );
 
@@ -13201,6 +13904,7 @@ Loc( {"a", "fred", "b", "fred"}, "fred" );
 
 ```jsl
 
+
 Loc Max( [11 22 33 22 33 11] );
 
 ```
@@ -13214,6 +13918,7 @@ Loc Max( [11 22 33 22 33 11] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Loc Min( [11 22 33 22 33 11] );
 
@@ -13229,6 +13934,7 @@ Loc Min( [11 22 33 22 33 11] );
 
 ```jsl
 
+
 Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 
 ```
@@ -13242,6 +13948,7 @@ Loc Nonmissing( [1 2 3, 4 . 6, 7 8 ., 8 7 6] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Show(
 	Loc Sorted( [11 22 33 44 55], [11 33 55] ),
@@ -13261,6 +13968,7 @@ Show(
 
 ```jsl
 
+
 Local( {a = 1, b},
 	b = 2;
 	a + b;
@@ -13277,6 +13985,7 @@ Local( {a = 1, b},
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 y = Local Here(
 	a = 1;
@@ -13296,6 +14005,7 @@ y = Local Here(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exalpha = 0.05;
 exdelta = 0.5;
@@ -13322,6 +14032,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -13347,6 +14058,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 Log( 256, 2 );
 
 ```
@@ -13360,6 +14072,7 @@ Log( 256, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 "captured:" || Log Capture(
 	For( i = 1, i <= 3, i++,
@@ -13380,6 +14093,7 @@ Log( 256, 2 );
 
 ```jsl
 
+
 Log10( 100 );
 
 ```
@@ -13394,6 +14108,7 @@ Log10( 100 );
 
 ```jsl
 
+
 Log1P( 1e-6 );
 
 ```
@@ -13407,6 +14122,7 @@ Log1P( 1e-6 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -13438,6 +14154,7 @@ New Window( "Example: LogGenGamma Density",
 
 ```jsl
 
+
 mu = 0;
 sigma = 1;
 lambda = 1;
@@ -13467,6 +14184,7 @@ New Window( "Example: LogGenGamma Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sigma = 1;
@@ -13515,6 +14233,7 @@ New Window( "Example: LogGenGamma Quantile",
 
 ```jsl
 
+
 Logist( 2 );
 
 ```
@@ -13529,6 +14248,7 @@ Logist( 2 );
 
 ```jsl
 
+
 Logist Percent( 10 );
 
 ```
@@ -13542,6 +14262,7 @@ Logist Percent( 10 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13571,6 +14292,7 @@ New Window( "Example: Logistic Density",
 
 ```jsl
 
+
 mu = 0;
 sig = .2;
 New Window( "Example: Logistic Distribution",
@@ -13597,6 +14319,7 @@ New Window( "Example: Logistic Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13636,6 +14359,7 @@ New Window( "Example: Logistic Quantile",
 
 ```jsl
 
+
 Logit( 0.95 );
 
 ```
@@ -13650,6 +14374,7 @@ Logit( 0.95 );
 
 ```jsl
 
+
 Logit Percent( 95.0 );
 
 ```
@@ -13663,6 +14388,7 @@ Logit Percent( 95.0 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13692,6 +14418,7 @@ New Window( "Example: Loglogistic Density",
 
 ```jsl
 
+
 mu = 0;
 sig = .2;
 New Window( "Example: Loglogistic Distribution",
@@ -13718,6 +14445,7 @@ New Window( "Example: Loglogistic Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sig = .2;
@@ -13757,6 +14485,7 @@ New Window( "Example: Loglogistic Quantile",
 
 ```jsl
 
+
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Density",
@@ -13785,6 +14514,7 @@ New Window( "Example: Lognormal Density",
 
 ```jsl
 
+
 mu = 0;
 sig = 1;
 New Window( "Example: Lognormal Distribution",
@@ -13811,6 +14541,7 @@ New Window( "Example: Lognormal Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 0;
 sig = 1;
@@ -13850,6 +14581,7 @@ New Window( "Example: Lognormal Quantile",
 
 ```jsl
 
+
 Long Date( Today() );
 
 ```
@@ -13861,6 +14593,7 @@ Long Date( Today() );
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 A = [2 0, 0 2];
 U = [2 4, 3 5];
@@ -13879,6 +14612,7 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ```jsl
 
+
 Lowercase( "CAFÉ #23" );
 
 ```
@@ -13892,6 +14626,7 @@ Lowercase( "CAFÉ #23" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 A = [5 -2 6, 2 4 0, 3 8 -4];
 b = [17, 19, 14];
@@ -13913,6 +14648,7 @@ Show( x, z );
 
 ```jsl
 
+
 Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class.jmp" );
 
 ```
@@ -13929,6 +14665,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ```jsl
 
+
 Main Menu( "Sample Index" );
 
 ```
@@ -13936,6 +14673,7 @@ Main Menu( "Sample Index" );
 **Esempio 2**
 
 ```jsl
+
 
 Main Menu( "Help:Sample Index" );
 
@@ -13953,6 +14691,7 @@ Main Menu( "Help:Sample Index" );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "KFold Validation",
 	"Numeric",
@@ -13965,6 +14704,7 @@ dt << New Column( "KFold Validation",
 **Esempio 2**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Stratified KFold",
@@ -13989,6 +14729,7 @@ dt << New Column( "Stratified KFold",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -14003,6 +14744,7 @@ dt << New Column( "Validation",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << New Column( "Validation",
 	"Numeric",
@@ -14016,6 +14758,7 @@ dt << New Column( "Validation",
 **Esempio 3**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Functional Data/Weekly Weather Data.jmp" );
 dt << New Column( "Validation",
@@ -14043,6 +14786,7 @@ dt << New Column( "Validation",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 grid = 50;
 rmax = 0/*zero for smooth*/;
@@ -14096,6 +14840,7 @@ g << Set Y Axis(
 
 ```jsl
 
+
 Map Value( "celry", {"celry", "celery"} );
 
 ```
@@ -14103,6 +14848,7 @@ Map Value( "celry", {"celry", "celery"} );
 **Esempio 2**
 
 ```jsl
+
 
 Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
@@ -14112,6 +14858,7 @@ Map Value( "carrot", {"celry", "celery"}, Unmatched( "not found" ) );
 
 ```jsl
 
+
 Map Value( 10, {10, "celery", 11, "banana"} );
 
 ```
@@ -14119,6 +14866,7 @@ Map Value( 10, {10, "celery", 11, "banana"} );
 **Esempio 4**
 
 ```jsl
+
 
 Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
@@ -14134,6 +14882,7 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ```jsl
 
+
 New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 50] ) ) );
 
 ```
@@ -14147,6 +14896,7 @@ New Window( "Example", Graph Box( Marker( Marker State( 3 ), [11 44 77], [75 25 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
@@ -14167,6 +14917,7 @@ Marker Of();
 **Esempio 1**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = Column( "height" ) << Get Values;
@@ -14192,6 +14943,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -14210,6 +14962,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
 yy = [2 3 4 5 6];
@@ -14227,6 +14980,7 @@ New Window( "Marker Seg Example",
 **Esempio 4**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
@@ -14249,6 +15003,7 @@ New Window( "Marker Seg Example",
 **Esempio 5**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 xx = [1 2 3 4 5];
@@ -14281,6 +15036,7 @@ New Window( "Marker Seg Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Marker Size( 5 );
@@ -14300,6 +15056,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Marker State( 5 );
 Marker Of( Row State( 3 ) );
@@ -14316,6 +15073,7 @@ Marker Of( Row State( 3 ) );
 
 ```jsl
 
+
 Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -14330,6 +15088,7 @@ Match( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```jsl
 
+
 MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 
 ```
@@ -14343,6 +15102,7 @@ MatchMZ( Year( Today() ), 2013, "snake", 2014, "horse", 2015, "goat", "other" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 MATLABConnection = MATLAB Connect();
 x = MatlabConnection << Is Connected;
@@ -14359,6 +15119,7 @@ Show( x );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 MATLAB Init( Echo( true ) );
@@ -14384,6 +15145,7 @@ MATLAB Term();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 MATLAB Init();
 a = "abcdef";
@@ -14415,6 +15177,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 x1 = [1, 2, 3];
 MATLAB Send( x1 );
@@ -14439,6 +15202,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 ml = MATLAB Submit( "\[
 plot(1:10)
@@ -14461,6 +15225,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 version = MATLAB Get Version();
 Show( version );
@@ -14477,6 +15242,7 @@ MATLAB Term();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 MATLAB Init();
 MATLAB Submit( "\[
@@ -14498,6 +15264,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 x = MATLAB Is Connected();
 Show( x );
@@ -14514,6 +15281,7 @@ MATLAB Term();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 MATLAB Init();
 MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );
@@ -14532,6 +15300,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 // if .mat file contained: x = 40; y = 'hello';
 vars = MATLAB Load( "path/to/.mat" );
@@ -14549,6 +15318,7 @@ MATLAB Term();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 MATLAB Init();
 x = [1, 2, 3];
@@ -14572,6 +15342,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );
 MATLAB Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -14590,6 +15361,7 @@ MATLAB Term();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 MATLAB Init();
 MATLAB Submit( "\[
@@ -14613,6 +15385,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 MATLAB Submit File( "file containing MATLAB source.m" );
 MATLAB Term();
@@ -14629,6 +15402,7 @@ MATLAB Term();
 
 ```jsl
 
+
 MATLAB Init();
 MATLAB Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog';
@@ -14641,7 +15415,7 @@ MATLAB Term();
 
 ### Matrix
 
-**Sintassi:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} ) y = Matrix( {x1, ..., xn} ) y = Matrix( n, m )
+**Sintassi:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
 
 **Descrizione:** Costruisce una matrice n-per-m. Se si specifica un elenco di n elenchi ognuno contenente m valori di riga, la matrice è formata concatenando verticalmente gli elenchi valutati. Se si specifica un singolo elenco di n elementi, il valore di ritorno è un vettore di colonna n-per-1. Se si specificano due argomenti interi, il valore di ritorno è una matrice di zeri contenente n righe e m colonne.
 
@@ -14651,6 +15425,7 @@ MATLAB Term();
 
 ```jsl
 
+
 Matrix( {{11, 22, 33}, {44, 55, 66}} );
 
 ```
@@ -14658,6 +15433,7 @@ Matrix( {{11, 22, 33}, {44, 55, 66}} );
 **Esempio 2**
 
 ```jsl
+
 
 Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
@@ -14667,6 +15443,7 @@ Matrix( {{[1 2 3], 4, 5, 6, 7, 8, 9}} );
 
 ```jsl
 
+
 Matrix( {2, 3 + 7} );
 
 ```
@@ -14674,6 +15451,7 @@ Matrix( {2, 3 + 7} );
 **Esempio 4**
 
 ```jsl
+
 
 Matrix( 2, 3 );
 
@@ -14689,6 +15467,7 @@ Matrix( 2, 3 );
 
 ```jsl
 
+
 New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "Second" ) ) );
 
 ```
@@ -14702,6 +15481,7 @@ New Window( "Example", Matrix Box( [11 22 33, 44 55 66], <<RowNames( "First", "S
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
@@ -14725,6 +15505,7 @@ Show( exMatM3 );
 
 ```jsl
 
+
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatB = [1 2, 1 2, 1 2];
 exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
@@ -14741,6 +15522,7 @@ exMatM2 = Matrix Mult BLAS( exMatA, exMatB );
 
 ```jsl
 
+
 Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 
 ```
@@ -14754,6 +15536,7 @@ Matrix Rank( [1 0 0, 0 1 0, 0 1 0] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
@@ -14769,13 +15552,14 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ```jsl
 
+
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
 
 ### Maximize
 
-**Sintassi:** Maximize( expr, {x1, x2, ...} ); Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Sintassi:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Descrizione:** Trova valori per gli argomenti della funzione, specificati nell&apos;elenco {x1, x2, ...}, che massimizzano l&apos;espressione expr. È possibile specificare i limiti inferiori e superiori per ciascun argomento tra parentesi dopo il nome dell&apos;argomento. Se expr non è una funzione concava, Maximize potrebbe trovare un massimo locale invece del massimo globale. Se è un problema, provare più valori di partenza. Inoltre, Maximize funziona meglio per le funzioni con una derivata seconda continua. Ulteriori argomenti per la funzione Maximize consentono di impostare il numero massimo di interazioni, la tolleranza per la convergenza e di visualizzare ulteriori dettagli sull&apos;ottimizzazione. Per ulteriori informazioni sugli argomenti opzionali. fare clic sul pulsante della guida dell&apos;argomento.
 
@@ -14784,6 +15568,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 **Esempio 1**
 
 ```jsl
+
 
 /*Simple example*/ 
 x = 0;
@@ -14796,6 +15581,7 @@ Eval List( {x, y, maxf} );
 **Esempio 2**
 
 ```jsl
+
 
 /*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
 x = [3 4 5]; /* observed values*/ 
@@ -14817,6 +15603,7 @@ sigSq = 1;/*initial values*/
 **Esempio 3**
 
 ```jsl
+
 
 /*Simple example with all optional arguments*/ 
 x = 0;
@@ -14841,6 +15628,7 @@ y = 0;
 
 ```jsl
 
+
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ```
@@ -14854,6 +15642,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 MDYHMS( Today() );
 
@@ -14869,6 +15658,7 @@ MDYHMS( Today() );
 
 ```jsl
 
+
 Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```
@@ -14883,6 +15673,7 @@ Eval List( {Mean( Pi(), e() ), Mean( [33 44 22 20 30] )} );
 
 ```jsl
 
+
 Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 
 ```
@@ -14896,6 +15687,7 @@ Median( [1.2, 1.5, 10, 25, 31, 40, 50, 99, 1000, 5000, 25000, 100000] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -14950,13 +15742,14 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
 
 ### Minimize
 
-**Sintassi:** Minimize( expr, {x1, x2, ...} ); Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Sintassi:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Descrizione:** Trova valori per gli argomenti della funzione, specificati nell&apos;elenco {x1, x2, ...}, che riducono al minimo l&apos;espressione expr. È possibile specificare i limiti inferiori e superiori per ciascun argomento tra parentesi dopo il nome dell&apos;argomento. Se expr non è una funzione convessa, Minimize potrebbe trovare un minimo locale invece del minimo globale. Se è un problema, provare più valori di partenza. Inoltre, Minimize funziona meglio per le funzioni con una derivata seconda continua. Ulteriori argomenti per la funzione Minimize consentono di impostare il numero massimo di interazioni, la tolleranza per la convergenza e di visualizzare ulteriori dettagli sull&apos;ottimizzazione. Per ulteriori informazioni sugli argomenti facoltativi, fare clic sul pulsante della guida dell&apos;argomento.
 
@@ -14965,6 +15758,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 **Esempio 1**
 
 ```jsl
+
 
 /*Simple Example*/
 x = 0;
@@ -14977,6 +15771,7 @@ Eval List( {x, y, minFun} );
 **Esempio 2**
 
 ```jsl
+
 
 /*Nonlinear Sums of Squares Example*/
 x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
@@ -14999,6 +15794,7 @@ b2 = 5;
 
 ```jsl
 
+
 /*Simple example with some optional arguments*/
 x = 0;
 y = 0;
@@ -15015,6 +15811,7 @@ y = 0;
 **Esempio 4**
 
 ```jsl
+
 
 /*Example with gradient, hessian, and method(nr) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
@@ -15055,6 +15852,7 @@ Minimize(
 
 ```jsl
 
+
 /*Example with usNumericDeriv and method(sr1) options*/
 xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
 yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
@@ -15084,6 +15882,7 @@ b2 = 5;
 
 ```jsl
 
+
 Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```
@@ -15097,6 +15896,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 -Pi();
 
@@ -15112,6 +15912,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ```jsl
 
+
 Minute( Today() );
 
 ```
@@ -15125,6 +15926,7 @@ Minute( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Modulo( 10, 3 );
 
@@ -15140,19 +15942,21 @@ Modulo( 10, 3 );
 
 ```jsl
 
+
 Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**Sintassi:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il tasso di ritorno interno modificato per una serie di flussi di cassa periodici prendendo in considerazione sia il costo dell&apos;investimento sia l&apos;interesse ricevuto sul reinvestimento di cassa. Equivalente alla funzione MIRR in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
 Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
@@ -15169,6 +15973,7 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```jsl
 
+
 Modulo( 10, 3 );
 
 ```
@@ -15183,6 +15988,7 @@ Modulo( 10, 3 );
 
 ```jsl
 
+
 Month( Today() );
 
 ```
@@ -15196,6 +16002,7 @@ Month( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	MouseBox(/*first sibling*/Text Box( "drag from here" ),
@@ -15248,6 +16055,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	exx = 20;
 	exy = 50;,
@@ -15273,6 +16081,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Delete Directory( "$TEMP/subB" );
 Delete Directory( "$TEMP/Loss Function Templates" );
 rc0 = Copy Directory( "$SAMPLE_DATA/Loss Function Templates", "$TEMP" );
@@ -15296,6 +16105,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 If( File Exists( "$TEMP/y.jmp" ),
 	Delete File( "$TEMP/y.jmp" )
@@ -15323,6 +16133,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 report = dt << Run Script( "Bivariate" );
                               
@@ -15335,6 +16146,7 @@ Move to Project( destination( project ), windows( {report} ) );
 **Esempio 2**
 
 ```jsl
+
 
 project = Open( "$SAMPLE_PROJECTS/Sports.jmpprj" );
 Move to Project( Source( project ) );
@@ -15351,6 +16163,7 @@ project << Close Window();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Eval List(
 	{Moving Average( [1 2 1 2 3 4 9 9 9 9 9], 1, 3 ),
@@ -15374,6 +16187,7 @@ Eval List(
 ```jsl
 
 
+
 mfi = Multiple File Import();
 mfi << Set Folder( "$SAMPLE_IMPORT_DATA" );
 mfi << Set Name Filter( "*.txt" );
@@ -15385,6 +16199,7 @@ tables = mfi << Import Data();
 **Esempio interattivo**
 
 ```jsl
+
 
 // use the save-script-to-script-window button 
 // in the MFI dialog to see more messages
@@ -15407,6 +16222,7 @@ Multiple File Import(
 
 ```jsl
 
+
 2 * Pi();
 
 ```
@@ -15420,6 +16236,7 @@ Multiple File Import(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = 3;
 ex *= 2;
@@ -15436,6 +16253,7 @@ ex;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mat = [0.430735257211985 -0.935632420013493 . 0.424649913158299,
 . -0.687720061441453 0.29665732536624 -1.94898001941576,
@@ -15461,6 +16279,7 @@ Print( mat );
 
 ```jsl
 
+
 Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "March" )} );
 
 ```
@@ -15474,6 +16293,7 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 N Arg( Expr( Sum( a, b, c ) ) );
 
@@ -15491,6 +16311,7 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
+
 // See Example 2 for the deprecated N Arg Expr() equivalent
 N Arg( Expr( Sum( a, b, c ) ) );
 
@@ -15499,6 +16320,7 @@ N Arg( Expr( Sum( a, b, c ) ) );
 **Esempio 2**
 
 ```jsl
+
 
 // Deprecated
 N Arg Expr( Sum( a, b, c ) );
@@ -15515,6 +16337,7 @@ N Arg Expr( Sum( a, b, c ) );
 
 ```jsl
 
+
 N Choose K( 5, 3 );
 
 ```
@@ -15529,6 +16352,7 @@ N Choose K( 5, 3 );
 
 ```jsl
 
+
 N Col( [11 22, 33 44] );
 
 ```
@@ -15542,6 +16366,7 @@ N Col( [11 22, 33 44] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 N Col( [11 22, 33 44] );
 
@@ -15559,6 +16384,7 @@ N Col( [11 22, 33 44] );
 
 ```jsl
 
+
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
@@ -15567,6 +16393,7 @@ N Items( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
+
 N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -15574,6 +16401,7 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 **Esempio 3**
 
 ```jsl
+
 
 New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
 N Items( hlist );
@@ -15590,6 +16418,7 @@ N Items( hlist );
 
 ```jsl
 
+
 N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```
@@ -15604,6 +16433,7 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ```jsl
 
+
 N Row( [11 22, 33 44] );
 
 ```
@@ -15617,6 +16447,7 @@ N Row( [11 22, 33 44] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 N Rows( [11 22, 33 44] );
 
@@ -15634,6 +16465,7 @@ N Rows( [11 22, 33 44] );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 N Table();
 
@@ -15642,6 +16474,7 @@ N Table();
 **Esempio 2**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Open( "$SAMPLE_DATA/Cars.jmp" );
@@ -15664,6 +16497,7 @@ d;
 
 ```jsl
 
+
 Name( "taxable income(2011)" ) = 456000;
 tax = .25;
 Print( tax * Name( "taxable income(2011)" ) );
@@ -15680,6 +16514,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ```jsl
 
+
 ex = Expr( 1 + 2 );
 Eval List( {ex, Name Expr( ex )} );
 
@@ -15695,6 +16530,7 @@ Eval List( {ex, Name Expr( ex )} );
 
 ```jsl
 
+
 /* Variable x will be stored in the Here: namespace by default */x = 1;
 Show( x );
 
@@ -15709,6 +16545,7 @@ Show( x );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Namespace(
 	"complex",
@@ -15752,6 +16589,7 @@ ns << Delete;
 
 ```jsl
 
+
 ns = New Namespace(
 	"complex",
 	{
@@ -15794,6 +16632,7 @@ ns << Delete;
 
 ```jsl
 
+
 Print( NChooseK Matrix( 5, 3 ) );
 
 ```
@@ -15807,6 +16646,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exnbdp = 0.5;
 exnbdn = 10;
@@ -15846,6 +16686,7 @@ New Window( "Example: Neg Binomial Distribution",
 
 ```jsl
 
+
 exnbpp = 0.5;
 exnbpn = 10;
 New Window( "Example: Neg Binomial Probability",
@@ -15874,6 +16715,7 @@ New Window( "Example: Neg Binomial Probability",
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 lambda = 20;
 sigma = 2;
@@ -15910,6 +16752,7 @@ New Window( "Example: Negative Binomial Distribution",
 
 ```jsl
 
+
 lambda = 5;
 sigma = 2;
 New Window( "Poisson and Negative Binomial",
@@ -15942,6 +16785,7 @@ New Window( "Poisson and Negative Binomial",
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 qexpl = 20;
 qexps = 2;
@@ -15981,13 +16825,14 @@ New Window( "Example: Negative Binomial Quantile",
 
 ### Net Present Value
 
-**Sintassi:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il valore attuale netto di un investimento mediante un tasso di sconto e una serie di pagamenti (valori negativi) e reddito (valori positivi) futuri. L&apos;argomento values è una matrice monodimensionale. Equivalente alla funzione NPV in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Net Present Value( .05, [-10000, 1000, 900, 9500] );
 Net Present Value( .05, -10000, 1000, 900, 9500 );
@@ -16003,6 +16848,7 @@ Net Present Value( .05, -10000, 1000, 900, 9500 );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 echo = [=> ];
@@ -16022,6 +16868,7 @@ action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 cas = Current CAS Connection();
@@ -16049,6 +16896,7 @@ cas << Submit( action );
 ```jsl
 
 
+
 url = "http://myCasURL";
 cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
@@ -16066,6 +16914,7 @@ cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 100 ) );
 
@@ -16074,6 +16923,7 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 **Simile**
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "like name", Like( :name ) );
@@ -16089,6 +16939,7 @@ New Column( "like name", Like( :name ) );
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Aircraft Incidents.jmp" );
 New Column by Text Matching(
@@ -16112,6 +16963,7 @@ New Column by Text Matching(
 
 ```jsl
 
+
 myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
 
 ```
@@ -16119,6 +16971,7 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 **Esempio 2**
 
 ```jsl
+
 
 /*Create a custom function that can be used as a format*/
 Add Custom Functions(
@@ -16138,6 +16991,7 @@ Add Custom Functions(
 **Esempio 3**
 
 ```jsl
+
 
 /*Create a custom function that can be used as a transform*/
 Add Custom Functions(
@@ -16167,6 +17021,7 @@ Add Custom Functions(
 ```jsl
 
 
+
 // Create a data connector from scratch
 dc = New Data Connector( Type( "ODBC" ), Database( "foo" ), Server( "bar.example.com" ) );
 Show( dc << Get( Database ) );  // Overridden database value "foo"
@@ -16180,6 +17035,7 @@ Show( dc << Get( Driver ) );  // New driver value "SQL Server"
 **Esempio 2**
 
 ```jsl
+
 
 
 // Launch Query Builder from a SQL Server data source
@@ -16204,6 +17060,7 @@ New SQL Query( Connection( dc ) ) << Modify;
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 
 nx = 20; // data is this size
@@ -16251,6 +17108,7 @@ New Window( "small and big",
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 
 getSentiment = Function( {text},
@@ -16307,7 +17165,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ### New Image
 
-**Sintassi:** img = New Image() img = New Image( width, height ) img = New Image( pathname ) img = New Image( picture ) img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Sintassi:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Descrizione:** Restituisce una nuova immagine che potrà quindi essere modificata mediante comandi JSL. Se viene specificato un percorso a un file di immagine esistente, il file deve essere in formato .JPG, .PNG, .GIF, .BMP o .TIF.
 
@@ -16316,6 +17174,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 **Esempio 1**
 
 ```jsl
+
 
 image = New Image( "$SAMPLE_IMAGES/windmap.png" );
 New Window( "new image", image );
@@ -16326,6 +17185,7 @@ New Window( "new image", image );
 
 ```jsl
 
+
 pic = Open( "$SAMPLE_IMAGES/windmap.png", png );
 image2 = New Image( pic );
 New Window( "new image", image2 );
@@ -16335,6 +17195,7 @@ New Window( "new image", image2 );
 **Esempio 3**
 
 ```jsl
+
 
 image3 = New Image();
 mat = J( 256, 256 );
@@ -16359,6 +17220,7 @@ New Window( "image", image3 );
 **Esempio 1**
 
 ```jsl
+
 
 /* Import actual (raw) data */
 /* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
@@ -16385,6 +17247,7 @@ importer << Run;
 **Esempio 2**
 
 ```jsl
+
 
 /* Import interpolated data */
 /* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
@@ -16421,6 +17284,7 @@ importer << Run;
 
 ```jsl
 
+
 jmplive = New JMP Live();
 
 ```
@@ -16429,6 +17293,7 @@ jmplive = New JMP Live();
 
 ```jsl
 
+
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 
 ```
@@ -16436,6 +17301,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( No ) );
 **Esempio 3**
 
 ```jsl
+
 
 jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
@@ -16463,6 +17329,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ```jsl
 
+
 bc = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dist = bc << Run Script( "Distribution" );
 
@@ -16489,6 +17356,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
+
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -16512,6 +17380,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 
 ```jsl
 
+
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
 	Parent Folder( "~" ),
@@ -16528,6 +17397,7 @@ jmpliveresult = liveconnection << Publish( content, Folder( folder ) );
 **Esempio 4**
 
 ```jsl
+
 
 liveconnection = New JMP Live();
 jmpliveresult = liveconnection << Create Folder(
@@ -16555,6 +17425,7 @@ jmpliveresult = liveconnection << Publish( imageContent, Folder( folder ) );
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 
 requests = New Multi HTTP Request();
@@ -16593,6 +17464,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ns = New Namespace(
 	"complex",
@@ -16634,6 +17506,7 @@ ns << Delete;
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 
 /*
@@ -16685,6 +17558,7 @@ data = request << Send;
 
 ```jsl
 
+
 token = New OAuth2 Token(
 	Account( "jmpgoogldev@gmail.com" ),
 	Client ID( "test" ),
@@ -16704,6 +17578,7 @@ token = New OAuth2 Token(
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -16760,6 +17635,7 @@ Delete Classes( "complex" );
 
 ```jsl
 
+
 /* Import raw data */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -16786,6 +17662,7 @@ importer << Run;
 
 ```jsl
 
+
 /* Import plot data using Kerberos for authentication */
 client = New PI Client(
 	URL( "https://myserver.com/piwebapi" ),
@@ -16806,6 +17683,7 @@ importer << Run;
 **Esempio 3**
 
 ```jsl
+
 
 /* Import interpolated data from a server that does not require authentication */
 client = New PI Client(
@@ -16839,6 +17717,7 @@ importer << Run;
 
 ```jsl
 
+
 project = New Project();
 
 ```
@@ -16846,6 +17725,7 @@ project = New Project();
 **Esempio 2**
 
 ```jsl
+
 
 project = New Project(
 	Run Script(
@@ -16859,6 +17739,7 @@ project = New Project(
 **Esempio 3**
 
 ```jsl
+
 
 project = New Project(
 	Run Script(
@@ -16874,6 +17755,7 @@ project = New Project(
 **Esempio 4**
 
 ```jsl
+
 
 project = New Project(
 	Set Bookmarks(
@@ -16892,6 +17774,7 @@ project = New Project(
 **Esempio 5**
 
 ```jsl
+
 
 project = New Project(
 	Run Script( Open( "$SAMPLE_SCRIPTS/demoCorr.jsl", Set Window ID( "demoCorr" ), Script ) ),
@@ -16921,6 +17804,7 @@ project = New Project(
 ```jsl
 
 
+
 obj = New SQL Query(
 	Connection( "ODBC:DSN=mydsn" ),
 	Select(),
@@ -16938,6 +17822,7 @@ obj = New SQL Query(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Table( "Little Class",
 	Add Rows( 3 ),
@@ -16957,6 +17842,7 @@ New Table( "Little Class",
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 
 Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
@@ -16999,6 +17885,7 @@ If( !Is Empty( file ),
 
 ```jsl
 
+
 // Compare settings for toolbars and menus
 // Suppress AutoHide is Windows only
 g = Graph Box(
@@ -17023,6 +17910,7 @@ New Window( "No menu, no toolbars", Show Menu( 0 ), Show Toolbars( 0 ), g );
 ```jsl
 
 
+
 ex = New Window( "Dialog example",
 	<<Type( "Dialog" ),
 	V List Box(
@@ -17038,6 +17926,7 @@ ex = New Window( "Dialog example",
 **Finestra di dialogo modale**
 
 ```jsl
+
 
 
 ex = New Window( "Modal Dialog example",
@@ -17078,6 +17967,7 @@ If(
 ```jsl
 
 
+
 g = Graph Box(
 	Frame Size( 300, 300 ),
 	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
@@ -17096,6 +17986,7 @@ New Window( "picture", Outline Box( "picture size: " || Char( psize ), p ) );
 
 ```jsl
 
+
 g = Graph Box(
 	Frame Size( 300, 300 ),
 	Marker( Marker State( 3 ), [11 44 77], [75 25 50] );
@@ -17110,6 +18001,7 @@ New Window( "My Window's Title", g );
 
 ```jsl
 
+
 script = JSL Quote(Names Default To Here(1);
 dt=Open("$SAMPLE_DATA/Big Class.jmp");
 dt << Run Script("Bivariate");
@@ -17121,6 +18013,7 @@ ex = New Window( "Script example", <<Type( "Script" ), script );
 **Script Python**
 
 ```jsl
+
 
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
@@ -17138,6 +18031,7 @@ ex = New Window( "Script example", <<Type( "Script" ), <<Language( "Python" ), p
 
 ```jsl
 
+
 Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ```
@@ -17151,6 +18045,7 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -17179,6 +18074,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example: Normal Density",
 	y = Graph Box(
 		Y Scale( 0, 0.45 ),
@@ -17200,6 +18096,7 @@ New Window( "Example: Normal Density",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example: Normal Distribution",
 	y = Graph Box(
@@ -17223,6 +18120,7 @@ New Window( "Example: Normal Distribution",
 
 ```jsl
 
+
 Normal Integrate(
 	J( 3, 1, 0 ),
 	Identity( 3 ),
@@ -17243,6 +18141,7 @@ Normal Integrate(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example: Normal Log CDistribution",
 	nlcdiy = Graph Box(
@@ -17266,6 +18165,7 @@ New Window( "Example: Normal Log CDistribution",
 
 ```jsl
 
+
 New Window( "Example: Normal Log Density",
 	nldey = Graph Box(
 		Y Scale( -9, 0.05 ),
@@ -17288,6 +18188,7 @@ New Window( "Example: Normal Log Density",
 
 ```jsl
 
+
 New Window( "Example: Normal Log Distribution",
 	nldiy = Graph Box(
 		Y Scale( -10, 0.05 ),
@@ -17309,6 +18210,7 @@ New Window( "Example: Normal Log Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu1 = -2;
 mu2 = 2;
@@ -17358,6 +18260,7 @@ New Window( "Univariate Normal Mixture Density",
 
 ```jsl
 
+
 mu1 = -2;
 mu2 = 2;
 sigma1 = 1;
@@ -17399,6 +18302,7 @@ New Window( "Univariate Normal Mixture Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 extqdf = 1;
 extqqq = 0.5;
@@ -17447,6 +18351,7 @@ New Window( "Example: Normal Mixture Quantile",
 
 ```jsl
 
+
 Normal Quantile( 0.9 );
 
 ```
@@ -17460,6 +18365,7 @@ Normal Quantile( 0.9 );
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 n = 15;
 New Window( "Example: Tolerance Factor()",
@@ -17487,6 +18393,7 @@ New Window( "Example: Tolerance Factor()",
 
 ```jsl
 
+
 !(1 < 2);
 
 ```
@@ -17500,6 +18407,7 @@ New Window( "Example: Tolerance Factor()",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 1 != 2 != 1;
 
@@ -17523,6 +18431,7 @@ New Window( "Example: Tolerance Factor()",
 
 ```jsl
 
+
 Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```
@@ -17539,6 +18448,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ```jsl
 
+
 Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 
 ```
@@ -17546,6 +18456,7 @@ Show( Num( "3.1e6" ), Num( "1989-10-04" ), Num( "5%" ), Num( "£23" ) );
 **Esempio 2**
 
 ```jsl
+
 
 Show(
 	Num( "3.1e6", <<Restrict ),
@@ -17566,6 +18477,7 @@ Show(
 
 ```jsl
 
+
 f = Function( {x, y}, x ^ 2 + y );
 Num Deriv( f( 2, 1 ) );
 Num Deriv( f( 2, 1 ), 2 );
@@ -17582,6 +18494,7 @@ Num Deriv( f( 2, 1 ), 2 );
 
 ```jsl
 
+
 f = Function( {x}, x ^ 3 );
 Num Deriv2( f( 2 ) );
 
@@ -17597,6 +18510,7 @@ Num Deriv2( f( 2 ) );
 
 ```jsl
 
+
 Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 
 ```
@@ -17610,6 +18524,7 @@ Eval List( {Number( 12, ., 11, 0, -42 ), Number( [33 . -42 . 0 . -30] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -17633,6 +18548,7 @@ New Window( "Example",
 
 ```jsl
 
+
 x = y = z = 0;
 New Window( "Example",
 	Modal,
@@ -17652,6 +18568,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example", neb = Number Edit Box( 5 ) );
 x = neb << get;
 
@@ -17666,6 +18583,7 @@ x = neb << get;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Number of Periods( .05 / 12, -2000, 100000 );
 
@@ -17683,6 +18601,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
+
 /* Installing Add-In:
 Open( Add-In to open,
     <Check For Updates( "never" | "startup" | "always")>, // "always" will check for updates at startup and while jmp is running
@@ -17694,6 +18613,7 @@ Open( "$downloads\test.jmpaddin", Check For Updates( "always" ), Update Prompt( 
 **Altro**
 
 ```jsl
+
 
 /* Other options:
    SAS File imported as a data table:
@@ -17754,6 +18674,7 @@ Open(
 
 ```jsl
 
+
 /* Excel files imported into a data table:
    Open( excelFilePath,
      <Worksheets( "sheet name" | {"sheet name", "sheet name", ...} | "n" )>,
@@ -17793,6 +18714,7 @@ dt = Open(
 
 ```jsl
 
+
 /* Open of folder launches file browser */
 Open( "$SAMPLE_DATA" );
 
@@ -17801,6 +18723,7 @@ Open( "$SAMPLE_DATA" );
 **Immagine**
 
 ```jsl
+
 
 /* Picture file imported as a picture object */
 pic = Open( "$SAMPLE_IMAGES/tile.jpg", jpg );
@@ -17811,6 +18734,7 @@ New Window( "Picture", Outline Box( "Picture", Picture Box( pic ) ) );
 **PDF**
 
 ```jsl
+
 
 /* PDF file imported as one or multiple data tables
 open(pdfFilePath,
@@ -17834,6 +18758,7 @@ pdftable2 = Open(
 
 ```jsl
 
+
 /* Data tables, other JMP files, external files:
    Open( filePath,
      <Invisible | Private>,
@@ -17856,6 +18781,7 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 **Testo**
 
 ```jsl
+
 
 /* Text files imported into a data table:
    Open( textFilePath,
@@ -17895,6 +18821,7 @@ dt = Open( "$SAMPLE_IMPORT_DATA/EOF_comma.txt", Table Contains Column Headers( 0
 
 ```jsl
 
+
 Open Database(
 	"DSN=dBASE Files;DBQ=C:/Program Files/JMP/JMPPRO/19/Samples/Import Data/;",
 	"SELECT HEIGHT, WEIGHT FROM Bigclass",
@@ -17912,6 +18839,7 @@ Open Database(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exfeed = Open Datafeed(/*Connect( Port( "com3" ), Baud( 4800 ), DataBits( 8 ) ),*/
 	Set Script(
@@ -17938,6 +18866,7 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```jsl
 
+
 Open Help( "Help" );
 
 ```
@@ -17945,6 +18874,7 @@ Open Help( "Help" );
 **Esempio 2**
 
 ```jsl
+
 
 Open Help(
 	"Scripting Index",
@@ -17957,6 +18887,7 @@ Open Help(
 **Esempio 3**
 
 ```jsl
+
 
 Open Help(
 	"Scripting Index",
@@ -17982,6 +18913,7 @@ Open Help(
 
 ```jsl
 
+
 Open Log();
 Show( Is Log Open() );
 
@@ -17990,6 +18922,7 @@ Show( Is Log Open() );
 **Esempio 2**
 
 ```jsl
+
 
 /* Bring Log Windows to the Top */
 Open Log( 1 );
@@ -18007,6 +18940,7 @@ Show( Is Log Open() );
 
 ```jsl
 
+
 1 < 2 | 3 < 2;
 
 ```
@@ -18020,6 +18954,7 @@ Show( Is Log Open() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 OrMZ( 1 < 2, 3 < 2 );
 
@@ -18035,6 +18970,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ```jsl
 
+
 Ortho( [1 1, 1 -1] );
 
 ```
@@ -18049,6 +18985,7 @@ Ortho( [1 1, 1 -1] );
 
 ```jsl
 
+
 Ortho Poly( 1 :: 10, 2 );
 
 ```
@@ -18062,6 +18999,7 @@ Ortho Poly( 1 :: 10, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -18081,6 +19019,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -18104,6 +19043,7 @@ New Window( "Example",
 
 ```jsl
 
+
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2 );
 P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 
@@ -18118,6 +19058,7 @@ P Spline Coef( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3, 7] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -18147,6 +19088,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -18168,6 +19110,7 @@ New Window( "Example",
 
 ```jsl
 
+
 m = J( 3, 2, -1 );
 If( Parallel Assign( {/*no locals */ }, m[a/* 1,2,3 */, b/* 1,2 */ ] = a * a + b ) == 0,
 	Throw( "thread failed" )
@@ -18186,6 +19129,7 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ```jsl
 
+
 Parameter( {a = 1}, a + 1 );
 
 ```
@@ -18200,13 +19144,14 @@ Parameter( {a = 1}, a + 1 );
 
 ```jsl
 
+
 Parse( "x+y" );
 
 ```
 
 ### Parse Date
 
-**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; ) dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
+**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descrizione:** Analizza una stringa di un dato formato. Se si tratta di un formato di data e ora, il valore è espresso come se fosse racchiuso in Come data(), restituendo la data nel formato ggmmmaaaa. L&apos;opzione facoltativa <<Restrict utilizzata con il formatString "migliore" consente solo la conversione usando formati interi, decimali e scientifici.
 
@@ -18216,6 +19161,7 @@ Parse( "x+y" );
 
 ```jsl
 
+
 Informat( "07152000", "MMDDYYYY" );
 
 ```
@@ -18223,6 +19169,7 @@ Informat( "07152000", "MMDDYYYY" );
 **Esempio 2**
 
 ```jsl
+
 
 Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
@@ -18232,6 +19179,7 @@ Informat( "07.15.2000", "Format Pattern", "<MM>.<DD>.<YYYY>" );
 
 ```jsl
 
+
 Informat( "86.8287° W", "Longitude DDD" );
 
 ```
@@ -18240,6 +19188,7 @@ Informat( "86.8287° W", "Longitude DDD" );
 
 ```jsl
 
+
 Informat( "123.45%", "Percent" );
 
 ```
@@ -18247,6 +19196,7 @@ Informat( "123.45%", "Percent" );
 **Esempio 5**
 
 ```jsl
+
 
 Show(
 	Informat( "1.23e4", "Best" ),
@@ -18267,6 +19217,7 @@ Show(
 
 ```jsl
 
+
 l = Parse JSON(
 	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
 );
@@ -18286,6 +19237,7 @@ Show( l );
 
 ```jsl
 
+
 /*See example two for more details*/
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -18302,6 +19254,7 @@ Parse XML( ex,
 **Esempio 2**
 
 ```jsl
+
 
 
 doc =
@@ -18362,6 +19315,7 @@ Show( docname, doctext, records, NestLevel );
 
 ```jsl
 
+
 source = "xxxxx";
 n = 0;
 pattern = Pat Succeed() + Pat Arb() >> xs + Expr(
@@ -18386,6 +19340,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
+
 Pat Match(
 	"123456789",
 	((Pat Pos( 2 ) + "1") | (Pat Pos( 1 ) + "2") | (Pat Pos( 0 ) + "3")) >> result
@@ -18404,6 +19359,7 @@ result;
 
 ```jsl
 
+
 operators = Pat Any( "*+-/" );
 text = "abc+def";
 Pat Match( text, operators >> op );
@@ -18420,6 +19376,7 @@ op;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Pat Match(
 	"123nonnumeric456",
@@ -18439,6 +19396,7 @@ result;
 
 ```jsl
 
+
 Pat Match(
 	"xyz aaaaabbbbbb@ccc no c is matched because reluctant",
 	Pat Arb No( "a" ) >> a + Pat Arb No( "b" ) >> b + "@" + Pat Arb No( "c" ) >> c
@@ -18457,6 +19415,7 @@ Pat Match(
 
 ```jsl
 
+
 Pat Match( "123456789", Pat Len( 2 ) + Pat At( result ) );
 result;
 
@@ -18471,6 +19430,7 @@ result;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 b = "- ";
 Pat Match( "one two three-", Pat Repeat( Pat Break( b ) >> word + Pat Any( b ) ) );
@@ -18487,6 +19447,7 @@ word;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 num = Pat Break( "," );
 sep = ",";
@@ -18505,6 +19466,7 @@ result;
 
 ```jsl
 
+
 a = "unchanged";
 b = "unchanged";
 Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
@@ -18521,6 +19483,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >? a | Pat Len( 1 ) >? b) + "2" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 source = "xxxxx";
 n = 0;
@@ -18546,6 +19509,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
+
 rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence() + "3" );
 "rc=" || Char( rc ) || " result=" || result;
 
@@ -18560,6 +19524,7 @@ rc = Pat Match( "123456789", (Pat Len( 1 ) | Pat Len( 2 )) >> result + Pat Fence
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 a = "unchanged";
 b = "unchanged";
@@ -18578,6 +19543,7 @@ Pat Match( "123456789", (Pat Len( 2 ) >> a | Pat Len( 1 ) >> b) + "2" );
 
 ```jsl
 
+
 Pat Match( "123456789", Pat Len( 2 ) + Pat Len( 3 ) >> result );
 result;
 
@@ -18595,6 +19561,7 @@ result;
 
 ```jsl
 
+
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -18610,6 +19577,7 @@ While( /* repeat the match until it fails */Pat Match(
 
 ```jsl
 
+
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -18624,6 +19592,7 @@ While( /* repeat the match until it fails */Pat Match(
 **Esempio 3**
 
 ```jsl
+
 
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
@@ -18651,6 +19620,7 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
+
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
 		Test,
@@ -18664,6 +19634,7 @@ While( /* repeat the match until it fails */Pat Match(
 **Esempio 2**
 
 ```jsl
+
 
 Test = "These are Bob's sons' nails.";
 While( /* repeat the match until it fails */Pat Match(
@@ -18679,6 +19650,7 @@ While( /* repeat the match until it fails */Pat Match(
 **Esempio 3**
 
 ```jsl
+
 
 Test = "a bb ccc dddd";
 While( /* keep repeating the match until it won't match */
@@ -18704,6 +19676,7 @@ While( /* keep repeating the match until it won't match */
 
 ```jsl
 
+
 string = "John Smith";
 Pat Match(
 	string,
@@ -18724,6 +19697,7 @@ string;
 
 ```jsl
 
+
 delimiter = ";,-";
 text = "fish,dog,cat,";
 Pat Match( text, Pat Repeat( Pat Not Any( delimiter ) ) >> word + Pat Any( delimiter ) );
@@ -18740,6 +19714,7 @@ word;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Pat Match(
 	"ab3defghi",
@@ -18760,6 +19735,7 @@ result;
 
 ```jsl
 
+
 Pat Match( "quick brown fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -18775,6 +19751,7 @@ result;
 
 ```jsl
 
+
 Pat Match( "123456789", "23" + Pat R Tab( 2 ) >> result );
 result;
 
@@ -18789,6 +19766,7 @@ result;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 string = "John Smith";
 Regex Match( string, Pat Regex( "([^ ]+)([ ]+)([^ ]+)" ), "\3, \1" );
@@ -18806,6 +19784,7 @@ string;
 
 ```jsl
 
+
 Pat Match( "the quick fox", Pat R Pos( 3 ) + Pat Rem() >> result );
 result;
 
@@ -18820,6 +19799,7 @@ result;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Pat Match(
 	"xyz aaaaabbbbbbccc 3 c is matched because greedy",
@@ -18839,6 +19819,7 @@ Pat Match(
 
 ```jsl
 
+
 sp = Pat Span( "0123456789.-" );
 Pat Match( "junk=-33.44e33", sp >> result );
 result;
@@ -18854,6 +19835,7 @@ result;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 x = Pat String( "a" || "b" );
 Pat Match(
@@ -18873,6 +19855,7 @@ Pat Match(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 source = "xxxxx";
 n = 0;
@@ -18898,6 +19881,7 @@ rc = Pat Match( source, pattern, NULL, FULLSCAN );
 
 ```jsl
 
+
 Pat Match( "123456789", "23" + Pat Tab( 6 ) >> result );
 result;
 
@@ -18912,6 +19896,7 @@ result;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 nCats = 0;
 whichCat = 3;
@@ -18938,6 +19923,7 @@ string;
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "blue" );
@@ -18958,6 +19944,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ```
@@ -18971,6 +19958,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
@@ -18987,6 +19975,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ```
@@ -19000,6 +19989,7 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19020,6 +20010,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( 4 );
@@ -19039,6 +20030,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Char( Pi(), 5 );
 
 ```
@@ -19052,6 +20044,7 @@ Char( Pi(), 5 );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 pickedColor = Pick Color( "Pick a Line Color", "Red" );
 New Window( "Example",
@@ -19078,6 +20071,7 @@ New Window( "Example",
 ```jsl
 
 
+
 theme = Pick Color Theme( "Choose a color theme", Type( "Bad to Good" ) );
 dt = Open( "$SAMPLE_DATA/SATByYear.jmp" );
 gb = dt << Graph Builder(
@@ -19094,6 +20088,7 @@ item << Set Properties( {Gradient( {Color Theme( theme )} )} );
 **Legenda righe**
 
 ```jsl
+
 
 
 pickedTheme = Pick Color Theme( "Pick a Color Theme" );
@@ -19114,6 +20109,7 @@ Report( biv )[FrameBox( 1 )] << Row Legend( "age", Color Theme( pickedTheme ) );
 
 ```jsl
 
+
 Pick Directory( "Select a directory" );
 
 ```
@@ -19121,6 +20117,7 @@ Pick Directory( "Select a directory" );
 **Show Files**
 
 ```jsl
+
 
 Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
@@ -19138,6 +20135,7 @@ Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ```jsl
 
+
 Pick File(
 	"Select JMP File",
 	"$DOCUMENTS",
@@ -19152,6 +20150,7 @@ Pick File(
 **Esempio 2**
 
 ```jsl
+
 
 Files = Pick File(
 	"Select JMP File",
@@ -19171,6 +20170,7 @@ For( i = 1, i <= N Items( Files ), i++,
 **Esempio 3**
 
 ```jsl
+
 
 filename = Pick File(
 	"Save As Text",
@@ -19199,6 +20199,7 @@ If( Is Missing( filename ),
 
 ```jsl
 
+
 New Window( "Example",
 	Picture Box( Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg ) )
 );
@@ -19208,6 +20209,7 @@ New Window( "Example",
 **Esempio 2**
 
 ```jsl
+
 
 pict = Open( "$SAMPLE_IMAGES/black rhino footprint.jpg", jpg );
 New Window( "Example", Picture Box( pict ) );
@@ -19223,6 +20225,7 @@ New Window( "Example", Picture Box( pict ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19242,6 +20245,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
@@ -19263,6 +20267,7 @@ New Window( "Pie Seg",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19289,6 +20294,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -19314,6 +20320,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 50, 50 ); // in axis coordinates
@@ -19338,6 +20345,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -19380,6 +20388,7 @@ New Window( "Example",
 ```jsl
 
 
+
 New Window( "Example",
 	Graph Box(
 		Pixel Origin( 10, 80 ); // in axis coordinates
@@ -19408,6 +20417,7 @@ New Window( "Example",
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Platform example",
 	H List Box(
@@ -19434,6 +20444,7 @@ New Window( "Platform example",
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -19448,6 +20459,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -19461,6 +20473,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -19483,6 +20496,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 lambda = 4;
 New Window( "Example: Poisson Distribution",
@@ -19516,6 +20530,7 @@ New Window( "Example: Poisson Distribution",
 
 ```jsl
 
+
 lambda = 4;
 New Window( "Example: Poisson Probability",
 	pdy = Graph Box(
@@ -19542,6 +20557,7 @@ New Window( "Example: Poisson Probability",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 qexpl = 20;
 qexpn = 40;
@@ -19588,6 +20604,7 @@ New Window( "Example: Poisson Quantile",
 
 ```jsl
 
+
 x = [10, 50, 90];
 y = [10, 90, 10];
 New Window( "Poly Seg Example", g = Graph Box( Poly Seg( x, y ) ) );
@@ -19606,6 +20623,7 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "gray" );
@@ -19618,7 +20636,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**Sintassi:** area = Polygon Area( {x1, y1}, {x2, y2}, ... ); area = Polygon Area( xMatrix, yMatrix )
+**Sintassi:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
 
 **Descrizione:** Calcola l&apos;area del poligono specificato.
 
@@ -19628,6 +20646,7 @@ New Window( "Example",
 
 ```jsl
 
+
 area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -19636,13 +20655,14 @@ area = Polygon Area( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```jsl
 
+
 area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```
 
 ### Polygon Centroid
 
-**Sintassi:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... ); centroid = Polygon Centroid( xMatrix, yMatrix )
+**Sintassi:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **Descrizione:** Calcola il centroide del poligono specificato.
 
@@ -19652,6 +20672,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ```jsl
 
+
 {cx, cy} = Polygon Centroid( {0, 0}, {0, 10}, {10, 10}, {10, 0} );
 
 ```
@@ -19659,6 +20680,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 **Esempio 2**
 
 ```jsl
+
 
 centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
@@ -19676,6 +20698,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "cyan" );
@@ -19692,6 +20715,7 @@ New Window( "Example",
 **Poligoni multipli**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_IMPORT_DATA/Parishes.shp" );
 rows = Where( dt, 4 <= :Shape <= 7 );
@@ -19752,6 +20776,7 @@ New Window( "Parishes",
 
 ```jsl
 
+
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
 L = [0, 0, 0.1];
@@ -19780,6 +20805,7 @@ Show( "see new window for example output" );
 **Esempio 2**
 
 ```jsl
+
 
 
 A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
@@ -19825,6 +20851,7 @@ dt = As Table( points );
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -19846,6 +20873,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ex = 1;
 ex--;
 ex;
@@ -19861,6 +20889,7 @@ ex;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = 1;
 ex++;
@@ -19878,6 +20907,7 @@ ex;
 
 ```jsl
 
+
 Power( 2, 5 );
 
 ```
@@ -19891,6 +20921,7 @@ Power( 2, 5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -19906,6 +20937,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19919,6 +20951,7 @@ Preferences( Graph marker size( "Large" ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -19934,6 +20967,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -19948,6 +20982,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ```jsl
 
+
 Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```
@@ -19961,6 +20996,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
 -Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
@@ -19977,6 +21013,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 Print( 355 / 113, Pi() );
 
 ```
@@ -19990,6 +21027,7 @@ Print( 355 / 113, Pi() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 A = [3.509 0.003, 874.4 0.00384, 0.03 0.093];
 Print Matrix( A );
@@ -20015,6 +21053,7 @@ Print Matrix(
 
 ```jsl
 
+
 Normal Quantile( 0.9 );
 
 ```
@@ -20029,6 +21068,7 @@ Normal Quantile( 0.9 );
 
 ```jsl
 
+
 2 * Product( i = 1, 10000, 4 * i * i / (2 * i - 1) / (2 * i + 1) );
 
 ```
@@ -20042,6 +21082,7 @@ Normal Quantile( 0.9 );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 PythonConnection = Python Connect();
 version = PythonConnection << Get Version;
@@ -20061,6 +21102,7 @@ Show( version );
 
 ```jsl
 
+
 Python Create JPIP CMD();
 
 ```
@@ -20068,6 +21110,7 @@ Python Create JPIP CMD();
 **Esempio 2**
 
 ```jsl
+
 
 
 conn = Python Connect();
@@ -20086,6 +21129,7 @@ conn << Create JPIP CMD();
 **Esempio 1**
 
 ```jsl
+
 
 
 a = "abcdef";
@@ -20115,6 +21159,7 @@ Show( v, m, ml, x, z, a, d );
 **Esempio 2**
 
 ```jsl
+
 
 
 x1 = 1;
@@ -20164,6 +21209,7 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 ```jsl
 
 
+
 date1 = As Date( Today() );
 Python Send( date1 );
 date2 = Python Get( date1 );
@@ -20176,6 +21222,7 @@ Show( date1, date2 );
 ```jsl
 
 
+
 x1 = {1, 2, 3};
 Python Send( x1 );
 x2 = Python Get( x1 );
@@ -20186,6 +21233,7 @@ Show( x1, x2 );
 **numpy.datetime64**
 
 ```jsl
+
 
 
 Python Install Packages( "numpy" );
@@ -20206,6 +21254,7 @@ Show( numpy_datetime );
 
 ```jsl
 
+
 version = Python Get Version();
 Show( version );
 
@@ -20224,6 +21273,7 @@ Show( version );
 ```jsl
 
 
+
 Python Init();
 Python Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog';
@@ -20236,6 +21286,7 @@ Show( getStr );
 **Esempio 2**
 
 ```jsl
+
 
 
 PythonConnection = Python Init();
@@ -20259,6 +21310,7 @@ Show( getStr );
 
 ```jsl
 
+
 // install numpy and pandas packages
 Python Install Packages( "numpy pandas" );
 
@@ -20268,6 +21320,7 @@ Python Install Packages( "numpy pandas" );
 
 ```jsl
 
+
 // install numpy and pandas packages
 Python Install Packages( {"numpy", "pandas"} );
 
@@ -20276,6 +21329,7 @@ Python Install Packages( {"numpy", "pandas"} );
 **Esempio 3**
 
 ```jsl
+
 
 // install numpy and pandas packages
 conn = Python Connect();
@@ -20293,6 +21347,7 @@ conn << Install Packages( "numpy pandas" );
 
 ```jsl
 
+
 x = Python Is Connected();
 Show( x );
 
@@ -20308,6 +21363,7 @@ Show( x );
 
 ```jsl
 
+
 Python name = Python JMP Name to Python Name( a b c );
 Show( Python name );
 
@@ -20322,6 +21378,7 @@ Show( Python name );
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 pi = 3.1415927;
 Python Send( pi );
@@ -20345,6 +21402,7 @@ Python Submit( "print(pi)" );
 ```jsl
 
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send( dt:weight );
 Python Submit( "print(dt_weight)" );
@@ -20356,6 +21414,7 @@ Python Submit( "print(dt_weight)" );
 ```jsl
 
 
+
 date = As Date( Today() );
 Python Send( date );
 Python Submit( "print(date)" );
@@ -20365,6 +21424,7 @@ Python Submit( "print(date)" );
 **Tabella di dati**
 
 ```jsl
+
 
 
 x = {1, 2, 3};
@@ -20387,6 +21447,7 @@ Python Submit( "print(dt)" );
 ```jsl
 
 
+
 Python Send File( "$SAMPLE_DATA/Big Class.jmp" );
 Python Send File( "$SAMPLE_DATA/Baseball.jmp" );
 Python Submit( "print(Big_Class)" );
@@ -20403,6 +21464,7 @@ Python Submit( "print(Baseball)" );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Python Submit( "\[
 str = 'The quick brown fox jumps over the lazy dog'
@@ -20422,6 +21484,7 @@ Show( getStr, getNum );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Python Submit File( "some_Python_source.py" );
 
@@ -20445,6 +21508,7 @@ Python Submit File( "some_Python_source.py" );
 
 ```jsl
 
+
 QR( [11 22, 33 44] );
 
 ```
@@ -20459,6 +21523,7 @@ QR( [11 22, 33 44] );
 
 ```jsl
 
+
 QR LAPACK( [11 22, 33 44] );
 
 ```
@@ -20470,6 +21535,7 @@ QR LAPACK( [11 22, 33 44] );
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 A = [2 0, 0 2];
 x = [2, 3];
@@ -20486,6 +21552,7 @@ y = Quadratic Form BLAS( A, x );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Eval List(
 	{Quantile( 0.75, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 ),
@@ -20504,6 +21571,7 @@ Eval List(
 
 ```jsl
 
+
 Quarter( Today() );
 
 ```
@@ -20517,6 +21585,7 @@ Quarter( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp", Invisible );
 Query( dt, "SELECT name, age, height FROM 'Big Class'
@@ -20555,6 +21624,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ```jsl
 
+
 If(
 	New Window( "Quit() example",
 		<<Type( "Modal" ),
@@ -20575,6 +21645,7 @@ If(
 
 ```jsl
 
+
 RConnection = R Connect();
 
 ```
@@ -20588,6 +21659,7 @@ RConnection = R Connect();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 R Init( Echo( true ) );
 R Control( Echo( false ) );
@@ -20604,6 +21676,7 @@ R Submit( "Add R code" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 R Init();
 a = "abcdef";
@@ -20630,6 +21703,7 @@ Show( v, m, rc, x, z, a, d );
 
 ```jsl
 
+
 R Init();
 x1 = [1, 2, 3];
 R Send( x1 );
@@ -20652,13 +21726,23 @@ Close( dt1, No Save );
 
 ```jsl
 
+
 R Init();
-img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
-R Execute( {img_path}, {}, "\[
-png(img_path)
+tmp_path = Get Path Variable( "TEMP" );
+If( Host is( "Windows" ),
+	tmp_path = Substr( tmp_path, 2 )
+);  // remove leading '/' from path
+R Execute(
+	{tmp_path},
+	{},
+	"\[
+output_path <- file.path(tmp_path, "r_plot.png")
+png(filename=output_path)
 plot(1:10)
 dev.off()
-]\" );
+]\"
+);
+img_path = tmp_path || "r_plot.png";
 plot = Open( img_path );
 rc = Delete File( img_path );
 
@@ -20673,6 +21757,7 @@ rc = Delete File( img_path );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 R Init();
 version = R Get Version();
@@ -20690,6 +21775,7 @@ Show( version );
 
 ```jsl
 
+
 R Init();
 
 ```
@@ -20703,6 +21789,7 @@ R Init();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 R Init();
 connected = R Is Connected();
@@ -20718,6 +21805,7 @@ connected = R Is Connected();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 R name = R JMP Name to R Name( a b c );
 
@@ -20735,6 +21823,7 @@ R name = R JMP Name to R Name( a b c );
 
 ```jsl
 
+
 R Init();
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 R Send( dt:weight );
@@ -20746,6 +21835,7 @@ w = R Get( "dt.weight" );
 **Tabella di dati**
 
 ```jsl
+
 
 R Init();
 x = [1, 2, 3];
@@ -20768,6 +21858,7 @@ R Submit( "dt" );
 
 ```jsl
 
+
 R Init();
 R Send File( "$SAMPLE_DATA/Big Class.jmp" );
 R Send File( "$SAMPLE_DATA/Baseball.jmp" );
@@ -20785,6 +21876,7 @@ R Submit( "Baseball" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 R Init();
@@ -20820,6 +21912,7 @@ rc = Delete File( img_path );
 ```jsl
 
 
+
 R Init();
 file_path = Get Path Variable( "SAMPLE_SCRIPTS" ) || "R/SI_example.R";
 R Submit File( file_path );
@@ -20836,6 +21929,7 @@ R Submit File( file_path );
 
 ```jsl
 
+
 R Init();
 R Term();
 
@@ -20850,6 +21944,7 @@ R Term();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	rb = Radio Box( {"single", "double", "triple"}, Show( rb << Get() ) )
@@ -20866,6 +21961,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -20888,6 +21984,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Beta Binomial( 14, .5, .2 );
 //produce a vector of random numbers
@@ -20906,6 +22003,7 @@ Show( x, v );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exrbinp = 0.5;
 exrbinn = 40;
@@ -20970,6 +22068,7 @@ New Window( "Example: Random Binomial and Empirical Distribution",
 
 ```jsl
 
+
 Random Category( .2, "A", .3, "B", .4, "C", "D" );
 
 ```
@@ -20983,6 +22082,7 @@ Random Category( .2, "A", .3, "B", .4, "C", "D" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21005,6 +22105,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random ChiSquare( 2 );
 //produce a vector of random numbers
@@ -21023,6 +22124,7 @@ Show( x, v );
 **JMP Versione aggiunta:** 18
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21045,6 +22147,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Exp();
 //produce a vector of random numbers
@@ -21063,6 +22166,7 @@ Show( x, v );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21085,6 +22189,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Frechet( 10, 5 );
 //produce a vector of random numbers
@@ -21103,6 +22208,7 @@ Show( x, v );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21125,6 +22231,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Gamma Poisson( 3, 2 );
 //produce a vector of random numbers
@@ -21145,6 +22252,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random GenGamma( 2, 1.25 );
 //produce a vector of random numbers
@@ -21163,6 +22271,7 @@ Show( x, v );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exrgeop = 0.1;
 exrgeolsz = Log( 300 );
@@ -21215,6 +22324,7 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 ```jsl
 
 
+
 //produce a single random number
 x = Random GLog( 4, 1, 0.1 );
 //produce a vector of random numbers
@@ -21234,6 +22344,7 @@ Show( x, v );
 
 ```jsl
 
+
 Random Index( 100, 5 );
 
 ```
@@ -21247,6 +22358,7 @@ Random Index( 100, 5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21269,6 +22381,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Johnson Sb( 0.5, 1, 1, 1 );
 //produce a vector of random numbers
@@ -21287,6 +22400,7 @@ Show( x, v );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21309,6 +22423,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Johnson Su( 0.5, 1, 1, 1 );
 //produce a vector of random numbers
@@ -21327,6 +22442,7 @@ Show( x, v );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21349,6 +22465,7 @@ Show( x, v );
 **Esempio 1**
 
 ```jsl
+
 
 A = [1 1 1, 1 2 0];
 b = [1, 0.5];
@@ -21378,6 +22495,7 @@ Show( "see new window for example output" );
 **Esempio 2**
 
 ```jsl
+
 
   
 A = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
@@ -21424,6 +22542,7 @@ dt = As Table( points );
 ```jsl
 
 
+
 //produce a single random number
 x = Random LogGenGamma( 2, 1.25 );
 //produce a vector of random numbers
@@ -21444,6 +22563,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Logistic( 15, 1 );
 //produce a vector of random numbers
@@ -21462,6 +22582,7 @@ Show( x, v );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21486,6 +22607,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Lognormal( -1, 1.5 );
 //produce a vector of random numbers
@@ -21498,6 +22620,7 @@ Show( x, v );
 **Esempio 2**
 
 ```jsl
+
 
 exrlnn = 30;
 New Window( "Example: Random Lognormal and Empirical Distribution",
@@ -21534,6 +22657,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ```jsl
 
+
 meanvec = 1 :: 3;
 covar = [1 .6 .6, .6 1 .6, .6 .6 1];
 randmvnRow = Random Multivariate Normal( meanvec, covar );
@@ -21550,6 +22674,7 @@ randmvnMat = Random Multivariate Normal( meanvec, covar, 10 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exnbpp = 0.3;
 exnbpn = 20;
@@ -21598,6 +22723,7 @@ New Window( "Example: Neg Binomial Probability",
 ```jsl
 
 
+
 //produce a single random number
 x = Random Normal();
 //produce a vector of random numbers
@@ -21610,6 +22736,7 @@ Show( x, v );
 **Esempio 2**
 
 ```jsl
+
 
 exGcoordX = J( 50, 1, . );
 exGcoordY = J( 50, 1, . );
@@ -21656,6 +22783,7 @@ New Window( "Random Normal, Linear Regression, and Outlier",
 
 ```jsl
 
+
 dt = New Table( "Example",
 	New Column( "Rand NM",
 		set formula( Random Normal Mixture( [-3, 3], [1, 1], [.3, .7] ) )
@@ -21675,6 +22803,7 @@ Distribution( Continuous Distribution( Column( :Rand NM ), Vertical( 0 ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exrpoilambda = 20;
 exrpoilsz = Log( 300 );
@@ -21734,6 +22863,7 @@ New Window( "Example: Random Poisson and Empirical Distribution",
 
 ```jsl
 
+
 Random Reset( 1 );
 Random Normal();
 
@@ -21749,6 +22879,7 @@ Random Normal();
 
 ```jsl
 
+
 r = Random Seed State();
 Random Seed State( r );
 
@@ -21763,6 +22894,7 @@ Random Seed State( r );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21787,6 +22919,7 @@ Show( x, v );
 ```jsl
 
 
+
 //produce a single random number
 x = Random SHASH( 0, 1, 0, 1 );
 //produce a vector of random numbers
@@ -21799,6 +22932,7 @@ Show( x, v );
 **Trasformazione SHASH**
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -21821,6 +22955,7 @@ Show( result1, result2 );
 
 ```jsl
 
+
 exA = [1 2 6, 3 5 8];
 Random Shuffle( exA );
 
@@ -21835,6 +22970,7 @@ Random Shuffle( exA );
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 Random SVD( [11 22, 33 44], 1 );
 
@@ -21851,6 +22987,7 @@ Random SVD( [11 22, 33 44], 1 );
 ```jsl
 
 
+
 //produce a single random number
 x = Random t( 2 );
 //produce a vector of random numbers
@@ -21862,13 +22999,14 @@ Show( x, v );
 
 ### Random Triangular
 
-**Sintassi:** y = Random Triangular( a, b, c ); y = Random Triangular( b, c ); y = Random Triangular( b )
+**Sintassi:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione triangolare con limite inferiore a, moda b e limite superiore c. Random Triangular(b,c) è equivalente a Random Triangular(0,b,c). Random Triangular(b) è equivalente a Random Triangular(0,b,1).
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Random Reset( 13579 );
 x = Random Triangular( 0.8 );
@@ -21891,6 +23029,7 @@ Show( x, y );
 ```jsl
 
 
+
 //produce a single random number
 x = Random Uniform( 1, 10 );
 //produce a vector of random numbers
@@ -21903,6 +23042,7 @@ Show( x, v );
 **Esempio 2**
 
 ```jsl
+
 
 Random Uniform( 1, 10 );
 
@@ -21917,6 +23057,7 @@ Random Uniform( 1, 10 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 //produce a single random number
@@ -21939,6 +23080,7 @@ Show( x, v );
 **Esempio 1**
 
 ```jsl
+
 
 exnbpp = 0.3;
 exnbpn = 20;
@@ -21986,6 +23128,7 @@ New Window( "Example: Zero Inflated Negative Binomial",
 
 ```jsl
 
+
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Negative Binomial( 5, 2, .2 ) ) );
 Column( 1 ) << set name( "Random ZiNB" );
@@ -22011,6 +23154,7 @@ dt << Distribution(
 **Esempio 1**
 
 ```jsl
+
 
 exnbpp = 0.3;
 exnbpn = 20;
@@ -22050,6 +23194,7 @@ New Window( "Example: Zero Inflated Poisson",
 
 ```jsl
 
+
 Random Reset( 19 );
 dt = As Table( J( 1000, 1, Random ZI Poisson( 5, .2 ) ) );
 Column( 1 ) << set name( "Random ZIP" );
@@ -22074,6 +23219,7 @@ dt << Distribution(
 
 ```jsl
 
+
 Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 
 ```
@@ -22087,6 +23233,7 @@ Eval List( {Range( Pi(), e() ), Range( [33 44 22] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 sliderLowerValue = .5;
 sliderUpperValue = .7;
@@ -22117,6 +23264,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Rank( [33, 22, 44, 11, ., 33] );
 
 ```
@@ -22130,6 +23278,7 @@ Rank( [33, 22, 44, 11, ., 33] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Rank Index( [33, 22, 44, 11, ., 33] );
 
@@ -22145,6 +23294,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ```jsl
 
+
 Ranking( [33, 22, 44, 11, 33] );
 Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
@@ -22159,6 +23309,7 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Ranking Tie( [33, 22, 44, 11, 33] );
 
@@ -22182,6 +23333,7 @@ Speciali variabili JSL vengono popolate durante l&apos;esecuzione del comando:
 
 ```jsl
 
+
 Recode(
 	"27513-0000",
 	{Regex( _rcNow, "(\d\d\d\d\d)-\d+", "\1", GLOBALREPLACE ), Num( _rcNow )}
@@ -22192,6 +23344,7 @@ Recode(
 **Esempio 2**
 
 ```jsl
+
 
 Recode(
 	"A B C",
@@ -22210,6 +23363,7 @@ Recode(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -22233,6 +23387,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ex rev = Function( {s},
 	If( Length( s ) <= 1,
 		s,
@@ -22253,6 +23408,7 @@ ex rev( "abcd" );
 
 ```jsl
 
+
 Regex(
 	"   Are you there Alice?, asked Jerry.",
 	" (here|there) (\w+).+(said|asked) (\w+)\.",
@@ -22270,6 +23426,7 @@ Regex(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 source = "believe";
@@ -22301,11 +23458,12 @@ Show( source, matches );
 
 **Sintassi:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;AutoLoad(0|1)&gt; )
 
-**Descrizione:** Register an add-in. An Autoload value of 1 forces the add-in to load when registered. A value of 0 leaves the add-in unloaded. If AutoLoad is not specified the addin.def setting will be used if found otherwise the default will be for the add-in to be loaded.
+**Descrizione:** Registra un add-in. Un valore per l&apos;opzione Caricamento automatico pari a 1 obbliga il caricamento dell&apos;add-in quando viene registrato. Un valore pari a 0 non carica l&apos;add-in. Se l&apos;opzione Carica automaticamente non è specificata, verrà utilizzata l&apos;impostazione addin.def, se trovata, altrimenti l&apos;impostazione di default prevede che l&apos;add-in venga caricato.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Register Addin(
 	"com.mycompany.myaddin",
@@ -22325,6 +23483,7 @@ Register Addin(
 
 ```jsl
 
+
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```
@@ -22339,6 +23498,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```jsl
 
+
 Remove Color Theme( "Yellow To Blue" );
 
 ```
@@ -22352,6 +23512,7 @@ Remove Color Theme( "Yellow To Blue" );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
@@ -22369,6 +23530,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ```jsl
 
+
 ex = {11, 22, 33, 44, 55};
 Remove From( ex, 3, 2 );
 ex;
@@ -22379,6 +23541,7 @@ ex;
 
 ```jsl
 
+
 ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
 Remove From( ex, "c" );
 ex;
@@ -22388,6 +23551,7 @@ ex;
 **Esempio 3**
 
 ```jsl
+
 
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
@@ -22406,6 +23570,7 @@ Remove From( hlist, 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Delete Directory( "$TEMP/subD" );
 Delete Directory( "$TEMP/Loss Function Templates" );
@@ -22430,6 +23595,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
+
 rc0 = Copy File( "$SAMPLE_DATA/Loss Function Templates/Normal.jmp", "$TEMP/x.jmp" );
 rc1 = Rename File( "$TEMP/x.jmp", "y.jmp" /* NO PATH */ );
 rc2 = File Exists( "$TEMP/x.jmp" );
@@ -22451,6 +23617,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ```jsl
 
+
 Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 
 ```
@@ -22464,6 +23631,7 @@ Show( Repeat( {"A", "B"}, 3 ), Repeat( 2, 3 ), Repeat( 2, 1, 3 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
@@ -22479,6 +23647,7 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Column( "Freq", numeric, formula( Resample Freq() ) );
@@ -22507,6 +23676,7 @@ theBox << CloseWindow;
 
 ```jsl
 
+
 vr = Function( {},
 	x = 2;
 	y = 4;
@@ -22533,6 +23703,7 @@ Show( vrv, lvrv, nrv );
 
 ```jsl
 
+
 f = Function( {a, b},
 	Return( a - b, a + b )
 );
@@ -22552,6 +23723,7 @@ Show( f( 7, 15 ) );
 
 ```jsl
 
+
 Reverse( {11, 22, 33, 44, 55} );
 
 ```
@@ -22568,6 +23740,7 @@ Reverse( {11, 22, 33, 44, 55} );
 
 ```jsl
 
+
 ex = {11, 22, 33, 44, 55};
 Reverse Into( ex );
 ex;
@@ -22577,6 +23750,7 @@ ex;
 **Esempio 2**
 
 ```jsl
+
 
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
@@ -22596,6 +23770,7 @@ Reverse Into( hlist );
 
 ```jsl
 
+
 /* Reverts menus back to factory default settings. */
 
 ```
@@ -22609,6 +23784,7 @@ Reverse Into( hlist );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "RGB Color Example", 
     /* 1 through 16 are good */ 
@@ -22648,6 +23824,7 @@ New Window( "RGB Color Example",
 
 ```jsl
 
+
 Right( "http://www.jmp.com", 3 );
 
 ```
@@ -22661,6 +23838,7 @@ Right( "http://www.jmp.com", 3 );
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 X = [1 -3, -1 -2, -3 -4, -4 -3, -3 1, 3 3] * [-2 5 -1 -2 1, 4 5 -4 -3 1];
 X[2, 3] += 15;
@@ -22678,6 +23856,7 @@ Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 ```jsl
 
+
 Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```
@@ -22691,6 +23870,7 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Round( 213, -1 );
 
@@ -22708,6 +23888,7 @@ Round( 213, -1 );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row() = 3;
 :height * :weight;
@@ -22717,6 +23898,7 @@ Row() = 3;
 **Reimposta riga**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Add Rows( 5 );
@@ -22735,6 +23917,7 @@ Row() = 0;
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Color State( {1, .5, 1} );
 Color To RGB( Color Of( Row State( 3 ) ) );
@@ -22743,7 +23926,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Run Program
 
-**Sintassi:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt; )
+**Sintassi:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **Descrizione:** Controlla un programma esterno mediante stdin e stdout.
 
@@ -22752,6 +23935,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 **Esempio 1**
 
 ```jsl
+
 
 RP = Run Program(
 	Executable( "PING.EXE"/*path probably not needed*/ ),
@@ -22765,6 +23949,7 @@ RP = Run Program(
 
 ```jsl
 
+
 RP = Run Program(
 	Executable( "CMD.EXE"/*path probably not needed*/ ),
 	Options( {"/a", "/q", "/c dir"} ),
@@ -22776,6 +23961,7 @@ RP = Run Program(
 **Esempio 3**
 
 ```jsl
+
 
 commands = {"echo this is a test\!n", "ping -n 1 localhost\!n", "exit\!n"};
 icommand = 0;
@@ -22799,6 +23985,37 @@ RP = Run Program(
 
 ```
 
+**Esempio 4**
+
+```jsl
+
+
+
+/* /u instructs CMD to produce Unicode output which we decode. */
+RP = Run Program(
+	Executable( "cmd.exe" ),
+	Options( "\[/u /c echo こんにちは]\" ),
+	Read Function( "blob" )
+);
+Show( Blob To Char( RP, "utf-16le" ) );
+
+```
+
+**Esempio 5**
+
+```jsl
+
+
+/*This example assumes a Japanese OS. 'blob' is used as 'text' assumes ASCII output.*/
+RP = Run Program(
+	Executable( "cmd.exe" ),
+	Options( "\[/c echo こんにちは]\" ),
+	Read Function( "blob" )
+);
+Show( Blob To Char( RP, "shift_jis" ) );
+
+```
+
 ### SAS Name
 
 **Sintassi:** sasName = SAS Name( string|namelist )
@@ -22808,6 +24025,7 @@ RP = Run Program(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 SAS Name( {"x 1", "x 2"} );
 
@@ -22823,6 +24041,7 @@ SAS Name( {"x 1", "x 2"} );
 
 ```jsl
 
+
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 
 ```
@@ -22836,6 +24055,7 @@ SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Save Log( "$TEMP/log.txt" );
 exlogText = Load Text File( "$TEMP/log.txt" );
@@ -22853,6 +24073,7 @@ Substr( exlogText, 1, 30 );
 
 ```jsl
 
+
 Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
 Load Text File( "$TEMP/DeleteMe.txt" );
 
@@ -22868,6 +24089,7 @@ Load Text File( "$TEMP/DeleteMe.txt" );
 
 ```jsl
 
+
 SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -22882,6 +24104,7 @@ SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
+
 Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -22895,6 +24118,7 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Scene = Scene Box( 600, 600 );
 Scene << backgroundcolor( 0 );
@@ -22920,6 +24144,7 @@ Scene << update;
 
 ```jsl
 
+
 ex = Scene Display List();
 ex << color( .9, .9, .9 );
 ex << Text( center, middle, .3, "Hello World" );
@@ -22944,6 +24169,7 @@ exScene << update;
 
 ```jsl
 
+
 Schedule(
 	10,
 	Beep();
@@ -22962,6 +24188,7 @@ Schedule(
 
 ```jsl
 
+
 Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```
@@ -22975,6 +24202,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 Scoring Impute(
 	[1 2 3 . 4 .],
@@ -22997,6 +24225,7 @@ Scoring Impute(
 
 ```jsl
 
+
 Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
 New Window( "This is a script box", Script );
 
@@ -23005,6 +24234,7 @@ New Window( "This is a script box", Script );
 **Script Python**
 
 ```jsl
+
 
 pyscript = "\[import numpy as np
 a = np.arange(15).reshape(3, 5)]\";
@@ -23022,6 +24252,7 @@ New Window( "This is a python script box", Script );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -23051,6 +24282,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Second( Today() );
 
 ```
@@ -23064,6 +24296,7 @@ Second( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
@@ -23083,6 +24316,7 @@ Selected();
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Selected State( 1 );
 Selected( Row State( 3 ) );
@@ -23099,6 +24333,7 @@ Selected( Row State( 3 ) );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
@@ -23113,6 +24348,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Row() = 3;
 Sequence( 1, 9, 2 );
@@ -23129,6 +24365,7 @@ Sequence( 1, 9, 2 );
 
 ```jsl
 
+
 Set Clipboard( "example" );
 
 ```
@@ -23142,6 +24379,7 @@ Set Clipboard( "example" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Set Default Directory( "$SAMPLE_DATA" );
 Open( "Big Class.jmp" );
@@ -23157,6 +24395,7 @@ Open( "Big Class.jmp" );
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 Show( Set Difference( {1, 3}, {3, 2} ) );
 Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
@@ -23177,6 +24416,7 @@ NOTA: sul sistema operativo Macintosh, il nome della variabile fa distinzione tr
 
 ```jsl
 
+
 Set Environment Variable( "PATH", "some path to a directory" );
 
 ```
@@ -23190,6 +24430,7 @@ Set Environment Variable( "PATH", "some path to a directory" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Set File Search Path(
 	{Convert File Path( "$SAMPLE_DATA/" ), Convert File Path( "$SAMPLE_DATA/Time Series/" )}
@@ -23210,6 +24451,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 Set Global Window Handler(
 	Function( {window},
@@ -23232,6 +24474,7 @@ Clear Global Window Handler();
 
 ```jsl
 
+
 Show( Set Intersection( {1, 3}, {3, 2} ) );
 Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -23249,6 +24492,7 @@ dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```jsl
 
+
 Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ```
@@ -23262,6 +24506,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
@@ -23277,6 +24522,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```
@@ -23291,6 +24537,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ```jsl
 
+
 Preferences( Graph marker size( "Large" ) );
 
 ```
@@ -23304,6 +24551,7 @@ Preferences( Graph marker size( "Large" ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Preferences( Graph marker size( "Large" ) );
 
@@ -23320,6 +24568,7 @@ Viene restituito 1 se l&apos;operazione è riuscita e 0 in caso contrario.
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 // Make the Analyze toolbar visible in Script windows
@@ -23346,6 +24595,7 @@ Set Toolbar Visibility( Default, All );
 
 ```jsl
 
+
 Show( Set Union( {1, 3}, {3, 2} ) );
 Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 all = {};
@@ -23366,6 +24616,7 @@ Show( all );
 
 ```jsl
 
+
 Show( Set Unique( {1, 3, 2} ) );
 Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
 Open( "$SAMPLE_DATA/Big Class Families.jmp" );
@@ -23383,6 +24634,7 @@ Show( Set Unique( :sports ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 50;
 sig = 5;
@@ -23412,6 +24664,7 @@ New Window( "Example: SEV Density",
 
 ```jsl
 
+
 mu = 50;
 sig = 5;
 New Window( "Example: SEV Distribution",
@@ -23438,6 +24691,7 @@ New Window( "Example: SEV Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 mu = 50;
 sig = 5;
@@ -23477,6 +24731,7 @@ New Window( "Example: SEV Quantile",
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
@@ -23491,6 +24746,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Eval List(
 	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ), Shape( [11 22, 33 44], ., 4 )
@@ -23508,6 +24764,7 @@ Eval List(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Shape Seg Example",
 	Graph Box(
@@ -23532,6 +24789,7 @@ New Window( "Shape Seg Example",
 
 ```jsl
 
+
 SHASH Density( 0, -1, 2, -2, 3 );
 
 ```
@@ -23539,6 +24797,7 @@ SHASH Density( 0, -1, 2, -2, 3 );
 **Trasformazione SHASH**
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -23562,6 +24821,7 @@ Show( result1, result2 );
 **Esempio 1**
 
 ```jsl
+
 
 gamma = 0.5;
 delta = 1;
@@ -23598,6 +24858,7 @@ New Window( "Example: SHASH Distribution",
 
 ```jsl
 
+
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -23621,6 +24882,7 @@ Show( result1, result2 );
 
 ```jsl
 
+
 SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ```
@@ -23628,6 +24890,7 @@ SHASH Quantile( .5, 1, 2, 3, 1 );
 **Trasformazione SHASH**
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -23649,6 +24912,7 @@ Show( result1, result2 );
 **JMP Versione aggiunta:** 14
 
 ```jsl
+
 
 gamma = 1;
 delta = .5;
@@ -23672,6 +24936,7 @@ Show( x1, x2 );
 
 ```jsl
 
+
 gamma = 1;
 delta = .5;
 theta = -1;
@@ -23692,6 +24957,7 @@ Show( result1, result2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -23742,6 +25008,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```
@@ -23758,6 +25025,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```jsl
 
+
 ex = {11, 22, 33, 44, 55};
 Shift Into( ex, -2 );
 ex;
@@ -23767,6 +25035,7 @@ ex;
 **Esempio 2**
 
 ```jsl
+
 
 New Window( "boxes",
 	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
@@ -23786,6 +25055,7 @@ Shift Into( hlist, -2 );
 
 ```jsl
 
+
 Short Date( Today() );
 
 ```
@@ -23799,6 +25069,7 @@ Short Date( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 editList = Shortest Edit Script( "time flies like an arrow", "fruit flies like a banana" );
 common = "";/* assemble a longest common subsequence */For( i = 1, i <= N Items( editList ),
@@ -23821,6 +25092,7 @@ common;
 
 ```jsl
 
+
 Show( 355 / 113, Pi() );
 
 ```
@@ -23834,6 +25106,7 @@ Show( 355 / 113, Pi() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Show Addin Builder Dialog();
 
@@ -23849,6 +25122,7 @@ Show Addin Builder Dialog();
 
 ```jsl
 
+
 Show Addins Dialog();
 
 ```
@@ -23862,6 +25136,7 @@ Show Addins Dialog();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Define Class(
 	"complex",
@@ -23914,6 +25189,7 @@ Show Classes();
 
 ```jsl
 
+
 Show Commands();
 
 ```
@@ -23928,6 +25204,7 @@ Show Commands();
 
 ```jsl
 
+
 Show Globals();
 
 ```
@@ -23941,6 +25218,7 @@ Show Globals();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Namespace(
 	"complex",
@@ -23983,6 +25261,7 @@ Delete Namespaces( "complex" );
 
 ```jsl
 
+
 Show Preferences();
 
 ```
@@ -23996,6 +25275,7 @@ Show Preferences();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Show Properties( Current Data Table() );
 
@@ -24011,6 +25291,7 @@ Show Properties( Current Data Table() );
 
 ```jsl
 
+
 Show Symbols();
 
 ```
@@ -24024,6 +25305,7 @@ Show Symbols();
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
@@ -24039,6 +25321,7 @@ Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 
 ```jsl
 
+
 Sine( Pi() / 6 );
 
 ```
@@ -24052,6 +25335,7 @@ Sine( Pi() / 6 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Sine( Pi() / 6 );
 
@@ -24067,6 +25351,7 @@ Sine( Pi() / 6 );
 
 ```jsl
 
+
 SinH( 1 );
 
 ```
@@ -24080,6 +25365,7 @@ SinH( 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 sliderValue = .6;
 New Window( "Example",
@@ -24106,6 +25392,7 @@ New Window( "Example",
 
 ```jsl
 
+
 SlInv( 1.96, 1.5, 2, 1 );
 
 ```
@@ -24120,6 +25407,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ```jsl
 
+
 Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```
@@ -24128,11 +25416,12 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 **Sintassi:** points = Sobol Quasi Random Sequence(nDim, nRow)
 
-**Descrizione:** Genera una sequenza di numeri quasi casuali riempitivi utilizzando la sequenza di Sobol in un massimo di 4000 dimensioni.
+**Descrizione:** Genera una sequenza di numeri quasi casuali riempitivi utilizzando la sequenza di Sobol in un massimo di 21.201 dimensioni.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 A = Sobol Quasi Random Sequence( 3, 100 );
 As Table( A );
@@ -24149,6 +25438,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 // see the socket's OBJECT messages in the scripting index for better examples
@@ -24194,6 +25484,7 @@ If( rc[2] == "ok",
 
 ```jsl
 
+
 Solve( [1 1, -1 4], [11, 14] );
 
 ```
@@ -24207,6 +25498,7 @@ Solve( [1 1, -1 4], [11, 14] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Sort Ascending( {111, 212, 133, 114, 55} );
 
@@ -24222,6 +25514,7 @@ Sort Ascending( {111, 212, 133, 114, 55} );
 
 ```jsl
 
+
 Sort Descending( {111, 212, 133, 114, 55} );
 
 ```
@@ -24236,6 +25529,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 ```jsl
 
+
 Sort List( {111, 212, 133, 114, 55} );
 
 ```
@@ -24249,6 +25543,7 @@ Sort List( {111, 212, 133, 114, 55} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = {111, 212, 133, 114, 55};
 Sort List Into( ex );
@@ -24265,6 +25560,7 @@ ex;
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box( N Col( 3 ),
@@ -24288,6 +25584,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ```
@@ -24302,6 +25599,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ```jsl
 
+
 Speak( "Hello" );
 
 ```
@@ -24315,6 +25613,7 @@ Speak( "Hello" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Lineup Box(
@@ -24337,6 +25636,7 @@ nb << Set Increment( 1 );
 
 ```jsl
 
+
 Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ```
@@ -24350,6 +25650,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 
 New Window( "Spline Fit",
@@ -24385,6 +25686,7 @@ New Window( "Spline Fit",
 
 ```jsl
 
+
 Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ```
@@ -24398,6 +25700,7 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Round( Sqrt( 2 ), 4 );
 
@@ -24413,6 +25716,7 @@ Round( Sqrt( 2 ), 4 );
 
 ```jsl
 
+
 Squash( 10 );
 
 ```
@@ -24426,6 +25730,7 @@ Squash( 10 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Logist( 2 );
 
@@ -24441,6 +25746,7 @@ Logist( 2 );
 
 ```jsl
 
+
 Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 
 ```
@@ -24454,6 +25760,7 @@ Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Starts With( "http://www.jmp.com", "http:" );
 
@@ -24469,6 +25776,7 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ```jsl
 
+
 Status Msg( "calculating..." );
 
 ```
@@ -24483,19 +25791,21 @@ Status Msg( "calculating..." );
 
 ```jsl
 
+
 Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ```
 
 ### Step
 
-**Sintassi:** y = Step( x, x1, y1, x2, y2, ... ) y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Sintassi:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Descrizione:** Restituisce l&apos;argomento yi corrispondente al più grande valore xi che soddisfa xi minore o uguale all&apos;argomento x. Nota: gli argomenti xi devono essere specificati in ordine.
 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Step( 2.5, [1 2 3], [15, 20, 30] );
 
@@ -24511,6 +25821,7 @@ Step( 2.5, [1 2 3], [15, 20, 30] );
 
 ```jsl
 
+
 STK:ArchSpiral( 3, 1, 1 );
 
 ```
@@ -24518,6 +25829,7 @@ STK:ArchSpiral( 3, 1, 1 );
 **Esempio 2**
 
 ```jsl
+
 
 For Each( {v, i}, 1 :: 30, Show( STK:ArchSpiral( v ) ) );
 
@@ -24533,6 +25845,7 @@ For Each( {v, i}, 1 :: 30, Show( STK:ArchSpiral( v ) ) );
 
 ```jsl
 
+
 STK:arctan2( 3, 4 );
 
 ```
@@ -24540,6 +25853,7 @@ STK:arctan2( 3, 4 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:arctan2( 3, 4 );
 
@@ -24555,6 +25869,7 @@ STK:arctan2( 3, 4 );
 
 ```jsl
 
+
 STK:Cart2Polar( 3, 4 );
 
 ```
@@ -24562,6 +25877,8 @@ STK:Cart2Polar( 3, 4 );
 **Esempio 2**
 
 ```jsl
+
+
 
 
 x = [1, -1, 1, -1];
@@ -24581,6 +25898,7 @@ For Each( {{a, b}, index}, Across( x, y ), Show( STK:Cart2Polar( a, b ) ) );
 
 ```jsl
 
+
 STK:deg2rad( 45 );
 
 ```
@@ -24588,6 +25906,7 @@ STK:deg2rad( 45 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:um2mm( 45 );
 
@@ -24603,6 +25922,7 @@ STK:um2mm( 45 );
 
 ```jsl
 
+
 STK:DieIndex( 3, 4 );
 
 ```
@@ -24610,6 +25930,7 @@ STK:DieIndex( 3, 4 );
 **Esempio 2**
 
 ```jsl
+
 
 Example;
 
@@ -24629,6 +25950,7 @@ NOTE: This simulator is entirely empirical and for demonstration, teaching, or t
 
 ```jsl
 
+
 STK:LPCVDSim( 0, 0 );
 
 ```
@@ -24636,6 +25958,7 @@ STK:LPCVDSim( 0, 0 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:LPCVDSim( 0, 0, 100 );
 
@@ -24651,6 +25974,7 @@ STK:LPCVDSim( 0, 0, 100 );
 
 ```jsl
 
+
 STK:mm2um( 3 );
 
 ```
@@ -24658,6 +25982,7 @@ STK:mm2um( 3 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:mm2um( 3 );
 
@@ -24673,6 +25998,7 @@ STK:mm2um( 3 );
 
 ```jsl
 
+
 STK:MShape( J( 13, 20 ) );
 
 ```
@@ -24680,6 +26006,7 @@ STK:MShape( J( 13, 20 ) );
 **Esempio 2**
 
 ```jsl
+
 
 STK:MShape( J( 13, 20 ) );
 
@@ -24695,6 +26022,7 @@ STK:MShape( J( 13, 20 ) );
 
 ```jsl
 
+
 STK:Polar2Cart( 1, Pi() / 4 );
 
 ```
@@ -24702,6 +26030,8 @@ STK:Polar2Cart( 1, Pi() / 4 );
 **Esempio 2**
 
 ```jsl
+
+
 
 
 x = [1, -1, 1, -1];
@@ -24725,6 +26055,7 @@ For Each( {{a, b}, index}, Across( x, y ),
 
 ```jsl
 
+
 STK:ProcessSim( 13 );
 
 ```
@@ -24733,6 +26064,7 @@ STK:ProcessSim( 13 );
 
 ```jsl
 
+
 STK:ProcessSim( 13, 150 );
 
 ```
@@ -24740,6 +26072,7 @@ STK:ProcessSim( 13, 150 );
 **Esempio 3**
 
 ```jsl
+
 
 STK:ProcessSim( 100, 150, "Std Dev", "full" );
 
@@ -24755,6 +26088,7 @@ STK:ProcessSim( 100, 150, "Std Dev", "full" );
 
 ```jsl
 
+
 STK:rad2deg( 0.79 );
 
 ```
@@ -24762,6 +26096,7 @@ STK:rad2deg( 0.79 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:um2mm( 0.79 );
 
@@ -24777,6 +26112,7 @@ STK:um2mm( 0.79 );
 
 ```jsl
 
+
 STK:Radius( 3, 4 );
 
 ```
@@ -24784,6 +26120,7 @@ STK:Radius( 3, 4 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:Radius( 3, 4 );
 
@@ -24799,6 +26136,7 @@ STK:Radius( 3, 4 );
 
 ```jsl
 
+
 STK:Theta( 3, 4 );
 
 ```
@@ -24806,6 +26144,7 @@ STK:Theta( 3, 4 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:Theta( 3, 4 );
 
@@ -24821,6 +26160,7 @@ STK:Theta( 3, 4 );
 
 ```jsl
 
+
 STK:um2mm( 3 );
 
 ```
@@ -24828,6 +26168,7 @@ STK:um2mm( 3 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:um2mm( 3 );
 
@@ -24843,6 +26184,7 @@ STK:um2mm( 3 );
 
 ```jsl
 
+
 STK:xCart( 1, Pi() / 4 );
 
 ```
@@ -24850,6 +26192,7 @@ STK:xCart( 1, Pi() / 4 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:xCart( 1, Pi() / 4 );
 
@@ -24865,6 +26208,7 @@ STK:xCart( 1, Pi() / 4 );
 
 ```jsl
 
+
 STK:yCart( 1, Pi() / 4 );
 
 ```
@@ -24872,6 +26216,7 @@ STK:yCart( 1, Pi() / 4 );
 **Esempio 2**
 
 ```jsl
+
 
 STK:yCart( 1, Pi() / 4 );
 
@@ -24886,6 +26231,7 @@ STK:yCart( 1, Pi() / 4 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 For( i = 1, i <= 10, i++,
 	If( i == 7, Stop() );
@@ -24904,6 +26250,7 @@ For( i = 1, i <= 10, i++,
 
 ```jsl
 
+
 Straight Line Depreciation( 1000, 100, 3 );
 
 ```
@@ -24917,6 +26264,7 @@ Straight Line Depreciation( 1000, 100, 3 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -24940,6 +26288,7 @@ New Window( "Example",
 
 ```jsl
 
+
 a = b = c = "";
 New Window( "Example",
 	Modal,
@@ -24958,6 +26307,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 tdedf = 1;
 New Window( "Example: Students t Density",
@@ -24993,6 +26343,7 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
+
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -25017,6 +26368,7 @@ New Window( "Example: Students t Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 extqdf = 1;
 extqqq = 0.5;
@@ -25050,6 +26402,7 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
+
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
 	Print( "opening" );
@@ -25071,6 +26424,7 @@ Close( dt );
 **Esempio 2**
 
 ```jsl
+
 
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
@@ -25099,13 +26453,14 @@ dt << setname( "xxx" );
 
 ```jsl
 
+
 {11, 12, 13}[2];
 
 ```
 
 ### Substitute
 
-**Sintassi:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Sintassi:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descrizione:** Restituisce una copia di stringa, elenco o espressione x, sostituendo istanze di ciascuna espressione di pattern con la rispettiva espressione di sostituzione. L&apos;argomento facoltativo <<IGNORECASE abilita la ricerca senza distinzione fra maiuscole e minuscole se x è una stringa.
 
@@ -25115,6 +26470,7 @@ dt << setname( "xxx" );
 
 ```jsl
 
+
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
@@ -25123,6 +26479,7 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```jsl
 
+
 Substitute( "All things considered", "All", "Some" );
 
 ```
@@ -25130,6 +26487,7 @@ Substitute( "All things considered", "All", "Some" );
 **Esempio 3**
 
 ```jsl
+
 
 lst = {"a", "b", "c"};
 Substitute( lst, "a", "A" );
@@ -25140,6 +26498,7 @@ Substitute( lst, "a", "A" );
 
 ```jsl
 
+
 Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```
@@ -25147,6 +26506,7 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 **Esempio 5**
 
 ```jsl
+
 
 Substitute( "Apple,orange,banana-grape",
 	Items( Get Punctuation Characters() || "-'", "" ), " "
@@ -25158,13 +26518,14 @@ Substitute( "Apple,orange,banana-grape",
 
 ```jsl
 
+
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
 
 ### Substitute Into
 
-**Sintassi:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Sintassi:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descrizione:** Modifica la stringa, elenco o espressione x, sostituendo istanze di ciascuna espressione di pattern con la rispettiva espressione di sostituzione. Nota: l&apos;argomento x deve essere una variabile. L&apos;argomento facoltativo <<IGNORECASE abilita la ricerca senza distinzione fra maiuscole e minuscole se x è una stringa.
 
@@ -25173,6 +26534,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 **Esempio 1**
 
 ```jsl
+
 
 ex = Expr( a + Sqrt( a ) );
 Substitute Into( ex, Expr( a ), Expr( b ) );
@@ -25184,6 +26546,7 @@ Name Expr( ex );
 
 ```jsl
 
+
 ex = "All things considered";
 Substitute Into( ex, "All", "Some" );
 Show( ex );
@@ -25194,6 +26557,7 @@ Show( ex );
 
 ```jsl
 
+
 lst = {"a", "b", "c"};
 Substitute Into( lst, "a", "A" );
 Show( lst );
@@ -25203,6 +26567,7 @@ Show( lst );
 **Esempio 4**
 
 ```jsl
+
 
 s = "Apple,APPLE,apple";
 Substitute Into( s, "apple", "orange", <<IGNORECASE );
@@ -25220,6 +26585,7 @@ Show( s );
 
 ```jsl
 
+
 Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```
@@ -25234,6 +26600,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ```jsl
 
+
 6 - 2 - 1;
 
 ```
@@ -25247,6 +26614,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex = 1;
 ex -= 2;
@@ -25264,6 +26632,7 @@ ex;
 
 ```jsl
 
+
 SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```
@@ -25277,6 +26646,7 @@ SuInv( 1.96, 1.5, 2, 1, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
@@ -25292,6 +26662,7 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ```jsl
 
+
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ```
@@ -25305,6 +26676,7 @@ Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize( exg = By( :sex ), exm = Mean( :height ) );
@@ -25322,6 +26694,7 @@ Eval List( {exg, Round( exm, 1 )} );
 
 ```jsl
 
+
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
@@ -25337,6 +26710,7 @@ Summarize YByX( X( :age, :height ), Y( :sex, :weight ) );
 
 ```jsl
 
+
 Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ```
@@ -25350,6 +26724,7 @@ Summation( i = 0, 10, 1 / Factorial( i ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Suppress Formula Eval( 1 );
 
@@ -25365,6 +26740,7 @@ Suppress Formula Eval( 1 );
 
 ```jsl
 
+
 Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -25378,6 +26754,7 @@ Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 SVD( [11 22, 33 44] );
 
@@ -25393,6 +26770,7 @@ SVD( [11 22, 33 44] );
 
 ```jsl
 
+
 SVD LAPACK( [11 22, 33 44] );
 
 ```
@@ -25406,6 +26784,7 @@ SVD LAPACK( [11 22, 33 44] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exMat = [5 4 1 1, 4 5 1 1, 1 1 4 2, 1 1 2 4];
 exMatswp = Sweep( exMat, [1, 2, 3, 4] );
@@ -25425,6 +26804,7 @@ Show( exMatinv );
 
 ```jsl
 
+
 exMatA = [1 2 3, -2 0 -1, 0 1 1];
 exMatA = exMatA` * exMatA;
 exMatB = [1 2, 1 2, 1 2];
@@ -25441,6 +26821,7 @@ exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 tdedf = 1;
 New Window( "Example: Students t Density",
@@ -25476,6 +26857,7 @@ New Window( "Example: Students t Density",
 
 ```jsl
 
+
 tdidf = 1;
 New Window( "Example: Students t Distribution",
 	tdigr = Graph Box(
@@ -25500,6 +26882,7 @@ New Window( "Example: Students t Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 tlcdidf = 1;
 New Window( "Example: Students t Log CDistribution",
@@ -25526,6 +26909,7 @@ New Window( "Example: Students t Log CDistribution",
 
 ```jsl
 
+
 tldedf = 1;
 New Window( "Example: Students t Log Density",
 	tldegr = Graph Box(
@@ -25550,6 +26934,7 @@ New Window( "Example: Students t Log Density",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 tldidf = 1;
 New Window( "Example: Students t Log Distribution",
@@ -25576,6 +26961,7 @@ New Window( "Example: Students t Log Distribution",
 
 ```jsl
 
+
 New Window( "Example: t Noncentrality",
 	tncgr = Graph Box(
 		Y Scale( 0.01, 0.99 ),
@@ -25598,6 +26984,7 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 extqdf = 1;
 extqqq = 0.5;
@@ -25629,6 +27016,7 @@ New Window( "Example: Students t Quantile",
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		"alpha",
@@ -25650,6 +27038,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Tab Box(
 		tp = Tab Page Box( Title( "alpha" ), Panel Box( "panel", Text Box( "text" ) ) ),
@@ -25668,6 +27057,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Table",
@@ -25691,6 +27081,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Tangent( Pi() / 4 );
 
 ```
@@ -25704,6 +27095,7 @@ Tangent( Pi() / 4 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Tangent( Pi() / 4 );
 
@@ -25719,13 +27111,14 @@ Tangent( Pi() / 4 );
 
 ```jsl
 
+
 TanH( 1 );
 
 ```
 
 ### Text
 
-**Sintassi:** Text( &lt;properties&gt;, {x, y}, text, ... ) Text( {left, top, right, bottom}, text )
+**Sintassi:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
 
 **Descrizione:** Si sposta in posizione {x, y} e disegna il testo specificato dall&apos;argomento  text. Gli argomenti delle proprietà con nome possono essere Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. Argomenti di posizione, argomenti con nome e stringhe possono essere mescolati in qualsiasi ordine. È anche possibile usare quattro coordinate x, y per descrivere un riquadro entro cui disegnare il testo. In tal caso le proprietà non vengono usate.
 
@@ -25734,6 +27127,7 @@ TanH( 1 );
 **Esempio 1**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -25747,6 +27141,7 @@ New Window( "Example",
 **Esempio 2**
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -25766,6 +27161,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Justification Example",
 	Outline Box( "text",
@@ -25805,6 +27201,7 @@ New Window( "Justification Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Text Color( "red" );
@@ -25823,6 +27220,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example: Text Edit Box",
 	Outline Box( "Picker Example",
@@ -25850,6 +27248,7 @@ New Window( "Example: Text Edit Box",
 **JMP Versione aggiunta:** 15
 
 ```jsl
+
 
 New Window( "Degrees",
 	Graph Box(
@@ -25882,6 +27281,7 @@ New Window( "Degrees",
 
 ```jsl
 
+
 score = Text Score(
 	"over the lazy dogs back",
 	["lazy" => 1, "dogs" => 2],
@@ -25900,6 +27300,7 @@ Show( score );
 
 ```jsl
 
+
 w = New Window( "test", Graph Box( FrameSize( 400, 400 ), ) );
 w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom left" ) );
 
@@ -25914,6 +27315,7 @@ w[FrameBox( 1 )] << append seg( ts1 = Text Seg( "default location fixed bottom l
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -25934,6 +27336,7 @@ New Window( "Example",
 
 ```jsl
 
+
 If(
 	Is Empty( This Project() ), Print( "Project: (none)" ),
 	Print( "Project: " || (This Project() << Get Window Title()) ),
@@ -25953,6 +27356,7 @@ If(
 
 ```jsl
 
+
 Throw( "A line number is included in this error", 1 );
 
 ```
@@ -25960,6 +27364,7 @@ Throw( "A line number is included in this error", 1 );
 **Throw irreversibile**
 
 ```jsl
+
 
 
 Try( Throw( "!This is a fatal error" ), Print( "CATCH message not reached" ) );
@@ -25970,6 +27375,7 @@ Print( "AFTER TRY message not reached" );
 **Try-Catch**
 
 ```jsl
+
 
 Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
@@ -25984,6 +27390,7 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 t1 = Tick Seconds();
 Open( "$SAMPLE_DATA/Big Class.jmp" );
@@ -26002,6 +27409,7 @@ Round( t2 - t1, 3 );
 
 ```jsl
 
+
 Format( Time Of Day( Today() ), "h:m:s" );
 
 ```
@@ -26015,6 +27423,7 @@ Format( Time Of Day( Today() ), "h:m:s" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Titlecase( "The dog crossed the road" );
 
@@ -26032,6 +27441,7 @@ Titlecase( "The dog crossed the road" );
 
 ```jsl
 
+
 To Color Space( "red", "LMS" );
 
 ```
@@ -26040,6 +27450,7 @@ To Color Space( "red", "LMS" );
 
 ```jsl
 
+
 To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 
 ```
@@ -26047,6 +27458,7 @@ To Color Space( {0.871, 0.032, 0.061, "lRGB"}, "HLS" );
 **Esempio 3**
 
 ```jsl
+
 
 To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
@@ -26062,6 +27474,7 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ```jsl
 
+
 As Date( Today() );
 
 ```
@@ -26075,6 +27488,7 @@ As Date( Today() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Trace( [11 22, 33 44] );
 
@@ -26092,6 +27506,7 @@ Trace( [11 22, 33 44] );
 
 ```jsl
 
+
 values = Transform Each( {{key, value}}, ["A" => 8, "B" => 6, "C" => 10], value + 1 );
 Show( values );
 
@@ -26101,6 +27516,7 @@ Show( values );
 
 ```jsl
 
+
 ex = Transform Each( {value}, Expr( MyExpr( 10, 20, 30 ) ), value + 1 );
 Show( ex );
 
@@ -26109,6 +27525,7 @@ Show( ex );
 **Expression 2**
 
 ```jsl
+
 
 // Find Functions defined in a script
 parsedScript = Include( "$SAMPLE_SCRIPTS/BayesPlotForFactors.jsl", <<ParseOnly );
@@ -26133,6 +27550,7 @@ Show( functionNames );
 
 ```jsl
 
+
 values = Transform Each( {value}, {10, 20, 30}, value + 5 );
 Show( values );
 
@@ -26142,6 +27560,7 @@ Show( values );
 
 ```jsl
 
+
 values = Transform Each( {element}, 10 :: 15, element + 5 );
 Show( values );
 
@@ -26150,6 +27569,7 @@ Show( values );
 **Output**
 
 ```jsl
+
 
 
 Write( "\!N===List===" );
@@ -26180,6 +27600,7 @@ Show( ex );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Frame Size( 500, 500 ),
@@ -26205,6 +27626,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ```
@@ -26218,6 +27640,7 @@ Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
@@ -26245,6 +27668,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 root1 = Tree Node( "Parent 1" );
 root2 = Tree Node( "Parent 2" );
@@ -26275,6 +27699,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Cities.jmp" );
 tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
@@ -26283,6 +27708,7 @@ tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 **Esempio 2**
 
 ```jsl
+
 
 tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
@@ -26298,6 +27724,7 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```jsl
 
+
 Trigamma( 5 );
 
 ```
@@ -26311,6 +27738,7 @@ Trigamma( 5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Trim( " title   ", both );
 
@@ -26326,6 +27754,7 @@ Trim( " title   ", both );
 
 ```jsl
 
+
 Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ```
@@ -26339,6 +27768,7 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 TripleS Import(); //To get a file dialog to select the XML file
 TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
@@ -26357,6 +27787,7 @@ TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
 ```jsl
 
+
 Try( Sqrt( "s" ), "invalid" );
 
 ```
@@ -26364,6 +27795,7 @@ Try( Sqrt( "s" ), "invalid" );
 **Esempio 2**
 
 ```jsl
+
 
 Try( Sqrt( "s" ), exception_msg );
 
@@ -26383,6 +27815,7 @@ Si osservi che q è il valore critico corretto di Tukey, che è il quantile dell
 
 ```jsl
 
+
 Tukey HSD P value( 3.73, 6, 34 );
 
 ```
@@ -26400,6 +27833,7 @@ Si osservi che q è il valore critico corretto di Tukey, che è il quantile dell
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 alpha = 0.05;
 dfe = 5;
@@ -26431,6 +27865,7 @@ New Window( "Example: Tukey HSD Quantile",
 
 ```jsl
 
+
 Type( [1 2 3] );
 
 ```
@@ -26444,6 +27879,7 @@ Type( [1 2 3] );
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 New Window( "unlineup",
 	Lineup Box( N Col( 2 ),
@@ -26467,6 +27903,7 @@ New Window( "unlineup",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exalpha = 0.05;
 exdelta = 0.5;
@@ -26493,6 +27930,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 exalpha = 0.05;
 exdelta = 0.5;
 Watch( exalpha, exdelta );
@@ -26518,6 +27956,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ```jsl
 
+
 Unregister Addin( "com.mycompany.myaddin" );
 
 ```
@@ -26533,6 +27972,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 **Esempio 1**
 
 ```jsl
+
 
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
@@ -26557,6 +27997,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 **Esempio 2**
 
 ```jsl
+
 
 f1 = Function( {dtab},
 	dtname = (dtab << getname());
@@ -26591,6 +28032,7 @@ Close( dt );
 ```jsl
 
 
+
 If( Check MATLAB Dependencies(),
 	Update MATLAB Dependencies(),
 	Print( "Dependencies are updated" )
@@ -26608,6 +28050,7 @@ If( Check MATLAB Dependencies(),
 
 ```jsl
 
+
 Uppercase( "Café #23" );
 
 ```
@@ -26621,6 +28064,7 @@ Uppercase( "Café #23" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "test",
 	H List Box(
@@ -26648,6 +28092,7 @@ New Window( "test",
 
 ```jsl
 
+
 [11 22] |/ [33 44];
 
 ```
@@ -26661,6 +28106,7 @@ New Window( "test",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exA = [1 2, 3 4];
 exB = [5 6, 7 8, 9 10];
@@ -26683,6 +28129,7 @@ Show( exA, exB, exC, exD, exE );
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Size( 2 );
@@ -26702,6 +28149,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Outline Box( "Picker", V List Box( Text Box( "Label:" ), Text Edit Box( Char( 213 ) ) ) )
 );
@@ -26718,6 +28166,7 @@ New Window( "Example",
 
 ```jsl
 
+
 V Max( [11 22, 33 44, 55 66] );
 
 ```
@@ -26731,6 +28180,7 @@ V Max( [11 22, 33 44, 55 66] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 V Mean( [11 22, 33 44, 55 66] );
 
@@ -26746,6 +28196,7 @@ V Mean( [11 22, 33 44, 55 66] );
 
 ```jsl
 
+
 V Median( [11 22, 33 44, 35 46, 55 66] );
 
 ```
@@ -26759,6 +28210,7 @@ V Median( [11 22, 33 44, 35 46, 55 66] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 V Min( [11 22, 33 44, 55 66] );
 
@@ -26774,6 +28226,7 @@ V Min( [11 22, 33 44, 55 66] );
 
 ```jsl
 
+
 V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ```
@@ -26788,6 +28241,7 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ```jsl
 
+
 V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 ```
@@ -26801,6 +28255,7 @@ V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Outline Box( "Picker",
@@ -26831,6 +28286,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Open( "$SAMPLE_DATA/Big Class.jmp" );
 New Window( "Example",
@@ -26881,6 +28337,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Text Size( V Size() / 4 );
@@ -26899,6 +28356,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Splitter",
 	V Splitter Box(
@@ -26931,6 +28389,7 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```jsl
 
+
 V Standardize( [11 22, 33 44, 55 66] );
 
 ```
@@ -26944,6 +28403,7 @@ V Standardize( [11 22, 33 44, 55 66] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 V Std( [11 22, 33 44, 55 66] );
 
@@ -26959,6 +28419,7 @@ V Std( [11 22, 33 44, 55 66] );
 
 ```jsl
 
+
 V Sum( [11 22, 33 44, 55 66] );
 
 ```
@@ -26972,6 +28433,7 @@ V Sum( [11 22, 33 44, 55 66] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Varimax( [1.2 .4, .9 1.5] );
 
@@ -26987,6 +28449,7 @@ Varimax( [1.2 .4, .9 1.5] );
 
 ```jsl
 
+
 Vec Diag( [11 22, 33 44] );
 
 ```
@@ -27000,6 +28463,7 @@ Vec Diag( [11 22, 33 44] );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exS = [1 3 5, 3 2 6, 5 6 1];
 exX = [1 3 5, 2 4 6];
@@ -27016,6 +28480,7 @@ Vec Quadratic( exS, exX );
 **JMP Versione aggiunta:** 16
 
 ```jsl
+
 
 tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
@@ -27035,6 +28500,7 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ```jsl
 
+
 Wait( -1 ); // Wait for OS events
 
 ```
@@ -27043,6 +28509,7 @@ Wait( -1 ); // Wait for OS events
 
 ```jsl
 
+
 Wait( 0 ); // Wait for OS events and callbacks
 
 ```
@@ -27050,6 +28517,7 @@ Wait( 0 ); // Wait for OS events and callbacks
 **Semplici**
 
 ```jsl
+
 
 Wait( 1.5 );
 
@@ -27064,6 +28532,7 @@ Wait( 1.5 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 x = 1;
 y = 2;
@@ -27088,6 +28557,7 @@ w << close Window();
 
 ```jsl
 
+
 Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 ```
@@ -27103,6 +28573,7 @@ Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 **Gestore eventi**
 
 ```jsl
+
 
 //Making a clickable link show up in a formula column
 New Table( "Example",
@@ -27131,6 +28602,7 @@ New Table( "Example",
 
 ```jsl
 
+
 Web( "http://www.jmp.com/" );
 
 ```
@@ -27144,6 +28616,7 @@ Web( "http://www.jmp.com/" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example", wb = Web Browser Box() );
 wb << Navigate( "http://www.jmp.com" );
@@ -27164,6 +28637,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ```jsl
 
+
 Week Of Year( Today() );
 
 ```
@@ -27171,6 +28645,7 @@ Week Of Year( Today() );
 **Esempio 2**
 
 ```jsl
+
 
 Show(
 	Week Of Year( 01jan2012, 1 ),
@@ -27189,6 +28664,7 @@ Show(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 shape = 0.5;
 New Window( "Example: Weibull Density",
@@ -27215,6 +28691,7 @@ New Window( "Example: Weibull Density",
 
 ```jsl
 
+
 shape = 2;
 New Window( "Example: Weibull Distribution",
 	y = Graph Box(
@@ -27239,6 +28716,7 @@ New Window( "Example: Weibull Distribution",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 exwqbeta = 2;
 exwqqq = 0.5;
@@ -27277,6 +28755,7 @@ New Window( "Example: Weibull Quantile",
 
 ```jsl
 
+
 xs = [10 20 30 . 50];
 ys = [0 0 0 1 1];
 Where( xs > 20 & ys );
@@ -27290,6 +28769,7 @@ Where( xs[1] < 18 );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Get Rows Where( :sex == "M" );
 Where( :sex == "M" );
@@ -27301,6 +28781,7 @@ Where( dt, :sex == "M" );
 
 ```jsl
 
+
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Clear Select << Select Rows( Where( Col Max( :height, :age ) >= 68 ) );
 dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) );
@@ -27310,6 +28791,7 @@ dt << Clear Select << Select Rows( Where( :height == Col Max( :height, :age ) ) 
 **Matrice/Elenco**
 
 ```jsl
+
 
 xs = [10 20 30 . 50];
 xs[Where( xs >= 20 )];
@@ -27322,6 +28804,7 @@ ys[Where( ys >= 20 )];
 **Stati delle righe**
 
 ```jsl
+
 
 dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 dt << Select Rows( [2 4 6] ) << Exclude( 1 );
@@ -27339,6 +28822,7 @@ Where( !Excluded() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 i = 1;
 s = "";
@@ -27360,6 +28844,7 @@ s;
 
 ```jsl
 
+
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
 	Show( "END" );
@@ -27377,6 +28862,7 @@ Extract Expr( extestexpr, For( i = 1, Wild(), i++, Print( "YES!!!" ) ) );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 extestexpr = Expr(
 	For( i = 1, i <= 14, i++, Print( "YES!!!" ) );
@@ -27396,6 +28882,7 @@ Extract Expr( extestexpr, For( i = 1, Wild List(), Print( "YES!!!" ) ) );
 
 ```jsl
 
+
 Window( "Big Class" );
 
 ```
@@ -27409,6 +28896,7 @@ Window( "Big Class" );
 **JMP Versione aggiunta:** 17
 
 ```jsl
+
 
 With Window Handler(
 	New Window( "My Window" ),
@@ -27432,6 +28920,7 @@ With Window Handler(
 
 ```jsl
 
+
 Word( 3, "http://www.jmp.com", ":/." );
 
 ```
@@ -27439,6 +28928,7 @@ Word( 3, "http://www.jmp.com", ":/." );
 **Esempio 2**
 
 ```jsl
+
 
 Word( [2 -1], "This is a sentence" );
 
@@ -27448,6 +28938,7 @@ Word( [2 -1], "This is a sentence" );
 
 ```jsl
 
+
 Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() );
 
 ```
@@ -27456,6 +28947,7 @@ Word( 4, "Apple+Banana Tree,,Pear,,Peach,,Grape", Get Punctuation Characters() )
 
 ```jsl
 
+
 Word( 5, "a b c d", Unmatched( "None" ) );
 
 ```
@@ -27463,6 +28955,7 @@ Word( 5, "a b c d", Unmatched( "None" ) );
 **Esempio 5**
 
 ```jsl
+
 
 Word( 2, "abcd", "" );
 
@@ -27480,6 +28973,7 @@ Word( 2, "abcd", "" );
 
 ```jsl
 
+
 Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
@@ -27488,6 +28982,7 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```jsl
 
+
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -27495,6 +28990,7 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **Esempio 3**
 
 ```jsl
+
 
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
@@ -27509,6 +29005,7 @@ Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "WrapListBox",
 	Wrap List Box(
@@ -27531,6 +29028,7 @@ New Window( "WrapListBox",
 
 ```jsl
 
+
 Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ```
@@ -27544,6 +29042,7 @@ Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -27563,6 +29062,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -27589,6 +29089,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -27613,6 +29114,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* Default value for X Scale() is (0,100). */
 New Window( "Example",
@@ -27641,6 +29143,7 @@ New Window( "Example",
 
 ```jsl
 
+
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
 Parse XML( ex,
@@ -27663,6 +29166,7 @@ Parse XML( ex,
 
 ```jsl
 
+
 text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&quot;z&quot;" );
 
 ```
@@ -27677,6 +29181,7 @@ text = XML Decode( "isSmallAlpha = letter&gt;=&quot;a&quot; &amp; letter&lt;=&qu
 
 ```jsl
 
+
 textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 
 ```
@@ -27690,6 +29195,7 @@ textxml = XML Encode( "\[isSmallAlpha = letter>="a" & letter<="z"]\" );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 ex =
 "<table name='fromxml'><col name='x'>[1 2 3]</col><col name='y'>[11 22 33]</col></table>";
@@ -27713,6 +29219,7 @@ Parse XML( ex,
 
 ```jsl
 
+
 result = XPath Query(
 	"<doc><colors><color>red</color><color>green</color><color>blue</color></colors></doc>",
 	"//color/text()"
@@ -27729,6 +29236,7 @@ result = XPath Query(
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Spiral",
 	Graph Box(
@@ -27763,6 +29271,7 @@ New Window( "Spiral",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Pen Color( "red" );
@@ -27781,6 +29290,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 New Window( "Example",
 	Graph Box(
@@ -27807,6 +29317,7 @@ New Window( "Example",
 
 ```jsl
 
+
 New Window( "Example",
 	Graph Box(
 		Fill Color( "red" );
@@ -27831,6 +29342,7 @@ New Window( "Example",
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 /* Default value for Y Scale() is (0,100).*/
 New Window( "Example",
@@ -27859,6 +29371,7 @@ New Window( "Example",
 
 ```jsl
 
+
 Year( Today() );
 
 ```
@@ -27873,6 +29386,7 @@ Year( Today() );
 
 ```jsl
 
+
 Zero Or Missing( 1 < 2 );
 
 ```
@@ -27886,6 +29400,7 @@ Zero Or Missing( 1 < 2 );
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 lambda = 4;
 sigma = .5;
@@ -27928,6 +29443,7 @@ New Window( "Example: Zero Inflated Negative Binomial Distribution",
 
 ```jsl
 
+
 lambda = 4;
 sigma = .5;
 p = .1;
@@ -27962,6 +29478,7 @@ New Window( "Example: Zero Inflated Negative Binomial Probability",
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 qexpl = 20;
 qexpsig = .5;
@@ -28023,6 +29540,7 @@ New Window( "Example: ZI Negative Binomial Quantile",
 
 ```jsl
 
+
 lambda = 4;
 p = .2;
 New Window( "Example: Zero Inflated Poisson Distribution",
@@ -28061,6 +29579,7 @@ New Window( "Example: Zero Inflated Poisson Distribution",
 
 ```jsl
 
+
 lambda = 4;
 p = .2;
 New Window( "Example: Poisson Probability",
@@ -28093,6 +29612,7 @@ New Window( "Example: Poisson Probability",
 **JMP Versione aggiunta:** 19
 
 ```jsl
+
 
 qexpl = 20;
 qexpp = .2;

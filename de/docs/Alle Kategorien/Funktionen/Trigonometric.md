@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 4 * ArcTangent( 1 );
 
 ```
@@ -25,6 +26,7 @@
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 ArcCosine( 0.5 );
 
@@ -40,6 +42,7 @@ ArcCosine( 0.5 );
 
 ```jsl
 
+
 ArcSine( 0.5 );
 
 ```
@@ -53,6 +56,7 @@ ArcSine( 0.5 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 ArcCosH( 1 );
 
@@ -68,6 +72,7 @@ ArcCosH( 1 );
 
 ```jsl
 
+
 ArcCosine( 0.5 );
 
 ```
@@ -81,6 +86,7 @@ ArcCosine( 0.5 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 ArcSinH( 1 );
 
@@ -96,6 +102,7 @@ ArcSinH( 1 );
 
 ```jsl
 
+
 ArcSine( 0.5 );
 
 ```
@@ -109,6 +116,7 @@ ArcSine( 0.5 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 4 * ArcTangent( 1 );
 
@@ -124,6 +132,7 @@ ArcSine( 0.5 );
 
 ```jsl
 
+
 ArcTanH( 0.5 );
 
 ```
@@ -137,6 +146,7 @@ ArcTanH( 0.5 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 4 * ArcTangent( 1 );
 
@@ -152,6 +162,7 @@ ArcTanH( 0.5 );
 
 ```jsl
 
+
 Cosine( Pi() / 2 );
 
 ```
@@ -165,6 +176,7 @@ Cosine( Pi() / 2 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 CosH( 1 );
 
@@ -180,6 +192,7 @@ CosH( 1 );
 
 ```jsl
 
+
 Cosine( Pi() / 2 );
 
 ```
@@ -193,6 +206,7 @@ Cosine( Pi() / 2 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 Sine( Pi() / 6 );
 
@@ -208,6 +222,7 @@ Sine( Pi() / 6 );
 
 ```jsl
 
+
 SinH( 1 );
 
 ```
@@ -221,6 +236,7 @@ SinH( 1 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 Sine( Pi() / 6 );
 
@@ -236,6 +252,7 @@ Sine( Pi() / 6 );
 
 ```jsl
 
+
 Tangent( Pi() / 4 );
 
 ```
@@ -250,6 +267,7 @@ Tangent( Pi() / 4 );
 
 ```jsl
 
+
 TanH( 1 );
 
 ```
@@ -263,6 +281,7 @@ TanH( 1 );
 **JMP Version hinzugefügt:** Vor Version 14
 
 ```jsl
+
 
 Tangent( Pi() / 4 );
 

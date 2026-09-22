@@ -12,7 +12,14 @@
 
 ```jsl
 
-If( !Check MATLAB Dependencies(),	Install MATLAB Dependencies();	Print( "Dependencies are installed" );,	Print( "Dependencies are installed" ));
+
+
+If( !Check MATLAB Dependencies(),
+	Install MATLAB Dependencies();
+	Print( "Dependencies are installed" );
+,
+	Print( "Dependencies are installed" )
+);
 
 ```
 
@@ -26,7 +33,12 @@
 
 ```jsl
 
-If( !Check MATLAB Dependencies(),	Install MATLAB Dependencies(),	Print( "Dependencies are installed" ));
+
+
+If( !Check MATLAB Dependencies(),
+	Install MATLAB Dependencies(),
+	Print( "Dependencies are installed" )
+);
 
 ```
 
@@ -40,7 +52,10 @@
 
 ```jsl
 
-MATLABConnection = MATLAB Connect();x = MatlabConnection << Is Connected;Show( x );
+
+MATLABConnection = MATLAB Connect();
+x = MatlabConnection << Is Connected;
+Show( x );
 
 ```
 
@@ -54,7 +69,19 @@ MATLABConnection = MATLAB Connect();x = MatlabConnection << Is Connected;Show(
 
 ```jsl
 
-MATLAB Init( Echo( true ) );MATLAB Control( Echo( false ) );MATLAB Submit(	"\[	v = [9 8 7, 6 5 4, 3 2 1];	m = [1 2 3, 4 5 6, 7 8 9];	rowjoin = [v ; m]	coljoin = [v , m]]\");MATLAB Term();
+
+
+MATLAB Init( Echo( true ) );
+MATLAB Control( Echo( false ) );
+MATLAB Submit(
+	"\[
+	v = [9 8 7, 6 5 4, 3 2 1];
+	m = [1 2 3, 4 5 6, 7 8 9];
+	rowjoin = [v ; m]
+	coljoin = [v , m]
+]\"
+);
+MATLAB Term();
 
 ```
 
@@ -68,7 +95,24 @@ MATLABConnection = MATLAB Connect();x = MatlabConnection << Is Connected;Show(
 
 ```jsl
 
-MATLAB Init();a = "abcdef";d = 3.141;v = [9 8 7, 6 5 4, 3 2 1];m = [1 2 3, 4 5 6, 7 8 9];ml = MATLAB Execute(	{v, m, a, d},	{x, z, a, d},	"\[a = v * m; % matrix productd = v / m; % = v * inv(m) called Right divisionz = m \ v; % = m * inv(v) called Left divisionx = m .* v; % element-wise product]\");Show( v, m, ml, x, z, a, d );MATLAB Term();
+
+MATLAB Init();
+a = "abcdef";
+d = 3.141;
+v = [9 8 7, 6 5 4, 3 2 1];
+m = [1 2 3, 4 5 6, 7 8 9];
+ml = MATLAB Execute(
+	{v, m, a, d},
+	{x, z, a, d},
+	"\[
+a = v * m; % matrix product
+d = v / m; % = v * inv(m) called Right division
+z = m \ v; % = m * inv(v) called Left division
+x = m .* v; % element-wise product
+]\"
+);
+Show( v, m, ml, x, z, a, d );
+MATLAB Term();
 
 ```
 
@@ -82,7 +126,18 @@ MATLAB Init();a = "abcdef";d = 3.141;v = [9 8 7, 6 5 4, 3 2 1];m = [1 2 3, 4
 
 ```jsl
 
-MATLAB Init();x1 = [1, 2, 3];MATLAB Send( x1 );x2 = MATLAB Get( x1 );Show( x1, x2 );dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );MATLAB Send( dt1 );dt2 = MATLAB Get( dt1 );dt2 << New Data View;Close( dt1 );MATLAB Term();
+
+MATLAB Init();
+x1 = [1, 2, 3];
+MATLAB Send( x1 );
+x2 = MATLAB Get( x1 );
+Show( x1, x2 );
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send( dt1 );
+dt2 = MATLAB Get( dt1 );
+dt2 << New Data View;
+Close( dt1 );
+MATLAB Term();
 
 ```
 
@@ -96,7 +151,16 @@ MATLAB Init();x1 = [1, 2, 3];MATLAB Send( x1 );x2 = MATLAB Get( x1 );Show( x
 
 ```jsl
 
-MATLAB Init();ml = MATLAB Submit( "\[plot(1:10)]\" );plot = MATLAB Get Graphics( png );pngJMP = New Window( "Plot", Picture Box( plot ) );pngJMP << Close Window;MATLAB Submit( "close" );//Needed this command to close the figure generated from MatlabMATLAB Term();
+
+MATLAB Init();
+ml = MATLAB Submit( "\[
+plot(1:10)
+]\" );
+plot = MATLAB Get Graphics( png );
+pngJMP = New Window( "Plot", Picture Box( plot ) );
+pngJMP << Close Window;
+MATLAB Submit( "close" );//Needed this command to close the figure generated from Matlab
+MATLAB Term();
 
 ```
 
@@ -110,7 +174,11 @@ MATLAB Init();ml = MATLAB Submit( "\[plot(1:10)]\" );plot = MATLAB Get Graph
 
 ```jsl
 
-MATLAB Init();version = MATLAB Get Version();Show( version );MATLAB Term();
+
+MATLAB Init();
+version = MATLAB Get Version();
+Show( version );
+MATLAB Term();
 
 ```
 
@@ -124,7 +192,14 @@ MATLAB Init();version = MATLAB Get Version();Show( version );MATLAB Term();
 
 ```jsl
 
-MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = MATLAB Get( str );Show( getStr );MATLAB Term();
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = MATLAB Get( str );
+Show( getStr );
+MATLAB Term();
 
 ```
 
@@ -138,7 +213,11 @@ MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy
 
 ```jsl
 
-MATLAB Init();x = MATLAB Is Connected();Show( x );MATLAB Term();
+
+MATLAB Init();
+x = MATLAB Is Connected();
+Show( x );
+MATLAB Term();
 
 ```
 
@@ -152,7 +231,11 @@ MATLAB Init();x = MATLAB Is Connected();Show( x );MATLAB Term();
 
 ```jsl
 
-MATLAB Init();MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );Show( MATLAB name );MATLAB Term();
+
+MATLAB Init();
+MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );
+Show( MATLAB name );
+MATLAB Term();
 
 ```
 
@@ -166,7 +249,12 @@ MATLAB Init();MATLAB name = MATLAB JMP Name to MATLAB Name( a b c );Show( MATL
 
 ```jsl
 
-MATLAB Init();// if .mat file contained: x = 40; y = 'hello';vars = MATLAB Load( "path/to/.mat" );Show( vars << Get Value( "x" ), vars << Get Value( "y" ) );MATLAB Term();
+
+MATLAB Init();
+// if .mat file contained: x = 40; y = 'hello';
+vars = MATLAB Load( "path/to/.mat" );
+Show( vars << Get Value( "x" ), vars << Get Value( "y" ) );
+MATLAB Term();
 
 ```
 
@@ -180,7 +268,16 @@ MATLAB Init();// if .mat file contained: x = 40; y = 'hello';vars = MATLAB Loa
 
 ```jsl
 
-MATLAB Init();x = [1, 2, 3];MATLAB Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );MATLAB Send( dt );Close( dt );MATLAB Submit( "x" );MATLAB Submit( "dt" );MATLAB Term();
+
+MATLAB Init();
+x = [1, 2, 3];
+MATLAB Send( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send( dt );
+Close( dt );
+MATLAB Submit( "x" );
+MATLAB Submit( "dt" );
+MATLAB Term();
 
 ```
 
@@ -194,7 +291,13 @@ MATLAB Init();x = [1, 2, 3];MATLAB Send( x );dt = Open( "$SAMPLE_DATA/Big Cla
 
 ```jsl
 
-MATLAB Init();MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );MATLAB Send File( "$SAMPLE_DATA/Baseball.jmp" );MATLAB Submit( "BigClass" );MATLAB Submit( "Baseball" );MATLAB Term();
+
+MATLAB Init();
+MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );
+MATLAB Send File( "$SAMPLE_DATA/Baseball.jmp" );
+MATLAB Submit( "BigClass" );
+MATLAB Submit( "Baseball" );
+MATLAB Term();
 
 ```
 
@@ -208,7 +311,16 @@ MATLAB Init();MATLAB Send File( "$SAMPLE_DATA/Big Class.jmp" );MATLAB Send Fil
 
 ```jsl
 
-MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy dog';a = 200;]\" );getStr = MATLAB Get( str );getNum = MATLAB Get( a );Show( getStr, getNum );MATLAB Term();
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+a = 200;
+]\" );
+getStr = MATLAB Get( str );
+getNum = MATLAB Get( a );
+Show( getStr, getNum );
+MATLAB Term();
 
 ```
 
@@ -222,7 +334,10 @@ MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy
 
 ```jsl
 
-MATLAB Init();MATLAB Submit File( "file containing MATLAB source.m" );MATLAB Term();
+
+MATLAB Init();
+MATLAB Submit File( "file containing MATLAB source.m" );
+MATLAB Term();
 
 ```
 
@@ -236,7 +351,14 @@ MATLAB Init();MATLAB Submit File( "file containing MATLAB source.m" );MATLAB T
 
 ```jsl
 
-MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy dog';]\" );getStr = MATLAB Get( str );Show( getStr );MATLAB Term();
+
+MATLAB Init();
+MATLAB Submit( "\[
+str = 'The quick brown fox jumps over the lazy dog';
+]\" );
+getStr = MATLAB Get( str );
+Show( getStr );
+MATLAB Term();
 
 ```
 
@@ -250,7 +372,12 @@ MATLAB Init();MATLAB Submit( "\[str = 'The quick brown fox jumps over the lazy
 
 ```jsl
 
-If( Check MATLAB Dependencies(),	Update MATLAB Dependencies(),	Print( "Dependencies are updated" ));
+
+
+If( Check MATLAB Dependencies(),
+	Update MATLAB Dependencies(),
+	Print( "Dependencies are updated" )
+);
 
 ```
 

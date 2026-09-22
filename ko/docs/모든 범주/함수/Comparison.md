@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 1 == 1;
 
 ```
@@ -25,6 +26,7 @@
 **JMP추가된 버전:** 버전 14 이전
 
 ```jsl
+
 
 3 > 2 > 1;
 
@@ -40,6 +42,7 @@
 
 ```jsl
 
+
 3 >= 2 >= 2;
 
 ```
@@ -53,6 +56,7 @@
 **JMP추가된 버전:** 버전 14 이전
 
 ```jsl
+
 
 Is Missing( . );
 
@@ -70,6 +74,7 @@ Is Missing( . );
 
 ```jsl
 
+
 Is Same Color( "black", 0 );
 
 ```
@@ -77,6 +82,7 @@ Is Same Color( "black", 0 );
 **예제 2**
 
 ```jsl
+
 
 Is Same Color( "red", "green", "blue" );
 
@@ -86,6 +92,7 @@ Is Same Color( "red", "green", "blue" );
 
 ```jsl
 
+
 Is Same Color( "red", To Color Space( "hls", "red" ) );
 
 ```
@@ -93,6 +100,7 @@ Is Same Color( "red", To Color Space( "hls", "red" ) );
 **예제 4**
 
 ```jsl
+
 
 Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
@@ -108,6 +116,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
+
 [1 1 1] < [0 1 2];
 
 ```
@@ -121,6 +130,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 **JMP추가된 버전:** 버전 14 이전
 
 ```jsl
+
 
 1 < 2 <= 2;
 
@@ -136,6 +146,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
+
 1 <= 2 <= 2;
 
 ```
@@ -150,6 +161,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ```jsl
 
+
 2 <= 2 < 3;
 
 ```
@@ -163,6 +175,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 **JMP추가된 버전:** 버전 14 이전
 
 ```jsl
+
 
 1 != 2 != 1;
 

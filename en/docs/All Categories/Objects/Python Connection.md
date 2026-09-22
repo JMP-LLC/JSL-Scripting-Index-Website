@@ -16,13 +16,17 @@
 
 ```jsl
 
-conn = Python Connect();conn << Create JPIP CMD();
+
+
+conn = Python Connect();
+conn << Create JPIP CMD();
 
 ```
 
 **Example 2**
 
 ```jsl
+
 
 Python Create JPIP CMD();
 
@@ -48,7 +52,31 @@ Python Create JPIP CMD();
 
 ```jsl
 
-PythonConnection = Python Connect();// NOTE: a,d,x,z must be declared before Execute()// as this is the location the results will be written.a = "abcdef";d = 3.141;x = 0;z = 0;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = PythonConnection << Execute(	{v, m, a, d},	{x, z, a, d},	"\[import numpy as npa = np.multiply(v, m) # matrix productd = np.divide(v, m) # matrix divisionz = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left divisionx = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division	]\");Show( v, m, ml, x, z, a, d );
+
+PythonConnection = Python Connect();
+// NOTE: a,d,x,z must be declared before Execute()
+// as this is the location the results will be written.
+a = "abcdef";
+d = 3.141;
+x = 0;
+z = 0;
+v = [1 0 0, 0 1 0, 0 0 1];
+// pi, e, phi, c, Plank's, Faraday, 345 triangle
+m = [3.141 2.718 1.618,
+2.997 6.626 9.648,
+3 4 5];
+ml = PythonConnection << Execute(
+	{v, m, a, d},
+	{x, z, a, d},
+	"\[
+import numpy as np
+a = np.multiply(v, m) # matrix product
+d = np.divide(v, m) # matrix division
+z = np.multiply(m, np.linalg.inv(v)) # m * inv(v) called Left division
+x = np.multiply(np.linalg.inv(m), v) # inv(m) * v called right division
+	]\"
+);
+Show( v, m, ml, x, z, a, d );
 
 ```
 
@@ -56,7 +84,39 @@ PythonConnection = Python Connect();// NOTE: a,d,x,z must be declared before Ex
 
 ```jsl
 
-PythonConnection = Python Connect();x1 = 0;x2 = 0;y1 = 0;y2 = 0;z1 = 0;z2 = 0;v = [1 0 0, 0 1 0, 0 0 1];// pi, e, phi, c, Plank's, Faraday, 345 trianglem = [3.141 2.718 1.618,2.997 6.626 9.648,3 4 5];ml = Python Execute(	{v, m},	{x1, x2, y1, y2, z1, z2},	"\[import numpy as npx1 = np.multiply(v, m) # matrix productprint('x1=', x1)x2 = np.divide(v, m) # matrix divisionprint('x2=', x2)y1 = np.dot(v, m) # dot product of v and mprint('y1=', y1)y2 = np.dot(m, v) # dot product of m and vprint('y2=', y2)z1 = np.inner(v, m) # inner product of v and mprint('z1=', z1)z2 = np.inner(m, v) # innder product of m and vprint('z2=', z2)		]\");Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
+
+PythonConnection = Python Connect();
+x1 = 0;
+x2 = 0;
+y1 = 0;
+y2 = 0;
+z1 = 0;
+z2 = 0;
+v = [1 0 0, 0 1 0, 0 0 1];
+// pi, e, phi, c, Plank's, Faraday, 345 triangle
+m = [3.141 2.718 1.618,
+2.997 6.626 9.648,
+3 4 5];
+ml = Python Execute(
+	{v, m},
+	{x1, x2, y1, y2, z1, z2},
+	"\[
+import numpy as np
+x1 = np.multiply(v, m) # matrix product
+print('x1=', x1)
+x2 = np.divide(v, m) # matrix division
+print('x2=', x2)
+y1 = np.dot(v, m) # dot product of v and m
+print('y1=', y1)
+y2 = np.dot(m, v) # dot product of m and v
+print('y2=', y2)
+z1 = np.inner(v, m) # inner product of v and m
+print('z1=', z1)
+z2 = np.inner(m, v) # innder product of m and v
+print('z2=', z2)
+		]\"
+);
+Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ```
 
@@ -72,7 +132,13 @@ PythonConnection = Python Connect();x1 = 0;x2 = 0;y1 = 0;y2 = 0;z1 = 0;z2 
 
 ```jsl
 
-PythonConnection = Python Connect();date1 = As Date( Today() );PythonConnection << Set( date1 );date2 = PythonConnection << Get( date1 );Show( date1, date2 );
+
+
+PythonConnection = Python Connect();
+date1 = As Date( Today() );
+PythonConnection << Set( date1 );
+date2 = PythonConnection << Get( date1 );
+Show( date1, date2 );
 
 ```
 
@@ -80,7 +146,18 @@ PythonConnection = Python Connect();x1 = 0;x2 = 0;y1 = 0;y2 = 0;z1 = 0;z2 
 
 ```jsl
 
-PythonConnection = Python Connect();x1 = [1, 2, 3];PythonConnection << Set( x1 );x2 = PythonConnection << Get( x1 );Show( x1, x2 );dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );PythonConnection << Set( dt1 );dt2 = PythonConnection << Get( dt1 );dt2 << New Data View;Close( dt1 );
+
+
+PythonConnection = Python Connect();
+x1 = [1, 2, 3];
+PythonConnection << Set( x1 );
+x2 = PythonConnection << Get( x1 );
+Show( x1, x2 );
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
+PythonConnection << Set( dt1 );
+dt2 = PythonConnection << Get( dt1 );
+dt2 << New Data View;
+Close( dt1 );
 
 ```
 
@@ -88,7 +165,14 @@ PythonConnection = Python Connect();x1 = 0;x2 = 0;y1 = 0;y2 = 0;z1 = 0;z2 
 
 ```jsl
 
-PythonConnection = Python Connect();PythonConnection << Install Packages( "numpy" );PythonConnection << Submit( "import numpy as np" );PythonConnection << Submit( "datetime64 = np.datetime64('1989-10-05')" );numpy_datetime = PythonConnection << Get( datetime64 );Show( numpy_datetime );
+
+
+PythonConnection = Python Connect();
+PythonConnection << Install Packages( "numpy" );
+PythonConnection << Submit( "import numpy as np" );
+PythonConnection << Submit( "datetime64 = np.datetime64('1989-10-05')" );
+numpy_datetime = PythonConnection << Get( datetime64 );
+Show( numpy_datetime );
 
 ```
 
@@ -102,7 +186,10 @@ PythonConnection = Python Connect();x1 = 0;x2 = 0;y1 = 0;y2 = 0;z1 = 0;z2 
 
 ```jsl
 
-PythonConnection = Python Connect();version = PythonConnection << Get Version;Show( version );
+
+PythonConnection = Python Connect();
+version = PythonConnection << Get Version;
+Show( version );
 
 ```
 
@@ -118,7 +205,10 @@ PythonConnection = Python Connect();version = PythonConnection << Get Version;
 
 ```jsl
 
-// install numpy and pandas packagesconn = Python Connect();conn << Install Packages( "numpy pandas" );
+
+// install numpy and pandas packages
+conn = Python Connect();
+conn << Install Packages( "numpy pandas" );
 
 ```
 
@@ -126,7 +216,9 @@ PythonConnection = Python Connect();version = PythonConnection << Get Version;
 
 ```jsl
 
-// install numpy and pandas packagesPython Install Packages( "numpy pandas" );
+
+// install numpy and pandas packages
+Python Install Packages( "numpy pandas" );
 
 ```
 
@@ -134,7 +226,9 @@ PythonConnection = Python Connect();version = PythonConnection << Get Version;
 
 ```jsl
 
-// install numpy and pandas packagesPython Install Packages( {"numpy", "pandas"} );
+
+// install numpy and pandas packages
+Python Install Packages( {"numpy", "pandas"} );
 
 ```
 
@@ -148,7 +242,10 @@ PythonConnection = Python Connect();version = PythonConnection << Get Version;
 
 ```jsl
 
-PythonConnection = Python Connect();x = PythonConnection << Is Connected;Show( x );
+
+PythonConnection = Python Connect();
+x = PythonConnection << Is Connected;
+Show( x );
 
 ```
 
@@ -162,7 +259,10 @@ PythonConnection = Python Connect();x = PythonConnection << Is Connected;Show(
 
 ```jsl
 
-PythonConnection = Python Connect();Python Name = PythonConnection << JMP Name To Python Name( a b c );Show( Python Name );
+
+PythonConnection = Python Connect();
+Python Name = PythonConnection << JMP Name To Python Name( a b c );
+Show( Python Name );
 
 ```
 
@@ -176,7 +276,14 @@ PythonConnection = Python Connect();Python Name = PythonConnection << JMP Name 
 
 ```jsl
 
-PythonConnection = Python Connect();pi = 3.1415927;PythonConnection << Send( pi );PythonConnection << Submit( "print(pi)" );PythonConnection << Reset();// will show error, pi not definedPythonConnection << Submit( "print(pi)" );
+
+PythonConnection = Python Connect();
+pi = 3.1415927;
+PythonConnection << Send( pi );
+PythonConnection << Submit( "print(pi)" );
+PythonConnection << Reset();
+// will show error, pi not defined
+PythonConnection << Submit( "print(pi)" );
 
 ```
 
@@ -192,7 +299,12 @@ PythonConnection = Python Connect();pi = 3.1415927;PythonConnection << Send( p
 
 ```jsl
 
-PythonConnection = Python Connect();date = As Date( Today() );PythonConnection << Send( date );PythonConnection << Submit( "print(date)" );
+
+
+PythonConnection = Python Connect();
+date = As Date( Today() );
+PythonConnection << Send( date );
+PythonConnection << Submit( "print(date)" );
 
 ```
 
@@ -200,7 +312,14 @@ PythonConnection = Python Connect();pi = 3.1415927;PythonConnection << Send( p
 
 ```jsl
 
-PythonConnection = Python Connect();x = [1, 2, 3];PythonConnection << Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );PythonConnection << Send( dt );PythonConnection << Submit( "print(x)" );PythonConnection << Submit( "print(dt)" );
+
+PythonConnection = Python Connect();
+x = [1, 2, 3];
+PythonConnection << Send( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+PythonConnection << Send( dt );
+PythonConnection << Submit( "print(x)" );
+PythonConnection << Submit( "print(dt)" );
 
 ```
 
@@ -214,7 +333,13 @@ PythonConnection = Python Connect();x = [1, 2, 3];PythonConnection << Send( x 
 
 ```jsl
 
-PythonConnection = Python Connect();PythonConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );dtname = "$SAMPLE_DATA/Baseball.jmp";PythonConnection << Send File( dtname );PythonConnection << Submit( "print(Big_Class)" );PythonConnection << Submit( "print(Baseball)" );
+
+PythonConnection = Python Connect();
+PythonConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );
+dtname = "$SAMPLE_DATA/Baseball.jmp";
+PythonConnection << Send File( dtname );
+PythonConnection << Submit( "print(Big_Class)" );
+PythonConnection << Submit( "print(Baseball)" );
 
 ```
 
@@ -230,7 +355,12 @@ PythonConnection = Python Connect();PythonConnection << Send File( "$SAMPLE_DAT
 
 ```jsl
 
-PythonConnection = Python Connect();date = As Date( Today() );PythonConnection << Set( date );PythonConnection << Submit( "print(date)" );
+
+
+PythonConnection = Python Connect();
+date = As Date( Today() );
+PythonConnection << Set( date );
+PythonConnection << Submit( "print(date)" );
 
 ```
 
@@ -238,7 +368,14 @@ PythonConnection = Python Connect();PythonConnection << Send File( "$SAMPLE_DAT
 
 ```jsl
 
-PythonConnection = Python Connect();x = [1, 2, 3];PythonConnection << Set( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );PythonConnection << Set( dt );PythonConnection << Submit( "print(x)" );PythonConnection << Submit( "print(dt)" );
+
+PythonConnection = Python Connect();
+x = [1, 2, 3];
+PythonConnection << Set( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+PythonConnection << Set( dt );
+PythonConnection << Submit( "print(x)" );
+PythonConnection << Submit( "print(dt)" );
 
 ```
 
@@ -252,7 +389,17 @@ PythonConnection = Python Connect();x = [1, 2, 3];PythonConnection << Set( x )
 
 ```jsl
 
-PythonConnection = Python Connect();PythonConnection << Submit(	"\[str = 'The quick brown fox jumps over the lazy dog';a = 200;]\");getStr = PythonConnection << Get( str );getNum = PythonConnection << Get( a );Show( getStr, getNum );
+
+PythonConnection = Python Connect();
+PythonConnection << Submit(
+	"\[
+str = 'The quick brown fox jumps over the lazy dog';
+a = 200;
+]\"
+);
+getStr = PythonConnection << Get( str );
+getNum = PythonConnection << Get( a );
+Show( getStr, getNum );
 
 ```
 
@@ -266,7 +413,9 @@ PythonConnection = Python Connect();PythonConnection << Submit(	"\[str = 'The
 
 ```jsl
 
-PythonConnection = Python Connect();PythonConnection << Submit File( "some_Python_source.py" );
+
+PythonConnection = Python Connect();
+PythonConnection << Submit File( "some_Python_source.py" );
 
 ```
 

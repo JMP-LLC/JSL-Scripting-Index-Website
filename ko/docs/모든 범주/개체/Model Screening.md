@@ -12,7 +12,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -28,7 +34,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -36,7 +46,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -44,7 +61,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -56,7 +77,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -70,7 +99,10 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder( Variables( Subgroup( :DAY ), Y( :DIAMETER ) ), By( :OPERATOR ) );
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -82,7 +114,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```
 
@@ -94,7 +129,21 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -106,7 +155,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Copy Script;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Copy Script;
 
 ```
 
@@ -118,7 +174,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Data Table Window;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Data Table Window;
 
 ```
 
@@ -132,7 +195,10 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -144,7 +210,22 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -158,7 +239,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -166,7 +255,28 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -178,7 +288,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -190,7 +308,12 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -202,7 +325,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));t = obj << Get Script;Show( t );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -214,7 +345,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -226,7 +365,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));t = obj << Get Timing;Show( t );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -238,7 +385,11 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -252,7 +403,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -264,7 +419,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -276,7 +438,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -290,7 +460,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -302,7 +475,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -314,7 +494,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Redo Analysis;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Redo Analysis;
 
 ```
 
@@ -326,7 +513,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Relaunch Analysis;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -338,7 +532,12 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -350,19 +549,38 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**구문:** obj &lt;&lt; Report; Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -374,7 +592,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Report View( "Summary" );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -386,7 +611,21 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -398,7 +637,21 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -410,7 +663,21 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -422,7 +689,12 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box( biv = dt << Run Script( "Bivariate" ), dist = dt << Run Script( "Distribution" ) )
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -432,19 +704,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-**예제 1**
-
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**예제 2**
-
-```jsl
-
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box( biv = dt << Run Script( "Bivariate" ), dist = dt << Run Script( "Distribution" ) )
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -456,7 +723,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -468,7 +742,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Save Script to Journal;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -480,7 +761,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Save Script to Report;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Save Script to Report;
 
 ```
 
@@ -492,7 +780,14 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Save Script to Script Window;
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -500,11 +795,17 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 **구문:** SendToByGroup( {":Column == level"}, command );
 
-**설명:** 기준 그룹의 각 수준으로 플랫폼 명령을 보내거나 사용자 정의 명령을 표시합니다.
+**설명:** 기준 그룹의 각 수준에 플랫폼 명령 또는 표시 사용자 정의 명령을 보냅니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -516,7 +817,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -528,7 +842,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -540,7 +860,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -552,7 +877,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Title( "My Platform" );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -564,7 +896,16 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -580,7 +921,12 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -592,19 +938,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**구문:** obj = Model Screening(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Model Screening(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -618,7 +974,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
 
 ```
 
@@ -634,7 +996,20 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -646,7 +1021,13 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
 
 ```
 
@@ -660,7 +1041,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Freq( :_freqcol ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Freq( :_freqcol )
+);
 
 ```
 
@@ -672,7 +1061,13 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
 
 ```
 
@@ -684,7 +1079,13 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
 
 ```
 
@@ -698,7 +1099,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Weight( :_weightcol ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Weight( :_weightcol )
+);
 
 ```
 
@@ -710,7 +1119,13 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );dt << New Column( "_weightcol", Numeri
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
 
 ```
 
@@ -722,7 +1137,13 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
 
 ```
 
@@ -740,7 +1161,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :LTG, :BMI, :BP, :Glucose, :HDL ),	Add Quadratics( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :LTG, :BMI, :BP, :Glucose, :HDL ),
+	Add Quadratics( 1 )
+);
 
 ```
 
@@ -756,7 +1185,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :LTG, :BMI, :BP, :Glucose, :HDL ),	Add Two Way Interactions( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :LTG, :BMI, :BP, :Glucose, :HDL ),
+	Add Two Way Interactions( 1 )
+);
 
 ```
 
@@ -772,7 +1209,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Additional Methods( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Additional Methods( 1 )
+);
 
 ```
 
@@ -788,7 +1233,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 1 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 1 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -804,7 +1265,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 1 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 1 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -818,7 +1295,19 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Equity.jmp" );Model Screening(	Y( :BAD ),	Validation( :Validation ),	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),	Neural( 0 ),	Bootstrap Forest( 0 ),	Generalized Regression( 0 ),	Support Vector Machines( 0 ),	Cardinality of Predictors( 1 ));
+
+
+Open( "$Sample_Data/Equity.jmp" );
+Model Screening(
+	Y( :BAD ),
+	Validation( :Validation ),
+	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),
+	Neural( 0 ),
+	Bootstrap Forest( 0 ),
+	Generalized Regression( 0 ),
+	Support Vector Machines( 0 ),
+	Cardinality of Predictors( 1 )
+);
 
 ```
 
@@ -832,7 +1321,25 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 1 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 1 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 1 ),	Generalized Regression( 1 ),	Decision Threshold( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 1 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 1 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 1 ),
+	Generalized Regression( 1 ),
+	Decision Threshold( 1 )
+);
 
 ```
 
@@ -848,7 +1355,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 1 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 1 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -864,7 +1387,26 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Iris.jmp" );Make Validation Column( Validation Set( .3 ), Training Set( .7 ), Go );obj = Model Screening(	Y( :Species ),	Validation( :Validation ),	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Discriminant( 1 ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Iris.jmp" );
+Make Validation Column( Validation Set( .3 ), Training Set( .7 ), Go );
+obj = Model Screening(
+	Y( :Species ),
+	Validation( :Validation ),
+	X( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Discriminant( 1 ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -878,7 +1420,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Elapsed Time( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Elapsed Time( 1 )
+);
 
 ```
 
@@ -894,7 +1444,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 1 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 1 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -910,7 +1476,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 1 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 1 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -926,7 +1508,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 1 )
+);
 
 ```
 
@@ -942,7 +1540,16 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Equity.jmp" );Model Screening(	Y( :BAD ),	Validation( :Validation ),	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),	Neural( 0 ),	Informative Missing( 1 ));
+
+
+Open( "$Sample_Data/Equity.jmp" );
+Model Screening(
+	Y( :BAD ),
+	Validation( :Validation ),
+	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),
+	Neural( 0 ),
+	Informative Missing( 1 )
+);
 
 ```
 
@@ -958,7 +1565,16 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	K Fold Crossvalidation( 1 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	K Fold Crossvalidation( 1 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
@@ -974,7 +1590,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 1 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 1 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -990,7 +1622,17 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	K Fold Crossvalidation( 1 ),	K for K Fold( 6 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	K Fold Crossvalidation( 1 ),
+	K for K Fold( 6 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
@@ -1006,7 +1648,18 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Nested Crossvalidation( 1 ),	K for Nested( 3 ),	L for Nested( 4 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Nested Crossvalidation( 1 ),
+	K for Nested( 3 ),
+	L for Nested( 4 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
@@ -1022,13 +1675,24 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Nested Crossvalidation( 1 ),	K for Nested( 5 ),	L for Nested( 4 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Nested Crossvalidation( 1 ),
+	K for Nested( 5 ),
+	L for Nested( 4 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
 ### Log Methods
 
-**구문:** obj = Model Screening(...Log Methods( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Model Screening(...Log Methods( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 ### Logistic Regression
 
@@ -1042,7 +1706,24 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 1 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 1 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -1056,7 +1737,28 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Add Two Way Interactions( 1 ),	Add Quadratics( 1 ),	Model NParm Limit( 40 ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Fit Least Squares( 1 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Add Two Way Interactions( 1 ),
+	Add Quadratics( 1 ),
+	Model NParm Limit( 40 ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Fit Least Squares( 1 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -1072,7 +1774,25 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 1 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 0 ),	Generalized Regression( 0 ), );
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 1 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 0 ),
+	Generalized Regression( 0 ), 
+
+);
 
 ```
 
@@ -1088,7 +1808,16 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Nested Crossvalidation( 1 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Nested Crossvalidation( 1 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
@@ -1104,7 +1833,23 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 1 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 1 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -1120,7 +1865,24 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ),	Partial Least Squares( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 ),
+	Partial Least Squares( 1 )
+);
 
 ```
 
@@ -1134,7 +1896,24 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 1 ),	Boosted Tree( 1 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 1 ),	Generalized Regression( 1 ),	Plot Actual by Predicted( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 1 ),
+	Boosted Tree( 1 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 1 ),
+	Generalized Regression( 1 ),
+	Plot Actual by Predicted( 1 )
+);
 
 ```
 
@@ -1148,7 +1927,26 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = dt << Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 1 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 1 ),	Generalized Regression( 1 ),);obj << Precision Recall Curve( 1 );
+
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = dt << Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 1 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 1 ),
+	Generalized Regression( 1 ),
+
+);
+obj << Precision Recall Curve( 1 );
 
 ```
 
@@ -1162,7 +1960,17 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ),	Predictor Properties( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Predictor Properties( 1 )
+);
 
 ```
 
@@ -1176,7 +1984,24 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 1 ),	K Nearest Neighbors( 0 ),	Neural( 1 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 1 ),	Profiler( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 1 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 1 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 1 ),
+	Profiler( 1 )
+);
 
 ```
 
@@ -1190,7 +2015,25 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 1 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 1 ),	Generalized Regression( 1 ),	ROC Curve( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 1 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 1 ),
+	Generalized Regression( 1 ),
+	ROC Curve( 1 )
+);
 
 ```
 
@@ -1206,7 +2049,17 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	K Fold Crossvalidation( 1 ),	Remove Live Reports( 1 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	K Fold Crossvalidation( 1 ),
+	Remove Live Reports( 1 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
@@ -1222,7 +2075,16 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Repeated K Fold( 2 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Repeated K Fold( 2 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
@@ -1236,7 +2098,24 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Equity.jmp" );Model Screening(	Y( :BAD ),	Validation( :Validation ),	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),	Decision Tree( 1 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 1 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ),	SVM NRow Limit( 6000 ));
+
+
+Open( "$Sample_Data/Equity.jmp" );
+Model Screening(
+	Y( :BAD ),
+	Validation( :Validation ),
+	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),
+	Decision Tree( 1 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 1 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 ),
+	SVM NRow Limit( 6000 )
+);
 
 ```
 
@@ -1256,7 +2135,25 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	K Fold Crossvalidation( 1 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 1 ),	Boosted Tree( 1 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 1 ),	Save KFold Results Table);
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	K Fold Crossvalidation( 1 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 1 ),
+	Boosted Tree( 1 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 1 ),
+	Save KFold Results Table
+);
 
 ```
 
@@ -1268,7 +2165,27 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 1 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Fit Least Squares( 1 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 0 ),	Generalized Regression( 0 ));obj << Select Fit( "Training", "Best" );obj << Save Prediction Formulas;
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 1 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Fit Least Squares( 1 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 0 ),
+	Generalized Regression( 0 )
+);
+obj << Select Fit( "Training", "Best" );
+obj << Save Prediction Formulas;
 
 ```
 
@@ -1282,7 +2199,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Save Results Table);
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Save Results Table
+);
 
 ```
 
@@ -1294,7 +2219,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Select Fit( Validation, Largest( "RSquare", 2 ) );
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Select Fit( Validation, Largest( "RSquare", 2 ) );
 
 ```
 
@@ -1308,7 +2241,26 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 1 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 1 ),	Generalized Regression( 1 ),	Decision Threshold( 1 ),	Set Probability Threshold( .2 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 1 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 1 ),
+	Generalized Regression( 1 ),
+	Decision Threshold( 1 ),
+	Set Probability Threshold( .2 )
+);
 
 ```
 
@@ -1324,7 +2276,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 123454321 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Set Random Seed( 123454321 )
+);
 
 ```
 
@@ -1340,7 +2300,15 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Log Methods( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Log Methods( 1 )
+);
 
 ```
 
@@ -1348,13 +2316,34 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 **구문:** obj &lt;&lt; Show Profit( state=0|1 )
 
-**설명:** 반응 수준에 대해 지정된 수익 행렬을 사용하여 각 모형에 대한 기대 수익을 표시하거나 숨깁니다.
+**설명:** 반응 수준에 대해 지정된 이익 행렬을 사용하여 각 모형의 기대 이익을 표시하거나 숨깁니다.
 
 **JMP추가된 버전:** 16
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );Column( "Y Binary" ) << Set Property(	"Profit Matrix", {[1 - 1, -0.3333333 1, . .], {"Low", "High", "Undecided"}});obj = Model Screening(	Y( :Y Binary ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 1 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 1 ),	Generalized Regression( 1 ),	Show Profit( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+Column( "Y Binary" ) << Set Property(
+	"Profit Matrix", {[1 - 1, -0.3333333 1, . .], {"Low", "High", "Undecided"}}
+);
+obj = Model Screening(
+	Y( :Y Binary ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 1 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 1 ),
+	Generalized Regression( 1 ),
+	Show Profit( 1 )
+);
 
 ```
 
@@ -1368,7 +2357,18 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Bootstrap Forest( 1, {Number Trees( 80 ), Number Terms( 5 )} ),	Neural( 0 ),	Support Vector Machines( 0 ),	Show Scripts( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Bootstrap Forest( 1, {Number Trees( 80 ), Number Terms( 5 )} ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Show Scripts( 1 )
+);
 
 ```
 
@@ -1376,11 +2376,28 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Vali
 
 **구문:** obj &lt;&lt; Specify Profit Matrix
 
-**설명:** 올바르거나 올바르지 않은 분류 결정과 관련된 수익 또는 비용을 지정할 수 있습니다.
+**설명:** 분류 결정이 정확할 때와 그렇지 않을 때의 이익 또는 손실을 지정할 수 있습니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Model Screening(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Naive Bayes( 0 ),	Neural( 1 ),	Support Vector Machines( 0 ),	Fit Stepwise( 0 ),	Logistic Regression( 1 ),	Generalized Regression( 1 ),	Specify Profit Matrix( [0 -1, -0.6 0, . .], "Married", "Single", "Undecided" ),	Show Profit( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Model Screening(
+	Y( :marital status ),
+	X( :sex, :age, :country, :type, :size ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Naive Bayes( 0 ),
+	Neural( 1 ),
+	Support Vector Machines( 0 ),
+	Fit Stepwise( 0 ),
+	Logistic Regression( 1 ),
+	Generalized Regression( 1 ),
+	Specify Profit Matrix( [0 -1, -0.6 0, . .], "Married", "Single", "Undecided" ),
+	Show Profit( 1 )
+);
 
 ```
 
@@ -1396,7 +2413,23 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Model Screening(	Y( :mari
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 1 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 1 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 )
+);
 
 ```
 
@@ -1412,7 +2445,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Model Screening(	Y( :mari
 
 ```jsl
 
-Open( "$Sample_Data/Equity.jmp" );Model Screening(	Y( :BAD ),	Validation( :Validation ),	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),	Time Limit Each( 1 ));
+
+
+Open( "$Sample_Data/Equity.jmp" );
+Model Screening(
+	Y( :BAD ),
+	Validation( :Validation ),
+	X( :LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO, :DEBTINC ),
+	Time Limit Each( 1 )
+);
 
 ```
 
@@ -1428,19 +2469,46 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Model Screening(	Y( :mari
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	K Fold Crossvalidation( 1 ),	Use Two Way Splits for K Fold( 1 ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Neural( 0 ),	Support Vector Machines( 0 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	K Fold Crossvalidation( 1 ),
+	Use Two Way Splits for K Fold( 1 ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Neural( 0 ),
+	Support Vector Machines( 0 )
+);
 
 ```
 
 ### XGBoost
 
-**구문:** obj = Model Screening(...XGBoost( state=0|1 )...) &lt;b&gt;실행기 항목: 예&lt;/b&gt;
+**구문:** obj = Model Screening(...XGBoost( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** XGBoost 추가기능이 있는 경우 그래디언트 부스트를 위해 XGBoost를 호출합니다. 이 옵션은 추가기능이 설치된 경우에만 나타납니다.
 
 ```jsl
 
-Open( "$Sample_Data/Diabetes.jmp" );obj = Model Screening(	Y( :Y ),	Validation( :Validation ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Decision Tree( 0 ),	Bootstrap Forest( 0 ),	Boosted Tree( 0 ),	K Nearest Neighbors( 0 ),	Neural( 0 ),	Support Vector Machines( 0 ),	Fit Least Squares( 0 ),	Fit Stepwise( 0 ),	Generalized Regression( 0 ),	XGBoost( 1 ));
+
+
+Open( "$Sample_Data/Diabetes.jmp" );
+obj = Model Screening(
+	Y( :Y ),
+	Validation( :Validation ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Decision Tree( 0 ),
+	Bootstrap Forest( 0 ),
+	Boosted Tree( 0 ),
+	K Nearest Neighbors( 0 ),
+	Neural( 0 ),
+	Support Vector Machines( 0 ),
+	Fit Least Squares( 0 ),
+	Fit Stepwise( 0 ),
+	Generalized Regression( 0 ),
+	XGBoost( 1 )
+);
 
 ```
 

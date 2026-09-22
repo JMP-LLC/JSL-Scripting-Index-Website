@@ -52,7 +52,10 @@
 
 ```jsl
 
-request = New HTTP Request();request << Authentication Method( "KERBEROS" );
+
+
+request = New HTTP Request();
+request << Authentication Method( "KERBEROS" );
 
 ```
 
@@ -66,7 +69,16 @@
 
 ```jsl
 
-blob = "Testing, Testing 1, 2, 3";file = Save Text File( "$TEMP/test_blob", blob );request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	Blob( Load Text File( file ) ));data = request << Send;
+
+
+blob = "Testing, Testing 1, 2, 3";
+file = Save Text File( "$TEMP/test_blob", blob );
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	Blob( Load Text File( file ) )
+);
+data = request << Send;
 
 ```
 
@@ -80,7 +92,12 @@
 
 ```jsl
 
-request = New HTTP Request();request << Proxy Server( "http://my_proxy.com" );request << Proxy User( "clark%20kent:superman" );request << Bypass Proxy( "localhost" );
+
+
+request = New HTTP Request();
+request << Proxy Server( "http://my_proxy.com" );
+request << Proxy User( "clark%20kent:superman" );
+request << Bypass Proxy( "localhost" );
 
 ```
 
@@ -94,7 +111,10 @@
 
 ```jsl
 
-request = New HTTP Request();request << Certificates( "c:\certs\my_certificate.crt" );
+
+
+request = New HTTP Request();
+request << Certificates( "c:\certs\my_certificate.crt" );
 
 ```
 
@@ -108,7 +128,14 @@
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/get" ),	Method( "GET" ),	Cookie( [["username" => "bob", "address" => "12345"]] ));data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/get" ),
+	Method( "GET" ),
+	Cookie( [["username" => "bob", "address" => "12345"]] )
+);
+data = request << Send;
 
 ```
 
@@ -122,7 +149,10 @@
 
 ```jsl
 
-request = New HTTP Request();data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
+
+
+request = New HTTP Request();
+data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
 
 ```
 
@@ -138,7 +168,10 @@
 
 ```jsl
 
-request = New HTTP Request();request << Curlrc( "true" );
+
+
+request = New HTTP Request();
+request << Curlrc( "true" );
 
 ```
 
@@ -154,7 +187,11 @@
 
 ```jsl
 
-request = New HTTP Request();request << Curlrc File( "$DESKTOP\..\my_curlrc.txt" );request << Curlrc( "true" );
+
+
+request = New HTTP Request();
+request << Curlrc File( "$DESKTOP\..\my_curlrc.txt" );
+request << Curlrc( "true" );
 
 ```
 
@@ -168,7 +205,16 @@
 
 ```jsl
 
-request = New HTTP Request(	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),	Method( "GET" ),	DNS Timeout( 120 ));bytes = request << Send;img = Open( bytes, jpg );obj = New Window( "Mastering JMP", img );
+
+
+request = New HTTP Request(
+	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),
+	Method( "GET" ),
+	DNS Timeout( 120 )
+);
+bytes = request << Send;
+img = Open( bytes, jpg );
+obj = New Window( "Mastering JMP", img );
 
 ```
 
@@ -182,7 +228,10 @@
 
 ```jsl
 
-request = New HTTP Request();data = request << Decode64 Char( "TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCAuLi4=" );
+
+
+request = New HTTP Request();
+data = request << Decode64 Char( "TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCAuLi4=" );
 
 ```
 
@@ -196,7 +245,16 @@
 
 ```jsl
 
-request = New HTTP Request(	URL( "https://community.jmp.com/kvoqx44227/attachments/kvoqx44227/sample-data/49/1/BlueBirds.jmp" ),	Method( "Get" ));file = request << Download( "$TEMP/BlueBirds.jmp", "replace", "show progress" );If( !Is Empty( file ),	Open( file ));
+
+
+request = New HTTP Request(
+	URL( "https://community.jmp.com/kvoqx44227/attachments/kvoqx44227/sample-data/49/1/BlueBirds.jmp" ),
+	Method( "Get" )
+);
+file = request << Download( "$TEMP/BlueBirds.jmp", "replace", "show progress" );
+If( !Is Empty( file ),
+	Open( file )
+);
 
 ```
 
@@ -210,7 +268,10 @@
 
 ```jsl
 
-request = New HTTP Request();data = request << Encode64 Char( "Man is distinguished, not only by his reason, but ..." );
+
+
+request = New HTTP Request();
+data = request << Encode64 Char( "Man is distinguished, not only by his reason, but ..." );
 
 ```
 
@@ -224,7 +285,11 @@
 
 ```jsl
 
-my_file = Save Text File( "$TEMP/test_file.txt", "Testing, Testing 1, 2, 3" );request = New HTTP Request( url( "http://httpbin.org/post" ), Method( "POST" ), File( my_file ) );data = request << Send;
+
+
+my_file = Save Text File( "$TEMP/test_file.txt", "Testing, Testing 1, 2, 3" );
+request = New HTTP Request( url( "http://httpbin.org/post" ), Method( "POST" ), File( my_file ) );
+data = request << Send;
 
 ```
 
@@ -238,7 +303,21 @@
 
 ```jsl
 
-file1 = Save Text File( "$TEMP/file1", "hello world 1" );file2 = Save Text File( "$TEMP/file2", "hello world 2" );file3 = Save Text File( "$TEMP/file3", "hello world 3" );file4 = Save Text File( "$TEMP/file4", "hello world 4" );request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	Form(		Fields( [["A" => "a", "B" => "b", "C" => "c", "1" => "one", "2" => "two", "3" => "three"]] ),		Files( {"group 1", {file1, file2}, "group 2", {file2, file4}} )	));data = request << Send;
+
+
+file1 = Save Text File( "$TEMP/file1", "hello world 1" );
+file2 = Save Text File( "$TEMP/file2", "hello world 2" );
+file3 = Save Text File( "$TEMP/file3", "hello world 3" );
+file4 = Save Text File( "$TEMP/file4", "hello world 4" );
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	Form(
+		Fields( [["A" => "a", "B" => "b", "C" => "c", "1" => "one", "2" => "two", "3" => "three"]] ),
+		Files( {"group 1", {file1, file2}, "group 2", {file2, file4}} )
+	)
+);
+data = request << Send;
 
 ```
 
@@ -252,7 +331,10 @@
 
 ```jsl
 
-request = New HTTP Request( URL( "https://google.com" ) );request << Get Certificate Info;
+
+
+request = New HTTP Request( URL( "https://google.com" ) );
+request << Get Certificate Info;
 
 ```
 
@@ -266,7 +348,12 @@
 
 ```jsl
 
-baseURL = "http://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people/10" ), Method( "GET" ) );request << Send;Write( Char( request << Get Last URL ) );
+
+
+baseURL = "http://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people/10" ), Method( "GET" ) );
+request << Send;
+Write( Char( request << Get Last URL ) );
 
 ```
 
@@ -280,7 +367,12 @@
 
 ```jsl
 
-url = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";request = New HTTP Request( URL( url ), Method( "GET" ) );request << Send;Write( request << Get Mime Type() || "\!n" );
+
+
+url = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+request = New HTTP Request( URL( url ), Method( "GET" ) );
+request << Send;
+Write( request << Get Mime Type() || "\!n" );
 
 ```
 
@@ -294,7 +386,17 @@
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	JSON( "\[{"username":"bob","address":"12345"}]\" ),	Password( "cm9zczpBYmMxMjM=" ),);request << Send;Write( Char( request << Get Method ) || "\!n" );
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	JSON( "\[{"username":"bob","address":"12345"}]\" ),
+	Password( "cm9zczpBYmMxMjM=" ),
+
+);
+request << Send;
+Write( Char( request << Get Method ) || "\!n" );
 
 ```
 
@@ -308,7 +410,19 @@
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );json = request << Send;                                          response_headers = request << Get Response Headers;keys = response_headers << Get Keys;For( i = 1, i <= N Items( keys ), i++,	key = keys[i];	value = response_headers[key];	Write( "Key=> " || Char( key ) || ", Value=> " || Char( value ) || "\!n" ););
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );
+json = request << Send;
+                                          
+response_headers = request << Get Response Headers;
+keys = response_headers << Get Keys;
+For( i = 1, i <= N Items( keys ), i++,
+	key = keys[i];
+	value = response_headers[key];
+	Write( "Key=> " || Char( key ) || ", Value=> " || Char( value ) || "\!n" );
+);
 
 ```
 
@@ -322,7 +436,14 @@
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people/1" ), Method( "GET" ) );data = request << Send;If( request << Get Status == 200,	Write( "Success!!!!\!n" || Char( data ) || "\!n" ));
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people/1" ), Method( "GET" ) );
+data = request << Send;
+If( request << Get Status == 200,
+	Write( "Success!!!!\!n" || Char( data ) || "\!n" )
+);
 
 ```
 
@@ -336,7 +457,12 @@
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people/100" ), Method( "GET" ) );request << Send;Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people/100" ), Method( "GET" ) );
+request << Send;
+Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 ```
 
@@ -350,7 +476,12 @@
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people/100" ), Method( "GET" ) );request << Send;Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people/100" ), Method( "GET" ) );
+request << Send;
+Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
 
 ```
 
@@ -364,7 +495,21 @@
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );json = request << Send;                                          warning_headers = request << Get Warning Headers;If( !Is Empty( warning_headers ),	keys = warning_headers << Get Keys;	For( i = 1, i <= N Items( keys ), i++,		key = keys[i];		value = response_headers[key];		Write( "Key=> " || Char( key ) || ", Value=> " || Char( value ) || "\!n" );	););
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );
+json = request << Send;
+                                          
+warning_headers = request << Get Warning Headers;
+If( !Is Empty( warning_headers ),
+	keys = warning_headers << Get Keys;
+	For( i = 1, i <= N Items( keys ), i++,
+		key = keys[i];
+		value = response_headers[key];
+		Write( "Key=> " || Char( key ) || ", Value=> " || Char( value ) || "\!n" );
+	);
+);
 
 ```
 
@@ -377,6 +522,7 @@
 **JMP추가된 버전:** 14
 
 ```jsl
+
 
 Write( New HTTP Request() << GetVersion );
 
@@ -392,7 +538,15 @@ Write( New HTTP Request() << GetVersion );
 
 ```jsl
 
-request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );json = request << Send;If( request << Has Client Error,	msg = "Has Client Error: " || Char( request << Get Status Message ),	msg = "Success!");Write( msg );
+
+
+request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );
+json = request << Send;
+If( request << Has Client Error,
+	msg = "Has Client Error: " || Char( request << Get Status Message ),
+	msg = "Success!"
+);
+Write( msg );
 
 ```
 
@@ -406,7 +560,15 @@ Write( New HTTP Request() << GetVersion );
 
 ```jsl
 
-request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/1/" ), Method( "GET" ) );json = request << Send;If( request << Has Error,	msg = "Has Error: " || Char( request << Get Status Message ),	msg = "Success!");Write( msg );
+
+
+request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/1/" ), Method( "GET" ) );
+json = request << Send;
+If( request << Has Error,
+	msg = "Has Error: " || Char( request << Get Status Message ),
+	msg = "Success!"
+);
+Write( msg );
 
 ```
 
@@ -420,7 +582,16 @@ Write( New HTTP Request() << GetVersion );
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people/20" ), Method( "GET" ) );request << Send;If( request << Has Information,	msg = "Has Information: " || Char( request << GetStatusMessage ),	msg = "No Status Information available.");Write( msg );
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people/20" ), Method( "GET" ) );
+request << Send;
+If( request << Has Information,
+	msg = "Has Information: " || Char( request << GetStatusMessage ),
+	msg = "No Status Information available."
+);
+Write( msg );
 
 ```
 
@@ -434,7 +605,16 @@ Write( New HTTP Request() << GetVersion );
 
 ```jsl
 
-baseURL = "http://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people/10" ), Method( "GET" ) );request << Send;If( request << Has Redirection,	msg = "Has Redirection: " || Char( request << Get Status Message ),	msg = "No Redirection ocurred.");Write( msg );
+
+
+baseURL = "http://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people/10" ), Method( "GET" ) );
+request << Send;
+If( request << Has Redirection,
+	msg = "Has Redirection: " || Char( request << Get Status Message ),
+	msg = "No Redirection ocurred."
+);
+Write( msg );
 
 ```
 
@@ -448,7 +628,15 @@ Write( New HTTP Request() << GetVersion );
 
 ```jsl
 
-request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );json = request << Send;If( request << Has Server Error,	msg = "Has Server Error: " || Char( request << Get Status Message ),	msg = "Success!");Write( msg );
+
+
+request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );
+json = request << Send;
+If( request << Has Server Error,
+	msg = "Has Server Error: " || Char( request << Get Status Message ),
+	msg = "Success!"
+);
+Write( msg );
 
 ```
 
@@ -462,7 +650,21 @@ Write( New HTTP Request() << GetVersion );
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );json = request << Send;                                          If( !request << Has Warning,	warning_headers = request << Get Warning Headers;	keys = warning_headers << Get Keys;	For( i = 1, i <= N Items( keys ), i++,		key = keys[i];		value = response_headers[key];		Write( "Key=> " || Char( key ) || ", Value=> " || Char( value ) || "\!n" );	););
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people" ), Method( "GET" ) );
+json = request << Send;
+                                          
+If( !request << Has Warning,
+	warning_headers = request << Get Warning Headers;
+	keys = warning_headers << Get Keys;
+	For( i = 1, i <= N Items( keys ), i++,
+		key = keys[i];
+		value = response_headers[key];
+		Write( "Key=> " || Char( key ) || ", Value=> " || Char( value ) || "\!n" );
+	);
+);
 
 ```
 
@@ -478,7 +680,20 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-url = "https://api.nasa.gov/planetary/apod";fields = [=> ];fields["api_key"] = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";                                          request = New HTTP Request(	URL( url ),	Method( "GET" ),	Query String( fields ),	Headers( {"Accept: application/json"} ));json = request << Send;Write( json || "\!n" );
+
+
+url = "https://api.nasa.gov/planetary/apod";
+fields = [=> ];
+fields["api_key"] = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";
+                                          
+request = New HTTP Request(
+	URL( url ),
+	Method( "GET" ),
+	Query String( fields ),
+	Headers( {"Accept: application/json"} )
+);
+json = request << Send;
+Write( json || "\!n" );
 
 ```
 
@@ -492,7 +707,16 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-request = New HTTP Request(	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),	Method( "GET" ),	Insecure( "true" ));bytes = request << Send;img = Open( bytes, jpg );obj = New Window( "Mastering JMP", img );
+
+
+request = New HTTP Request(
+	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),
+	Method( "GET" ),
+	Insecure( "true" )
+);
+bytes = request << Send;
+img = Open( bytes, jpg );
+obj = New Window( "Mastering JMP", img );
 
 ```
 
@@ -506,7 +730,17 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-url = "https://api.nasa.gov/planetary/apod";fields = [=> ];fields["api_key"] = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";                                          request = New HTTP Request( URL( url ), Method( "GET" ), Query String( fields ) );json = request << Send;If( request << Is Success,	JSON To Data Table( json ));
+
+
+url = "https://api.nasa.gov/planetary/apod";
+fields = [=> ];
+fields["api_key"] = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";
+                                          
+request = New HTTP Request( URL( url ), Method( "GET" ), Query String( fields ) );
+json = request << Send;
+If( request << Is Success,
+	JSON To Data Table( json )
+);
 
 ```
 
@@ -520,7 +754,23 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-url = "https://api.nasa.gov/planetary/apod";fields = [=> ];fields["api_key"] = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";                                          request = New HTTP Request( URL( url ), Method( "GET" ), Query String( fields ) );json = request << Send;If( request << Is Successful,	aa = Parse JSON( json );	If( Contains( aa, "url" ),		request << Reset( URL( aa["url"] ), Method( "GET" ) );		bytes = request << Send;		img = Open( bytes, jpg );		obj = New Window( aa["title"], img );	););
+
+
+url = "https://api.nasa.gov/planetary/apod";
+fields = [=> ];
+fields["api_key"] = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";
+                                          
+request = New HTTP Request( URL( url ), Method( "GET" ), Query String( fields ) );
+json = request << Send;
+If( request << Is Successful,
+	aa = Parse JSON( json );
+	If( Contains( aa, "url" ),
+		request << Reset( URL( aa["url"] ), Method( "GET" ) );
+		bytes = request << Send;
+		img = Open( bytes, jpg );
+		obj = New Window( aa["title"], img );
+	);
+);
 
 ```
 
@@ -534,7 +784,10 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-request = New HTTP Request();data = request << Is Valid();
+
+
+request = New HTTP Request();
+data = request << Is Valid();
 
 ```
 
@@ -548,7 +801,10 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-request = New HTTP Request();data = request << Is Verbose();
+
+
+request = New HTTP Request();
+data = request << Is Verbose();
 
 ```
 
@@ -562,7 +818,14 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	JSON( "\[{"username":"bob","address":"12345"}]\" ));data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	JSON( "\[{"username":"bob","address":"12345"}]\" )
+);
+data = request << Send;
 
 ```
 
@@ -576,7 +839,15 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/get" ),	Method( "GET" ),	Query String( [["username" => "bob", "address" => "12345"]] ),	MaxRedirect( 2 ));data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/get" ),
+	Method( "GET" ),
+	Query String( [["username" => "bob", "address" => "12345"]] ),
+	MaxRedirect( 2 )
+);
+data = request << Send;
 
 ```
 
@@ -590,7 +861,16 @@ https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. 머리글 정의는 웹
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );json = request << Send;dt = JSON To Data Table( json );dt << Set Name( "Swapi.co Planets" );dt << Delete Columns( :next, :count, :previous );dt << Select Where( :name == "" );dt << Delete Rows();
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );
+json = request << Send;
+dt = JSON To Data Table( json );
+dt << Set Name( "Swapi.co Planets" );
+dt << Delete Columns( :next, :count, :previous );
+dt << Select Where( :name == "" );
+dt << Delete Rows();
 
 ```
 
@@ -638,7 +918,10 @@ password
 
 ```jsl
 
-request = New HTTP Request();request << Netrc( "true" );
+
+
+request = New HTTP Request();
+request << Netrc( "true" );
 
 ```
 
@@ -684,7 +967,11 @@ password
 
 ```jsl
 
-request = New HTTP Request();request << Netrc File( "$DESKTOP\..\my_netrc.txt" );request << Netrc( "true" );
+
+
+request = New HTTP Request();
+request << Netrc File( "$DESKTOP\..\my_netrc.txt" );
+request << Netrc( "true" );
 
 ```
 
@@ -698,7 +985,16 @@ password
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	JSON( "\[{"username":"bob","address":"12345"}]\" ),	Password( "cm9zczpBYmMxMjM=" ),);data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	JSON( "\[{"username":"bob","address":"12345"}]\" ),
+	Password( "cm9zczpBYmMxMjM=" ),
+
+);
+data = request << Send;
 
 ```
 
@@ -712,7 +1008,11 @@ password
 
 ```jsl
 
-request = New HTTP Request();url = "http://my_proxy.com";request << Proxy Server( url );
+
+
+request = New HTTP Request();
+url = "http://my_proxy.com";
+request << Proxy Server( url );
 
 ```
 
@@ -726,7 +1026,12 @@ password
 
 ```jsl
 
-request = New HTTP Request();url = "http://my_proxy.com";request << Proxy Server( url );request << Proxy User( "clark%20kent:superman" );
+
+
+request = New HTTP Request();
+url = "http://my_proxy.com";
+request << Proxy Server( url );
+request << Proxy User( "clark%20kent:superman" );
 
 ```
 
@@ -740,7 +1045,14 @@ password
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/get" ),	Method( "GET" ),	Query String( [["username" => "bob", "address" => "12345"]] ));data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/get" ),
+	Method( "GET" ),
+	Query String( [["username" => "bob", "address" => "12345"]] )
+);
+data = request << Send;
 
 ```
 
@@ -754,7 +1066,12 @@ password
 
 ```jsl
 
-request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/1/" ), Method( "GET" ) );json1 = request << Send;request << Reset( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );json2 = request << Send;
+
+
+request = New HTTP Request( URL( "http://pokeapi.co/api/v2/pokemon/1/" ), Method( "GET" ) );
+json1 = request << Send;
+request << Reset( URL( "http://pokeapi.co/api/v2/pokemon/25/" ), Method( "GET" ) );
+json2 = request << Send;
 
 ```
 
@@ -768,7 +1085,12 @@ password
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );json = request << Send;Write( json || "\!n" );
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );
+json = request << Send;
+Write( json || "\!n" );
 
 ```
 
@@ -814,7 +1136,10 @@ password
 
 ```jsl
 
-request = New HTTP Request();request << SSL Version( "1+" );
+
+
+request = New HTTP Request();
+request << SSL Version( "1+" );
 
 ```
 
@@ -828,7 +1153,16 @@ password
 
 ```jsl
 
-request = New HTTP Request(	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),	Method( "GET" ),	Secure( 1 ));bytes = request << Send;img = Open( bytes, jpg );obj = New Window( "Mastering JMP", img );
+
+
+request = New HTTP Request(
+	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),
+	Method( "GET" ),
+	Secure( 1 )
+);
+bytes = request << Send;
+img = Open( bytes, jpg );
+obj = New Window( "Mastering JMP", img );
 
 ```
 
@@ -842,7 +1176,12 @@ password
 
 ```jsl
 
-baseURL = "https://swapi.co/api";request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );json = request << Send;Write( json || "\!n" );
+
+
+baseURL = "https://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/planets" ), Method( "GET" ) );
+json = request << Send;
+Write( json || "\!n" );
 
 ```
 
@@ -856,7 +1195,10 @@ password
 
 ```jsl
 
-request = New HTTP Request( url( "http://httpbin.org/post" ), Method( "POST" ), Text( "Hello World" ) );data = request << Send;
+
+
+request = New HTTP Request( url( "http://httpbin.org/post" ), Method( "POST" ), Text( "Hello World" ) );
+data = request << Send;
 
 ```
 
@@ -870,7 +1212,16 @@ password
 
 ```jsl
 
-request = New HTTP Request(	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),	Method( "GET" ),	Timeout( 120 ));bytes = request << Send;img = Open( bytes, jpg );obj = New Window( "Mastering JMP", img );
+
+
+request = New HTTP Request(
+	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),
+	Method( "GET" ),
+	Timeout( 120 )
+);
+bytes = request << Send;
+img = Open( bytes, jpg );
+obj = New Window( "Mastering JMP", img );
 
 ```
 
@@ -884,7 +1235,15 @@ password
 
 ```jsl
 
-fields = Associative Array();fields["text"] = "statistics";s = New HTTP Request(	URL( "http://text-processing.com/api/sentiment/" ),	Method( "POST" ),	Form( Fields( fields ) )) << Send;
+
+
+fields = Associative Array();
+fields["text"] = "statistics";
+s = New HTTP Request(
+	URL( "http://text-processing.com/api/sentiment/" ),
+	Method( "POST" ),
+	Form( Fields( fields ) )
+) << Send;
 
 ```
 
@@ -898,7 +1257,10 @@ password
 
 ```jsl
 
-request = New HTTP Request();data = request << Use Cookies( "false" );
+
+
+request = New HTTP Request();
+data = request << Use Cookies( "false" );
 
 ```
 
@@ -912,7 +1274,16 @@ password
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	JSON( "\[{"username":"bob","address":"12345"}]\" ),	UserPwd( "clark kent:superman" ),);data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	JSON( "\[{"username":"bob","address":"12345"}]\" ),
+	UserPwd( "clark kent:superman" ),
+
+);
+data = request << Send;
 
 ```
 
@@ -926,7 +1297,17 @@ password
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	JSON( "\[{"username":"bob","address":"12345"}]\" ),	Username( "ross" ),	Password( "Abc123" ),);data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	JSON( "\[{"username":"bob","address":"12345"}]\" ),
+	Username( "ross" ),
+	Password( "Abc123" ),
+
+);
+data = request << Send;
 
 ```
 
@@ -940,7 +1321,21 @@ password
 
 ```jsl
 
-Write(	"\!Verbose is true by default.\!nIt automatically outputs status so you'll see the status message twice....\!n");baseURL = "http://swapi.co/api";request = New HTTP Request( URL( baseURL || "/people/1000" ), Method( "GET" ) );request << Send;Write( "\!n" || Char( request << Get Status Message ) || "\!n" );Write( "\!nSetting Verbose to false controls writing the status....\!n" );baseURL = "http://swapi.co/api";request << Reset( URL( baseURL || "/people/1000" ), Method( "GET" ), Verbose( "false" ) );request << Send;Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
+
+
+Write(
+	"\!Verbose is true by default.\!nIt automatically outputs status so you'll see the status message twice....\!n"
+);
+baseURL = "http://swapi.co/api";
+request = New HTTP Request( URL( baseURL || "/people/1000" ), Method( "GET" ) );
+request << Send;
+Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
+
+Write( "\!nSetting Verbose to false controls writing the status....\!n" );
+baseURL = "http://swapi.co/api";
+request << Reset( URL( baseURL || "/people/1000" ), Method( "GET" ), Verbose( "false" ) );
+request << Send;
+Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 ```
 
@@ -954,7 +1349,16 @@ password
 
 ```jsl
 
-request = New HTTP Request(	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),	Method( "GET" ),	Verify SSL( "false" ));bytes = request << Send;img = Open( bytes, jpg );obj = New Window( "Mastering JMP", img );
+
+
+request = New HTTP Request(
+	Url( "https://community.jmp.com/html/assets/community-icons/community-icon-mastering.png" ),
+	Method( "GET" ),
+	Verify SSL( "false" )
+);
+bytes = request << Send;
+img = Open( bytes, jpg );
+obj = New Window( "Mastering JMP", img );
 
 ```
 
@@ -968,7 +1372,24 @@ password
 
 ```jsl
 
-request = New HTTP Request(	url( "http://httpbin.org/post" ),	Method( "POST" ),	XML(		"\[<?xml version="1.0" encoding="UTF-8"?>		<serv:message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">		<body>			<bodyContent				xsi:type="java:com.webex.service.binding.attendee.LstMeetingAttendee">				<meetingKey>123456</meetingKey>			</bodyContent>		</body>	</serv:message>]\"	));data = request << Send;
+
+
+request = New HTTP Request(
+	url( "http://httpbin.org/post" ),
+	Method( "POST" ),
+	XML(
+		"\[<?xml version="1.0" encoding="UTF-8"?>
+		<serv:message xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<body>
+			<bodyContent
+				xsi:type="java:com.webex.service.binding.attendee.LstMeetingAttendee">
+				<meetingKey>123456</meetingKey>
+			</bodyContent>
+		</body>
+	</serv:message>]\"
+	)
+);
+data = request << Send;
 
 ```
 
@@ -986,7 +1407,29 @@ password
 
 ```jsl
 
-requests = New Multi HTTP Request();requests << Add(	New HTTP Request(		Method( "GET" ),		URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" )	),	"My First Download");requests << Add(	New HTTP Request(		Method( "GET" ),		URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" )	));data = requests << Download( "show progress", "detailed" );http_requests = requests << Get Requests();For( i = 1, i <= N Items( http_requests ), i++,	Show( http_requests[i] << Get Mime Type() ));
+
+
+requests = New Multi HTTP Request();
+requests << Add(
+	New HTTP Request(
+		Method( "GET" ),
+		URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" )
+	),
+	"My First Download"
+);
+
+requests << Add(
+	New HTTP Request(
+		Method( "GET" ),
+		URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" )
+	)
+);
+
+data = requests << Download( "show progress", "detailed" );
+http_requests = requests << Get Requests();
+For( i = 1, i <= N Items( http_requests ), i++,
+	Show( http_requests[i] << Get Mime Type() )
+);
 
 ```
 
@@ -1002,7 +1445,23 @@ password
 
 ```jsl
 
-urls = {"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso","http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso","https://download.manjaro.org/xfce/21.1.0/manjaro-xfce-21.1.0-210817-linux513.iso"};requests = New Multi HTTP Request();For( i = 1, i <= N Items( urls ), i++,	request = New HTTP Request( Method( "GET" ), URL( urls[i] ) );	requests << Add( request ););http_requests = requests << Get Requests();data = requests << Download( "show progress", "detailed" );Show( requests << Has Error );For( i = 1, i <= N Items( http_requests ), i++,	Show( http_requests[i] << Get Mime Type() ));
+
+
+urls = {"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso",
+"http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso",
+"https://download.manjaro.org/xfce/21.1.0/manjaro-xfce-21.1.0-210817-linux513.iso"};
+
+requests = New Multi HTTP Request();
+For( i = 1, i <= N Items( urls ), i++,
+	request = New HTTP Request( Method( "GET" ), URL( urls[i] ) );
+	requests << Add( request );
+);
+http_requests = requests << Get Requests();
+data = requests << Download( "show progress", "detailed" );
+Show( requests << Has Error );
+For( i = 1, i <= N Items( http_requests ), i++,
+	Show( http_requests[i] << Get Mime Type() )
+);
 
 ```
 
@@ -1010,7 +1469,34 @@ password
 
 ```jsl
 
-urls = {"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso","http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso","https://download.manjaro.org/xfce/21.1.0/manjaro-xfce-21.1.0-210817-linux513.iso"};process_result = Function( {p, r},	{Default Local},	Show( r ));process_error = Function( {p, e, t},	{Default Local},	Show( e );	Show( t ););requests = New Multi HTTP Request();For( i = 1, i <= N Items( urls ), i++,	request = New HTTP Request( Method( "GET" ), URL( urls[i] ) );	requests << Add( request ););http_requests = requests << Get Requests();promise = requests << Download( "async" );promise << On Result( process_result );promise << On Error( process_error );
+
+
+urls = {"http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso",
+"http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso",
+"https://download.manjaro.org/xfce/21.1.0/manjaro-xfce-21.1.0-210817-linux513.iso"};
+
+process_result = Function( {p, r},
+	{Default Local},
+	Show( r )
+);
+
+process_error = Function( {p, e, t},
+	{Default Local},
+	Show( e );
+	Show( t );
+);
+
+
+requests = New Multi HTTP Request();
+For( i = 1, i <= N Items( urls ), i++,
+	request = New HTTP Request( Method( "GET" ), URL( urls[i] ) );
+	requests << Add( request );
+);
+
+http_requests = requests << Get Requests();
+promise = requests << Download( "async" );
+promise << On Result( process_result );
+promise << On Error( process_error );
 
 ```
 
@@ -1022,7 +1508,24 @@ password
 
 ```jsl
 
-requests = New Multi HTTP Request();http_request_1 = New HTTP Request(	Method( "GET" ),	URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" ));http_request_2 = New HTTP Request(	Method( "GET" ),	URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" ));requests << Add( http_request_1 );requests << Add( http_request_2 );http_requests = requests << Get Requests();//http_request_1 is the same as http_requests[1]//http_request_2 is the same as http_requests[2]
+
+
+requests = New Multi HTTP Request();
+http_request_1 = New HTTP Request(
+	Method( "GET" ),
+	URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" )
+);
+http_request_2 = New HTTP Request(
+	Method( "GET" ),
+	URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" )
+);
+
+requests << Add( http_request_1 );
+
+requests << Add( http_request_2 );
+http_requests = requests << Get Requests();
+//http_request_1 is the same as http_requests[1]
+//http_request_2 is the same as http_requests[2]
 
 ```
 
@@ -1036,7 +1539,23 @@ password
 
 ```jsl
 
-requests = New Multi HTTP Request();http_request_1 = New HTTP Request(	Method( "GET" ),	URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" ));http_request_2 = New HTTP Request(	Method( "GET" ),	URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" ));requests << Add( http_request_1 );requests << Add( http_request_2 );data = requests << Download( "show progress", "detailed" );Show( requests << Has Error );
+
+
+requests = New Multi HTTP Request();
+http_request_1 = New HTTP Request(
+	Method( "GET" ),
+	URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" )
+);
+http_request_2 = New HTTP Request(
+	Method( "GET" ),
+	URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" )
+);
+
+requests << Add( http_request_1 );
+
+requests << Add( http_request_2 );
+data = requests << Download( "show progress", "detailed" );
+Show( requests << Has Error );
 
 ```
 
@@ -1050,7 +1569,17 @@ password
 
 ```jsl
 
-requests = New Multi HTTP Request();http_request_1 = New HTTP Request( Method( "GET" ), URL( "https://google.com" ) );http_request_2 = New HTTP Request( Method( "GET" ), URL( "https://jmp.com" ) );requests << Add( http_request_1 );requests << Add( http_request_2 );data = requests << Download( "show progress", "detailed" );Show( requests << Is Successful );
+
+
+requests = New Multi HTTP Request();
+http_request_1 = New HTTP Request( Method( "GET" ), URL( "https://google.com" ) );
+http_request_2 = New HTTP Request( Method( "GET" ), URL( "https://jmp.com" ) );
+
+requests << Add( http_request_1 );
+
+requests << Add( http_request_2 );
+data = requests << Download( "show progress", "detailed" );
+Show( requests << Is Successful );
 
 ```
 
@@ -1064,7 +1593,17 @@ password
 
 ```jsl
 
-requests = New Multi HTTP Request();http_request_1 = New HTTP Request( Method( "GET" ), URL( "https://google.com" ) );http_request_2 = New HTTP Request( Method( "GET" ), URL( "https://jmp.com" ) );requests << Add( http_request_1 );requests << Add( http_request_2 );data = requests << Download( "show progress", "detailed" );Show( requests << Is Successful );
+
+
+requests = New Multi HTTP Request();
+http_request_1 = New HTTP Request( Method( "GET" ), URL( "https://google.com" ) );
+http_request_2 = New HTTP Request( Method( "GET" ), URL( "https://jmp.com" ) );
+
+requests << Add( http_request_1 );
+
+requests << Add( http_request_2 );
+data = requests << Download( "show progress", "detailed" );
+Show( requests << Is Successful );
 
 ```
 
@@ -1078,7 +1617,22 @@ password
 
 ```jsl
 
-requests = New Multi HTTP Request();http_request_1 = New HTTP Request(	Method( "GET" ),	URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" ));http_request_2 = New HTTP Request(	Method( "GET" ),	URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" ));requests << Add( http_request_1 );requests << Add( http_request_2 );Show( requests << Is Valid() );
+
+
+requests = New Multi HTTP Request();
+http_request_1 = New HTTP Request(
+	Method( "GET" ),
+	URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" )
+);
+http_request_2 = New HTTP Request(
+	Method( "GET" ),
+	URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" )
+);
+
+requests << Add( http_request_1 );
+
+requests << Add( http_request_2 );
+Show( requests << Is Valid() );
 
 ```
 
@@ -1092,7 +1646,24 @@ password
 
 ```jsl
 
-requests = New Multi HTTP Request();requests << Add(	New HTTP Request(		Method( "GET" ),		URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" )	),	"My First Download");requests << Add(	New HTTP Request(		Method( "GET" ),		URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" )	));requests << Reset();
+
+
+requests = New Multi HTTP Request();
+requests << Add(
+	New HTTP Request(
+		Method( "GET" ),
+		URL( "http://cdimage.ubuntu.com/lubuntu/releases/20.04.3/release/lubuntu-20.04.3-desktop-amd64.iso" )
+	),
+	"My First Download"
+);
+
+requests << Add(
+	New HTTP Request(
+		Method( "GET" ),
+		URL( "http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.7.3-19-amd64.iso" )
+	)
+);
+requests << Reset();
 
 ```
 
@@ -1108,7 +1679,89 @@ password
 
 ```jsl
 
-//Taken from the Scripting Index Example for New HTTP Requestrequests = New Multi HTTP Request();bLabel = 0;bValues = 0;dt = Empty();process_result = Function( {p, r},	{Default Local},	sentiments = {};	For( i = 1, i <= N Items( r ), i++,		Insert Into( sentiments, r[i]["content"] )	);	//loop through the returned sentiments	For( i = 1, i <= N Items( sentiments ), i++,		s = sentiments[i];		sAsList = Parse JSON( s );		retval = Associative Array();		retval["pos"] = sAsList["probability"]["pos"];		retval["neg"] = sAsList["probability"]["neg"];		retval["neutral"] = sAsList["probability"]["neutral"];		retval["label"] = sAsList["label"];		sentiment = retval;		If( bLabel,			Column( dt, colLabel )[i] = sentiment["label"]		);		If( bValues,			Column( dt, colValPos )[i] = sentiment["pos"];			Column( dt, colValNeg )[i] = sentiment["neg"];			Column( dt, colValNeutral )[i] = sentiment["neutral"];		);	););process_error = Function( {p, e, t},	{Default Local},	Show( e );	Show( t ););//this is now just going to configure a New HTTP Request and add it to New Multi HTTP RequestgetSentiment = Function( {text},	fields = Associative Array();	fields["text"] = text;	requests << Add(		New HTTP Request(			URL( "http://text-processing.com/api/sentiment/" ),			Method( "POST" ),			Form( Fields( fields ) ),			Headers( {"Accept: application/json"} )		)	););                      addSentimentColumns = Function( {dt3, colname, cLabel, cValues},	dt = dt3;	bLabel = cLabel;	bValues = cValues;	col = Column( dt, colname );	colLabel = "Sentiment_Label(" || colname || ")";	colValPos = "Sentiment_Pos(" || colname || ")";	colValNeg = "Sentiment_Neg(" || colname || ")";	colValNeutral = "Sentiment_Neutral(" || colname || ")";	If( bLabel,		dt << New Column( colLabel, Character )	);	If( bValues,		dt << New Column( colValPos, Numeric );		dt << New Column( colValNeg, Numeric );		dt << New Column( colValNeutral, Numeric );	);	For( i = 1, i <= N Rows( dt ), i++,		getSentiment( col[i] )	);	//this executes in parallel, with a promise	promise = requests << Send( "async" );	promise << On Result( process_result );	promise << On Error( process_error ););                      dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );addSentimentColumns( dt2, "Name", 1, 1 );
+
+
+//Taken from the Scripting Index Example for New HTTP Request
+requests = New Multi HTTP Request();
+bLabel = 0;
+bValues = 0;
+dt = Empty();
+
+process_result = Function( {p, r},
+	{Default Local},
+	sentiments = {};
+	For( i = 1, i <= N Items( r ), i++,
+		Insert Into( sentiments, r[i]["content"] )
+	);
+	//loop through the returned sentiments
+	For( i = 1, i <= N Items( sentiments ), i++,
+		s = sentiments[i];
+		sAsList = Parse JSON( s );
+		retval = Associative Array();
+		retval["pos"] = sAsList["probability"]["pos"];
+		retval["neg"] = sAsList["probability"]["neg"];
+		retval["neutral"] = sAsList["probability"]["neutral"];
+		retval["label"] = sAsList["label"];
+		sentiment = retval;
+		If( bLabel,
+			Column( dt, colLabel )[i] = sentiment["label"]
+		);
+		If( bValues,
+			Column( dt, colValPos )[i] = sentiment["pos"];
+			Column( dt, colValNeg )[i] = sentiment["neg"];
+			Column( dt, colValNeutral )[i] = sentiment["neutral"];
+		);
+	);
+);
+
+process_error = Function( {p, e, t},
+	{Default Local},
+	Show( e );
+	Show( t );
+);
+
+//this is now just going to configure a New HTTP Request and add it to New Multi HTTP Request
+getSentiment = Function( {text},
+	fields = Associative Array();
+	fields["text"] = text;
+	requests << Add(
+		New HTTP Request(
+			URL( "http://text-processing.com/api/sentiment/" ),
+			Method( "POST" ),
+			Form( Fields( fields ) ),
+			Headers( {"Accept: application/json"} )
+		)
+	);
+);
+                      
+addSentimentColumns = Function( {dt3, colname, cLabel, cValues},
+	dt = dt3;
+	bLabel = cLabel;
+	bValues = cValues;
+	col = Column( dt, colname );
+	colLabel = "Sentiment_Label(" || colname || ")";
+	colValPos = "Sentiment_Pos(" || colname || ")";
+	colValNeg = "Sentiment_Neg(" || colname || ")";
+	colValNeutral = "Sentiment_Neutral(" || colname || ")";
+	If( bLabel,
+		dt << New Column( colLabel, Character )
+	);
+	If( bValues,
+		dt << New Column( colValPos, Numeric );
+		dt << New Column( colValNeg, Numeric );
+		dt << New Column( colValNeutral, Numeric );
+	);
+	For( i = 1, i <= N Rows( dt ), i++,
+		getSentiment( col[i] )
+	);
+	//this executes in parallel, with a promise
+	promise = requests << Send( "async" );
+	promise << On Result( process_result );
+	promise << On Error( process_error );
+);
+                      
+dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );
+addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```
 
@@ -1116,7 +1769,68 @@ password
 
 ```jsl
 
-//Taken from the Scripting Index Example for New HTTP Requestrequests = New Multi HTTP Request();//this is now just going to configure a New HTTP Request and add it to New Multi HTTP RequestgetSentiment = Function( {text},	fields = Associative Array();	fields["text"] = text;	requests << Add(		New HTTP Request(			URL( "http://text-processing.com/api/sentiment/" ),			Method( "POST" ),			Form( Fields( fields ) ),			Headers( {"Accept: application/json"} )		)	););                      addSentimentColumns = Function( {dt, colname, bLabel, bValues},	col = Column( dt, colname );	colLabel = "Sentiment_Label(" || colname || ")";	colValPos = "Sentiment_Pos(" || colname || ")";	colValNeg = "Sentiment_Neg(" || colname || ")";	colValNeutral = "Sentiment_Neutral(" || colname || ")";	If( bLabel,		dt << New Column( colLabel, Character )	);	If( bValues,		dt << New Column( colValPos, Numeric );		dt << New Column( colValNeg, Numeric );		dt << New Column( colValNeutral, Numeric );	);	For( i = 1, i <= N Rows( dt ), i++,		getSentiment( col[i] )	);	//this executes in parallel	sentiments = requests << Send( "show progress", "detailed" );	//loop through the returned sentiments	Show( N Items( requests << Get Requests() ) ); //number of requests in parallel	For( i = 1, i <= N Items( sentiments ), i++,		s = sentiments[i];		sAsList = Parse JSON( s );		retval = Associative Array();		retval["pos"] = sAsList["probability"]["pos"];		retval["neg"] = sAsList["probability"]["neg"];		retval["neutral"] = sAsList["probability"]["neutral"];		retval["label"] = sAsList["label"];		sentiment = retval;		If( bLabel,			Column( dt, colLabel )[i] = sentiment["label"]		);		If( bValues,			Column( dt, colValPos )[i] = sentiment["pos"];			Column( dt, colValNeg )[i] = sentiment["neg"];			Column( dt, colValNeutral )[i] = sentiment["neutral"];		);	););                      dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );addSentimentColumns( dt2, "Name", 1, 1 );
+
+
+//Taken from the Scripting Index Example for New HTTP Request
+requests = New Multi HTTP Request();
+
+//this is now just going to configure a New HTTP Request and add it to New Multi HTTP Request
+getSentiment = Function( {text},
+	fields = Associative Array();
+	fields["text"] = text;
+	requests << Add(
+		New HTTP Request(
+			URL( "http://text-processing.com/api/sentiment/" ),
+			Method( "POST" ),
+			Form( Fields( fields ) ),
+			Headers( {"Accept: application/json"} )
+		)
+	);
+);
+                      
+addSentimentColumns = Function( {dt, colname, bLabel, bValues},
+	col = Column( dt, colname );
+	colLabel = "Sentiment_Label(" || colname || ")";
+	colValPos = "Sentiment_Pos(" || colname || ")";
+	colValNeg = "Sentiment_Neg(" || colname || ")";
+	colValNeutral = "Sentiment_Neutral(" || colname || ")";
+	If( bLabel,
+		dt << New Column( colLabel, Character )
+	);
+	If( bValues,
+		dt << New Column( colValPos, Numeric );
+		dt << New Column( colValNeg, Numeric );
+		dt << New Column( colValNeutral, Numeric );
+	);
+	For( i = 1, i <= N Rows( dt ), i++,
+		getSentiment( col[i] )
+	);
+	//this executes in parallel
+	sentiments = requests << Send( "show progress", "detailed" );
+	//loop through the returned sentiments
+	Show( N Items( requests << Get Requests() ) ); //number of requests in parallel
+	For( i = 1, i <= N Items( sentiments ), i++,
+		s = sentiments[i];
+		sAsList = Parse JSON( s );
+		retval = Associative Array();
+		retval["pos"] = sAsList["probability"]["pos"];
+		retval["neg"] = sAsList["probability"]["neg"];
+		retval["neutral"] = sAsList["probability"]["neutral"];
+		retval["label"] = sAsList["label"];
+		sentiment = retval;
+		If( bLabel,
+			Column( dt, colLabel )[i] = sentiment["label"]
+		);
+		If( bValues,
+			Column( dt, colValPos )[i] = sentiment["pos"];
+			Column( dt, colValNeg )[i] = sentiment["neg"];
+			Column( dt, colValNeutral )[i] = sentiment["neutral"];
+		);
+	);
+);
+                      
+dt2 = Open( "$SAMPLE_DATA\Cereal.jmp" );
+addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```
 
@@ -1134,7 +1848,20 @@ password
 
 ```jsl
 
-/*https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow*/auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";scope = "https://graph.microsoft.com/user.read";client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";auth_fields = [=> ];auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;oauth2 = New OAuth2();oauth2 << Authorization Fields( auth_fields );
+
+
+/*
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+*/
+auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+scope = "https://graph.microsoft.com/user.read";
+client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";
+auth_fields = [=> ];
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+oauth2 = New OAuth2();
+oauth2 << Authorization Fields( auth_fields );
 
 ```
 
@@ -1148,7 +1875,11 @@ password
 
 ```jsl
 
-oauth2 = New OAuth2();auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";oauth2 << Authorization URL( auth_url );
+
+
+oauth2 = New OAuth2();
+auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+oauth2 << Authorization URL( auth_url );
 
 ```
 
@@ -1162,7 +1893,44 @@ password
 
 ```jsl
 
-/*https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow*//*Note: the copy the url into the text area after authentication is complete*/auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";redirect_url = "http://localhost/myapp/";client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";client_secret = "JqQX2PNo9bpM0uEihUPzyrh";scope = "openid offline_access https://graph.microsoft.com/user.read";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2( Browser Type( "External" ) );oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );auth_header = oauth2 << Get Auth Header();request = New HTTP Request(	URL( "https://graph.microsoft.com/v1.0/me" ),	Headers( {auth_header} ),	Method( "GET" ));data = request << Send;
+
+
+/*
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+*/
+
+/*
+Note: the copy the url into the text area after authentication is complete
+*/
+auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";
+client_secret = "JqQX2PNo9bpM0uEihUPzyrh";
+scope = "openid offline_access https://graph.microsoft.com/user.read";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2( Browser Type( "External" ) );
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+auth_header = oauth2 << Get Auth Header();
+request = New HTTP Request(
+	URL( "https://graph.microsoft.com/v1.0/me" ),
+	Headers( {auth_header} ),
+	Method( "GET" )
+);
+data = request << Send;
 
 ```
 
@@ -1176,7 +1944,14 @@ password
 
 ```jsl
 
-/*https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/*/client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";oauth2 = New OAuth2();oauth2 << Client Id( client_id );
+
+
+/*
+https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/
+*/
+client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";
+oauth2 = New OAuth2();
+oauth2 << Client Id( client_id );
 
 ```
 
@@ -1190,7 +1965,14 @@ password
 
 ```jsl
 
-/*https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/*/client_secret = "JqQX2PNo9bpM0uEihUPzyrh";oauth2 = New OAuth2();oauth2 << Client Secret( client_secret );
+
+
+/*
+https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/
+*/
+client_secret = "JqQX2PNo9bpM0uEihUPzyrh";
+oauth2 = New OAuth2();
+oauth2 << Client Secret( client_secret );
 
 ```
 
@@ -1204,7 +1986,10 @@ password
 
 ```jsl
 
-oauth2 = New OAuth2();oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~" );
+
+
+oauth2 = New OAuth2();
+oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~" );
 
 ```
 
@@ -1218,7 +2003,39 @@ password
 
 ```jsl
 
-/*https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://accounts.google.com/o/oauth2/v2/auth";token_url = "https://www.googleapis.com/oauth2/v4/token";redirect_url = "http://localhost/myapp/";client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";scope = "openid profile";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );access_token = oauth2 << Get Access Token();
+
+
+/*
+https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth";
+token_url = "https://www.googleapis.com/oauth2/v4/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";
+scope = "openid profile";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+access_token = oauth2 << Get Access Token();
 
 ```
 
@@ -1232,7 +2049,10 @@ password
 
 ```jsl
 
-oauth2 = New OAuth2();error = oauth2 << Get Authentication Response Error();
+
+
+oauth2 = New OAuth2();
+error = oauth2 << Get Authentication Response Error();
 
 ```
 
@@ -1264,7 +2084,44 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";redirect_url = "http://localhost/myapp/";client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";client_secret = "JqQX2PNo9bpM0uEihUPzyrh";scope = "openid offline_access https://graph.microsoft.com/user.read";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );auth_header = oauth2 << Get Auth Header();request = New HTTP Request(	URL( "https://graph.microsoft.com/v1.0/me" ),	Headers( {auth_header} ),	Method( "GET" ));data = request << Send;
+
+
+/*
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";
+client_secret = "JqQX2PNo9bpM0uEihUPzyrh";
+scope = "openid offline_access https://graph.microsoft.com/user.read";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+auth_header = oauth2 << Get Auth Header();
+request = New HTTP Request(
+	URL( "https://graph.microsoft.com/v1.0/me" ),
+	Headers( {auth_header} ),
+	Method( "GET" )
+);
+data = request << Send;
 
 ```
 
@@ -1272,7 +2129,53 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://accounts.google.com/o/oauth2/v2/auth";token_url = "https://www.googleapis.com/oauth2/v4/token";redirect_url = "http://localhost/myapp/";client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";scope = "openid profile";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );auth_header = oauth2 << Get Auth Header();request = New HTTP Request(	URL( "https://www.googleapis.com/oauth2/v3/userinfo" ),	Headers( {auth_header} ),	Method( "GET" ));data = request << Send;If( !Is Empty( data ),	json_jsl = Parse JSON( data );	If( json_jsl << Contains( "picture" ),		picture_url = json_jsl["picture"];		New Window( "Example", Picture Box( Open( picture_url ) ) );	,		Show( data )	););
+
+
+/*
+https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth";
+token_url = "https://www.googleapis.com/oauth2/v4/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";
+scope = "openid profile";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+auth_header = oauth2 << Get Auth Header();
+request = New HTTP Request(
+	URL( "https://www.googleapis.com/oauth2/v3/userinfo" ),
+	Headers( {auth_header} ),
+	Method( "GET" )
+);
+data = request << Send;
+If( !Is Empty( data ),
+	json_jsl = Parse JSON( data );
+	If( json_jsl << Contains( "picture" ),
+		picture_url = json_jsl["picture"];
+		New Window( "Example", Picture Box( Open( picture_url ) ) );
+	,
+		Show( data )
+	);
+);
 
 ```
 
@@ -1286,7 +2189,39 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://accounts.google.com/o/oauth2/v2/auth";token_url = "https://www.googleapis.com/oauth2/v4/token";redirect_url = "http://localhost/myapp/";client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";scope = "openid profile";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );token = oauth2 << Get Access Token();auth_response = oauth2 << Get Authorization Response Fields();
+
+
+/*
+https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth";
+token_url = "https://www.googleapis.com/oauth2/v4/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";
+scope = "openid profile";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+token = oauth2 << Get Access Token();
+auth_response = oauth2 << Get Authorization Response Fields();
 
 ```
 
@@ -1300,7 +2235,39 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://accounts.google.com/o/oauth2/v2/auth";token_url = "https://www.googleapis.com/oauth2/v4/token";redirect_url = "http://localhost/myapp/";client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";scope = "openid profile";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );code = oauth2 << Get Code();
+
+
+/*
+https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth";
+token_url = "https://www.googleapis.com/oauth2/v4/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";
+scope = "openid profile";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+code = oauth2 << Get Code();
 
 ```
 
@@ -1314,7 +2281,13 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();grant_types = oauth2 << Get Grant Types();oauth2 << Grant Type( grant_types[1] );grant = oauth2 << Get Grant Type();Show( grant );
+
+
+oauth2 = New OAuth2();
+grant_types = oauth2 << Get Grant Types();
+oauth2 << Grant Type( grant_types[1] );
+grant = oauth2 << Get Grant Type();
+Show( grant );
 
 ```
 
@@ -1328,7 +2301,14 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://oauth.net/2/grant-types/*/oauth2 = New OAuth2();grant_types = oauth2 << Get Grant Types();Show( grant_types );
+
+
+/*
+https://oauth.net/2/grant-types/
+*/
+oauth2 = New OAuth2();
+grant_types = oauth2 << Get Grant Types();
+Show( grant_types );
 
 ```
 
@@ -1342,7 +2322,39 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";redirect_url = "http://localhost/myapp/";client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";client_secret = "JqQX2PNo9bpM0uEihUPzyrh";scope = "openid offline_access https://graph.microsoft.com/user.read";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );id_token = oauth2 << Get ID Token();
+
+
+/*
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+
+auth_url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "6731de76-14a6-49ae-97bc-6eba6914391e";
+client_secret = "JqQX2PNo9bpM0uEihUPzyrh";
+scope = "openid offline_access https://graph.microsoft.com/user.read";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+id_token = oauth2 << Get ID Token();
 
 ```
 
@@ -1356,7 +2368,39 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://accounts.google.com/o/oauth2/v2/auth";token_url = "https://www.googleapis.com/oauth2/v4/token";redirect_url = "http://localhost/myapp/";client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";scope = "openid profile";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );refresh_token = oauth2 << Get Refresh Token();
+
+
+/*
+https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth";
+token_url = "https://www.googleapis.com/oauth2/v4/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";
+scope = "openid profile";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+refresh_token = oauth2 << Get Refresh Token();
 
 ```
 
@@ -1370,7 +2414,39 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://accounts.google.com/o/oauth2/v2/auth";token_url = "https://www.googleapis.com/oauth2/v4/token";redirect_url = "http://localhost/myapp/";client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";scope = "openid profile";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );code = oauth2 << Get Scope();
+
+
+/*
+https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth";
+token_url = "https://www.googleapis.com/oauth2/v4/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";
+scope = "openid profile";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+code = oauth2 << Get Scope();
 
 ```
 
@@ -1384,7 +2460,11 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();oauth2 << Set Window Title( "Authorization Window" );title = oauth2 << Get Window Title;
+
+
+oauth2 = New OAuth2();
+oauth2 << Set Window Title( "Authorization Window" );
+title = oauth2 << Get Window Title;
 
 ```
 
@@ -1398,7 +2478,12 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );grant = oauth2 << Get Grant Type();Show( grant );
+
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+grant = oauth2 << Get Grant Type();
+Show( grant );
 
 ```
 
@@ -1418,7 +2503,12 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();If( oauth2 << Has Authentication Response Error(),	Show( oauth2 << Get Authentication Response Error ));
+
+
+oauth2 = New OAuth2();
+If( oauth2 << Has Authentication Response Error(),
+	Show( oauth2 << Get Authentication Response Error )
+);
 
 ```
 
@@ -1432,7 +2522,39 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs*//*Note: the "code" parameter is set automatically after the redirect occurs*/auth_url = "https://accounts.google.com/o/oauth2/v2/auth";token_url = "https://www.googleapis.com/oauth2/v4/token";redirect_url = "http://localhost/myapp/";client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";scope = "openid profile";auth_fields = [=> ];token_fields = [=> ];oauth2 = New OAuth2();oauth2 << Grant Type( "Authorization Code" );oauth2 << Auth URL( auth_url );oauth2 << Token URL( token_url );oauth2 << Redirect URL( redirect_url );auth_fields["scope"] = scope;auth_fields["client_id"] = client_id;token_fields["client_secret"] = client_secret;oauth2 << Auth Fields( auth_fields );oauth2 << Token Fields( token_fields );token = oauth2 << Get Access Token();expired = oauth2 << Is Expired();
+
+
+/*
+https://github.com/googlesamples/oauth-apps-for-windows/blob/master/OAuthConsoleApp/OAuthConsoleApp/Program.cs
+*/
+
+/*
+Note: the "code" parameter is set automatically after the redirect occurs
+*/
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth";
+token_url = "https://www.googleapis.com/oauth2/v4/token";
+redirect_url = "http://localhost/myapp/";
+client_id = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+client_secret = "3f6NggMbPtrmIBpgx-MK2xXK";
+scope = "openid profile";
+auth_fields = [=> ];
+token_fields = [=> ];
+
+oauth2 = New OAuth2();
+oauth2 << Grant Type( "Authorization Code" );
+oauth2 << Auth URL( auth_url );
+oauth2 << Token URL( token_url );
+oauth2 << Redirect URL( redirect_url );
+
+auth_fields["scope"] = scope;
+auth_fields["client_id"] = client_id;
+token_fields["client_secret"] = client_secret;
+
+oauth2 << Auth Fields( auth_fields );
+oauth2 << Token Fields( token_fields );
+
+token = oauth2 << Get Access Token();
+expired = oauth2 << Is Expired();
 
 ```
 
@@ -1446,7 +2568,10 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();oauth2 << Login Hint( "jmp_user@jmp.com" );
+
+
+oauth2 = New OAuth2();
+oauth2 << Login Hint( "jmp_user@jmp.com" );
 
 ```
 
@@ -1474,7 +2599,11 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-redirect_url = "http://localhost/myapp/";oauth2 = New OAuth2();oauth2 << Redirect URL( redirect_url );
+
+
+redirect_url = "http://localhost/myapp/";
+oauth2 = New OAuth2();
+oauth2 << Redirect URL( redirect_url );
 
 ```
 
@@ -1488,7 +2617,18 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://oauth.net/2/scope/https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent*/scope = {"openid", "offline_access", "https://graph.microsoft.com/user.read"};auth_fields = [=> ];auth_fields["scope"] = Concat Items( scope, " " );Show( auth_fields );oauth2 = New OAuth2();oauth2 << Authorization Fields( auth_fields );
+
+
+/*
+https://oauth.net/2/scope/
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent
+*/
+scope = {"openid", "offline_access", "https://graph.microsoft.com/user.read"};
+auth_fields = [=> ];
+auth_fields["scope"] = Concat Items( scope, " " );
+Show( auth_fields );
+oauth2 = New OAuth2();
+oauth2 << Authorization Fields( auth_fields );
 
 ```
 
@@ -1502,7 +2642,10 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();oauth2 << Set Window Title( "Authorization Window" );
+
+
+oauth2 = New OAuth2();
+oauth2 << Set Window Title( "Authorization Window" );
 
 ```
 
@@ -1516,7 +2659,18 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-/*https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow*/tokem_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";client_secret = "6731de76-14a6-49ae-97bc-6eba6914391e";token_fields = [=> ];scope = "openid profile";token_fields["scope"] = scope;oauth2 = New OAuth2();oauth2 << Token Fields( token_fields );
+
+
+/*
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+*/
+tokem_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+client_secret = "6731de76-14a6-49ae-97bc-6eba6914391e";
+token_fields = [=> ];
+scope = "openid profile";
+token_fields["scope"] = scope;
+oauth2 = New OAuth2();
+oauth2 << Token Fields( token_fields );
 
 ```
 
@@ -1530,7 +2684,11 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";oauth2 << Token URL( token_url );
+
+
+oauth2 = New OAuth2();
+token_url = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+oauth2 << Token URL( token_url );
 
 ```
 
@@ -1544,7 +2702,11 @@ Authorization: Bearer [OAuth2 token]
 
 ```jsl
 
-oauth2 = New OAuth2();oauth2 << Use Default Window Title( 1 );title = oauth2 << Get Window Title;
+
+
+oauth2 = New OAuth2();
+oauth2 << Use Default Window Title( 1 );
+title = oauth2 << Get Window Title;
 
 ```
 

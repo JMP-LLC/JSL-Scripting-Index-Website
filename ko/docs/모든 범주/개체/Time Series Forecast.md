@@ -12,7 +12,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -28,7 +34,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -36,7 +46,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -44,7 +61,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -56,7 +77,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -68,7 +93,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ```
 
@@ -80,7 +108,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Copy Script;
 
 ```
 
@@ -92,7 +123,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Data Table Window;
 
 ```
 
@@ -106,7 +140,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -120,7 +157,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -128,7 +169,28 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -140,7 +202,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -152,7 +218,11 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -164,7 +234,11 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -176,7 +250,11 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -188,7 +266,11 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -202,7 +284,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -214,7 +300,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -226,7 +319,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -240,7 +341,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -252,7 +356,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter( Add Filter( columns( :Region ), Where( :Region == "MW" ) ) );
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -264,7 +375,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Redo Analysis;
 
 ```
 
@@ -276,7 +390,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -288,7 +405,12 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country, :marital status} );
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -300,19 +422,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**구문:** obj &lt;&lt; Report; Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -324,7 +461,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -336,7 +476,12 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box( biv = dt << Run Script( "Bivariate" ), dist = dt << Run Script( "Distribution" ) )
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -346,19 +491,14 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
-**예제 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Time Series Forecast(	Y( :Y ),	Grouping( :Series ),	Time( :Time ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**예제 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Time Series Forecast(	Y( :Y ),	Grouping( :Series ),	Time( :Time ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box( biv = dt << Run Script( "Bivariate" ), dist = dt << Run Script( "Distribution" ) )
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -370,7 +510,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );dt << New Column( "_b
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -382,7 +525,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -394,7 +540,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Save Script to Report;
 
 ```
 
@@ -406,7 +555,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -414,11 +566,17 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 **구문:** SendToByGroup( {":Column == level"}, command );
 
-**설명:** 기준 그룹의 각 수준으로 플랫폼 명령을 보내거나 사용자 정의 명령을 표시합니다.
+**설명:** 기준 그룹의 각 수준에 플랫폼 명령 또는 표시 사용자 정의 명령을 보냅니다.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup( {:sex == "F"}, Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) ) ),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -430,7 +588,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch( {"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -442,7 +613,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -454,7 +631,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -466,7 +648,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -478,7 +663,12 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -490,7 +680,10 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -504,7 +697,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ```
 
@@ -518,7 +713,9 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ```
 
@@ -530,7 +727,9 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ```
 
@@ -542,7 +741,9 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ```
 
@@ -558,7 +759,31 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast(	Y( :Y ),	Grouping( :Series ),	Time( :Time ),	Fit Model(		NAhead( 4 ),		Period( 4 ),		Other Options(			Preserve Model Selection Criterion( 0 ),			Forecast Interval Level( 0.95 ),			Imputation for Applicable Models( "None" )		)	),	Save Results(		Save Forecast Intervals( 1 ),		"Save One-Step-Ahead Predictions"n( 1 ),		Save Original Series( 1 ),		Save Forecast Results to Original Table( 0 ),		Forecast Interval Level( .90 ),		NAhead( 100 )	));
+
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast(
+	Y( :Y ),
+	Grouping( :Series ),
+	Time( :Time ),
+	Fit Model(
+		NAhead( 4 ),
+		Period( 4 ),
+		Other Options(
+			Preserve Model Selection Criterion( 0 ),
+			Forecast Interval Level( 0.95 ),
+			Imputation for Applicable Models( "None" )
+		)
+	),
+	Save Results(
+		Save Forecast Intervals( 1 ),
+		"Save One-Step-Ahead Predictions"n( 1 ),
+		Save Original Series( 1 ),
+		Save Forecast Results to Original Table( 0 ),
+		Forecast Interval Level( .90 ),
+		NAhead( 100 )
+	)
+);
 
 ```
 
@@ -572,7 +797,24 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast(	Y( :Y ),	Grouping( :Series ),	Time( :Time ),	Fit Model(		NAhead( 4 ),		Period( 4 ),		Other Options(			Preserve Model Selection Criterion( 0 ),			Forecast Interval Level( 0.95 ),			Imputation for Applicable Models( "None" )		)	),	Set Forecast Interval Level( .9 ));
+
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast(
+	Y( :Y ),
+	Grouping( :Series ),
+	Time( :Time ),
+	Fit Model(
+		NAhead( 4 ),
+		Period( 4 ),
+		Other Options(
+			Preserve Model Selection Criterion( 0 ),
+			Forecast Interval Level( 0.95 ),
+			Imputation for Applicable Models( "None" )
+		)
+	),
+	Set Forecast Interval Level( .9 )
+);
 
 ```
 
@@ -586,7 +828,24 @@ dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Seri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );obj = dt << Time Series Forecast(	Y( :Y ),	Grouping( :Series ),	Time( :Time ),	Fit Model(		NAhead( 4 ),		Period( 4 ),		Other Options(			Preserve Model Selection Criterion( 0 ),			Forecast Interval Level( 0.95 ),			Imputation for Applicable Models( "None" )		)	),	Set NAhead( 10 ));
+
+
+dt = Open( "$SAMPLE_DATA/Time Series/M3C Quarterly.jmp" );
+obj = dt << Time Series Forecast(
+	Y( :Y ),
+	Grouping( :Series ),
+	Time( :Time ),
+	Fit Model(
+		NAhead( 4 ),
+		Period( 4 ),
+		Other Options(
+			Preserve Model Selection Criterion( 0 ),
+			Forecast Interval Level( 0.95 ),
+			Imputation for Applicable Models( "None" )
+		)
+	),
+	Set NAhead( 10 )
+);
 
 ```
 

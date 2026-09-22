@@ -14,7 +14,21 @@
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );nclref = clref << Clone;Show( clref << Equal( nclref ) );Show( clref == nclref );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+nclref = clref << Clone;
+Show( clref << Equal( nclref ) );
+Show( clref == nclref );
 
 ```
 
@@ -28,7 +42,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << Contains( "nObs" );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << Contains( "nObs" );
 
 ```
 
@@ -42,7 +68,20 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );clref << Delete Class;Show( clref );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+clref << Delete Class;
+Show( clref );
 
 ```
 
@@ -56,7 +95,22 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );nclref = New Object( Test() );Show( clref << Equal( nclref ) );nclref:nObs = 50;Show( clref << Equal( nclref ) );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+nclref = New Object( Test() );
+Show( clref << Equal( nclref ) );
+nclref:nObs = 50;
+Show( clref << Equal( nclref ) );
 
 ```
 
@@ -70,7 +124,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << First;
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << First;
 
 ```
 
@@ -84,7 +150,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << Get Contents;
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << Get Contents;
 
 ```
 
@@ -98,7 +176,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << Get Keys;
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << Get Keys;
 
 ```
 
@@ -112,7 +202,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );class name = clref << Get Name;
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+class name = clref << Get Name;
 
 ```
 
@@ -126,7 +228,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << Get Value( "nObs" );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << Get Value( "nObs" );
 
 ```
 
@@ -140,7 +254,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << Get Values;
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << Get Values;
 
 ```
 
@@ -154,7 +280,20 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );clref << Insert( "X", 25 );Show( clref );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+clref << Insert( "X", 25 );
+Show( clref );
 
 ```
 
@@ -168,7 +307,20 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );clref << Lock Class;Try( clref:nObs = 40, "clref is locked." );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+clref << Lock Class;
+Try( clref:nObs = 40, "clref is locked." );
 
 ```
 
@@ -182,7 +334,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );n = clref << N Items;
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+n = clref << N Items;
 
 ```
 
@@ -196,7 +360,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << Next( "addition" );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << Next( "addition" );
 
 ```
 
@@ -210,7 +386,20 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );clref << Remove( "nObs" );Show( clref );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+clref << Remove( "nObs" );
+Show( clref );
 
 ```
 
@@ -224,7 +413,19 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );result = clref << Show Contents;
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+result = clref << Show Contents;
 
 ```
 
@@ -238,7 +439,23 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );clref << Lock Class( "nObs" );Try( clref:nObs = 30, Show( "clref is locked." ) ); //Try again after unlocking. clref << Unlock Class( "nObs" );Try( clref:nObs = 40, Show( "clref is locked." ) );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
+clref << Lock Class( "nObs" );
+Try( clref:nObs = 30, Show( "clref is locked." ) ); 
+//Try again after unlocking. 
+clref << Unlock Class( "nObs" );
+Try( clref:nObs = 40, Show( "clref is locked." ) );
 
 ```
 
@@ -252,7 +469,18 @@ Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs
 
 ```jsl
 
-Define Class(	"Test",	nObs = 20;	addition = Method( {x, y},		(x + y) * nObs	);	append = Method( {a, b},		Char( a ) || " + " || Char( b )	););clref = New Object( Test() );
+
+Define Class(
+	"Test",
+	nObs = 20;
+	addition = Method( {x, y},
+		(x + y) * nObs
+	);
+	append = Method( {a, b},
+		Char( a ) || " + " || Char( b )
+	);
+);
+clref = New Object( Test() );
 
 ```
 

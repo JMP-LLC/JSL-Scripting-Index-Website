@@ -16,7 +16,26 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
 
 ```
 
@@ -24,7 +43,45 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Models(	Model Variables(		:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,		:Growth_S, :Coworker_S, :Supervisor_S	),	Fit(		Model Name( "Higher Order CFA" ),		New Latent( "Leadership", "Conflict", "Satisfaction", "General" ),		Means(			{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,			:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}		),		Loadings(			{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},			{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},			{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}},			{"General", {"Leadership", "Conflict", "Satisfaction"}, {1}}		),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{:Person_C, {:Person_C}},			{:Intra_C, {:Intra_C}},			{:Inter_C, {:Inter_C}},			{:General_S, {:General_S}},			{:Growth_S, {:Growth_S}},			{:Coworker_S, {:Coworker_S}},			{:Supervisor_S, {:Supervisor_S}},			{"Leadership", {"Leadership"}},			{"Conflict", {"Conflict"}},			{"Satisfaction", {"Satisfaction"}},			{"General", {"General"}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+	Model Variables(
+		:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,
+		:Growth_S, :Coworker_S, :Supervisor_S
+	),
+	Fit(
+		Model Name( "Higher Order CFA" ),
+		New Latent( "Leadership", "Conflict", "Satisfaction", "General" ),
+		Means(
+			{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,
+			:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}
+		),
+		Loadings(
+			{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},
+			{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},
+			{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}},
+			{"General", {"Leadership", "Conflict", "Satisfaction"}, {1}}
+		),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{:Person_C, {:Person_C}},
+			{:Intra_C, {:Intra_C}},
+			{:Inter_C, {:Inter_C}},
+			{:General_S, {:General_S}},
+			{:Growth_S, {:Growth_S}},
+			{:Coworker_S, {:Coworker_S}},
+			{:Supervisor_S, {:Supervisor_S}},
+			{"Leadership", {"Leadership"}},
+			{"Conflict", {"Conflict"}},
+			{"Satisfaction", {"Satisfaction"}},
+			{"General", {"General"}}
+		)
+	)
+);
 
 ```
 
@@ -32,7 +89,35 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Mode
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables(		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,		:Multiple Choice Year4	),	Fit(		Model Name( "Linear Growth Curve Model" ),		New Latent( "Intercept", "Slope" ),		Means( {"Constant", {"Intercept", "Slope"}} ),		Loadings(			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,			:Multiple Choice Year4}, {0, 1, 2, 3}}		),		Variances(			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},			{"Intercept", {"Intercept"}},			{"Slope", {"Slope"}}		),		Covariances( {"Intercept", {"Slope"}} ),		Path Diagram Properties( Show Means( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables(
+		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+		:Multiple Choice Year4
+	),
+	Fit(
+		Model Name( "Linear Growth Curve Model" ),
+		New Latent( "Intercept", "Slope" ),
+		Means( {"Constant", {"Intercept", "Slope"}} ),
+		Loadings(
+			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+			:Multiple Choice Year4}, {0, 1, 2, 3}}
+		),
+		Variances(
+			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},
+			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},
+			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},
+			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},
+			{"Intercept", {"Intercept"}},
+			{"Slope", {"Slope"}}
+		),
+		Covariances( {"Intercept", {"Slope"}} ),
+		Path Diagram Properties( Show Means( 1 ) )
+	)
+);
 
 ```
 
@@ -40,7 +125,28 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Models(	Model Variables( :Satisfaction_Avg, :Support_L, :Goal_L, :Work_L ),	Fit(		Model Name( "Multiple Regression" ),		Means( {"Constant", {:Satisfaction_Avg, :Support_L, :Goal_L, :Work_L}} ),		Regressions(			{:Support_L, {:Satisfaction_Avg}},			{:Goal_L, {:Satisfaction_Avg}},			{:Work_L, {:Satisfaction_Avg}}		),		Variances(			{:Satisfaction_Avg, {:Satisfaction_Avg}},			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}}		),		Covariances( {:Support_L, {:Goal_L, :Work_L}}, {:Goal_L, {:Work_L}} ),	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+	Model Variables( :Satisfaction_Avg, :Support_L, :Goal_L, :Work_L ),
+	Fit(
+		Model Name( "Multiple Regression" ),
+		Means( {"Constant", {:Satisfaction_Avg, :Support_L, :Goal_L, :Work_L}} ),
+		Regressions(
+			{:Support_L, {:Satisfaction_Avg}},
+			{:Goal_L, {:Satisfaction_Avg}},
+			{:Work_L, {:Satisfaction_Avg}}
+		),
+		Variances(
+			{:Satisfaction_Avg, {:Satisfaction_Avg}},
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}}
+		),
+		Covariances( {:Support_L, {:Goal_L, :Work_L}}, {:Goal_L, {:Work_L}} ),
+
+	)
+);
 
 ```
 
@@ -48,7 +154,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Mode
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Online Consumer Data.jmp" );dt << Structural Equation Models(	Model Variables( :Privacy, :Reputation, :Trust, :Purchase Int ),	Fit(		Model Name( "Path Analysis with Observed Variables" ),		Means( {"Constant", {:Privacy, :Reputation, :Trust, :Purchase Int}} ),		Regressions(			{:Privacy, {:Trust}},			{:Reputation, {:Trust, :Purchase Int}},			{:Trust, {:Purchase Int}}		),		Variances(			{:Privacy, {:Privacy}},			{:Reputation, {:Reputation}},			{:Trust, {:Trust}},			{:Purchase Int, {:Purchase Int}}		),		Covariances( {:Privacy, {:Reputation}} )	));
+
+dt = Open( "$SAMPLE_DATA/Online Consumer Data.jmp" );
+dt << Structural Equation Models(
+	Model Variables( :Privacy, :Reputation, :Trust, :Purchase Int ),
+	Fit(
+		Model Name( "Path Analysis with Observed Variables" ),
+		Means( {"Constant", {:Privacy, :Reputation, :Trust, :Purchase Int}} ),
+		Regressions(
+			{:Privacy, {:Trust}},
+			{:Reputation, {:Trust, :Purchase Int}},
+			{:Trust, {:Purchase Int}}
+		),
+		Variances(
+			{:Privacy, {:Privacy}},
+			{:Reputation, {:Reputation}},
+			{:Trust, {:Trust}},
+			{:Purchase Int, {:Purchase Int}}
+		),
+		Covariances( {:Privacy, {:Reputation}} )
+	)
+);
 
 ```
 
@@ -56,7 +182,47 @@ dt = Open( "$SAMPLE_DATA/Online Consumer Data.jmp" );dt << Structural Equation 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Models(	Model Variables(		:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,		:Growth_S, :Coworker_S, :Supervisor_S	),	Fit(		Model Name( "Path Analysis with Latent Variables" ),		New Latent( "Leadership", "Conflict", "Satisfaction" ),		Means(			{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,			:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}		),		Loadings(			{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},			{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},			{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}}		),		Regressions(			{"Leadership", {"Conflict", "Satisfaction"}},			{"Conflict", {"Satisfaction"}}		),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{:Person_C, {:Person_C}},			{:Intra_C, {:Intra_C}},			{:Inter_C, {:Inter_C}},			{:General_S, {:General_S}},			{:Growth_S, {:Growth_S}},			{:Coworker_S, {:Coworker_S}},			{:Supervisor_S, {:Supervisor_S}},			{"Leadership", {"Leadership"}},			{"Conflict", {"Conflict"}},			{"Satisfaction", {"Satisfaction"}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+	Model Variables(
+		:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C, :Inter_C, :General_S,
+		:Growth_S, :Coworker_S, :Supervisor_S
+	),
+	Fit(
+		Model Name( "Path Analysis with Latent Variables" ),
+		New Latent( "Leadership", "Conflict", "Satisfaction" ),
+		Means(
+			{"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L, :Person_C, :Intra_C,
+			:Inter_C, :General_S, :Growth_S, :Coworker_S, :Supervisor_S}}
+		),
+		Loadings(
+			{"Leadership", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}},
+			{"Conflict", {:Person_C, :Intra_C, :Inter_C}, {1}},
+			{"Satisfaction", {:General_S, :Growth_S, :Coworker_S, :Supervisor_S}, {1}}
+		),
+		Regressions(
+			{"Leadership", {"Conflict", "Satisfaction"}},
+			{"Conflict", {"Satisfaction"}}
+		),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{:Person_C, {:Person_C}},
+			{:Intra_C, {:Intra_C}},
+			{:Inter_C, {:Inter_C}},
+			{:General_S, {:General_S}},
+			{:Growth_S, {:Growth_S}},
+			{:Coworker_S, {:Coworker_S}},
+			{:Supervisor_S, {:Supervisor_S}},
+			{"Leadership", {"Leadership"}},
+			{"Conflict", {"Conflict"}},
+			{"Satisfaction", {"Satisfaction"}}
+		)
+	)
+);
 
 ```
 
@@ -64,7 +230,38 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Mode
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables(		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,		:Multiple Choice Year4	),	Fit(		Model Name( "Quadratic Growth Model" ),		New Latent( "Intercept", "Slope", "QuadSlope" ),		Means( {"Constant", {"Intercept", "Slope", "QuadSlope"}} ),		Loadings(			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,			:Multiple Choice Year4}, {0, 1, 2, 3}},			{"QuadSlope", {:Multiple Choice Year1, :Multiple Choice Year2,			:Multiple Choice Year3, :Multiple Choice Year4}, {0, 1, 4, 9}}		),		Variances(			{:Multiple Choice Year1, {:Multiple Choice Year1}},			{:Multiple Choice Year2, {:Multiple Choice Year2}},			{:Multiple Choice Year3, {:Multiple Choice Year3}},			{:Multiple Choice Year4, {:Multiple Choice Year4}},			{"Intercept", {"Intercept"}},			{"Slope", {"Slope"}},			{"QuadSlope", {"QuadSlope"}}		),		Covariances( {"Intercept", {"Slope", "QuadSlope"}}, {"Slope", {"QuadSlope"}} ),		Path Diagram Properties( Show Means( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables(
+		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+		:Multiple Choice Year4
+	),
+	Fit(
+		Model Name( "Quadratic Growth Model" ),
+		New Latent( "Intercept", "Slope", "QuadSlope" ),
+		Means( {"Constant", {"Intercept", "Slope", "QuadSlope"}} ),
+		Loadings(
+			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+			:Multiple Choice Year4}, {0, 1, 2, 3}},
+			{"QuadSlope", {:Multiple Choice Year1, :Multiple Choice Year2,
+			:Multiple Choice Year3, :Multiple Choice Year4}, {0, 1, 4, 9}}
+		),
+		Variances(
+			{:Multiple Choice Year1, {:Multiple Choice Year1}},
+			{:Multiple Choice Year2, {:Multiple Choice Year2}},
+			{:Multiple Choice Year3, {:Multiple Choice Year3}},
+			{:Multiple Choice Year4, {:Multiple Choice Year4}},
+			{"Intercept", {"Intercept"}},
+			{"Slope", {"Slope"}},
+			{"QuadSlope", {"QuadSlope"}}
+		),
+		Covariances( {"Intercept", {"Slope", "QuadSlope"}}, {"Slope", {"QuadSlope"}} ),
+		Path Diagram Properties( Show Means( 1 ) )
+	)
+);
 
 ```
 
@@ -72,7 +269,20 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Satisfaction_Avg ),	Fit(		Model Name( "Simple Regression" ),		Means( {"Constant", {:Leadership_Avg, :Satisfaction_Avg}} ),		Regressions( {:Leadership_Avg, {:Satisfaction_Avg}} ),		Variances(			{:Leadership_Avg, {:Leadership_Avg}},			{:Satisfaction_Avg, {:Satisfaction_Avg}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Satisfaction_Avg ),
+	Fit(
+		Model Name( "Simple Regression" ),
+		Means( {"Constant", {:Leadership_Avg, :Satisfaction_Avg}} ),
+		Regressions( {:Leadership_Avg, {:Satisfaction_Avg}} ),
+		Variances(
+			{:Leadership_Avg, {:Leadership_Avg}},
+			{:Satisfaction_Avg, {:Satisfaction_Avg}}
+		)
+	)
+);
 
 ```
 
@@ -80,7 +290,24 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Mode
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg ),	Fit(		Model Name( "Mediation Analysis" ),		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg}} ),		Regressions(			{:Leadership_Avg, {:Conflict_Avg, :Satisfaction_Avg}},			{:Conflict_Avg, {:Satisfaction_Avg}}		),		Variances(			{:Leadership_Avg, {:Leadership_Avg}},			{:Conflict_Avg, {:Conflict_Avg}},			{:Satisfaction_Avg, {:Satisfaction_Avg}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg ),
+	Fit(
+		Model Name( "Mediation Analysis" ),
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg}} ),
+		Regressions(
+			{:Leadership_Avg, {:Conflict_Avg, :Satisfaction_Avg}},
+			{:Conflict_Avg, {:Satisfaction_Avg}}
+		),
+		Variances(
+			{:Leadership_Avg, {:Leadership_Avg}},
+			{:Conflict_Avg, {:Conflict_Avg}},
+			{:Satisfaction_Avg, {:Satisfaction_Avg}}
+		)
+	)
+);
 
 ```
 
@@ -94,7 +321,28 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << Structural Equation Mode
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	Freq( :_freqcol ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	),
+	Freq( :_freqcol )
+);
 
 ```
 
@@ -106,7 +354,9 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_freqcol", 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );dt << Structural Equation Models( Model Variables( 4 :: 7 ), Groups( :Sex ) );
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+dt << Structural Equation Models( Model Variables( 4 :: 7 ), Groups( :Sex ) );
 
 ```
 
@@ -120,7 +370,20 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );dt << Structural Equation 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );mat = dt[0, 2 :: 5];mat_cor = Correlation( mat );mat_means = V Mean( mat );mat_sds = V Std( mat );As Table( mat_cor || mat_means` || mat_sds` ) << Set Name( "Correlation" );Data Table( "Correlation" ) << Structural Equation Models(	Data Format( "Matrix" ),	Model Variables( 1 :: 4 ),	Mean( :Col5 ),	Std Dev( :Col6 ),	Sample Size( 200 ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+mat = dt[0, 2 :: 5];
+mat_cor = Correlation( mat );
+mat_means = V Mean( mat );
+mat_sds = V Std( mat );
+As Table( mat_cor || mat_means` || mat_sds` ) << Set Name( "Correlation" );
+Data Table( "Correlation" ) << Structural Equation Models(
+	Data Format( "Matrix" ),
+	Model Variables( 1 :: 4 ),
+	Mean( :Col5 ),
+	Std Dev( :Col6 ),
+	Sample Size( 200 )
+);
 
 ```
 
@@ -134,7 +397,11 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );mat = dt[0, 2 :: 5];mat_cor =
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
+);
 
 ```
 
@@ -148,7 +415,20 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );mat = dt[0, 2 :: 5];mat_cor = Correlation( mat );mat_means = V Mean( mat );mat_sds = V Std( mat );As Table( mat_cor || mat_means` || mat_sds` ) << Set Name( "Correlation" );Data Table( "Correlation" ) << Structural Equation Models(	Data Format( "Matrix" ),	Model Variables( 1 :: 4 ),	Mean( :Col5 ),	Std Dev( :Col6 ),	Sample Size( 200 ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+mat = dt[0, 2 :: 5];
+mat_cor = Correlation( mat );
+mat_means = V Mean( mat );
+mat_sds = V Std( mat );
+As Table( mat_cor || mat_means` || mat_sds` ) << Set Name( "Correlation" );
+Data Table( "Correlation" ) << Structural Equation Models(
+	Data Format( "Matrix" ),
+	Model Variables( 1 :: 4 ),
+	Mean( :Col5 ),
+	Std Dev( :Col6 ),
+	Sample Size( 200 )
+);
 
 ```
 
@@ -160,7 +440,28 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );mat = dt[0, 2 :: 5];mat_cor =
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	Weight( :_weightcol ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	),
+	Weight( :_weightcol )
+);
 
 ```
 
@@ -176,7 +477,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_weightcol"
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: CFA 1Factor Conflict UI" );obj << Add Manifest Variables();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: CFA 1Factor Conflict UI" );
+obj << Add Manifest Variables();
 
 ```
 
@@ -190,7 +494,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Bootstrap Inference( Parameter Estimates( 1 ), Indirect Effects( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Bootstrap Inference( Parameter Estimates( 1 ), Indirect Effects( 1 ) );
 
 ```
 
@@ -204,7 +511,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Measurement Models" );obj << Compare Selected Models( {"Orthogonal 3-Factor CFA", "3-Factor CFA"} );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Measurement Models" );
+obj << Compare Selected Models( {"Orthogonal 3-Factor CFA", "3-Factor CFA"} );
 
 ```
 
@@ -218,7 +528,13 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );obj << Copy Diagram Properties();obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );obj2 << Paste Diagram Properties();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
+obj << Copy Diagram Properties();
+obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );
+obj2 << Paste Diagram Properties();
 
 ```
 
@@ -232,7 +548,14 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Acad
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Path Analysis no Latent" );obj << Copy Model Specification();obj2 = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg ));obj2 << Paste Model Specification();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Path Analysis no Latent" );
+obj << Copy Model Specification();
+obj2 = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg )
+);
+obj2 << Paste Model Specification();
 
 ```
 
@@ -246,7 +569,28 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Estimation Method( "MIIV Two-Stage Least Squares" ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Goal_L, :Work_L, :Interact_L, "Leader"}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 ),		Assess Measurement Model( 1 )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Estimation Method( "MIIV Two-Stage Least Squares" ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Goal_L, :Work_L, :Interact_L, "Leader"}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 ),
+		Assess Measurement Model( 1 )
+	)
+);
 
 ```
 
@@ -260,7 +604,24 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		)
+	)
+);
 
 ```
 
@@ -274,7 +635,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit Independence Model( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit Independence Model( 0 )
+);
 
 ```
 
@@ -288,7 +654,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit Unrestricted Model( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit Unrestricted Model( 0 )
+);
 
 ```
 
@@ -302,7 +673,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ));obj << Full Information Multivariate Statistics( 1 );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
+);
+obj << Full Information Multivariate Statistics( 1 );
 
 ```
 
@@ -316,7 +692,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Path Analysis no Latent" );obj << Generate R Code();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Path Analysis no Latent" );
+obj << Generate R Code();
 
 ```
 
@@ -330,7 +709,22 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		)	),	Hide Model( {3} ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		)
+	),
+	Hide Model( {3} )
+);
 
 ```
 
@@ -344,7 +738,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ));obj << Launch Explore Missing Values( 1 );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
+);
+obj << Launch Explore Missing Values( 1 );
 
 ```
 
@@ -358,7 +757,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ));obj << Launch Explore Outliers( 1 );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
+);
+obj << Launch Explore Outliers( 1 );
 
 ```
 
@@ -372,7 +776,16 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Model Name( "Means and Variances Model" ),		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Model Name( "Means and Variances Model" ),
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -386,7 +799,13 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );obj << Copy Diagram Properties();obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );obj2 << Paste Diagram Properties();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
+obj << Copy Diagram Properties();
+obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );
+obj2 << Paste Diagram Properties();
 
 ```
 
@@ -400,7 +819,14 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Acad
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Path Analysis no Latent" );obj << Copy Model Specification();obj2 = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg ));obj2 << Paste Model Specification();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Path Analysis no Latent" );
+obj << Copy Model Specification();
+obj2 = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg, :Satisfaction_Avg )
+);
+obj2 << Paste Model Specification();
 
 ```
 
@@ -412,7 +838,35 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables(		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,		:Multiple Choice Year4	),	Fit(		Model Name( "Linear Growth Model" ),		New Latent( "Intercept", "Slope" ),		Means( {"Constant", {"Intercept", "Slope"}} ),		Loadings(			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,			:Multiple Choice Year4}, {0, 1, 2, 3}}		),		Variances(			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},			{"Intercept", {"Intercept"}},			{"Slope", {"Slope"}}		),		Covariances( {"Intercept", {"Slope"}} ),		Path Diagram Properties( Show Means( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables(
+		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+		:Multiple Choice Year4
+	),
+	Fit(
+		Model Name( "Linear Growth Model" ),
+		New Latent( "Intercept", "Slope" ),
+		Means( {"Constant", {"Intercept", "Slope"}} ),
+		Loadings(
+			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+			:Multiple Choice Year4}, {0, 1, 2, 3}}
+		),
+		Variances(
+			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},
+			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},
+			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},
+			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},
+			{"Intercept", {"Intercept"}},
+			{"Slope", {"Slope"}}
+		),
+		Covariances( {"Intercept", {"Slope"}} ),
+		Path Diagram Properties( Show Means( 1 ) )
+	)
+);
 
 ```
 
@@ -426,7 +880,10 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: CFA 1Factor Conflict UI" );obj << Remove Manifest Variables();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: CFA 1Factor Conflict UI" );
+obj << Remove Manifest Variables();
 
 ```
 
@@ -440,7 +897,11 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Run Script( "SEM: Compare Growth Trajectories" );obj << Set as Independence Model( 2 );obj << Reset Independence Model();
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Run Script( "SEM: Compare Growth Trajectories" );
+obj << Set as Independence Model( 2 );
+obj << Reset Independence Model();
 
 ```
 
@@ -454,7 +915,10 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Run Script( "S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Robust Inference( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Robust Inference( 1 );
 
 ```
 
@@ -468,7 +932,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Run Script( "SEM: Compare Growth Trajectories" );obj << Set as Independence Model( 2 );
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Run Script( "SEM: Compare Growth Trajectories" );
+obj << Set as Independence Model( 2 );
 
 ```
 
@@ -482,7 +949,12 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Run Script( "S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Standardize Latent Variables( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Standardize Latent Variables( 1 )
+);
 
 ```
 
@@ -496,7 +968,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ));obj << Univariate Simple Statistics( 1 );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L )
+);
+obj << Univariate Simple Statistics( 1 );
 
 ```
 
@@ -510,7 +987,13 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -526,7 +1009,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -534,7 +1024,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -542,7 +1036,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -554,7 +1052,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -568,7 +1087,13 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -580,7 +1105,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -592,7 +1123,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -604,7 +1162,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Copy Script;
 
 ```
 
@@ -616,7 +1194,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Data Table Window;
 
 ```
 
@@ -630,7 +1228,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -642,7 +1243,35 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -656,7 +1285,28 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -664,7 +1314,28 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -676,7 +1347,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -688,7 +1380,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -700,7 +1397,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -712,7 +1430,28 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -724,7 +1463,28 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -736,7 +1496,11 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -750,7 +1514,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -762,7 +1530,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -774,7 +1549,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -788,7 +1571,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -800,7 +1586,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -812,7 +1607,27 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Redo Analysis;
 
 ```
 
@@ -824,7 +1639,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -836,7 +1671,15 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -848,19 +1691,51 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -872,7 +1747,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -884,7 +1779,34 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -896,7 +1818,34 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -908,7 +1857,34 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -920,7 +1896,15 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -930,19 +1914,17 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
-**Example 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -954,7 +1936,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt << New Column( "_bycol",	C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -966,7 +1968,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -978,7 +2000,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Save Script to Report;
 
 ```
 
@@ -990,7 +2032,27 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -1002,7 +2064,16 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -1014,7 +2085,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -1026,7 +2111,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -1038,7 +2129,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -1050,7 +2146,27 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -1062,7 +2178,29 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		Model Name( "One Factor CFA" ),		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		),		Standardized Parameter Estimates( 1 ),		Normalized Residuals Heat Map( 1 )	));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		Model Name( "One Factor CFA" ),
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		),
+		Standardized Parameter Estimates( 1 ),
+		Normalized Residuals Heat Map( 1 )
+	)
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1076,7 +2214,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -1088,7 +2231,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -1100,7 +2246,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -1118,7 +2271,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989) MIIV-2SLS Estimator" );obj << Equation Details( Composite Error( 1 ) );
+
+dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989) MIIV-2SLS Estimator" );
+obj << Equation Details( Composite Error( 1 ) );
 
 ```
 
@@ -1132,7 +2288,10 @@ dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989) MIIV-2SLS Estimator" );obj << Equation Details( Show All Equations( 1 ) );
+
+dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989) MIIV-2SLS Estimator" );
+obj << Equation Details( Show All Equations( 1 ) );
 
 ```
 
@@ -1146,7 +2305,10 @@ dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989) MIIV-2SLS Estimator" );obj << Equation Details( Variance of the Error( 1 ) );
+
+dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989) MIIV-2SLS Estimator" );
+obj << Equation Details( Variance of the Error( 1 ) );
 
 ```
 
@@ -1164,7 +2326,13 @@ dt = Open( "$SAMPLE_DATA\Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA\Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Path Analysis no Latent" );obj << Specific Indirect Effects( {"Leadership_Avg", "Satisfaction_Avg"} );rpt = obj << Report();scrobj = rpt[Outline Box( "Specific Indirect Effects" )] << Get Scriptable Object();scrobj << Remove Effects( 1 );
+
+dt = Open( "$SAMPLE_DATA\Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Path Analysis no Latent" );
+obj << Specific Indirect Effects( {"Leadership_Avg", "Satisfaction_Avg"} );
+rpt = obj << Report();
+scrobj = rpt[Outline Box( "Specific Indirect Effects" )] << Get Scriptable Object();
+scrobj << Remove Effects( 1 );
 
 ```
 
@@ -1182,7 +2350,10 @@ dt = Open( "$SAMPLE_DATA\Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Modification Indices( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Modification Indices( 1 );
 
 ```
 
@@ -1196,7 +2367,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Measurement Models" );obj << Assess Measurement Model( 1 );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Measurement Models" );
+obj << Assess Measurement Model( 1 );
 
 ```
 
@@ -1210,7 +2384,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Confidence Intervals( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Confidence Intervals( 1 );
 
 ```
 
@@ -1224,7 +2401,13 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );obj << Copy Diagram Properties();obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );obj2 << Paste Diagram Properties();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
+obj << Copy Diagram Properties();
+obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );
+obj2 << Paste Diagram Properties();
 
 ```
 
@@ -1238,7 +2421,12 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Acad
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Path Analysis w/ Latent" );obj << (Fit[1] << Copy Model Specification());obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );obj2 << Paste Model Specification();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Path Analysis w/ Latent" );
+obj << (Fit[1] << Copy Model Specification());
+obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );
+obj2 << Paste Model Specification();
 
 ```
 
@@ -1252,7 +2440,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Correlation of Estimates( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Correlation of Estimates( 1 );
 
 ```
 
@@ -1266,7 +2457,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Correlation of Estimates Heat Map( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Correlation of Estimates Heat Map( 1 );
 
 ```
 
@@ -1280,7 +2474,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Covariance of Estimates( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Covariance of Estimates( 1 );
 
 ```
 
@@ -1294,7 +2491,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Covariance of Estimates Heat Map( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Covariance of Estimates Heat Map( 1 );
 
 ```
 
@@ -1306,7 +2506,16 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Covariances( {:Leadership_Avg, {:Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Covariances( {:Leadership_Avg, {:Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -1320,7 +2529,33 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4 ),	Fit(		Model Name( "Linear Growth Model" ),		Define Time Values( {0, 2, 3} ),		New Latent( "Intercept", "Slope" ),		Means( {"Constant", {"Intercept", "Slope"}} ),		Loadings(			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year3,			:Multiple Choice Year4}, {1, 1, 1}},			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4			}, {0, 2, 3}}		),		Variances(			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},			{"Intercept", {"Intercept"}},			{"Slope", {"Slope"}}		),		Covariances( {"Intercept", {"Slope"}} ),		Path Diagram Properties( Show Means( 1 ) ),		Predicted Values Plot( 1, 1 )	));
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4 ),
+	Fit(
+		Model Name( "Linear Growth Model" ),
+		Define Time Values( {0, 2, 3} ),
+		New Latent( "Intercept", "Slope" ),
+		Means( {"Constant", {"Intercept", "Slope"}} ),
+		Loadings(
+			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year3,
+			:Multiple Choice Year4}, {1, 1, 1}},
+			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4
+			}, {0, 2, 3}}
+		),
+		Variances(
+			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},
+			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},
+			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},
+			{"Intercept", {"Intercept"}},
+			{"Slope", {"Slope"}}
+		),
+		Covariances( {"Intercept", {"Slope"}} ),
+		Path Diagram Properties( Show Means( 1 ) ),
+		Predicted Values Plot( 1, 1 )
+	)
+);
 
 ```
 
@@ -1334,7 +2569,25 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Estimation Method( "MIIV Two-Stage Least Squares" ),	Fit(		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		)	));obj << Equation Details( 0 );
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Estimation Method( "MIIV Two-Stage Least Squares" ),
+	Fit(
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		)
+	)
+);
+obj << Equation Details( 0 );
 
 ```
 
@@ -1348,7 +2601,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Fit Indices( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Fit Indices( 1 );
 
 ```
 
@@ -1360,7 +2616,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Indirect Effects( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Indirect Effects( 1 );
 
 ```
 
@@ -1372,7 +2631,23 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		)
+	)
+);
 
 ```
 
@@ -1384,7 +2659,20 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Model Specification(		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Model Specification(
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}}
+		)
+	)
+);
 
 ```
 
@@ -1398,7 +2686,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Model Implied Correlations( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Model Implied Correlations( 1 );
 
 ```
 
@@ -1412,7 +2703,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Model Implied Correlations Heat Map( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Model Implied Correlations Heat Map( 1 );
 
 ```
 
@@ -1426,7 +2720,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Model Implied Covariances( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Model Implied Covariances( 1 );
 
 ```
 
@@ -1440,7 +2737,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Model Implied Covariances Heat Map( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Model Implied Covariances Heat Map( 1 );
 
 ```
 
@@ -1454,7 +2754,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Model Implied Means( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Model Implied Means( 1 );
 
 ```
 
@@ -1468,7 +2771,16 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Model Name( "Means and Variances Model" ),		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Model Name( "Means and Variances Model" ),
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -1482,7 +2794,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Modification Indices( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Modification Indices( 1 );
 
 ```
 
@@ -1496,7 +2811,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Modification Indices for Covariances( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Modification Indices for Covariances( 1 );
 
 ```
 
@@ -1510,7 +2828,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Modification Indices for Loadings( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Modification Indices for Loadings( 1 );
 
 ```
 
@@ -1524,7 +2845,36 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables(		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,		:Multiple Choice Year4	),	Fit(		Model Name( "Linear Growth Model" ),		New Latent( "Intercept", "Slope" ),		Means( {"Constant", {"Intercept", "Slope"}} ),		Loadings(			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,			:Multiple Choice Year4}, {0, 1, 2, 3}}		),		Variances(			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},			{"Intercept", {"Intercept"}},			{"Slope", {"Slope"}}		),		Covariances( {"Intercept", {"Slope"}} ),		Path Diagram Properties( Show Means( 1 ) )	));obj << Modification Indices for Means( 1 );
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables(
+		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+		:Multiple Choice Year4
+	),
+	Fit(
+		Model Name( "Linear Growth Model" ),
+		New Latent( "Intercept", "Slope" ),
+		Means( {"Constant", {"Intercept", "Slope"}} ),
+		Loadings(
+			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+			:Multiple Choice Year4}, {0, 1, 2, 3}}
+		),
+		Variances(
+			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},
+			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},
+			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},
+			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},
+			{"Intercept", {"Intercept"}},
+			{"Slope", {"Slope"}}
+		),
+		Covariances( {"Intercept", {"Slope"}} ),
+		Path Diagram Properties( Show Means( 1 ) )
+	)
+);
+obj << Modification Indices for Means( 1 );
 
 ```
 
@@ -1538,7 +2888,10 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Modification Indices for Regressions( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Modification Indices for Regressions( 1 );
 
 ```
 
@@ -1552,7 +2905,36 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables(		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,		:Multiple Choice Year4	),	Fit(		Model Name( "Linear Growth Model" ),		New Latent( "Intercept", "Slope" ),		Means( {"Constant", {"Intercept", "Slope"}} ),		Loadings(			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,			:Multiple Choice Year4}, {0, 1, 2, 3}}		),		Variances(			{:Multiple Choice Year1, {:Multiple Choice Year1}, {.25}},			{:Multiple Choice Year2, {:Multiple Choice Year2}, {.25}},			{:Multiple Choice Year3, {:Multiple Choice Year3}, {.25}},			{:Multiple Choice Year4, {:Multiple Choice Year4}, {.25}},			{"Intercept", {"Intercept"}},			{"Slope", {"Slope"}}		),		Covariances( {"Intercept", {"Slope"}} ),		Path Diagram Properties( Show Means( 1 ) )	));obj << Modification Indices for Variances( 1 );
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables(
+		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+		:Multiple Choice Year4
+	),
+	Fit(
+		Model Name( "Linear Growth Model" ),
+		New Latent( "Intercept", "Slope" ),
+		Means( {"Constant", {"Intercept", "Slope"}} ),
+		Loadings(
+			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+			:Multiple Choice Year4}, {0, 1, 2, 3}}
+		),
+		Variances(
+			{:Multiple Choice Year1, {:Multiple Choice Year1}, {.25}},
+			{:Multiple Choice Year2, {:Multiple Choice Year2}, {.25}},
+			{:Multiple Choice Year3, {:Multiple Choice Year3}, {.25}},
+			{:Multiple Choice Year4, {:Multiple Choice Year4}, {.25}},
+			{"Intercept", {"Intercept"}},
+			{"Slope", {"Slope"}}
+		),
+		Covariances( {"Intercept", {"Slope"}} ),
+		Path Diagram Properties( Show Means( 1 ) )
+	)
+);
+obj << Modification Indices for Variances( 1 );
 
 ```
 
@@ -1566,7 +2948,23 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Model Specification(		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Model Specification(
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		)
+	)
+);
 
 ```
 
@@ -1580,7 +2978,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Normalized Residuals( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Normalized Residuals( 1 );
 
 ```
 
@@ -1594,7 +2995,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Normalized Residuals Heat Map( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Normalized Residuals Heat Map( 1 );
 
 ```
 
@@ -1608,7 +3012,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Parameter Estimates( 0 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Parameter Estimates( 0 );
 
 ```
 
@@ -1622,7 +3029,13 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );obj << Copy Diagram Properties();obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );obj2 << Paste Diagram Properties();
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+dt2 = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt2 << Run Script( "SEM: Compare Growth Trajectories" );
+obj << Copy Diagram Properties();
+obj2 = dt << Structural Equation Models( Model Variables( 2 :: 12 ) );
+obj2 << Paste Diagram Properties();
 
 ```
 
@@ -1634,7 +3047,35 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );dt2 = Open( "$SAMPLE_DATA/Acad
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables(		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,		:Multiple Choice Year4	),	Fit(		Model Name( "Linear Growth Model" ),		New Latent( "Intercept", "Slope" ),		Means( {"Constant", {"Intercept", "Slope"}} ),		Loadings(			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,			:Multiple Choice Year4}, {0, 1, 2, 3}}		),		Variances(			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},			{"Intercept", {"Intercept"}},			{"Slope", {"Slope"}}		),		Covariances( {"Intercept", {"Slope"}} ),		Path Diagram Properties( Show Means( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables(
+		:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+		:Multiple Choice Year4
+	),
+	Fit(
+		Model Name( "Linear Growth Model" ),
+		New Latent( "Intercept", "Slope" ),
+		Means( {"Constant", {"Intercept", "Slope"}} ),
+		Loadings(
+			{"Intercept", {:Multiple Choice Year1, :Multiple Choice Year2,
+			:Multiple Choice Year3, :Multiple Choice Year4}, {1, 1, 1, 1}},
+			{"Slope", {:Multiple Choice Year1, :Multiple Choice Year2, :Multiple Choice Year3,
+			:Multiple Choice Year4}, {0, 1, 2, 3}}
+		),
+		Variances(
+			{:Multiple Choice Year1, {:Multiple Choice Year1}, {"b1"}},
+			{:Multiple Choice Year2, {:Multiple Choice Year2}, {"b1"}},
+			{:Multiple Choice Year3, {:Multiple Choice Year3}, {"b1"}},
+			{:Multiple Choice Year4, {:Multiple Choice Year4}, {"b1"}},
+			{"Intercept", {"Intercept"}},
+			{"Slope", {"Slope"}}
+		),
+		Covariances( {"Intercept", {"Slope"}} ),
+		Path Diagram Properties( Show Means( 1 ) )
+	)
+);
 
 ```
 
@@ -1648,7 +3089,10 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Run Script( "SEM: LGC with LDF" );obj << Predicted Values Plot( 1, 1 );
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Run Script( "SEM: LGC with LDF" );
+obj << Predicted Values Plot( 1, 1 );
 
 ```
 
@@ -1662,7 +3106,15 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Run Script( "S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: Path Analysis w / Latent" );obj << Prediction Profiler(	1,	Confidence Intervals( 1 ),	Term Value( Leadership( 0, Lock( 0 ), Show( 1 ) ), Conflict( 0, Lock( 0 ), Show( 1 ) ) ),	Y Terms( Conflict, Satisfaction ));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Run Script( "SEM: Path Analysis w / Latent" );
+obj << Prediction Profiler(
+	1,
+	Confidence Intervals( 1 ),
+	Term Value( Leadership( 0, Lock( 0 ), Show( 1 ) ), Conflict( 0, Lock( 0 ), Show( 1 ) ) ),
+	Y Terms( Conflict, Satisfaction )
+);
 
 ```
 
@@ -1676,7 +3128,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Run Script( "SEM: 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << R Square for Endogenous Variables( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << R Square for Endogenous Variables( 1 );
 
 ```
 
@@ -1690,7 +3145,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << RAM Matrices( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << RAM Matrices( 1 );
 
 ```
 
@@ -1704,7 +3162,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Recall in Model Specification( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Recall in Model Specification( 1 );
 
 ```
 
@@ -1716,7 +3177,16 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Regressions( {:Leadership_Avg, {:Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Regressions( {:Leadership_Avg, {:Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -1730,7 +3200,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Remove Fit( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Remove Fit( 1 );
 
 ```
 
@@ -1744,7 +3217,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Residuals( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Residuals( 1 );
 
 ```
 
@@ -1756,7 +3232,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Save Bartlett Factor Scores();
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Save Bartlett Factor Scores();
 
 ```
 
@@ -1770,7 +3249,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Save Factor Scores();
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Save Factor Scores();
 
 ```
 
@@ -1784,7 +3266,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Save Observational Residuals();
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Save Observational Residuals();
 
 ```
 
@@ -1798,7 +3283,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Save Prediction Formulas();
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Save Prediction Formulas();
 
 ```
 
@@ -1812,7 +3300,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Show Path Diagram( 0 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Show Path Diagram( 0 );
 
 ```
 
@@ -1826,7 +3317,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Specific Indirect Effects( {"Ind60", "Dem65"} );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Specific Indirect Effects( {"Ind60", "Dem65"} );
 
 ```
 
@@ -1840,7 +3334,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Standardized Parameter Estimates( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Standardized Parameter Estimates( 1 );
 
 ```
 
@@ -1854,7 +3351,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Summary of Fit( 0 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Summary of Fit( 0 );
 
 ```
 
@@ -1866,7 +3366,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Total Effects( 1 );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Total Effects( 1 );
 
 ```
 
@@ -1878,7 +3381,20 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Model Specification(		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Model Specification(
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}}
+		)
+	)
+);
 
 ```
 
@@ -1902,7 +3418,10 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Means( 1 ), Constant Border Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Means( 1 ), Constant Border Color( "Blue" ) );
 
 ```
 
@@ -1916,7 +3435,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Means( 1 ), Constant Fill Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Means( 1 ), Constant Fill Color( "Blue" ) );
 
 ```
 
@@ -1930,7 +3452,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Means( 1 ), Constant Font( "Sitka Small" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Means( 1 ), Constant Font( "Sitka Small" ) );
 
 ```
 
@@ -1944,7 +3469,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Means( 1 ), Constant Height( 20 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Means( 1 ), Constant Height( 20 ) );
 
 ```
 
@@ -1958,7 +3486,13 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties(	Show Means( 1 ),	Constant Shape( {Fill Color( "Medium Light BlueCyan" ), Width( 80 ), Height( 40 )} ));
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties(
+	Show Means( 1 ),
+	Constant Shape( {Fill Color( "Medium Light BlueCyan" ), Width( 80 ), Height( 40 )} )
+);
 
 ```
 
@@ -1972,7 +3506,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Constant Size Option( "Scale To Text" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Constant Size Option( "Scale To Text" ) );
 
 ```
 
@@ -1986,7 +3523,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Means( 1 ), Constant Text Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Means( 1 ), Constant Text Color( "Blue" ) );
 
 ```
 
@@ -2000,7 +3540,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Means( 1 ), Constant Width( 71 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Means( 1 ), Constant Width( 71 ) );
 
 ```
 
@@ -2014,7 +3557,11 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );rpt = obj << Report();rpt[Node Graph Box( 1 )] << Copy Diagram;
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+rpt = obj << Report();
+rpt[Node Graph Box( 1 )] << Copy Diagram;
 
 ```
 
@@ -2026,7 +3573,19 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );rpt = obj << Report();diagram = rpt[Node Graph Box( 1 )];diagram << Latent Fill Color( "Blue" );diagram << Paths Color( "Green" );diagram << Copy Diagram Properties;obj = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" ) <<Run Script( "SEM: Path Analysis w/ Latent" );rpt = obj << Report();other_diagram = rpt[Node Graph Box( 1 )];other_diagram << Paste Diagram Properties;
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+rpt = obj << Report();
+diagram = rpt[Node Graph Box( 1 )];
+diagram << Latent Fill Color( "Blue" );
+diagram << Paths Color( "Green" );
+diagram << Copy Diagram Properties;
+obj = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" ) <<
+Run Script( "SEM: Path Analysis w/ Latent" );
+rpt = obj << Report();
+other_diagram = rpt[Node Graph Box( 1 )];
+other_diagram << Paste Diagram Properties;
 
 ```
 
@@ -2040,7 +3599,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( "Dashed Lines for Nonsignificant p - values"n( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( "Dashed Lines for Nonsignificant p - values"n( 0 ) );
 
 ```
 
@@ -2054,7 +3616,23 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties(	Place Nodes(		{{"Energy60", 88, 184}, {"Fair60", 374, 94}, {"Fair65", 660, 184}, {"FrOpp60", 301,		94}, {"FrOpp65", 587, 184}, {"FrPress60", 229, 94}, {"FrPress65", 515, 184},		{"Labor60", 161, 184}, {"Legis60", 447, 94}, {"Legis65", 732, 184}, {"Prod60", 16,		184}}	),	Rotate Loops(		{{"Dem60", 1.571}, {"Dem65", 1.571}, {"Energy60", 4.712}, {"Fair60", 4.712},		{"Fair65", 4.712}, {"FrOpp60", 4.712}, {"FrOpp65", 4.712}, {"FrPress60", 4.712},		{"FrPress65", 4.712}, {"Ind60", 1.571}, {"Labor60", 4.712}, {"Legis60", 4.712},		{"Legis65", 4.712}, {"Prod60", 4.712}}	));
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties(
+	Place Nodes(
+		{{"Energy60", 88, 184}, {"Fair60", 374, 94}, {"Fair65", 660, 184}, {"FrOpp60", 301,
+		94}, {"FrOpp65", 587, 184}, {"FrPress60", 229, 94}, {"FrPress65", 515, 184},
+		{"Labor60", 161, 184}, {"Legis60", 447, 94}, {"Legis65", 732, 184}, {"Prod60", 16,
+		184}}
+	),
+	Rotate Loops(
+		{{"Dem60", 1.571}, {"Dem65", 1.571}, {"Energy60", 4.712}, {"Fair60", 4.712},
+		{"Fair65", 4.712}, {"FrOpp60", 4.712}, {"FrOpp65", 4.712}, {"FrPress60", 4.712},
+		{"FrPress65", 4.712}, {"Ind60", 1.571}, {"Labor60", 4.712}, {"Legis60", 4.712},
+		{"Legis65", 4.712}, {"Prod60", 4.712}}
+	)
+);
 
 ```
 
@@ -2068,7 +3646,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Enable Grid( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Enable Grid( 1 ) );
 
 ```
 
@@ -2082,7 +3663,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Fill Nodes With R Squared( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Fill Nodes With R Squared( 1 ) );
 
 ```
 
@@ -2096,7 +3680,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Latent Border Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Latent Border Color( "Blue" ) );
 
 ```
 
@@ -2110,7 +3697,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Latent Fill Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Latent Fill Color( "Blue" ) );
 
 ```
 
@@ -2124,7 +3714,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Latent Font( "Sitka Small" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Latent Font( "Sitka Small" ) );
 
 ```
 
@@ -2138,7 +3731,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Latent Height( 30 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Latent Height( 30 ) );
 
 ```
 
@@ -2152,7 +3748,12 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties(	Latent Shape( {Fill Color( "Medium Light BlueCyan" ), Width( 80 ), Height( 40 )} ));
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties(
+	Latent Shape( {Fill Color( "Medium Light BlueCyan" ), Width( 80 ), Height( 40 )} )
+);
 
 ```
 
@@ -2166,7 +3767,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Latent Size Option( "Scale To Text" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Latent Size Option( "Scale To Text" ) );
 
 ```
 
@@ -2180,7 +3784,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Latent Text Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Latent Text Color( "Blue" ) );
 
 ```
 
@@ -2194,7 +3801,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Latent Width( 71 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Latent Width( 71 ) );
 
 ```
 
@@ -2208,7 +3818,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Layout( "Top To Bottom" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Layout( "Top To Bottom" ) );
 
 ```
 
@@ -2222,7 +3835,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Lock Diagram( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Lock Diagram( 1 ) );
 
 ```
 
@@ -2236,7 +3852,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Border Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Border Color( "Blue" ) );
 
 ```
 
@@ -2250,7 +3869,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Fill Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Fill Color( "Blue" ) );
 
 ```
 
@@ -2264,7 +3886,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Font( "Sitka Small" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Font( "Sitka Small" ) );
 
 ```
 
@@ -2278,7 +3903,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Height( 30 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Height( 30 ) );
 
 ```
 
@@ -2292,7 +3920,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Shape( {Fill Color( "Green" )} ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Shape( {Fill Color( "Green" )} ) );
 
 ```
 
@@ -2306,7 +3937,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Size Option( "Scale To Text" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Size Option( "Scale To Text" ) );
 
 ```
 
@@ -2320,7 +3954,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Text Color( "Blue" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Text Color( "Blue" ) );
 
 ```
 
@@ -2334,7 +3971,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Manifest Width( 67 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Manifest Width( 67 ) );
 
 ```
 
@@ -2346,7 +3986,19 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );rpt = obj << Report();diagram = rpt[Node Graph Box( 1 )];diagram << Latent Fill Color( "Blue" );diagram << Paths Color( "Green" );diagram << Copy Diagram Properties;obj = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" ) <<Run Script( "SEM: Path Analysis w/ Latent" );rpt = obj << Report();other_diagram = rpt[Node Graph Box( 1 )];other_diagram << Paste Diagram Properties;
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+rpt = obj << Report();
+diagram = rpt[Node Graph Box( 1 )];
+diagram << Latent Fill Color( "Blue" );
+diagram << Paths Color( "Green" );
+diagram << Copy Diagram Properties;
+obj = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" ) <<
+Run Script( "SEM: Path Analysis w/ Latent" );
+rpt = obj << Report();
+other_diagram = rpt[Node Graph Box( 1 )];
+other_diagram << Paste Diagram Properties;
 
 ```
 
@@ -2360,7 +4012,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Path Styles( {Color( "Green" )} ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Path Styles( {Color( "Green" )} ) );
 
 ```
 
@@ -2374,7 +4029,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Path Thickness( "Map to Stdz. Estimates" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Path Thickness( "Map to Stdz. Estimates" ) );
 
 ```
 
@@ -2388,7 +4046,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Path Transparency( "Fixed" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Path Transparency( "Fixed" ) );
 
 ```
 
@@ -2402,7 +4063,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Paths Alpha Level( 0.01 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Paths Alpha Level( 0.01 ) );
 
 ```
 
@@ -2416,7 +4080,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Paths Color( "Green" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Paths Color( "Green" ) );
 
 ```
 
@@ -2430,7 +4097,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Paths Font( "Segoe Script", 12, "Bold" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Paths Font( "Segoe Script", 12, "Bold" ) );
 
 ```
 
@@ -2444,7 +4114,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Paths Opacity( 0.5 ), Path Transparency( "Fixed" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Paths Opacity( 0.5 ), Path Transparency( "Fixed" ) );
 
 ```
 
@@ -2458,7 +4131,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Paths Thickness( 2.7103 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Paths Thickness( 2.7103 ) );
 
 ```
 
@@ -2472,7 +4148,23 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties(	Place Nodes(		{{"Energy60", 88, 184}, {"Fair60", 374, 94}, {"Fair65", 660, 184}, {"FrOpp60", 301,		94}, {"FrOpp65", 587, 184}, {"FrPress60", 229, 94}, {"FrPress65", 515, 184},		{"Labor60", 161, 184}, {"Legis60", 447, 94}, {"Legis65", 732, 184}, {"Prod60", 16,		184}}	),	Rotate Loops(		{{"Dem60", 1.571}, {"Dem65", 1.571}, {"Energy60", 4.712}, {"Fair60", 4.712},		{"Fair65", 4.712}, {"FrOpp60", 4.712}, {"FrOpp65", 4.712}, {"FrPress60", 4.712},		{"FrPress65", 4.712}, {"Ind60", 1.571}, {"Labor60", 4.712}, {"Legis60", 4.712},		{"Legis65", 4.712}, {"Prod60", 4.712}}	));
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties(
+	Place Nodes(
+		{{"Energy60", 88, 184}, {"Fair60", 374, 94}, {"Fair65", 660, 184}, {"FrOpp60", 301,
+		94}, {"FrOpp65", 587, 184}, {"FrPress60", 229, 94}, {"FrPress65", 515, 184},
+		{"Labor60", 161, 184}, {"Legis60", 447, 94}, {"Legis65", 732, 184}, {"Prod60", 16,
+		184}}
+	),
+	Rotate Loops(
+		{{"Dem60", 1.571}, {"Dem65", 1.571}, {"Energy60", 4.712}, {"Fair60", 4.712},
+		{"Fair65", 4.712}, {"FrOpp60", 4.712}, {"FrOpp65", 4.712}, {"FrPress60", 4.712},
+		{"FrPress65", 4.712}, {"Ind60", 1.571}, {"Labor60", 4.712}, {"Legis60", 4.712},
+		{"Legis65", 4.712}, {"Prod60", 4.712}}
+	)
+);
 
 ```
 
@@ -2486,7 +4178,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( R2 Fill Color( Cyan ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( R2 Fill Color( Cyan ) );
 
 ```
 
@@ -2500,7 +4195,12 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );rpt = obj << Report();diagram = rpt[Node Graph Box( 1 )];diagram << Rotate Latent Groups;
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+rpt = obj << Report();
+diagram = rpt[Node Graph Box( 1 )];
+diagram << Rotate Latent Groups;
 
 ```
 
@@ -2514,7 +4214,23 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties(	Place Nodes(		{{"Energy60", 88, 184}, {"Fair60", 374, 94}, {"Fair65", 660, 184}, {"FrOpp60", 301,		94}, {"FrOpp65", 587, 184}, {"FrPress60", 229, 94}, {"FrPress65", 515, 184},		{"Labor60", 161, 184}, {"Legis60", 447, 94}, {"Legis65", 732, 184}, {"Prod60", 16,		184}}	),	Rotate Loops(		{{"Dem60", 1.571}, {"Dem65", 1.571}, {"Energy60", 4.712}, {"Fair60", 4.712},		{"Fair65", 4.712}, {"FrOpp60", 4.712}, {"FrOpp65", 4.712}, {"FrPress60", 4.712},		{"FrPress65", 4.712}, {"Ind60", 1.571}, {"Labor60", 4.712}, {"Legis60", 4.712},		{"Legis65", 4.712}, {"Prod60", 4.712}}	));
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties(
+	Place Nodes(
+		{{"Energy60", 88, 184}, {"Fair60", 374, 94}, {"Fair65", 660, 184}, {"FrOpp60", 301,
+		94}, {"FrOpp65", 587, 184}, {"FrPress60", 229, 94}, {"FrPress65", 515, 184},
+		{"Labor60", 161, 184}, {"Legis60", 447, 94}, {"Legis65", 732, 184}, {"Prod60", 16,
+		184}}
+	),
+	Rotate Loops(
+		{{"Dem60", 1.571}, {"Dem65", 1.571}, {"Energy60", 4.712}, {"Fair60", 4.712},
+		{"Fair65", 4.712}, {"FrOpp60", 4.712}, {"FrOpp65", 4.712}, {"FrPress60", 4.712},
+		{"FrPress65", 4.712}, {"Ind60", 1.571}, {"Labor60", 4.712}, {"Legis60", 4.712},
+		{"Legis65", 4.712}, {"Prod60", 4.712}}
+	)
+);
 
 ```
 
@@ -2528,7 +4244,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Constant Mean Square( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Constant Mean Square( 1 ) );
 
 ```
 
@@ -2542,7 +4261,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Covariances( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Covariances( 0 ) );
 
 ```
 
@@ -2556,7 +4278,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Equality Constraints( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Equality Constraints( 0 ) );
 
 ```
 
@@ -2570,7 +4295,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Estimates( "None" ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Estimates( "None" ) );
 
 ```
 
@@ -2584,7 +4312,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Loadings( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Loadings( 0 ) );
 
 ```
 
@@ -2598,7 +4329,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Means( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Means( 1 ) );
 
 ```
 
@@ -2612,7 +4346,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show R Squared Values( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show R Squared Values( 1 ) );
 
 ```
 
@@ -2626,7 +4363,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Regressions( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Regressions( 0 ) );
 
 ```
 
@@ -2640,7 +4380,10 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SEM: Bollen (1989)" );obj << Path Diagram Properties( Show Variances( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );
+obj = dt << Run Script( "SEM: Bollen (1989)" );
+obj << Path Diagram Properties( Show Variances( 0 ) );
 
 ```
 
@@ -2656,7 +4399,16 @@ dt = Open( "$SAMPLE_DATA/Political Democracy.jmp" );obj = dt << Run Script( "SE
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Covariances( {:Leadership_Avg, {:Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Covariances( {:Leadership_Avg, {:Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -2670,7 +4422,15 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4 ),	Model Specification(		Model Name( "Longitudinal Model" ),		Define Time Values( {0, 2, 3} )	));
+
+dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Multiple Choice Year1, :Multiple Choice Year3, :Multiple Choice Year4 ),
+	Model Specification(
+		Model Name( "Longitudinal Model" ),
+		Define Time Values( {0, 2, 3} )
+	)
+);
 
 ```
 
@@ -2682,7 +4442,23 @@ dt = Open( "$SAMPLE_DATA/Academic Achievement.jmp" );obj = dt << Structural Equ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Fit(		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Fit(
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		)
+	)
+);
 
 ```
 
@@ -2696,7 +4472,17 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Covariances( {:Leadership_Avg, {:Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} ),		Max Iterations( 3 )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Covariances( {:Leadership_Avg, {:Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} ),
+		Max Iterations( 3 )
+	)
+);
 
 ```
 
@@ -2708,7 +4494,20 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Model Specification(		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Model Specification(
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}}
+		)
+	)
+);
 
 ```
 
@@ -2722,7 +4521,16 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Model Name( "Means and Variances Model" ),		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Model Name( "Means and Variances Model" ),
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -2736,7 +4544,19 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Model Name( "Means and Variances Model" ),		Model Notes(			"This is a simple model with only means and variances for each variable"		),		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Model Name( "Means and Variances Model" ),
+		Model Notes(
+			"This is a simple model with only means and variances for each variable"
+		),
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -2750,7 +4570,23 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Model Specification(		New Latent( "Leader" ),		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}},			{"Leader", {"Leader"}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Model Specification(
+		New Latent( "Leader" ),
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Loadings( {"Leader", {:Support_L, :Goal_L, :Work_L, :Interact_L}, {1}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}},
+			{"Leader", {"Leader"}}
+		)
+	)
+);
 
 ```
 
@@ -2762,7 +4598,16 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Leadership_Avg, :Conflict_Avg ),	Model Specification(		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),		Regressions( {:Leadership_Avg, {:Conflict_Avg}} ),		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Leadership_Avg, :Conflict_Avg ),
+	Model Specification(
+		Means( {"Constant", {:Leadership_Avg, :Conflict_Avg}} ),
+		Regressions( {:Leadership_Avg, {:Conflict_Avg}} ),
+		Variances( {:Leadership_Avg, {:Leadership_Avg}}, {:Conflict_Avg, {:Conflict_Avg}} )
+	)
+);
 
 ```
 
@@ -2774,7 +4619,20 @@ dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equatio
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );obj = dt << Structural Equation Models(	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),	Model Specification(		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),		Variances(			{:Support_L, {:Support_L}},			{:Goal_L, {:Goal_L}},			{:Work_L, {:Work_L}},			{:Interact_L, {:Interact_L}}		)	));
+
+dt = Open( "$SAMPLE_DATA/Job Satisfaction.jmp" );
+obj = dt << Structural Equation Models(
+	Model Variables( :Support_L, :Goal_L, :Work_L, :Interact_L ),
+	Model Specification(
+		Means( {"Constant", {:Support_L, :Goal_L, :Work_L, :Interact_L}} ),
+		Variances(
+			{:Support_L, {:Support_L}},
+			{:Goal_L, {:Goal_L}},
+			{:Work_L, {:Work_L}},
+			{:Interact_L, {:Interact_L}}
+		)
+	)
+);
 
 ```
 

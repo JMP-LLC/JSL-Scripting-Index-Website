@@ -6,7 +6,7 @@ For an interactive scripting experience within JMP, go to **Ayuda > Índice de s
 
 ¿No ha probado JMP? [Descargue una prueba gratuita](https://www.jmp.com/fr/download-jmp-free-trial?utm_campaign=jslindex&utm_source=jslfreetrialbtn&utm_medium=jslindex)
 
-*Última actualización: 2 de marzo de 2026 (JMP Versión 19.1)*
+*Última actualización: 22 de septiembre de 2026 (JMP versión 19.2)*
 
 
 

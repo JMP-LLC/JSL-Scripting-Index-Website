@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Arrhenius( 100 );
 
 ```
@@ -25,6 +26,7 @@ Arrhenius( 100 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Arrhenius Inv( 100 );
 
@@ -40,6 +42,7 @@ Arrhenius Inv( 100 );
 
 ```jsl
 
+
 Beta( 5, 4 );
 
 ```
@@ -53,6 +56,7 @@ Beta( 5, 4 );
 **JMP Version ajoutée :** 19
 
 ```jsl
+
 
 Box Cox Inverse Transform( 3, 2 );
 
@@ -68,6 +72,7 @@ Box Cox Inverse Transform( 3, 2 );
 
 ```jsl
 
+
 Box Cox Transform( 3, 2 );
 
 ```
@@ -81,6 +86,7 @@ Box Cox Transform( 3, 2 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
@@ -96,6 +102,7 @@ Cytometry Logicle( 100, 10000, .15, .45, 0 );
 
 ```jsl
 
+
 Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 
 ```
@@ -109,6 +116,7 @@ Cytometry Logicle Inverse( 100, 10000, .15, .45, 0 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Digamma( 5 );
 
@@ -124,6 +132,7 @@ Digamma( 5 );
 
 ```jsl
 
+
 Round( Exp( 1 ), 5 );
 
 ```
@@ -137,6 +146,7 @@ Round( Exp( 1 ), 5 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
@@ -152,7 +162,64 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ```jsl
 
-FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];res = FFT( {A} );res = FFT( {A}, <<Inverse( 1 ) );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );B = FFT( {A} );FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]);FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );Afun = Function( {},	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]});FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4, 6 7, 6 4, 2 7, 2 4, 2 6, 3 5,3 6, 3 1];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );res = FFT(	FFT( {A}, <<multivariate( 1 ) ),	<<multivariate( 1 ),	<<Inverse( 1 ),	<<scale( 1 / 20 ));A = [1 3 1,2 4 3,3 1 2,4 3 3,4 5 9,5 2 8,5 7 6,6 9 5,7 5 3,7 3 2,2 7 1,3 4 3,6 7 3,6 4 2,2 7 4,2 4 1,2 6 5,3 5 1,3 6 2,3 1 9];res = FFT( {A} );res = FFT( {A}, <<multivariate( 1 ) );FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );fin = FFT(	FFT( {A}, <<multivariate( 1 ) ),	<<Inverse( 1 ),	<<multivariate( 1 ),	<<scale( 1 / 20 ));Show( fin );
+
+FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );
+A = [1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3];
+res = FFT( {A} );
+res = FFT( {A}, <<Inverse( 1 ) );
+res = FFT( {A}, <<multivariate( 1 ) );
+res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
+B = FFT( {A} );
+FFT( B, <<Inverse( 1 ), <<scale( 1 / 20 ) );
+Afun = Function( {},
+	[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]
+);
+FFT( FFT( {Afun()} ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
+Afun = Function( {},
+	{[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]}
+);
+FFT( FFT( Afun() ), <<Inverse( 1 ), <<scale( 1 / 20 ) );
+A = [1 3, 2 4, 3 1, 4 3, 4 5, 5 2, 5 7, 6 9, 7 5, 7 3, 2 7, 3 4, 6 7, 6 4, 2 7, 2 4, 2 6, 3 5,
+3 6, 3 1];
+res = FFT( {A} );
+res = FFT( {A}, <<multivariate( 1 ) );
+res = FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 40 ) );
+res = FFT(
+	FFT( {A}, <<multivariate( 1 ) ),
+	<<multivariate( 1 ),
+	<<Inverse( 1 ),
+	<<scale( 1 / 20 )
+);
+A = [1 3 1,
+2 4 3,
+3 1 2,
+4 3 3,
+4 5 9,
+5 2 8,
+5 7 6,
+6 9 5,
+7 5 3,
+7 3 2,
+2 7 1,
+3 4 3,
+6 7 3,
+6 4 2,
+2 7 4,
+2 4 1,
+2 6 5,
+3 5 1,
+3 6 2,
+3 1 9];
+res = FFT( {A} );
+res = FFT( {A}, <<multivariate( 1 ) );
+FFT( FFT( {A} ), <<Inverse( 1 ), <<scale( 1 / 60 ) );
+fin = FFT(
+	FFT( {A}, <<multivariate( 1 ) ),
+	<<Inverse( 1 ),
+	<<multivariate( 1 ),
+	<<scale( 1 / 20 )
+);
+Show( fin );
 
 ```
 
@@ -165,6 +232,7 @@ FFT( {[1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 2, 3, 6, 6, 2, 2, 2, 3, 3, 3]} );A = [1, 2
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Factorial( 5 );
 
@@ -180,7 +248,19 @@ Factorial( 5 );
 
 ```jsl
 
-datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,-6.1855986, 2.16525629, -30.990061];freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];As Table( datavec || freqvec );Column( 1 ) << set name( "x" );Column( 2 ) << set name( "freq vec" );Distribution(	Freq( :freq vec ),	Continuous Distribution( Column( :x ), Fit Distribution( GLog ) ));results = Fit Transform To Normal( Distribution( "glog" ), Y( datavec ), freq( freqvec ) );Show( results );
+
+datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024, -19.470857,
+-6.1855986, 2.16525629, -30.990061];
+freqvec = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
+As Table( datavec || freqvec );
+Column( 1 ) << set name( "x" );
+Column( 2 ) << set name( "freq vec" );
+Distribution(
+	Freq( :freq vec ),
+	Continuous Distribution( Column( :x ), Fit Distribution( GLog ) )
+);
+results = Fit Transform To Normal( Distribution( "glog" ), Y( datavec ), freq( freqvec ) );
+Show( results );
 
 ```
 
@@ -193,6 +273,7 @@ datavec = [-3.7975076, 0.48221038, -1.3082712, -1.860647, -6.9470789, -17.237024
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Gamma( 5 );
 
@@ -208,6 +289,7 @@ Gamma( 5 );
 
 ```jsl
 
+
 LGamma( 5 );
 
 ```
@@ -221,6 +303,7 @@ LGamma( 5 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Ln( Exp( 2 ) );
 
@@ -236,6 +319,7 @@ Ln( Exp( 2 ) );
 
 ```jsl
 
+
 Log( 256, 2 );
 
 ```
@@ -249,6 +333,7 @@ Log( 256, 2 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Log10( 100 );
 
@@ -264,6 +349,7 @@ Log10( 100 );
 
 ```jsl
 
+
 Log1P( 1e-6 );
 
 ```
@@ -277,6 +363,7 @@ Log1P( 1e-6 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Logist( 2 );
 
@@ -292,6 +379,7 @@ Logist( 2 );
 
 ```jsl
 
+
 Logist Percent( 10 );
 
 ```
@@ -305,6 +393,7 @@ Logist Percent( 10 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Logit( 0.95 );
 
@@ -320,6 +409,7 @@ Logit( 0.95 );
 
 ```jsl
 
+
 Logit Percent( 95.0 );
 
 ```
@@ -333,6 +423,7 @@ Logit Percent( 95.0 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 N Choose K( 5, 3 );
 
@@ -348,6 +439,7 @@ N Choose K( 5, 3 );
 
 ```jsl
 
+
 Power( 2, 5 );
 
 ```
@@ -361,6 +453,7 @@ Power( 2, 5 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Round( Root( 2, 3 ), 4 ) /* cube root */;
 
@@ -376,7 +469,16 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ```jsl
 
-gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );x1 = SHASHInv( result1, gamma, delta, theta, sigma );x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;Show( x1, x2 );
+
+gamma = 1;
+delta = .5;
+theta = -1;
+sigma = 2;
+x = 3;
+result1 = SHASHTrans( x, gamma, delta, theta, sigma );
+x1 = SHASHInv( result1, gamma, delta, theta, sigma );
+x2 = SinH( (ArcSinH( result1 ) - gamma) / delta ) * sigma + theta;
+Show( x1, x2 );
 
 ```
 
@@ -390,7 +492,15 @@ gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, ga
 
 ```jsl
 
-gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, gamma, delta, theta, sigma );result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );Show( result1, result2 );
+
+gamma = 1;
+delta = .5;
+theta = -1;
+sigma = 2;
+x = 3;
+result1 = SHASHTrans( x, gamma, delta, theta, sigma );
+result2 = SinH( gamma + delta * ArcSinH( (x - theta) / sigma ) );
+Show( result1, result2 );
 
 ```
 
@@ -403,6 +513,7 @@ gamma = 1;delta = .5;theta = -1;sigma = 2;x = 3;result1 = SHASHTrans( x, ga
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 SbInv( 1.96, 1.5, 2, 1, 2 );
 
@@ -418,6 +529,7 @@ SbInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
+
 Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -431,6 +543,7 @@ Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
@@ -446,6 +559,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ```jsl
 
+
 SlInv( 1.96, 1.5, 2, 1 );
 
 ```
@@ -459,6 +573,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
@@ -474,6 +589,7 @@ Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
 
 ```jsl
 
+
 Round( Sqrt( 2 ), 4 );
 
 ```
@@ -487,6 +603,7 @@ Round( Sqrt( 2 ), 4 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Squash( 10 );
 
@@ -502,6 +619,7 @@ Squash( 10 );
 
 ```jsl
 
+
 Logist( 2 );
 
 ```
@@ -515,6 +633,7 @@ Logist( 2 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 SuInv( 1.96, 1.5, 2, 1, 2 );
 
@@ -530,6 +649,7 @@ SuInv( 1.96, 1.5, 2, 1, 2 );
 
 ```jsl
 
+
 Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 
 ```
@@ -543,6 +663,7 @@ Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Trigamma( 5 );
 

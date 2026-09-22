@@ -12,7 +12,14 @@
 
 ```jsl
 
-New Window( "test",	tb = Table Box(		String Col Box( "string col", {"a"} ),		Number Col Box( "number col", {1} )	));tb << add row( {"b", 2} );
+
+New Window( "test",
+	tb = Table Box(
+		String Col Box( "string col", {"a"} ),
+		Number Col Box( "number col", {1} )
+	)
+);
+tb << add row( {"b", 2} );
 
 ```
 
@@ -24,7 +31,15 @@ New Window( "test",	tb = Table Box(		String Col Box( "string col", {"a"} ),		
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line;(obj << Report)[Table Box( 1 )] << Bootstrap(	50,	Fractional Weights( 1 ),	Split Selected Column( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line;
+(obj << Report)[Table Box( 1 )] << Bootstrap(
+	50,
+	Fractional Weights( 1 ),
+	Split Selected Column( 1 )
+);
 
 ```
 
@@ -52,7 +67,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-New Window( "test",	tb = Table Box(		String Col Box( "string col", {"a", "b"} ),		Number Col Box( "number col", {1, 2} )	));tb << delete row( 1 );
+
+New Window( "test",
+	tb = Table Box(
+		String Col Box( "string col", {"a", "b"} ),
+		Number Col Box( "number col", {1, 2} )
+	)
+);
+tb << delete row( 1 );
 
 ```
 
@@ -66,7 +88,16 @@ New Window( "test",	tb = Table Box(		String Col Box( "string col", {"a", "b"} 
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << set selectable rows( 1 );tb << filter where( "Elevation (meters)"n < 4000 | Mountain == "K2" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << set selectable rows( 1 );
+tb << filter where( "Elevation (meters)"n < 4000 | Mountain == "K2" );
 
 ```
 
@@ -78,7 +109,12 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Column( :ls ) ) );rpt = d << report;tb = rpt[Table Box( 1 )];Print( tb << Get );
+
+Open( "$SAMPLE_DATA/Baltic.jmp" );
+d = Distribution( Continuous Distribution( Column( :ls ) ) );
+rpt = d << report;
+tb = rpt[Table Box( 1 )];
+Print( tb << Get );
 
 ```
 
@@ -90,7 +126,12 @@ Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Co
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Column( :ls ) ) );rpt = d << report;tb = rpt[Table Box( 1 )];Print( tb << Get As Matrix );
+
+Open( "$SAMPLE_DATA/Baltic.jmp" );
+d = Distribution( Continuous Distribution( Column( :ls ) ) );
+rpt = d << report;
+tb = rpt[Table Box( 1 )];
+Print( tb << Get As Matrix );
 
 ```
 
@@ -102,7 +143,15 @@ Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Co
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Base Data Font;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Base Data Font;
 
 ```
 
@@ -114,7 +163,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Base Title Font;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Base Title Font;
 
 ```
 
@@ -126,7 +183,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Click Sort;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Click Sort;
 
 ```
 
@@ -138,7 +203,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Column Borders;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Column Borders;
 
 ```
 
@@ -148,7 +221,18 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		Col Span Box(			"Column Span",			String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} )		),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Column Group Borders;
+
+New Window( "Mountains",
+	tb = Table Box(
+		Col Span Box(
+			"Column Span",
+			String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} )
+		),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Column Group Borders;
 
 ```
 
@@ -160,7 +244,17 @@ New Window( "Mountains",	tb = Table Box(		Col Span Box(			"Column Span",			S
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Context Menu Script( {"A", Print( "A" ), "B", Print( "B" ), "C", Print( "C" )} );tb << Set Context Menu Item State( 2, -1 );tb << Get Context Menu Item State( 2 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Context Menu Script( {"A", Print( "A" ), "B", Print( "B" ), "C", Print( "C" )} );
+tb << Set Context Menu Item State( 2, -1 );
+tb << Get Context Menu Item State( 2 );
 
 ```
 
@@ -172,7 +266,18 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Context Menu Script(	{"Beep", Beep(), "Beep Twice", Beep() ; Wait( 1.0 ) ; Beep() ; ,	"Get Context Menu Script", Print( tb << Get Context Menu Script )});
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Context Menu Script(
+	{"Beep", Beep(), "Beep Twice", Beep() ; Wait( 1.0 ) ; Beep() ; ,
+	"Get Context Menu Script", Print( tb << Get Context Menu Script )}
+);
 
 ```
 
@@ -184,7 +289,20 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Context Menu Script(	{"A", Print( "A" ), "B", Print( "B" ), "B1", Print( "B1" ), "B2", Print( "B2" ), "B3",	Print( "B3" ), "C", Print( "C" )});tb << Set Context Menu Submenu( 2, 3 );tb << Get Context Menu Submenu( 2 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Context Menu Script(
+	{"A", Print( "A" ), "B", Print( "B" ), "B1", Print( "B1" ), "B2", Print( "B2" ), "B3",
+	Print( "B3" ), "C", Print( "C" )}
+);
+tb << Set Context Menu Submenu( 2, 3 );
+tb << Get Context Menu Submenu( 2 );
 
 ```
 
@@ -196,7 +314,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font Name( "Times New Roman" );tb << Get Data Font Name;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font Name( "Times New Roman" );
+tb << Get Data Font Name;
 
 ```
 
@@ -208,7 +335,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Data Font Scale;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Data Font Scale;
 
 ```
 
@@ -220,7 +355,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Data Font Size;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Data Font Size;
 
 ```
 
@@ -232,7 +375,17 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font Name( "Arial" );tb << Set Data Font Style( "Italic" );tb << Get Data Font Style;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font Name( "Arial" );
+tb << Set Data Font Style( "Italic" );
+tb << Get Data Font Style;
 
 ```
 
@@ -242,7 +395,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Font;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Font;
 
 ```
 
@@ -254,19 +415,37 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Heading Column Borders;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Heading Column Borders;
 
 ```
 
 ### Get Heading Underline Color
 
-**Syntax:** obj &lt;&lt; Heading Underline Color( color ); color = obj &lt;&lt; Get Heading Underline Color
+**Syntax:** obj &lt;&lt; Heading Underline Color( color );color = obj &lt;&lt; Get Heading Underline Color
 
 **JMP Version hinzugefügt:** 19
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Underline Headings( 1 );tb << Heading Underline Color( "Black" );Show( tb << Get Heading Underline Color );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Underline Headings( 1 );
+tb << Heading Underline Color( "Black" );
+Show( tb << Get Heading Underline Color );
 
 ```
 
@@ -278,7 +457,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << set locked columns( 1 );tb << get locked columns();
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << set locked columns( 1 );
+tb << get locked columns();
 
 ```
 
@@ -290,19 +478,37 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Names();
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Names();
 
 ```
 
 ### Get Row Border Color
 
-**Syntax:** obj &lt;&lt; Row Border Color( color ); color = obj &lt;&lt; Get Row Border Color
+**Syntax:** obj &lt;&lt; Row Border Color( color );color = obj &lt;&lt; Get Row Border Color
 
 **JMP Version hinzugefügt:** 19
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Row Borders( 1 );tb << Row Border Color( "Black" );Show( tb << Get Row Border Color );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Row Borders( 1 );
+tb << Row Border Color( "Black" );
+Show( tb << Get Row Border Color );
 
 ```
 
@@ -314,7 +520,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Row Borders;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Row Borders;
 
 ```
 
@@ -326,13 +540,23 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Selectable Rows();tb << set row change function( Function( {this}, Print( this << get selected rows ) ) );tb << get row change function;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Selectable Rows();
+tb << set row change function( Function( {this}, Print( this << get selected rows ) ) );
+tb << get row change function;
 
 ```
 
 ### Get Row Height Scale
 
-**Syntax:** obj &lt;&lt; Row Height Scale( number ); number = obj &lt;&lt; Get Row Height Scale
+**Syntax:** obj &lt;&lt; Row Height Scale( number );number = obj &lt;&lt; Get Row Height Scale
 
 **Beschreibung:** Skaliert die Standardhöhe oder die Zeilen einer Tabelle. Der Standardwert ist 1.
 
@@ -340,13 +564,22 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Row Height Scale( 3 );tb << Get Row Height Scale();
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Row Height Scale( 3 );
+tb << Get Row Height Scale();
 
 ```
 
 ### Get Row Vertical Alignment
 
-**Syntax:** obj &lt;&lt; Row Vertical Alignment( "Oben"|"Mitte"|"Baseline"|"Unten" ); "Oben"|"Mitte"|"Baseline"|"Unten" = obj &lt;&lt; Get Row Vertical Alignment
+**Syntax:** obj &lt;&lt; Row Vertical Alignment( "Oben"|"Mitte"|"Baseline"|"Unten" );"Oben"|"Mitte"|"Baseline"|"Unten" = obj &lt;&lt; Get Row Vertical Alignment
 
 **Beschreibung:** Legt die vertikale Ausrichtung des Texts oder der Zahlen in den Zeilen einer Tabelle fest
 
@@ -354,7 +587,17 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Row Vertical Alignment( "Bottom" );tb << Get Row Vertical Alignment();tb << Row Height Scale( 3 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Row Vertical Alignment( "Bottom" );
+tb << Get Row Vertical Alignment();
+tb << Row Height Scale( 3 );
 
 ```
 
@@ -366,7 +609,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Selectable Rows();
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Selectable Rows();
 
 ```
 
@@ -378,7 +629,17 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Selectable Rows();tb << Set Selected Row Color( "Red" );Color To RGB( tb << Get Selected Row Color );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Selectable Rows();
+tb << Set Selected Row Color( "Red" );
+Color To RGB( tb << Get Selected Row Color );
 
 ```
 
@@ -390,7 +651,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Selected Rows( [1, 4] );Print( tb << Get Selected Rows() );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Selected Rows( [1, 4] );
+Print( tb << Get Selected Rows() );
 
 ```
 
@@ -402,7 +672,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Shade Alternate Rows;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Shade Alternate Rows;
 
 ```
 
@@ -414,7 +692,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Shade Cells;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Shade Cells;
 
 ```
 
@@ -426,7 +712,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Shade Headings;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Shade Headings;
 
 ```
 
@@ -436,7 +730,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Title Font;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Title Font;
 
 ```
 
@@ -448,7 +750,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font Name( "Times New Roman" );tb << Get Title Font Name;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font Name( "Times New Roman" );
+tb << Get Title Font Name;
 
 ```
 
@@ -460,7 +771,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Title Font Scale;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Title Font Scale;
 
 ```
 
@@ -472,7 +791,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Title Font Size;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Title Font Size;
 
 ```
 
@@ -484,7 +811,17 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font Name( "Arial" );tb << Set Title Font Style( "Italic" );tb << Get Title Font Style;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font Name( "Arial" );
+tb << Set Title Font Style( "Italic" );
+tb << Get Title Font Style;
 
 ```
 
@@ -496,7 +833,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Get Underline Headings;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Get Underline Headings;
 
 ```
 
@@ -510,19 +855,34 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-dt = Open( "$sample_data\big class.jmp" );New Window( "Test", dtb = Data Table Box( dt ) );dtb << sort by column( 4 );dtb << group by column( 3 );dtb << set click sort( 1 );
+
+dt = Open( "$sample_data\big class.jmp" );
+New Window( "Test", dtb = Data Table Box( dt ) );
+dtb << sort by column( 4 );
+dtb << group by column( 3 );
+dtb << set click sort( 1 );
 
 ```
 
 ### Heading Underline Color
 
-**Syntax:** obj &lt;&lt; Heading Underline Color( color ); color = obj &lt;&lt; Get Heading Underline Color
+**Syntax:** obj &lt;&lt; Heading Underline Color( color );color = obj &lt;&lt; Get Heading Underline Color
 
 **JMP Version hinzugefügt:** 19
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Underline Headings( 1 );tb << Heading Underline Color( "Black" );Show( tb << Get Heading Underline Color );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Underline Headings( 1 );
+tb << Heading Underline Color( "Black" );
+Show( tb << Get Heading Underline Color );
 
 ```
 
@@ -534,7 +894,14 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "test",	tb = Table Box(		String Col Box( "string col", {"a"} ),		Number Col Box( "number col", {1} )	));tb << insert row( 1, {"b", 2} );
+
+New Window( "test",
+	tb = Table Box(
+		String Col Box( "string col", {"a"} ),
+		Number Col Box( "number col", {1} )
+	)
+);
+tb << insert row( 1, {"b", 2} );
 
 ```
 
@@ -546,7 +913,15 @@ New Window( "test",	tb = Table Box(		String Col Box( "string col", {"a"} ),		
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution(	Continuous Distribution( Column( :ls ) ),	Continuous Distribution( Column( :ha ) ));rpt = d << report;tb = rpt[Table Box( 1 )];tb << Make Combined Data Table;
+
+Open( "$SAMPLE_DATA/Baltic.jmp" );
+d = Distribution(
+	Continuous Distribution( Column( :ls ) ),
+	Continuous Distribution( Column( :ha ) )
+);
+rpt = d << report;
+tb = rpt[Table Box( 1 )];
+tb << Make Combined Data Table;
 
 ```
 
@@ -560,7 +935,12 @@ Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution(	Continuous Distribution( C
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Column( :ls ) ) );rpt = d << report;tb = rpt[Table Box( 1 )];tb << Make Into Data Table;
+
+Open( "$SAMPLE_DATA/Baltic.jmp" );
+d = Distribution( Continuous Distribution( Column( :ls ) ) );
+rpt = d << report;
+tb = rpt[Table Box( 1 )];
+tb << Make Into Data Table;
 
 ```
 
@@ -568,7 +948,12 @@ Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Co
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Column( :ls ) ) );rpt = d << report;tb = rpt[Table Box( 1 )];tb << Make Into Data Table( invisible( 1 ) );
+
+Open( "$SAMPLE_DATA/Baltic.jmp" );
+d = Distribution( Continuous Distribution( Column( :ls ) ) );
+rpt = d << report;
+tb = rpt[Table Box( 1 )];
+tb << Make Into Data Table( invisible( 1 ) );
 
 ```
 
@@ -580,7 +965,13 @@ Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Co
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Column( :ls ) ) );rpt = d << report;tb = rpt[Table Box( 1 )];Wait( 1 );tb << Reorder Columns( 1, 3 );
+
+Open( "$SAMPLE_DATA/Baltic.jmp" );
+d = Distribution( Continuous Distribution( Column( :ls ) ) );
+rpt = d << report;
+tb = rpt[Table Box( 1 )];
+Wait( 1 );
+tb << Reorder Columns( 1, 3 );
 
 ```
 
@@ -594,7 +985,18 @@ Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Co
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << set selectable rows( 1 );tb << filter where( "Elevation (meters)"n < 4000 | Mountain == "K2" );Wait( 2 );tb << Reset Filter;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << set selectable rows( 1 );
+tb << filter where( "Elevation (meters)"n < 4000 | Mountain == "K2" );
+Wait( 2 );
+tb << Reset Filter;
 
 ```
 
@@ -606,25 +1008,44 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Shade Cells( 1 );tb << Reset Style;
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Shade Cells( 1 );
+tb << Reset Style;
 
 ```
 
 ### Row Border Color
 
-**Syntax:** obj &lt;&lt; Row Border Color( color ); color = obj &lt;&lt; Get Row Border Color
+**Syntax:** obj &lt;&lt; Row Border Color( color );color = obj &lt;&lt; Get Row Border Color
 
 **JMP Version hinzugefügt:** 19
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Row Borders( 1 );tb << Row Border Color( "Black" );Show( tb << Get Row Border Color );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Row Borders( 1 );
+tb << Row Border Color( "Black" );
+Show( tb << Get Row Border Color );
 
 ```
 
 ### Row Height Scale
 
-**Syntax:** obj &lt;&lt; Row Height Scale( number ); number = obj &lt;&lt; Get Row Height Scale
+**Syntax:** obj &lt;&lt; Row Height Scale( number );number = obj &lt;&lt; Get Row Height Scale
 
 **Beschreibung:** Skaliert die Standardhöhe oder die Zeilen einer Tabelle. Der Standardwert ist 1.
 
@@ -632,13 +1053,22 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Row Height Scale( 3 );tb << Get Row Height Scale();
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Row Height Scale( 3 );
+tb << Get Row Height Scale();
 
 ```
 
 ### Row Vertical Alignment
 
-**Syntax:** obj &lt;&lt; Row Vertical Alignment( "Oben"|"Mitte"|"Baseline"|"Unten" ); "Oben"|"Mitte"|"Baseline"|"Unten" = obj &lt;&lt; Get Row Vertical Alignment
+**Syntax:** obj &lt;&lt; Row Vertical Alignment( "Oben"|"Mitte"|"Baseline"|"Unten" );"Oben"|"Mitte"|"Baseline"|"Unten" = obj &lt;&lt; Get Row Vertical Alignment
 
 **Beschreibung:** Legt die vertikale Ausrichtung des Texts oder der Zahlen in den Zeilen einer Tabelle fest
 
@@ -646,7 +1076,17 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Row Vertical Alignment( "Bottom" );tb << Get Row Vertical Alignment();tb << Row Height Scale( 3 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Row Vertical Alignment( "Bottom" );
+tb << Get Row Vertical Alignment();
+tb << Row Height Scale( 3 );
 
 ```
 
@@ -660,7 +1100,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << set selectable rows( 1 );tb << select where( "Elevation (meters)"n < 4000 | Mountain == "K2" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << set selectable rows( 1 );
+tb << select where( "Elevation (meters)"n < 4000 | Mountain == "K2" );
 
 ```
 
@@ -672,7 +1121,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));Wait( 2 );tb << Set Base Data Font( "Data" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+Wait( 2 );
+tb << Set Base Data Font( "Data" );
 
 ```
 
@@ -684,7 +1142,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));Wait( 2 );tb << Set Base Title Font( "Title" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+Wait( 2 );
+tb << Set Base Title Font( "Title" );
 
 ```
 
@@ -696,7 +1163,22 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Edit Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Edit Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Cell Changed Function(	Function( {thisBox, col, row},		Print(			(col << get heading) || ": row:" || Char( row ) || " is now " ||			Char( col << get( row ) )		)	));
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Edit Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Edit Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Cell Changed Function(
+	Function( {thisBox, col, row},
+		Print(
+			(col << get heading) || ": row:" || Char( row ) || " is now " ||
+			Char( col << get( row ) )
+		)
+	)
+);
 
 ```
 
@@ -708,7 +1190,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Edit Box( "Mountain", {"K
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Click Sort( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Click Sort( 1 );
 
 ```
 
@@ -720,7 +1210,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Column Borders( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Column Borders( 1 );
 
 ```
 
@@ -730,7 +1228,18 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		Col Span Box(			"Column Span",			String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} )		),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Column Group Borders( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		Col Span Box(
+			"Column Span",
+			String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} )
+		),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Column Group Borders( 1 );
 
 ```
 
@@ -742,7 +1251,16 @@ New Window( "Mountains",	tb = Table Box(		Col Span Box(			"Column Span",			S
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Context Menu Script( {"A", Print( "A" ), "B", Print( "B" ), "C", Print( "C" )} );tb << Set Context Menu Item State( 2, -1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Context Menu Script( {"A", Print( "A" ), "B", Print( "B" ), "C", Print( "C" )} );
+tb << Set Context Menu Item State( 2, -1 );
 
 ```
 
@@ -754,7 +1272,18 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Context Menu Script(	{"Beep", Beep(), "Beep Twice", Beep() ; Wait( 1.0 ) ; Beep() ; ,	"Get Context Menu Script", Print( tb << Get Context Menu Script )});
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Context Menu Script(
+	{"Beep", Beep(), "Beep Twice", Beep() ; Wait( 1.0 ) ; Beep() ; ,
+	"Get Context Menu Script", Print( tb << Get Context Menu Script )}
+);
 
 ```
 
@@ -766,7 +1295,19 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Context Menu Script(	{"A", Print( "A" ), "B", Print( "B" ), "B1", Print( "B1" ), "B2", Print( "B2" ), "B3",	Print( "B3" ), "C", Print( "C" )});tb << Set Context Menu Submenu( 2, 3 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Context Menu Script(
+	{"A", Print( "A" ), "B", Print( "B" ), "B1", Print( "B1" ), "B2", Print( "B2" ), "B3",
+	Print( "B3" ), "C", Print( "C" )}
+);
+tb << Set Context Menu Submenu( 2, 3 );
 
 ```
 
@@ -778,7 +1319,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font( "Arial Black" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font( "Arial Black" );
 
 ```
 
@@ -786,7 +1335,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font( "Arial Black", 12, "Italic Underline" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font( "Arial Black", 12, "Italic Underline" );
 
 ```
 
@@ -798,7 +1355,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font Name( "Arial Black" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font Name( "Arial Black" );
 
 ```
 
@@ -810,7 +1375,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));Wait( 2 );tb << Set Data Font Scale( 2.0 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+Wait( 2 );
+tb << Set Data Font Scale( 2.0 );
 
 ```
 
@@ -822,7 +1396,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font Size( 14 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font Size( 14 );
 
 ```
 
@@ -836,7 +1418,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font Style( "Italic" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font Style( "Italic" );
 
 ```
 
@@ -844,7 +1434,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Data Font Style( "Italic Bold Underline" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Data Font Style( "Italic Bold Underline" );
 
 ```
 
@@ -856,7 +1454,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Heading Column Borders( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Heading Column Borders( 1 );
 
 ```
 
@@ -868,7 +1474,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << set locked columns( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << set locked columns( 1 );
 
 ```
 
@@ -880,7 +1494,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Row Borders( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Row Borders( 1 );
 
 ```
 
@@ -892,7 +1514,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Selectable Rows();tb << set row change function( Function( {thisBox}, Print( thisBox << get selected rows ) ) );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Selectable Rows();
+tb << set row change function( Function( {thisBox}, Print( thisBox << get selected rows ) ) );
 
 ```
 
@@ -904,7 +1535,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Scrollable( 3, 0 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Scrollable( 3, 0 );
 
 ```
 
@@ -916,7 +1555,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Selectable Rows();
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Selectable Rows();
 
 ```
 
@@ -928,7 +1575,17 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Selectable Rows();tb << Set Selected Rows( [1, 4] );tb << Set Selected Row Color( "Red" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Selectable Rows();
+tb << Set Selected Rows( [1, 4] );
+tb << Set Selected Row Color( "Red" );
 
 ```
 
@@ -940,7 +1597,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Selected Rows( [1, 4] );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Selected Rows( [1, 4] );
 
 ```
 
@@ -952,7 +1617,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Shade Alternate Rows( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Shade Alternate Rows( 1 );
 
 ```
 
@@ -964,7 +1637,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Shade Cells( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Shade Cells( 1 );
 
 ```
 
@@ -976,7 +1657,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Shade Headings( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Shade Headings( 1 );
 
 ```
 
@@ -988,7 +1677,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font( "Arial Black" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font( "Arial Black" );
 
 ```
 
@@ -996,7 +1693,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font( "Arial Black", 12, "Italic Underline" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font( "Arial Black", 12, "Italic Underline" );
 
 ```
 
@@ -1008,7 +1713,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font Name( "Arial Black" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font Name( "Arial Black" );
 
 ```
 
@@ -1020,7 +1733,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));Wait( 2 );tb << Set Title Font Scale( 2.0 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+Wait( 2 );
+tb << Set Title Font Scale( 2.0 );
 
 ```
 
@@ -1032,7 +1754,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font Size( 14 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font Size( 14 );
 
 ```
 
@@ -1046,7 +1776,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font Style( "Italic" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font Style( "Italic" );
 
 ```
 
@@ -1054,7 +1792,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Title Font Style( "Italic Bold Underline" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Title Font Style( "Italic Bold Underline" );
 
 ```
 
@@ -1066,7 +1812,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Set Underline Headings( 1 );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Set Underline Headings( 1 );
 
 ```
 
@@ -1078,7 +1832,24 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Fit Model(	Y( :weight ),	Effects( :age, :sex, :height ),	Personality( "Generalized Regression" ),	Generalized Distribution( "Normal" ),	Run( Fit( Estimation Method( Lasso( Adaptive ) ), Validation Method( AICc ) ) ));obj << (fit[1] << Save Simulation Formula);rpt = Report( obj );dtlst = rpt["Parameter Estimates for Original Predictors"][Number Col Box( "Prob > ChiSquare" )] << Simulate(	10,	Out( :weight ),	In( :weight Simulation Formula ));dtlst[2] << Distribution( Y( :height ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Fit Model(
+	Y( :weight ),
+	Effects( :age, :sex, :height ),
+	Personality( "Generalized Regression" ),
+	Generalized Distribution( "Normal" ),
+	Run( Fit( Estimation Method( Lasso( Adaptive ) ), Validation Method( AICc ) ) )
+);
+obj << (fit[1] << Save Simulation Formula);
+rpt = Report( obj );
+dtlst = rpt["Parameter Estimates for Original Predictors"][
+Number Col Box( "Prob > ChiSquare" )] << Simulate(
+	10,
+	Out( :weight ),
+	In( :weight Simulation Formula )
+);
+dtlst[2] << Distribution( Y( :height ) );
 
 ```
 
@@ -1090,7 +1861,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Fit Model(	Y( :weight ),	Effe
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));tb << Sort By Column( 1 );Wait( 2 );tb << Sort By Column( "Elevation (meters)" );
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
+tb << Sort By Column( 1 );
+Wait( 2 );
+tb << Sort By Column( "Elevation (meters)" );
 
 ```
 
@@ -1104,7 +1885,12 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ```
 
@@ -1116,7 +1902,28 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :weight ),	X( :height ),	SendToReport(		Dispatch( {}, "Bivar Plot", FrameBox,			Add Pin Annotation(				Seg( Marker Seg( 1 ) ),				Index( 17 ),				Index Row( 17 ),				UniqueID( -960001792 ),				FoundPt( {238, 219} ),				Origin( {64.9765625, 142} ),				Offset( {-174, -40} ),				Tag Line( 1 ),				Font( "Helvetica", 11, "Plain" )			)		)	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	SendToReport(
+		Dispatch( {}, "Bivar Plot", FrameBox,
+			Add Pin Annotation(
+				Seg( Marker Seg( 1 ) ),
+				Index( 17 ),
+				Index Row( 17 ),
+				UniqueID( -960001792 ),
+				FoundPt( {238, 219} ),
+				Origin( {64.9765625, 142} ),
+				Offset( {-174, -40} ),
+				Tag Line( 1 ),
+				Font( "Helvetica", 11, "Plain" )
+			)
+		)
+	)
+);
 
 ```
 
@@ -1128,7 +1935,16 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Polygon Annotation(	Points( {210, 80}, {230, 70}, {280, 115}, {240, 120} ),	Color( "Red" ),	Closed( 1 ));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Polygon Annotation(
+	Points( {210, 80}, {230, 70}, {280, 115}, {240, 120} ),
+	Color( "Red" ),
+	Closed( 1 )
+);
 
 ```
 
@@ -1140,7 +1956,13 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Simple Shape Annotation( Oval( 210, 100, 250, 75 ) );rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Simple Shape Annotation( Oval( 210, 100, 250, 75 ) );
+rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ```
 
@@ -1152,7 +1974,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Text Annotation(	Text( "We need to discuss this at the next meeting." ),	Text Box( {65, 35, 200, 77} ));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Text Annotation(
+	Text( "We need to discuss this at the next meeting." ),
+	Text Box( {65, 35, 200, 77} )
+);
 
 ```
 
@@ -1164,13 +1994,18 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << append( Text Box( "=== below ===" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << append( Text Box( "=== below ===" ) );
 
 ```
 
 ### Background Color
 
-**Syntax:** obj &lt;&lt; Background Color( color ); color = obj &lt;&lt; Get Background Color
+**Syntax:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Beschreibung:** Ist die Hintergrundfarbe festgelegt, wird das Feld vor dem Darstellen des Inhalts mit der Hintergrundfarbe ausgefüllt. Ist die Hintergrundfarbe nicht festgelegt, sind Hintergrund und Inhalt der beinhaltenden Boxen sichtbar.
 
@@ -1178,25 +2013,41 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Background Color );Wait( 2 );tb << Background Color( "Yellow" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Background Color );
+Wait( 2 );
+tb << Background Color( "Yellow" );
 
 ```
 
 ### Border
 
-**Syntax:** obj &lt;&lt; Border( sides ); sides = obj &lt;&lt; Get Border
+**Syntax:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Beschreibung:** Rahmen sind durchgezogene Linien um das Äußere eines Anzeigefelds. Wird ein einziger Wert angegeben, gilt dieser für alle Seiten. Werden zwei Werte angegeben, gelten diese für horizontale und vertikale Rahmen.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Border );Wait( 1 );tb << Border( 1 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Border );
+Wait( 1 );
+tb << Border( 1 );
 
 ```
 
 ### Border Color
 
-**Syntax:** obj &lt;&lt; Border Color( color ); color = obj &lt;&lt; Get Border Color
+**Syntax:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Beschreibung:** Optionale Farbe zum Überschreiben der Standardfarbe für Feldrahmen.
 
@@ -1204,7 +2055,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Wait( 2 );tb << Border( 1 );tb << Border Color( "Light Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Wait( 2 );
+tb << Border( 1 );
+tb << Border Color( "Light Red" );
 
 ```
 
@@ -1216,7 +2075,11 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Run Script( "Bivariate" );w << Bring Window To Front;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Run Script( "Bivariate" );
+w << Bring Window To Front;
 
 ```
 
@@ -1228,7 +2091,15 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisParent = axisbox << parent();axisChild = axisParent << child();Print( axisChild << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisParent = axisbox << parent();
+axisChild = axisParent << child();
+Print( axisChild << Class Name() );
 
 ```
 
@@ -1240,7 +2111,13 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisbox << Class Name();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisbox << Class Name();
 
 ```
 
@@ -1252,7 +2129,14 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << append( Text Box( "=== below ===" ) );clonedBox = rbiv << Clone Box();rbiv << append( clonedBox );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << append( Text Box( "=== below ===" ) );
+clonedBox = rbiv << Clone Box();
+rbiv << append( clonedBox );
 
 ```
 
@@ -1264,7 +2148,11 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Close Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Close Window;
 
 ```
 
@@ -1276,7 +2164,9 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
+
+New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );
+mat << CopyData;
 
 ```
 
@@ -1288,7 +2178,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;(rbiv[FrameBox( 1 )]) << Copy Graph();"paste into a paint program";
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+(rbiv[FrameBox( 1 )]) << Copy Graph();
+"paste into a paint program";
 
 ```
 
@@ -1300,7 +2196,12 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Copy Picture();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Copy Picture();
 
 ```
 
@@ -1312,7 +2213,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisbox << Delete Box();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisbox << Delete Box();
 
 ```
 
@@ -1324,7 +2231,21 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsselected = 0;New Window( "Example",	ex = Button Box( "Press Me",		selected = !selected;		refresh;	));refresh = Function( {},	If( selected,		ex << Select,		ex << Deselect	));
+
+//This message applies to all display box objects
+selected = 0;
+New Window( "Example",
+	ex = Button Box( "Press Me",
+		selected = !selected;
+		refresh;
+	)
+);
+refresh = Function( {},
+	If( selected,
+		ex << Select,
+		ex << Deselect
+	)
+);
 
 ```
 
@@ -1336,19 +2257,44 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ```
 
 ### Enabled
 
-**Syntax:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -1360,7 +2306,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv << Find( axis box( 1 ) );axisbox << Delete();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv << Find( axis box( 1 ) );
+axisbox << Delete();
 
 ```
 
@@ -1372,13 +2324,23 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Add Text Annotation(	Text( "We need to discuss this at the next meeting." ),	Text Box( {65, 35, 200, 77} ));annotation = rbiv << Get Annotation;annotation << delete;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Add Text Annotation(
+	Text( "We need to discuss this at the next meeting." ),
+	Text Box( {65, 35, 200, 77} )
+);
+annotation = rbiv << Get Annotation;
+annotation << delete;
 
 ```
 
 ### Get Background Color
 
-**Syntax:** obj &lt;&lt; Background Color( color ); color = obj &lt;&lt; Get Background Color
+**Syntax:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Beschreibung:** Ist die Hintergrundfarbe festgelegt, wird das Feld vor dem Darstellen des Inhalts mit der Hintergrundfarbe ausgefüllt. Ist die Hintergrundfarbe nicht festgelegt, sind Hintergrund und Inhalt der beinhaltenden Boxen sichtbar.
 
@@ -1386,25 +2348,41 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Background Color );Wait( 2 );tb << Background Color( "Yellow" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Background Color );
+Wait( 2 );
+tb << Background Color( "Yellow" );
 
 ```
 
 ### Get Border
 
-**Syntax:** obj &lt;&lt; Border( sides ); sides = obj &lt;&lt; Get Border
+**Syntax:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Beschreibung:** Rahmen sind durchgezogene Linien um das Äußere eines Anzeigefelds. Wird ein einziger Wert angegeben, gilt dieser für alle Seiten. Werden zwei Werte angegeben, gelten diese für horizontale und vertikale Rahmen.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Border );Wait( 1 );tb << Border( 1 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Border );
+Wait( 1 );
+tb << Border( 1 );
 
 ```
 
 ### Get Border Color
 
-**Syntax:** obj &lt;&lt; Border Color( color ); color = obj &lt;&lt; Get Border Color
+**Syntax:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Beschreibung:** Optionale Farbe zum Überschreiben der Standardfarbe für Feldrahmen.
 
@@ -1412,7 +2390,15 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Wait( 2 );tb << Border( 1 );tb << Border Color( "Light Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Wait( 2 );
+tb << Border( 1 );
+tb << Border Color( "Light Red" );
 
 ```
 
@@ -1424,7 +2410,11 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Content Size();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Content Size();
+Show( c );
 
 ```
 
@@ -1438,7 +2428,14 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );rpt = Report( biv );xpath expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Expr( Report( biv ) ) ); // Make Number Col Box(9) more robustShow( xpath expr );xpath expr << Select;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+rpt = Report( biv );
+xpath expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Expr( Report( biv ) ) ); // Make Number Col Box(9) more robust
+Show( xpath expr );
+xpath expr << Select;
 
 ```
 
@@ -1446,19 +2443,46 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );rpt = Report( biv );subscript expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Mode( "Subscript" ) ); // Make Number Col Box(9) more robustShow( subscript expr );subscript expr << Select;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+rpt = Report( biv );
+subscript expr = rpt[Number Col Box( 9 )] << Get Display Path( rpt, Mode( "Subscript" ) ); // Make Number Col Box(9) more robust
+Show( subscript expr );
+subscript expr << Select;
 
 ```
 
 ### Get Enabled
 
-**Syntax:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -1472,7 +2496,10 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get HTML );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get HTML );
 
 ```
 
@@ -1480,7 +2507,12 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );Save Text File( "$TEMP/Oneway.html", obj << Get HTML( "svg" ) ); // Prefer <<Save HTMLWeb( "$TEMP/Oneway.html", JMPWindow );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
+Save Text File( "$TEMP/Oneway.html", obj << Get HTML( "svg" ) ); // Prefer <<Save HTML
+Web( "$TEMP/Oneway.html", JMPWindow );
 
 ```
 
@@ -1492,19 +2524,33 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Height;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Height;
 
 ```
 
 ### Get Horizontal Alignment
 
-**Syntax:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" ); "Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
+**Syntax:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Beschreibung:** Die horizontale Ausrichtung steuert die Position des Felds innerhalb eines Containers, sofern das Feld nicht den gesamten Raum ausfüllt.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Border( 1 );Wait( 2 );lb << Horizontal Alignment( "Right" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Horizontal Alignment( "Right" );
 
 ```
 
@@ -1516,19 +2562,33 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;Print( rbiv << Get Journal );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+Print( rbiv << Get Journal );
 
 ```
 
 ### Get Margin
 
-**Syntax:** obj &lt;&lt; Margin( sides ); sides = obj &lt;&lt; Get Margin
+**Syntax:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Beschreibung:** Der Rand fügt Platz zwischen dem Rahmen des Felds und benachbarten Feldern hinzu. Verwenden Sie benannte Argumente oder geben Sie eine Liste mit Werten an. Wird ein einziger Wert angegeben, gilt dieser für alle Seiten. Werden zwei Werte angegeben, gelten diese für den horizontalen und vertikalen Rand.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Margin );tb << Border( 1 );Wait( 2 );tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Margin );
+tb << Border( 1 );
+Wait( 2 );
+tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -1540,7 +2600,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Max Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Max Size;
 
 ```
 
@@ -1552,7 +2618,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Min Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Min Size;
 
 ```
 
@@ -1564,7 +2636,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
+
+//This message applies to all display objects
+x = 1;
+w = New Window( "Test", b = Button Box( "Press me" ) );
+b:x = 2;
+ns = b << GetNamespace();
+Show( ns:x, x );
 
 ```
 
@@ -1576,19 +2654,41 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);Show( w << Get On Close );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
+Show( w << Get On Close );
 
 ```
 
 ### Get Padding
 
-**Syntax:** obj &lt;&lt; Padding( sides ); sides = obj &lt;&lt; Get Padding
+**Syntax:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Beschreibung:** Der Innenabstand fügt Platz zwischen dem Inhalt und dem Rahmen des Felds hinzu. Verwenden Sie benannte Argumente oder geben Sie eine Liste mit Werten an. Wird ein einziger Wert angegeben, gilt dieser für alle Seiten. Werden zwei Werte angegeben, gelten diese für den horizontalen und vertikalen Innenabstand.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Padding );tb << Border( 1 );Wait( 1 );tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Padding );
+tb << Border( 1 );
+Wait( 1 );
+tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -1600,7 +2700,10 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Page Setup Test" ) );w << get page setup();
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Page Setup Test" ) );
+w << get page setup();
 
 ```
 
@@ -1614,7 +2717,24 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate(	Y( :weight ),	X( :height ),	Fit Line( {Line Color( {212, 73, 88} )} ),	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),	Kernel Smoother( 1, 1, 0.5, 0 ));rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );New Window( "Example",	H List Box(		rbiv << Get Picture( View( "Screen" ), Appearance( "Current" ) ),		rbiv << Get Picture( View( "Print" ), Appearance( "Default" ) )	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	Fit Line( {Line Color( {212, 73, 88} )} ),
+	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),
+	Kernel Smoother( 1, 1, 0.5, 0 )
+);
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+New Window( "Example",
+	H List Box(
+		rbiv << Get Picture( View( "Screen" ), Appearance( "Current" ) ),
+		rbiv << Get Picture( View( "Print" ), Appearance( "Default" ) )
+	)
+);
 
 ```
 
@@ -1622,7 +2742,13 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
 
 ```
 
@@ -1630,7 +2756,12 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;New Window( "Example", rbiv << Get Picture );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+New Window( "Example", rbiv << Get Picture );
 
 ```
 
@@ -1644,7 +2775,11 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Project();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Project();
+Show( c );
 
 ```
 
@@ -1656,7 +2791,9 @@ New Window( "x", mat = Matrix Box( [1 2 3, 4 5 6, 7 8 9] ) );mat << CopyData;
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Properties;
 
 ```
 
@@ -1668,7 +2805,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property( "Enabled" );
 
 ```
 
@@ -1680,7 +2819,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property List;
 
 ```
 
@@ -1694,7 +2835,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get RTF );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get RTF );
 
 ```
 
@@ -1702,7 +2846,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );Save Text File( "$TEMP/Oneway.rtf", obj << Get RTF( "png" ) ); // Prefer <<Save RTFOpen( "$TEMP/Oneway.rtf" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), Means( 1 ), Mean Diamonds( 1 ) );
+Save Text File( "$TEMP/Oneway.rtf", obj << Get RTF( "png" ) ); // Prefer <<Save RTF
+Open( "$TEMP/Oneway.rtf" );
 
 ```
 
@@ -1716,7 +2865,43 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filter Context Box(		H List Box(			dt << Data Filter(				Local,				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )			),			V List Box(				t = Text Box( "0 Rows Excluded" ),				Distribution(					Continuous Distribution( Column( :weight ) ),					Nominal Distribution( Column( :age ) )				)			)		)	));updatetext = Function( {},	rs = t << Get Row States( dt );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = t << Make Row State Handler( dt, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	Data Filter Context Box(
+		H List Box(
+			dt << Data Filter(
+				Local,
+				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+			),
+			V List Box(
+				t = Text Box( "0 Rows Excluded" ),
+				Distribution(
+					Continuous Distribution( Column( :weight ) ),
+					Nominal Distribution( Column( :age ) )
+				)
+			)
+		)
+	)
+);
+updatetext = Function( {},
+	rs = t << Get Row States( dt );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = t << Make Row State Handler( dt, rsupdate );
+updatetext();
 
 ```
 
@@ -1724,7 +2909,38 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text Box( "0 Rows Excluded" ),	dist = Distribution(		Continuous Distribution( Column( :weight ) ),		Nominal Distribution( Column( :age ) ),		Local Data Filter(			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )		),		Where( :sex == "F" )	));subset = dist << Get Data Table();updatetext = Function( {},	rs = Report( dist ) << Get Row States( subset );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	t = Text Box( "0 Rows Excluded" ),
+	dist = Distribution(
+		Continuous Distribution( Column( :weight ) ),
+		Nominal Distribution( Column( :age ) ),
+		Local Data Filter(
+			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+		),
+		Where( :sex == "F" )
+	)
+);
+subset = dist << Get Data Table();
+updatetext = Function( {},
+	rs = Report( dist ) << Get Row States( subset );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );
+updatetext();
 
 ```
 
@@ -1736,7 +2952,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );Print( w << Get Show Window() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+Print( w << Get Show Window() );
 
 ```
 
@@ -1748,7 +2970,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];Print( fb << Get Size );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+Print( fb << Get Size );
 
 ```
 
@@ -1762,7 +2990,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Stretch",	V List Box(		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),		spacer = Spacer Box(			Size( 20, 20 ),			Color( "Light Red" ),			<<Set Stretch( "Fill", "Off" )		)	));spacer << Get Stretch();
+
+//This message applies to all display box objects
+New Window( "Stretch",
+	V List Box(
+		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),
+		spacer = Spacer Box(
+			Size( 20, 20 ),
+			Color( "Light Red" ),
+			<<Set Stretch( "Fill", "Off" )
+		)
+	)
+);
+spacer << Get Stretch();
 
 ```
 
@@ -1774,13 +3014,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << Set Text( win << Get Text );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << Set Text( win << Get Text );
 
 ```
 
 ### Get Text Color
 
-**Syntax:** obj &lt;&lt; Text Color( color ); color = obj &lt;&lt; Get Text Color
+**Syntax:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Beschreibung:** Der Text wird in der Textfarbe dargestellt, sofern eine festgelegt ist. Ist die Eigenschaft nicht festgelegt, erbt das Feld die Textfarbe des Containerfelds.
 
@@ -1788,47 +3031,99 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Text Color );Wait( 2 );tb << Text Color( "Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Text Color );
+Wait( 2 );
+tb << Text Color( "Red" );
 
 ```
 
 ### Get UI Only
 
-**Syntax:** obj &lt;&lt; UI Only( state=0|1 ); state = obj &lt;&lt; Get UI Only
+**Syntax:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**Syntax:** obj &lt;&lt; User Resizable; obj &lt;&lt; Get User Resizable
+**Syntax:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Beschreibung:** Wenn die Feldgröße vom Benutzer geändert werden kann, ändert sich der Cursor am unteren und rechten Rand, um die Größenänderung per Drag & Drop zuzulassen.
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );New Window( "resize",	H Splitter Box(		Size( 600, 200 ),		tree = Tree Box( {root1, root2} ),		scroll = Scroll Box(			Size( 300, 200 ),			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )		)	));tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );Wait( 2 );tree << User Resizable( {0, 0} );scroll << User Resizable( {0, 0} );
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+New Window( "resize",
+	H Splitter Box(
+		Size( 600, 200 ),
+		tree = Tree Box( {root1, root2} ),
+		scroll = Scroll Box(
+			Size( 300, 200 ),
+			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )
+		)
+	)
+);
+tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+Wait( 2 );
+tree << User Resizable( {0, 0} );
+scroll << User Resizable( {0, 0} );
 
 ```
 
 ### Get Vertical Alignment
 
-**Syntax:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" ); "Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
+**Syntax:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Beschreibung:** Die vertikale Ausrichtung steuert die Position des Felds innerhalb eines Containers, sofern das Feld nicht den gesamten Raum ausfüllt.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Set Horizontal( 1 );lb = r[List Box( 7 )];lb << Border( 1 );Wait( 2 );lb << Vertical Alignment( "Bottom" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Set Horizontal( 1 );
+lb = r[List Box( 7 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Vertical Alignment( "Bottom" );
 
 ```
 
 ### Get Visibility
 
-**Syntax:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" ); "Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
+**Syntax:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Beschreibung:** Die Sichtbarkeit legt fest, ob ein Feld angezeigt wird und ob es Platz benötigt. Der Standardwert "Visible" bedeutet, dass das Objekt angezeigt wird. Ein Objekt vom Typ "Hidden" wird nicht angezeigt, benötigt jedoch trotzdem Platz, während ein Feld vom Typ "Collapsed" keinen Platz im Layout benötigt.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Visibility );Wait( 1 );tb << Visibility( "Collapse" );Show( tb << Get Visibility );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Visibility );
+Wait( 1 );
+tb << Visibility( "Collapse" );
+Show( tb << Get Visibility );
 
 ```
 
@@ -1840,7 +3135,11 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -1852,7 +3151,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Get Width;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Get Width;
 
 ```
 
@@ -1864,7 +3169,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Icon;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Icon;
+Show( t );
 
 ```
 
@@ -1876,7 +3185,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );p = w << Get Window Position();Show( p );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+p = w << Get Window Position();
+Show( p );
 
 ```
 
@@ -1888,7 +3201,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );s = w << Get Window Size();Show( s );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+s = w << Get Window Size();
+Show( s );
 
 ```
 
@@ -1900,7 +3217,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Title;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Title;
+Show( t );
 
 ```
 
@@ -1912,7 +3233,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Print( w << Get Window View() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Print( w << Get Window View() );
 
 ```
 
@@ -1924,7 +3248,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "test", a = Text Box( "my test" ) );a << set text( win << get xml );
+
+//This message applies to all display box objects
+win = New Window( "test", a = Text Box( "my test" ) );
+a << set text( win << get xml );
 
 ```
 
@@ -1936,19 +3263,60 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size( 3 );			Y Function( -3 + 100 / 2 * (1 + Sin( (2 * Pi() * (x + .3)) / 100 )), x );		),		<<settrackenable( 1 ) // put the mouse box to work, watching "tracking"	,		<<settrack( // events from the mouse (movement, with button up or down)			Function( {this, pt}, // parameters: this is the mousebox, pt is mouse x,y				{fb, offset, t, off, size}, // local variables				// recalulate offset and size each time, the values can change				fb = this[framebox( 1 )]; // the framebox in the graph 				offset = [0, 0]; // accumulator to sum up the offset between framebox and mousebox				t = fb; // a temporary box that starts at the frame 				While( t != this, // and walks up to the mousebox					off = t << getOffset; // ask each box for its offset to the immediate parent					offset += Matrix( off ); // convert list answer to matrix so + will work					t = t << parent; // crawl up to the mousebox, one box at a time				);				size = Matrix( fb << getSize ); // the frame knows its size				If( // over the frame box					offset[1] < pt[1] < offset[1] + size[1] & offset[2] < pt[2] < offset[2]					 + size[2]				,					fb << setbackgroundcolor( "red" ),					fb << setbackgroundcolor( "blue" )				);			)		)	));
+
+New Window( "example",
+	MouseBox(
+		Graph Box(
+			title( "title" ),
+			Pen Size( 3 );
+			Y Function( -3 + 100 / 2 * (1 + Sin( (2 * Pi() * (x + .3)) / 100 )), x );
+		),
+		<<settrackenable( 1 ) // put the mouse box to work, watching "tracking"
+	,
+		<<settrack( // events from the mouse (movement, with button up or down)
+			Function( {this, pt}, // parameters: this is the mousebox, pt is mouse x,y
+				{fb, offset, t, off, size}, // local variables
+				// recalulate offset and size each time, the values can change
+				fb = this[framebox( 1 )]; // the framebox in the graph 
+				offset = [0, 0]; // accumulator to sum up the offset between framebox and mousebox
+				t = fb; // a temporary box that starts at the frame 
+				While( t != this, // and walks up to the mousebox
+					off = t << getOffset; // ask each box for its offset to the immediate parent
+					offset += Matrix( off ); // convert list answer to matrix so + will work
+					t = t << parent; // crawl up to the mousebox, one box at a time
+				);
+				size = Matrix( fb << getSize ); // the frame knows its size
+				If( // over the frame box
+					offset[1] < pt[1] < offset[1] + size[1] & offset[2] < pt[2] < offset[2]
+					 + size[2]
+				,
+					fb << setbackgroundcolor( "red" ),
+					fb << setbackgroundcolor( "blue" )
+				);
+			)
+		)
+	)
+);
 
 ```
 
 ### Horizontal Alignment
 
-**Syntax:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" ); "Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
+**Syntax:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Beschreibung:** Die horizontale Ausrichtung steuert die Position des Felds innerhalb eines Containers, sofern das Feld nicht den gesamten Raum ausfüllt.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Border( 1 );Wait( 2 );lb << Horizontal Alignment( "Right" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Horizontal Alignment( "Right" );
 
 ```
 
@@ -1960,7 +3328,37 @@ New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size(
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "Inval example",	Button Box( "red",		color = "red";		g1 << inval; /* tell the oval to redraw */		g2 << inval; /* tell the rectangle to redraw */		g1 << updateWindow; /* tell the window to update immediately */		// this is a busy-wait to help demonstrate the various behaviors...		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );	),	Button Box( "blue",		color = "blue";		g1 << inval; /* same comments */		g2 << inval;		g1 << updateWindow;		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 );	),	g1 = Graph Box(/* the graph does NOT watch for the color variable to change                       but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	),	g2 = Graph Box(		Fill Color( color );		Rect( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "Inval example",
+	Button Box( "red",
+		color = "red";
+		g1 << inval; /* tell the oval to redraw */
+		g2 << inval; /* tell the rectangle to redraw */
+		g1 << updateWindow; /* tell the window to update immediately */
+		// this is a busy-wait to help demonstrate the various behaviors...
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );
+	),
+	Button Box( "blue",
+		color = "blue";
+		g1 << inval; /* same comments */
+		g2 << inval;
+		g1 << updateWindow;
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 );
+	),
+	g1 = Graph Box(/* the graph does NOT watch for the color variable to change 
+                      but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	),
+	g2 = Graph Box(
+		Fill Color( color );
+		Rect( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
@@ -1974,7 +3372,12 @@ New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size(
 
 ```jsl
 
-ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );Show( ww << Is Dirty );ww << Set Dirty( 0 );Show( ww << Is Dirty );
+
+
+ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
+Show( ww << Is Dirty );
+ww << Set Dirty( 0 );
+Show( ww << Is Dirty );
 
 ```
 
@@ -1986,7 +3389,14 @@ New Window( "example",	MouseBox(		Graph Box(			title( "title" ),			Pen Size(
 
 ```jsl
 
-With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},		Print( win << Is Modal Dialog() );		win << close window();	));
+
+With Window Handler(
+	New Window( "Modal Window", <<Modal ),
+	Function( {win},
+		Print( win << Is Modal Dialog() );
+		win << close window();
+	)
+);
 
 ```
 
@@ -1998,7 +3408,12 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << journal;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << journal;
 
 ```
 
@@ -2010,7 +3425,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Main Window", Text Box( "Main JMP Window" ) );w << Journal Window;
+
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Journal Window;
 
 ```
 
@@ -2022,7 +3440,17 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsOpen( "$SAMPLE_DATA/Big Class.jmp" );New Window( "example",	ob1 = Outline Box( "treemap launcher" ),	ob2 = Outline Box( "bivariate partial" ),	ob3 = Outline Box( "bivariate launched" ));ob1 << launch( Treemap() );ob2 << launch( Bivariate( Y( :height ) ) );ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
+
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "example",
+	ob1 = Outline Box( "treemap launcher" ),
+	ob2 = Outline Box( "bivariate partial" ),
+	ob3 = Outline Box( "bivariate launched" )
+);
+ob1 << launch( Treemap() );
+ob2 << launch( Bivariate( Y( :height ) ) );
+ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ```
 
@@ -2036,7 +3464,43 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filter Context Box(		H List Box(			dt << Data Filter(				Local,				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )			),			V List Box(				t = Text Box( "0 Rows Excluded" ),				Distribution(					Continuous Distribution( Column( :weight ) ),					Nominal Distribution( Column( :age ) )				)			)		)	));updatetext = Function( {},	rs = t << Get Row States( dt );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = t << Make Row State Handler( dt, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	Data Filter Context Box(
+		H List Box(
+			dt << Data Filter(
+				Local,
+				Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+				Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+			),
+			V List Box(
+				t = Text Box( "0 Rows Excluded" ),
+				Distribution(
+					Continuous Distribution( Column( :weight ) ),
+					Nominal Distribution( Column( :age ) )
+				)
+			)
+		)
+	)
+);
+updatetext = Function( {},
+	rs = t << Get Row States( dt );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = t << Make Row State Handler( dt, rsupdate );
+updatetext();
 
 ```
 
@@ -2044,19 +3508,59 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	Data Filt
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text Box( "0 Rows Excluded" ),	dist = Distribution(		Continuous Distribution( Column( :weight ) ),		Nominal Distribution( Column( :age ) ),		Local Data Filter(			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )		),		Where( :sex == "F" )	));subset = dist << Get Data Table();updatetext = Function( {},	rs = Report( dist ) << Get Row States( subset );	n = 0;	For( ii = 1, ii <= N Rows( rs ), ii++,		If( Excluded( As Row State( rs[ii] ) ),			n			++)	);	t << Set Text( Char( n ) || " Rows Excluded" ););rsupdate = Function( {a},	If( Is Matrix( a ),		updatetext()	));rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );updatetext();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "filter test",
+	t = Text Box( "0 Rows Excluded" ),
+	dist = Distribution(
+		Continuous Distribution( Column( :weight ) ),
+		Nominal Distribution( Column( :age ) ),
+		Local Data Filter(
+			Add Filter( columns( :height ), Where( :height >= 51 & :height <= 62 ) ),
+			Mode( Select( 0 ), Show( 1 ), Include( 1 ) )
+		),
+		Where( :sex == "F" )
+	)
+);
+subset = dist << Get Data Table();
+updatetext = Function( {},
+	rs = Report( dist ) << Get Row States( subset );
+	n = 0;
+	For( ii = 1, ii <= N Rows( rs ), ii++,
+		If( Excluded( As Row State( rs[ii] ) ),
+			n
+			++)
+	);
+	t << Set Text( Char( n ) || " Rows Excluded" );
+);
+rsupdate = Function( {a},
+	If( Is Matrix( a ),
+		updatetext()
+	)
+);
+rsh = Report( dist ) << Make Row State Handler( subset, rsupdate );
+updatetext();
 
 ```
 
 ### Margin
 
-**Syntax:** obj &lt;&lt; Margin( sides ); sides = obj &lt;&lt; Get Margin
+**Syntax:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Beschreibung:** Der Rand fügt Platz zwischen dem Rahmen des Felds und benachbarten Feldern hinzu. Verwenden Sie benannte Argumente oder geben Sie eine Liste mit Werten an. Wird ein einziger Wert angegeben, gilt dieser für alle Seiten. Werden zwei Werte angegeben, gelten diese für den horizontalen und vertikalen Rand.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Margin );tb << Border( 1 );Wait( 2 );tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Margin );
+tb << Border( 1 );
+Wait( 2 );
+tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -2068,7 +3572,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Maximize Window( 1 );Wait( 1 );w << Maximize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Maximize Window( 1 );
+Wait( 1 );
+w << Maximize Window( 0 );
 
 ```
 
@@ -2080,7 +3590,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Minimize Window( 1 );Wait( 1 );w << Minimize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Minimize Window( 1 );
+Wait( 1 );
+w << Minimize Window( 0 );
 
 ```
 
@@ -2092,7 +3608,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Move Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Move Window( 500, 500 );
 
 ```
 
@@ -2104,7 +3624,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;next = rbiv << Next();Print( next << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+next = rbiv << Next();
+Print( next << Class Name() );
 
 ```
 
@@ -2118,7 +3644,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	Function( {this},         // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled		New Window( "Are you sure?",			<<modal,			V List Box(				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )			)		)["button"] == 1	));
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	Function( {this}, 
+        // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled
+		New Window( "Are you sure?",
+			<<modal,
+			V List Box(
+				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),
+				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+			)
+		)["button"] == 1
+	)
+);
 
 ```
 
@@ -2126,7 +3666,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
 
 ```
 
@@ -2140,7 +3692,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to Data Table objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Optimize Display;
+
+//This message applies to Data Table objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Optimize Display;
 
 ```
 
@@ -2152,19 +3707,33 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );r = d << report;r << Pad Window( 0 );
+
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+r = d << report;
+r << Pad Window( 0 );
 
 ```
 
 ### Padding
 
-**Syntax:** obj &lt;&lt; Padding( sides ); sides = obj &lt;&lt; Get Padding
+**Syntax:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Beschreibung:** Der Innenabstand fügt Platz zwischen dem Inhalt und dem Rahmen des Felds hinzu. Verwenden Sie benannte Argumente oder geben Sie eine Liste mit Werten an. Wird ein einziger Wert angegeben, gilt dieser für alle Seiten. Werden zwei Werte angegeben, gelten diese für den horizontalen und vertikalen Innenabstand.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Padding );tb << Border( 1 );Wait( 1 );tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Padding );
+tb << Border( 1 );
+Wait( 1 );
+tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ```
 
@@ -2176,7 +3745,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example",	ob = Outline Box( "Outline Box",		V List Box(			ob2 = Outline Box( "Outline Box 2",				H List Box( Text Edit Box( "Top Left" ), Text Edit Box( "Top Right" ) )			),			ob3 = Outline Box( "Outline Box",				H List Box( Text Edit Box( "Bottom Left" ), Text Edit Box( "Bottom Right" ) )			)		)	));ob3 << Page Break;
+
+//This message applies to all display box objects
+New Window( "Example",
+	ob = Outline Box( "Outline Box",
+		V List Box(
+			ob2 = Outline Box( "Outline Box 2",
+				H List Box( Text Edit Box( "Top Left" ), Text Edit Box( "Top Right" ) )
+			),
+			ob3 = Outline Box( "Outline Box",
+				H List Box( Text Edit Box( "Bottom Left" ), Text Edit Box( "Bottom Right" ) )
+			)
+		)
+	)
+);
+ob3 << Page Break;
 
 ```
 
@@ -2188,7 +3771,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisParent = axisbox << parent();Print( axisParent << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisParent = axisbox << parent();
+Print( axisParent << Class Name() );
 
 ```
 
@@ -2200,7 +3790,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << prepend( Text Box( "=== above ===" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << prepend( Text Box( "=== above ===" ) );
 
 ```
 
@@ -2214,7 +3809,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 2 )];axisSibling = axisbox << Prev Sib();Print( axisSibling << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 2 )];
+axisSibling = axisbox << Prev Sib();
+Print( axisSibling << Class Name() );
 
 ```
 
@@ -2226,7 +3828,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Print Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Print Window;
 
 ```
 
@@ -2238,7 +3843,24 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "Reshow example",	Button Box( "red",		color = "red";		g << reshow/* tell the graph that something changed */;	),	Button Box( "blue",		color = "blue";		g << reshow/* tell the graph that something changed */;	),	g = Graph Box(/* the graph does NOT watch for the color variable to change                     but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "Reshow example",
+	Button Box( "red",
+		color = "red";
+		g << reshow/* tell the graph that something changed */;
+	),
+	Button Box( "blue",
+		color = "blue";
+		g << reshow/* tell the graph that something changed */;
+	),
+	g = Graph Box(/* the graph does NOT watch for the color variable to change
+                     but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
@@ -2250,7 +3872,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ```
 
@@ -2262,7 +3889,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save HTML( "$TEMP/jmp_example.html" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ```
 
@@ -2274,7 +3906,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ```
 
@@ -2286,7 +3923,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ```
 
@@ -2298,7 +3940,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ```
 
@@ -2310,7 +3957,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ```
 
@@ -2324,7 +3976,35 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate(	Y( :weight ),	X( :height ),	Fit Line( {Line Color( {212, 73, 88} )} ),	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),	Kernel Smoother( 1, 1, 0.5, 0 ));rbiv = biv << report;rbiv << Save Picture(	"$TEMP/jmp_example_screen.png",	"png",	View( "Screen" ),	Appearance( "Current" ));rbiv << Save Picture(	"$TEMP/jmp_example_print.png",	"png",	View( "Print" ),	Appearance( "Default" ));New Window( "Example",	H List Box(		New Image( "$TEMP/jmp_example_screen.png" ),		New Image( "$TEMP/jmp_example_print.png" )	));
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate(
+	Y( :weight ),
+	X( :height ),
+	Fit Line( {Line Color( {212, 73, 88} )} ),
+	Fit Polynomial( 3, {Line Color( {61, 174, 70} )} ),
+	Kernel Smoother( 1, 1, 0.5, 0 )
+);
+rbiv = biv << report;
+rbiv << Save Picture(
+	"$TEMP/jmp_example_screen.png",
+	"png",
+	View( "Screen" ),
+	Appearance( "Current" )
+);
+rbiv << Save Picture(
+	"$TEMP/jmp_example_print.png",
+	"png",
+	View( "Print" ),
+	Appearance( "Default" )
+);
+New Window( "Example",
+	H List Box(
+		New Image( "$TEMP/jmp_example_screen.png" ),
+		New Image( "$TEMP/jmp_example_print.png" )
+	)
+);
 
 ```
 
@@ -2332,7 +4012,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );rbiv << Save Picture( "$TEMP/jmp_example_scale.png", "png", Scale( 1.5 ) );New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv[FrameBox( 1 )] << Set Stretch( "Window", "Window" );
+rbiv << Save Picture( "$TEMP/jmp_example_scale.png", "png", Scale( 1.5 ) );
+New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
 
 ```
 
@@ -2340,7 +4027,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ```
 
@@ -2352,7 +4044,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );New Window( "filter test",	t = Text 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save Presentation( "$TEMP/jmp_example.pptx" );Open( "$TEMP/jmp_example.pptx" );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save Presentation( "$TEMP/jmp_example.pptx" );
+Open( "$TEMP/jmp_example.pptx" );
 
 ```
 
@@ -2364,7 +4061,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ```
 
@@ -2376,7 +4078,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectswin = New Window( "Example", a = Text Box( "Example Text" ) );a << save text( "$TEMP/jmp_example.txt" );
+
+//This message applies to all display box objects
+win = New Window( "Example", a = Text Box( "Example Text" ) );
+a << save text( "$TEMP/jmp_example.txt" );
 
 ```
 
@@ -2390,7 +4095,11 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message can be sent to any display box object but will be applied to the report windowOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
+
+//This message can be sent to any display box object but will be applied to the report window
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ```
 
@@ -2404,7 +4113,20 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowfm << scroll window( Absolute( "End", "End" ) );Wait( 1 );fm << scroll window( Absolute( 0, 300 ) );Wait( 1 );
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+fm << scroll window( Absolute( "End", "End" ) );
+Wait( 1 );
+fm << scroll window( Absolute( 0, 300 ) );
+Wait( 1 );
 
 ```
 
@@ -2412,7 +4134,24 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowFor( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 second	fm << scroll window( Report( fm )[framebox( 2 )] );	Wait( .5 );	fm << scroll window( Report( fm )[framebox( 3 )] );	Wait( .5 );	fm << scroll window( Report( fm )[framebox( 1 )] );	Wait( .5 ););
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+For( i = 1, i <= 5, i++, // repeatedly, bring each frame box into view for 1/2 second
+	fm << scroll window( Report( fm )[framebox( 2 )] );
+	Wait( .5 );
+	fm << scroll window( Report( fm )[framebox( 3 )] );
+	Wait( .5 );
+	fm << scroll window( Report( fm )[framebox( 1 )] );
+	Wait( .5 );
+);
 
 ```
 
@@ -2420,7 +4159,22 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Blood Pressure.jmp" );fm = Fit Model(	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),	Effects( :Subject, :Dose ),	Personality( "Manova" ),	Run);fm << setwindowsize( 600, 600 ); // shrink the windowfm << scroll window( Relative( 300 ) );Wait( 1 );fm << scroll window( Relative( -50 ) );Wait( 1 );fm << scroll window( Relative( "Start" ) );Wait( 1 );
+
+
+Open( "$SAMPLE_DATA/Blood Pressure.jmp" );
+fm = Fit Model(
+	Y( :BP 8M, :BP 12M, :BP 6M, :BP 8W, :BP 12W, :BP 6W, :BP 8F, :BP 12F, :BP 6F ),
+	Effects( :Subject, :Dose ),
+	Personality( "Manova" ),
+	Run
+);
+fm << setwindowsize( 600, 600 ); // shrink the window
+fm << scroll window( Relative( 300 ) );
+Wait( 1 );
+fm << scroll window( Relative( -50 ) );
+Wait( 1 );
+fm << scroll window( Relative( "Start" ) );
+Wait( 1 );
 
 ```
 
@@ -2432,7 +4186,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example", ex = Button Box( "Press Me" ) );ex << Select;
+
+//This message applies to all display box objects
+New Window( "Example", ex = Button Box( "Press Me" ) );
+ex << Select;
 
 ```
 
@@ -2444,7 +4201,21 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Test",	lb = List Box( {"a", "b", "c", "d"} ),	Button Box( "Enable 2nd item",		lb << enable item( 2, 1 );		Show( lb << item enabled( 2 ) );	),	Button Box( "Disable 2nd item",		lb << enable item( 2, 0 );		Show( lb << item enabled( 2 ) );	));Wait( 2 );w << Set Content Size( 400, 300 );
+
+//This message applies to all display box objects
+w = New Window( "Test",
+	lb = List Box( {"a", "b", "c", "d"} ),
+	Button Box( "Enable 2nd item",
+		lb << enable item( 2, 1 );
+		Show( lb << item enabled( 2 ) );
+	),
+	Button Box( "Disable 2nd item",
+		lb << enable item( 2, 0 );
+		Show( lb << item enabled( 2 ) );
+	)
+);
+Wait( 2 );
+w << Set Content Size( 400, 300 );
 
 ```
 
@@ -2458,7 +4229,12 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );Show( ww << Is Dirty );ww << Set Dirty( 0 );Show( ww << Is Dirty );
+
+
+ww = New Window( "Test", <<Script, "Open(\!"$SAMPLE_DATA\Big Class.jmp\!");" );
+Show( ww << Is Dirty );
+ww << Set Dirty( 0 );
+Show( ww << Is Dirty );
 
 ```
 
@@ -2470,7 +4246,13 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Height( 150 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Height( 150 );
 
 ```
 
@@ -2482,7 +4264,10 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Main Window", Text Box( "Main JMP Window" ) );w << Set Main Window;
+
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Set Main Window;
 
 ```
 
@@ -2494,7 +4279,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Max Size( 500, 500 );fb << Get Max Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Max Size( 500, 500 );
+fb << Get Max Size;
 
 ```
 
@@ -2506,7 +4298,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Min Size( 30, 30 );fb << Get Min Size;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Min Size( 30, 30 );
+fb << Get Min Size;
 
 ```
 
@@ -2518,7 +4317,17 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );w << Set page setup(	margins( 1, 1, 1, 1 ),	scale( 1 ),	portrait( 1 ),	paper size( "Letter" ),	Table of Contents( "always" ));w << Save pdf( "$DOCUMENTS\test.pdf" );
+
+//This message applies to all display box objects
+w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
+w << Set page setup(
+	margins( 1, 1, 1, 1 ),
+	scale( 1 ),
+	portrait( 1 ),
+	paper size( "Letter" ),
+	Table of Contents( "always" )
+);
+w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```
 
@@ -2530,7 +4339,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Footer Test" ) );w << Set Print Footers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Footer Test" ) );
+w << Set Print Footers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -2542,7 +4358,14 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Header Test" ) );w << Set Print Headers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Header Test" ) );
+w << Set Print Headers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -2554,7 +4377,9 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );biv = bivariate( y( :weight ), x( :height 
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -2566,7 +4391,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Set Report Title( "New Title" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Set Report Title( "New Title" );
 
 ```
 
@@ -2582,7 +4412,24 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Example",	H List Box(		tv = Text Box( "V+V", <<rotate text( left ) ),		V List Box(			Text Box( "resize the containing window" ),			th = Text Box( "H+H" ),			ts = Spacer Box( <<Size( 10, 30 ), <<Color( "blue" ) )		)	));tv << Vertical Alignment( "Center" );th << Horizontal Alignment( "Center" );th << Set Stretch( "Window", "Off" );ts << Set Min Size( 5, 20 );ts << Set Max Size( 100000, 100 );ts << Set Stretch( "Window", "Window" );
+
+//This message applies to all display box objects
+New Window( "Example",
+	H List Box(
+		tv = Text Box( "V+V", <<rotate text( left ) ),
+		V List Box(
+			Text Box( "resize the containing window" ),
+			th = Text Box( "H+H" ),
+			ts = Spacer Box( <<Size( 10, 30 ), <<Color( "blue" ) )
+		)
+	)
+);
+tv << Vertical Alignment( "Center" );
+th << Horizontal Alignment( "Center" );
+th << Set Stretch( "Window", "Off" );
+ts << Set Min Size( 5, 20 );
+ts << Set Max Size( 100000, 100 );
+ts << Set Stretch( "Window", "Window" );
 
 ```
 
@@ -2590,7 +4437,14 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsNew Window( "Stretch",	V List Box(		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),		Spacer Box( Size( 20, 20 ), Color( "Light Red" ), <<Set Stretch( "Fill", "Off" ) )	));
+
+//This message applies to all display box objects
+New Window( "Stretch",
+	V List Box(
+		H List Box( Text Edit Box( "String1" ), Text Edit Box( "String2" ) ),
+		Spacer Box( Size( 20, 20 ), Color( "Light Red" ), <<Set Stretch( "Fill", "Off" ) )
+	)
+);
 
 ```
 
@@ -2602,7 +4456,14 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );d << Report View( "Summary" );r = d << Report;tb = r[Table Box( 1 )];tb << Set Summary Behavior( "Visible" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+d << Report View( "Summary" );
+r = d << Report;
+tb = r[Table Box( 1 )];
+tb << Set Summary Behavior( "Visible" );
 
 ```
 
@@ -2614,7 +4475,13 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << Set Width( 400 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << Set Width( 400 );
 
 ```
 
@@ -2626,7 +4493,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Example", ex = Button Box( "New Analysis" ) );w << Set Window Icon( "Scatter3D" );
+
+//This message applies to all display box objects
+w = New Window( "Example", ex = Button Box( "New Analysis" ) );
+w << Set Window Icon( "Scatter3D" );
 
 ```
 
@@ -2638,7 +4508,10 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 800, 1200 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 800, 1200 );
 
 ```
 
@@ -2650,7 +4523,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Set Window Title( "New Title" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Set Window Title( "New Title" );
 
 ```
 
@@ -2662,7 +4540,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Show Properties();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Show Properties();
 
 ```
 
@@ -2674,7 +4557,12 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rbiv << Show Tree Structure();
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rbiv << Show Tree Structure();
 
 ```
 
@@ -2686,7 +4574,13 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );w << Show Window( 1 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+w << Show Window( 1 );
 
 ```
 
@@ -2698,7 +4592,14 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;axisbox = rbiv[axis box( 1 )];axisSibling = axisbox << sib();Print( axisSibling << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+axisbox = rbiv[axis box( 1 )];
+axisSibling = axisbox << sib();
+Print( axisSibling << Class Name() );
 
 ```
 
@@ -2710,7 +4611,17 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r()[framebox( 1 )];fb << sib append(	Text Box( "============ after ==============", Rotate Text( "Right" ) ),	"Horizontal");fb << sib append( Text Box( "=== below ===" ), "Vertical" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r()[framebox( 1 )];
+fb << sib append(
+	Text Box( "============ after ==============", Rotate Text( "Right" ) ),
+	"Horizontal"
+);
+fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ```
 
@@ -2722,7 +4633,17 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/big class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;fb = r[framebox( 1 )];fb << sib prepend(	Text Box( "    ============ before ==============", Rotate Text( "Right" ) ),	"Horizontal");fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/big class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+fb = r[framebox( 1 )];
+fb << sib prepend(
+	Text Box( "    ============ before ==============", Rotate Text( "Right" ) ),
+	"Horizontal"
+);
+fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ```
 
@@ -2734,13 +4655,16 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Size Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Size Window( 500, 500 );
 
 ```
 
 ### Text Color
 
-**Syntax:** obj &lt;&lt; Text Color( color ); color = obj &lt;&lt; Get Text Color
+**Syntax:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Beschreibung:** Der Text wird in der Textfarbe dargestellt, sofern eine festgelegt ist. Ist die Eigenschaft nicht festgelegt, erbt das Feld die Textfarbe des Containerfelds.
 
@@ -2748,7 +4672,15 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Text Color );Wait( 2 );tb << Text Color( "Red" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Text Color );
+Wait( 2 );
+tb << Text Color( "Red" );
 
 ```
 
@@ -2760,13 +4692,19 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;rootParent = rbiv << Top Parent();Print( rootParent << Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+rootParent = rbiv << Top Parent();
+Print( rootParent << Class Name() );
 
 ```
 
 ### UI Only
 
-**Syntax:** obj &lt;&lt; UI Only( state=0|1 ); state = obj &lt;&lt; Get UI Only
+**Syntax:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
@@ -2776,43 +4714,127 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-//This message applies to all display box objectscolor = "green"; /* initial color in a variable */New Window( "UpdateWindow example",	Button Box( "red",		color = "red";        // try commenting out each of the 4 lines that follow, run the script,		// click the buttons, and resize the windows (for example) to force a		// redraw.  All 4 lines are important, though the last two may be		// slightly different on Windows and Mac OSs.		g1 << inval; /* tell the oval to redraw */		g2 << inval; /* tell the rectangle to redraw */		g1 << updateWindow; /* tell the oval window to update immediately */		g2 << updateWindow; /* tell the rect window to update immediately */		// this is a busy-wait to help demonstrate the various behaviors...		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );	),	Button Box( "blue",		color = "blue";		g1 << inval; /* same comments */		g2 << inval;		g1 << updateWindow;		g2 << updateWindow;		x = Tick Seconds();		While( Tick Seconds() - x < .5, 0 );	));New Window( "oval",	g1 = Graph Box(/* the graph does NOT watch for the color variable to change                      but will use the current value of color when it reshows */		Fill Color( color );		Oval( 10, 80, 70, 50, 1 );	));New Window( "rect",	g2 = Graph Box(		Fill Color( color );		Rect( 10, 80, 70, 50, 1 );	));
+
+//This message applies to all display box objects
+color = "green"; /* initial color in a variable */
+New Window( "UpdateWindow example",
+	Button Box( "red",
+		color = "red";
+        // try commenting out each of the 4 lines that follow, run the script,
+		// click the buttons, and resize the windows (for example) to force a
+		// redraw.  All 4 lines are important, though the last two may be
+		// slightly different on Windows and Mac OSs.
+		g1 << inval; /* tell the oval to redraw */
+		g2 << inval; /* tell the rectangle to redraw */
+		g1 << updateWindow; /* tell the oval window to update immediately */
+		g2 << updateWindow; /* tell the rect window to update immediately */
+		// this is a busy-wait to help demonstrate the various behaviors...
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 /* delay without wait(.5) */ );
+	),
+	Button Box( "blue",
+		color = "blue";
+		g1 << inval; /* same comments */
+		g2 << inval;
+		g1 << updateWindow;
+		g2 << updateWindow;
+		x = Tick Seconds();
+		While( Tick Seconds() - x < .5, 0 );
+	)
+);
+New Window( "oval",
+	g1 = Graph Box(/* the graph does NOT watch for the color variable to change
+                      but will use the current value of color when it reshows */
+		Fill Color( color );
+		Oval( 10, 80, 70, 50, 1 );
+	)
+);
+New Window( "rect",
+	g2 = Graph Box(
+		Fill Color( color );
+		Rect( 10, 80, 70, 50, 1 );
+	)
+);
 
 ```
 
 ### User Resizable
 
-**Syntax:** obj &lt;&lt; User Resizable; obj &lt;&lt; Get User Resizable
+**Syntax:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Beschreibung:** Wenn die Feldgröße vom Benutzer geändert werden kann, ändert sich der Cursor am unteren und rechten Rand, um die Größenänderung per Drag & Drop zuzulassen.
 
 ```jsl
 
-root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node( "Child 1" );c2 = Tree Node( "Child 2" );c3 = Tree Node( "Child 3" );c4 = Tree Node( "Child 4" );root1 << Append( c1 );root1 << Append( c2 );root2 << Append( c3 );root2 << Append( c4 );New Window( "resize",	H Splitter Box(		Size( 600, 200 ),		tree = Tree Box( {root1, root2} ),		scroll = Scroll Box(			Size( 300, 200 ),			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )		)	));tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );Wait( 2 );tree << User Resizable( {0, 0} );scroll << User Resizable( {0, 0} );
+
+root1 = Tree Node( "Parent 1" );
+root2 = Tree Node( "Parent 2" );
+c1 = Tree Node( "Child 1" );
+c2 = Tree Node( "Child 2" );
+c3 = Tree Node( "Child 3" );
+c4 = Tree Node( "Child 4" );
+root1 << Append( c1 );
+root1 << Append( c2 );
+root2 << Append( c3 );
+root2 << Append( c4 );
+New Window( "resize",
+	H Splitter Box(
+		Size( 600, 200 ),
+		tree = Tree Box( {root1, root2} ),
+		scroll = Scroll Box(
+			Size( 300, 200 ),
+			Picture Box( Open( "$SAMPLE_IMAGES/tile.jpg", jpg ) )
+		)
+	)
+);
+tree << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+scroll << Set Stretch( "Window", "Window" ) << Set Max Size( 10000, 10000 );
+Wait( 2 );
+tree << User Resizable( {0, 0} );
+scroll << User Resizable( {0, 0} );
 
 ```
 
 ### Vertical Alignment
 
-**Syntax:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" ); "Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
+**Syntax:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Beschreibung:** Die vertikale Ausrichtung steuert die Position des Felds innerhalb eines Containers, sofern das Feld nicht den gesamten Raum ausfüllt.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;lb = r[List Box( 6 )];lb << Set Horizontal( 1 );lb = r[List Box( 7 )];lb << Border( 1 );Wait( 2 );lb << Vertical Alignment( "Bottom" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+lb = r[List Box( 6 )];
+lb << Set Horizontal( 1 );
+lb = r[List Box( 7 )];
+lb << Border( 1 );
+Wait( 2 );
+lb << Vertical Alignment( "Bottom" );
 
 ```
 
 ### Visibility
 
-**Syntax:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" ); "Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
+**Syntax:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Beschreibung:** Die Sichtbarkeit legt fest, ob ein Feld angezeigt wird und ob es Platz benötigt. Der Standardwert "Visible" bedeutet, dass das Objekt angezeigt wird. Ein Objekt vom Typ "Hidden" wird nicht angezeigt, benötigt jedoch trotzdem Platz, während ein Feld vom Typ "Collapsed" keinen Platz im Layout benötigt.
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );d = dt << Distribution( Column( :height ) );r = d << report;tb = r[Table Box( 1 )];Show( tb << Get Visibility );Wait( 1 );tb << Visibility( "Collapse" );Show( tb << Get Visibility );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = dt << Distribution( Column( :height ) );
+r = d << report;
+tb = r[Table Box( 1 )];
+Show( tb << Get Visibility );
+Wait( 1 );
+tb << Visibility( "Collapse" );
+Show( tb << Get Visibility );
 
 ```
 
@@ -2824,7 +4846,13 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( y( :weight ), x( :height ) );rbiv = biv << report;Show( biv << Window Class Name() );Show( rbiv << Window Class Name() );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( y( :weight ), x( :height ) );
+rbiv = biv << report;
+Show( biv << Window Class Name() );
+Show( rbiv << Window Class Name() );
 
 ```
 
@@ -2838,7 +4866,11 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[@isOpen='false']" )) << Close( 0 );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[@isOpen='false']" )) << Close( 0 );
 
 ```
 
@@ -2846,7 +4878,11 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//TextEditBox" )) << Text Color( "Green" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//TextEditBox" )) << Text Color( "Green" );
 
 ```
 
@@ -2854,7 +4890,12 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[text()='Summary of Fit']/TableBox" )) <<Make Into Data Table;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[text()='Summary of Fit']/TableBox" )) <<
+Make Into Data Table;
 
 ```
 
@@ -2862,7 +4903,12 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//NumberColBoxItem[text()='40']/parent::*" )) <<Text Color( "Green" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//NumberColBoxItem[text()='40']/parent::*" )) <<
+Text Color( "Green" );
 
 ```
 
@@ -2870,7 +4916,11 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//MarkerSeg" )) << Set Marker( "Square" );
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//MarkerSeg" )) << Set Marker( "Square" );
 
 ```
 
@@ -2878,7 +4928,11 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Run Script( "Bivariate" );(Report( biv ) << xpath( "//OutlineBox[text()='Parameter Estimates']" )) << Close;
+
+//This message applies to all display box objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Run Script( "Bivariate" );
+(Report( biv ) << xpath( "//OutlineBox[text()='Parameter Estimates']" )) << Close;
 
 ```
 
@@ -2890,7 +4944,12 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 80, 120 );Wait( 2 );w << Zoom Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 80, 120 );
+Wait( 2 );
+w << Zoom Window;
 
 ```
 
@@ -2906,7 +4965,14 @@ root1 = Tree Node( "Parent 1" );root2 = Tree Node( "Parent 2" );c1 = Tree Node
 
 ```jsl
 
-New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),		Plot Col Box( "", {8611, 681, 5895, 4199} )	));
+
+New Window( "Mountains",
+	tb = Table Box(
+		String Col Box( "Mountain", {"K2", "Delphi", "Kilimanjaro", "Grand Teton"} ),
+		Number Col Box( "Elevation (meters)", {8611, 681, 5895, 4199} ),
+		Plot Col Box( "", {8611, 681, 5895, 4199} )
+	)
+);
 
 ```
 
@@ -2914,7 +4980,12 @@ New Window( "Mountains",	tb = Table Box(		String Col Box( "Mountain", {"K2", "
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Baltic.jmp" );d = Distribution( Continuous Distribution( Column( :ls ) ) );rpt = d << report;tb = rpt[Table Box( 1 )];tb << Select;
+
+Open( "$SAMPLE_DATA/Baltic.jmp" );
+d = Distribution( Continuous Distribution( Column( :ls ) ) );
+rpt = d << report;
+tb = rpt[Table Box( 1 )];
+tb << Select;
 
 ```
 

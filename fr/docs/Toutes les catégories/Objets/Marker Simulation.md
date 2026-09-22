@@ -12,7 +12,31 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );	//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;	//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4	),	Cross( :Sex ),	By( :Disease Status ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+	//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+	//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4
+	),
+	Cross( :Sex ),
+	By( :Disease Status ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 )
+);
 
 ```
 
@@ -24,7 +48,31 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );	//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;	//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+	//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+	//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -36,7 +84,30 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -48,7 +119,30 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -60,7 +154,39 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );	//Set up ID Columndt << New Column( "SampleID",	Character,	"Nominal",	Formula( Char( :Pedigree ) || Char( :Sample ) ));	//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;	//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Sample ID( :SampleID ),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+	//Set up ID Column
+dt << New Column( "SampleID",
+	Character,
+	"Nominal",
+	Formula( Char( :Pedigree ) || Char( :Sample ) )
+);
+
+	//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+	//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Sample ID( :SampleID ),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -78,7 +204,30 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -86,7 +235,31 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformobj = dt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+obj = dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -94,97 +267,313 @@
 
 ### Estimate Diversity
 
-**Syntaxe :** obj = Marker Simulation(...Estimate Diversity( state=0|1 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Estimate Diversity( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Estime la diversité génétique pour les individus simulés.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Set up thresholds for progeny selection via Spec Limitsdt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Estimate Diversity( 1 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),);
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Set up thresholds for progeny selection via Spec Limits
+dt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );
+dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );
+dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Estimate Diversity( 1 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+
+);
 
 ```
 
 ### Imputation Value
 
-**Syntaxe :** obj = Marker Simulation(...Imputation Value( number=0 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Imputation Value( number=0 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie un nombre entier allant de zéro à la ploïdie pour le remplacement des scores de marqueur manquants. "0" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Set up thresholds for progeny selection via Spec Limitsdt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 1 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	Missing Marker Imputation Method( "Specified" ),	Imputation Value( 0 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Set up thresholds for progeny selection via Spec Limits
+dt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );
+dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );
+dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 1 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	Missing Marker Imputation Method( "Specified" ),
+	Imputation Value( 0 )
+);
 
 ```
 
 ### Missing Marker Imputation Method
 
-**Syntaxe :** obj = Marker Simulation(...Missing Marker Imputation Method( "HWE désactivé"|"HWE activé"|"Aléatoire"|"Spécifiée"="HWE désactivé" )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Missing Marker Imputation Method( "HWE désactivé"|"HWE activé"|"Aléatoire"|"Spécifiée"="HWE désactivé" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie un des quatre types de méthodes d&apos;imputation des marqueurs manquants. "HWE désactivé" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Set up thresholds for progeny selection via Spec Limitsdt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	Missing Marker Imputation Method( "Random" ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Set up thresholds for progeny selection via Spec Limits
+dt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );
+dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );
+dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	Missing Marker Imputation Method( "Random" )
+);
 
 ```
 
 ### Number of Generations
 
-**Syntaxe :** obj = Marker Simulation(...Number of Generations( number=1 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Number of Generations( number=1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie le nombre de générations à traverser dans les croisements et le processus de sélection. "1" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
 ### Number of Individuals per Cross
 
-**Syntaxe :** obj = Marker Simulation(...Number of Individuals per Cross( number=5 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Number of Individuals per Cross( number=5 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie le nombre d&apos;individus à simuler par croisement. "5" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
 ### Number of Selected Crosses
 
-**Syntaxe :** obj = Marker Simulation(...Number of Selected Crosses( number=0 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Number of Selected Crosses( number=0 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie le nombre maximum de familles à sélectionner par génération. "0" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Select Best Individuals( 1 ),	Number of Selected Individuals( 2 ),	Number of Selected Crosses( 5 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Select Best Individuals( 1 ),
+	Number of Selected Individuals( 2 ),
+	Number of Selected Crosses( 5 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
 ### Number of Selected Individuals
 
-**Syntaxe :** obj = Marker Simulation(...Number of Selected Individuals( number=0 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Number of Selected Individuals( number=0 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie le nombre maximum d&apos;individus à sélectionner par famille. "0" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Select Best Individuals( 1 ),	Number of Selected Individuals( 2 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Select Best Individuals( 1 ),
+	Number of Selected Individuals( 2 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
 ### Ploidy
 
-**Syntaxe :** obj = Marker Simulation(...Ploidy( number=2 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Ploidy( number=2 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie un nombre pair qui indique le niveau de ploïdie. "2" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -196,31 +585,114 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformobj = dt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 2000 ),	Show Evaluation Plot( 0 ),	Show Diversity Plot( 0 ));// Create Full Simulated TableShow( obj << Save Simulated Table );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+obj = dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 2000 ),
+	Show Evaluation Plot( 0 ),
+	Show Diversity Plot( 0 )
+);
+
+// Create Full Simulated Table
+Show( obj << Save Simulated Table );
 
 ```
 
 ### Select Best Individuals
 
-**Syntaxe :** obj = Marker Simulation(...Select Best Individuals( state=0|1 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Select Best Individuals( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Sélectionne les meilleurs individus qui répondent à tous les critères spécifiés dans les propriétés de colonne des limites de spécification des formules du prédicteur.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Set up thresholds for progeny selection via Spec Limitsdt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Select Best Individuals( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Set up thresholds for progeny selection via Spec Limits
+dt:Name( "Pred Formula Trait1" ) << Set Property( "Spec Limits", {LSL( 22.5 )} );
+dt:Name( "Pred Formula Trait2" ) << Set Property( "Spec Limits", {USL( 25.5 )} );
+dt:Name( "Probability( Disease Status=1 )" ) << Set Property( "Spec Limits", {USL( 0.3 )} );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Select Best Individuals( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
 ### Set Random Seed
 
-**Syntaxe :** obj = Marker Simulation(...Set Random Seed( number=0 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Set Random Seed( number=0 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définit une valeur spécifique pour la graine aléatoire en assurant ainsi que toutes les exécutions successives utilisant la même graine aléatoire sont reproductibles. "0" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -234,7 +706,33 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 2000 ),	Estimate Diversity( 1 ),	Show Diversity Plot( 1 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 2000 ),
+	Estimate Diversity( 1 ),
+	Show Diversity Plot( 1 )
+);
 
 ```
 
@@ -242,7 +740,34 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformobj = dt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 2000 ),	Estimate Diversity( 1 ),	Show Diversity Plot( 0 ));obj << Show Diversity Plot( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+obj = dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 2000 ),
+	Estimate Diversity( 1 ),
+	Show Diversity Plot( 0 )
+);
+obj << Show Diversity Plot( 1 );
 
 ```
 
@@ -256,7 +781,33 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 2000 ),	Show Evaluation Plot( 1 ),);
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 2000 ),
+	Show Evaluation Plot( 1 ),
+
+);
 
 ```
 
@@ -264,55 +815,187 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformobj = dt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 2000 ),	Show Evaluation Plot( 0 ),);obj << Show Evaluation Plot( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+obj = dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 2000 ),
+	Show Evaluation Plot( 0 ),
+
+);
+obj << Show Evaluation Plot( 1 );
 
 ```
 
 ### Threshold to Make Line Plots
 
-**Syntaxe :** obj = Marker Simulation(...Threshold to Make Line Plots( number=500 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Threshold to Make Line Plots( number=500 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie un nombre maximum de croisements pour lesquels dessiner des graphiques en courbe dans les rapports. Les graphiques en courbes sont dessinés lorsque le nombre total de croisements est inférieur à ce seuil. "500" par défaut.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
 ### Unthreaded
 
-**Syntaxe :** obj = Marker Simulation(...Unthreaded( state=0|1 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Unthreaded( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Utiliser uniquement le Thread principal pour les calculs
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
 ### Use Annotation Table
 
-**Syntaxe :** obj = Marker Simulation(...Use Annotation Table( state=0|1 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Use Annotation Table( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Utilise la table d&apos;annotation qui contient la position et le groupe d&apos;annotation des marqueurs.
 
 ```jsl
 
-dtAnno = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree Anno.jmp" );dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	Use Annotation Table(		1,		dtAnno,		Marker Variables( :Marker ),		Annotation Group( :Gene ),		Annotation Position( :Linkage Position ),		Go	));
+
+
+dtAnno = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree Anno.jmp" );
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	Use Annotation Table(
+		1,
+		dtAnno,
+		Marker Variables( :Marker ),
+		Annotation Group( :Gene ),
+		Annotation Position( :Linkage Position ),
+		Go
+	)
+);
 
 ```
 
 ### Use Only Markers Found in Predictor Formula
 
-**Syntaxe :** obj = Marker Simulation(...Use Only Markers Found in Predictor Formula( state=0|1 )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Use Only Markers Found in Predictor Formula( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Simule uniquement les marqueurs trouvés dans la formule du prédicteur.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Use Only Markers Found in Predictor Formula( 1 ),	Unthreaded( 1 ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Use Only Markers Found in Predictor Formula( 1 ),
+	Unthreaded( 1 ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
 
 ```
 
@@ -326,7 +1009,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -342,7 +1031,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -350,7 +1046,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -358,7 +1058,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -370,7 +1074,32 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -384,7 +1113,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -396,7 +1131,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -408,7 +1149,37 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -420,7 +1191,31 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Copy Script;
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Copy Script;
 
 ```
 
@@ -432,7 +1227,31 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Data Table Window;
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Data Table Window;
 
 ```
 
@@ -446,7 +1265,10 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -458,7 +1280,38 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -472,7 +1325,32 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -480,7 +1358,28 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -492,7 +1391,32 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));t = obj << Get Datatable;Show( N Rows( t ) );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -504,7 +1428,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -516,7 +1445,32 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));t = obj << Get Script;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -528,7 +1482,32 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));t = obj << Get Script With Data Table;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -540,7 +1519,32 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));t = obj << Get Timing;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -552,7 +1556,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -566,7 +1574,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -578,7 +1590,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -590,7 +1609,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -604,7 +1631,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -616,7 +1646,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -628,7 +1667,31 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Redo Analysis;
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Redo Analysis;
 
 ```
 
@@ -640,7 +1703,31 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Relaunch Analysis;
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -652,7 +1739,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -664,19 +1759,55 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntaxe :** obj &lt;&lt; Report; Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -688,7 +1819,31 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Di
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Report View( "Summary" );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -700,7 +1855,37 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Di
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -712,7 +1897,37 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -724,7 +1939,37 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -736,7 +1981,15 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -746,19 +1999,17 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
-**Exemple 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Exemple 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -770,7 +2021,31 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -782,7 +2057,31 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Save Script to Journal;
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -794,7 +2093,31 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Save Script to Report;
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Save Script to Report;
 
 ```
 
@@ -806,7 +2129,31 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Save Script to Script Window;
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -818,7 +2165,16 @@ dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );dt << New Colu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -830,7 +2186,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -842,7 +2212,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -854,7 +2230,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -866,7 +2247,31 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));obj << Title( "My Platform" );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -878,7 +2283,33 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );//Hide and Exclude Rowsdt << Clear Select << Clear Row States;dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );dt << Invert Row Selection << Exclude;dt << Clear Select;//Run platformdt << Marker Simulation(	Marker( Column Group( "Markers" ) ),	Predictor Formula(		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n	),	Cross( :Sex ),	Ploidy( 2 ),	Number of Generations( 2 ),	Number of Individuals per Cross( 10 ),	Set Random Seed( 12345 ),	Threshold to Make Line Plots( 1000 ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Life Sciences/Genotypes Pedigree.jmp" );
+
+//Hide and Exclude Rows
+dt << Clear Select << Clear Row States;
+dt << Select Where( :Father == 0 & :Mother == 0 & Row() <= 100 );
+dt << Invert Row Selection << Exclude;
+dt << Clear Select;
+
+//Run platform
+dt << Marker Simulation(
+	Marker( Column Group( "Markers" ) ),
+	Predictor Formula(
+		:Pred Formula Trait1, :Pred Formula Trait2, :Pred Formula Trait3,
+		:Pred Formula Trait4, :"Probability( Disease Status=1 )"n
+	),
+	Cross( :Sex ),
+	Ploidy( 2 ),
+	Number of Generations( 2 ),
+	Number of Individuals per Cross( 10 ),
+	Set Random Seed( 12345 ),
+	Threshold to Make Line Plots( 1000 )
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -894,7 +2325,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -906,19 +2342,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Syntaxe :** obj = Marker Simulation(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
+**Syntaxe :** obj = Marker Simulation(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 

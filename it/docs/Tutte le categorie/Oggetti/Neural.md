@@ -6,85 +6,137 @@
 
 ### By
 
-**Sintassi:** obj = Neural(...&lt;By( column(s) )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Esegue un&apos;analisi separata per ogni livello della colonna specificata.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
 
 ```
 
 ### Factor
 
-**Sintassi:** obj = Neural(...Factor( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...Factor( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le variabili predittore
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
 ### Freq
 
-**Sintassi:** obj = Neural(...&lt;Freq( column )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...&lt;Freq( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano una frequenza a ogni riga per l&apos;analisi.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Freq( :_freqcol ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Freq( :_freqcol ),
+	Go
+);
 
 ```
 
 ### Response
 
-**Sintassi:** obj = Neural(...Response( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...Response( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica la variabile o le variabili di risposta che si desidera analizzare.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
 ### Validation
 
-**Sintassi:** obj = Neural(...&lt;Validation( column )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...&lt;Validation( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna numerica che definisce i set di validazione. Questa colonna deve contenere al massimo tre valori distinti.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ));obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation )
+);
+obj << Go;
 
 ```
 
 ### X
 
-**Sintassi:** obj = Neural(...X( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...X( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le variabili predittore
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
 ### Y
 
-**Sintassi:** obj = Neural(...Y( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...Y( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica la variabile o le variabili di risposta che si desidera analizzare.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
@@ -98,7 +150,13 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
@@ -112,7 +170,13 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -128,7 +192,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -136,7 +204,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -144,7 +219,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -158,7 +237,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -170,7 +255,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -182,7 +273,21 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -194,7 +299,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Copy Script;
 
 ```
 
@@ -206,7 +318,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Data Table Window;
 
 ```
 
@@ -218,7 +337,13 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Fit( NTanH( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Fit( NTanH( 4 ) );
 
 ```
 
@@ -232,7 +357,10 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -244,7 +372,22 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -258,7 +401,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -266,7 +417,28 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -278,7 +450,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -290,7 +470,12 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -302,7 +487,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -314,7 +507,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -326,7 +527,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -338,7 +547,11 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -352,7 +565,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -364,7 +581,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));Wait( 1 );obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+Wait( 1 );
+obj << Go;
 
 ```
 
@@ -376,13 +600,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
 ### Informative Missing
 
-**Sintassi:** obj = Neural(...Informative Missing( state=0|1 )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...Informative Missing( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Attiva l&apos;imputazione e la codifica dei valori mancanti. Se non si seleziona questa opzione, le righe con valori mancanti vengono ignorate.
 
@@ -396,7 +627,10 @@ Per variabili categoriche, i valori mancanti non sono imputati, ma considerati u
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), Go );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt:age[3] = .;
+obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), Go );
 
 ```
 
@@ -408,7 +642,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Neural( Y(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	N Boost( 2 ));obj << Learning Rate( 0.2 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	N Boost( 2 )
+);
+obj << Learning Rate( 0.2 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -420,7 +663,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -428,13 +679,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ### Multithreading
 
-**Sintassi:** obj = Neural(...Multithreading( state=0|1 )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...Multithreading( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Suddivide i calcoli fra i thread disponibili del computer. Per impostazione predefinita l&apos;opzione è attivata.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 0 ));obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Multithreading( 0 )
+);
+obj << Go;
 
 ```
 
@@ -446,7 +704,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << N Boost( 2 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << N Boost( 2 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -460,7 +726,10 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -472,7 +741,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -484,7 +762,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Penalty Method( "Absolute" );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Penalty Method( "Absolute" );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -496,7 +782,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Redo Analysis;
 
 ```
 
@@ -508,7 +801,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -520,7 +820,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -532,19 +840,38 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintassi:** obj &lt;&lt; Report; Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -556,7 +883,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -568,7 +902,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Robust Fit( 1 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Robust Fit( 1 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -580,7 +922,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -592,7 +948,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -604,7 +974,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -616,7 +1000,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -626,19 +1018,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Esempio 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -650,7 +1040,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -662,7 +1059,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -674,7 +1078,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Report;
 
 ```
 
@@ -686,7 +1097,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -698,7 +1116,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -710,7 +1137,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -722,19 +1163,33 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
 ### Set Random Seed
 
-**Sintassi:** obj = Neural(...Set Random Seed( number )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...Set Random Seed( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica un seme casuale utilizzato per riprodurre i valori iniziali e l&apos;assegnazione della validazione.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ));Wait( 1 );obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Set Random Seed( 1234 )
+);
+Wait( 1 );
+obj << Go;
 
 ```
 
@@ -746,7 +1201,12 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -758,7 +1218,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -770,7 +1237,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -786,7 +1262,12 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -798,7 +1279,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Transform Covariates( 1 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Transform Covariates( 1 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -810,7 +1299,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Method( "Holdback", 0.4 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Method( "Holdback", 0.4 ),
+	Go
+);
 
 ```
 
@@ -822,19 +1318,29 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintassi:** obj = Neural(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Neural(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -850,7 +1356,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Categorical Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Categorical Profiler( 1 ));
 
 ```
 
@@ -862,7 +1376,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Contour Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Contour Profiler( 1 ));
 
 ```
 
@@ -876,7 +1398,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));Wait( 0 );obj << (Fit[1] << Decision Threshold( 1 ));Wait( 1 );obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+Wait( 0 );
+obj << (Fit[1] << Decision Threshold( 1 ));
+Wait( 1 );
+obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
 
 ```
 
@@ -888,7 +1421,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Diagram( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Diagram( 1 ));
 
 ```
 
@@ -900,7 +1441,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));ae = obj << (Fit[1] << Get Average Absolute Error Test);Show( ae );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+ae = obj << (Fit[1] << Get Average Absolute Error Test);
+Show( ae );
 
 ```
 
@@ -912,7 +1466,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));ae = obj << (Fit[1] << Get Average Absolute Error Training);Show( ae );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+ae = obj << (Fit[1] << Get Average Absolute Error Training);
+Show( ae );
 
 ```
 
@@ -924,7 +1487,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));ae = obj << (Fit[1] << Get Average Absolute Error Validation);Show( ae );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+ae = obj << (Fit[1] << Get Average Absolute Error Validation);
+Show( ae );
 
 ```
 
@@ -936,7 +1508,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));avg = obj << (Fit[1] << Get Average Log Error Test);Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+avg = obj << (Fit[1] << Get Average Log Error Test);
+Show( avg );
 
 ```
 
@@ -948,7 +1533,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));avg = obj << (Fit[1] << Get Average Log Error Training);Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+avg = obj << (Fit[1] << Get Average Log Error Training);
+Show( avg );
 
 ```
 
@@ -960,7 +1554,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));avg = obj << (Fit[1] << Get Average Log Error Validation);Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+avg = obj << (Fit[1] << Get Average Log Error Validation);
+Show( avg );
 
 ```
 
@@ -972,7 +1575,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cm = obj << (Fit[1] << Get Confusion Matrix Test);Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cm = obj << (Fit[1] << Get Confusion Matrix Test);
+Show( cm );
 
 ```
 
@@ -984,7 +1600,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cm = obj << (Fit[1] << Get Confusion Matrix Training);Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cm = obj << (Fit[1] << Get Confusion Matrix Training);
+Show( cm );
 
 ```
 
@@ -996,7 +1621,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cm = obj << (Fit[1] << Get Confusion Matrix Validation);Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cm = obj << (Fit[1] << Get Confusion Matrix Validation);
+Show( cm );
 
 ```
 
@@ -1008,7 +1642,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cr = obj << (Fit[1] << Get Confusion Rates Test);Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cr = obj << (Fit[1] << Get Confusion Rates Test);
+Show( cr );
 
 ```
 
@@ -1020,7 +1667,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cr = obj << (Fit[1] << Get Confusion Rates Training);Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cr = obj << (Fit[1] << Get Confusion Rates Training);
+Show( cr );
 
 ```
 
@@ -1032,7 +1688,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cr = obj << (Fit[1] << Get Confusion Rates Validation);Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cr = obj << (Fit[1] << Get Confusion Rates Validation);
+Show( cr );
 
 ```
 
@@ -1044,7 +1709,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get Gen RSquare Test);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get Gen RSquare Test);
+Show( rt );
 
 ```
 
@@ -1056,7 +1734,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get Gen RSquare Training);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get Gen RSquare Training);
+Show( rt );
 
 ```
 
@@ -1068,7 +1755,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get Gen RSquare Validation);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get Gen RSquare Validation);
+Show( rt );
 
 ```
 
@@ -1080,7 +1776,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));code = obj << (Fit[1] << Get MM SAS Data Step);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+code = obj << (Fit[1] << Get MM SAS Data Step);
 
 ```
 
@@ -1092,7 +1796,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Diagram( 1 ));obj << (Fit[1] << Get Measures);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Diagram( 1 ));
+obj << (Fit[1] << Get Measures);
 
 ```
 
@@ -1104,7 +1817,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));mr = obj << (Fit[1] << Get Misclassification Rate Test);Show( mr );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+mr = obj << (Fit[1] << Get Misclassification Rate Test);
+Show( mr );
 
 ```
 
@@ -1116,7 +1842,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));mrt = obj << (Fit[1] << Get Misclassification Rate Training);Show( mrt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+mrt = obj << (Fit[1] << Get Misclassification Rate Training);
+Show( mrt );
 
 ```
 
@@ -1128,7 +1863,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));mrt = obj << (Fit[1] << Get Misclassification Rate Validation);Show( mrt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+mrt = obj << (Fit[1] << Get Misclassification Rate Validation);
+Show( mrt );
 
 ```
 
@@ -1140,7 +1884,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	N Boost( 2 ),	Go);n = obj << (fit[1] << Get NBoost);Show( n );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	N Boost( 2 ),
+	Go
+);
+n = obj << (fit[1] << Get NBoost);
+Show( n );
 
 ```
 
@@ -1152,7 +1905,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));ra = obj << (Fit[1] << Get Precision Recall Area Test);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
+ra = obj << (Fit[1] << Get Precision Recall Area Test);
+Show( ra );
 
 ```
 
@@ -1164,7 +1931,17 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));ra = obj << (Fit[1] << Get Precision Recall Area Training);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
+ra = obj << (Fit[1] << Get Precision Recall Area Training);
+Show( ra );
 
 ```
 
@@ -1176,7 +1953,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));ra = obj << (Fit[1] << Get Precision Recall Area Validation);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
+ra = obj << (Fit[1] << Get Precision Recall Area Validation);
+Show( ra );
 
 ```
 
@@ -1188,7 +1975,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Get Prediction Formula);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Get Prediction Formula);
 
 ```
 
@@ -1200,7 +1995,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));re = obj << (Fit[1] << Get RMS Error Test);Show( re );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+re = obj << (Fit[1] << Get RMS Error Test);
+Show( re );
 
 ```
 
@@ -1212,7 +2020,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));re = obj << (Fit[1] << Get RMS Error Training);Show( re );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+re = obj << (Fit[1] << Get RMS Error Training);
+Show( re );
 
 ```
 
@@ -1224,7 +2041,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));re = obj << (Fit[1] << Get RMS Error Validation);Show( re );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+re = obj << (Fit[1] << Get RMS Error Validation);
+Show( re );
 
 ```
 
@@ -1236,7 +2062,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));ra = obj << (Fit[1] << Get ROC Area Test);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
+ra = obj << (Fit[1] << Get ROC Area Test);
+Show( ra );
 
 ```
 
@@ -1248,7 +2088,17 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));ra = obj << (Fit[1] << Get ROC Area Training);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
+ra = obj << (Fit[1] << Get ROC Area Training);
+Show( ra );
 
 ```
 
@@ -1260,7 +2110,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));ra = obj << (Fit[1] << Get ROC Area Validation);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
+ra = obj << (Fit[1] << Get ROC Area Validation);
+Show( ra );
 
 ```
 
@@ -1272,7 +2132,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get RSquare Test);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get RSquare Test);
+Show( rt );
 
 ```
 
@@ -1284,7 +2157,17 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get RSquare Training);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get RSquare Training);
+Show( rt );
 
 ```
 
@@ -1296,7 +2179,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get RSquare Validation);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get RSquare Validation);
+Show( rt );
 
 ```
 
@@ -1308,7 +2201,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));code = obj << (Fit[1] << Get SAS Data Step);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+code = obj << (Fit[1] << Get SAS Data Step);
 
 ```
 
@@ -1320,7 +2221,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));s = obj << (Fit[1] << Get Seconds);Show( s );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+s = obj << (Fit[1] << Get Seconds);
+Show( s );
 
 ```
 
@@ -1332,7 +2242,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Lift Curve( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Lift Curve( 1 ));
 
 ```
 
@@ -1344,7 +2262,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Make SAS Data Step);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Make SAS Data Step);
 
 ```
 
@@ -1356,7 +2282,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Plot Actual By Predicted( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Plot Actual By Predicted( 1 ));
 
 ```
 
@@ -1368,7 +2302,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Plot Residual By Predicted( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Plot Residual By Predicted( 1 ));
 
 ```
 
@@ -1380,7 +2322,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
 
 ```
 
@@ -1392,7 +2342,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Profiler( 1 ));
 
 ```
 
@@ -1404,7 +2362,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Publish Prediction Formula);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Publish Prediction Formula);
 
 ```
 
@@ -1416,7 +2382,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
 
 ```
 
@@ -1428,7 +2402,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));Wait( 2 );obj << (Fit[1] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+Wait( 2 );
+obj << (Fit[1] << Remove Fit);
 
 ```
 
@@ -1440,7 +2423,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Fast Formulas);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Fast Formulas);
 
 ```
 
@@ -1452,7 +2443,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Formulas);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Formulas);
 
 ```
 
@@ -1464,7 +2463,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Profile Formulas);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Profile Formulas);
 
 ```
 
@@ -1476,7 +2483,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Transform Covariates( 1 ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Transformed Covariates);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Transform Covariates( 1 ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Transformed Covariates);
 
 ```
 
@@ -1488,7 +2504,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Validation);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Validation);
 
 ```
 
@@ -1500,7 +2524,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Show Estimates( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Show Estimates( 1 ));
 
 ```
 
@@ -1512,7 +2544,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Surface Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Surface Profiler( 1 ));
 
 ```
 

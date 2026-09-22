@@ -12,7 +12,13 @@
 
 ```jsl
 
-za = Open( "$TEMP\deleteMe.zip", zip );za << Write( "ralph", "this is ralph's data" );za << Write( "fred", "this is fred's data" );dirlist = za << dir;text = za << read( dirlist[1] );dirlist[1] || ": " || text;
+
+za = Open( "$TEMP\deleteMe.zip", zip );
+za << Write( "ralph", "this is ralph's data" );
+za << Write( "fred", "this is fred's data" );
+dirlist = za << dir;
+text = za << read( dirlist[1] );
+dirlist[1] || ": " || text;
 
 ```
 
@@ -24,7 +30,13 @@ za = Open( "$TEMP\deleteMe.zip", zip );za << Write( "ralph", "this is ralph's d
 
 ```jsl
 
-za = Open( "$TEMP\deleteMe.zip", zip );za << Write( "ralph", "this is ralph's data" );za << Write( "fred", "this is fred's data" );dirlist = za << dir;text = za << read( dirlist[1] );dirlist[1] || ": " || text;
+
+za = Open( "$TEMP\deleteMe.zip", zip );
+za << Write( "ralph", "this is ralph's data" );
+za << Write( "fred", "this is fred's data" );
+dirlist = za << dir;
+text = za << read( dirlist[1] );
+dirlist[1] || ": " || text;
 
 ```
 
@@ -36,7 +48,13 @@ za = Open( "$TEMP\deleteMe.zip", zip );za << Write( "ralph", "this is ralph's d
 
 ```jsl
 
-za = Open( "$TEMP\deleteMe.zip", zip );za << Write( "ralph", "this is ralph's data" );za << Write( "fred", "this is fred's data" );dirlist = za << dir;text = za << read( dirlist[1] );dirlist[1] || ": " || text;
+
+za = Open( "$TEMP\deleteMe.zip", zip );
+za << Write( "ralph", "this is ralph's data" );
+za << Write( "fred", "this is fred's data" );
+dirlist = za << dir;
+text = za << read( dirlist[1] );
+dirlist[1] || ": " || text;
 
 ```
 
@@ -50,7 +68,23 @@ za = Open( "$TEMP\deleteMe.zip", zip );za << Write( "ralph", "this is ralph's d
 
 ```jsl
 
-/* Data tables, other JMP files, external files:   Open( filePath,     <Invisible | Private>,     <Select Columns( "col", ... )>,     <Ignore Columns( "col", ... )>,     <Add to Recent Files(bool)>,     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>     <Force Refresh>,     <Enable Filter Views(bool)>,     <"file type">   )*///Basic data table opendt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );//Data table open with some optionsdt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "Weight" ) );
+
+/* Data tables, other JMP files, external files:
+   Open( filePath,
+     <Invisible | Private>,
+     <Select Columns( "col", ... )>,
+     <Ignore Columns( "col", ... )>,
+     <Add to Recent Files(bool)>,
+     <Quarantine Action("Allow Scripts"|"Block Scripts"|"Do Not Open"|"Show Dialog")>
+     <Force Refresh>,
+     <Enable Filter Views(bool)>,
+     <"file type">
+   )
+*/
+//Basic data table open
+dt1 = Open( "$SAMPLE_DATA/Big Class.jmp" );
+//Data table open with some options
+dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "Weight" ) );
 
 ```
 

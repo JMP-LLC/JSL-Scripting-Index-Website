@@ -14,7 +14,8 @@
 
 ```python
 
-import jmpprint(jmp.ALL_HOME)
+import jmp
+print(jmp.ALL_HOME)
 
 ```
 
@@ -30,7 +31,8 @@ import jmpprint(jmp.ALL_HOME)
 
 ```python
 
-import jmpprint(jmp.BUILTIN_SCRIPTS)
+import jmp
+print(jmp.BUILTIN_SCRIPTS)
 
 ```
 
@@ -44,7 +46,8 @@ import jmpprint(jmp.BUILTIN_SCRIPTS)
 
 ```python
 
-import jmpprint(jmp.DESKTOP)
+import jmp
+print(jmp.DESKTOP)
 
 ```
 
@@ -58,7 +61,8 @@ import jmpprint(jmp.DESKTOP)
 
 ```python
 
-import jmpprint(jmp.DOCUMENTS)
+import jmp
+print(jmp.DOCUMENTS)
 
 ```
 
@@ -72,7 +76,8 @@ import jmpprint(jmp.DOCUMENTS)
 
 ```python
 
-import jmpprint(jmp.DOWNLOADS)
+import jmp
+print(jmp.DOWNLOADS)
 
 ```
 
@@ -86,7 +91,12 @@ import jmpprint(jmp.DOWNLOADS)
 
 ```python
 
-import jmp# for the sake of typingfrom jmp import DataType as dTypeprint('jmp.DataType members:')print( list(map(lambda c: c.name, dType)) )
+import jmp
+
+# for the sake of typing
+from jmp import DataType as dType
+print('jmp.DataType members:')
+print( list(map(lambda c: c.name, dType)) )
 
 ```
 
@@ -102,7 +112,8 @@ import jmp# for the sake of typingfrom jmp import DataType as dTypeprint('jm
 
 ```python
 
-import jmpprint(jmp.HOME)
+import jmp
+print(jmp.HOME)
 
 ```
 
@@ -116,7 +127,8 @@ import jmpprint(jmp.HOME)
 
 ```python
 
-import jmpprint(jmp.JMPPRJ)
+import jmp
+print(jmp.JMPPRJ)
 
 ```
 
@@ -132,7 +144,12 @@ import jmpprint(jmp.JMPPRJ)
 
 ```python
 
-import jmp# for the sake of typingfrom jmp import ModelingType as mTypeprint('jmp.ModleingType members:')print( list(map(lambda c: c.name, mType)) )
+import jmp
+
+# for the sake of typing
+from jmp import ModelingType as mType
+print('jmp.ModleingType members:')
+print( list(map(lambda c: c.name, mType)) )
 
 ```
 
@@ -146,7 +163,11 @@ import jmp# for the sake of typingfrom jmp import ModelingType as mTypeprint
 
 ```python
 
-import jmpimport platformif platform.system() == "Windows":    print(jmp.PYTHONW_EXE)
+import jmp
+
+import platform
+if platform.system() == "Windows":
+    print(jmp.PYTHONW_EXE)
 
 ```
 
@@ -160,7 +181,8 @@ import jmpimport platformif platform.system() == "Windows":    print(jmp.PYT
 
 ```python
 
-import jmpprint(jmp.PYTHON_EXE)
+import jmp
+print(jmp.PYTHON_EXE)
 
 ```
 
@@ -174,7 +196,8 @@ import jmpprint(jmp.PYTHON_EXE)
 
 ```python
 
-import jmpprint(jmp.PY_USER_APPDIR)
+import jmp
+print(jmp.PY_USER_APPDIR)
 
 ```
 
@@ -188,7 +211,8 @@ import jmpprint(jmp.PY_USER_APPDIR)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_APPS)
+import jmp
+print(jmp.SAMPLE_APPS)
 
 ```
 
@@ -202,7 +226,8 @@ import jmpprint(jmp.SAMPLE_APPS)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_DASHBOARDS)
+import jmp
+print(jmp.SAMPLE_DASHBOARDS)
 
 ```
 
@@ -216,7 +241,8 @@ import jmpprint(jmp.SAMPLE_DASHBOARDS)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_DATA)
+import jmp
+print(jmp.SAMPLE_DATA)
 
 ```
 
@@ -230,7 +256,8 @@ import jmpprint(jmp.SAMPLE_DATA)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_IMAGES)
+import jmp
+print(jmp.SAMPLE_IMAGES)
 
 ```
 
@@ -244,7 +271,8 @@ import jmpprint(jmp.SAMPLE_IMAGES)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_IMPORT_DATA)
+import jmp
+print(jmp.SAMPLE_IMPORT_DATA)
 
 ```
 
@@ -258,7 +286,8 @@ import jmpprint(jmp.SAMPLE_IMPORT_DATA)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_PROJECTS)
+import jmp
+print(jmp.SAMPLE_PROJECTS)
 
 ```
 
@@ -272,7 +301,8 @@ import jmpprint(jmp.SAMPLE_PROJECTS)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_SCRIPTS)
+import jmp
+print(jmp.SAMPLE_SCRIPTS)
 
 ```
 
@@ -286,7 +316,8 @@ import jmpprint(jmp.SAMPLE_SCRIPTS)
 
 ```python
 
-import jmpprint(jmp.TEMP)
+import jmp
+print(jmp.TEMP)
 
 ```
 
@@ -300,7 +331,8 @@ import jmpprint(jmp.TEMP)
 
 ```python
 
-import jmpprint(jmp.USER_APPDATA)
+import jmp
+print(jmp.USER_APPDATA)
 
 ```
 
@@ -314,7 +346,8 @@ import jmpprint(jmp.USER_APPDATA)
 
 ```python
 
-import jmpprint(jmp.__jmp_version__)
+import jmp
+print(jmp.__jmp_version__)
 
 ```
 
@@ -328,7 +361,8 @@ import jmpprint(jmp.__jmp_version__)
 
 ```python
 
-import jmpprint(jmp.__version__)
+import jmp
+print(jmp.__version__)
 
 ```
 
@@ -342,7 +376,10 @@ import jmpprint(jmp.__version__)
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(jmp.current())
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(jmp.current())
 
 ```
 
@@ -356,7 +393,136 @@ import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(jmp.current())
 
 ```python
 
-import jmpfrom jmp import eval, Expressionexpression = Expression("2 + 2")result = eval(expression)print(result)
+import jmp
+
+from jmp import eval, Expression
+expression = Expression("2 + 2")
+result = eval(expression)
+print(result)
+
+```
+
+### from_arrow
+
+**Syntax:** result = jmp.from_arrow(&lt;library.Dataframe&gt;, requested_schema=&lt;schema&gt;, visibility=&lt;string&gt;, preserve_index=&lt;bool&gt;)
+
+**Beschreibung:** Erstellt eine jmp.DataTable aus einem Dataframe, der die PyArrow-Capsule-Schnittstelle implementiert.
+
+**JMP Version hinzugefügt:** 20
+
+#### JMP nach Pandas
+
+```python
+
+import jmp
+
+import jmp
+import jmputils
+
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas==3.0.3', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+pandas_df = pd.DataFrame.from_arrow(dt)
+print(pandas_df)
+
+```
+
+#### JMP nach Polars
+
+```python
+
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+polars_df = pl.from_arrow(dt)
+print(polars_df)
+
+```
+
+#### Pandas nach JMP
+
+```python
+
+import jmp
+
+import jmputils
+
+try:
+    # pandas depends on numpy will install numpy if needed
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas==3.0.3', echo=False)
+
+    # pyarrow is a dependency used by pandas for the 
+    # Arrow PyCapsule interface. If not already installed,
+    # pyarrow will be installed automatically when calling from_arrow
+    if not jmputils.is_installed('pyarrow'):
+        jmputils.jpip('install', 'pyarrow==23.0.1', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+import numpy as np
+
+pandas_df = pd.DataFrame(
+    {
+        "A": 1.0,
+        "B": pd.Timestamp("20130102"),
+        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
+        "D": np.array([3] * 4, dtype="int32"),
+        "E": pd.Categorical(["test", "train", "test", "train"]),
+        "F": "foo",
+    }
+)
+print(pandas_df)
+
+dt = jmp.from_arrow(pandas_df)
+print(dt)
+
+```
+
+#### Polars nach JMP
+
+```python
+
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+from datetime import date
+
+polars_df = pl.DataFrame(
+ {
+    "foo": [1, 2, 3],
+    "bar": [6.0, 7.0, 8.0],
+    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],
+  }
+)
+print(polars_df)
+dt = jmp.from_arrow(polars_df)
+print(dt)
 
 ```
 
@@ -372,7 +538,24 @@ import jmpfrom jmp import eval, Expressionexpression = Expression("2 + 2")re
 
 ```python
 
-import jmpimport jmputils        try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe(df)print(dt)
+import jmp
+
+import jmputils        
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+# Object columns are unsupported with jmp.from_dataframe() 
+df = pd.DataFrame({
+    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
+})
+
+dt = jmp.from_dataframe(df)
+print(dt)
 
 ```
 
@@ -380,7 +563,29 @@ import jmpimport jmputils        try:    if not jmputils.is_installed('panda
 
 ```python
 
-import jmpimport jmputils try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)    jmputils.jpip('install', 'ibis-framework[duckdb,examples]') except Exception as e:    print(f'Install failed with exception: {e}')          import pandas as pd import ibis  pandas_df = pd.DataFrame(     [["a", 1, 2], ["b", 3, 4]],     columns=["one", "two", "three"], ) t = ibis.memtable(pandas_df, name="t") print(t) dt = jmp.from_dataframe(t) print(dt)
+import jmp
+
+import jmputils
+ 
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+    jmputils.jpip('install', 'ibis-framework[duckdb,examples]')
+ 
+except Exception as e:
+    print(f'Install failed with exception: {e}')         
+
+import pandas as pd
+import ibis
+ 
+pandas_df = pd.DataFrame(
+     [["a", 1, 2], ["b", 3, 4]],
+     columns=["one", "two", "three"],
+)
+t = ibis.memtable(pandas_df)
+print(t)
+dt = jmp.from_dataframe(t)
+print(dt)
 
 ```
 
@@ -388,7 +593,21 @@ import jmpimport jmputils try:    if not jmputils.is_installed('pandas'): 
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pddt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")pandas_df = (pd.api.interchange.from_dataframe(dt))print(pandas_df)
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+pandas_df = (pd.api.interchange.from_dataframe(dt))
+print(pandas_df)
 
 ```
 
@@ -396,7 +615,21 @@ import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):  
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as pldt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")polars_df = pl.from_dataframe(dt)print(polars_df)
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+polars_df = pl.from_dataframe(dt)
+print(polars_df)
 
 ```
 
@@ -404,7 +637,34 @@ import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):  
 
 ```python
 
-import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df)print(dt)
+import jmp
+
+import jmputils
+
+try:
+    # pandas depends on numpy will install numpy if needed
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+import numpy as np
+
+pandas_df = pd.DataFrame(
+    {
+        "A": 1.0,
+        "B": pd.Timestamp("20130102"),
+        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
+        "D": np.array([3] * 4, dtype="int32"),
+        "E": pd.Categorical(["test", "train", "test", "train"]),
+        "F": "foo",
+    }
+)
+print(pandas_df)
+
+dt = jmp.from_dataframe(pandas_df)
+print(dt)
 
 ```
 
@@ -412,15 +672,66 @@ import jmpimport jmputilstry:    # pandas depends on numpy will install num
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as plfrom datetime import datepolars_df = pl.DataFrame( {    "foo": [1, 2, 3],    "bar": [6.0, 7.0, 8.0],    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],  } ) print(polars_df) dt = jmp.from_dataframe(polars_df) print(dt)
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+from datetime import date
+
+polars_df = pl.DataFrame(
+ {
+    "foo": [1, 2, 3],
+    "bar": [6.0, 7.0, 8.0],
+    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],
+  }
+)
+print(polars_df)
+dt = jmp.from_dataframe(polars_df)
+print(dt)
 
 ```
 
-#### Visibility
+#### Sichtbarkeit
 
 ```python
 
-import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df, visibility="invisible")#dt = jmp.from_dataframe(pandas_df, visibility="private")print(dt)
+import jmp
+
+import jmputils
+
+try:
+    # pandas depends on numpy will install numpy if needed
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+import numpy as np
+
+pandas_df = pd.DataFrame(
+    {
+        "A": 1.0,
+        "B": pd.Timestamp("20130102"),
+        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
+        "D": np.array([3] * 4, dtype="int32"),
+        "E": pd.Categorical(["test", "train", "test", "train"]),
+        "F": "foo",
+    }
+)
+print(pandas_df)
+
+dt = jmp.from_dataframe(pandas_df, visibility="invisible")
+#dt = jmp.from_dataframe(pandas_df, visibility="private")
+
+print(dt)
 
 ```
 
@@ -432,19 +743,63 @@ import jmpimport jmputilstry:    # pandas depends on numpy will install num
 
 **JMP Version hinzugefügt:** 19
 
-#### General
+#### Allgemein
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})try:    # Try converting object without CSV fallback    dt = jmp.from_dataframe(df, True, False)    print("Converted using jmp.from_dataframe()")except:     # Explicitly convert using CSV    dt = jmp.from_dataframe_using_csv(df)    print("Converted using jmp.from_dataframe_using_csv()")print(dt)
+import jmp
+
+import jmputils
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+# Object columns are unsupported with jmp.from_dataframe() 
+df = pd.DataFrame({
+    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
+})
+
+try:
+    # Try converting object without CSV fallback
+    dt = jmp.from_dataframe(df, True, False)
+    print("Converted using jmp.from_dataframe()")
+except: 
+    # Explicitly convert using CSV
+    dt = jmp.from_dataframe_using_csv(df)
+    print("Converted using jmp.from_dataframe_using_csv()")
+
+print(dt)
 
 ```
 
-#### Visibility
+#### Sichtbarkeit
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe_using_csv(df, visibility="invisible")#dt = jmp.from_dataframe_using_csv(df, visibility="private")print(dt)
+import jmp
+
+import jmputils
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+# Object columns are unsupported with jmp.from_dataframe() 
+df = pd.DataFrame({
+    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
+})
+
+dt = jmp.from_dataframe_using_csv(df, visibility="invisible")
+#dt = jmp.from_dataframe_using_csv(df, visibility="private")
+
+print(dt)
 
 ```
 
@@ -460,7 +815,10 @@ import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):   
 
 ```python
 
-import jmpobj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')print(obj)
+import jmp
+
+obj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')
+print(obj)
 
 ```
 
@@ -468,7 +826,10 @@ import jmpobj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')print(obj)
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(dt)
 
 ```
 
@@ -476,7 +837,10 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
 
 ```python
 
-import jmpobj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')print(obj)
+import jmp
+
+obj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')
+print(obj)
 
 ```
 
@@ -484,7 +848,19 @@ import jmpobj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')print(obj)
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')dt = jmp.current()print(dt)  # => Nonetry:  dt = jmp.table('Animals')except FileNotFoundError:  print('Requested table not found')dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')print(dt)dt.close(save=False)del dt
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
+dt = jmp.current()
+print(dt)  # => None
+try:
+  dt = jmp.table('Animals')
+except FileNotFoundError:
+  print('Requested table not found')
+dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
+print(dt)
+dt.close(save=False)
+del dt
 
 ```
 
@@ -492,7 +868,18 @@ import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')dt
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')dt = jmp.current()print(dt)  # successdt = jmp.table('Animals')print(dt)  # success# Select and run the above first if you want to see that even though# there is no window, Animals.jmp appears in recent files and# home window's list of filesdt.close(save=False);del dt
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')
+dt = jmp.current()
+print(dt)  # success
+dt = jmp.table('Animals')
+print(dt)  # success
+# Select and run the above first if you want to see that even though
+# there is no window, Animals.jmp appears in recent files and
+# home window's list of files
+dt.close(save=False);
+del dt
 
 ```
 
@@ -506,7 +893,13 @@ import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')
 
 ```python
 
-import jmppath_value = jmp.path_variable('SAMPLE_DATA')if not path_value:    print('Invalid path variable.')else:    print(path_value)
+import jmp
+
+path_value = jmp.path_variable('SAMPLE_DATA')
+if not path_value:
+    print('Invalid path variable.')
+else:
+    print(path_value)
 
 ```
 
@@ -520,7 +913,10 @@ import jmppath_value = jmp.path_variable('SAMPLE_DATA')if not path_value:   
 
 ```python
 
-import jmprName = jmp.r_name('c d e')print(rName)
+import jmp
+
+rName = jmp.r_name('c d e')
+print(rName)
 
 ```
 
@@ -534,7 +930,12 @@ import jmprName = jmp.r_name('c d e')print(rName)
 
 ```python
 
-import jmppi = 3.1415927print(pi)jmp.reset()print(pi)
+import jmp
+
+pi = 3.1415927
+print(pi)
+jmp.reset()
+print(pi)
 
 ```
 
@@ -550,7 +951,14 @@ import jmppi = 3.1415927print(pi)jmp.reset()print(pi)
 
 ```python
 
-import jmpvalue = jmp.run_jsl('''Names default to here(1);an A = 1.5;x = 5 * anA;''')print( f'{value} = jmp.run_jsl()')
+import jmp
+
+value = jmp.run_jsl('''
+Names default to here(1);
+an A = 1.5;
+x = 5 * anA;
+''')
+print( f'{value} = jmp.run_jsl()')
 
 ```
 
@@ -558,7 +966,24 @@ import jmpvalue = jmp.run_jsl('''Names default to here(1);an A = 1.5;x = 5 
 
 ```python
 
-import jmp# Create a data table# dt = jmp.DataTable(name='table_name', rows=n)pbp = jmp.DataTable(rows=5)pbp.name = 'Powered by Python'pbp.new_column('Name', jmp.DataType.Character)pbp.new_column('Hourly Rate')#pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missingpbp[1][4] = 17.25## Change column format: Hourly Ratejmp.run_jsl('''Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );Data Table( "Powered by Python" ):Name << Set Display Width( 75 );''')
+import jmp
+
+# Create a data table
+# dt = jmp.DataTable(name='table_name', rows=n)
+pbp = jmp.DataTable(rows=5)
+pbp.name = 'Powered by Python'
+pbp.new_column('Name', jmp.DataType.Character)
+pbp.new_column('Hourly Rate')
+#
+pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']
+pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missing
+pbp[1][4] = 17.25
+#
+# Change column format: Hourly Rate
+jmp.run_jsl('''
+Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );
+Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
+''')
 
 ```
 
@@ -566,7 +991,9 @@ import jmp# Create a data table# dt = jmp.DataTable(name='table_name', rows=n
 
 ```python
 
-import jmpjmp.run_jsl('Python Get Version();')
+import jmp
+
+jmp.run_jsl('Python Get Version();')
 
 ```
 
@@ -580,7 +1007,10 @@ import jmpjmp.run_jsl('Python Get Version();')
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( jmp.table('Big Class') )
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print( jmp.table('Big Class') )
 
 ```
 
@@ -604,7 +1034,46 @@ Eine Änderung des Kopierverhaltens in Unterklassen wird nicht unterstützt, des
 
 ```python
 
-import jmpimport copyclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource(copy.copy(self))jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def __init__(self, config):        self._config = config        print("Connecting to data source")    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column')        dt['column'] = [self._config['My Option']]        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" ),            My Option( 42 )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
+import jmp
+
+import copy
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {'My Option': int}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_as_data_source(self):
+        return ExampleDataSource(copy.copy(self))
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+class ExampleDataSource(jmp.DataSource):
+    def __init__(self, config):
+        self._config = config
+        print("Connecting to data source")
+
+    def get_tables(self, schema):
+        return ['example']
+
+    def open_table(self, schema, table):
+        dt = jmp.DataTable(rows=1, visibility='private')
+        dt.new_column('column')
+        dt['column'] = [self._config['My Option']]
+        return dt
+
+jmp.run_jsl(r"""
+New SQL Query(
+    Connection(
+        New Data Connector(
+            Type( "Python:__main__:ExampleConnectorType" ),
+            My Option( 42 )
+        )
+    ),
+    QueryName( "example" ),
+    Select( Star ),
+    From( Table( "example", Alias( "t1" ) ) )
+) << Run;
+""", echo=False)
 
 ```
 
@@ -622,7 +1091,32 @@ import jmpimport copyclass ExampleConnectorType(jmp.DataConnectorType):    
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {"Example Field": str}class ExampleConnector(jmp.DataConnector):    ...    def _do_as_data_source(self):        ef = self["Example Field"]        # When running the JSL below, ef will be "example value"        print(f"{ef=}")        ...jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# This will fail but only after printing the valuejmp.run_jsl("""    New SQL Query( Connection(        New Data Connector(            Type("Python:__main__:ExampleConnectorType"),            Example Field("example value")        )    ) ) << Modify""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {"Example Field": str}
+
+class ExampleConnector(jmp.DataConnector):
+    ...
+
+    def _do_as_data_source(self):
+        ef = self["Example Field"]
+        # When running the JSL below, ef will be "example value"
+        print(f"{ef=}")
+        ...
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+# This will fail but only after printing the value
+jmp.run_jsl("""
+    New SQL Query( Connection(
+        New Data Connector(
+            Type("Python:__main__:ExampleConnectorType"),
+            Example Field("example value")
+        )
+    ) ) << Modify
+""", echo=False)
 
 ```
 
@@ -640,7 +1134,45 @@ Vermeiden Sie das Speichern und Verwenden einer Referenz auf die Konnektorinstan
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource(self['My Option'])jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def __init__(self, my_option):        self._my_option = my_option        print("Connecting to data source")    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column')        dt['column'] = [self._my_option]        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" ),            My Option( 42 )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {'My Option': int}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_as_data_source(self):
+        return ExampleDataSource(self['My Option'])
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+class ExampleDataSource(jmp.DataSource):
+    def __init__(self, my_option):
+        self._my_option = my_option
+        print("Connecting to data source")
+
+    def get_tables(self, schema):
+        return ['example']
+
+    def open_table(self, schema, table):
+        dt = jmp.DataTable(rows=1, visibility='private')
+        dt.new_column('column')
+        dt['column'] = [self._my_option]
+        return dt
+
+jmp.run_jsl(r"""
+New SQL Query(
+    Connection(
+        New Data Connector(
+            Type( "Python:__main__:ExampleConnectorType" ),
+            My Option( 42 )
+        )
+    ),
+    QueryName( "example" ),
+    Select( Star ),
+    From( Table( "example", Alias( "t1" ) ) )
+) << Run;
+""", echo=False)
 
 ```
 
@@ -658,7 +1190,27 @@ Wenn sowohl diese Funktion als auch _do_as_data_source implementiert sind, sollt
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_open(self):        dt = jmp.DataTable(rows=1)        dt.new_column('column')        dt['column'] = [self['My Option']]        return dtjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    My Option( 42 )) << Open();""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {'My Option': int}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_open(self):
+        dt = jmp.DataTable(rows=1)
+        dt.new_column('column')
+        dt['column'] = [self['My Option']]
+        return dt
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+jmp.run_jsl(r"""
+New Data Connector(
+    Type( "Python:__main__:ExampleConnectorType" ),
+    My Option( 42 )
+) << Open();
+""", echo=False)
 
 ```
 
@@ -676,7 +1228,27 @@ Diese Funktion erstellt die Zuordnung, indem sie Attribute für die Unterklassen
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {'My Option': int}class ExampleConnector(jmp.DataConnector):    def _do_open(self):        dt = jmp.DataTable(rows=1)        dt.new_column('column')        dt['column'] = [self['My Option']]        return dtjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    My Option( 42 )) << Open();""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {'My Option': int}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_open(self):
+        dt = jmp.DataTable(rows=1)
+        dt.new_column('column')
+        dt['column'] = [self['My Option']]
+        return dt
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+jmp.run_jsl(r"""
+New Data Connector(
+    Type( "Python:__main__:ExampleConnectorType" ),
+    My Option( 42 )
+) << Open();
+""", echo=False)
 
 ```
 
@@ -732,7 +1304,54 @@ mask_input: Wenn „true“, wird der Wert unkenntlich gemacht und im Datenkonne
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    _DCF = jmp.DataConnectorField    fields = {        "Field 1": int,        # Same as Field 1 but uses jmp.DataConnectorField instead of a bare type        "Field 2": _DCF(int),        # Like Field 1 and Field 2 but adds a tooltip        "Field 3": _DCF(int, tooltip="The third field."),        # Like Field 1 and Field 2 but adds a default value and a tooltip        "Field 4": _DCF(int, default=42, tooltip="The fourth field."),        # ui_name is useful for JSL-unfriendly names or localization        "JSL Unfriendly Field": _DCF(int, ui_name="JSL-Unfriendly Field"),        # credential (and sensitive and mask_input) are useful for usernames,        # passwords, and other sorts of credentials        "Password Field": _DCF(str, credential="password"),    }class ExampleConnector(jmp.DataConnector):    def _do_open(self):        # Show the values then error        print(f"{self["Field 1"] = }")        print(f"{self["Field 2"] = }")        print(f"{self["Field 3"] = }")        print(f"{self["Field 4"] = }")        print(f"{self["JSL Unfriendly Field"] = }")        print(f"{self["Password Field"] = }")        raise NotImplementedErrorjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# To see the tooltips, the UI name, and the masking triggered by credential,# you'll need to launch the Data Connector Editor and set the type to# Python:__main__:ExampleConnectorType.jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    Field 1( 4 ),    Field 2( 19 ),    Field 3( 23 ),    Field 4( 42 ),    JSL Unfriendly Field( 65 ),    // This encodes the string "107":    Password Field( "0173AEE42BA6B646CBE03941DD25153DAAFDF2ED3039A9E64296808E53DA110CDE45733216E9B2A3F82AA052F370443F231C8B1D83E2AA68B6D19DD4B6BB0CE08F635C07162E3E13B2AF77D25DF8DDD1DB" )) << Open();""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    _DCF = jmp.DataConnectorField
+    fields = {
+        "Field 1": int,
+        # Same as Field 1 but uses jmp.DataConnectorField instead of a bare type
+        "Field 2": _DCF(int),
+        # Like Field 1 and Field 2 but adds a tooltip
+        "Field 3": _DCF(int, tooltip="The third field."),
+        # Like Field 1 and Field 2 but adds a default value and a tooltip
+        "Field 4": _DCF(int, default=42, tooltip="The fourth field."),
+        # ui_name is useful for JSL-unfriendly names or localization
+        "JSL Unfriendly Field": _DCF(int, ui_name="JSL-Unfriendly Field"),
+        # credential (and sensitive and mask_input) are useful for usernames,
+        # passwords, and other sorts of credentials
+        "Password Field": _DCF(str, credential="password"),
+    }
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_open(self):
+        # Show the values then error
+        print(f"{self["Field 1"] = }")
+        print(f"{self["Field 2"] = }")
+        print(f"{self["Field 3"] = }")
+        print(f"{self["Field 4"] = }")
+        print(f"{self["JSL Unfriendly Field"] = }")
+        print(f"{self["Password Field"] = }")
+        raise NotImplementedError
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+# To see the tooltips, the UI name, and the masking triggered by credential,
+# you'll need to launch the Data Connector Editor and set the type to
+# Python:__main__:ExampleConnectorType.
+jmp.run_jsl(r"""
+New Data Connector(
+    Type( "Python:__main__:ExampleConnectorType" ),
+    Field 1( 4 ),
+    Field 2( 19 ),
+    Field 3( 23 ),
+    Field 4( 42 ),
+    JSL Unfriendly Field( 65 ),
+    // This encodes the string "107":
+    Password Field( "0173AEE42BA6B646CBE03941DD25153DAAFDF2ED3039A9E64296808E53DA110CDE45733216E9B2A3F82AA052F370443F231C8B1D83E2AA68B6D19DD4B6BB0CE08F635C07162E3E13B2AF77D25DF8DDD1DB" )
+) << Open();
+""", echo=False)
 
 ```
 
@@ -756,7 +1375,47 @@ Die Verwendung von Gruppen wirkt sich auf die Darstellung der Felder im Datenkon
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = jmp.DataConnectorGroupedFields([        # Specify a first group named "Route" that has "Destination" and        # "Origin" fields.        ("Route", {            "Destination": str,            "Origin": str,        }),        # Specify a second group named "Vehicle" that has "Passengers" and        # "Range" fields.        ("Vehicle", {            "Passengers": int,            "Range": int,        }),    ])class ExampleConnector(jmp.DataConnector):    def _do_open(self):        # Show the values then error        print(f"{self["Destination"] = }")        print(f"{self["Origin"] = }")        print(f"{self["Passengers"] = }")        print(f"{self["Range"] = }")        raise NotImplementedErrorjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# To see the groups you'll need to launch the Data Connector Editor# and set the type to Python:__main__:ExampleConnectorType.jmp.run_jsl(r"""New Data Connector(    Type( "Python:__main__:ExampleConnectorType" ),    Destination( "JMP" ),    Origin( "RDU" ),    Passengers( 5 ),    Range( 254 )) << Open();""")
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = jmp.DataConnectorGroupedFields([
+        # Specify a first group named "Route" that has "Destination" and
+        # "Origin" fields.
+        ("Route", {
+            "Destination": str,
+            "Origin": str,
+        }),
+        # Specify a second group named "Vehicle" that has "Passengers" and
+        # "Range" fields.
+        ("Vehicle", {
+            "Passengers": int,
+            "Range": int,
+        }),
+    ])
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_open(self):
+        # Show the values then error
+        print(f"{self["Destination"] = }")
+        print(f"{self["Origin"] = }")
+        print(f"{self["Passengers"] = }")
+        print(f"{self["Range"] = }")
+        raise NotImplementedError
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+# To see the groups you'll need to launch the Data Connector Editor
+# and set the type to Python:__main__:ExampleConnectorType.
+jmp.run_jsl(r"""
+New Data Connector(
+    Type( "Python:__main__:ExampleConnectorType" ),
+    Destination( "JMP" ),
+    Origin( "RDU" ),
+    Passengers( 5 ),
+    Range( 254 )
+) << Open();
+""")
 
 ```
 
@@ -784,7 +1443,41 @@ Zu den unterstützten Typen gehören bool, int, str. Optionale Versionen davon, 
 
 ```python
 
-import jmpimport typingclass ExampleConnectorType(jmp.DataConnectorType):    _DCF = jmp.DataConnectorField    fields = {        "Basic Int Field": int,        "Optional Int Field": int | None,        "Alternative Optional Int Field": typing.Optional[int],        "Int Field With Default And Tooltip": _DCF(int, default=42, tooltip=(            "Tooltip for complicated int field."        )),        "Catalog": _DCF(str, default="main", tooltip=(            "Database catalog in which to access schemas and tables."        )),    }class ExampleConnector(jmp.DataConnector):    def _do_open(self):        # Show values for demo purposes and then error out        print(f"{self["Basic Int Field"] = }")        print(f"{self["Optional Int Field"] = }")        print(f"{self["Alternative Optional Int Field"] = }")        print(f"{self["Int Field With Default And Tooltip"] = }")        print(f"{self["Catalog"] = }")        raise NotImplementedErrorjmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# To see the tooltips you'll need to launch the Data Connector Editor# and set the type to Python:__main__:ExampleConnectorType.jmp.run_jsl(r"""New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();""")
+import jmp
+
+import typing
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    _DCF = jmp.DataConnectorField
+    fields = {
+        "Basic Int Field": int,
+        "Optional Int Field": int | None,
+        "Alternative Optional Int Field": typing.Optional[int],
+        "Int Field With Default And Tooltip": _DCF(int, default=42, tooltip=(
+            "Tooltip for complicated int field."
+        )),
+        "Catalog": _DCF(str, default="main", tooltip=(
+            "Database catalog in which to access schemas and tables."
+        )),
+    }
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_open(self):
+        # Show values for demo purposes and then error out
+        print(f"{self["Basic Int Field"] = }")
+        print(f"{self["Optional Int Field"] = }")
+        print(f"{self["Alternative Optional Int Field"] = }")
+        print(f"{self["Int Field With Default And Tooltip"] = }")
+        print(f"{self["Catalog"] = }")
+        raise NotImplementedError
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+# To see the tooltips you'll need to launch the Data Connector Editor
+# and set the type to Python:__main__:ExampleConnectorType.
+jmp.run_jsl(r"""
+New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();
+""")
 
 ```
 
@@ -804,7 +1497,45 @@ import jmpimport typingclass ExampleConnectorType(jmp.DataConnectorType):  
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)# Pretend our data source has two schemas, each with a tableclass ExampleDataSource(jmp.DataSource):    def get_schemas(self):        # Normally you would get this dynamically instead of hard-coding it.        return ['schema1', 'schema2']    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column', jmp.DataType.Character)        dt['column'] = [f'{schema}.{table}']        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Schema( "schema1" ), Alias( "t1" ) ) )) << Run;""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_as_data_source(self):
+        return ExampleDataSource()
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+# Pretend our data source has two schemas, each with a table
+class ExampleDataSource(jmp.DataSource):
+    def get_schemas(self):
+        # Normally you would get this dynamically instead of hard-coding it.
+        return ['schema1', 'schema2']
+
+    def get_tables(self, schema):
+        return ['example']
+
+    def open_table(self, schema, table):
+        dt = jmp.DataTable(rows=1, visibility='private')
+        dt.new_column('column', jmp.DataType.Character)
+        dt['column'] = [f'{schema}.{table}']
+        return dt
+
+jmp.run_jsl(r"""
+New SQL Query(
+    Connection(
+        New Data Connector(
+            Type( "Python:__main__:ExampleConnectorType" )
+        )
+    ),
+    QueryName( "example" ),
+    Select( Star ),
+    From( Table( "example", Schema( "schema1" ), Alias( "t1" ) ) )
+) << Run;
+""", echo=False)
 
 ```
 
@@ -818,7 +1549,41 @@ import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        # Normally you would get this dynamically instead of hard-coding it.        return ['example1', 'example2']    def open_table(self, schema, table):        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('column', jmp.DataType.Character)        dt['column'] = [table]        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "A" ),    Select( Star ),    From( Table( "example1", Alias( "t1" ) ) )) << Run;""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_as_data_source(self):
+        return ExampleDataSource()
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+class ExampleDataSource(jmp.DataSource):
+    def get_tables(self, schema):
+        # Normally you would get this dynamically instead of hard-coding it.
+        return ['example1', 'example2']
+
+    def open_table(self, schema, table):
+        dt = jmp.DataTable(rows=1, visibility='private')
+        dt.new_column('column', jmp.DataType.Character)
+        dt['column'] = [table]
+        return dt
+
+jmp.run_jsl(r"""
+New SQL Query(
+    Connection(
+        New Data Connector(
+            Type( "Python:__main__:ExampleConnectorType" )
+        )
+    ),
+    QueryName( "A" ),
+    Select( Star ),
+    From( Table( "example1", Alias( "t1" ) ) )
+) << Run;
+""", echo=False)
 
 ```
 
@@ -838,7 +1603,38 @@ Wird eine Datentabelle direkt zurückgegeben, sollte die Tabelle privat erstellt
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        # Normally you would use schema and table.        return jmp.SAMPLE_IMPORT_DATA + 'Bigclass_L.txt'jmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_as_data_source(self):
+        return ExampleDataSource()
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+class ExampleDataSource(jmp.DataSource):
+    def get_tables(self, schema):
+        return ['example']
+
+    def open_table(self, schema, table):
+        # Normally you would use schema and table.
+        return jmp.SAMPLE_IMPORT_DATA + 'Bigclass_L.txt'
+
+jmp.run_jsl(r"""
+New SQL Query(
+    Connection(
+        New Data Connector(
+            Type( "Python:__main__:ExampleConnectorType" )
+        )
+    ),
+    QueryName( "example" ),
+    Select( Star ),
+    From( Table( "example", Alias( "t1" ) ) )
+) << Run;
+""", echo=False)
 
 ```
 
@@ -846,7 +1642,41 @@ import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        return ['example']    def open_table(self, schema, table):        # Normally you would use schema and table.        dt = jmp.DataTable(rows=1, visibility='private')        dt.new_column('Hello', jmp.DataType.Character)        dt['Hello'] = ['world!']        return dtjmp.run_jsl(r"""New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run;""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_as_data_source(self):
+        return ExampleDataSource()
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+class ExampleDataSource(jmp.DataSource):
+    def get_tables(self, schema):
+        return ['example']
+
+    def open_table(self, schema, table):
+        # Normally you would use schema and table.
+        dt = jmp.DataTable(rows=1, visibility='private')
+        dt.new_column('Hello', jmp.DataType.Character)
+        dt['Hello'] = ['world!']
+        return dt
+
+jmp.run_jsl(r"""
+New SQL Query(
+    Connection(
+        New Data Connector(
+            Type( "Python:__main__:ExampleConnectorType" )
+        )
+    ),
+    QueryName( "example" ),
+    Select( Star ),
+    From( Table( "example", Alias( "t1" ) ) )
+) << Run;
+""", echo=False)
 
 ```
 
@@ -860,7 +1690,45 @@ import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}
 
 ```python
 
-import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}class ExampleConnector(jmp.DataConnector):    def _do_as_data_source(self):        return ExampleDataSource()jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)class ExampleDataSource(jmp.DataSource):    def get_tables(self, schema):        return ['example']    def open_table_with_settings(self, schema, table, settings):        print(f"Input settings: {settings!r}")        if settings is None:            # In practice settings are something you prompt the user            # for, but here we hard-code it.            settings = f'settings for {table}'        dt = jmp.DataTable(visibility='private')        dt.new_column()        print(f"Output settings: {settings!r}")        return dt, settingsjmp.run_jsl(r"""Write( ( New SQL Query(    Connection(        New Data Connector(            Type( "Python:__main__:ExampleConnectorType" )        )    ),    QueryName( "example" ),    Select( Star ),    From( Table( "example", Alias( "t1" ) ) )) << Run Foreground ) << Get Property( "Source" ) );""", echo=False)
+import jmp
+
+
+class ExampleConnectorType(jmp.DataConnectorType):
+    fields = {}
+
+class ExampleConnector(jmp.DataConnector):
+    def _do_as_data_source(self):
+        return ExampleDataSource()
+
+jmp.DataConnector.tie(ExampleConnectorType, ExampleConnector)
+
+class ExampleDataSource(jmp.DataSource):
+    def get_tables(self, schema):
+        return ['example']
+
+    def open_table_with_settings(self, schema, table, settings):
+        print(f"Input settings: {settings!r}")
+        if settings is None:
+            # In practice settings are something you prompt the user
+            # for, but here we hard-code it.
+            settings = f'settings for {table}'
+        dt = jmp.DataTable(visibility='private')
+        dt.new_column()
+        print(f"Output settings: {settings!r}")
+        return dt, settings
+
+jmp.run_jsl(r"""
+Write( ( New SQL Query(
+    Connection(
+        New Data Connector(
+            Type( "Python:__main__:ExampleConnectorType" )
+        )
+    ),
+    QueryName( "example" ),
+    Select( Star ),
+    From( Table( "example", Alias( "t1" ) ) )
+) << Run Foreground ) << Get Property( "Source" ) );
+""", echo=False)
 
 ```
 
@@ -880,7 +1748,16 @@ import jmpclass ExampleConnectorType(jmp.DataConnectorType):    fields = {}
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 = dt['name']col3 = dt['age']print( col1 == col2 )print( col1 == col3 )print( col1 != col2 )print( col1 != col3 )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+col1 = dt[0]
+col2 = dt['name']
+col3 = dt['age']
+print( col1 == col2 )
+print( col1 == col3 )
+print( col1 != col2 )
+print( col1 != col3 )
 
 ```
 
@@ -896,7 +1773,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 =
 
 ```python
 
-import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]for n in dt[0]:    print( n )
+import jmp
+
+dt = jmp.DataTable('Names', 5)
+dt.new_column('First Name', jmp.DataType.Character)
+dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
+for n in dt[0]:
+    print( n )
 
 ```
 
@@ -908,7 +1791,13 @@ import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataT
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( [c.name for c in dt[:]] )         # print list of column names default step = 1reverse_cols = dt[::-1]                  # list of column names in reverse orderprint( [c.name for c in reverse_cols] )  # print reversed column name listprint( dt['name'][0:20:2] )              # print every other value in range [0, 20)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print( [c.name for c in dt[:]] )         # print list of column names default step = 1
+reverse_cols = dt[::-1]                  # list of column names in reverse order
+print( [c.name for c in reverse_cols] )  # print reversed column name list
+print( dt['name'][0:20:2] )              # print every other value in range [0, 20)
 
 ```
 
@@ -920,7 +1809,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( [c.name for 
 
 ```python
 
-import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]for i in range(0, dt.nrows):    print( dt[0][i] )
+import jmp
+
+dt = jmp.DataTable('Names', 5)
+dt.new_column('First Name', jmp.DataType.Character)
+dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
+for i in range(0, dt.nrows):
+    print( dt[0][i] )
 
 ```
 
@@ -934,7 +1829,14 @@ import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataT
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 = dt['name']col3 = dt['age']print( col1 == col2 )print( col1 == col3 )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+col1 = dt[0]
+col2 = dt['name']
+col3 = dt['age']
+print( col1 == col2 )
+print( col1 == col3 )
 
 ```
 
@@ -948,7 +1850,12 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 =
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col = dt[0]for i in range ( len(col) ):    print( col[i] )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+col = dt[0]
+for i in range ( len(col) ):
+    print( col[i] )
 
 ```
 
@@ -962,7 +1869,15 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col = dt[0]for i i
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col = jmp.DataTable.Column(dt, 'name')print(col)# Note: it's simpler to just let Python create one for you through assignment.col2 = dt['name'];print(col2)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+col = jmp.DataTable.Column(dt, 'name')
+print(col)
+
+# Note: it's simpler to just let Python create one for you through assignment.
+col2 = dt['name'];
+print(col2)
 
 ```
 
@@ -976,7 +1891,10 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col = jmp.DataTable
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print( len( dt['name'] ) )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+print( len( dt['name'] ) )
 
 ```
 
@@ -990,7 +1908,14 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print( len( dt['nam
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 = dt['name']col3 = dt['age']print( col1 != col2 )print( col1 != col3 )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+col1 = dt[0]
+col2 = dt['name']
+col3 = dt['age']
+print( col1 != col2 )
+print( col1 != col3 )
 
 ```
 
@@ -1006,7 +1931,14 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")col1 = dt[0]col2 =
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("expressions", jmp.DataType.Expression)dt['expressions'][0] = jmp.Expression('1 + 1')print(dt['expressions'][0])result = jmp.eval(dt['expressions'][0])print(result)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column("expressions", jmp.DataType.Expression)
+dt['expressions'][0] = jmp.Expression('1 + 1')
+print(dt['expressions'][0])
+result = jmp.eval(dt['expressions'][0])
+print(result)
 
 ```
 
@@ -1014,7 +1946,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("expr
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("images", jmp.DataType.Expression)for i in range( len( dt["images"] ) ):    dt['images'][i] = jmp.Image(jmp.SAMPLE_IMAGES + "tile.jpg")print(dt['images'][0])
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column("images", jmp.DataType.Expression)
+for i in range( len( dt["images"] ) ):
+    dt['images'][i] = jmp.Image(jmp.SAMPLE_IMAGES + "tile.jpg")
+print(dt['images'][0])
 
 ```
 
@@ -1022,7 +1960,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("imag
 
 ```python
 
-import jmpfrom datetime import datedt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('birthday', jmp.DataType.Numeric)dt['birthday'].format = "m/d/y"dt['birthday'][0] = date.today()
+import jmp
+
+from datetime import date
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column('birthday', jmp.DataType.Numeric)
+dt['birthday'].format = "m/d/y"
+dt['birthday'][0] = date.today()
 
 ```
 
@@ -1030,7 +1974,13 @@ import jmpfrom datetime import datedt = jmp.open(jmp.SAMPLE_DATA + "Big Class
 
 ```python
 
-import jmpfrom datetime import datetimedt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('birthday', jmp.DataType.Numeric)dt['birthday'].format = "m/d/y h:m:s"dt['birthday'][0] = datetime.now()
+import jmp
+
+from datetime import datetime
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column('birthday', jmp.DataType.Numeric)
+dt['birthday'].format = "m/d/y h:m:s"
+dt['birthday'][0] = datetime.now()
 
 ```
 
@@ -1038,7 +1988,13 @@ import jmpfrom datetime import datetimedt = jmp.open(jmp.SAMPLE_DATA + "Big C
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")column = dt[0]column2 = dt['age']print(column)print(column2)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+column = dt[0]
+column2 = dt['age']
+print(column)
+print(column2)
 
 ```
 
@@ -1046,7 +2002,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")column = dt[0]colu
 
 ```python
 
-import jmpimport timedt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('birthday', jmp.DataType.Numeric)dt['birthday'].format = "h:m:s"dt['birthday'][0] = time.localtime()
+import jmp
+
+import time
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column('birthday', jmp.DataType.Numeric)
+dt['birthday'].format = "h:m:s"
+dt['birthday'][0] = time.localtime()
 
 ```
 
@@ -1054,7 +2016,12 @@ import jmpimport timedt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("rs", jmp.DataType.RowState)dt['rs'][0] = jmp.RowState(selected=True, marker=3, color=4)print(dt['rs'][0])
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column("rs", jmp.DataType.RowState)
+dt['rs'][0] = jmp.RowState(selected=True, marker=3, color=4)
+print(dt['rs'][0])
 
 ```
 
@@ -1068,7 +2035,9 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column("rs",
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt[0])
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(dt[0])
 
 ```
 
@@ -1082,13 +2051,15 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt[0])
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
 
 ```
 
 #### display_width
 
-**Syntax:** col_obj.display_width col_obj.display_width = &lt;int&gt;
+**Syntax:** col_obj.display_widthcol_obj.display_width = &lt;int&gt;
 
 **Beschreibung:** Anzeigebreite der Spalte ändern.
 
@@ -1096,7 +2067,12 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Data length 
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")jmp.run_jsl('Wait( 0 );')print(dt[0].display_width)dt[0].display_width = 100print(dt[0].display_width)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+jmp.run_jsl('Wait( 0 );')
+print(dt[0].display_width)
+dt[0].display_width = 100
+print(dt[0].display_width)
 
 ```
 
@@ -1110,13 +2086,17 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")jmp.run_jsl('Wait( 0
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f"Data Type of dt['age']: {dt['age'].dtype}")dt['age'].dtype = jmp.DataType.Character print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(f"Data Type of dt['age']: {dt['age'].dtype}")
+dt['age'].dtype = jmp.DataType.Character 
+print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
 
 ```
 
 #### format
 
-**Syntax:** col_obj.format col_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
+**Syntax:** col_obj.formatcol_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
 
 **Beschreibung:** Format abrufen
 
@@ -1126,7 +2106,11 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f"Data Type of
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print(dt[3].format)dt[3].format = ('Fixed Dec', 6, 3)print(dt[3].format)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+print(dt[3].format)
+dt[3].format = ('Fixed Dec', 6, 3)
+print(dt[3].format)
 
 ```
 
@@ -1134,13 +2118,27 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print(dt[3].format)
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "XYZ Stock Averages (plots).jmp")dt[0].format = ("ddMonyyyy", 9)dt[1].format = "Currency"dt[2].format = (    "best",    "Use Thousands Separator",    10,    0)dt[3].format = (    "Fixed Dec",    "Use Thousands Separator",    10,    2)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + "XYZ Stock Averages (plots).jmp")
+dt[0].format = ("ddMonyyyy", 9)
+dt[1].format = "Currency"
+dt[2].format = (
+    "best",
+    "Use Thousands Separator",
+    10,
+    0)
+dt[3].format = (
+    "Fixed Dec",
+    "Use Thousands Separator",
+    10,
+    2
+)
 
 ```
 
 #### formula
 
-**Syntax:** col_obj.formula col_obj.formula = &lt;Expression | string&gt;
+**Syntax:** col_obj.formulacol_obj.formula = &lt;Expression | string&gt;
 
 **Beschreibung:** Legt eine Spaltenformel fest aus einem Expression-Objekt oder einem String, der eine gültige JSL darstellt.
 
@@ -1150,7 +2148,12 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "XYZ Stock Averages (plots).jmp")dt[
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('ratio', jmp.DataType.Numeric)dt['ratio'].formula = jmp.Expression(':Height / :Weight')print(dt['ratio'].formula)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column('ratio', jmp.DataType.Numeric)
+dt['ratio'].formula = jmp.Expression(':Height / :Weight')
+print(dt['ratio'].formula)
 
 ```
 
@@ -1158,7 +2161,12 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('rati
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('ratio', jmp.DataType.Numeric)dt['ratio'].formula = ':Height / :Weight'print(dt['ratio'].formula)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt.new_column('ratio', jmp.DataType.Numeric)
+dt['ratio'].formula = ':Height / :Weight'
+print(dt['ratio'].formula)
 
 ```
 
@@ -1172,13 +2180,18 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt.new_column('rati
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f"Modeling Type of dt['age']: {dt['age'].mtype}") dt['age'].mtype = jmp.ModelingType.Nominalprint(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(f"Modeling Type of dt['age']: {dt['age'].mtype}") 
+dt['age'].mtype = jmp.ModelingType.Nominal
+print(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
 
 ```
 
 #### name
 
-**Syntax:** col_obj.name col_obj.name = &lt;string&gt;
+**Syntax:** col_obj.namecol_obj.name = &lt;string&gt;
 
 **Beschreibung:** Eigenschaft Spaltenname, kann sowohl gelesen als auch festgelegt werden.
 
@@ -1186,7 +2199,10 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f"Modeling Ty
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print(dt[0].name)dt[0].name = 'First Name'
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+print(dt[0].name)
+dt[0].name = 'First Name'
 
 ```
 
@@ -1206,7 +2222,15 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print(dt[0].name)dt
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")print( dt == dt2 )print( dt == iris)print( dt != dt2 )print( dt != iris )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt2 = jmp.current()
+iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")
+print( dt == dt2 )
+print( dt == iris)
+print( dt != dt2 )
+print( dt != iris )
 
 ```
 
@@ -1224,7 +2248,11 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")for n in dt:    print( n.name )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+for n in dt:
+    print( n.name )
 
 ```
 
@@ -1236,7 +2264,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")for n in dt:    pr
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( [c.name for c in dt[:]] )         # print list of column names default step = 1reverse_cols = dt[::-1]                  # list of column names in reverse orderprint( [c.name for c in reverse_cols] )  # print reversed column name listprint( dt['name'][0:20:2] )              # print every other value in range [0, 20)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print( [c.name for c in dt[:]] )         # print list of column names default step = 1
+reverse_cols = dt[::-1]                  # list of column names in reverse order
+print( [c.name for c in reverse_cols] )  # print reversed column name list
+print( dt['name'][0:20:2] )              # print every other value in range [0, 20)
 
 ```
 
@@ -1248,7 +2282,11 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( [c.name for 
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( f'Column name: {dt[1].name}' )print( f"Column name: {dt['age'].name}" )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print( f'Column name: {dt[1].name}' )
+print( f"Column name: {dt['age'].name}" )
 
 ```
 
@@ -1262,7 +2300,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( f'Column nam
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")print( dt == dt2 )print( dt == iris)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt2 = jmp.current()
+iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")
+print( dt == dt2 )
+print( dt == iris)
 
 ```
 
@@ -1276,7 +2320,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")column = dt[0]column2 = dt['age']print(column)print(column2)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+column = dt[0]
+column2 = dt['age']
+print(column)
+print(column2)
 
 ```
 
@@ -1292,7 +2342,8 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")column = dt[0]colu
 
 ```python
 
-import jmpdt = jmp.DataTable('Powered By Python', 40)
+import jmp
+dt = jmp.DataTable('Powered By Python', 40)
 
 ```
 
@@ -1300,7 +2351,8 @@ import jmpdt = jmp.DataTable('Powered By Python', 40)
 
 ```python
 
-import jmpdt = jmp.DataTable('Powered By Python')
+import jmp
+dt = jmp.DataTable('Powered By Python')
 
 ```
 
@@ -1308,7 +2360,8 @@ import jmpdt = jmp.DataTable('Powered By Python')
 
 ```python
 
-import jmpdt = jmp.DataTable()
+import jmp
+dt = jmp.DataTable()
 
 ```
 
@@ -1316,7 +2369,8 @@ import jmpdt = jmp.DataTable()
 
 ```python
 
-import jmpdt = jmp.DataTable(rows=40, name='Powered By Python')
+import jmp
+dt = jmp.DataTable(rows=40, name='Powered By Python')
 
 ```
 
@@ -1324,7 +2378,8 @@ import jmpdt = jmp.DataTable(rows=40, name='Powered By Python')
 
 ```python
 
-import jmpdt = jmp.DataTable('Powered By Python', 40, visibility='private')
+import jmp
+dt = jmp.DataTable('Powered By Python', 40, visibility='private')
 
 ```
 
@@ -1332,7 +2387,8 @@ import jmpdt = jmp.DataTable('Powered By Python', 40, visibility='private')
 
 ```python
 
-import jmpdt = jmp.DataTable('Powered By Python', 40, visibility='Invisible')
+import jmp
+dt = jmp.DataTable('Powered By Python', 40, visibility='Invisible')
 
 ```
 
@@ -1346,7 +2402,10 @@ import jmpdt = jmp.DataTable('Powered By Python', 40, visibility='Invisible')
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print( len(dt) )
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+print( len(dt) )
 
 ```
 
@@ -1360,7 +2419,13 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")print( len(dt) )
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")print( dt != dt2 )print( dt != iris)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt2 = jmp.current()
+iris = jmp.open(jmp.SAMPLE_DATA + "Iris.jmp")
+print( dt != dt2 )
+print( dt != iris)
 
 ```
 
@@ -1374,7 +2439,12 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt2 = jmp.current()
 
 ```python
 
-import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]print( dt[0][:] )
+import jmp
+
+dt = jmp.DataTable('Names', 5)
+dt.new_column('First Name', jmp.DataType.Character)
+dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
+print( dt[0][:] )
 
 ```
 
@@ -1388,7 +2458,9 @@ import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataT
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(dt)
 
 ```
 
@@ -1402,7 +2474,11 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.add_rows(5)dt.add_rows(1, at=0)dt.add_rows(2, at=12) # 0-based indexing
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+dt.add_rows(5)
+dt.add_rows(1, at=0)
+dt.add_rows(2, at=12) # 0-based indexing
 
 ```
 
@@ -1410,19 +2486,37 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.add_rows(5)dt.ad
 
 **Syntax:** dt.begin_update() # added JMP 19.1
 
-**Beschreibung:** Small tables update rapidly, but for large tables, having to update the user interface while making mass changes to a column is very time consuming. The begin_update() method stops the GUI updates to the data table until a corresponding end_update().
+**Beschreibung:** Kleine Tabellen werden schnell aktualisiert, doch bei großen Tabellen ist es sehr zeitaufwendig, die Benutzeroberfläche zu aktualisieren, wenn umfangreiche Änderungen an einer Spalte vorgenommen werden. Die Methode begin_update() unterbricht die GUI-Aktualisierungen an der Datentabelle, bis ein entsprechendes end_update() aufgerufen wird.
 
 **JMP Version hinzugefügt:** 19
 
 ```python
 
-import jmpimport randomimport timedt = jmp.open(jmp.SAMPLE_DATA + "Wafer Stacked.jmp")print(dt.nrows)start_time = time.perf_counter()dt.begin_update()try:    for x in range(dt.nrows):        dt[5][x] = random.randint(1,1000)finally:    dt.end_update()end_time = time.perf_counter()elapsed = end_time - start_timeprint(f'Elapsed time: {elapsed:.3f}')
+import jmp
+
+import random
+import time
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Wafer Stacked.jmp")
+print(dt.nrows)
+
+start_time = time.perf_counter()
+dt.begin_update()
+try:
+    for x in range(dt.nrows):
+        dt[5][x] = random.randint(1,1000)
+finally:
+    dt.end_update()
+
+end_time = time.perf_counter()
+elapsed = end_time - start_time
+print(f'Elapsed time: {elapsed:.3f}')
 
 ```
 
 #### cell_height
 
-**Syntax:** dt.cell_height dt.cell_height = &lt;int&gt;
+**Syntax:** dt.cell_heightdt.cell_height = &lt;int&gt;
 
 **Beschreibung:** Anzeigehöhe jeder Zelle in der Datentabelle festlegen.
 
@@ -1430,7 +2524,12 @@ import jmpimport randomimport timedt = jmp.open(jmp.SAMPLE_DATA + "Wafer St
 
 ```python
 
-import jmpdt = jmp.DataTable()jmp.run_jsl('Wait(0)')print(dt.cell_height)dt.cell_height = 40print(dt.cell_height)
+import jmp
+dt = jmp.DataTable()
+jmp.run_jsl('Wait(0)')
+print(dt.cell_height)
+dt.cell_height = 40
+print(dt.cell_height)
 
 ```
 
@@ -1444,7 +2543,21 @@ import jmpdt = jmp.DataTable()jmp.run_jsl('Wait(0)')print(dt.cell_height)dt.
 
 ```python
 
-import jmpimport os# To remove the wow.jmp file uncomment then run the 2 lines below,# if os.path.isfile('wow.jmp'):#    os.unlink('wow.jmp')dt = jmp.DataTable('wow', 5)dt.new_column('one')dt.close()                # saves and closes filedt = jmp.open('wow.jmp')dt.new_column('two')dt.close(save=False)      # closes without saving
+import jmp
+
+import os
+
+# To remove the wow.jmp file uncomment then run the 2 lines below,
+# if os.path.isfile('wow.jmp'):
+#    os.unlink('wow.jmp')
+
+dt = jmp.DataTable('wow', 5)
+dt.new_column('one')
+dt.close()                # saves and closes file
+
+dt = jmp.open('wow.jmp')
+dt.new_column('two')
+dt.close(save=False)      # closes without saving
 
 ```
 
@@ -1458,7 +2571,20 @@ import jmpimport os# To remove the wow.jmp file uncomment then run the 2 lin
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns('weight')     # JSL:  dt << Select Columns( {:weight})r = dt.delete_columns()                  # delete by selected column(s)print(r)r = dt.delete_columns('name', 'sex')     # delete by nameprint(r)r = dt.delete_columns(['age', 'height']) # delete with list of column namesprint(r)
+import jmp
+
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+dt.select_columns('weight')     # JSL:  dt << Select Columns( {:weight})
+r = dt.delete_columns()                  # delete by selected column(s)
+print(r)
+
+r = dt.delete_columns('name', 'sex')     # delete by name
+print(r)
+
+r = dt.delete_columns(['age', 'height']) # delete with list of column names
+print(r)
 
 ```
 
@@ -1466,19 +2592,37 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns
 
 **Syntax:** dt.end_update() # added JMP 19.1
 
-**Beschreibung:** Restores the data table GUI update processing.
+**Beschreibung:** Stellt die GUI-Aktualisierung der Datentabelle wieder her.
 
 **JMP Version hinzugefügt:** 19
 
 ```python
 
-import jmpimport randomimport timedt = jmp.open(jmp.SAMPLE_DATA + "Wafer Stacked.jmp")print(dt.nrows)start_time = time.perf_counter()dt.begin_update()try:    for x in range(dt.nrows):        dt[5][x] = random.randint(1,1000)finally:    dt.end_update()end_time = time.perf_counter()elapsed = end_time - start_timeprint(f'Elapsed time: {elapsed:.3f}')
+import jmp
+
+import random
+import time
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Wafer Stacked.jmp")
+print(dt.nrows)
+
+start_time = time.perf_counter()
+dt.begin_update()
+try:
+    for x in range(dt.nrows):
+        dt[5][x] = random.randint(1,1000)
+finally:
+    dt.end_update()
+
+end_time = time.perf_counter()
+elapsed = end_time - start_time
+print(f'Elapsed time: {elapsed:.3f}')
 
 ```
 
 #### name
 
-**Syntax:** dt.name dt.name = &apos;string&apos;
+**Syntax:** dt.namedt.name = &apos;string&apos;
 
 **Beschreibung:** Die name kann den Namen der Datentabelle sowohl festlegen als auch abrufen.
 
@@ -1486,7 +2630,10 @@ import jmpimport randomimport timedt = jmp.open(jmp.SAMPLE_DATA + "Wafer St
 
 ```python
 
-import jmpdt = jmp.DataTable()print(dt.name)dt.name = 'Powered by Python'
+import jmp
+dt = jmp.DataTable()
+print(dt.name)
+dt.name = 'Powered by Python'
 
 ```
 
@@ -1500,7 +2647,9 @@ import jmpdt = jmp.DataTable()print(dt.name)dt.name = 'Powered by Python'
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Number of columns: {dt.ncols}')
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(f'Number of columns: {dt.ncols}')
 
 ```
 
@@ -1516,7 +2665,15 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Number of co
 
 ```python
 
-import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataType.Character)dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]print( dt[0][:] )print( list( dt['First Name'] ) )dt.new_column('Distance (km)', jmp.DataType.Numeric, jmp.ModelingType.Continuous)dt[1] = [ 1239.2, 12266.4, 15.75, 35.0, 10.6 ]
+import jmp
+
+dt = jmp.DataTable('Names', 5)
+dt.new_column('First Name', jmp.DataType.Character)
+dt[0]  = ['Paul', 'Kimi', 'Evan', 'Ernest', 'Shannon' ]
+print( dt[0][:] )
+print( list( dt['First Name'] ) )
+dt.new_column('Distance (km)', jmp.DataType.Numeric, jmp.ModelingType.Continuous)
+dt[1] = [ 1239.2, 12266.4, 15.75, 35.0, 10.6 ]
 
 ```
 
@@ -1524,7 +2681,23 @@ import jmpdt = jmp.DataTable('Names', 5)dt.new_column('First Name', jmp.DataT
 
 ```python
 
-import jmpfrom jmp import DataTable as Dtdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')nc = jmp.DataTable('New Class', dt.nrows)nc.new_column('name', jmp.DataType.Character)# populate column from a listnc[0] = ['Fred','Kimi','Amanda','Courtney','Paul','Theresa','Erika','Blake','Joseph','Amber',    'Daphne','Robert','James','Richard', 'Eric','Mark','Coleen','Brian','Bryan','Emily',    'Bonnie','Georgia','Terrance','Carmen','Hunter','Samantha','Kay','Tamara','Brett','David',    'Chandler','Siebela','Judy','Hui','Drew','Russ','Megan','Evan','Alex','Travis']col = nc.new_column('age', jmp.DataType.Numeric)# populate column from another columnnc['age'] = dt['age']print(nc['age'][::])print(col.__class__)
+import jmp
+
+from jmp import DataTable as Dt
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+nc = jmp.DataTable('New Class', dt.nrows)
+nc.new_column('name', jmp.DataType.Character)
+# populate column from a list
+nc[0] = ['Fred','Kimi','Amanda','Courtney','Paul','Theresa','Erika','Blake','Joseph','Amber',
+    'Daphne','Robert','James','Richard', 'Eric','Mark','Coleen','Brian','Bryan','Emily',
+    'Bonnie','Georgia','Terrance','Carmen','Hunter','Samantha','Kay','Tamara','Brett','David',
+    'Chandler','Siebela','Judy','Hui','Drew','Russ','Megan','Evan','Alex','Travis'
+]
+col = nc.new_column('age', jmp.DataType.Numeric)
+# populate column from another column
+nc['age'] = dt['age']
+print(nc['age'][::])
+print(col.__class__)
 
 ```
 
@@ -1538,13 +2711,15 @@ import jmpfrom jmp import DataTable as Dtdt = jmp.open(jmp.SAMPLE_DATA + 'Big
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Number of rows: {dt.nrows}')
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(f'Number of rows: {dt.nrows}')
 
 ```
 
 #### row_states
 
-**Syntax:** dt.row_states dt.row_states = [state1, state2, ..., stateN]
+**Syntax:** dt.row_statesdt.row_states = [state1, state2, ..., stateN]
 
 **Beschreibung:** Legt die Zeileneigenschaft für alle Zeilen in der Datentabelle fest.
 
@@ -1554,7 +2729,16 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(f'Number of ro
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states[0] = jmp.RowState(marker=4, color=3)print(dt.row_states)dt.row_states[0].selected = Truedt.row_states[1] = jmp.RowState(value=22)print(dt.row_states)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+dt.row_states[0] = jmp.RowState(marker=4, color=3)
+print(dt.row_states)
+
+dt.row_states[0].selected = True
+dt.row_states[1] = jmp.RowState(value=22)
+print(dt.row_states)
 
 ```
 
@@ -1562,7 +2746,12 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states[0] =
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')for i in range(len(dt.row_states)):    if dt['age'][i] % 2:        dt.row_states[i].selected = Trueprint(dt.row_states)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+for i in range(len(dt.row_states)):
+    if dt['age'][i] % 2:
+        dt.row_states[i].selected = True
+print(dt.row_states)
 
 ```
 
@@ -1570,7 +2759,10 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')for i in range(len(d
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]print(dt.row_states)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+dt.row_states = [33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]
+print(dt.row_states)
 
 ```
 
@@ -1578,7 +2770,11 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [33,
 
 ```python
 
-import jmpfrom jmp import RowStatedt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [(2, RowState(marker=2, selected=True)), (5, 97)]print(dt.row_states)
+import jmp
+from jmp import RowState
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+dt.row_states = [(2, RowState(marker=2, selected=True)), (5, 97)]
+print(dt.row_states)
 
 ```
 
@@ -1586,7 +2782,23 @@ import jmpfrom jmp import RowStatedt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.j
 
 ```python
 
-import jmpfrom jmp import DataTypedt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')rs_col = dt.new_column('rs', DataType.RowState)dt['rs'] = dt.row_statesdt['rs'][0] = jmp.RowState(value=33)dt['rs'][1] = jmp.RowState(color=2, marker=3)row_state = jmp.RowState(color=4, selected=False)dt['rs'][3] = row_staterow_state.marker = 9dt['rs'][4] = row_statedt.row_states = dt['rs']print(dt.row_states)
+import jmp
+from jmp import DataType
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+rs_col = dt.new_column('rs', DataType.RowState)
+dt['rs'] = dt.row_states
+
+dt['rs'][0] = jmp.RowState(value=33)
+dt['rs'][1] = jmp.RowState(color=2, marker=3)
+
+row_state = jmp.RowState(color=4, selected=False)
+dt['rs'][3] = row_state
+row_state.marker = 9
+dt['rs'][4] = row_state
+
+dt.row_states = dt['rs']
+print(dt.row_states)
 
 ```
 
@@ -1594,7 +2806,13 @@ import jmpfrom jmp import DataTypedt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.j
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]print(dt.row_states)dt.row_states = [0] * dt.nrowsprint(dt.row_states)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+dt.row_states = [33, 33, 33, 33, 33, 97, 97, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 768]
+print(dt.row_states)
+
+dt.row_states = [0] * dt.nrows
+print(dt.row_states)
 
 ```
 
@@ -1608,13 +2826,17 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.row_states = [33,
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt[0][0] = 'Katie'dt.save('BC_lowercase.jmp')
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+dt[0][0] = 'Katie'
+dt.save('BC_lowercase.jmp')
 
 ```
 
 #### scripts
 
-**Syntax:** dt.scripts dt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
+**Syntax:** dt.scriptsdt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
 
 **Beschreibung:** Die Eigenschaft Skripte ermöglicht das Lesen und Schreiben von Datentabellenskripten.
 
@@ -1624,7 +2846,31 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")dt[0][0] = 'Katie'
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Concatenationdt.scripts |= {    "Example": 'Print("Foo")',    "Example 2": jmp.Expression('Print("Bar")')}print("Distribution" in dt.scripts)print("Example" in dt.scripts)print("Example 2" in dt.scripts)# Reassigning of scripts removes all other scriptsdt.scripts = {    "Example": 'Print("FooBar")',}print(dt.scripts)# Iterationfor name, value in dt.scripts.items():    print(name, value)for name in dt.scripts:    print(name, dt.scripts[name])
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+# Concatenation
+dt.scripts |= {
+    "Example": 'Print("Foo")',
+    "Example 2": jmp.Expression('Print("Bar")')
+}
+
+print("Distribution" in dt.scripts)
+print("Example" in dt.scripts)
+print("Example 2" in dt.scripts)
+
+# Reassigning of scripts removes all other scripts
+dt.scripts = {
+    "Example": 'Print("FooBar")',
+}
+print(dt.scripts)
+
+# Iteration
+for name, value in dt.scripts.items():
+    print(name, value)
+
+for name in dt.scripts:
+    print(name, dt.scripts[name])
 
 ```
 
@@ -1632,7 +2878,18 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Concatenationdt.
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Getting a scriptprint(dt.scripts["Distribution"])# Adding a scriptdt.scripts["Example"] = 'Print("Foo")'dt.scripts["Example 2"] = jmp.Expression('Print("Bar")')# Getting all scriptsprint(dt.scripts)
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+# Getting a script
+print(dt.scripts["Distribution"])
+
+# Adding a script
+dt.scripts["Example"] = 'Print("Foo")'
+dt.scripts["Example 2"] = jmp.Expression('Print("Bar")')
+
+# Getting all scripts
+print(dt.scripts)
 
 ```
 
@@ -1640,7 +2897,33 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Getting a script
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Reassigning of scripts removes all other scriptsdt.scripts = {    "Example": 'Print("Foo")',    "Example 2": jmp.Expression('Print("Bar")')}print("Distribution" in dt.scripts)   # Falseprint("Example" in dt.scripts)        # Trueprint("Example 2" in dt.scripts)      # True# Deleting a script# Note: If the script editing window is open, the script will not be deleted. del dt.scripts["Example"]dt.scripts["Example 2"] = Noneprint("Example" in dt.scripts)        # Falseprint("Example 2" in dt.scripts)      # Falsedt.scripts = {    "Example": 'Print("FooBar")',}# Deleting all scriptsdt.scripts = {}
+import jmp
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+# Reassigning of scripts removes all other scripts
+dt.scripts = {
+    "Example": 'Print("Foo")',
+    "Example 2": jmp.Expression('Print("Bar")')
+}
+
+print("Distribution" in dt.scripts)   # False
+print("Example" in dt.scripts)        # True
+print("Example 2" in dt.scripts)      # True
+
+# Deleting a script
+# Note: If the script editing window is open, the script will not be deleted. 
+del dt.scripts["Example"]
+dt.scripts["Example 2"] = None
+
+print("Example" in dt.scripts)        # False
+print("Example 2" in dt.scripts)      # False
+
+dt.scripts = {
+    "Example": 'Print("FooBar")',
+}
+
+# Deleting all scripts
+dt.scripts = {}
 
 ```
 
@@ -1656,7 +2939,12 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# Reassigning of sc
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns([col.name for col in dt])# all columns should be selected.
+import jmp
+
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+dt.select_columns([col.name for col in dt])
+# all columns should be selected.
 
 ```
 
@@ -1664,7 +2952,14 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns(
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns('weight')dt.select_columns('name', 'sex')dt.select_columns(['age', 'height'])# all columns should be selected.
+import jmp
+
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+dt.select_columns('weight')
+dt.select_columns('name', 'sex')
+dt.select_columns(['age', 'height'])
+# all columns should be selected.
 
 ```
 
@@ -1684,7 +2979,15 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')dt.select_columns(
 
 ```python
 
-import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr3 = jmp.Expression('1 + 1')print(expr1 == expr2)print(expr1 == expr3)print(expr1 != expr2)print(expr1 != expr3)
+import jmp
+
+expr1 = jmp.Expression('1 + 1')
+expr2 = jmp.Expression('2 + 0')
+expr3 = jmp.Expression('1 + 1')
+print(expr1 == expr2)
+print(expr1 == expr3)
+print(expr1 != expr2)
+print(expr1 != expr3)
 
 ```
 
@@ -1702,7 +3005,13 @@ import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr
 
 ```python
 
-import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr3 = jmp.Expression('1 + 1')print(expr1 == expr2)print(expr1 == expr3)
+import jmp
+
+expr1 = jmp.Expression('1 + 1')
+expr2 = jmp.Expression('2 + 0')
+expr3 = jmp.Expression('1 + 1')
+print(expr1 == expr2)
+print(expr1 == expr3)
 
 ```
 
@@ -1716,7 +3025,14 @@ import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr
 
 ```python
 
-import jmpfrom jmp import Expression, evalexpr = Expression(jsl="2 + 2")print(f'Expression: {expr}')print(f'Result: {eval(expr)}')expr.jsl = '1 + 1'print(f'Expression Adjusted: {eval(expr)}')
+import jmp
+
+from jmp import Expression, eval
+expr = Expression(jsl="2 + 2")
+print(f'Expression: {expr}')
+print(f'Result: {eval(expr)}')
+expr.jsl = '1 + 1'
+print(f'Expression Adjusted: {eval(expr)}')
 
 ```
 
@@ -1730,7 +3046,13 @@ import jmpfrom jmp import Expression, evalexpr = Expression(jsl="2 + 2")prin
 
 ```python
 
-import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr3 = jmp.Expression('1 + 1')print(expr1 != expr2)print(expr1 != expr3)
+import jmp
+
+expr1 = jmp.Expression('1 + 1')
+expr2 = jmp.Expression('2 + 0')
+expr3 = jmp.Expression('1 + 1')
+print(expr1 != expr2)
+print(expr1 != expr3)
 
 ```
 
@@ -1744,13 +3066,15 @@ import jmpexpr1 = jmp.Expression('1 + 1')expr2 = jmp.Expression('2 + 0')expr
 
 ```python
 
-import jmpexpr = jmp.Expression(':Height / :Weight')print(expr)
+import jmp
+expr = jmp.Expression(':Height / :Weight')
+print(expr)
 
 ```
 
 #### jsl
 
-**Syntax:** expr_obj.jsl expr_obj.jsl = &lt;string&gt;
+**Syntax:** expr_obj.jslexpr_obj.jsl = &lt;string&gt;
 
 **Beschreibung:** Die JSL-Eigenschaft Expression ist lesbar und einstellbar.
 
@@ -1758,7 +3082,12 @@ import jmpexpr = jmp.Expression(':Height / :Weight')print(expr)
 
 ```python
 
-import jmpexpr = jmp.Expression(jsl='0 + 0')print(expr)expr.jsl = '2 + 2'print(expr)
+import jmp
+
+expr = jmp.Expression(jsl='0 + 0')
+print(expr)
+expr.jsl = '2 + 2'
+print(expr)
 
 ```
 
@@ -1776,7 +3105,15 @@ import jmpexpr = jmp.Expression(jsl='0 + 0')print(expr)expr.jsl = '2 + 2'pr
 
 ```python
 
-import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')print(image1 == image2)print(image1 == image3)print(image1 != image2)print(image1 != image3)
+import jmp
+
+image1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
+image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')
+image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')
+print(image1 == image2)
+print(image1 == image3)
+print(image1 != image2)
+print(image1 != image3)
 
 ```
 
@@ -1794,7 +3131,13 @@ import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Imag
 
 ```python
 
-import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')print(image1 == image2)print(image1 == image3)
+import jmp
+
+image1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
+image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')
+image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')
+print(image1 == image2)
+print(image1 == image3)
 
 ```
 
@@ -1808,7 +3151,11 @@ import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Imag
 
 ```python
 
-import jmpimage = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')print(f'Image: {image}')jmp.open(image)
+import jmp
+
+image = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
+print(f'Image: {image}')
+jmp.open(image)
 
 ```
 
@@ -1822,7 +3169,13 @@ import jmpimage = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')print(f'Image: {im
 
 ```python
 
-import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')print(image1 != image2)print(image1 != image3)
+import jmp
+
+image1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
+image2 = jmp.Image(jmp.SAMPLE_IMAGES + 'pi.gif')
+image3 = jmp.Image(path=jmp.SAMPLE_IMAGES + 'tile.jpg')
+print(image1 != image2)
+print(image1 != image3)
 
 ```
 
@@ -1836,7 +3189,9 @@ import jmpimage1 = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')image2 = jmp.Imag
 
 ```python
 
-import jmpimage = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')print(image)
+import jmp
+image = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')
+print(image)
 
 ```
 
@@ -1864,7 +3219,8 @@ import jmpimage = jmp.Image(jmp.SAMPLE_IMAGES + 'tile.jpg')print(image)
 
 ```python
 
-import jmpprj = jmp.Project('My Project')
+import jmp
+prj = jmp.Project('My Project')
 
 ```
 
@@ -1872,7 +3228,8 @@ import jmpprj = jmp.Project('My Project')
 
 ```python
 
-import jmpprj = jmp.Project()
+import jmp
+prj = jmp.Project()
 
 ```
 
@@ -1880,7 +3237,10 @@ import jmpprj = jmp.Project()
 
 ```python
 
-import jmpprj = jmp.Project()print(prj.name)
+import jmp
+
+prj = jmp.Project()
+print(prj.name)
 
 ```
 
@@ -1894,7 +3254,10 @@ import jmpprj = jmp.Project()print(prj.name)
 
 ```python
 
-import jmpprj = jmp.Project()print( prj )
+import jmp
+
+prj = jmp.Project()
+print( prj )
 
 ```
 
@@ -1908,7 +3271,10 @@ import jmpprj = jmp.Project()print( prj )
 
 ```python
 
-import jmpprj = jmp.Project()print(prj.contents)
+import jmp
+
+prj = jmp.Project()
+print(prj.contents)
 
 ```
 
@@ -1922,7 +3288,10 @@ import jmpprj = jmp.Project()print(prj.contents)
 
 ```python
 
-import jmpprj = jmp.Project()print( prj.exists('myfile.data') )
+import jmp
+
+prj = jmp.Project()
+print( prj.exists('myfile.data') )
 
 ```
 
@@ -1936,7 +3305,10 @@ import jmpprj = jmp.Project()print( prj.exists('myfile.data') )
 
 ```python
 
-import jmpprj = jmp.Project()success = prj.extract('myfile.data')
+import jmp
+
+prj = jmp.Project()
+success = prj.extract('myfile.data')
 
 ```
 
@@ -1950,7 +3322,10 @@ import jmpprj = jmp.Project()success = prj.extract('myfile.data')
 
 ```python
 
-import jmpprj = jmp.Project()success = prj.extract_all()
+import jmp
+
+prj = jmp.Project()
+success = prj.extract_all()
 
 ```
 
@@ -1964,7 +3339,10 @@ import jmpprj = jmp.Project()success = prj.extract_all()
 
 ```python
 
-import jmpprj = jmp.Project()print( prj.is_extracted('myfile.data') )
+import jmp
+
+prj = jmp.Project()
+print( prj.is_extracted('myfile.data') )
 
 ```
 
@@ -1978,7 +3356,10 @@ import jmpprj = jmp.Project()print( prj.is_extracted('myfile.data') )
 
 ```python
 
-import jmpprj = jmp.Project()print(prj.name)
+import jmp
+
+prj = jmp.Project()
+print(prj.name)
 
 ```
 
@@ -1998,7 +3379,15 @@ import jmpprj = jmp.Project()print(prj.name)
 
 ```python
 
-import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowState(color=11, excluded=True, labeled=True)rs3 = jmp.RowState(value=1057)print(rs1 == rs2)print(rs1 == rs3)print(rs1 != rs2)print(rs1 != rs3)
+import jmp
+
+rs1 = jmp.RowState(color=4, marker=2, selected=True)
+rs2 = jmp.RowState(color=11, excluded=True, labeled=True)
+rs3 = jmp.RowState(value=1057)
+print(rs1 == rs2)
+print(rs1 == rs3)
+print(rs1 != rs2)
+print(rs1 != rs3)
 
 ```
 
@@ -2016,13 +3405,19 @@ import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowSt
 
 ```python
 
-import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowState(color=11, excluded=True, labeled=True)rs3 = jmp.RowState(value=1057)print(rs1 == rs2)print(rs1 == rs3)
+import jmp
+
+rs1 = jmp.RowState(color=4, marker=2, selected=True)
+rs2 = jmp.RowState(color=11, excluded=True, labeled=True)
+rs3 = jmp.RowState(value=1057)
+print(rs1 == rs2)
+print(rs1 == rs3)
 
 ```
 
 #### __init__
 
-**Syntax:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;) jmp.RowState(value=&lt;int&gt;)
+**Syntax:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;)jmp.RowState(value=&lt;int&gt;)
 
 **Beschreibung:** Erzeugt ein neues RowState-Objekt. RowState ist ein Objekt, das eine der sechs Eigenschaften enthält, die Zeilen in einer JMP-Datentabelle haben können: ausgewählt, ausgeblendet, ausgeschlossen, beschriftet, gefärbt oder Symbol.
 
@@ -2030,7 +3425,14 @@ import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowSt
 
 ```python
 
-import jmpfrom jmp import RowStaters = RowState(color=4, marker=2, selected=True)print(f'Row State: {rs}')rs_from_value = RowState(value=33)print(f'Row State from Value: {rs_from_value}')
+import jmp
+
+from jmp import RowState
+rs = RowState(color=4, marker=2, selected=True)
+print(f'Row State: {rs}')
+
+rs_from_value = RowState(value=33)
+print(f'Row State from Value: {rs_from_value}')
 
 ```
 
@@ -2044,7 +3446,13 @@ import jmpfrom jmp import RowStaters = RowState(color=4, marker=2, selected=T
 
 ```python
 
-import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowState(color=11, excluded=True, labeled=True)rs3 = jmp.RowState(value=1057)print(rs1 != rs2)print(rs1 != rs3)
+import jmp
+
+rs1 = jmp.RowState(color=4, marker=2, selected=True)
+rs2 = jmp.RowState(color=11, excluded=True, labeled=True)
+rs3 = jmp.RowState(value=1057)
+print(rs1 != rs2)
+print(rs1 != rs3)
 
 ```
 
@@ -2058,13 +3466,15 @@ import jmprs1 = jmp.RowState(color=4, marker=2, selected=True)rs2 = jmp.RowSt
 
 ```python
 
-import jmprs = jmp.RowState(color=11, excluded=True, labeled=True)print(rs)
+import jmp
+rs = jmp.RowState(color=11, excluded=True, labeled=True)
+print(rs)
 
 ```
 
 #### color
 
-**Syntax:** rs_obj.color rs_obj.color = &lt;int&gt;
+**Syntax:** rs_obj.colorrs_obj.color = &lt;int&gt;
 
 **Beschreibung:** RowState-Eigenschaft „gefärbt“ ist lesbar und einstellbar. Die Farben werden von 0 bis 84 gewählt (0-15 Basis, 16-31 dunkel, 32-47 hell, 48-63 sehr dunkel, 64-79 sehr hell, 80-84 Grautöne).
 
@@ -2072,13 +3482,18 @@ import jmprs = jmp.RowState(color=11, excluded=True, labeled=True)print(rs)
 
 ```python
 
-import jmprs = jmp.RowState(color=5)print(rs)rs.color = 0print(rs)
+import jmp
+
+rs = jmp.RowState(color=5)
+print(rs)
+rs.color = 0
+print(rs)
 
 ```
 
 #### excluded
 
-**Syntax:** rs_obj.excluded rs_obj.excluded = &lt;boolean&gt;
+**Syntax:** rs_obj.excludedrs_obj.excluded = &lt;boolean&gt;
 
 **Beschreibung:** RowState-Eigenschaft „ausgeschlossen“ ist lesbar und einstellbar.
 
@@ -2086,13 +3501,18 @@ import jmprs = jmp.RowState(color=5)print(rs)rs.color = 0print(rs)
 
 ```python
 
-import jmprs = jmp.RowState(excluded=True)print(rs)rs.excluded = False print(rs)
+import jmp
+
+rs = jmp.RowState(excluded=True)
+print(rs)
+rs.excluded = False 
+print(rs)
 
 ```
 
 #### hidden
 
-**Syntax:** rs_obj.hidden rs_obj.hidden = &lt;boolean&gt;
+**Syntax:** rs_obj.hiddenrs_obj.hidden = &lt;boolean&gt;
 
 **Beschreibung:** RowState-Eigenschaft „ausgeblendet“ ist lesbar und einstellbar.
 
@@ -2100,13 +3520,18 @@ import jmprs = jmp.RowState(excluded=True)print(rs)rs.excluded = False prin
 
 ```python
 
-import jmprs = jmp.RowState(hidden=True)print(rs)rs.hidden = False print(rs)
+import jmp
+
+rs = jmp.RowState(hidden=True)
+print(rs)
+rs.hidden = False 
+print(rs)
 
 ```
 
 #### labeled
 
-**Syntax:** rs_obj.labeled rs_obj.labeled = &lt;boolean&gt;
+**Syntax:** rs_obj.labeledrs_obj.labeled = &lt;boolean&gt;
 
 **Beschreibung:** RowState-Eigenschaft „beschriftet“ ist lesbar und einstellbar.
 
@@ -2114,13 +3539,18 @@ import jmprs = jmp.RowState(hidden=True)print(rs)rs.hidden = False print(rs
 
 ```python
 
-import jmprs = jmp.RowState(labeled=True)print(rs)rs.labeled = False print(rs)
+import jmp
+
+rs = jmp.RowState(labeled=True)
+print(rs)
+rs.labeled = False 
+print(rs)
 
 ```
 
 #### marker
 
-**Syntax:** rs_obj.marker rs_obj.marker = &lt;int&gt;
+**Syntax:** rs_obj.markerrs_obj.marker = &lt;int&gt;
 
 **Beschreibung:** RowState-Eigenschaft „Symbol“ ist lesbar und einstellbar. Symbole werden von 0 bis 31 gewählt.
 
@@ -2128,13 +3558,18 @@ import jmprs = jmp.RowState(labeled=True)print(rs)rs.labeled = False print(
 
 ```python
 
-import jmprs = jmp.RowState(marker=3)print(rs)rs.marker = 0print(rs)
+import jmp
+
+rs = jmp.RowState(marker=3)
+print(rs)
+rs.marker = 0
+print(rs)
 
 ```
 
 #### selected
 
-**Syntax:** rs_obj.selected rs_obj.selected = &lt;boolean&gt;
+**Syntax:** rs_obj.selectedrs_obj.selected = &lt;boolean&gt;
 
 **Beschreibung:** RowState-Eigenschaft „ausgewählt“ ist lesbar und einstellbar.
 
@@ -2142,7 +3577,12 @@ import jmprs = jmp.RowState(marker=3)print(rs)rs.marker = 0print(rs)
 
 ```python
 
-import jmprs = jmp.RowState(selected=True)print(rs)rs.selected = False print(rs)
+import jmp
+
+rs = jmp.RowState(selected=True)
+print(rs)
+rs.selected = False 
+print(rs)
 
 ```
 
@@ -2160,7 +3600,16 @@ import jmprs = jmp.RowState(selected=True)print(rs)rs.selected = False prin
 
 ```python
 
-import jmpjmp.globals['pi'] = 3.1415927jmp.globals['e'] = 2.718jmp.run_jsl('''    show(::pi)''')for x in jmp.globals:    print( x )
+import jmp
+
+jmp.globals['pi'] = 3.1415927
+jmp.globals['e'] = 2.718
+jmp.run_jsl('''
+    show(::pi)
+''')
+
+for x in jmp.globals:
+    print( x )
 
 ```
 
@@ -2178,7 +3627,12 @@ import jmpjmp.globals['pi'] = 3.1415927jmp.globals['e'] = 2.718jmp.run_jsl('
 
 ```python
 
-import jmpjmp.run_jsl('''    pi = 3.1415929''')print( jmp.globals['pi'] )
+import jmp
+
+jmp.run_jsl('''
+    pi = 3.1415929
+''')
+print( jmp.globals['pi'] )
 
 ```
 
@@ -2192,7 +3646,13 @@ import jmpjmp.run_jsl('''    pi = 3.1415929''')print( jmp.globals['pi'] )
 
 ```python
 
-import jmpprint( len( jmp.globals ) )jmp.globals['pi'] = 3.1415927print( len( jmp.globals ) )jmp.globals['e'] =  2.7182818print( len( jmp.globals ) )
+import jmp
+
+print( len( jmp.globals ) )
+jmp.globals['pi'] = 3.1415927
+print( len( jmp.globals ) )
+jmp.globals['e'] =  2.7182818
+print( len( jmp.globals ) )
 
 ```
 
@@ -2206,7 +3666,12 @@ import jmpprint( len( jmp.globals ) )jmp.globals['pi'] = 3.1415927print( len
 
 ```python
 
-import jmpjmp.globals['pi'] = 3.1415927jmp.run_jsl('''    show(pi)''')
+import jmp
+
+jmp.globals['pi'] = 3.1415927
+jmp.run_jsl('''
+    show(pi)
+''')
 
 ```
 
@@ -2220,7 +3685,14 @@ import jmpjmp.globals['pi'] = 3.1415927jmp.run_jsl('''    show(pi)''')
 
 ```python
 
-import jmpjmp.globals['pi'] = 3.1415927jmp.globals['e'] =  2.7182818jmp.globals['Bb'] = 'bumble bee'print( jmp.globals )d = str(jmp.globals)print(d)
+import jmp
+
+jmp.globals['pi'] = 3.1415927
+jmp.globals['e'] =  2.7182818
+jmp.globals['Bb'] = 'bumble bee'
+print( jmp.globals )
+d = str(jmp.globals)
+print(d)
 
 ```
 
@@ -2234,7 +3706,12 @@ import jmpjmp.globals['pi'] = 3.1415927jmp.globals['e'] =  2.7182818jmp.glob
 
 ```python
 
-import jmpjmp.globals['pi'] = 3.1415927jmp.globals['an A'] = 'Annie'print( jmp.globals.get('pi') )                        print( jmp.globals.get('ana') )
+import jmp
+
+jmp.globals['pi'] = 3.1415927
+jmp.globals['an A'] = 'Annie'
+print( jmp.globals.get('pi') )                        
+print( jmp.globals.get('ana') )
 
 ```
 
@@ -2248,7 +3725,11 @@ import jmpjmp.globals['pi'] = 3.1415927jmp.globals['an A'] = 'Annie'print( j
 
 ```python
 
-import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print( jmp.globals.items() )
+import jmp
+
+jmp.globals['pi'] = 3.1415927
+jmp.globals['bB'] = 'Bumble Bee'
+print( jmp.globals.items() )
 
 ```
 
@@ -2262,7 +3743,11 @@ import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print
 
 ```python
 
-import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print( jmp.globals.keys() )
+import jmp
+
+jmp.globals['pi'] = 3.1415927
+jmp.globals['bB'] = 'Bumble Bee'
+print( jmp.globals.keys() )
 
 ```
 
@@ -2276,7 +3761,11 @@ import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print
 
 ```python
 
-import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print( jmp.globals.values() )
+import jmp
+
+jmp.globals['pi'] = 3.1415927
+jmp.globals['bB'] = 'Bumble Bee'
+print( jmp.globals.values() )
 
 ```
 
@@ -2294,7 +3783,18 @@ import jmpjmp.globals['pi'] = 3.1415927jmp.globals['bB'] = 'Bumble Bee'print
 
 ```python
 
-import jmpjmp.here['pi'] = 3.1415927jmp.globals['e'] = 2.718jmp.run_jsl('''    Names Default to Here(1);    show(pi)''')for x in jmp.here:    print( x )print([x for x in jmp.globals])
+import jmp
+
+jmp.here['pi'] = 3.1415927
+jmp.globals['e'] = 2.718
+jmp.run_jsl('''
+    Names Default to Here(1);
+    show(pi)
+''')
+
+for x in jmp.here:
+    print( x )
+print([x for x in jmp.globals])
 
 ```
 
@@ -2314,7 +3814,15 @@ import jmpjmp.here['pi'] = 3.1415927jmp.globals['e'] = 2.718jmp.run_jsl('''
 
 ```python
 
-import jmpjmp.globals['e'] = 2.71828jmp.run_jsl('''    Names Default to Here(1);    pi = 3.1415929;    show(::e);''')print( jmp.here['pi'] )
+import jmp
+
+jmp.globals['e'] = 2.71828
+jmp.run_jsl('''
+    Names Default to Here(1);
+    pi = 3.1415929;
+    show(::e);
+''')
+print( jmp.here['pi'] )
 
 ```
 
@@ -2322,7 +3830,27 @@ import jmpjmp.globals['e'] = 2.71828jmp.run_jsl('''    Names Default to Here
 
 ```python
 
-import jmpjmp.run_jsl('''Names Default to Here(1);here_v = "here";Show(here_v);''')print( f'temporary: {jmp.here['here_v']}' )try:        print(here_v)except:    print('here_v is not in Python globals().')def scoped():    v = jmp.here['here_v']    print(f'scoped: {v}')    scoped()try:        print(v)except:    print('v is local to scoped().')
+import jmp
+
+jmp.run_jsl('''
+Names Default to Here(1);
+here_v = "here";
+Show(here_v);
+''')
+print( f'temporary: {jmp.here['here_v']}' )
+try:    
+    print(here_v)
+except:
+    print('here_v is not in Python globals().')
+def scoped():
+    v = jmp.here['here_v']
+    print(f'scoped: {v}')
+    
+scoped()
+try:    
+    print(v)
+except:
+    print('v is local to scoped().')
 
 ```
 
@@ -2336,7 +3864,13 @@ import jmpjmp.run_jsl('''Names Default to Here(1);here_v = "here";Show(here
 
 ```python
 
-import jmpprint( len( jmp.here ) )jmp.here['pi'] = 3.1415927print( len( jmp.here ) )jmp.here['e'] =  2.7182818print( len( jmp.here ) )
+import jmp
+
+print( len( jmp.here ) )
+jmp.here['pi'] = 3.1415927
+print( len( jmp.here ) )
+jmp.here['e'] =  2.7182818
+print( len( jmp.here ) )
 
 ```
 
@@ -2350,7 +3884,13 @@ import jmpprint( len( jmp.here ) )jmp.here['pi'] = 3.1415927print( len( jmp.
 
 ```python
 
-import jmpjmp.here['pi'] = 3.1415927jmp.run_jsl('''    Names Default to Here(1);    show(pi)''')
+import jmp
+
+jmp.here['pi'] = 3.1415927
+jmp.run_jsl('''
+    Names Default to Here(1);
+    show(pi)
+''')
 
 ```
 
@@ -2364,7 +3904,14 @@ import jmpjmp.here['pi'] = 3.1415927jmp.run_jsl('''    Names Default to Here
 
 ```python
 
-import jmpjmp.here['pi'] = 3.1415927jmp.here['e'] =  2.7182818jmp.here['Bb'] = 'bumble bee'print( jmp.here )d = str(jmp.here)print(d)
+import jmp
+
+jmp.here['pi'] = 3.1415927
+jmp.here['e'] =  2.7182818
+jmp.here['Bb'] = 'bumble bee'
+print( jmp.here )
+d = str(jmp.here)
+print(d)
 
 ```
 
@@ -2378,7 +3925,12 @@ import jmpjmp.here['pi'] = 3.1415927jmp.here['e'] =  2.7182818jmp.here['Bb']
 
 ```python
 
-import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.get('pi') )                        print( jmp.here.get('b  b') )
+import jmp
+
+jmp.here['pi'] = 3.1415927
+jmp.here['bB'] = 'Bumble Bee'
+print( jmp.here.get('pi') )                        
+print( jmp.here.get('b  b') )
 
 ```
 
@@ -2392,7 +3944,11 @@ import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.
 
 ```python
 
-import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.items() )
+import jmp
+
+jmp.here['pi'] = 3.1415927
+jmp.here['bB'] = 'Bumble Bee'
+print( jmp.here.items() )
 
 ```
 
@@ -2406,7 +3962,11 @@ import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.
 
 ```python
 
-import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.keys() )
+import jmp
+
+jmp.here['pi'] = 3.1415927
+jmp.here['bB'] = 'Bumble Bee'
+print( jmp.here.keys() )
 
 ```
 
@@ -2420,7 +3980,11 @@ import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.
 
 ```python
 
-import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.here.values() )
+import jmp
+
+jmp.here['pi'] = 3.1415927
+jmp.here['bB'] = 'Bumble Bee'
+print( jmp.here.values() )
 
 ```
 
@@ -2440,7 +4004,16 @@ import jmpjmp.here['pi'] = 3.1415927jmp.here['bB'] = 'Bumble Bee'print( jmp.
 
 ```python
 
-import jmpdt = jmp.DataTable()credentials = jmp.live.get_credentials()# login to external data source using credentials['username'] and credentials['password']# create dt using obtained datajmp.live.set_result(dt)
+import jmp
+
+dt = jmp.DataTable()
+
+credentials = jmp.live.get_credentials()
+
+# login to external data source using credentials['username'] and credentials['password']
+# create dt using obtained data
+
+jmp.live.set_result(dt)
 
 ```
 
@@ -2454,7 +4027,15 @@ import jmpdt = jmp.DataTable()credentials = jmp.live.get_credentials()# lo
 
 ```python
 
-import jmpdt = jmp.DataTable()importPath = jmp.live.get_import_file_path()with open(importPath) as importFile:    # [import data from importFile to dt]jmp.live.set_result(dt)
+import jmp
+
+dt = jmp.DataTable()
+
+importPath = jmp.live.get_import_file_path()
+with open(importPath) as importFile:
+    # [import data from importFile to dt]
+
+jmp.live.set_result(dt)
 
 ```
 
@@ -2468,7 +4049,17 @@ import jmpdt = jmp.DataTable()importPath = jmp.live.get_import_file_path()w
 
 ```python
 
-import jmpdt = jmp.DataTable()shouldUpdate = True# add data to dt, or set shouldUpdate to Falseif shouldUpdate:    jmp.live.set_result(dt)else:    jmp.live.set_result(None)
+import jmp
+
+dt = jmp.DataTable()
+shouldUpdate = True
+
+# add data to dt, or set shouldUpdate to False
+
+if shouldUpdate:
+    jmp.live.set_result(dt)
+else:
+    jmp.live.set_result(None)
 
 ```
 
@@ -2488,7 +4079,10 @@ import jmpdt = jmp.DataTable()shouldUpdate = True# add data to dt, or set s
 
 ```python
 
-import jmpimport jmp.logjmp.log.flush()
+import jmp
+
+import jmp.log
+jmp.log.flush()
 
 ```
 
@@ -2502,7 +4096,10 @@ import jmpimport jmp.logjmp.log.flush()
 
 ```python
 
-import jmpimport jmp.logjmp.log.write('I am a log message.')
+import jmp
+
+import jmp.log
+jmp.log.write('I am a log message.')
 
 ```
 
@@ -2520,7 +4117,8 @@ import jmpimport jmp.logjmp.log.write('I am a log message.')
 
 ```python
 
-import jmpprint(jmp.ALL_HOME)
+import jmp
+print(jmp.ALL_HOME)
 
 ```
 
@@ -2536,7 +4134,8 @@ import jmpprint(jmp.ALL_HOME)
 
 ```python
 
-import jmpprint(jmp.BUILTIN_SCRIPTS)
+import jmp
+print(jmp.BUILTIN_SCRIPTS)
 
 ```
 
@@ -2550,7 +4149,8 @@ import jmpprint(jmp.BUILTIN_SCRIPTS)
 
 ```python
 
-import jmpprint(jmp.DESKTOP)
+import jmp
+print(jmp.DESKTOP)
 
 ```
 
@@ -2564,7 +4164,8 @@ import jmpprint(jmp.DESKTOP)
 
 ```python
 
-import jmpprint(jmp.DOCUMENTS)
+import jmp
+print(jmp.DOCUMENTS)
 
 ```
 
@@ -2578,7 +4179,8 @@ import jmpprint(jmp.DOCUMENTS)
 
 ```python
 
-import jmpprint(jmp.DOWNLOADS)
+import jmp
+print(jmp.DOWNLOADS)
 
 ```
 
@@ -2592,7 +4194,12 @@ import jmpprint(jmp.DOWNLOADS)
 
 ```python
 
-import jmp# for the sake of typingfrom jmp import DataType as dTypeprint('jmp.DataType members:')print( list(map(lambda c: c.name, dType)) )
+import jmp
+
+# for the sake of typing
+from jmp import DataType as dType
+print('jmp.DataType members:')
+print( list(map(lambda c: c.name, dType)) )
 
 ```
 
@@ -2608,7 +4215,8 @@ import jmp# for the sake of typingfrom jmp import DataType as dTypeprint('jm
 
 ```python
 
-import jmpprint(jmp.HOME)
+import jmp
+print(jmp.HOME)
 
 ```
 
@@ -2622,7 +4230,8 @@ import jmpprint(jmp.HOME)
 
 ```python
 
-import jmpprint(jmp.JMPPRJ)
+import jmp
+print(jmp.JMPPRJ)
 
 ```
 
@@ -2638,7 +4247,12 @@ import jmpprint(jmp.JMPPRJ)
 
 ```python
 
-import jmp# for the sake of typingfrom jmp import ModelingType as mTypeprint('jmp.ModleingType members:')print( list(map(lambda c: c.name, mType)) )
+import jmp
+
+# for the sake of typing
+from jmp import ModelingType as mType
+print('jmp.ModleingType members:')
+print( list(map(lambda c: c.name, mType)) )
 
 ```
 
@@ -2652,7 +4266,11 @@ import jmp# for the sake of typingfrom jmp import ModelingType as mTypeprint
 
 ```python
 
-import jmpimport platformif platform.system() == "Windows":    print(jmp.PYTHONW_EXE)
+import jmp
+
+import platform
+if platform.system() == "Windows":
+    print(jmp.PYTHONW_EXE)
 
 ```
 
@@ -2666,7 +4284,8 @@ import jmpimport platformif platform.system() == "Windows":    print(jmp.PYT
 
 ```python
 
-import jmpprint(jmp.PYTHON_EXE)
+import jmp
+print(jmp.PYTHON_EXE)
 
 ```
 
@@ -2680,7 +4299,8 @@ import jmpprint(jmp.PYTHON_EXE)
 
 ```python
 
-import jmpprint(jmp.PY_USER_APPDIR)
+import jmp
+print(jmp.PY_USER_APPDIR)
 
 ```
 
@@ -2694,7 +4314,8 @@ import jmpprint(jmp.PY_USER_APPDIR)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_APPS)
+import jmp
+print(jmp.SAMPLE_APPS)
 
 ```
 
@@ -2708,7 +4329,8 @@ import jmpprint(jmp.SAMPLE_APPS)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_DASHBOARDS)
+import jmp
+print(jmp.SAMPLE_DASHBOARDS)
 
 ```
 
@@ -2722,7 +4344,8 @@ import jmpprint(jmp.SAMPLE_DASHBOARDS)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_DATA)
+import jmp
+print(jmp.SAMPLE_DATA)
 
 ```
 
@@ -2736,7 +4359,8 @@ import jmpprint(jmp.SAMPLE_DATA)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_IMAGES)
+import jmp
+print(jmp.SAMPLE_IMAGES)
 
 ```
 
@@ -2750,7 +4374,8 @@ import jmpprint(jmp.SAMPLE_IMAGES)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_IMPORT_DATA)
+import jmp
+print(jmp.SAMPLE_IMPORT_DATA)
 
 ```
 
@@ -2764,7 +4389,8 @@ import jmpprint(jmp.SAMPLE_IMPORT_DATA)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_PROJECTS)
+import jmp
+print(jmp.SAMPLE_PROJECTS)
 
 ```
 
@@ -2778,7 +4404,8 @@ import jmpprint(jmp.SAMPLE_PROJECTS)
 
 ```python
 
-import jmpprint(jmp.SAMPLE_SCRIPTS)
+import jmp
+print(jmp.SAMPLE_SCRIPTS)
 
 ```
 
@@ -2792,7 +4419,8 @@ import jmpprint(jmp.SAMPLE_SCRIPTS)
 
 ```python
 
-import jmpprint(jmp.TEMP)
+import jmp
+print(jmp.TEMP)
 
 ```
 
@@ -2806,7 +4434,8 @@ import jmpprint(jmp.TEMP)
 
 ```python
 
-import jmpprint(jmp.USER_APPDATA)
+import jmp
+print(jmp.USER_APPDATA)
 
 ```
 
@@ -2820,7 +4449,8 @@ import jmpprint(jmp.USER_APPDATA)
 
 ```python
 
-import jmpprint(jmp.__jmp_version__)
+import jmp
+print(jmp.__jmp_version__)
 
 ```
 
@@ -2834,7 +4464,8 @@ import jmpprint(jmp.__jmp_version__)
 
 ```python
 
-import jmpprint(jmp.__version__)
+import jmp
+print(jmp.__version__)
 
 ```
 
@@ -2848,7 +4479,10 @@ import jmpprint(jmp.__version__)
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(jmp.current())
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(jmp.current())
 
 ```
 
@@ -2862,7 +4496,136 @@ import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(jmp.current())
 
 ```python
 
-import jmpfrom jmp import eval, Expressionexpression = Expression("2 + 2")result = eval(expression)print(result)
+import jmp
+
+from jmp import eval, Expression
+expression = Expression("2 + 2")
+result = eval(expression)
+print(result)
+
+```
+
+#### from_arrow
+
+**Syntax:** result = jmp.from_arrow(&lt;library.Dataframe&gt;, requested_schema=&lt;schema&gt;, visibility=&lt;string&gt;, preserve_index=&lt;bool&gt;)
+
+**Beschreibung:** Erstellt eine jmp.DataTable aus einem Dataframe, der die PyArrow-Capsule-Schnittstelle implementiert.
+
+**JMP Version hinzugefügt:** 20
+
+**JMP nach Pandas**
+
+```python
+
+import jmp
+
+import jmp
+import jmputils
+
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas==3.0.3', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+pandas_df = pd.DataFrame.from_arrow(dt)
+print(pandas_df)
+
+```
+
+**JMP nach Polars**
+
+```python
+
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+polars_df = pl.from_arrow(dt)
+print(polars_df)
+
+```
+
+**Pandas nach JMP**
+
+```python
+
+import jmp
+
+import jmputils
+
+try:
+    # pandas depends on numpy will install numpy if needed
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas==3.0.3', echo=False)
+
+    # pyarrow is a dependency used by pandas for the 
+    # Arrow PyCapsule interface. If not already installed,
+    # pyarrow will be installed automatically when calling from_arrow
+    if not jmputils.is_installed('pyarrow'):
+        jmputils.jpip('install', 'pyarrow==23.0.1', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+import numpy as np
+
+pandas_df = pd.DataFrame(
+    {
+        "A": 1.0,
+        "B": pd.Timestamp("20130102"),
+        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
+        "D": np.array([3] * 4, dtype="int32"),
+        "E": pd.Categorical(["test", "train", "test", "train"]),
+        "F": "foo",
+    }
+)
+print(pandas_df)
+
+dt = jmp.from_arrow(pandas_df)
+print(dt)
+
+```
+
+**Polars nach JMP**
+
+```python
+
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+from datetime import date
+
+polars_df = pl.DataFrame(
+ {
+    "foo": [1, 2, 3],
+    "bar": [6.0, 7.0, 8.0],
+    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],
+  }
+)
+print(polars_df)
+dt = jmp.from_arrow(polars_df)
+print(dt)
 
 ```
 
@@ -2878,7 +4641,24 @@ import jmpfrom jmp import eval, Expressionexpression = Expression("2 + 2")re
 
 ```python
 
-import jmpimport jmputils        try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe(df)print(dt)
+import jmp
+
+import jmputils        
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+# Object columns are unsupported with jmp.from_dataframe() 
+df = pd.DataFrame({
+    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
+})
+
+dt = jmp.from_dataframe(df)
+print(dt)
 
 ```
 
@@ -2886,7 +4666,29 @@ import jmpimport jmputils        try:    if not jmputils.is_installed('panda
 
 ```python
 
-import jmpimport jmputils try:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)    jmputils.jpip('install', 'ibis-framework[duckdb,examples]') except Exception as e:    print(f'Install failed with exception: {e}')          import pandas as pd import ibis  pandas_df = pd.DataFrame(     [["a", 1, 2], ["b", 3, 4]],     columns=["one", "two", "three"], ) t = ibis.memtable(pandas_df, name="t") print(t) dt = jmp.from_dataframe(t) print(dt)
+import jmp
+
+import jmputils
+ 
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+    jmputils.jpip('install', 'ibis-framework[duckdb,examples]')
+ 
+except Exception as e:
+    print(f'Install failed with exception: {e}')         
+
+import pandas as pd
+import ibis
+ 
+pandas_df = pd.DataFrame(
+     [["a", 1, 2], ["b", 3, 4]],
+     columns=["one", "two", "three"],
+)
+t = ibis.memtable(pandas_df)
+print(t)
+dt = jmp.from_dataframe(t)
+print(dt)
 
 ```
 
@@ -2894,7 +4696,21 @@ import jmpimport jmputils try:    if not jmputils.is_installed('pandas'): 
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pddt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")pandas_df = (pd.api.interchange.from_dataframe(dt))print(pandas_df)
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+pandas_df = (pd.api.interchange.from_dataframe(dt))
+print(pandas_df)
 
 ```
 
@@ -2902,7 +4718,21 @@ import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):  
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as pldt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")polars_df = pl.from_dataframe(dt)print(polars_df)
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+
+dt = jmp.open(jmp.SAMPLE_DATA + "Big Class.jmp")
+polars_df = pl.from_dataframe(dt)
+print(polars_df)
 
 ```
 
@@ -2910,7 +4740,34 @@ import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):  
 
 ```python
 
-import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df)print(dt)
+import jmp
+
+import jmputils
+
+try:
+    # pandas depends on numpy will install numpy if needed
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+import numpy as np
+
+pandas_df = pd.DataFrame(
+    {
+        "A": 1.0,
+        "B": pd.Timestamp("20130102"),
+        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
+        "D": np.array([3] * 4, dtype="int32"),
+        "E": pd.Categorical(["test", "train", "test", "train"]),
+        "F": "foo",
+    }
+)
+print(pandas_df)
+
+dt = jmp.from_dataframe(pandas_df)
+print(dt)
 
 ```
 
@@ -2918,15 +4775,66 @@ import jmpimport jmputilstry:    # pandas depends on numpy will install num
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('polars'):        jmputils.jpip('install', 'polars', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import polars as plfrom datetime import datepolars_df = pl.DataFrame( {    "foo": [1, 2, 3],    "bar": [6.0, 7.0, 8.0],    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],  } ) print(polars_df) dt = jmp.from_dataframe(polars_df) print(dt)
+import jmp
+
+import jmputils
+
+try:
+    if not jmputils.is_installed('polars'):
+        jmputils.jpip('install', 'polars', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import polars as pl
+from datetime import date
+
+polars_df = pl.DataFrame(
+ {
+    "foo": [1, 2, 3],
+    "bar": [6.0, 7.0, 8.0],
+    "ham": [date(2020, 1, 2), date(2021, 3, 4), date(2022, 5, 6)],
+  }
+)
+print(polars_df)
+dt = jmp.from_dataframe(polars_df)
+print(dt)
 
 ```
 
-**Visibility**
+**Sichtbarkeit**
 
 ```python
 
-import jmpimport jmputilstry:    # pandas depends on numpy will install numpy if needed    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pdimport numpy as nppandas_df = pd.DataFrame(    {        "A": 1.0,        "B": pd.Timestamp("20130102"),        "C": pd.Series(1, index=list(range(4)), dtype="float32"),        "D": np.array([3] * 4, dtype="int32"),        "E": pd.Categorical(["test", "train", "test", "train"]),        "F": "foo",    })print(pandas_df)dt = jmp.from_dataframe(pandas_df, visibility="invisible")#dt = jmp.from_dataframe(pandas_df, visibility="private")print(dt)
+import jmp
+
+import jmputils
+
+try:
+    # pandas depends on numpy will install numpy if needed
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+import numpy as np
+
+pandas_df = pd.DataFrame(
+    {
+        "A": 1.0,
+        "B": pd.Timestamp("20130102"),
+        "C": pd.Series(1, index=list(range(4)), dtype="float32"),
+        "D": np.array([3] * 4, dtype="int32"),
+        "E": pd.Categorical(["test", "train", "test", "train"]),
+        "F": "foo",
+    }
+)
+print(pandas_df)
+
+dt = jmp.from_dataframe(pandas_df, visibility="invisible")
+#dt = jmp.from_dataframe(pandas_df, visibility="private")
+
+print(dt)
 
 ```
 
@@ -2938,19 +4846,63 @@ import jmpimport jmputilstry:    # pandas depends on numpy will install num
 
 **JMP Version hinzugefügt:** 19
 
-**General**
+**Allgemein**
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})try:    # Try converting object without CSV fallback    dt = jmp.from_dataframe(df, True, False)    print("Converted using jmp.from_dataframe()")except:     # Explicitly convert using CSV    dt = jmp.from_dataframe_using_csv(df)    print("Converted using jmp.from_dataframe_using_csv()")print(dt)
+import jmp
+
+import jmputils
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+# Object columns are unsupported with jmp.from_dataframe() 
+df = pd.DataFrame({
+    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
+})
+
+try:
+    # Try converting object without CSV fallback
+    dt = jmp.from_dataframe(df, True, False)
+    print("Converted using jmp.from_dataframe()")
+except: 
+    # Explicitly convert using CSV
+    dt = jmp.from_dataframe_using_csv(df)
+    print("Converted using jmp.from_dataframe_using_csv()")
+
+print(dt)
 
 ```
 
-**Visibility**
+**Sichtbarkeit**
 
 ```python
 
-import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):        jmputils.jpip('install', 'pandas', echo=False)except Exception as e:    print(f'Install failed with exception: {e}')import pandas as pd# Object columns are unsupported with jmp.from_dataframe() df = pd.DataFrame({    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),})dt = jmp.from_dataframe_using_csv(df, visibility="invisible")#dt = jmp.from_dataframe_using_csv(df, visibility="private")print(dt)
+import jmp
+
+import jmputils
+try:
+    if not jmputils.is_installed('pandas'):
+        jmputils.jpip('install', 'pandas<3.0.0', echo=False)
+except Exception as e:
+    print(f'Install failed with exception: {e}')
+
+import pandas as pd
+
+# Object columns are unsupported with jmp.from_dataframe() 
+df = pd.DataFrame({
+    "objects": pd.Series([{"a": 1, "b": 2}, {"a": 3, "b": 4}, {"a": 5, "b": 6}, {"a": 7, "b": 8}, {"a": 9, "b": 10}, {"a": 11, "b": 12}]),
+})
+
+dt = jmp.from_dataframe_using_csv(df, visibility="invisible")
+#dt = jmp.from_dataframe_using_csv(df, visibility="private")
+
+print(dt)
 
 ```
 
@@ -2966,7 +4918,10 @@ import jmpimport jmputilstry:    if not jmputils.is_installed('pandas'):   
 
 ```python
 
-import jmpobj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')print(obj)
+import jmp
+
+obj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')
+print(obj)
 
 ```
 
@@ -2974,7 +4929,10 @@ import jmpobj = jmp.open(jmp.SAMPLE_IMPORT_DATA + 'Bigclass.xlsx')print(obj)
 
 ```python
 
-import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
+import jmp
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print(dt)
 
 ```
 
@@ -2982,7 +4940,10 @@ import jmpdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print(dt)
 
 ```python
 
-import jmpobj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')print(obj)
+import jmp
+
+obj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')
+print(obj)
 
 ```
 
@@ -2990,7 +4951,19 @@ import jmpobj = jmp.open(jmp.SAMPLE_SCRIPTS + 'string.jsl')print(obj)
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')dt = jmp.current()print(dt)  # => Nonetry:  dt = jmp.table('Animals')except FileNotFoundError:  print('Requested table not found')dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')print(dt)dt.close(save=False)del dt
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
+dt = jmp.current()
+print(dt)  # => None
+try:
+  dt = jmp.table('Animals')
+except FileNotFoundError:
+  print('Requested table not found')
+dt = jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')
+print(dt)
+dt.close(save=False)
+del dt
 
 ```
 
@@ -2998,7 +4971,18 @@ import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Private')dt
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')dt = jmp.current()print(dt)  # successdt = jmp.table('Animals')print(dt)  # success# Select and run the above first if you want to see that even though# there is no window, Animals.jmp appears in recent files and# home window's list of filesdt.close(save=False);del dt
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')
+dt = jmp.current()
+print(dt)  # success
+dt = jmp.table('Animals')
+print(dt)  # success
+# Select and run the above first if you want to see that even though
+# there is no window, Animals.jmp appears in recent files and
+# home window's list of files
+dt.close(save=False);
+del dt
 
 ```
 
@@ -3012,7 +4996,13 @@ import jmpjmp.open(jmp.SAMPLE_DATA + 'Animals.jmp', visibility = 'Invisible')
 
 ```python
 
-import jmppath_value = jmp.path_variable('SAMPLE_DATA')if not path_value:    print('Invalid path variable.')else:    print(path_value)
+import jmp
+
+path_value = jmp.path_variable('SAMPLE_DATA')
+if not path_value:
+    print('Invalid path variable.')
+else:
+    print(path_value)
 
 ```
 
@@ -3026,7 +5016,10 @@ import jmppath_value = jmp.path_variable('SAMPLE_DATA')if not path_value:   
 
 ```python
 
-import jmprName = jmp.r_name('c d e')print(rName)
+import jmp
+
+rName = jmp.r_name('c d e')
+print(rName)
 
 ```
 
@@ -3040,7 +5033,12 @@ import jmprName = jmp.r_name('c d e')print(rName)
 
 ```python
 
-import jmppi = 3.1415927print(pi)jmp.reset()print(pi)
+import jmp
+
+pi = 3.1415927
+print(pi)
+jmp.reset()
+print(pi)
 
 ```
 
@@ -3056,7 +5054,14 @@ import jmppi = 3.1415927print(pi)jmp.reset()print(pi)
 
 ```python
 
-import jmpvalue = jmp.run_jsl('''Names default to here(1);an A = 1.5;x = 5 * anA;''')print( f'{value} = jmp.run_jsl()')
+import jmp
+
+value = jmp.run_jsl('''
+Names default to here(1);
+an A = 1.5;
+x = 5 * anA;
+''')
+print( f'{value} = jmp.run_jsl()')
 
 ```
 
@@ -3064,7 +5069,24 @@ import jmpvalue = jmp.run_jsl('''Names default to here(1);an A = 1.5;x = 5 
 
 ```python
 
-import jmp# Create a data table# dt = jmp.DataTable(name='table_name', rows=n)pbp = jmp.DataTable(rows=5)pbp.name = 'Powered by Python'pbp.new_column('Name', jmp.DataType.Character)pbp.new_column('Hourly Rate')#pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missingpbp[1][4] = 17.25## Change column format: Hourly Ratejmp.run_jsl('''Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );Data Table( "Powered by Python" ):Name << Set Display Width( 75 );''')
+import jmp
+
+# Create a data table
+# dt = jmp.DataTable(name='table_name', rows=n)
+pbp = jmp.DataTable(rows=5)
+pbp.name = 'Powered by Python'
+pbp.new_column('Name', jmp.DataType.Character)
+pbp.new_column('Hourly Rate')
+#
+pbp['Name'] = ['Janet', 'James', 'Jerry', 'Jenny', 'Jill']
+pbp[1] = [ 14.25, 9.75, 15.0, 12.35, '17.25']  # last value bad => becomes missing
+pbp[1][4] = 17.25
+#
+# Change column format: Hourly Rate
+jmp.run_jsl('''
+Data Table( "Powered by Python" ):Hourly Rate << Format( "Currency", "USD", 17, 2 );
+Data Table( "Powered by Python" ):Name << Set Display Width( 75 );
+''')
 
 ```
 
@@ -3072,7 +5094,9 @@ import jmp# Create a data table# dt = jmp.DataTable(name='table_name', rows=n
 
 ```python
 
-import jmpjmp.run_jsl('Python Get Version();')
+import jmp
+
+jmp.run_jsl('Python Get Version();')
 
 ```
 
@@ -3086,7 +5110,10 @@ import jmpjmp.run_jsl('Python Get Version();')
 
 ```python
 
-import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( jmp.table('Big Class') )
+import jmp
+
+jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+print( jmp.table('Big Class') )
 
 ```
 
@@ -3110,7 +5137,12 @@ import jmpjmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')print( jmp.table('Big Cl
 
 ```python
 
-import jmpfrom jmpex.R import Rjr = R()print(jr.r_version())
+import jmp
+
+from jmpex.R import R
+
+jr = R()
+print(jr.r_version())
 
 ```
 
@@ -3124,7 +5156,12 @@ import jmpfrom jmpex.R import Rjr = R()print(jr.r_version())
 
 ```python
 
-import jmpfrom jmpex.R import Rjr = R()print(jr.__version__)
+import jmp
+
+from jmpex.R import R
+
+jr = R()
+print(jr.__version__)
 
 ```
 
@@ -3140,7 +5177,20 @@ import jmpfrom jmpex.R import Rjr = R()print(jr.__version__)
 
 ```python
 
-import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()d = jr.set( dt , 'rdt' )   # as_name required from Pythonprint(d.__class__)print(d)# A R DataFrame is returned to Python as a pandas.DataFramerdt = jr.get('rdt')print( rdt.__class__ )print( rdt )
+import jmp
+
+from jmpex.R import R
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+jr = R()
+
+d = jr.set( dt , 'rdt' )   # as_name required from Python
+print(d.__class__)
+print(d)
+# A R DataFrame is returned to Python as a pandas.DataFrame
+rdt = jr.get('rdt')
+print( rdt.__class__ )
+print( rdt )
 
 ```
 
@@ -3148,7 +5198,24 @@ import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp
 
 ```python
 
-import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# initialize jmpex.R.R classjr = R()a = dt['age']nar = np.array( a )print(nar.__class__)print(nar)rv = ro.vectors.FloatVector(nar)print(rv.__class__)print(rv)
+import jmp
+
+from jmpex.R import R
+import numpy as np
+import rpy2.robjects as ro
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+# initialize jmpex.R.R class
+jr = R()
+
+a = dt['age']
+nar = np.array( a )
+print(nar.__class__)
+print(nar)
+rv = ro.vectors.FloatVector(nar)
+print(rv.__class__)
+print(rv)
 
 ```
 
@@ -3156,7 +5223,20 @@ import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as ro
 
 ```python
 
-import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()a = jr.set( dt['age'], 'rage' )   # as_name required from Pythonprint(a.__class__)print(a)ra = jr.get('rage')print( ra.__class__ )print( ra )
+import jmp
+
+from jmpex.R import R
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+jr = R()
+
+a = jr.set( dt['age'], 'rage' )   # as_name required from Python
+
+print(a.__class__)
+print(a)
+ra = jr.get('rage')
+print( ra.__class__ )
+print( ra )
 
 ```
 
@@ -3164,7 +5244,23 @@ import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp
 
 ```python
 
-import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()s = dt['name']nas = np.array(s)print(nas.__class__)print(nas)rv = ro.vectors.StrVector(nas)print(rv.__class__)print(rv)
+import jmp
+
+from jmpex.R import R
+import numpy as np
+import rpy2.robjects as ro
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+jr = R()
+
+s = dt['name']
+nas = np.array(s)
+print(nas.__class__)
+print(nas)
+rv = ro.vectors.StrVector(nas)
+print(rv.__class__)
+print(rv)
 
 ```
 
@@ -3178,7 +5274,13 @@ import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as ro
 
 ```python
 
-import jmpfrom jmpex.R import Rprint(f'R initialized: {R.is_connected()}')jr = R()print(f'R initialized: {R.is_connected()}')
+import jmp
+
+from jmpex.R import R
+
+print(f'R initialized: {R.is_connected()}')
+jr = R()
+print(f'R initialized: {R.is_connected()}')
 
 ```
 
@@ -3192,7 +5294,23 @@ import jmpfrom jmpex.R import Rprint(f'R initialized: {R.is_connected()}')j
 
 ```python
 
-import jmpfrom jmpex.R import Rjr = R()d = { "canine": ["poodle", "dalmation", "wolf"],       "ages": [ 1, 3, 5],       "vet bill": [200.0, 300.57, 2000.99] }      r_obj = jr.obj2r( d )p_obj = jr.r2obj( r_obj )print(r_obj.__class__)print(r_obj)print(p_obj.__class__)print(p_obj)
+import jmp
+
+from jmpex.R import R
+
+jr = R()
+d = { "canine": ["poodle", "dalmation", "wolf"], 
+      "ages": [ 1, 3, 5], 
+      "vet bill": [200.0, 300.57, 2000.99] }
+      
+r_obj = jr.obj2r( d )
+p_obj = jr.r2obj( r_obj )
+
+print(r_obj.__class__)
+print(r_obj)
+
+print(p_obj.__class__)
+print(p_obj)
 
 ```
 
@@ -3206,7 +5324,23 @@ import jmpfrom jmpex.R import Rjr = R()d = { "canine": ["poodle", "dalmatio
 
 ```python
 
-import jmpfrom jmpex.R import Rjr = R()d = { "canine": ["poodle", "dalmation", "wolf"],       "ages": [ 1, 3, 5],       "vet bill": [200.0, 300.57, 2000.99] }      r_obj = jr.obj2r( d )p_obj = jr.r2obj( r_obj )print(r_obj.__class__)print(r_obj)print(p_obj.__class__)print(p_obj)
+import jmp
+
+from jmpex.R import R
+
+jr = R()
+d = { "canine": ["poodle", "dalmation", "wolf"], 
+      "ages": [ 1, 3, 5], 
+      "vet bill": [200.0, 300.57, 2000.99] }
+      
+r_obj = jr.obj2r( d )
+p_obj = jr.r2obj( r_obj )
+
+print(r_obj.__class__)
+print(r_obj)
+
+print(p_obj.__class__)
+print(p_obj)
 
 ```
 
@@ -3220,7 +5354,12 @@ import jmpfrom jmpex.R import Rjr = R()d = { "canine": ["poodle", "dalmatio
 
 ```python
 
-import jmpfrom jmpex.R import Rjr = R()print(f'R Version: {jr.r_version()}')
+import jmp
+
+from jmpex.R import R
+
+jr = R()
+print(f'R Version: {jr.r_version()}')
 
 ```
 
@@ -3236,7 +5375,22 @@ import jmpfrom jmpex.R import Rjr = R()print(f'R Version: {jr.r_version()}'
 
 ```python
 
-import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();print(d.__class__)print(d)bc = jr.get('Big.Class')print( bc.__class__ )print( bc )
+import jmp
+
+from jmpex.R import R
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+jr = R()
+
+# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...
+d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'
+jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();
+
+print(d.__class__)
+print(d)
+bc = jr.get('Big.Class')
+print( bc.__class__ )
+print( bc )
 
 ```
 
@@ -3244,7 +5398,24 @@ import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp
 
 ```python
 
-import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# initialize jmpex.Rjr = R()a = dt['age']nar = np.array( a )print(nar.__class__)print(nar)rv = ro.vectors.FloatVector(nar)print(rv.__class__)print(rv)
+import jmp
+
+from jmpex.R import R
+import numpy as np
+import rpy2.robjects as ro
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+# initialize jmpex.R
+jr = R()
+
+a = dt['age']
+nar = np.array( a )
+print(nar.__class__)
+print(nar)
+rv = ro.vectors.FloatVector(nar)
+print(rv.__class__)
+print(rv)
 
 ```
 
@@ -3252,7 +5423,20 @@ import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as ro
 
 ```python
 
-import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()a = jr.set( dt['age'], 'rage' )   # as_name required from Pythonprint(a.__class__)print(a)ra = jr.get('rage')print( ra.__class__ )print( ra )
+import jmp
+
+from jmpex.R import R
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+jr = R()
+
+a = jr.set( dt['age'], 'rage' )   # as_name required from Python
+
+print(a.__class__)
+print(a)
+ra = jr.get('rage')
+print( ra.__class__ )
+print( ra )
 
 ```
 
@@ -3260,7 +5444,23 @@ import jmpfrom jmpex.R import Rdt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp
 
 ```python
 
-import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as rodt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')jr = R()s = dt['name']nas = np.array(s)print(nas.__class__)print(nas)rv = ro.vectors.StrVector(nas)print(rv.__class__)print(rv)
+import jmp
+
+from jmpex.R import R
+import numpy as np
+import rpy2.robjects as ro
+
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+jr = R()
+
+s = dt['name']
+nas = np.array(s)
+print(nas.__class__)
+print(nas)
+rv = ro.vectors.StrVector(nas)
+print(rv.__class__)
+print(rv)
 
 ```
 
@@ -3276,7 +5476,23 @@ import jmpfrom jmpex.R import Rimport numpy as npimport rpy2.robjects as ro
 
 ```python
 
-import jmpfrom jmpex.R import R           jr = R()dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'df = jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();print(f'DataFrame:\n{df}')print(d.__class__)print(d)bc = jr.get('Big.Class')print( bc.__class__ )print( bc )
+import jmp
+
+from jmpex.R import R
+           
+jr = R()
+dt = jmp.open(jmp.SAMPLE_DATA + 'Big Class.jmp')
+
+# R DataFrame can be jmp.DataTable, pandas.DataFrame, ...
+d = jr.set( dt , 'Big.Class' )   # becomes 'Big.Class'
+df = jr.submit('Big.Class')           # see: JSL R Send File(); R Submit();
+print(f'DataFrame:\n{df}')
+
+print(d.__class__)
+print(d)
+bc = jr.get('Big.Class')
+print( bc.__class__ )
+print( bc )
 
 ```
 
@@ -3284,7 +5500,15 @@ import jmpfrom jmpex.R import R           jr = R()dt = jmp.open(jmp.SAMPLE_
 
 ```python
 
-import jmpfrom jmpex.R import Rjr = R()jr.submit('''x <- rnorm (100)y <- x**2 + rnorm (100)''')
+import jmp
+
+from jmpex.R import R
+
+jr = R()
+jr.submit('''
+x <- rnorm (100)
+y <- x**2 + rnorm (100)
+''')
 
 ```
 
@@ -3298,7 +5522,19 @@ import jmpfrom jmpex.R import Rjr = R()jr.submit('''x <- rnorm (100)y <- 
 
 ```python
 
-import jmpimport osfrom jmpex.R import Rjr = R()result = jr.submit_file( os.path.join(jmp.SAMPLE_SCRIPTS, 'R', 'SI_example.R') )print(result)print(result.__class__)po = jr.r2obj(result)print(po)print(po.__class__)
+import jmp
+
+import os
+from jmpex.R import R
+
+jr = R()
+result = jr.submit_file( os.path.join(jmp.SAMPLE_SCRIPTS, 'R', 'SI_example.R') )
+print(result)
+print(result.__class__)
+
+po = jr.r2obj(result)
+print(po)
+print(po.__class__)
 
 ```
 
@@ -3342,7 +5578,10 @@ import jmpimport osfrom jmpex.R import Rjr = R()result = jr.submit_file( o
 
 ```python
 
-import jmpimport jmputilsprint( jmputils.__version__ )
+import jmp
+
+import jmputils
+print( jmputils.__version__ )
 
 ```
 
@@ -3356,7 +5595,19 @@ import jmpimport jmputilsprint( jmputils.__version__ )
 
 ```python
 
-import jmpimport jmputilsjmp.run_jsl('''dest_path = Pick Directory("Directory location to save jpip script.");// Pick Directory on windows returns a leading / use Convert File Path()If( Host is("Windows"),    dest_path = Convert File Path( dest_path, windows ));Python Send(dest_path);''')jmputils.create_jpip(dest_path)
+import jmp
+
+import jmputils
+
+jmp.run_jsl('''
+dest_path = Pick Directory("Directory location to save jpip script.");
+// Pick Directory on windows returns a leading / use Convert File Path()
+If( Host is("Windows"),
+    dest_path = Convert File Path( dest_path, windows )
+);
+Python Send(dest_path);
+''')
+jmputils.create_jpip(dest_path)
 
 ```
 
@@ -3372,7 +5623,19 @@ import jmpimport jmputilsjmp.run_jsl('''dest_path = Pick Directory("Directo
 
 ```python
 
-import jmpimport jmputilsif not jmputils.is_installed('certifi'):    result = jmputils.jpip('install', 'certifi', echo=False)    try:        result.check_returncode()        print( jmputils.package_version('certifi') )    except Exception as e:        print(f'jpip install failed with reason: {e}')else:    print( jmputils.package_version('certifi') )
+import jmp
+
+import jmputils
+
+if not jmputils.is_installed('certifi'):
+    result = jmputils.jpip('install', 'certifi', echo=False)
+    try:
+        result.check_returncode()
+        print( jmputils.package_version('certifi') )
+    except Exception as e:
+        print(f'jpip install failed with reason: {e}')
+else:
+    print( jmputils.package_version('certifi') )
 
 ```
 
@@ -3380,7 +5643,14 @@ import jmpimport jmputilsif not jmputils.is_installed('certifi'):    result
 
 ```python
 
-import jmpimport jmputilsif jmputils.is_installed('invalidjmppackage'):    print("Surprise!")else:    print('Package not found.')
+import jmp
+
+import jmputils
+
+if jmputils.is_installed('invalidjmppackage'):
+    print("Surprise!")
+else:
+    print('Package not found.')
 
 ```
 
@@ -3396,7 +5666,29 @@ import jmpimport jmputilsif jmputils.is_installed('invalidjmppackage'):    
 
 ```python
 
-import jmpfrom jmputils import jpipjmp.run_jsl('''src_path = Pick File(    "Select requirements.txt File",    "$DOCUMENTS",    {"TXT Files|txt", "All Files|*"},    0,    0,    "requirements.txt");show(src_path);If( Host is("Windows"),    src_path = Convert File Path( src_path, windows ));show(src_path);Python Send(src_path);''')jpip('install', f'-r {src_path}')
+import jmp
+
+from jmputils import jpip
+
+jmp.run_jsl('''
+
+
+src_path = Pick File(
+    "Select requirements.txt File",
+    "$DOCUMENTS",
+    {"TXT Files|txt", "All Files|*"},
+    0,
+    0,
+    "requirements.txt"
+);
+show(src_path);
+If( Host is("Windows"),
+    src_path = Convert File Path( src_path, windows )
+);
+show(src_path);
+Python Send(src_path);
+''')
+jpip('install', f'-r {src_path}')
 
 ```
 
@@ -3404,7 +5696,11 @@ import jmpfrom jmputils import jpipjmp.run_jsl('''src_path = Pick File(  
 
 ```python
 
-import jmpfrom jmputils import jpip# R support package jmpex uninstalled like any other Python package. jpip('uninstall', 'jmpex')
+import jmp
+
+from jmputils import jpip
+# R support package jmpex uninstalled like any other Python package. 
+jpip('uninstall', 'jmpex')
 
 ```
 
@@ -3412,7 +5708,12 @@ import jmpfrom jmputils import jpip# R support package jmpex uninstalled like
 
 ```python
 
-import jmpfrom jmputils import jpip# update to latest version of pip and setuptools then install numpy & pandasjpip('install --upgrade', 'pip setuptools certifi')jpip('install', 'numpy pandas')
+import jmp
+
+from jmputils import jpip
+# update to latest version of pip and setuptools then install numpy & pandas
+jpip('install --upgrade', 'pip setuptools certifi')
+jpip('install', 'numpy pandas')
 
 ```
 
@@ -3420,7 +5721,12 @@ import jmpfrom jmputils import jpip# update to latest version of pip and setu
 
 ```python
 
-import jmpfrom jmputils import jpip# update to latest version of pip and setuptools then install numpy & pandasjpip(['install', '--upgrade'], ['pip', 'setuptools', 'certifi'])jpip(['install'], ['numpy', 'pandas'])
+import jmp
+
+from jmputils import jpip
+# update to latest version of pip and setuptools then install numpy & pandas
+jpip(['install', '--upgrade'], ['pip', 'setuptools', 'certifi'])
+jpip(['install'], ['numpy', 'pandas'])
 
 ```
 
@@ -3428,7 +5734,12 @@ import jmpfrom jmputils import jpip# update to latest version of pip and setu
 
 ```python
 
-import jmpimport osfrom jmputils import jpip# Install jmpex package jpip('install', [ os.path.join(jmp.SAMPLE_SCRIPTS, 'Python', 'jmpex.zip') ] )
+import jmp
+
+import os
+from jmputils import jpip
+# Install jmpex package 
+jpip('install', [ os.path.join(jmp.SAMPLE_SCRIPTS, 'Python', 'jmpex.zip') ] )
 
 ```
 
@@ -3436,7 +5747,10 @@ import jmpimport osfrom jmputils import jpip# Install jmpex package jpip('i
 
 ```python
 
-import jmpfrom jmputils import jpipjpip('list')
+import jmp
+
+from jmputils import jpip
+jpip('list')
 
 ```
 
@@ -3444,7 +5758,19 @@ import jmpfrom jmputils import jpipjpip('list')
 
 ```python
 
-import jmpfrom jmputils import jpipjmp.run_jsl('''dest_path = Pick Directory("Directory location of local package directory to install.");// Pick Directory on windows returns a leading / use Convert File Path()If( Host is("Windows"),    dest_path = Convert File Path( dest_path, windows ));Python Send(dest_path);''')print(dest_path)jpip('install', dest_path)
+import jmp
+
+from jmputils import jpip
+jmp.run_jsl('''
+dest_path = Pick Directory("Directory location of local package directory to install.");
+// Pick Directory on windows returns a leading / use Convert File Path()
+If( Host is("Windows"),
+    dest_path = Convert File Path( dest_path, windows )
+);
+Python Send(dest_path);
+''')
+print(dest_path)
+jpip('install', dest_path)
 
 ```
 
@@ -3458,7 +5784,11 @@ import jmpfrom jmputils import jpipjmp.run_jsl('''dest_path = Pick Directory
 
 ```python
 
-import jmpimport jmputils# package_version() internally calls is_installed()print( jmputils.package_version('certifi') )
+import jmp
+
+import jmputils
+# package_version() internally calls is_installed()
+print( jmputils.package_version('certifi') )
 
 ```
 
@@ -3472,7 +5802,13 @@ import jmpimport jmputils# package_version() internally calls is_installed()
 
 ```python
 
-import jmpimport jmputilspkgs = jmputils.packages()print('Package,', 'Version')for key, value in pkgs.items():    print(f'{key}: {value}')
+import jmp
+
+import jmputils
+pkgs = jmputils.packages()
+print('Package,', 'Version')
+for key, value in pkgs.items():
+    print(f'{key}: {value}')
 
 ```
 

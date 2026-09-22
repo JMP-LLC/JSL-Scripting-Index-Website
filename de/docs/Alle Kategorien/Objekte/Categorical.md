@@ -12,19 +12,29 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical(	Rater Agreement( :First Survey, :Second Survey ),	Freq( :Count ),	Agreement Statistic( 0 ));Wait( 1 );obj << Agreement Statistic( 1 );
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Categorical(
+	Rater Agreement( :First Survey, :Second Survey ),
+	Freq( :Count ),
+	Agreement Statistic( 0 )
+);
+Wait( 1 );
+obj << Agreement Statistic( 1 );
 
 ```
 
 ### Aligned Responses
 
-**Syntax:** obj = Categorical(...Aligned Responses( columns )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Aligned Responses( columns )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Daten mehrerer Spalten mit gleichen Zielgrößenstufen in einem einzelnen Bericht zusammen.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical( Aligned Responses( :First Survey, :Second Survey ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Categorical( Aligned Responses( :First Survey, :Second Survey ), Freq( :Count ) );
 
 ```
 
@@ -36,7 +46,17 @@ dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	Responses( :country ),	Legend( 0 ),	Arrange in Rows( 2 ));Wait( 1 );obj << Arrange in Rows( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	Responses( :country ),
+	Legend( 0 ),
+	Arrange in Rows( 2 )
+);
+Wait( 1 );
+obj << Arrange in Rows( 1 );
 
 ```
 
@@ -48,7 +68,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :ma
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );obj << Homogeneity Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );
+obj << Homogeneity Test( 1 );
 
 ```
 
@@ -60,7 +83,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Resp
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :size ), Responses( :country ) );obj << Cell Chisq( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :size ), Responses( :country ) );
+obj << Cell Chisq( 1 );
 
 ```
 
@@ -74,7 +100,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :size ), R
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :size ), Responses( :country ) );obj << Cell Chisq( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :size ), Responses( :country ) );
+obj << Cell Chisq( 1 );
 
 ```
 
@@ -86,7 +115,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :size ), R
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << ChiSquare Test Choices( "Pearson Only" );obj << Test Response Homogeneity( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << ChiSquare Test Choices( "Pearson Only" );
+obj << Test Response Homogeneity( 1 );
 
 ```
 
@@ -98,7 +131,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X( :Employee Tenure ), Responses( :Job Satisfaction ) );obj << Compare Each Cell( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical( X( :Employee Tenure ), Responses( :Job Satisfaction ) );
+obj << Compare Each Cell( 1 );
 
 ```
 
@@ -112,7 +148,10 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X( :Employee Tenure ), Responses( :Job Satisfaction ) );obj << Compare Each Cell FDR( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical( X( :Employee Tenure ), Responses( :Job Satisfaction ) );
+obj << Compare Each Cell FDR( 1 );
 
 ```
 
@@ -124,7 +163,10 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X( :Age Group ), Responses( :I am working on my career ) );obj << Compare Each Sample( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical( X( :Age Group ), Responses( :I am working on my career ) );
+obj << Compare Each Sample( 1 );
 
 ```
 
@@ -138,7 +180,10 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X( :Age Group ), Responses( :I am working on my career ) );obj << Compare Each Sample FDR( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical( X( :Age Group ), Responses( :I am working on my career ) );
+obj << Compare Each Sample FDR( 1 );
 
 ```
 
@@ -150,19 +195,35 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	ID( :Response ID ),	Unique Occurrences within ID( 1 ),	Structured( :Brush, :Brush Delimited ),	Share Chart( 0 ),	Legend( 0 ),	Conditional Association( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	ID( :Response ID ),
+	Unique Occurrences within ID( 1 ),
+	Structured( :Brush, :Brush Delimited ),
+	Share Chart( 0 ),
+	Legend( 0 ),
+	Conditional Association( 1 )
+);
 
 ```
 
 ### Confidence Interval Coverage
 
-**Syntax:** obj = Categorical(...Confidence Interval Coverage( number=0.95 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Confidence Interval Coverage( number=0.95 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Legt die Überdeckung der Konfidenzintervalle für die Raten und den Anteil der Antworten fest. Die Überdeckung ist gleich (1-Alpha). Standardmäßig „0.95“.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	X( :Age Group ),	Responses( :I am working on my career ),	Confidence Interval Coverage( 0.99 ),	Share Confidence Interval( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	X( :Age Group ),
+	Responses( :I am working on my career ),
+	Confidence Interval Coverage( 0.99 ),
+	Share Confidence Interval( 1 )
+);
 
 ```
 
@@ -176,7 +237,16 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	X( :Age Group ),	Responses( :I am working on my career ),	Confidence Interval Coverage( 0.99 ),	Share Confidence Interval( 1 ));Wait( 1 );obj << Confidence Limits Format( "Percent", 6, 0 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	X( :Age Group ),
+	Responses( :I am working on my career ),
+	Confidence Interval Coverage( 0.99 ),
+	Share Confidence Interval( 1 )
+);
+Wait( 1 );
+obj << Confidence Limits Format( "Percent", 6, 0 );
 
 ```
 
@@ -188,19 +258,25 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Contents Summary( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Contents Summary( 1 );
 
 ```
 
 ### Count Missing Responses
 
-**Syntax:** obj = Categorical(...Count Missing Responses( state=0|1 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Count Missing Responses( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Schließt fehlende Werte als Zielgrößenkategorie ein.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Missing Data Pattern.jmp" );Categorical( X( :Trial 1 ), Count Missing Responses( 1 ), Responses( :Trial 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Missing Data Pattern.jmp" );
+Categorical( X( :Trial 1 ), Count Missing Responses( 1 ), Responses( :Trial 4 ) );
 
 ```
 
@@ -212,7 +288,10 @@ dt = Open( "$SAMPLE_DATA/Missing Data Pattern.jmp" );Categorical( X( :Trial 1 )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );obj << Count Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );
+obj << Count Test( 1 );
 
 ```
 
@@ -224,7 +303,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Resp
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Crosstab Transposed( 1 );obj << Crosstab( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Crosstab Transposed( 1 );
+obj << Crosstab( 1 );
 
 ```
 
@@ -236,7 +319,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Crosstab Transposed( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Crosstab Transposed( 1 );
 
 ```
 
@@ -250,7 +336,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical(	Structured( :"What is your gender ? "n, :"What colors do you like? (with nonresponse)"n ),	Share Chart( 0 ),	Homogeneity Test( 1 ));Wait( 1 );obj << Exclude Nonresponses( 1 );
+
+dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );
+obj = dt << Categorical(
+	Structured( :"What is your gender ? "n, :"What colors do you like? (with nonresponse)"n ),
+	Share Chart( 0 ),
+	Homogeneity Test( 1 )
+);
+Wait( 1 );
+obj << Exclude Nonresponses( 1 );
 
 ```
 
@@ -264,7 +358,14 @@ dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	Structured( :I am working on my career, :Age Group * :Employee Tenure ),	Share Chart( 0 ),	Test Response Homogeneity( 1 ));obj << FDR Adjusted PValues( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	Structured( :I am working on my career, :Age Group * :Employee Tenure ),
+	Share Chart( 0 ),
+	Test Response Homogeneity( 1 )
+);
+obj << FDR Adjusted PValues( 1 );
 
 ```
 
@@ -276,7 +377,19 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	Responses( :country ),	Legend( 0 ),	Local Data Filter(		Location( {634, 43} ),		Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),		Add Filter( columns( :sex ), Where( :sex == "Female" ) )	));Wait( 1.0 );obj << Filter( 0 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical(
+	Responses( :country ),
+	Legend( 0 ),
+	Local Data Filter(
+		Location( {634, 43} ),
+		Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) )
+	)
+);
+Wait( 1.0 );
+obj << Filter( 0 );
 
 ```
 
@@ -288,7 +401,13 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	Responses( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Force Crosstab Shading( 0 );Wait( 1 );obj << Force Crosstab Shading( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Force Crosstab Shading( 0 );
+Wait( 1 );
+obj << Force Crosstab Shading( 1 );
 
 ```
 
@@ -302,7 +421,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	Responses( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X( :Employee Tenure ), Responses( :Job Satisfaction ) );Wait( 1 );obj << Force Labels Horizontal( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical( X( :Employee Tenure ), Responses( :Job Satisfaction ) );
+Wait( 1 );
+obj << Force Labels Horizontal( 1 );
 
 ```
 
@@ -320,7 +443,15 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	Frequencies( 0 ));Wait( 1 );obj << Frequencies( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	Frequencies( 0 )
+);
+Wait( 1 );
+obj << Frequencies( 1 );
 
 ```
 
@@ -332,7 +463,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :ma
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );Wait( 1 );obj << Frequencies Format( "Fixed Dec", 7, 2 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+Wait( 1 );
+obj << Frequencies Format( "Fixed Dec", 7, 2 );
 
 ```
 
@@ -344,19 +479,28 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Frequency Chart( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Frequency Chart( 1 );
 
 ```
 
 ### Grouping Option
 
-**Syntax:** obj = Categorical(...Grouping Option( "Kombinationen"|"Jeweils einzeln"|"Beide" )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Grouping Option( "Kombinationen"|"Jeweils einzeln"|"Beide" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Legt die Gruppierungsmethode für die X-Variablen fest.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :marital status ),	Aligned Responses( :country, :size ),	Grouping Option( Each Individually ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Aligned Responses( :country, :size ),
+	Grouping Option( Each Individually )
+);
 
 ```
 
@@ -368,7 +512,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :ma
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	Grouping Option( Each Individually ),	X( :Age Group, :School Age Children ),	Responses( :I am working on my career ),	Responses( :My home needs some major improvements ),	Responses( :I have vast interests outside of work ),	Responses( :I come from a large family ),	Crosstab Transposed( 1 ),	Test Response Homogeneity( 1 ));obj << Hide Nonsignificant( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	Grouping Option( Each Individually ),
+	X( :Age Group, :School Age Children ),
+	Responses( :I am working on my career ),
+	Responses( :My home needs some major improvements ),
+	Responses( :I have vast interests outside of work ),
+	Responses( :I come from a large family ),
+	Crosstab Transposed( 1 ),
+	Test Response Homogeneity( 1 )
+);
+obj << Hide Nonsignificant( 1 );
 
 ```
 
@@ -382,7 +538,17 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );Categorical(	ID( :ID ),	X( :clean, :date ),	Multiple Delimited( :failures ),	Share Chart( 1 ),	Highlight Cells( Highest in Table( Freq ), Color( "Green" ) ),	Highlight Cells( Lowest in Table( Freq ), Color( "Purple" ) ));
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );
+Categorical(
+	ID( :ID ),
+	X( :clean, :date ),
+	Multiple Delimited( :failures ),
+	Share Chart( 1 ),
+	Highlight Cells( Highest in Table( Freq ), Color( "Green" ) ),
+	Highlight Cells( Lowest in Table( Freq ), Color( "Purple" ) )
+);
 
 ```
 
@@ -390,7 +556,16 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );obj = dt << Categorical(	Multiple Delimited( :failures ),	ID( :ID ),	X( :clean, :date ),	Highlight Cells( Highest Response( Share ), Color( "Green" ) ),	Highlight Cells( Highest Sample( Share ), Color( "Purple" ) ));
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );
+obj = dt << Categorical(
+	Multiple Delimited( :failures ),
+	ID( :ID ),
+	X( :clean, :date ),
+	Highlight Cells( Highest Response( Share ), Color( "Green" ) ),
+	Highlight Cells( Highest Sample( Share ), Color( "Purple" ) )
+);
 
 ```
 
@@ -398,7 +573,17 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Categorical(	Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),	Mean Score( 1 ),	Highlight Cells( Share >= 0.5, Color( "Magenta" ), Category( "30-34" ) ),	Highlight Cells( Share >= 0.46, Color( "Green" ), Category( "5 to 10 years" ) ),	Highlight Cells( Share < 0.5, Color( "Blue" ), Category( "Agree" ) ),	Highlight Cells( Mean Score <= 2, Color( "Yellow" ), Category( "25-29" ) ));
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+	Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),
+	Mean Score( 1 ),
+	Highlight Cells( Share >= 0.5, Color( "Magenta" ), Category( "30-34" ) ),
+	Highlight Cells( Share >= 0.46, Color( "Green" ), Category( "5 to 10 years" ) ),
+	Highlight Cells( Share < 0.5, Color( "Blue" ), Category( "Agree" ) ),
+	Highlight Cells( Mean Score <= 2, Color( "Yellow" ), Category( "25-29" ) )
+);
 
 ```
 
@@ -406,7 +591,22 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Categorical(	X( :Gender, :Age Group ),	Responses( :Job Satisfaction ),	Responses( :I am working on my career ),	Mean Score( 1 ),	Mean Std Error( 1 ),	Mean Confidence Interval( 1 ),	Std Dev Score( 1 ),	Share Chart( 0 ),	Highlight Cells( Mean Score > 2.3, Color( "Blue" ) ),	Highlight Cells( Share >= 0.6, Color( "Cyan" ) ),	Highlight Cells( Share > 0.7, Color( "Green" ) ));
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+	X( :Gender, :Age Group ),
+	Responses( :Job Satisfaction ),
+	Responses( :I am working on my career ),
+	Mean Score( 1 ),
+	Mean Std Error( 1 ),
+	Mean Confidence Interval( 1 ),
+	Std Dev Score( 1 ),
+	Share Chart( 0 ),
+	Highlight Cells( Mean Score > 2.3, Color( "Blue" ) ),
+	Highlight Cells( Share >= 0.6, Color( "Cyan" ) ),
+	Highlight Cells( Share > 0.7, Color( "Green" ) )
+);
 
 ```
 
@@ -414,7 +614,16 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );obj = dt << Categorical(	Multiple Delimited( :failures ),	ID( :ID ),	X( :clean, :date ),	Highlight Cells( Lowest Response( Share ), Color( "Green" ) ),	Highlight Cells( Lowest Sample( Share ), Color( "Purple" ) ));
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );
+obj = dt << Categorical(
+	Multiple Delimited( :failures ),
+	ID( :ID ),
+	X( :clean, :date ),
+	Highlight Cells( Lowest Response( Share ), Color( "Green" ) ),
+	Highlight Cells( Lowest Sample( Share ), Color( "Purple" ) )
+);
 
 ```
 
@@ -422,7 +631,15 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Categorical(	Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),	Mean Score( 1 ),	Highlight Cells( Share >= 0.5, Column( :Age Group ) ),	Highlight Cells( Share >= 0.46, Color( "Fuchsia" ), Column( :Brush ) ));
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+	Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),
+	Mean Score( 1 ),
+	Highlight Cells( Share >= 0.5, Column( :Age Group ) ),
+	Highlight Cells( Share >= 0.46, Color( "Fuchsia" ), Column( :Brush ) )
+);
 
 ```
 
@@ -434,7 +651,10 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );obj << Homogeneity Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );
+obj << Homogeneity Test( 1 );
 
 ```
 
@@ -450,31 +670,54 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Resp
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Select Where( :size == "Small" );dt << Exclude;obj = Categorical(	Include Response Categories in Excluded Rows( 1 ),	X( :marital status ),	Responses( :size ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Select Where( :size == "Small" );
+dt << Exclude;
+obj = Categorical(
+	Include Response Categories in Excluded Rows( 1 ),
+	X( :marital status ),
+	Responses( :size )
+);
 
 ```
 
 ### Include Responses Not in Data
 
-**Syntax:** obj = Categorical(...Include Responses Not in Data( state=0|1 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Include Responses Not in Data( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Zeigt Zielgrößenkategorien mit Wertbeschriftungen an, auch wenn diese nicht in den Daten vorkommen.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );:type << Set Property(	Value Labels,	{"Family" = "Family", "Sporty" = "Sporty", "Utility" = "SUV", "Work" = "Work"});obj = Categorical( X( :marital status ), Responses( :type ) );obj << Include Responses Not in Data( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+:type << Set Property(
+	Value Labels,
+	{"Family" = "Family", "Sporty" = "Sporty", "Utility" = "SUV", "Work" = "Work"}
+);
+obj = Categorical( X( :marital status ), Responses( :type ) );
+obj << Include Responses Not in Data( 1 );
 
 ```
 
 ### Indicator Group
 
-**Syntax:** obj = Categorical(...Indicator Group( columns )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Indicator Group( columns )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Daten einer Mehrfachantwortvariablen zusammen, wobei sich die Antworten in mehreren Indikatorspalten befinden.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt << Categorical(	X( :clean, :date ),	Indicator Group(		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,		:silicon defect	));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );
+obj = dt << Categorical(
+	X( :clean, :date ),
+	Indicator Group(
+		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,
+		:silicon defect
+	)
+);
 
 ```
 
@@ -488,7 +731,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Mean Confidence Interval( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Mean Confidence Interval( 1 );
 
 ```
 
@@ -500,7 +747,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Mean Score( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Mean Score( 1 );
 
 ```
 
@@ -512,7 +763,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Mean Score Comparisons( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Mean Score Comparisons( 1 );
 
 ```
 
@@ -526,7 +781,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Mean Score Comparisons FDR( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Mean Score Comparisons FDR( 1 );
 
 ```
 
@@ -538,7 +797,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Mean Score Comparisons Suffixed( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Mean Score Comparisons Suffixed( 1 );
 
 ```
 
@@ -552,7 +815,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Mean Std Error( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Mean Std Error( 1 );
 
 ```
 
@@ -566,55 +833,83 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Indicators.jmp" );obj = dt <<
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Mean Score( 1 );Wait( 1 );obj << Means Format( "Fixed", 6, 4 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Mean Score( 1 );
+Wait( 1 );
+obj << Means Format( "Fixed", 6, 4 );
 
 ```
 
 ### Multiple Delimited
 
-**Syntax:** obj = Categorical(...Multiple Delimited( column )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Multiple Delimited( column )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Daten einer Mehrfachantwortvariablen zusammen, wobei sich die Antworten in einer einzelnen Spalte befinden und jede Antwort durch Komma, Semikolon oder Tabstopp getrennt ist.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );obj = dt << Categorical( Multiple Delimited( :failureS ), ID( :ID ), X( :clean, :date ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures3Delimited.jmp" );
+obj = dt << Categorical( Multiple Delimited( :failureS ), ID( :ID ), X( :clean, :date ) );
 
 ```
 
 ### Multiple Response
 
-**Syntax:** obj = Categorical(...Multiple Response( columns )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Multiple Response( columns )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Daten einer Mehrfachantwortvariablen zusammen, wobei jede mögliche Antwort in einer eigenen Spalte aufgezeichnet wird.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3MultipleField.jmp" );obj = dt << Categorical(	X( :clean, :date ),	Multiple Response( :Failure1, :Failure2, :Failure3 ),	Frequency Chart( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3MultipleField.jmp" );
+obj = dt << Categorical(
+	X( :clean, :date ),
+	Multiple Response( :Failure1, :Failure2, :Failure3 ),
+	Frequency Chart( 0 )
+);
 
 ```
 
 ### Multiple Response by ID
 
-**Syntax:** obj = Categorical(...Multiple Response by ID( column )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Multiple Response by ID( column )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Daten einer Mehrfachantwortvariablen zusammen, wobei es eine einzelne Spalte mit Antworten und eine zweite Spalte mit einer ID für das Subjekt gibt.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categorical(	Multiple Response by ID( :failure ),	Freq( :N ),	Sample Size( :SampleSize ),	ID( :ID ),	X( :clean, :date ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );
+obj = dt << Categorical(
+	Multiple Response by ID( :failure ),
+	Freq( :N ),
+	Sample Size( :SampleSize ),
+	ID( :ID ),
+	X( :clean, :date )
+);
 
 ```
 
 ### Order Response Levels High to Low
 
-**Syntax:** obj = Categorical(...Order Response Levels High to Low( state=0|1 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Order Response Levels High to Low( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Ordnet den Bericht neu, so dass sich Kategorien mit dem höchsten Wert oben befinden.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :marital status ),	Order Response Levels High to Low( 1 ),	Responses( :country ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Order Response Levels High to Low( 1 ),
+	Responses( :country )
+);
 
 ```
 
@@ -626,7 +921,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :ma
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	Grouping Option( Each Individually ),	X( :Age Group, :School Age Children ),	Responses( :I am working on my career ),	Responses( :My home needs some major improvements ),	Responses( :I have vast interests outside of work ),	Responses( :I come from a large family ),	Crosstab Transposed( 1 ),	Test Response Homogeneity( 1 ));obj << Order by Significance( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	Grouping Option( Each Individually ),
+	X( :Age Group, :School Age Children ),
+	Responses( :I am working on my career ),
+	Responses( :My home needs some major improvements ),
+	Responses( :I have vast interests outside of work ),
+	Responses( :I come from a large family ),
+	Crosstab Transposed( 1 ),
+	Test Response Homogeneity( 1 )
+);
+obj << Order by Significance( 1 );
 
 ```
 
@@ -638,7 +945,10 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );obj << Count Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( Multiple Response( :country, :size ), X( :sex, :marital status ) );
+obj << Count Test( 1 );
 
 ```
 
@@ -650,7 +960,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( Multiple Resp
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X( :Gender ), Multiple Delimited( :Brush Delimited ) );obj << Rate Confidence Interval( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical( X( :Gender ), Multiple Delimited( :Brush Delimited ) );
+obj << Rate Confidence Interval( 1 );
 
 ```
 
@@ -662,7 +975,18 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categorical(	Multiple Response by ID( :failure ),	Freq( :N ),	Sample Size( :SampleSize ),	ID( :ID ),	X( :clean, :date ),	Rate Per Case( 0 ));Wait( 1 );obj << Rate Per Case( 1 );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );
+obj = dt << Categorical(
+	Multiple Response by ID( :failure ),
+	Freq( :N ),
+	Sample Size( :SampleSize ),
+	ID( :ID ),
+	X( :clean, :date ),
+	Rate Per Case( 0 )
+);
+Wait( 1 );
+obj << Rate Per Case( 1 );
 
 ```
 
@@ -674,19 +998,30 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categori
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categorical(	Multiple Response by ID( :failure ),	Freq( :N ),	Sample Size( :SampleSize ),	ID( :ID ),	X( :clean, :date ));obj << Rate Per Case Responding( 1 );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );
+obj = dt << Categorical(
+	Multiple Response by ID( :failure ),
+	Freq( :N ),
+	Sample Size( :SampleSize ),
+	ID( :ID ),
+	X( :clean, :date )
+);
+obj << Rate Per Case Responding( 1 );
 
 ```
 
 ### Rater Agreement
 
-**Syntax:** obj = Categorical(...Rater Agreement( columns )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Rater Agreement( columns )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Daten mehrerer Spalten zusammen, wobei jede Spalte eine Bewertung für die gleiche Frage oder das gleiche Element ist, die jedoch von unterschiedlichen Individuen gegeben wurde (Bewerter).
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical( Rater Agreement( :First Survey, :Second Survey ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Categorical( Rater Agreement( :First Survey, :Second Survey ), Freq( :Count ) );
 
 ```
 
@@ -698,31 +1033,52 @@ dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );obj = dt << Categorical(	Response Frequencies(		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,		:silicon defect,	),	Sample Size( :SampleSize ),	X( :clean ));obj << Relative Risk( 1, {}, {"after"} );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
+obj = dt << Categorical(
+	Response Frequencies(
+		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,
+		:silicon defect,
+	),
+	Sample Size( :SampleSize ),
+	X( :clean )
+);
+obj << Relative Risk( 1, {}, {"after"} );
 
 ```
 
 ### Repeated Measures
 
-**Syntax:** obj = Categorical(...Repeated Measures( columns )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Repeated Measures( columns )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Daten mehrerer Spalten zusammen, wobei jede Spalte Antworten auf die gleiche Frage zu unterschieden Zeitpunkten enthält.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical( Repeated Measures( :First Survey, :Second Survey ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Categorical( Repeated Measures( :First Survey, :Second Survey ), Freq( :Count ) );
 
 ```
 
 ### Response Frequencies
 
-**Syntax:** obj = Categorical(...Response Frequencies( columns )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Response Frequencies( columns )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst eine Mehrfachantwortvariable zusammen, wobei die Häufigkeit jeder möglichen Antwort in einer eigenen Spalte aufgezeichnet wird.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );obj = dt << Categorical(	Response Frequencies(		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,		:silicon defect	),	X( :clean, :date ),	Sample Size( :SampleSize ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );
+obj = dt << Categorical(
+	Response Frequencies(
+		:contamination, :corrosion, :doping, :metallization, :miscellaneous, :oxide defect,
+		:silicon defect
+	),
+	X( :clean, :date ),
+	Sample Size( :SampleSize )
+);
 
 ```
 
@@ -734,19 +1090,27 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failure3Freq.jmp" );obj = dt << Catego
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Response Levels( 0 );Wait( 1 );obj << Response Levels( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Response Levels( 0 );
+Wait( 1 );
+obj << Response Levels( 1 );
 
 ```
 
 ### Responses
 
-**Syntax:** obj = Categorical(...Responses( column )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Responses( column )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Fasst Zielgrößen einer einzelnen Spalte zusammen. Wenn mehrere Spalten ausgewählt werden, enthält der kategoriale Bericht einen separaten Bericht für jede einzelne Spalte.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ```
 
@@ -760,7 +1124,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );obj << Save Contingency Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );
+obj << Save Contingency Table;
 
 ```
 
@@ -778,7 +1145,13 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );obj << Save Excel File(	"$DOCUMENTS\ExcelCarSize.xlsx",	Separate Rows for Each Cell Statistic( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );
+obj << Save Excel File(
+	"$DOCUMENTS\ExcelCarSize.xlsx",
+	Separate Rows for Each Cell Statistic( 1 )
+);
 
 ```
 
@@ -790,7 +1163,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Frequencies;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Frequencies;
 
 ```
 
@@ -802,7 +1178,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );obj << Save Mean Scores;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );
+obj << Save Mean Scores;
 
 ```
 
@@ -814,7 +1193,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categorical(	Multiple Response by ID( :failure ),	Freq( :N ),	Sample Size( :SampleSize ),	ID( :ID ),	X( :clean, :date ));obj << Rate Per Case( 1 );obj << Save Rate Per Case;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );
+obj = dt << Categorical(
+	Multiple Response by ID( :failure ),
+	Freq( :N ),
+	Sample Size( :SampleSize ),
+	ID( :ID ),
+	X( :clean, :date )
+);
+obj << Rate Per Case( 1 );
+obj << Save Rate Per Case;
 
 ```
 
@@ -826,7 +1215,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categori
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Share of Responses;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Share of Responses;
 
 ```
 
@@ -840,7 +1232,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );obj << Save Stacked Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );
+obj << Save Stacked Table;
 
 ```
 
@@ -852,7 +1247,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Test Homogeneity;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Test Homogeneity;
 
 ```
 
@@ -864,7 +1262,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categorical(	Multiple Response by ID( :failure ),	Freq( :N ),	Sample Size( :SampleSize ),	ID( :ID ),	X( :clean, :date ));obj << Rate Per Case( 1 );obj << Save Test Rates;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );
+obj = dt << Categorical(
+	Multiple Response by ID( :failure ),
+	Freq( :N ),
+	Sample Size( :SampleSize ),
+	ID( :ID ),
+	X( :clean, :date )
+);
+obj << Rate Per Case( 1 );
+obj << Save Test Rates;
 
 ```
 
@@ -876,7 +1284,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categori
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Transposed Frequencies;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Transposed Frequencies;
 
 ```
 
@@ -888,7 +1299,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categorical(	Multiple Response by ID( :failure ),	Freq( :N ),	Sample Size( :SampleSize ),	ID( :ID ),	X( :clean, :date ));obj << Rate Per Case( 1 );obj << Save Transposed Rate Per Case;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );
+obj = dt << Categorical(
+	Multiple Response by ID( :failure ),
+	Freq( :N ),
+	Sample Size( :SampleSize ),
+	ID( :ID ),
+	X( :clean, :date )
+);
+obj << Rate Per Case( 1 );
+obj << Save Transposed Rate Per Case;
 
 ```
 
@@ -900,7 +1321,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categori
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Transposed Share of Responses;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Transposed Share of Responses;
 
 ```
 
@@ -912,7 +1336,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );obj << Save ttests and pvalues;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :size ) );
+obj << Save ttests and pvalues;
 
 ```
 
@@ -924,7 +1351,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	Share Chart( 0 ));Wait( 1 );obj << Share Chart( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	Share Chart( 0 )
+);
+Wait( 1 );
+obj << Share Chart( 1 );
 
 ```
 
@@ -936,7 +1371,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :ma
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X( :Age Group ), Responses( :I am working on my career ) );obj << Share Confidence Interval( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical( X( :Age Group ), Responses( :I am working on my career ) );
+obj << Share Confidence Interval( 1 );
 
 ```
 
@@ -948,7 +1386,15 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical( X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	Share of Responses( 0 ));Wait( 1 );obj << Share of Responses( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	Share of Responses( 0 )
+);
+Wait( 1 );
+obj << Share of Responses( 1 );
 
 ```
 
@@ -962,19 +1408,33 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical(	X( :sex, :ma
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );Wait( 1 );obj << Shares and Rates Format( "Percent", 7, 2 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+Wait( 1 );
+obj << Shares and Rates Format( "Percent", 7, 2 );
 
 ```
 
 ### Shorten Labels
 
-**Syntax:** obj = Categorical(...Shorten Labels( state=0|1 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Shorten Labels( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Kürzt Beschriftungen durch Entfernen gemeinsamer Präfixe und Suffixe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Age Range",	Numeric,	"Continuous",	Formula( :age > 12 ),	Value Labels( {0 = "Age Range: Adolescent", 1 = "Age Range: Teenager"} ));obj = dt << Categorical( Responses( :Age Range ), Legend( 0 ) );Wait( 2 );obj << Shorten Labels( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "Age Range",
+	Numeric,
+	"Continuous",
+	Formula( :age > 12 ),
+	Value Labels( {0 = "Age Range: Adolescent", 1 = "Age Range: Teenager"} )
+);
+obj = dt << Categorical( Responses( :Age Range ), Legend( 0 ) );
+Wait( 2 );
+obj << Shorten Labels( 1 );
 
 ```
 
@@ -986,7 +1446,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "Age Range",	Numer
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );:country << Set Property( "SAS Label", "Country of Manufacture Origin" );obj = Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Show Columns Used in Report( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+:country << Set Property( "SAS Label", "Country of Manufacture Origin" );
+obj = Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Show Columns Used in Report( 1 );
 
 ```
 
@@ -998,7 +1462,18 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );:country << Set Property( "SAS Label",
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),	Mean Score( 1 ),	Highlight Cells( Share >= 0.8 ),	Highlight Cells( Mean Score >= 2.7, Color( "Blue" ) ));obj << Show Highlight Legend( 0 );Wait( 1 );obj << Show Highlight Legend( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	Structured( :Position Tenure + :Age Group, :I am working on my career + :Brush ),
+	Mean Score( 1 ),
+	Highlight Cells( Share >= 0.8 ),
+	Highlight Cells( Mean Score >= 2.7, Color( "Blue" ) )
+);
+
+obj << Show Highlight Legend( 0 );
+Wait( 1 );
+obj << Show Highlight Legend( 1 );
 
 ```
 
@@ -1010,7 +1485,21 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical(	X( :"What is your gender ? "n, :"How old are you ? "n ),	Responses( :I like the color orange. ),	Supercategories(		:I like the color orange.(			{Group( "Positive Response", {"Neutral", "Agree", "Strongly agree"} )}		)	),	Legend( 0 ));obj << Show Supercategories( 0 );Wait( 1 );obj << Show Supercategories( 1 );
+
+dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );
+obj = dt << Categorical(
+	X( :"What is your gender ? "n, :"How old are you ? "n ),
+	Responses( :I like the color orange. ),
+	Supercategories(
+		:I like the color orange.(
+			{Group( "Positive Response", {"Neutral", "Agree", "Strongly agree"} )}
+		)
+	),
+	Legend( 0 )
+);
+obj << Show Supercategories( 0 );
+Wait( 1 );
+obj << Show Supercategories( 1 );
 
 ```
 
@@ -1022,7 +1511,14 @@ dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	Structured( :I am working on my career, :Age Group * :Employee Tenure ),	Share Chart( 0 ),	Test Response Homogeneity( 1 ));obj << Show Warnings( 1 );
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	Structured( :I am working on my career, :Age Group * :Employee Tenure ),
+	Share Chart( 0 ),
+	Test Response Homogeneity( 1 )
+);
+obj << Show Warnings( 1 );
 
 ```
 
@@ -1036,7 +1532,13 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Std Dev Score( 1 );Wait( 1 );obj << Std Dev Format( "Fixed", 6, 4 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Std Dev Score( 1 );
+Wait( 1 );
+obj << Std Dev Format( "Fixed", 6, 4 );
 
 ```
 
@@ -1048,19 +1550,27 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Std Dev Score( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Std Dev Score( 1 );
 
 ```
 
 ### Structured
 
-**Syntax:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns... )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns... )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Erzeugt eine strukturierte Kreuztabelle aus zwei oder mehr Variablen.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	Structured( :Gender * :Age Group + :Position Tenure, :Job Satisfaction + :Salary Group ));
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = dt << Categorical(
+	Structured( :Gender * :Age Group + :Position Tenure, :Job Satisfaction + :Salary Group )
+);
 
 ```
 
@@ -1072,7 +1582,18 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = dt << Categorical(	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical(	X( :"What is your gender ? "n, :"How old are you ? "n ),	Responses( :I like the color orange. ),	Supercategories(		:I like the color orange.(			{Group( "Positive Response", {"Neutral", "Agree", "Strongly agree"} )}		)	),	Legend( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );
+obj = dt << Categorical(
+	X( :"What is your gender ? "n, :"How old are you ? "n ),
+	Responses( :I like the color orange. ),
+	Supercategories(
+		:I like the color orange.(
+			{Group( "Positive Response", {"Neutral", "Agree", "Strongly agree"} )}
+		)
+	),
+	Legend( 0 )
+);
 
 ```
 
@@ -1084,7 +1605,10 @@ dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Test Response Homogeneity( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Test Response Homogeneity( 1 );
 
 ```
 
@@ -1096,7 +1620,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :mar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical(	X( :"What is your gender ? "n, :"How old are you ? "n ),	Multiple Response(		:I like the color blue., :I like the color red., :I like the color orange.	));obj << Total Cases( 0 );Wait( 1 );obj << Total Cases( 1 );
+
+dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );
+obj = dt << Categorical(
+	X( :"What is your gender ? "n, :"How old are you ? "n ),
+	Multiple Response(
+		:I like the color blue., :I like the color red., :I like the color orange.
+	)
+);
+obj << Total Cases( 0 );
+Wait( 1 );
+obj << Total Cases( 1 );
 
 ```
 
@@ -1108,7 +1642,17 @@ dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical(	X( :"What is your gender ? "n, :"How old are you ? "n ),	Multiple Response(		:I like the color blue., :I like the color red., :I like the color orange.	));obj << Total Cases Responding( 0 );Wait( 1 );obj << Total Cases Responding( 1 );
+
+dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );
+obj = dt << Categorical(
+	X( :"What is your gender ? "n, :"How old are you ? "n ),
+	Multiple Response(
+		:I like the color blue., :I like the color red., :I like the color orange.
+	)
+);
+obj << Total Cases Responding( 0 );
+Wait( 1 );
+obj << Total Cases Responding( 1 );
 
 ```
 
@@ -1120,7 +1664,13 @@ dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Total Responses( 0 );Wait( 1 );obj << Total Responses( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Total Responses( 0 );
+Wait( 1 );
+obj << Total Responses( 1 );
 
 ```
 
@@ -1132,7 +1682,17 @@ dt = Open( "$SAMPLE_DATA/Color Preference Survey.jmp" );obj = dt << Categorical
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Categorical(	Structured(		:Single Status + :School Age Children,		:Employee Tenure + :Position Tenure + :Age Group	),	Frequencies( 0 ),	Totals First( 1 ),	Total Responses( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+obj = Categorical(
+	Structured(
+		:Single Status + :School Age Children,
+		:Employee Tenure + :Position Tenure + :Age Group
+	),
+	Frequencies( 0 ),
+	Totals First( 1 ),
+	Total Responses( 0 )
+);
 
 ```
 
@@ -1144,7 +1704,10 @@ dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );obj = Categorical(	Struct
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical( Repeated Measures( :First Survey, :Second Survey ), Freq( :Count ) );obj << Transition Report( 1 );
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Categorical( Repeated Measures( :First Survey, :Second Survey ), Freq( :Count ) );
+obj << Transition Report( 1 );
 
 ```
 
@@ -1156,19 +1719,31 @@ dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Categorical(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :marital status ), Responses( :country ) );obj << Transposed Freq Chart( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :marital status ), Responses( :country ) );
+obj << Transposed Freq Chart( 1 );
 
 ```
 
 ### Unique Occurrences within ID
 
-**Syntax:** obj = Categorical(...Unique Occurrences within ID( state=0|1 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Unique Occurrences within ID( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Richtet Mehrfachantworten mit derselben ID über Zeilen aus.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categorical(	Freq( :N ),	Sample Size( :SampleSize ),	ID( :ID ),	X( :clean, :date ),	Unique occurrences within ID( 1 ),	Multiple Response by ID( :failure ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );
+obj = dt << Categorical(
+	Freq( :N ),
+	Sample Size( :SampleSize ),
+	ID( :ID ),
+	X( :clean, :date ),
+	Unique occurrences within ID( 1 ),
+	Multiple Response by ID( :failure )
+);
 
 ```
 
@@ -1182,7 +1757,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failure3ID.jmp" );obj = dt << Categori
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1198,7 +1779,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -1206,7 +1794,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1214,7 +1806,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1226,7 +1822,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -1240,7 +1841,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1252,7 +1859,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -1264,7 +1877,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -1276,7 +1902,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Copy Script;
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Copy Script;
 
 ```
 
@@ -1288,7 +1918,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Data Table Window;
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Data Table Window;
 
 ```
 
@@ -1302,7 +1936,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -1314,7 +1951,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -1328,7 +1979,12 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1336,7 +1992,28 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -1348,7 +2025,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -1360,7 +2042,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1372,7 +2059,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );t = obj << Get Script;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -1384,7 +2076,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );t = obj << Get Script With Data Table;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -1396,7 +2093,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );t = obj << Get Timing;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -1408,7 +2110,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -1422,7 +2128,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1434,7 +2144,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1446,7 +2163,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -1460,7 +2185,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -1472,7 +2200,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1484,7 +2221,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Redo Analysis;
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Redo Analysis;
 
 ```
 
@@ -1496,7 +2237,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Relaunch Analysis;
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -1508,7 +2253,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -1520,19 +2273,35 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1544,7 +2313,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Di
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Report View( "Summary" );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -1556,7 +2329,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Di
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1568,7 +2354,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -1580,7 +2379,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1592,7 +2404,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -1602,19 +2422,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
-**Beispiel 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Beispiel 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -1626,7 +2444,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1638,7 +2460,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Script to Journal;
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -1650,7 +2476,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Script to Report;
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Script to Report;
 
 ```
 
@@ -1662,7 +2492,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Save Script to Script Window;
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -1674,7 +2508,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -1686,7 +2529,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -1698,7 +2555,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -1710,7 +2573,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -1722,7 +2590,11 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );obj << Title( "My Platform" );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -1734,7 +2606,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1750,7 +2628,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -1762,19 +2645,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Syntax:** obj = Categorical(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Categorical(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -1788,7 +2681,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -1800,7 +2705,14 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Categorical(	X( :sex, :marital status ),	Responses( :country ),	Freq( :_freqcol ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Categorical(
+	X( :sex, :marital status ),
+	Responses( :country ),
+	Freq( :_freqcol )
+);
 
 ```
 
@@ -1810,7 +2722,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ```
 
@@ -1820,7 +2735,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ```
 
@@ -1830,7 +2748,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ```
 
@@ -1840,7 +2761,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ```
 
@@ -1856,7 +2780,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Categorical(	Structured(		Empty(),		Empty(),		Aligned Responses(			:I am working on my career, :I want to see the world,			:My home needs some major improvements, :I have vast interests outside of work,			:I want to get my debt under control, :I come from a large family		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+	Structured(
+		Empty(),
+		Empty(),
+		Aligned Responses(
+			:I am working on my career, :I want to see the world,
+			:My home needs some major improvements, :I have vast interests outside of work,
+			:I want to get my debt under control, :I come from a large family
+		)
+	)
+);
 
 ```
 
@@ -1864,7 +2801,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Attribute Gauge.jmp" );Categorical( Rater Agreement( :A, :B, :C ) );
+
+
+dt = Open( "$SAMPLE_DATA/Attribute Gauge.jmp" );
+Categorical( Rater Agreement( :A, :B, :C ) );
 
 ```
 
@@ -1872,7 +2812,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Categorical(	Structured(		:I am working on my career + :I want to see the world,		:Gender + :Single Status + :Age Group	));
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+	Structured(
+		:I am working on my career + :I want to see the world,
+		:Gender + :Single Status + :Age Group
+	)
+);
 
 ```
 
@@ -1880,7 +2828,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
+
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ```
 
@@ -1888,7 +2839,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Categorical(	Structured(		:Single Status * :Gender + :School Age Children * :Gender,		:I am working on my career + :I want to see the world	));
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical(
+	Structured(
+		:Single Status * :Gender + :School Age Children * :Gender,
+		:I am working on my career + :I want to see the world
+	)
+);
 
 ```
 
@@ -1896,7 +2855,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );Categorical( Structured( :Gender, :Brush Delimited + :Floss Delimited ) );
+
+
+dt = Open( "$SAMPLE_DATA/Consumer Preferences.jmp" );
+Categorical( Structured( :Gender, :Brush Delimited + :Floss Delimited ) );
 
 ```
 
@@ -1904,7 +2866,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failure3MultipleField.jmp" );Categorical( X( :clean, :date ), Multiple Response( :Failure1, :Failure2, :Failure3 ) );
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failure3MultipleField.jmp" );
+Categorical( X( :clean, :date ), Multiple Response( :Failure1, :Failure2, :Failure3 ) );
 
 ```
 
@@ -1912,7 +2877,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Presidential Elections.jmp" );Categorical(	Repeated Measures(		:"1980 Winner"n, :"1984 Winner"n, :"1988 Winner"n, :"1992 Winner"n, :"1996 Winner"n,		:"2000 Winner"n, :"2004 Winner"n, :"2008 Winner"n, :"2012 Winner"n	));
+
+
+dt = Open( "$SAMPLE_DATA/Presidential Elections.jmp" );
+Categorical(
+	Repeated Measures(
+		:"1980 Winner"n, :"1984 Winner"n, :"1988 Winner"n, :"1992 Winner"n, :"1996 Winner"n,
+		:"2000 Winner"n, :"2004 Winner"n, :"2008 Winner"n, :"2012 Winner"n
+	)
+);
 
 ```
 

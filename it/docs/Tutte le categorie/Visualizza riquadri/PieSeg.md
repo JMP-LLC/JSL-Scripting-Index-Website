@@ -12,7 +12,15 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
 
 ```
 
@@ -26,7 +34,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Child; // not many segs support children
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Child; // not many segs support children
 
 ```
 
@@ -38,7 +55,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Class Name;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Class Name;
 
 ```
 
@@ -52,7 +78,23 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );Wait( 2 );cs << Clip Shape( Boundaries( "US States" ) );
+
+Open( "$SAMPLE_DATA/Cities.jmp" );
+gb = Graph Builder(
+	Size( 653, 396 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Longitude ), Y( :Latitude ) ),
+	Elements( Contour( X, Y, Legend( 2 ) ) ),
+	SendToReport(
+		Dispatch( {}, "Graph Builder", FrameBox,
+			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
+			Reference Line Order( 3 )}
+		)
+	)
+);
+cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
+Wait( 2 );
+cs << Clip Shape( Boundaries( "US States" ) );
 
 ```
 
@@ -68,7 +110,16 @@ Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Delete;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Delete;
 
 ```
 
@@ -82,19 +133,48 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Density Gradient( "Fade to Gray" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Density Gradient( "Fade to Gray" );
 
 ```
 
 ### Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -108,7 +188,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap( "Large" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :Age ), Y( :Height ) ),
+	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
+
+);
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Set Error Bar Cap( "Large" );
 
 ```
 
@@ -122,7 +211,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap Shape( "Line", "Arrow" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :Age ), Y( :Height ) ),
+	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
+
+);
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```
 
@@ -132,7 +230,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Fill Color( "Green" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Fill Color( "Green" );
 
 ```
 
@@ -150,7 +257,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Frame;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Frame;
 
 ```
 
@@ -164,7 +280,24 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),			Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );cs << Clip Shape( Boundaries( "US States" ) );Wait( 2 );cs << Get Clip Shape();
+
+Open( "$SAMPLE_DATA/Cities.jmp" );
+gb = Graph Builder(
+	Size( 653, 396 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Longitude ), Y( :Latitude ) ),
+	Elements( Contour( X, Y, Legend( 2 ) ) ),
+	SendToReport(
+		Dispatch( {}, "Graph Builder", FrameBox,
+			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ),
+			Reference Line Order( 3 )}
+		)
+	)
+);
+cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
+cs << Clip Shape( Boundaries( "US States" ) );
+Wait( 2 );
+cs << Get Clip Shape();
 
 ```
 
@@ -178,7 +311,16 @@ Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Density Gradient;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Density Gradient;
 
 ```
 
@@ -190,19 +332,48 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << get description();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << get description();
 
 ```
 
 ### Get Enabled
 
-**Sintassi:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "",				<<Password Style( 1 ),				<<Set Width( 20 ),				<<Enabled( 0 )			)		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "",
+				<<Password Style( 1 ),
+				<<Set Width( 20 ),
+				<<Enabled( 0 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -216,7 +387,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Get Error Bar Cap();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :Age ), Y( :Height ) ),
+	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
+
+);
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Get Error Bar Cap();
 
 ```
 
@@ -230,7 +410,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Get Error Bar Cap Shape();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :Age ), Y( :Height ) ),
+	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
+
+);
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Get Error Bar Cap Shape();
 
 ```
 
@@ -240,7 +429,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Fill Color;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Fill Color;
 
 ```
 
@@ -250,7 +448,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Fill Pattern;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Fill Pattern;
 
 ```
 
@@ -262,7 +469,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient;
 
 ```
 
@@ -276,7 +492,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Color Theme;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Color Theme;
 
 ```
 
@@ -290,7 +515,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Discrete Colors;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Discrete Colors;
 
 ```
 
@@ -304,7 +538,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Fill;
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Get Gradient Fill;
 
 ```
 
@@ -318,7 +557,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Label Count;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Label Count;
 
 ```
 
@@ -334,7 +582,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Get Gradient Scale Values;
 
 ```
 
@@ -342,7 +595,13 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
+seg << Get Gradient Scale Values;
 
 ```
 
@@ -356,7 +615,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Legend Horizontal;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Legend Horizontal;
 
 ```
 
@@ -370,7 +638,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Legend Label Format;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Legend Label Format;
 
 ```
 
@@ -384,7 +661,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Legend Label Width;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Legend Label Width;
 
 ```
 
@@ -398,7 +684,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Legend Show Labels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Legend Show Labels;
 
 ```
 
@@ -412,7 +707,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Levels;
 
 ```
 
@@ -426,7 +730,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Lightness Range;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Lightness Range;
 
 ```
 
@@ -440,7 +753,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Range;
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Get Gradient Range;
 
 ```
 
@@ -454,7 +772,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Reverse Color Order;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Reverse Color Order;
 
 ```
 
@@ -468,7 +795,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Reverse Label Order;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Reverse Label Order;
 
 ```
 
@@ -482,7 +818,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale;
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Get Gradient Scale;
 
 ```
 
@@ -498,7 +839,12 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Get Gradient Scale Values;
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Get Gradient Scale Values;
 
 ```
 
@@ -506,7 +852,13 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );seg << Get Gradient Scale Values;
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale Values( [-10.0, 0.0, 100] );
+seg << Get Gradient Scale Values;
 
 ```
 
@@ -520,7 +872,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Show Missing;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Show Missing;
 
 ```
 
@@ -534,7 +895,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Gradient Transparency;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Gradient Transparency;
 
 ```
 
@@ -548,7 +918,32 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :age ), Y( :weight ) ),	Elements(		Points(			X,			Y,			Legend( 3 ),			Summary Statistic( "Mean" ),			Error Interval( "Standard Deviation" )		)	),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Reference Line Order( 3 ), DispatchSeg(				BarSeg( 1 ),				{Set Interval Draw Directions( "Upper" )}			)}		)	));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Get Interval Draw Directions;
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :age ), Y( :weight ) ),
+	Elements(
+		Points(
+			X,
+			Y,
+			Legend( 3 ),
+			Summary Statistic( "Mean" ),
+			Error Interval( "Standard Deviation" )
+		)
+	),
+	SendToReport(
+		Dispatch( {}, "Graph Builder", FrameBox,
+			{Reference Line Order( 3 ), DispatchSeg(
+				BarSeg( 1 ),
+				{Set Interval Draw Directions( "Upper" )}
+			)}
+		)
+	)
+);
+
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Get Interval Draw Directions;
 
 ```
 
@@ -560,7 +955,16 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :age )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Line Color;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Line Color;
 
 ```
 
@@ -574,7 +978,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Line Style;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Line Style;
 
 ```
 
@@ -588,7 +1001,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Line Width;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Line Width;
 
 ```
 
@@ -602,7 +1024,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Marker;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Marker;
 
 ```
 
@@ -616,7 +1047,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Marker Size;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Marker Size;
 
 ```
 
@@ -628,7 +1068,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
+
+//This message applies to all display objects
+x = 1;
+w = New Window( "Test", b = Button Box( "Press me" ) );
+b:x = 2;
+ns = b << GetNamespace();
+Show( ns:x, x );
 
 ```
 
@@ -642,7 +1088,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );nw = New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));frame = nw[framebox( 1 )];seg = frame << Find Seg( "Pie Seg" );Wait( 2 );{ox, oy} = seg << getOrigin;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+nw = New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+frame = nw[framebox( 1 )];
+seg = frame << Find Seg( "Pie Seg" );
+Wait( 2 );
+{ox, oy} = seg << getOrigin;
 
 ```
 
@@ -654,7 +1112,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Properties;
 
 ```
 
@@ -666,7 +1126,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property( "Enabled" );
 
 ```
 
@@ -678,7 +1140,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property List;
 
 ```
 
@@ -692,7 +1156,19 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );nw = New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));frame = nw[framebox( 1 )];seg = frame << Find Seg( "Pie Seg" );Wait( 2 );rad = seg << getRadius;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+nw = New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+frame = nw[framebox( 1 )];
+seg = frame << Find Seg( "Pie Seg" );
+Wait( 2 );
+rad = seg << getRadius;
 
 ```
 
@@ -706,7 +1182,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );nw = New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));frame = nw[framebox( 1 )];seg = frame << Find Seg( "Pie Seg" );Wait( 2 );style = seg << getStyle;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+nw = New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+frame = nw[framebox( 1 )];
+seg = frame << Find Seg( "Pie Seg" );
+Wait( 2 );
+style = seg << getStyle;
 
 ```
 
@@ -718,19 +1206,37 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Get Transparency;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Get Transparency;
 
 ```
 
 ### Gradient
 
-**Sintassi:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**Sintassi:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Descrizione:** Imposta il gradiente di colorazione.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -744,7 +1250,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Color Theme( "Viridis" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -758,7 +1273,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Marker Seg( 1 ) );
+seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -772,7 +1292,13 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Range( "Middle 90%" );
+seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -786,7 +1312,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Label Count( 8 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -800,7 +1335,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -814,7 +1354,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Horizontal( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -828,7 +1377,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -842,7 +1400,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Label Width( 4 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -856,7 +1423,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Show Labels( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -870,7 +1446,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Levels( 7 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -886,7 +1471,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
@@ -894,7 +1488,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Lightness Range( 0.25, 0.75 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
@@ -902,7 +1505,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Lightness Range( ., 0.75 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -916,7 +1528,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -930,7 +1547,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Reverse Color Order( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -944,7 +1570,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Reverse Label Order( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -958,7 +1593,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -972,7 +1612,12 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -986,7 +1631,15 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
+
+dt = Open( "$Sample_Data/Cities.jmp" );
+gb = Graph Builder(
+	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
+	Elements( Bar( X, Y ) )
+);
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Bar Seg( 1 ) );
+seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -1000,7 +1653,16 @@ dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Gradient Transparency( "None" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Gradient Transparency( "None" );
 
 ```
 
@@ -1018,7 +1680,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Line Color( "Green" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Line Color( "Green" );
 
 ```
 
@@ -1032,7 +1703,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Line Style( "Dotted" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Line Style( "Dotted" );
 
 ```
 
@@ -1046,7 +1726,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Line Width( 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Line Width( 3 );
 
 ```
 
@@ -1060,7 +1749,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Marker( "Square" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Marker( "Square" );
 
 ```
 
@@ -1074,7 +1772,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Marker( "Square" );seg << Set Marker Size( "XL" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Marker( "Square" );
+seg << Set Marker Size( "XL" );
 
 ```
 
@@ -1108,7 +1816,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );nw = New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));frame = nw[framebox( 1 )];seg = frame << Find Seg( "Pie Seg" );Wait( 2 );seg << origin( 35, 25 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+nw = New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+frame = nw[framebox( 1 )];
+seg = frame << Find Seg( "Pie Seg" );
+Wait( 2 );
+seg << origin( 35, 25 );
 
 ```
 
@@ -1120,7 +1840,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Parent;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Parent;
 
 ```
 
@@ -1134,7 +1863,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );nw = New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));frame = nw[framebox( 1 )];seg = frame << Find Seg( "Pie Seg" );Wait( 2 );seg << radius( 0.5 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+nw = New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+frame = nw[framebox( 1 )];
+seg = frame << Find Seg( "Pie Seg" );
+Wait( 2 );
+seg << radius( 0.5 );
 
 ```
 
@@ -1146,7 +1887,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << set description( "my seg" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << set description( "my seg" );
 
 ```
 
@@ -1160,7 +1910,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap( "Large" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :Age ), Y( :Height ) ),
+	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
+
+);
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Set Error Bar Cap( "Large" );
 
 ```
 
@@ -1174,7 +1933,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :Age ), Y( :Height ) ),	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), );frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Error Bar Cap Shape( "Line", "Arrow" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :Age ), Y( :Height ) ),
+	Elements( Line( X, Y, Legend( 4 ), Error Bars( "Range" ) ) ), 
+
+);
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ```
 
@@ -1184,7 +1952,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Fill Color( "Green" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Fill Color( "Green" );
 
 ```
 
@@ -1194,19 +1971,37 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Fill Pattern( "h wave medium" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Fill Pattern( "h wave medium" );
 
 ```
 
 ### Set Gradient
 
-**Sintassi:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; } obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
+**Sintassi:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Descrizione:** Imposta il gradiente di colorazione.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ```
 
@@ -1220,7 +2015,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Color Theme( "Viridis" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Color Theme( "Viridis" );
 
 ```
 
@@ -1234,7 +2038,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ```
 
@@ -1248,7 +2061,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Marker Seg( 1 ) );seg << Set Gradient Discrete Colors( 1 );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Points( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Marker Seg( 1 ) );
+seg << Set Gradient Discrete Colors( 1 );
 
 ```
 
@@ -1262,7 +2080,13 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Middle 90%" );seg << Set Gradient Fill( "Between" );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Range( "Middle 90%" );
+seg << Set Gradient Fill( "Between" );
 
 ```
 
@@ -1276,7 +2100,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Label Count( 8 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Label Count( 8 );
 
 ```
 
@@ -1290,7 +2123,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1304,7 +2142,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Horizontal( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Horizontal( 1 );
 
 ```
 
@@ -1318,7 +2165,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ```
 
@@ -1332,7 +2188,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Label Width( 4 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Label Width( 4 );
 
 ```
 
@@ -1346,7 +2211,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Legend Show Labels( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Legend Show Labels( 0 );
 
 ```
 
@@ -1360,7 +2234,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Levels( 7 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Levels( 7 );
 
 ```
 
@@ -1376,7 +2259,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Lightness Range( Min( 0.25 ), Max( 0.75 ) );
 
 ```
 
@@ -1384,7 +2276,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Lightness Range( 0.25, 0.75 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Lightness Range( 0.25, 0.75 );
 
 ```
 
@@ -1392,7 +2293,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Lightness Range( ., 0.75 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Lightness Range( ., 0.75 );
 
 ```
 
@@ -1406,7 +2316,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Range( "Exact Data Range" );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Range( "Exact Data Range" );
 
 ```
 
@@ -1420,7 +2335,16 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Reverse Color Order( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Reverse Color Order( 1 );
 
 ```
 
@@ -1434,7 +2358,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Gradient Reverse Label Order( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Gradient Reverse Label Order( 1 );
 
 ```
 
@@ -1448,7 +2381,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale( "Quantile" );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale( "Quantile" );
 
 ```
 
@@ -1462,7 +2400,12 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Contour Seg( 1 ) );seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
+
+Open( "$SAMPLE_DATA/Little Pond.jmp" );
+gb = Graph Builder( Variables( X( :X ), Y( :Y ), Color( :Z ) ), Elements( Contour( X, Y ) ) );
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Contour Seg( 1 ) );
+seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ```
 
@@ -1476,7 +2419,15 @@ Open( "$SAMPLE_DATA/Little Pond.jmp" );gb = Graph Builder( Variables( X( :X ), 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city ), Y( :POP ), Color( :NO ) ),	Elements( Bar( X, Y ) ));frame = (gb << Report)[FrameBox( 1 )];seg = frame << Find Seg( Bar Seg( 1 ) );seg << Set Gradient Show Missing( "Off" );
+
+dt = Open( "$Sample_Data/Cities.jmp" );
+gb = Graph Builder(
+	Variables( X( :city ), Y( :POP ), Color( :NO ) ),
+	Elements( Bar( X, Y ) )
+);
+frame = (gb << Report)[FrameBox( 1 )];
+seg = frame << Find Seg( Bar Seg( 1 ) );
+seg << Set Gradient Show Missing( "Off" );
 
 ```
 
@@ -1490,7 +2441,32 @@ dt = Open( "$Sample_Data/Cities.jmp" );gb = Graph Builder(	Variables( X( :city
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :age ), Y( :weight ) ),	Elements(		Points(			X,			Y,			Legend( 3 ),			Summary Statistic( "Mean" ),			Error Interval( "Standard Deviation" )		)	),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Reference Line Order( 3 ), DispatchSeg(				BarSeg( 1 ),				{Set Interval Draw Directions( "Upper" )}			)}		)	));frame = Report( obj )[FrameBox( 1 )];seg = (frame << Find Seg( "Bar Seg" ));seg << Set Interval Draw Directions( "Lower" );
+
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Graph Builder(
+	Variables( X( :age ), Y( :weight ) ),
+	Elements(
+		Points(
+			X,
+			Y,
+			Legend( 3 ),
+			Summary Statistic( "Mean" ),
+			Error Interval( "Standard Deviation" )
+		)
+	),
+	SendToReport(
+		Dispatch( {}, "Graph Builder", FrameBox,
+			{Reference Line Order( 3 ), DispatchSeg(
+				BarSeg( 1 ),
+				{Set Interval Draw Directions( "Upper" )}
+			)}
+		)
+	)
+);
+
+frame = Report( obj )[FrameBox( 1 )];
+seg = (frame << Find Seg( "Bar Seg" ));
+seg << Set Interval Draw Directions( "Lower" );
 
 ```
 
@@ -1510,7 +2486,16 @@ Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Graph Builder(	Variables( X( :age )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Line Color( "Green" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Line Color( "Green" );
 
 ```
 
@@ -1524,7 +2509,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Line Style( "Dotted" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Line Style( "Dotted" );
 
 ```
 
@@ -1538,7 +2532,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Line Width( 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Line Width( 3 );
 
 ```
 
@@ -1552,7 +2555,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Marker( "Square" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Marker( "Square" );
 
 ```
 
@@ -1566,7 +2578,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Marker( "Square" );seg << Set Marker Size( "XL" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Marker( "Square" );
+seg << Set Marker Size( "XL" );
 
 ```
 
@@ -1578,7 +2600,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -1592,7 +2616,16 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Transparency( .3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Transparency( .3 );
 
 ```
 
@@ -1604,7 +2637,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Sib;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Sib;
 
 ```
 
@@ -1616,7 +2658,33 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180, 180 ),		Y Scale( -90, 90 ),		<<Background Map( Images( "Simple Earth" ) )	));imgBox = win[framebox( 1 )];mapSeg = imgBox << FindSeg( MapSeg( 1 ) );mapSeg << Transparency( 0.5 );Try(	xAxis = gb[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = gb[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+
+
+win = New Window( "World",
+	gb = Graph(
+		FrameSize( 800, 400 ),
+		X Scale( -180, 180 ),
+		Y Scale( -90, 90 ),
+		<<Background Map( Images( "Simple Earth" ) )
+	)
+);
+imgBox = win[framebox( 1 )];
+mapSeg = imgBox << FindSeg( MapSeg( 1 ) );
+mapSeg << Transparency( 0.5 );
+Try(
+	xAxis = gb[AxisBox( 2 )];
+	xMin = (xAxis << get min);
+	xMax = (xAxis << get max);
+,
+	xMin = 0;
+	xMax = 100;
+);
+yAxis = gb[AxisBox( 1 )];
+yMin = (yAxis << get min);
+yMax = (yAxis << get max);
+xval = Matrix( {xmin, xmax} );
+yval = Matrix( {ymin, ymax} );
+mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -1628,7 +2696,29 @@ win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));Try(	xAxis = g[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = g[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+Try(
+	xAxis = g[AxisBox( 2 )];
+	xMin = (xAxis << get min);
+	xMax = (xAxis << get max);
+,
+	xMin = 0;
+	xMax = 100;
+);
+yAxis = g[AxisBox( 1 )];
+yMin = (yAxis << get min);
+yMax = (yAxis << get max);
+xval = Matrix( {xmin, xmax} );
+yval = Matrix( {ymin, ymax} );
+seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -1642,7 +2732,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );nw = New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		Pie Seg( {75, 50}, .25, sumWt )	));frame = nw[framebox( 1 )];seg = frame << Find Seg( "Pie Seg" );Wait( 2 );seg << Style( "Coxcomb" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+nw = New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+frame = nw[framebox( 1 )];
+seg = frame << Find Seg( "Pie Seg" );
+Wait( 2 );
+seg << Style( "Coxcomb" );
 
 ```
 
@@ -1656,7 +2758,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );New Window( "Pie Seg",	Graph Box(		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),		seg = Pie Seg( {75, 50}, .25, sumWt )	));seg << Set Transparency( .3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Summarize( a = by( :age ), c = count, sumHt = Sum( :height ), sumWt = Sum( :weight ) );
+New Window( "Pie Seg",
+	Graph Box(
+		Pie Seg( style( "ring" ), {25, 50}, .25, sumHt ),
+		seg = Pie Seg( {75, 50}, .25, sumWt )
+	)
+);
+seg << Set Transparency( .3 );
 
 ```
 

@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
@@ -28,7 +29,9 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
-// See Example 2 for the deprecated Arg Expr() equivalentArg( Expr( Sum( a, b, c ) ), 2 );
+
+// See Example 2 for the deprecated Arg Expr() equivalent
+Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```
 
@@ -36,7 +39,9 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 
 ```jsl
 
-// DeprecatedArg Expr( Sum( a, b, c ), 2 );
+
+// Deprecated
+Arg Expr( Sum( a, b, c ), 2 );
 
 ```
 
@@ -49,6 +54,7 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
@@ -64,6 +70,7 @@ Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ```jsl
 
+
 Expr( x + y );
 
 ```
@@ -78,6 +85,7 @@ Expr( x + y );
 
 ```jsl
 
+
 Extract Expr( a + b * c, Wild() * Wild() );
 
 ```
@@ -91,6 +99,7 @@ Extract Expr( a + b * c, Wild() * Wild() );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Head( Expr( Sum( a, b, c ) ) );
 
@@ -108,7 +117,9 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// See Example 2 for the deprecated Head Expr() equivalentHead( Expr( Sum( a, b, c ) ) );
+
+// See Example 2 for the deprecated Head Expr() equivalent
+Head( Expr( Sum( a, b, c ) ) );
 
 ```
 
@@ -116,7 +127,9 @@ Head( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// DeprecatedHead Expr( Sum( a, b, c ) );
+
+// Deprecated
+Head Expr( Sum( a, b, c ) );
 
 ```
 
@@ -129,6 +142,7 @@ Head( Expr( Sum( a, b, c ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Head Name( Expr( Sum( a, b, c ) ) );
 
@@ -146,7 +160,9 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// See Example 2 for the deprecated Head Name Expr() equivalentHead Name( Expr( Sum( a, b, c ) ) );
+
+// See Example 2 for the deprecated Head Name Expr() equivalent
+Head Name( Expr( Sum( a, b, c ) ) );
 
 ```
 
@@ -154,7 +170,9 @@ Head Name( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// DeprecatedHead Name Expr( Sum( a, b, c ) );
+
+// Deprecated
+Head Name Expr( Sum( a, b, c ) );
 
 ```
 
@@ -167,6 +185,7 @@ Head Name( Expr( Sum( a, b, c ) ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 N Arg( Expr( Sum( a, b, c ) ) );
 
@@ -184,7 +203,9 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// See Example 2 for the deprecated N Arg Expr() equivalentN Arg( Expr( Sum( a, b, c ) ) );
+
+// See Example 2 for the deprecated N Arg Expr() equivalent
+N Arg( Expr( Sum( a, b, c ) ) );
 
 ```
 
@@ -192,7 +213,9 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-// DeprecatedN Arg Expr( Sum( a, b, c ) );
+
+// Deprecated
+N Arg Expr( Sum( a, b, c ) );
 
 ```
 
@@ -206,7 +229,9 @@ N Arg( Expr( Sum( a, b, c ) ) );
 
 ```jsl
 
-ex = Expr( 1 + 2 );Eval List( {ex, Name Expr( ex )} );
+
+ex = Expr( 1 + 2 );
+Eval List( {ex, Name Expr( ex )} );
 
 ```
 

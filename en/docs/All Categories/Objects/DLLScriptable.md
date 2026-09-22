@@ -12,7 +12,14 @@
 
 ```jsl
 
-If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	dll << CallDLL( "MessageBeep", "n", 0 );	Wait( 1 );	dll << CallDLL( "MessageBeep", "n", 0 );	dll << UnloadDLL(););
+
+If( Host is( "Windows" ),
+	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	Wait( 1 );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	dll << UnloadDLL();
+);
 
 ```
 
@@ -26,7 +33,14 @@ If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	
 
 ```jsl
 
-If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	dll << CallDLL( "MessageBeep", "n", 0 );	Wait( 1 );	dll << CallDLL( "MessageBeep", "n", 0 );	dll << UnloadDLL(););
+
+If( Host is( "Windows" ),
+	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	Wait( 1 );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	dll << UnloadDLL();
+);
 
 ```
 
@@ -38,7 +52,22 @@ If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	
 
 ```jsl
 
-If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	dll << DeclareFunction(		"MessageBoxW",		Convention( STDCALL ),		Alias( "MsgBox" ),		Arg( IntPtr, "hWnd" ),		Arg( UnicodeString, "message" ),		Arg( UnicodeString, "caption" ),		Arg( UInt32, "uType" ),		Returns( Int32 )	);	result = dll << MsgBox( 0, "Here is a message from JMP.", "Call DLL", 321 );	Show( result ););
+
+If( Host is( "Windows" ),
+	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
+	dll << DeclareFunction(
+		"MessageBoxW",
+		Convention( STDCALL ),
+		Alias( "MsgBox" ),
+		Arg( IntPtr, "hWnd" ),
+		Arg( UnicodeString, "message" ),
+		Arg( UnicodeString, "caption" ),
+		Arg( UInt32, "uType" ),
+		Returns( Int32 )
+	);
+	result = dll << MsgBox( 0, "Here is a message from JMP.", "Call DLL", 321 );
+	Show( result );
+);
 
 ```
 
@@ -50,7 +79,9 @@ If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	
 
 ```jsl
 
-dll = Load DLL( /*DLL with JSL keyword*/ ); //dll << Get Declaration JSL;
+
+dll = Load DLL( /*DLL with JSL keyword*/ ); 
+//dll << Get Declaration JSL;
 
 ```
 
@@ -62,7 +93,21 @@ dll = Load DLL( /*DLL with JSL keyword*/ ); //dll << Get Declaration JSL;
 
 ```jsl
 
-If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	dll << DeclareFunction(		"MessageBoxW",		Convention( STDCALL ),		Alias( "MsgBox" ),		Arg( IntPtr, "hWnd" ),		Arg( UnicodeString, "message" ),		Arg( UnicodeString, "caption" ),		Arg( UInt32, "uType" ),		Returns( Int32 )	);	dll << Show Functions;);
+
+If( Host is( "Windows" ),
+	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
+	dll << DeclareFunction(
+		"MessageBoxW",
+		Convention( STDCALL ),
+		Alias( "MsgBox" ),
+		Arg( IntPtr, "hWnd" ),
+		Arg( UnicodeString, "message" ),
+		Arg( UnicodeString, "caption" ),
+		Arg( UInt32, "uType" ),
+		Returns( Int32 )
+	);
+	dll << Show Functions;
+);
 
 ```
 
@@ -74,7 +119,14 @@ If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	
 
 ```jsl
 
-If( Host is( "Windows" ),	dll = Load DLL( "C:/Windows/System32/User32.DLL" );	dll << CallDLL( "MessageBeep", "n", 0 );	Wait( 1 );	dll << CallDLL( "MessageBeep", "n", 0 );	dll << UnloadDLL(););
+
+If( Host is( "Windows" ),
+	dll = Load DLL( "C:/Windows/System32/User32.DLL" );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	Wait( 1 );
+	dll << CallDLL( "MessageBeep", "n", 0 );
+	dll << UnloadDLL();
+);
 
 ```
 

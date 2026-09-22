@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 As List( [11 22 33, 44 55 66] );
 
 ```
@@ -25,6 +26,7 @@ As List( [11 22 33, 44 55 66] );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Concat Items( {"www", "jmp", "com"}, "." );
 
@@ -42,6 +44,7 @@ Concat Items( {"www", "jmp", "com"}, "." );
 
 ```jsl
 
+
 Eval List( {1 + 2, 3 + 4} );
 
 ```
@@ -50,7 +53,10 @@ Eval List( {1 + 2, 3 + 4} );
 
 ```jsl
 
-x = 5;y = 10;Eval List( {x, y} );
+
+x = 5;
+y = 10;
+Eval List( {x, y} );
 
 ```
 
@@ -64,7 +70,9 @@ x = 5;y = 10;Eval List( {x, y} );
 
 ```jsl
 
-z = {11, 22, 33};z = Insert( z, 99, 2 );
+
+z = {11, 22, 33};
+z = Insert( z, 99, 2 );
 
 ```
 
@@ -80,7 +88,10 @@ z = {11, 22, 33};z = Insert( z, 99, 2 );
 
 ```jsl
 
-ex = {11, 22, 33};Insert Into( ex, 99 );ex;
+
+ex = {11, 22, 33};
+Insert Into( ex, 99 );
+ex;
 
 ```
 
@@ -88,7 +99,10 @@ ex = {11, 22, 33};Insert Into( ex, 99 );ex;
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, => 0];Insert Into( ex, "c", 12 );ex;
+
+ex = ["a" => 10, "b" => 3, => 0];
+Insert Into( ex, "c", 12 );
+ex;
 
 ```
 
@@ -96,7 +110,10 @@ ex = ["a" => 10, "b" => 3, => 0];Insert Into( ex, "c", 12 );ex;
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );Wait( 1 );Insert Into( hlist, Button Box( "c" ) );
+
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
+Wait( 1 );
+Insert Into( hlist, Button Box( "c" ) );
 
 ```
 
@@ -109,6 +126,7 @@ New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Is List( {1, 2, 3} );
 
@@ -126,6 +144,7 @@ Is List( {1, 2, 3} );
 
 ```jsl
 
+
 Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 
 ```
@@ -133,6 +152,7 @@ Eval List( {Items( "http://www.jmp.com", ":/." ), Items( "hello", "" )} );
 **Example 2**
 
 ```jsl
+
 
 Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
@@ -142,13 +162,19 @@ Items( ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
-Items(	",Apple,Banana Tree,Peach",	Get Punctuation Characters(),	Include Boundary Delimiters);
+
+Items(
+	",Apple,Banana Tree,Peach",
+	Get Punctuation Characters(),
+	Include Boundary Delimiters
+);
 
 ```
 
 **Example 4**
 
 ```jsl
+
 
 Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
@@ -166,6 +192,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```jsl
 
+
 Length( "Café" );
 
 ```
@@ -173,6 +200,7 @@ Length( "Café" );
 **Example 2**
 
 ```jsl
+
 
 Length( {1, 2 + 3, [11 22]} );
 
@@ -182,6 +210,7 @@ Length( {1, 2 + 3, [11 22]} );
 
 ```jsl
 
+
 Length( ["a" => 10, "b" => 3, => 0] );
 
 ```
@@ -189,6 +218,7 @@ Length( ["a" => 10, "b" => 3, => 0] );
 **Example 4**
 
 ```jsl
+
 
 Length( Char To Blob( "Café" ) );
 
@@ -203,6 +233,7 @@ Length( Char To Blob( "Café" ) );
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 {1, 2 + 3, [11 22]};
 
@@ -220,6 +251,7 @@ Length( Char To Blob( "Café" ) );
 
 ```jsl
 
+
 N Items( {1, 2 + 3, [11 22]} );
 
 ```
@@ -227,6 +259,7 @@ N Items( {1, 2 + 3, [11 22]} );
 **Example 2**
 
 ```jsl
+
 
 N Items( ["a" => 10, "b" => 3, => 0] );
 
@@ -236,7 +269,9 @@ N Items( ["a" => 10, "b" => 3, => 0] );
 
 ```jsl
 
-New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );N Items( hlist );
+
+New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) );
+N Items( hlist );
 
 ```
 
@@ -249,6 +284,7 @@ New Window( "boxes", hlist = H List Box( Button Box( "a" ), Button Box( "b" ) ) 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
@@ -266,7 +302,10 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};Remove From( ex, 3, 2 );ex;
+
+ex = {11, 22, 33, 44, 55};
+Remove From( ex, 3, 2 );
+ex;
 
 ```
 
@@ -274,7 +313,10 @@ ex = {11, 22, 33, 44, 55};Remove From( ex, 3, 2 );ex;
 
 ```jsl
 
-ex = ["a" => 10, "b" => 3, "c" => 12, => 0];Remove From( ex, "c" );ex;
+
+ex = ["a" => 10, "b" => 3, "c" => 12, => 0];
+Remove From( ex, "c" );
+ex;
 
 ```
 
@@ -282,7 +324,12 @@ ex = ["a" => 10, "b" => 3, "c" => 12, => 0];Remove From( ex, "c" );ex;
 
 ```jsl
 
-New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Remove From( hlist, 1 );
+
+New Window( "boxes",
+	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
+);
+Wait( 1 );
+Remove From( hlist, 1 );
 
 ```
 
@@ -295,6 +342,7 @@ New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Reverse( {11, 22, 33, 44, 55} );
 
@@ -312,7 +360,10 @@ Reverse( {11, 22, 33, 44, 55} );
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};Reverse Into( ex );ex;
+
+ex = {11, 22, 33, 44, 55};
+Reverse Into( ex );
+ex;
 
 ```
 
@@ -320,7 +371,12 @@ ex = {11, 22, 33, 44, 55};Reverse Into( ex );ex;
 
 ```jsl
 
-New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Reverse Into( hlist );
+
+New Window( "boxes",
+	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
+);
+Wait( 1 );
+Reverse Into( hlist );
 
 ```
 
@@ -334,7 +390,9 @@ New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), 
 
 ```jsl
 
-Show( Set Difference( {1, 3}, {3, 2} ) );Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+
+Show( Set Difference( {1, 3}, {3, 2} ) );
+Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
 
 ```
 
@@ -348,7 +406,11 @@ Show( Set Difference( {1, 3}, {3, 2} ) );Show( Set Difference( {1, 3, 4, 3}, {3
 
 ```jsl
 
-Show( Set Intersection( {1, 3}, {3, 2} ) );Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
+
+Show( Set Intersection( {1, 3}, {3, 2} ) );
+Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
 
 ```
 
@@ -362,7 +424,14 @@ Show( Set Intersection( {1, 3}, {3, 2} ) );Show( Set Intersection( {1, 3, 4, 3}
 
 ```jsl
 
-Show( Set Union( {1, 3}, {3, 2} ) );Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );all = {};Open( "$SAMPLE_DATA/Big Class Families.jmp" );For Each Row( all = Set Union( all, :sports ) );all = Set Unique( all );Show( all );
+
+Show( Set Union( {1, 3}, {3, 2} ) );
+Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+all = {};
+Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+For Each Row( all = Set Union( all, :sports ) );
+all = Set Unique( all );
+Show( all );
 
 ```
 
@@ -376,7 +445,12 @@ Show( Set Union( {1, 3}, {3, 2} ) );Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5,
 
 ```jsl
 
-Show( Set Unique( {1, 3, 2} ) );Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );Open( "$SAMPLE_DATA/Big Class Families.jmp" );Row() = 1;Show( Set Unique( :sports ) );
+
+Show( Set Unique( {1, 3, 2} ) );
+Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
+Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Row() = 1;
+Show( Set Unique( :sports ) );
 
 ```
 
@@ -389,6 +463,7 @@ Show( Set Unique( {1, 3, 2} ) );Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} )
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Shift( {11, 22, 33, 44, 55}, 2 );
 
@@ -406,7 +481,10 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ```jsl
 
-ex = {11, 22, 33, 44, 55};Shift Into( ex, -2 );ex;
+
+ex = {11, 22, 33, 44, 55};
+Shift Into( ex, -2 );
+ex;
 
 ```
 
@@ -414,7 +492,12 @@ ex = {11, 22, 33, 44, 55};Shift Into( ex, -2 );ex;
 
 ```jsl
 
-New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) ));Wait( 1 );Shift Into( hlist, -2 );
+
+New Window( "boxes",
+	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), Button Box( "c" ) )
+);
+Wait( 1 );
+Shift Into( hlist, -2 );
 
 ```
 
@@ -427,6 +510,7 @@ New Window( "boxes",	hlist = H List Box( Button Box( "a" ), Button Box( "b" ), 
 **JMP Version Added:** Before version 14
 
 ```jsl
+
 
 Sort List( {111, 212, 133, 114, 55} );
 
@@ -442,13 +526,16 @@ Sort List( {111, 212, 133, 114, 55} );
 
 ```jsl
 
-ex = {111, 212, 133, 114, 55};Sort List Into( ex );ex;
+
+ex = {111, 212, 133, 114, 55};
+Sort List Into( ex );
+ex;
 
 ```
 
 ### Substitute
 
-**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... ) y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Returns a copy of string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -458,6 +545,7 @@ ex = {111, 212, 133, 114, 55};Sort List Into( ex );ex;
 
 ```jsl
 
+
 Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 
 ```
@@ -465,6 +553,7 @@ Substitute( Expr( a + Sqrt( a ) ), Expr( a ), Expr( b ) );
 **Example 2**
 
 ```jsl
+
 
 Substitute( "All things considered", "All", "Some" );
 
@@ -474,13 +563,16 @@ Substitute( "All things considered", "All", "Some" );
 
 ```jsl
 
-lst = {"a", "b", "c"};Substitute( lst, "a", "A" );
+
+lst = {"a", "b", "c"};
+Substitute( lst, "a", "A" );
 
 ```
 
 **Example 4**
 
 ```jsl
+
 
 Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
@@ -490,7 +582,10 @@ Substitute( "All things considered", {"things", "All"}, {"ideas", "Some"} );
 
 ```jsl
 
-Substitute( "Apple,orange,banana-grape",	Items( Get Punctuation Characters() || "-'", "" ), " ");
+
+Substitute( "Apple,orange,banana-grape",
+	Items( Get Punctuation Characters() || "-'", "" ), " "
+);
 
 ```
 
@@ -498,13 +593,14 @@ Substitute( "Apple,orange,banana-grape",	Items( Get Punctuation Characters() ||
 
 ```jsl
 
+
 Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```
 
 ### Substitute Into
 
-**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... ) Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
+**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Modifies string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. Note that the x argument must be a variable. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -514,7 +610,10 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ```jsl
 
-ex = Expr( a + Sqrt( a ) );Substitute Into( ex, Expr( a ), Expr( b ) );Name Expr( ex );
+
+ex = Expr( a + Sqrt( a ) );
+Substitute Into( ex, Expr( a ), Expr( b ) );
+Name Expr( ex );
 
 ```
 
@@ -522,7 +621,10 @@ ex = Expr( a + Sqrt( a ) );Substitute Into( ex, Expr( a ), Expr( b ) );Name Ex
 
 ```jsl
 
-ex = "All things considered";Substitute Into( ex, "All", "Some" );Show( ex );
+
+ex = "All things considered";
+Substitute Into( ex, "All", "Some" );
+Show( ex );
 
 ```
 
@@ -530,7 +632,10 @@ ex = "All things considered";Substitute Into( ex, "All", "Some" );Show( ex );
 
 ```jsl
 
-lst = {"a", "b", "c"};Substitute Into( lst, "a", "A" );Show( lst );
+
+lst = {"a", "b", "c"};
+Substitute Into( lst, "a", "A" );
+Show( lst );
 
 ```
 
@@ -538,7 +643,10 @@ lst = {"a", "b", "c"};Substitute Into( lst, "a", "A" );Show( lst );
 
 ```jsl
 
-s = "Apple,APPLE,apple";Substitute Into( s, "apple", "orange", <<IGNORECASE );Show( s );
+
+s = "Apple,APPLE,apple";
+Substitute Into( s, "apple", "orange", <<IGNORECASE );
+Show( s );
 
 ```
 
@@ -554,6 +662,7 @@ s = "Apple,APPLE,apple";Substitute Into( s, "apple", "orange", <<IGNORECASE );
 
 ```jsl
 
+
 Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```
@@ -562,6 +671,7 @@ Eval List( {Words( "http://www.jmp.com", ":/." ), Words( "hello", "" )} );
 
 ```jsl
 
+
 Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ```
@@ -569,6 +679,7 @@ Words( "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 **Example 3**
 
 ```jsl
+
 
 Words( [1 2], "Apple,Banana Tree,Peach", Get Punctuation Characters() );
 

@@ -12,7 +12,31 @@
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -24,7 +48,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -36,7 +84,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -48,7 +120,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -60,7 +156,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -72,7 +192,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -84,7 +228,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -96,7 +264,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 
@@ -108,7 +300,33 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	),	ALT Plan(),	Save Script to Script Window);
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	),
+	ALT Plan(),
+	Save Script to Script Window
+);
 
 ```
 
@@ -126,7 +344,31 @@ d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			N
 
 ```jsl
 
-d = Constant Stress ALT Design(	Factors(		Factor(			Factor Name( "X1" ),			Number of Levels( 3 ),			Factor Transformation( "Arrhenius Celsius" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		),		Factor(			Factor Name( "X2" ),			Number of Levels( 3 ),			Factor Transformation( "Log" ),			Low Usage Condition( 20 ),			High Usage Condition( 30 ),			Low Test Condition( 90 ),			High Test Condition( 110 ),		)	));
+
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
 
 ```
 

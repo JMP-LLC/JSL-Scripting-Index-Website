@@ -8,7 +8,7 @@ theme:
   collapse_navigation: false
   navigation_depth: 6
   include_homepage_in_sidebar: false
-site_url: https://jsl.jmp.com
+site_url: https://jsl.jmp.com/
 site_description: The JMP Scripting Index provides a brief description and the syntax for JMP Scripting Language functions, objects, python integration, and display boxes for the JMP® Software.
 copyright: © 2026 JMP Statistical Discovery LLC. All Rights Reserved.
 use_directory_urls: false
@@ -20,8 +20,9 @@ extra_javascript:
   - js/prism-custom.js
   - js/popper.min.js
   - js/tippy.js
-  - js/extra.js
   - js/clipboard.js
+hooks:
+  - hooks.py
 markdown_extensions:
     - toc:
         permalink: 
@@ -35,22 +36,22 @@ plugins:
       exclude:
           - "**/Functions/All*.md" 
 
-  - llmstxt:
-      full_output: llms-full.txt
-      markdown_description: Documentation for all of the Functions, Objects, Display Boxes, and Python functions that are supported by the JMP Scripting Language also known as JSL. This guide includes syntax, descriptions, code examples, and JMP® software version compatibility for each item.
-      sections:
-        JSL Objects Usage Documentation:
-          - All Categories/Objects/*.md
-        JSL Functions Usage Documentation:
-          - All Categories/Functions/*.md
-        JSL Display Boxes Usage Documentation:
-          - All Categories/Display Boxes/*.md
-        JMP Python Usage Documentation:
-          - All Categories/Python/*.md
-        JMP Sample Data JSL Examples:
-          - Examples/Sample Data Examples/*.md
-        Platform and Scriptables JSL Examples:
-          - Examples/Platform and Scriptables Examples/*.md
+  # - llmstxt:
+  #     full_output: llms-full.txt
+  #     markdown_description: Documentation for all of the Functions, Objects, Display Boxes, and Python functions that are supported by the JMP Scripting Language also known as JSL. This guide includes syntax, descriptions, code examples, and JMP® software version compatibility for each item.
+  #     sections:
+  #       JSL Objects Usage Documentation:
+  #         - All Categories/Objects/*.md
+  #       JSL Functions Usage Documentation:
+  #         - All Categories/Functions/*.md
+  #       JSL Display Boxes Usage Documentation:
+  #         - All Categories/Display Boxes/*.md
+  #       JMP Python Usage Documentation:
+  #         - All Categories/Python/*.md
+  #       JMP Sample Data JSL Examples:
+  #         - Examples/Sample Data Examples/*.md
+  #       Platform and Scriptables JSL Examples:
+  #         - Examples/Platform and Scriptable Examples/*.md    
 
 
   

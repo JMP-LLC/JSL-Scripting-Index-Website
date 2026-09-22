@@ -12,7 +12,13 @@
 
 ```jsl
 
-s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Clear Schedule;
+
+s = Schedule(
+	10,
+	Beep();
+	Print( "Hello World!" );
+);
+s << Clear Schedule;
 
 ```
 
@@ -24,7 +30,14 @@ s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Clear Schedule;
 
 ```jsl
 
-s = Schedule(	10,	Beep();	Print( "Hello World!" ););Wait( 2 );s << Close;
+
+s = Schedule(
+	10,
+	Beep();
+	Print( "Hello World!" );
+);
+Wait( 2 );
+s << Close;
 
 ```
 
@@ -36,7 +49,14 @@ s = Schedule(	10,	Beep();	Print( "Hello World!" ););Wait( 2 );s << Close;
 
 ```jsl
 
-s = Schedule(	10,	Beep();	Print( "Hello World!" ););t = s << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+s = Schedule(
+	10,
+	Beep();
+	Print( "Hello World!" );
+);
+t = s << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -48,7 +68,15 @@ s = Schedule(	10,	Beep();	Print( "Hello World!" ););t = s << Get Container;
 
 ```jsl
 
-s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Stop;Wait( 2 );s << Restart;
+
+s = Schedule(
+	10,
+	Beep();
+	Print( "Hello World!" );
+);
+s << Stop;
+Wait( 2 );
+s << Restart;
 
 ```
 
@@ -60,7 +88,13 @@ s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Stop;Wait( 2 );s
 
 ```jsl
 
-s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Show Schedule;
+
+s = Schedule(
+	10,
+	Beep();
+	Print( "Hello World!" );
+);
+s << Show Schedule;
 
 ```
 
@@ -72,7 +106,13 @@ s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Show Schedule;
 
 ```jsl
 
-s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Stop;
+
+s = Schedule(
+	10,
+	Beep();
+	Print( "Hello World!" );
+);
+s << Stop;
 
 ```
 
@@ -86,7 +126,12 @@ s = Schedule(	10,	Beep();	Print( "Hello World!" ););s << Stop;
 
 ```jsl
 
-s = Schedule(	10,	Beep();	Print( "Hello World!" ););
+
+s = Schedule(
+	10,
+	Beep();
+	Print( "Hello World!" );
+);
 
 ```
 

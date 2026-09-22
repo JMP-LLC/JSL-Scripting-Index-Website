@@ -14,7 +14,9 @@
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Custom Format Category( 1 );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Custom Format Category( 1 );
 
 ```
 
@@ -28,7 +30,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Description( "Add two numbers together, but subtract 1" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Description( "Add two numbers together, but subtract 1" );
 
 ```
 
@@ -44,7 +48,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Example( "Add(1, 2)" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Example( "Add(1, 2)" );
 
 ```
 
@@ -52,7 +58,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Example( "Add(1, 2)", "small add" );myAdd << Example( "Add(1, 500)", "bigger add" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Example( "Add(1, 2)", "small add" );
+myAdd << Example( "Add(1, 500)", "bigger add" );
 
 ```
 
@@ -66,7 +75,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Formula Category( "NumberStuff" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Formula Category( "NumberStuff" );
 
 ```
 
@@ -80,7 +91,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Custom Format Category( 1 );myAdd << Get Custom Format Category;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Custom Format Category( 1 );
+myAdd << Get Custom Format Category;
 
 ```
 
@@ -94,7 +108,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Description( "Add two numbers together, but subtract 1" );myAdd << Get Description;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Description( "Add two numbers together, but subtract 1" );
+myAdd << Get Description;
 
 ```
 
@@ -108,7 +125,11 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Example( "Add(1, 2)", "small add" );myAdd << Example( "Add(1, 500)", "bigger add" );myAdd << Get Examples;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Example( "Add(1, 2)", "small add" );
+myAdd << Example( "Add(1, 500)", "bigger add" );
+myAdd << Get Examples;
 
 ```
 
@@ -122,7 +143,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Formula Category( "NumberStuff" );myAdd << Get Formula Category;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Formula Category( "NumberStuff" );
+myAdd << Get Formula Category;
 
 ```
 
@@ -136,7 +160,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Get Function;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Get Function;
 
 ```
 
@@ -150,7 +176,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Get Name;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Get Name;
 
 ```
 
@@ -164,7 +192,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Get Namespace;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Get Namespace;
 
 ```
 
@@ -178,7 +208,11 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Parameter( "Number", "number" );myAdd << Parameter( "Number", "<number=1>" );myAdd << Get Parameters;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Parameter( "Number", "number" );
+myAdd << Parameter( "Number", "<number=1>" );
+myAdd << Get Parameters;
 
 ```
 
@@ -192,7 +226,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Prototype( "Add(number, <number=1>)" );myAdd << Get Prototype;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Prototype( "Add(number, <number=1>)" );
+myAdd << Get Prototype;
 
 ```
 
@@ -206,7 +243,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Result Type( "Number" );myAdd << Get Result Type;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Result Type( "Number" );
+myAdd << Get Result Type;
 
 ```
 
@@ -220,7 +260,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Scripting Index Category( "My Functions" );myAdd << Get Scripting Index Category;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Scripting Index Category( "My Functions" );
+myAdd << Get Scripting Index Category;
 
 ```
 
@@ -234,7 +277,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Transform Category( 1 );myAdd << Get Transform Category;
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Transform Category( 1 );
+myAdd << Get Transform Category;
 
 ```
 
@@ -248,7 +294,10 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Parameter( "Number", "number" );myAdd << Parameter( "Number", "<number=1>" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Parameter( "Number", "number" );
+myAdd << Parameter( "Number", "<number=1>" );
 
 ```
 
@@ -262,7 +311,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Prototype( "Add(number, <number=1>)" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Prototype( "Add(number, <number=1>)" );
 
 ```
 
@@ -278,7 +329,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Result Type( "Number" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Result Type( "Number" );
 
 ```
 
@@ -286,7 +339,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Result Type( {"Number", "String"} );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Result Type( {"Number", "String"} );
 
 ```
 
@@ -300,7 +355,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Scripting Index Category( "My Functions" );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Scripting Index Category( "My Functions" );
 
 ```
 
@@ -314,7 +371,9 @@ myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) 
 
 ```jsl
 
-myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );myAdd << Transform Category( 1 );
+
+myAdd = New Custom Function( "custom", "Add", Function( {x, y = 1}, x + y - 1 ) );
+myAdd << Transform Category( 1 );
 
 ```
 

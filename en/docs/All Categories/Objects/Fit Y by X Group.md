@@ -14,7 +14,12 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ), Fit Line );obj << (curve[1] << Line of Fit( 1 ));Wait( 1 );obj << (curve[1] << Line of Fit( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ), Fit Line );
+obj << (curve[1] << Line of Fit( 1 ));
+Wait( 1 );
+obj << (curve[1] << Line of Fit( 0 ));
 
 ```
 
@@ -28,7 +33,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Fit( 1 )} );Wait( 1 );obj << Fit Polynomial( 3 );obj << (curve[2] << Confid Curves Fit( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Fit( 1 )} );
+Wait( 1 );
+obj << Fit Polynomial( 3 );
+obj << (curve[2] << Confid Curves Fit( 1 ));
 
 ```
 
@@ -40,7 +51,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Indiv( 1 )} ) );Wait( 1 );obj << Fit Polynomial( 3 );obj << (curve[2] << Confid Curves Indiv( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Indiv( 1 )} ) );
+Wait( 1 );
+obj << Fit Polynomial( 3 );
+obj << (curve[2] << Confid Curves Indiv( 1 ));
 
 ```
 
@@ -52,7 +68,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Fit( 1 ), Confid Shaded Fit( 1 )} );Wait( 1 );obj << (curve[1] << Confid Shaded Fit( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Fit( 1 ), Confid Shaded Fit( 1 )} );
+Wait( 1 );
+obj << (curve[1] << Confid Shaded Fit( 0 ));
 
 ```
 
@@ -64,7 +85,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Indiv( 1 ), Confid Shaded Indiv( 1 )} );Wait( 1 );obj << (curve[1] << Confid Shaded Indiv( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Indiv( 1 ), Confid Shaded Indiv( 1 )} );
+Wait( 1 );
+obj << (curve[1] << Confid Shaded Indiv( 0 ));
 
 ```
 
@@ -76,7 +102,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Indiv Confidence Limit Formula( .001 ));Wait( 1 );obj << Fit Line( {Indiv Confidence Limit Formula( 0.01 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Indiv Confidence Limit Formula( .001 ));
+Wait( 1 );
+obj << Fit Line( {Indiv Confidence Limit Formula( 0.01 )} );
 
 ```
 
@@ -90,7 +121,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Indiv, Line Color( "Medium Dark BlueGreen" )} );Wait( 1 );obj << (curve[1] << Line Color( "black" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Indiv, Line Color( "Medium Dark BlueGreen" )} );
+Wait( 1 );
+obj << (curve[1] << Line Color( "black" ));
 
 ```
 
@@ -98,7 +134,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.95, {Line Color( "Medium Dark BlueGreen" )} );Wait( 1 );obj << (curve[1] << Line Color( "black" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.95, {Line Color( "Medium Dark BlueGreen" )} );
+Wait( 1 );
+obj << (curve[1] << Line Color( "black" ));
 
 ```
 
@@ -112,7 +153,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Fit} ) );Wait( 1 );obj << (Curve[1] << Line Style( "DashDot" ));obj << Fit Polynomial( 3, {Line Style( "Dense Dash" )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Fit} ) );
+Wait( 1 );
+obj << (Curve[1] << Line Style( "DashDot" ));
+obj << Fit Polynomial( 3, {Line Style( "Dense Dash" )} );
 
 ```
 
@@ -120,7 +166,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );Wait( 1 );obj << (Curve[1] << Line Style( "DashDot" ));obj << Density Ellipse( 0.90, {Line Style( "Dense Dash" )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );
+Wait( 1 );
+obj << (Curve[1] << Line Style( "DashDot" ));
+obj << Density Ellipse( 0.90, {Line Style( "Dense Dash" )} );
 
 ```
 
@@ -134,7 +185,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Line Width( 3 )} );Wait( 1 );obj << (curve[1] << Line Width( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Line Width( 3 )} );
+Wait( 1 );
+obj << (curve[1] << Line Width( 1 ));
 
 ```
 
@@ -142,7 +198,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.99, {Line Width( 3 )} );Wait( 1 );obj << (curve[1] << Line Width( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.99, {Line Width( 3 )} );
+Wait( 1 );
+obj << (curve[1] << Line Width( 1 ));
 
 ```
 
@@ -156,7 +217,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line );Wait( 1 );obj << (Curve[1] << Line of Fit( 0 ));obj << Fit Polynomial( 3, {Line of Fit( 0 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line );
+Wait( 1 );
+obj << (Curve[1] << Line of Fit( 0 ));
+obj << Fit Polynomial( 3, {Line of Fit( 0 )} );
 
 ```
 
@@ -164,7 +230,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );Wait( 1 );obj << (Curve[1] << Line of Fit( 0 ));obj << Density Ellipse( 0.90, {Line of Fit( 0 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );
+Wait( 1 );
+obj << (Curve[1] << Line of Fit( 0 ));
+obj << Density Ellipse( 0.90, {Line of Fit( 0 )} );
 
 ```
 
@@ -176,7 +247,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Mean Confidence Limit Formula( .01 ));Wait( 1 );obj << Fit Line( {Mean Confidence Limit Formula( 0.05 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Mean Confidence Limit Formula( .01 ));
+Wait( 1 );
+obj << Fit Line( {Mean Confidence Limit Formula( 0.05 )} );
 
 ```
 
@@ -188,7 +264,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( 1, {Plot Residuals( 1 )} );Wait( 1 );obj << (curve[1] << Plot Residuals( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( 1, {Plot Residuals( 1 )} );
+Wait( 1 );
+obj << (curve[1] << Plot Residuals( 0 ));
 
 ```
 
@@ -202,7 +283,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Polynomial( 3, {Profiler( 1 )} );Wait( 1 );obj << (Curve[1] << Profiler( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Polynomial( 3, {Profiler( 1 )} );
+Wait( 1 );
+obj << (Curve[1] << Profiler( 0 ));
 
 ```
 
@@ -216,7 +302,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( 1 );obj << Fit Polynomial( 3 );Wait( 1 );obj << (Curve[2] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( 1 );
+obj << Fit Polynomial( 3 );
+Wait( 1 );
+obj << (Curve[2] << Remove Fit);
 
 ```
 
@@ -224,7 +316,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.95 );obj << Density Ellipse( 0.90 );Wait( 1 );obj << (Curve[2] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.95 );
+obj << Density Ellipse( 0.90 );
+Wait( 1 );
+obj << (Curve[2] << Remove Fit);
 
 ```
 
@@ -238,7 +336,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Report( 0 )} );Wait( 1 );obj << (Curve[1] << Report( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Report( 0 )} );
+Wait( 1 );
+obj << (Curve[1] << Report( 1 ));
 
 ```
 
@@ -246,7 +349,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.95, {Report( 0 )} );Wait( 1 );obj << (Curve[1] << Report( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.95, {Report( 0 )} );
+Wait( 1 );
+obj << (Curve[1] << Report( 1 ));
 
 ```
 
@@ -258,7 +366,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Polynomial( 3, {Save Predicteds} );Wait( 1 );obj << Fit Line( 1 );obj << (curve[2] << Save Predicteds);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Polynomial( 3, {Save Predicteds} );
+Wait( 1 );
+obj << Fit Line( 1 );
+obj << (curve[2] << Save Predicteds);
 
 ```
 
@@ -270,7 +384,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Save Residuals);Wait( 1 );obj << Fit Line( {Save Residuals} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Save Residuals);
+Wait( 1 );
+obj << Fit Line( {Save Residuals} );
 
 ```
 
@@ -284,7 +403,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Save Studentized Residuals);Wait( 1 );obj << Fit Line( {Save Studentized Residuals} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Save Studentized Residuals);
+Wait( 1 );
+obj << Fit Line( {Save Studentized Residuals} );
 
 ```
 
@@ -296,7 +420,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Fit( 1 ), Set Alpha Level( 0.001 )} );obj << Fit Polynomial( 2, {Confid Curves Fit( 1 )} );Wait( 1 );obj << (curve[2] << Set Alpha Level( 0.01 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Fit( 1 ), Set Alpha Level( 0.001 )} );
+obj << Fit Polynomial( 2, {Confid Curves Fit( 1 )} );
+Wait( 1 );
+obj << (curve[2] << Set Alpha Level( 0.01 ));
 
 ```
 
@@ -308,7 +438,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Fit( 1 ), Set Alpha Level( 0.001 )} );obj << Fit Polynomial( 2, {Confid Curves Fit( 1 )} );Wait( 1 );obj << (curve[2] << Set Alpha Level( 0.01 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Fit( 1 ), Set Alpha Level( 0.001 )} );
+obj << Fit Polynomial( 2, {Confid Curves Fit( 1 )} );
+Wait( 1 );
+obj << (curve[2] << Set Alpha Level( 0.01 ));
 
 ```
 
@@ -324,7 +460,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {"5% Contours"n( 0 )} );Wait( 1 );obj << (curve[1] << "5% Contours"n( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {"5% Contours"n( 0 )} );
+Wait( 1 );
+obj << (curve[1] << "5% Contours"n( 1 ));
 
 ```
 
@@ -338,7 +479,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );Wait( 1 );obj << (curve[1] << Color By Density Quantile);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );
+Wait( 1 );
+obj << (curve[1] << Color By Density Quantile);
 
 ```
 
@@ -346,7 +491,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Color By Density Quantile} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Color By Density Quantile} );
 
 ```
 
@@ -362,7 +510,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );obj << (curve[1] << Color Theme( "Jet"(1) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );
+obj << (curve[1] << Color Theme( "Jet"(1) ));
 
 ```
 
@@ -370,7 +521,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Color Theme( "White to Black"(1) )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Color Theme( "White to Black"(1) )} );
 
 ```
 
@@ -384,7 +538,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density( {Contour Lines( 0 )} ) );obj << (curve[1] << Contour Fill( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density( {Contour Lines( 0 )} ) );
+obj << (curve[1] << Contour Fill( 1 ));
 
 ```
 
@@ -392,7 +549,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Contour Fill( 1 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Contour Fill( 1 )} );
 
 ```
 
@@ -404,7 +564,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Contour Lines( 0 )} );Wait( 1 );obj << (curve[1] << Contour Lines( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Contour Lines( 0 )} );
+Wait( 1 );
+obj << (curve[1] << Contour Lines( 1 ));
 
 ```
 
@@ -416,7 +581,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Kernel Control( 1 )} );Wait( 1 );obj << (curve[1] << Kernel Control( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Kernel Control( 1 )} );
+Wait( 1 );
+obj << (curve[1] << Kernel Control( 0 ));
 
 ```
 
@@ -428,7 +598,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Mesh Plot( 1 )} );Wait( 1 );obj << (curve[1] << Mesh Plot( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Mesh Plot( 1 )} );
+Wait( 1 );
+obj << (curve[1] << Mesh Plot( 0 ));
 
 ```
 
@@ -440,7 +615,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Modal Clustering( 1 )} );Wait( 1 );obj << (curve[1] << Modal Clustering( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Modal Clustering( 1 )} );
+Wait( 1 );
+obj << (curve[1] << Modal Clustering( 0 ));
 
 ```
 
@@ -452,7 +632,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density();Wait( 1 );obj << (curve[1] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density();
+Wait( 1 );
+obj << (curve[1] << Remove Fit);
 
 ```
 
@@ -464,7 +649,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Report( 0 )} );Wait( 1 );obj << (curve[1] << Report( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Report( 0 )} );
+Wait( 1 );
+obj << (curve[1] << Report( 1 ));
 
 ```
 
@@ -478,7 +668,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Save Density Grid} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Save Density Grid} );
 
 ```
 
@@ -486,7 +679,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );obj << (curve[1] << Save Density Grid);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );
+obj << (curve[1] << Save Density Grid);
 
 ```
 
@@ -500,7 +696,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );obj << (curve[1] << Save Density Quantile);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Nonpar Density );
+obj << (curve[1] << Save Density Quantile);
 
 ```
 
@@ -508,7 +707,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Save Density Quantile} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Save Density Quantile} );
 
 ```
 
@@ -520,7 +722,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Select Points by Density( 0.2, 0.5 )} );Wait( 1 );obj << (curve[1] << Select Points by Density( 0.8, 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Select Points by Density( 0.2, 0.5 )} );
+Wait( 1 );
+obj << (curve[1] << Select Points by Density( 0.8, 1 ));
 
 ```
 
@@ -532,7 +739,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density( {Kernel Control( 1 ), Set Kernel( 8.537, 1.7333 )} );Wait( 1 );obj << (curve[1] << Set Kernel( 8, 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density( {Kernel Control( 1 ), Set Kernel( 8.537, 1.7333 )} );
+Wait( 1 );
+obj << (curve[1] << Set Kernel( 8, 1 ));
 
 ```
 
@@ -548,7 +760,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Fit( 1 )} );Wait( 1 );obj << Fit Polynomial( 3 );obj << (curve[2] << Confid Curves Fit( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Fit( 1 )} );
+Wait( 1 );
+obj << Fit Polynomial( 3 );
+obj << (curve[2] << Confid Curves Fit( 1 ));
 
 ```
 
@@ -560,7 +778,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Indiv( 1 )} ) );Wait( 1 );obj << Fit Polynomial( 3 );obj << (curve[2] << Confid Curves Indiv( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Indiv( 1 )} ) );
+Wait( 1 );
+obj << Fit Polynomial( 3 );
+obj << (curve[2] << Confid Curves Indiv( 1 ));
 
 ```
 
@@ -572,7 +795,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Indiv Confidence Limit Formula( .001 ));Wait( 1 );obj << Fit Line( {Indiv Confidence Limit Formula( 0.01 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Indiv Confidence Limit Formula( .001 ));
+Wait( 1 );
+obj << Fit Line( {Indiv Confidence Limit Formula( 0.01 )} );
 
 ```
 
@@ -586,7 +814,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Confid Curves Indiv, Line Color( "Medium Dark BlueGreen" )} );Wait( 1 );obj << (curve[1] << Line Color( "black" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Confid Curves Indiv, Line Color( "Medium Dark BlueGreen" )} );
+Wait( 1 );
+obj << (curve[1] << Line Color( "black" ));
 
 ```
 
@@ -594,7 +827,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.95, {Line Color( "Medium Dark BlueGreen" )} );Wait( 1 );obj << (curve[1] << Line Color( "black" ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.95, {Line Color( "Medium Dark BlueGreen" )} );
+Wait( 1 );
+obj << (curve[1] << Line Color( "black" ));
 
 ```
 
@@ -608,7 +846,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Fit} ) );Wait( 1 );obj << (Curve[1] << Line Style( "DashDot" ));obj << Fit Polynomial( 3, {Line Style( "Dense Dash" )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line( {Confid Curves Fit} ) );
+Wait( 1 );
+obj << (Curve[1] << Line Style( "DashDot" ));
+obj << Fit Polynomial( 3, {Line Style( "Dense Dash" )} );
 
 ```
 
@@ -616,7 +859,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );Wait( 1 );obj << (Curve[1] << Line Style( "DashDot" ));obj << Density Ellipse( 0.90, {Line Style( "Dense Dash" )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );
+Wait( 1 );
+obj << (Curve[1] << Line Style( "DashDot" ));
+obj << Density Ellipse( 0.90, {Line Style( "Dense Dash" )} );
 
 ```
 
@@ -630,7 +878,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Line Width( 3 )} );Wait( 1 );obj << (curve[1] << Line Width( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Line Width( 3 )} );
+Wait( 1 );
+obj << (curve[1] << Line Width( 1 ));
 
 ```
 
@@ -638,7 +891,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.99, {Line Width( 3 )} );Wait( 1 );obj << (curve[1] << Line Width( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.99, {Line Width( 3 )} );
+Wait( 1 );
+obj << (curve[1] << Line Width( 1 ));
 
 ```
 
@@ -652,7 +910,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line );Wait( 1 );obj << (Curve[1] << Line of Fit( 0 ));obj << Fit Polynomial( 3, {Line of Fit( 0 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Line );
+Wait( 1 );
+obj << (Curve[1] << Line of Fit( 0 ));
+obj << Fit Polynomial( 3, {Line of Fit( 0 )} );
 
 ```
 
@@ -660,7 +923,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );Wait( 1 );obj << (Curve[1] << Line of Fit( 0 ));obj << Density Ellipse( 0.90, {Line of Fit( 0 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Density Ellipse( 0.95 ) );
+Wait( 1 );
+obj << (Curve[1] << Line of Fit( 0 ));
+obj << Density Ellipse( 0.90, {Line of Fit( 0 )} );
 
 ```
 
@@ -672,7 +940,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Mean Confidence Limit Formula( .01 ));Wait( 1 );obj << Fit Line( {Mean Confidence Limit Formula( 0.05 )} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Mean Confidence Limit Formula( .01 ));
+Wait( 1 );
+obj << Fit Line( {Mean Confidence Limit Formula( 0.05 )} );
 
 ```
 
@@ -686,7 +959,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( 1 );obj << Fit Polynomial( 3 );Wait( 1 );obj << (Curve[2] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( 1 );
+obj << Fit Polynomial( 3 );
+Wait( 1 );
+obj << (Curve[2] << Remove Fit);
 
 ```
 
@@ -694,7 +973,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.95 );obj << Density Ellipse( 0.90 );Wait( 1 );obj << (Curve[2] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.95 );
+obj << Density Ellipse( 0.90 );
+Wait( 1 );
+obj << (Curve[2] << Remove Fit);
 
 ```
 
@@ -708,7 +993,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( {Report( 0 )} );Wait( 1 );obj << (Curve[1] << Report( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( {Report( 0 )} );
+Wait( 1 );
+obj << (Curve[1] << Report( 1 ));
 
 ```
 
@@ -716,7 +1006,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.95, {Report( 0 )} );Wait( 1 );obj << (Curve[1] << Report( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.95, {Report( 0 )} );
+Wait( 1 );
+obj << (Curve[1] << Report( 1 ));
 
 ```
 
@@ -728,7 +1023,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Polynomial( 3, {Save Predicteds} );Wait( 1 );obj << Fit Line( 1 );obj << (curve[2] << Save Predicteds);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Polynomial( 3, {Save Predicteds} );
+Wait( 1 );
+obj << Fit Line( 1 );
+obj << (curve[2] << Save Predicteds);
 
 ```
 
@@ -740,7 +1041,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Save Residuals);Wait( 1 );obj << Fit Line( {Save Residuals} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Save Residuals);
+Wait( 1 );
+obj << Fit Line( {Save Residuals} );
 
 ```
 
@@ -754,7 +1060,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );obj << (Curve[1] << Save Studentized Residuals);Wait( 1 );obj << Fit Line( {Save Studentized Residuals} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Fit Polynomial( 3 ) );
+obj << (Curve[1] << Save Studentized Residuals);
+Wait( 1 );
+obj << Fit Line( {Save Studentized Residuals} );
 
 ```
 
@@ -766,7 +1077,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate(	Y( :Weight ),	X( :Height ),	Density Ellipse( 0.95, {Line Color( {213, 72, 87} )} ),);obj << (curve[1] << Select Points Inside);Wait( 1 );obj << Density Ellipse( 0.8, {Select Points Inside} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	Density Ellipse( 0.95, {Line Color( {213, 72, 87} )} ),
+
+);
+obj << (curve[1] << Select Points Inside);
+Wait( 1 );
+obj << Density Ellipse( 0.8, {Select Points Inside} );
 
 ```
 
@@ -778,7 +1099,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate(	Y( :Weight ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate(	Y( :Weight ),	X( :Height ),	Density Ellipse( 0.8, {Line Color( {213, 72, 87} )} ),);obj << (curve[1] << Select Points Outside);Wait( 1 );obj << Density Ellipse( 0.95, {Select Points Outside} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	Density Ellipse( 0.8, {Line Color( {213, 72, 87} )} ),
+
+);
+obj << (curve[1] << Select Points Outside);
+Wait( 1 );
+obj << Density Ellipse( 0.95, {Select Points Outside} );
 
 ```
 
@@ -790,7 +1121,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate(	Y( :Weight ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ), );obj << Density Ellipse( 0.95, {Shaded Contour( 1 )} );Wait( 1 );obj << (Curve[1] << Shaded Contour( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ), );
+obj << Density Ellipse( 0.95, {Shaded Contour( 1 )} );
+Wait( 1 );
+obj << (Curve[1] << Shaded Contour( 0 ));
 
 ```
 
@@ -806,7 +1142,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 
 ```
 
@@ -820,7 +1158,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -832,7 +1182,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Freq( :_freqcol ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Freq( :_freqcol ) );
 
 ```
 
@@ -844,7 +1197,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 
 ```
 
@@ -856,7 +1211,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 
 ```
 
@@ -868,7 +1225,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Bivariate( Y( :Weight ), X( :Height ), Weight( :_weightcol ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ), Weight( :_weightcol ) );
 
 ```
 
@@ -880,7 +1240,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numer
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 
 ```
 
@@ -892,7 +1254,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
 
 ```
 
@@ -906,7 +1270,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( 1 );obj << Fit Polynomial( 3 );obj << (curve[2] << Confid Curves Fit( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( 1 );
+obj << Fit Polynomial( 3 );
+obj << (curve[2] << Confid Curves Fit( 1 ));
 
 ```
 
@@ -918,7 +1287,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Density Ellipse( 0.95 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Density Ellipse( 0.95 );
 
 ```
 
@@ -930,7 +1302,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Cauchy;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Cauchy;
 
 ```
 
@@ -942,7 +1317,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Each Value;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Each Value;
 
 ```
 
@@ -954,7 +1332,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line;
 
 ```
 
@@ -966,7 +1347,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Mean;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Mean;
 
 ```
 
@@ -978,7 +1362,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Orthogonal( Fit X to Y );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Orthogonal( Fit X to Y );
 
 ```
 
@@ -992,7 +1379,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Passing Bablok;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Passing Bablok;
 
 ```
 
@@ -1004,7 +1394,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Polynomial( 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Polynomial( 3 );
 
 ```
 
@@ -1016,7 +1409,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Robust;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Robust;
 
 ```
 
@@ -1028,7 +1424,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Special( xTran( "Log" ) );obj << Fit Special( xTran( "Square" ), yTran( "Reciprocal" ), Intercept( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Special( xTran( "Log" ) );
+obj << Fit Special( xTran( "Square" ), yTran( "Reciprocal" ), Intercept( 0 ) );
 
 ```
 
@@ -1040,7 +1440,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Spline( 341.1929, Standardized );obj << Fit Spline( 341.1929 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Spline( 341.1929, Standardized );
+obj << Fit Spline( 341.1929 );
 
 ```
 
@@ -1052,7 +1456,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :weight ), X( :height ) );obj << Fit Where( :sex == "F", Fit Line( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :weight ), X( :height ) );
+obj << Fit Where( :sex == "F", Fit Line( 1 ) );
 
 ```
 
@@ -1064,7 +1471,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dogs.jmp" );obj = dt << Bivariate( Y( :LogHist1 ), X( :LogHist0 ) );obj << Group By( :drug );obj << Fit Line;
+
+dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj = dt << Bivariate( Y( :LogHist1 ), X( :LogHist0 ) );
+obj << Group By( :drug );
+obj << Fit Line;
 
 ```
 
@@ -1076,7 +1487,10 @@ dt = Open( "$SAMPLE_DATA/Dogs.jmp" );obj = dt << Bivariate( Y( :LogHist1 ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Histogram Borders( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Histogram Borders( 1 );
 
 ```
 
@@ -1088,7 +1502,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt << Bivariate( Y( :"Velocity (y)"n ), X( :Concentration ) );obj << Kernel Smoother( 1, 1, 0.84615, 0 );
+
+dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );
+obj = dt << Bivariate( Y( :"Velocity (y)"n ), X( :Concentration ) );
+obj << Kernel Smoother( 1, 1, 0.84615, 0 );
 
 ```
 
@@ -1100,7 +1517,10 @@ dt = Open( "$SAMPLE_DATA/Nonlinear Examples/Chemical Kinetics.jmp" );obj = dt <
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Nonpar Density;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Nonpar Density;
 
 ```
 
@@ -1116,7 +1536,10 @@ This option has been promoted to the Matched Pairs platform. This option is also
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dogs.jmp" );obj = dt << Bivariate( Y( :LogHist1 ), X( :LogHist0 ) );obj << Paired t test;
+
+dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj = dt << Bivariate( Y( :LogHist1 ), X( :LogHist0 ) );
+obj << Paired t test;
 
 ```
 
@@ -1128,7 +1551,10 @@ dt = Open( "$SAMPLE_DATA/Dogs.jmp" );obj = dt << Bivariate( Y( :LogHist1 ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Oneway( Y( :Sepal length ), X( :Sepal width ) );obj << Points Jittered( "Random Normal" );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Oneway( Y( :Sepal length ), X( :Sepal width ) );
+obj << Points Jittered( "Random Normal" );
 
 ```
 
@@ -1140,7 +1566,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Oneway( Y( :Sepal length ), X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Fit Line( 1 );Wait( 1 );obj << Show Points( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Fit Line( 1 );
+Wait( 1 );
+obj << Show Points( 0 );
 
 ```
 
@@ -1154,7 +1585,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Summary Statistics( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Summary Statistics( 1 );
 
 ```
 
@@ -1168,7 +1602,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1184,7 +1624,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -1192,7 +1639,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1200,7 +1651,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1212,7 +1667,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -1226,7 +1685,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1238,7 +1703,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -1250,7 +1721,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -1262,7 +1746,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Copy Script;
 
 ```
 
@@ -1274,7 +1761,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Data Table Window;
 
 ```
 
@@ -1288,7 +1778,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -1300,7 +1793,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -1314,7 +1821,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1322,7 +1833,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -1334,7 +1866,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -1346,7 +1882,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1358,7 +1899,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -1370,7 +1915,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -1382,7 +1931,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -1394,7 +1947,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -1408,7 +1965,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1420,7 +1981,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1432,7 +2000,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -1446,7 +2022,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -1458,7 +2037,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1470,7 +2058,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Redo Analysis;
 
 ```
 
@@ -1482,7 +2073,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -1494,7 +2088,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -1506,19 +2108,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 #### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1530,7 +2147,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -1542,7 +2162,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1554,7 +2187,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -1566,7 +2212,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bivariate(
+	Y( :Weight ),
+	X( :Height ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1578,7 +2237,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -1588,19 +2255,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
-**Example 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bivariate(	Y( :Weight ),	X( :Height ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -1612,7 +2277,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1624,7 +2292,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -1636,7 +2307,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Save Script to Report;
 
 ```
 
@@ -1648,7 +2322,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -1660,7 +2337,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -1672,7 +2358,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -1684,7 +2384,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -1696,7 +2402,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -1708,7 +2419,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -1720,7 +2434,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1734,7 +2453,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -1746,7 +2470,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -1758,7 +2485,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -1768,85 +2502,127 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 #### Point Options
 
-**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) ); scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the Analysis of Means for Proportions chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status ), X( :type ) );obj << Analysis of Means for Proportions( 1, Point Options( "Show Only Points" ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;scrobj << Point Options( "Show Connected Points" );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = Contingency( Y( :marital status ), X( :type ) );
+obj << Analysis of Means for Proportions( 1, Point Options( "Show Only Points" ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;
+scrobj << Point Options( "Show Connected Points" );
 
 ```
 
 #### Set Alpha Level
 
-**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Set Alpha Level( alpha ) ); scrobj &lt;&lt; Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status ), X( :type ) );obj << Analysis of Means for Proportions( 1, Set Alpha Level( 0.1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;scrobj << Set Alpha Level( 0.05 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = Contingency( Y( :marital status ), X( :type ) );
+obj << Analysis of Means for Proportions( 1, Set Alpha Level( 0.1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;
+scrobj << Set Alpha Level( 0.05 );
 
 ```
 
 #### Show Center Line
 
-**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Center Line( state=0|1 ) ); scrobj &lt;&lt; Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line for the Analysis of Means in Proportions chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status ), X( :type ) );obj << Analysis of Means for Proportions( 1, Show Center Line( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;scrobj << Show Center Line( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = Contingency( Y( :marital status ), X( :type ) );
+obj << Analysis of Means for Proportions( 1, Show Center Line( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;
+scrobj << Show Center Line( 1 );
 
 ```
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Decision Limit Shading( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading in the Analysis of Means for Proportions chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status ), X( :type ) );obj << Analysis of Means for Proportions( 1, Show Decision Limit Shading( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;scrobj << Show Decision Limit Shading( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = Contingency( Y( :marital status ), X( :type ) );
+obj << Analysis of Means for Proportions( 1, Show Decision Limit Shading( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;
+scrobj << Show Decision Limit Shading( 1 );
 
 ```
 
 #### Show Decision Limits
 
-**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Decision Limits( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines in the Analysis of Means for Proportions chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status ), X( :type ) );obj << Analysis of Means for Proportions( 1, Show Decision Limits( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;scrobj << Show Decision Limits( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = Contingency( Y( :marital status ), X( :type ) );
+obj << Analysis of Means for Proportions( 1, Show Decision Limits( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;
+scrobj << Show Decision Limits( 1 );
 
 ```
 
 #### Show Summary Report
 
-**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Summary Report( state=0|1 ) ); scrobj &lt;&lt; Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the response proportions and decision limits for each level of the X variable. The report also indicates whether a limit has been exceeded.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status ), X( :type ) );obj << Analysis of Means for Proportions( 1, Show Summary Report( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;scrobj << Show Summary Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = Contingency( Y( :marital status ), X( :type ) );
+obj << Analysis of Means for Proportions( 1, Show Summary Report( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;
+scrobj << Show Summary Report( 0 );
 
 ```
 
 #### Switch Response Level for Proportion
 
-**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Switch Response Level for Proportion( state=0|1 ) ); scrobj &lt;&lt; Switch Response Level for Proportion( state=0|1 )
+**Syntax:** obj &lt;&lt; Analysis of Means for Proportions( 1, Switch Response Level for Proportion( state=0|1 ) );scrobj &lt;&lt; Switch Response Level for Proportion( state=0|1 )
 
 **Description:** Changes the response category that is used in the analysis.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status ), X( :type ) );obj << Analysis of Means for Proportions( 1, Switch Response Level for Proportion( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;scrobj << Switch Response Level for Proportion( 0 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = Contingency( Y( :marital status ), X( :type ) );
+obj << Analysis of Means for Proportions( 1, Switch Response Level for Proportion( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Proportions"] << Get Scriptable Object;
+scrobj << Switch Response Level for Proportion( 0 );
 
 ```
 
@@ -1856,7 +2632,7 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status 
 
 #### Forest Plot
 
-**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Forest Plot( state=0|1 ) ); scobj &lt;&lt; Forest Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Forest Plot( state=0|1 ) );scobj &lt;&lt; Forest Plot( state=0|1 )
 
 **Description:** Shows or hides the Equivalence Tests Forest Plot. On by default.
 
@@ -1864,7 +2640,24 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = Contingency( Y( :marital status 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),	Equivalence Tests of Risk Difference(		0.1,		0.05,		"Equivalence",		Response Group( "Cancer" ),		Factor Group( "NonSmoker" )	));Wait( 2 );scobj = (Report( obj )["Equivalence Tests for the Risk Difference"] << Get Scriptable Object);scobj << Forest Plot( 0 );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),
+	Equivalence Tests of Risk Difference(
+		0.1,
+		0.05,
+		"Equivalence",
+		Response Group( "Cancer" ),
+		Factor Group( "NonSmoker" )
+	)
+);
+Wait( 2 );
+scobj = (Report( obj )["Equivalence Tests for the Risk Difference"] << Get Scriptable Object);
+scobj << Forest Plot( 0 );
 
 ```
 
@@ -1878,13 +2671,31 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),	Equivalence Tests of Risk Difference(		0.1,		0.05,		"Equivalence",		Response Group( "Cancer" ),		Factor Group( "NonSmoker" )	));Wait( 1 );scobj = (Report( obj )["Equivalence Tests for the Risk Difference"] << Get Scriptable Object);Wait( 1 );scobj << Remove;
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),
+	Equivalence Tests of Risk Difference(
+		0.1,
+		0.05,
+		"Equivalence",
+		Response Group( "Cancer" ),
+		Factor Group( "NonSmoker" )
+	)
+);
+Wait( 1 );
+scobj = (Report( obj )["Equivalence Tests for the Risk Difference"] << Get Scriptable Object);
+Wait( 1 );
+scobj << Remove;
 
 ```
 
 #### Test Report
 
-**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Test Report( state=0|1 ) ); scobj &lt;&lt; Test Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Test Report( state=0|1 ) );scobj &lt;&lt; Test Report( state=0|1 )
 
 **Description:** Shows or hides a report that summarizes the equivalence tests, superiority tests, or noninferiority tests for risk differences or risk ratios. On by default.
 
@@ -1892,7 +2703,24 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),	Equivalence Tests of Risk Difference(		0.1,		0.05,		"Equivalence",		Response Group( "Cancer" ),		Factor Group( "NonSmoker" )	));Wait( 2 );scobj = (Report( obj )["Equivalence Tests for the Risk Difference"] << Get Scriptable Object);scobj << Test Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),
+	Equivalence Tests of Risk Difference(
+		0.1,
+		0.05,
+		"Equivalence",
+		Response Group( "Cancer" ),
+		Factor Group( "NonSmoker" )
+	)
+);
+Wait( 2 );
+scobj = (Report( obj )["Equivalence Tests for the Risk Difference"] << Get Scriptable Object);
+scobj << Test Report( 0 );
 
 ```
 
@@ -1910,7 +2738,10 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Contingency Table( Cell Chi Square( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Contingency Table( Cell Chi Square( 1 ) );
 
 ```
 
@@ -1918,7 +2749,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Cell Chi Square( 1, Format( "Fixed Dec", 8, 5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Cell Chi Square( 1, Format( "Fixed Dec", 8, 5 ) ) );
 
 ```
 
@@ -1932,7 +2767,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Col %( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Col %( 0 ) );
 
 ```
 
@@ -1940,7 +2779,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Col %( 1, Format( "Fixed Dec", 7, 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Col %( 1, Format( "Fixed Dec", 7, 1 ) ) );
 
 ```
 
@@ -1954,7 +2797,10 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Col Cum( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Col Cum( 1 ) );
 
 ```
 
@@ -1962,7 +2808,16 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table(	Total %( 0 ),	Col %( 0 ),	Row %( 0 ),	Col Cum( 1, Format( "Fixed Dec", 7, 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table(
+	Total %( 0 ),
+	Col %( 0 ),
+	Row %( 0 ),
+	Col Cum( 1, Format( "Fixed Dec", 7, 1 ) )
+);
 
 ```
 
@@ -1976,7 +2831,10 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Col Cum %( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Col Cum %( 1 ) );
 
 ```
 
@@ -1984,7 +2842,16 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table(	Total %( 0 ),	Col %( 0 ),	Row %( 0 ),	Col Cum %( 1, Format( "Fixed Dec", 7, 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table(
+	Total %( 0 ),
+	Col %( 0 ),
+	Row %( 0 ),
+	Col Cum %( 1, Format( "Fixed Dec", 7, 1 ) )
+);
 
 ```
 
@@ -1998,7 +2865,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Count( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Count( 0 ) );
 
 ```
 
@@ -2006,7 +2877,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Count( 1, Format( "Fixed Dec", 7, 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Count( 1, Format( "Fixed Dec", 7, 1 ) ) );
 
 ```
 
@@ -2020,7 +2895,10 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Contingency Table( Deviation( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Contingency Table( Deviation( 1 ) );
 
 ```
 
@@ -2028,7 +2906,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Deviation( 1, Format( "Fixed Dec", 7, 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Deviation( 1, Format( "Fixed Dec", 7, 1 ) ) );
 
 ```
 
@@ -2042,7 +2924,10 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Contingency Table( Expected( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Contingency Table( Expected( 1 ) );
 
 ```
 
@@ -2050,7 +2935,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Expected( 1, Format( "Fixed Dec", 7, 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Expected( 1, Format( "Fixed Dec", 7, 1 ) ) );
 
 ```
 
@@ -2062,7 +2951,9 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Contingency( Y( :Age ), X( :sex ), Contingency Table( Make into Data Table ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Contingency( Y( :Age ), X( :sex ), Contingency Table( Make into Data Table ) );
 
 ```
 
@@ -2076,7 +2967,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Contingency( Y( :Age ), X( :sex
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Row %( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Row %( 0 ) );
 
 ```
 
@@ -2084,7 +2979,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Row %( 1, Format( "Fixed Dec", 7, 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Row %( 1, Format( "Fixed Dec", 7, 1 ) ) );
 
 ```
 
@@ -2098,7 +2997,10 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Row Cum( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Row Cum( 1 ) );
 
 ```
 
@@ -2106,7 +3008,16 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table(	Total %( 0 ),	Col %( 0 ),	Row %( 0 ),	Row Cum( 1, Format( "Fixed Dec", 7, 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table(
+	Total %( 0 ),
+	Col %( 0 ),
+	Row %( 0 ),
+	Row Cum( 1, Format( "Fixed Dec", 7, 1 ) )
+);
 
 ```
 
@@ -2120,7 +3031,10 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Row Cum %( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Contingency Table( Total %( 0 ), Col %( 0 ), Row %( 0 ), Row Cum %( 1 ) );
 
 ```
 
@@ -2128,7 +3042,16 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table(	Total %( 0 ),	Col %( 0 ),	Row %( 0 ),	Row Cum %( 1, Format( "Fixed Dec", 7, 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table(
+	Total %( 0 ),
+	Col %( 0 ),
+	Row %( 0 ),
+	Row Cum %( 1, Format( "Fixed Dec", 7, 1 ) )
+);
 
 ```
 
@@ -2142,7 +3065,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Total %( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Total %( 0 ) );
 
 ```
 
@@ -2150,7 +3077,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( Total %( 1, Format( "Fixed Dec", 7, 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( Total %( 1, Format( "Fixed Dec", 7, 1 ) ) );
 
 ```
 
@@ -2166,7 +3097,16 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cars 1993.jmp" );obj = Contingency(	Y( :Vehicle Category ),	X( :Manufacturer ),	Contingency Table( 0 ),	Tests( 0 ));Wait( 1 );obj << Correspondence Analysis( "3D Correspondence Analysis"(1) );
+
+dt = Open( "$SAMPLE_DATA/Cars 1993.jmp" );
+obj = Contingency(
+	Y( :Vehicle Category ),
+	X( :Manufacturer ),
+	Contingency Table( 0 ),
+	Tests( 0 )
+);
+Wait( 1 );
+obj << Correspondence Analysis( "3D Correspondence Analysis"(1) );
 
 ```
 
@@ -2178,7 +3118,10 @@ dt = Open( "$SAMPLE_DATA/Cars 1993.jmp" );obj = Contingency(	Y( :Vehicle Categ
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cereal.jmp" );obj = Contingency( Y( :Fiber Gr ), X( :Manufacturer ) );obj << Correspondence Analysis( "Make Table" );
+
+dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
+obj = Contingency( Y( :Fiber Gr ), X( :Manufacturer ) );
+obj << Correspondence Analysis( "Make Table" );
 
 ```
 
@@ -2192,7 +3135,10 @@ dt = Open( "$SAMPLE_DATA/Cereal.jmp" );obj = Contingency( Y( :Fiber Gr ), X( :M
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cereal.jmp" );obj = Contingency( Y( :Fiber Gr ), X( :Manufacturer ) );obj << Correspondence Analysis( "Save Value Order" );
+
+dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
+obj = Contingency( Y( :Fiber Gr ), X( :Manufacturer ) );
+obj << Correspondence Analysis( "Save Value Order" );
 
 ```
 
@@ -2208,7 +3154,9 @@ dt = Open( "$SAMPLE_DATA/Cereal.jmp" );obj = Contingency( Y( :Fiber Gr ), X( :M
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
 
 ```
 
@@ -2222,7 +3170,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );obj = dt << Contingency( Y( :marital status ), X( :type ), Block( :sex ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );
+obj = dt << Contingency( Y( :marital status ), X( :type ), Block( :sex ) );
 
 ```
 
@@ -2234,7 +3184,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );obj = dt << Contingency( Y( :marital s
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Contingency(
+	Y( :Age ),
+	X( :sex ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -2246,7 +3208,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Contingency( Y( :Age ), X( :sex ), Freq( :_freqcol ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Contingency( Y( :Age ), X( :sex ), Freq( :_freqcol ) );
 
 ```
 
@@ -2258,7 +3223,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
 
 ```
 
@@ -2270,7 +3237,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
 
 ```
 
@@ -2282,7 +3251,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Contingency( Y( :Age ), X( :sex ), Weight( :_weightcol ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = dt << Contingency( Y( :Age ), X( :sex ), Weight( :_weightcol ) );
 
 ```
 
@@ -2294,7 +3266,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numer
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
 
 ```
 
@@ -2306,7 +3280,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
 
 ```
 
@@ -2320,7 +3296,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Contingency(	Y( :Second Survey ),	X( :First Survey ),	Freq( :Count ),	Tests( 0 ),	Agreement Statistic( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Contingency(
+	Y( :Second Survey ),
+	X( :First Survey ),
+	Freq( :Count ),
+	Tests( 0 ),
+	Agreement Statistic( 1 )
+);
 
 ```
 
@@ -2332,7 +3316,13 @@ dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Contingency(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency(	Y( :marital status ),	X( :type ),	Analysis of Means for Proportions( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency(
+	Y( :marital status ),
+	X( :type ),
+	Analysis of Means for Proportions( 1 )
+);
 
 ```
 
@@ -2344,19 +3334,27 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency(	Y( :marital 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );obj = dt << Contingency( Y( :size ), X( :sex ), Mosaic Plot( 0 ) );obj << Cochran Armitage Trend Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );
+obj = dt << Contingency( Y( :size ), X( :sex ), Mosaic Plot( 0 ) );
+obj << Cochran Armitage Trend Test( 1 );
 
 ```
 
 #### Cochran Mantel Haenszel
 
-**Syntax:** obj &lt;&lt; Cochran Mantel Haenszel( column ); obj &lt;&lt; Cochran Mantel Haenszel( state=0|1 )
+**Syntax:** obj &lt;&lt; Cochran Mantel Haenszel( column );obj &lt;&lt; Cochran Mantel Haenszel( state=0|1 )
 
 **Description:** Shows or hides a test that determines whether there is a relationship between two categorical variables after blocking across a third classification variable.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );obj = dt << Contingency( Y( :type ), X( :marital status ) );obj << Cochran Mantel Haenszel( :country );Wait( 2 );obj << Cochran Mantel Haenszel( 0 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );
+obj = dt << Contingency( Y( :type ), X( :marital status ) );
+obj << Cochran Mantel Haenszel( :country );
+Wait( 2 );
+obj << Cochran Mantel Haenszel( 0 );
 
 ```
 
@@ -2368,19 +3366,26 @@ dt = Open( "$SAMPLE_DATA/Car Poll.JMP" );obj = dt << Contingency( Y( :type ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Contingency Table( 0 );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Contingency Table( 0 );
 
 ```
 
 #### Correspondence Analysis
 
-**Syntax:** obj &lt;&lt; Correspondence Analysis( state=0|1 ); obj &lt;&lt; Correspondence Analysis( correspondence chart options )
+**Syntax:** obj &lt;&lt; Correspondence Analysis( state=0|1 );obj &lt;&lt; Correspondence Analysis( correspondence chart options )
 
 **Description:** Shows or hides a correspondence analysis, which identifies rows or columns of a frequency table that have similar patterns of counts. In the correspondence analysis plot, there is a point for each row and for each column of the contingency table.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cereal.jmp" );obj = dt << Contingency( Y( :Fiber Gr ), X( :Manufacturer ) );obj << Correspondence Analysis( 1 );
+
+dt = Open( "$SAMPLE_DATA/Cereal.jmp" );
+obj = dt << Contingency( Y( :Fiber Gr ), X( :Manufacturer ) );
+obj << Correspondence Analysis( 1 );
 
 ```
 
@@ -2392,7 +3397,21 @@ dt = Open( "$SAMPLE_DATA/Cereal.jmp" );obj = dt << Contingency( Y( :Fiber Gr ),
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),	Equivalence Tests of Relative Risk(		0.8,		0.05,		"Equivalence",		Response Group( "Cancer" ),		Factor Group( "NonSmoker" )	));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),
+	Equivalence Tests of Relative Risk(
+		0.8,
+		0.05,
+		"Equivalence",
+		Response Group( "Cancer" ),
+		Factor Group( "NonSmoker" )
+	)
+);
 
 ```
 
@@ -2404,7 +3423,21 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),	Equivalence Tests of Risk Difference(		0.1,		0.05,		"Equivalence",		Response Group( "Cancer" ),		Factor Group( "NonSmoker" )	));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Contingency Table( Count( 1 ), Total %( 0 ), Col %( 0 ), Row %( 1 ) ),
+	Equivalence Tests of Risk Difference(
+		0.1,
+		0.05,
+		"Equivalence",
+		Response Group( "Cancer" ),
+		Factor Group( "NonSmoker" )
+	)
+);
 
 ```
 
@@ -2416,7 +3449,15 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Contingency(	Y( :Second Survey ),	X( :First Survey ),	Freq( :Count ),	Tests( 0 ));obj << Exact Agreement Statistic( 1 );
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Contingency(
+	Y( :Second Survey ),
+	X( :First Survey ),
+	Freq( :Count ),
+	Tests( 0 )
+);
+obj << Exact Agreement Statistic( 1 );
 
 ```
 
@@ -2428,7 +3469,15 @@ dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Contingency(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Contingency(	Y( :Second Survey ),	X( :First Survey ),	Freq( :Count ),	Tests( 0 ));obj << Exact Cochran Armitage Trend Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );
+obj = dt << Contingency(
+	Y( :Second Survey ),
+	X( :First Survey ),
+	Freq( :Count ),
+	Tests( 0 )
+);
+obj << Exact Cochran Armitage Trend Test( 1 );
 
 ```
 
@@ -2440,7 +3489,10 @@ dt = Open( "$SAMPLE_DATA/Prime Minister Ratings.jmp" );obj = dt << Contingency(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Fisher's Exact Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Fisher's Exact Test( 1 );
 
 ```
 
@@ -2452,7 +3504,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );Wait( 2 );obj << Horizontal Mosaic( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+Wait( 2 );
+obj << Horizontal Mosaic( 1 );
 
 ```
 
@@ -2464,7 +3520,27 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.JMP" );:height << Nominal( 1 );obj = dt << Contingency(	Y( :height ),	X( :age ),	Contingency Table(		Count( 1 ),		Total %( 0 ),		Col %( 0 ),		Row %( 0 ),		Expected( 0 ),		Deviation( 0 ),		Cell Chi Square( 0 ),		Col Cum( 0 ),		Col Cum %( 0 ),		Row Cum( 0 ),		Row Cum %( 0 )	));obj << Jonckheere Terpstra Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.JMP" );
+:height << Nominal( 1 );
+obj = dt << Contingency(
+	Y( :height ),
+	X( :age ),
+	Contingency Table(
+		Count( 1 ),
+		Total %( 0 ),
+		Col %( 0 ),
+		Row %( 0 ),
+		Expected( 0 ),
+		Deviation( 0 ),
+		Cell Chi Square( 0 ),
+		Col Cum( 0 ),
+		Col Cum %( 0 ),
+		Row Cum( 0 ),
+		Row Cum %( 0 )
+	)
+);
+obj << Jonckheere Terpstra Test( 1 );
 
 ```
 
@@ -2476,7 +3552,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.JMP" );:height << Nominal( 1 );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Measures of Association( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Measures of Association( 1 )
+);
 
 ```
 
@@ -2488,7 +3571,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Mosaic Plot( 0 );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Mosaic Plot( 0 );
 
 ```
 
@@ -2500,7 +3587,9 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ), Odds Ratio( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ), Odds Ratio( 1 ) );
 
 ```
 
@@ -2514,7 +3603,15 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Contingency Table( 0 ));obj << Relative Risk( 1, "Cancer", "Smoker" );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Contingency Table( 0 )
+);
+obj << Relative Risk( 1, "Cancer", "Smoker" );
 
 ```
 
@@ -2522,7 +3619,15 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Contingency Table( 0 ));obj << Relative Risk( 1, "All" );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Contingency Table( 0 )
+);
+obj << Relative Risk( 1, "All" );
 
 ```
 
@@ -2534,7 +3639,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Set Alpha Level( 0.1 );obj << Measures of Association( 1 );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Set Alpha Level( 0.1 );
+obj << Measures of Association( 1 );
 
 ```
 
@@ -2546,7 +3655,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );obj << Set Alpha Level( 0.1 );obj << Measures of Association( 1 );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+obj << Set Alpha Level( 0.1 );
+obj << Measures of Association( 1 );
 
 ```
 
@@ -2558,7 +3671,11 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );Wait( 2 );obj << Tests( 0 );
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency( Y( :Lung Cancer ), X( :Smoker ), Freq( :Count ) );
+Wait( 2 );
+obj << Tests( 0 );
 
 ```
 
@@ -2570,7 +3687,14 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency( Y( :Lung C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung Cancer ),	X( :Smoker ),	Freq( :Count ),	Two Sample Test for Proportions( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );
+obj = dt << Contingency(
+	Y( :Lung Cancer ),
+	X( :Smoker ),
+	Freq( :Count ),
+	Two Sample Test for Proportions( 1 )
+);
 
 ```
 
@@ -2584,7 +3708,13 @@ dt = Open( "$SAMPLE_DATA/Lung Cancer.jmp" );obj = dt << Contingency(	Y( :Lung 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -2600,7 +3730,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -2608,7 +3745,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -2616,7 +3757,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -2628,7 +3773,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -2642,7 +3791,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -2654,7 +3809,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -2666,7 +3827,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Contingency(
+	Y( :Age ),
+	X( :sex ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -2678,7 +3852,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Copy Script;
 
 ```
 
@@ -2690,7 +3867,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Data Table Window;
 
 ```
 
@@ -2704,7 +3884,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -2716,7 +3899,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Contingency(
+	Y( :Age ),
+	X( :sex ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -2730,7 +3927,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -2738,7 +3939,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -2750,7 +3972,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -2762,7 +3988,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -2774,7 +4005,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -2786,7 +4021,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -2798,7 +4037,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -2810,7 +4053,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -2824,7 +4071,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -2836,7 +4087,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -2848,7 +4106,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -2862,7 +4128,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -2874,7 +4143,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -2886,7 +4164,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Redo Analysis;
 
 ```
 
@@ -2898,7 +4179,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -2910,7 +4194,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -2922,19 +4214,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 #### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -2946,7 +4253,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -2958,7 +4268,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Contingency(
+	Y( :Age ),
+	X( :sex ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -2970,7 +4293,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Contingency(
+	Y( :Age ),
+	X( :sex ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -2982,7 +4318,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Contingency(
+	Y( :Age ),
+	X( :sex ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -2994,7 +4343,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -3004,19 +4361,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
-**Example 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Contingency(	Y( :Age ),	X( :sex ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -3028,7 +4383,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -3040,7 +4398,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -3052,7 +4413,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Save Script to Report;
 
 ```
 
@@ -3064,7 +4428,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -3076,7 +4443,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -3088,7 +4464,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -3100,7 +4490,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -3112,7 +4508,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -3124,7 +4525,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -3136,7 +4540,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X( :sex ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Contingency( Y( :Age ), X( :sex ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -3150,7 +4559,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Contingency( Y( :Age ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -3162,7 +4576,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -3174,7 +4591,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -3190,7 +4614,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ```
 
@@ -3204,7 +4630,20 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -3216,7 +4655,9 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ```
 
@@ -3228,7 +4669,9 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ```
 
@@ -3240,7 +4683,9 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ```
 
@@ -3252,7 +4697,15 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	Weight( :_weightcol ));
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	Weight( :_weightcol )
+);
 
 ```
 
@@ -3264,7 +4717,9 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_weightcol", Nume
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ```
 
@@ -3276,7 +4731,9 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ```
 
@@ -3290,7 +4747,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Freq( :Count ), Y( :Response ), X( :"ln(dose)"n ) );obj << Confidence Intervals( 0.01 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Freq( :Count ), Y( :Response ), X( :"ln(dose)"n ) );
+obj << Confidence Intervals( 0.01 );
 
 ```
 
@@ -3302,7 +4762,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Freq( :Count )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Inverse Prediction( Response( 0.5, 0.9 ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Inverse Prediction( Response( 0.5, 0.9 ) );
 
 ```
 
@@ -3314,7 +4778,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Lift Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Lift Curve( 1 );
 
 ```
 
@@ -3326,7 +4794,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Line Color( "Magenta" );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Line Color( "Magenta" );
 
 ```
 
@@ -3338,7 +4810,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Logistic Plot( 0 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Logistic Plot( 0 );
 
 ```
 
@@ -3350,7 +4826,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Odds Ratios( 1 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Odds Ratios( 1 );
 
 ```
 
@@ -3362,7 +4842,16 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	Target Level( "Cured" ));Wait( 1 );obj << Precision Recall Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	Target Level( "Cured" )
+);
+Wait( 1 );
+obj << Precision Recall Curve( 1 );
 
 ```
 
@@ -3374,7 +4863,16 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic(	Y( :Response 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	Target Level( "Cured" ));Wait( 1 );obj << ROC Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	Target Level( "Cured" )
+);
+Wait( 1 );
+obj << ROC Curve( 1 );
 
 ```
 
@@ -3386,7 +4884,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic(	Y( :Response 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Save Probability Formula;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Save Probability Formula;
 
 ```
 
@@ -3398,7 +4900,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Show Points( 0 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Show Points( 0 );
 
 ```
 
@@ -3410,7 +4916,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );Wait( 1 );obj << Show Rate Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+Wait( 1 );
+obj << Show Rate Curve( 1 );
 
 ```
 
@@ -3424,7 +4934,15 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	Target Level( "Cured" ));obj << ROC Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	Target Level( "Cured" )
+);
+obj << ROC Curve( 1 );
 
 ```
 
@@ -3438,7 +4956,13 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic(	Y( :Response 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -3454,7 +4978,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -3462,7 +4993,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -3470,7 +5005,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -3482,7 +5021,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -3496,7 +5039,13 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -3508,7 +5057,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -3520,7 +5075,21 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -3532,7 +5101,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Copy Script;
 
 ```
 
@@ -3544,7 +5116,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Data Table Window;
 
 ```
 
@@ -3558,7 +5133,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -3570,7 +5148,22 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -3584,7 +5177,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -3592,7 +5189,28 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -3604,7 +5222,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -3616,7 +5238,12 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -3628,7 +5255,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -3640,7 +5271,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -3652,7 +5287,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -3664,7 +5303,11 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -3678,7 +5321,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -3690,7 +5337,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -3702,7 +5356,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -3716,7 +5378,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -3728,7 +5393,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -3740,7 +5414,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Redo Analysis;
 
 ```
 
@@ -3752,7 +5429,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -3764,7 +5444,15 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -3776,19 +5464,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 #### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -3800,7 +5503,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -3812,7 +5518,21 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -3824,7 +5544,21 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -3836,7 +5570,21 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Logistic(
+	Y( :Response ),
+	X( :"ln(dose)"n ),
+	Freq( :Count ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -3848,7 +5596,15 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -3858,19 +5614,17 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
-**Example 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Logistic(	Y( :Response ),	X( :"ln(dose)"n ),	Freq( :Count ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -3882,7 +5636,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );dt << New Column( "_bycol",	Charact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -3894,7 +5651,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -3906,7 +5666,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Save Script to Report;
 
 ```
 
@@ -3918,7 +5681,10 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -3930,7 +5696,16 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -3942,7 +5717,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -3954,7 +5743,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -3966,7 +5761,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -3978,7 +5778,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -3990,7 +5793,12 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );
+obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -4004,7 +5812,12 @@ dt = Open( "$SAMPLE_DATA/Penicillin.jmp" );obj = dt << Logistic( Y( :Response )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -4016,7 +5829,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -4028,7 +5844,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -4038,73 +5861,109 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 #### Point Options
 
-**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) ); scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Michelson.jmp" );obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );obj << ANOM for Ranges( 1, Point Options( "Show Connected Points" ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;scrobj << Point Options( "Show Only Points" );
+
+dt = Open( "$SAMPLE_DATA/Michelson.jmp" );
+obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );
+obj << ANOM for Ranges( 1, Point Options( "Show Connected Points" ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;
+scrobj << Point Options( "Show Only Points" );
 
 ```
 
 #### Set Alpha Level
 
-**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Set Alpha Level( alpha ) ); scrobj &lt;&lt; Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Michelson.jmp" );obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );obj << ANOM for Ranges( 1, Set Alpha Level( 0.1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;scrobj << Set Alpha Level( 0.05 );
+
+dt = Open( "$SAMPLE_DATA/Michelson.jmp" );
+obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );
+obj << ANOM for Ranges( 1, Set Alpha Level( 0.1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;
+scrobj << Set Alpha Level( 0.05 );
 
 ```
 
 #### Show Center Line
 
-**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Center Line( state=0|1 ) ); scrobj &lt;&lt; Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line (overall average range). On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Michelson.jmp" );obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );obj << ANOM for Ranges( 1, Show Center Line( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;scrobj << Show Center Line( 1 );
+
+dt = Open( "$SAMPLE_DATA/Michelson.jmp" );
+obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );
+obj << ANOM for Ranges( 1, Show Center Line( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;
+scrobj << Show Center Line( 1 );
 
 ```
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Decision Limit Shading( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading for the Analysis of Means for Ranges chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Michelson.jmp" );obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );obj << ANOM for Ranges( 1, Show Decision Limit Shading( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;scrobj << Show Decision Limit Shading( 1 );
+
+dt = Open( "$SAMPLE_DATA/Michelson.jmp" );
+obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );
+obj << ANOM for Ranges( 1, Show Decision Limit Shading( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;
+scrobj << Show Decision Limit Shading( 1 );
 
 ```
 
 #### Show Decision Limits
 
-**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Decision Limits( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines for the Analysis of Means for Ranges chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Michelson.jmp" );obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );obj << ANOM for Ranges( 1, Show Decision Limits( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;scrobj << Show Decision Limits( 1 );
+
+dt = Open( "$SAMPLE_DATA/Michelson.jmp" );
+obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );
+obj << ANOM for Ranges( 1, Show Decision Limits( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;
+scrobj << Show Decision Limits( 1 );
 
 ```
 
 #### Show Summary Report
 
-**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Summary Report( state=0|1 ) ); scrobj &lt;&lt; Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Ranges( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the group ranges and corresponding decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Michelson.jmp" );obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );obj << ANOM for Ranges( 1, Show Summary Report( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;scrobj << Show Summary Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Michelson.jmp" );
+obj = dt << Oneway( Y( :Velocity ), X( :Trial# ) );
+obj << ANOM for Ranges( 1, Show Summary Report( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Ranges"] << Get Scriptable Object;
+scrobj << Show Summary Report( 0 );
 
 ```
 
@@ -4114,73 +5973,115 @@ dt = Open( "$SAMPLE_DATA/Michelson.jmp" );obj = dt << Oneway( Y( :Velocity ), X
 
 #### Point Options
 
-**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) ); scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << "ANOM for Variances with Levene(ADM)"n( 1, Point Options( "Show Only Points" ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<Get Scriptable Object;scrobj << Point Options( "Show Connected Points" );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << "ANOM for Variances with Levene(ADM)"n( 1, Point Options( "Show Only Points" ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<
+Get Scriptable Object;
+scrobj << Point Options( "Show Connected Points" );
 
 ```
 
 #### Set Alpha Level
 
-**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Set Alpha Level( alpha ) ); scrobj &lt;&lt; Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << "ANOM for Variances with Levene(ADM)"n( 1, Set Alpha Level( 0.1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<Get Scriptable Object;scrobj << Set Alpha Level( 0.05 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << "ANOM for Variances with Levene(ADM)"n( 1, Set Alpha Level( 0.1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<
+Get Scriptable Object;
+scrobj << Set Alpha Level( 0.05 );
 
 ```
 
 #### Show Center Line
 
-**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Center Line( state=0|1 ) ); scrobj &lt;&lt; Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line (overall mean ADM). On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Center Line( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<Get Scriptable Object;scrobj << Show Center Line( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Center Line( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<
+Get Scriptable Object;
+scrobj << Show Center Line( 1 );
 
 ```
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limit Shading( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading for the ANOMV-Levene (ADM) chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limit Shading( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<Get Scriptable Object;scrobj << Show Decision Limit Shading( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limit Shading( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<
+Get Scriptable Object;
+scrobj << Show Decision Limit Shading( 1 );
 
 ```
 
 #### Show Decision Limits
 
-**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limits( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines for the ANOMV-Levene (ADM) chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limits( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<Get Scriptable Object;scrobj << Show Decision Limits( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Decision Limits( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<
+Get Scriptable Object;
+scrobj << Show Decision Limits( 1 );
 
 ```
 
 #### Show Summary Report
 
-**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Summary Report( state=0|1 ) ); scrobj &lt;&lt; Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; "ANOM for Variances with Levene(ADM)"n( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the group mean ADMs and the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Summary Report( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<Get Scriptable Object;scrobj << Show Summary Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << "ANOM for Variances with Levene(ADM)"n( 1, Show Summary Report( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances-Levene(ADM)"] <<
+Get Scriptable Object;
+scrobj << Show Summary Report( 0 );
 
 ```
 
@@ -4190,85 +6091,127 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 #### Graph in Variance Scale
 
-**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Graph in Variance Scale( state=0|1 ) ); scrobj &lt;&lt; Graph in Variance Scale( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Graph in Variance Scale( state=0|1 ) );scrobj &lt;&lt; Graph in Variance Scale( state=0|1 )
 
 **Description:** Specifies the scale of the vertical axis. You can choose between standard deviations and variances.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1, Graph in Variance Scale( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;scrobj << Graph in Variance Scale( 0 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1, Graph in Variance Scale( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;
+scrobj << Graph in Variance Scale( 0 );
 
 ```
 
 #### Point Options
 
-**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) ); scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1, Point Options( "Show Only Points" ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;scrobj << Point Options( "Show Connected Points" );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1, Point Options( "Show Only Points" ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;
+scrobj << Point Options( "Show Connected Points" );
 
 ```
 
 #### Set Alpha Level
 
-**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Set Alpha Level( alpha ) ); scrobj &lt;&lt; Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1, Set Alpha Level( 0.1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;scrobj << Set Alpha Level( 0.05 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1, Set Alpha Level( 0.1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;
+scrobj << Set Alpha Level( 0.05 );
 
 ```
 
 #### Show Center Line
 
-**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Center Line( state=0|1 ) ); scrobj &lt;&lt; Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line (RMSE or MSE depending on Y-scale). On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1, Show Center Line( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;scrobj << Show Center Line( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1, Show Center Line( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;
+scrobj << Show Center Line( 1 );
 
 ```
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Decision Limit Shading( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading for the ANOMV chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1, Show Decision Limit Shading( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;scrobj << Show Decision Limit Shading( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1, Show Decision Limit Shading( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;
+scrobj << Show Decision Limit Shading( 1 );
 
 ```
 
 #### Show Decision Limits
 
-**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Decision Limits( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines for the ANOMV chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1, Show Decision Limits( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;scrobj << Show Decision Limits( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1, Show Decision Limits( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;
+scrobj << Show Decision Limits( 1 );
 
 ```
 
 #### Show Summary Report
 
-**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Summary Report( state=0|1 ) ); scrobj &lt;&lt; Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM for Variances( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the group standard deviations (or variances) and the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1, Show Summary Report( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;scrobj << Show Summary Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1, Show Summary Report( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means for Variances"] << Get Scriptable Object;
+scrobj << Show Summary Report( 0 );
 
 ```
 
@@ -4278,73 +6221,109 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 #### Point Options
 
-**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) ); scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM with Transformed Ranks( 1, Point Options( "Show Only Points" ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;scrobj << Point Options( "Show Connected Points" );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM with Transformed Ranks( 1, Point Options( "Show Only Points" ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;
+scrobj << Point Options( "Show Connected Points" );
 
 ```
 
 #### Set Alpha Level
 
-**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Set Alpha Level( alpha ) ); scrobj &lt;&lt; Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM with Transformed Ranks( 1, Set Alpha Level( 0.1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;scrobj << Set Alpha Level( 0.05 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM with Transformed Ranks( 1, Set Alpha Level( 0.1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;
+scrobj << Set Alpha Level( 0.05 );
 
 ```
 
 #### Show Center Line
 
-**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Center Line( state=0|1 ) ); scrobj &lt;&lt; Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line (overall mean). On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM with Transformed Ranks( 1, Show Center Line( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;scrobj << Show Center Line( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM with Transformed Ranks( 1, Show Center Line( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;
+scrobj << Show Center Line( 1 );
 
 ```
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Decision Limit Shading( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading for the ANOM-TR chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM with Transformed Ranks( 1, Show Decision Limit Shading( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;scrobj << Show Decision Limit Shading( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM with Transformed Ranks( 1, Show Decision Limit Shading( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;
+scrobj << Show Decision Limit Shading( 1 );
 
 ```
 
 #### Show Decision Limits
 
-**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Decision Limits( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines for the ANOM-TR chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM with Transformed Ranks( 1, Show Decision Limits( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;scrobj << Show Decision Limits( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM with Transformed Ranks( 1, Show Decision Limits( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;
+scrobj << Show Decision Limits( 1 );
 
 ```
 
 #### Show Summary Report
 
-**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Summary Report( state=0|1 ) ); scrobj &lt;&lt; Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM with Transformed Ranks( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the group mean transformed ranks and the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM with Transformed Ranks( 1, Show Summary Report( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;scrobj << Show Summary Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM with Transformed Ranks( 1, Show Summary Report( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means-Transformed Ranks"] << Get Scriptable Object;
+scrobj << Show Summary Report( 0 );
 
 ```
 
@@ -4354,73 +6333,109 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 #### Point Options
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) ); scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Point Options( "Show Only Points" ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Point Options( "Show Connected Points" );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM( 1, Point Options( "Show Only Points" ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
+scrobj << Point Options( "Show Connected Points" );
 
 ```
 
 #### Set Alpha Level
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Set Alpha Level( alpha ) ); scrobj &lt;&lt; Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; ANOM( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Set Alpha Level( 0.1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Set Alpha Level( 0.05 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM( 1, Set Alpha Level( 0.1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
+scrobj << Set Alpha Level( 0.05 );
 
 ```
 
 #### Show Center Line
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Center Line( state=0|1 ) ); scrobj &lt;&lt; Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line (overall mean) on the ANOM chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Center Line( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Center Line( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM( 1, Show Center Line( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
+scrobj << Show Center Line( 1 );
 
 ```
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limit Shading( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading for the ANOM chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Decision Limit Shading( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Decision Limit Shading( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM( 1, Show Decision Limit Shading( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
+scrobj << Show Decision Limit Shading( 1 );
 
 ```
 
 #### Show Decision Limits
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limits( state=0|1 ) ); scrobj &lt;&lt; Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines for the ANOM chart. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Decision Limits( 0 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Decision Limits( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM( 1, Show Decision Limits( 0 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
+scrobj << Show Decision Limits( 1 );
 
 ```
 
 #### Show Summary Report
 
-**Syntax:** obj &lt;&lt; ANOM( 1, Show Summary Report( state=0|1 ) ); scrobj &lt;&lt; Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the group means and the decision limits.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1, Show Summary Report( 1 ) );Wait( 2 );scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;scrobj << Show Summary Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM( 1, Show Summary Report( 1 ) );
+Wait( 2 );
+scrobj = Report( obj )["Analysis of Means"] << Get Scriptable Object;
+scrobj << Show Summary Report( 0 );
 
 ```
 
@@ -4430,7 +6445,7 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 #### Forest Plot
 
-**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Forest Plot( state=0|1 ) ); scobj &lt;&lt; Forest Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Forest Plot( state=0|1 ) );scobj &lt;&lt; Forest Plot( state=0|1 )
 
 **Description:** Shows or hides the Equivalence Tests Forest Plot. On by default.
 
@@ -4438,13 +6453,19 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Equivalence Tests( 4, 0.05, "Pooled Variance", "Equivalence", Forest Plot( 1 ) );Wait( 2 );scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);scobj << Forest Plot( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Equivalence Tests( 4, 0.05, "Pooled Variance", "Equivalence", Forest Plot( 1 ) );
+Wait( 2 );
+scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);
+scobj << Forest Plot( 0 );
 
 ```
 
 #### Pairwise Comparisons
 
-**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Equivalence Tests Pairwise Comparisons( state=0|1 ) ); scobj &lt;&lt; Equivalence Tests Pairwise Comparisons( state=0|1 )
+**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Equivalence Tests Pairwise Comparisons( state=0|1 ) );scobj &lt;&lt; Equivalence Tests Pairwise Comparisons( state=0|1 )
 
 **Description:** Shows or hides the Equivalence Tests Pairwise Comparisons report for all pairwise comparisons.
 
@@ -4452,7 +6473,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Equivalence Tests(	4,	0.05,	"Pooled Variance",	"Equivalence",	Equivalence Tests Pairwise Comparisons( 1 ));Wait( 2 );scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);scobj << Pairwise Comparisons( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Equivalence Tests(
+	4,
+	0.05,
+	"Pooled Variance",
+	"Equivalence",
+	Equivalence Tests Pairwise Comparisons( 1 )
+);
+Wait( 2 );
+scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);
+scobj << Pairwise Comparisons( 0 );
 
 ```
 
@@ -4466,25 +6499,44 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Equivalence Tests(	4,	0.05,	"Pooled Variance",	"Equivalence",	Equivalence Tests Pairwise Comparisons( 1 ));Wait( 1 );scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);Wait( 1 );scobj << Remove;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Equivalence Tests(
+	4,
+	0.05,
+	"Pooled Variance",
+	"Equivalence",
+	Equivalence Tests Pairwise Comparisons( 1 )
+);
+Wait( 1 );
+scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);
+Wait( 1 );
+scobj << Remove;
 
 ```
 
 #### Scatterplot
 
-**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Scatterplot( state=0|1 ) ); scobj &lt;&lt; Scatterplot( state=0|1 )
+**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Scatterplot( state=0|1 ) );scobj &lt;&lt; Scatterplot( state=0|1 )
 
 **Description:** Shows or hides the Equivalence Tests Scatterplot. On by default.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Equivalence Tests( 4, 0.05, "Pooled Variance", "Equivalence", Scatterplot( 1 ) );Wait( 2 );scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);scobj << Scatterplot( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Equivalence Tests( 4, 0.05, "Pooled Variance", "Equivalence", Scatterplot( 1 ) );
+Wait( 2 );
+scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);
+scobj << Scatterplot( 0 );
 
 ```
 
 #### Test Report
 
-**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Test Report( state=0|1 ) ); scobj &lt;&lt; Test Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Equivalence Tests( ..., Test Report( state=0|1 ) );scobj &lt;&lt; Test Report( state=0|1 )
 
 **Description:** Shows or hides a report that summarizes the equivalence tests, superiority tests, or noninferiority tests for means or standard deviations. On by default.
 
@@ -4492,7 +6544,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Equivalence Tests( 4, 0.05, "Pooled Variance", "Equivalence", Test Report( 1 ) );Wait( 2 );scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);scobj << Test Report( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Equivalence Tests( 4, 0.05, "Pooled Variance", "Equivalence", Test Report( 1 ) );
+Wait( 2 );
+scobj = (Report( obj )["Equivalence Tests with Pooled Variance"] << Get Scriptable Object);
+scobj << Test Report( 0 );
 
 ```
 
@@ -4502,7 +6560,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 #### Confidence Quantile
 
-**Syntax:** obj &lt;&lt; Each Pair( 1, Confidence Quantile( state=0|1 ) ); obj &lt;&lt; All Pairs( 1, Confidence Quantile( state=0|1 ) ); obj &lt;&lt; With Best( 1, Confidence Quantile( state=0|1 ) ); obj &lt;&lt; With Control( 1, Confidence Quantile( state=0|1 ) ); obj &lt;&lt; Each Pair Stepwise( 1, Confidence Quantile( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Each Pair( 1, Confidence Quantile( state=0|1 ) );obj &lt;&lt; All Pairs( 1, Confidence Quantile( state=0|1 ) );obj &lt;&lt; With Best( 1, Confidence Quantile( state=0|1 ) );obj &lt;&lt; With Control( 1, Confidence Quantile( state=0|1 ) );obj &lt;&lt; Each Pair Stepwise( 1, Confidence Quantile( state=0|1 ) )
 
 **Description:** Shows or hides the critical value(s) and alpha level used for the means comparison. 
 
@@ -4514,13 +6572,16 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1, Confidence Quantile( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1, Confidence Quantile( 1 ) );
 
 ```
 
 #### Connecting Letters Report
 
-**Syntax:** obj &lt;&lt; Each Pair( 1, Connecting Letters Report( state=0|1 ) ); obj &lt;&lt; All Pairs( 1, Connecting Letters Report( state=0|1 ) ); obj &lt;&lt; Each Pair Stepwise( 1, Connecting Letters Report( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Each Pair( 1, Connecting Letters Report( state=0|1 ) );obj &lt;&lt; All Pairs( 1, Connecting Letters Report( state=0|1 ) );obj &lt;&lt; Each Pair Stepwise( 1, Connecting Letters Report( state=0|1 ) )
 
 **Description:** Shows or hides the traditional letter-coded report where means that do not share a letter are significantly different. 
 
@@ -4532,7 +6593,10 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1, Connecting Letters Report( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1, Connecting Letters Report( 1 ) );
 
 ```
 
@@ -4548,13 +6612,16 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1, Detailed Comparisons Report( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1, Detailed Comparisons Report( 1 ) );
 
 ```
 
 #### Difference Matrix
 
-**Syntax:** obj &lt;&lt; Each Pair( 1, Difference Matrix( state=0|1 ) ); obj &lt;&lt; All Pairs( 1, Difference Matrix( state=0|1 ) ); obj &lt;&lt; With Best( 1, Difference Matrix( state=0|1 ) ); obj &lt;&lt; With Control( 1, Difference Matrix( state=0|1 ) ); obj &lt;&lt; Each Pair Stepwise( 1, Difference Matrix( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Each Pair( 1, Difference Matrix( state=0|1 ) );obj &lt;&lt; All Pairs( 1, Difference Matrix( state=0|1 ) );obj &lt;&lt; With Best( 1, Difference Matrix( state=0|1 ) );obj &lt;&lt; With Control( 1, Difference Matrix( state=0|1 ) );obj &lt;&lt; Each Pair Stepwise( 1, Difference Matrix( state=0|1 ) )
 
 **Description:** Shows or hides a table of all differences of means. 
 
@@ -4564,7 +6631,10 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1, Difference Matrix( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1, Difference Matrix( 1 ) );
 
 ```
 
@@ -4578,7 +6648,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << With Control( 1, {15}, Dunnett's Lower( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << With Control( 1, {15}, Dunnett's Lower( 1 ) );
 
 ```
 
@@ -4592,13 +6665,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << With Control( 1, {15}, Dunnett's Upper( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << With Control( 1, {15}, Dunnett's Upper( 1 ) );
 
 ```
 
 #### LSD Threshold Matrix
 
-**Syntax:** obj &lt;&lt; Each Pair( 1, LSD Threshold Matrix( state=0|1 ) ); obj &lt;&lt; All Pairs( 1, LSD Threshold Matrix( state=0|1 ) ); obj &lt;&lt; With Best( 1, LSD Threshold Matrix( state=0|1 ) ); obj &lt;&lt; With Control( 1, LSD Threshold Matrix( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Each Pair( 1, LSD Threshold Matrix( state=0|1 ) );obj &lt;&lt; All Pairs( 1, LSD Threshold Matrix( state=0|1 ) );obj &lt;&lt; With Best( 1, LSD Threshold Matrix( state=0|1 ) );obj &lt;&lt; With Control( 1, LSD Threshold Matrix( state=0|1 ) )
 
 **Description:** Shows or hides a matrix of pairwise differences of means minus the least significant difference for those means. A positive value indicates a pair of means that are significantly different. 
 
@@ -4610,13 +6686,16 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1, LSD Threshold Matrix( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1, LSD Threshold Matrix( 1 ) );
 
 ```
 
 #### Ordered Differences Report
 
-**Syntax:** obj &lt;&lt; Each Pair( 1, Ordered Differences Report( state=0|1 ) ); obj &lt;&lt; All Pairs( 1, Ordered Differences Report( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Each Pair( 1, Ordered Differences Report( state=0|1 ) );obj &lt;&lt; All Pairs( 1, Ordered Differences Report( state=0|1 ) )
 
 **Description:** Shows or hides all pairwise positive-side differences, standard error of the difference, confidence intervals, p-values, and a plot of the magnitude of the difference with overlaid confidence intervals. 
 
@@ -4628,13 +6707,16 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1, Ordered Differences Report( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1, Ordered Differences Report( 1 ) );
 
 ```
 
 #### Ordered Ratio Report
 
-**Syntax:** obj &lt;&lt; Each Pair( 1, Ordered Differences Report( state=0|1 ) ); obj &lt;&lt; Ratio Comparison for Pooled Variance( 1, Ordered Differences Report( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Each Pair( 1, Ordered Differences Report( state=0|1 ) );obj &lt;&lt; Ratio Comparison for Pooled Variance( 1, Ordered Differences Report( state=0|1 ) )
 
 **Description:** Shows or hides all pairwise positive-side differences, standard error of the difference, confidence intervals, p-values, and a plot of the magnitude of the difference with overlaid confidence intervals. 
 
@@ -4646,13 +6728,16 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Ratio Comparison for Pooled Variance( 1, Ordered Differences Report( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Ratio Comparison for Pooled Variance( 1, Ordered Differences Report( 1 ) );
 
 ```
 
 #### Ratio Matrix
 
-**Syntax:** obj &lt;&lt; Ratios with Pooled Variance( 1, Ratio Matrix( state=0|1 ) ); obj &lt;&lt; Ratio Comparison for Pooled Variance( 1, Ratio Matrix( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Ratios with Pooled Variance( 1, Ratio Matrix( state=0|1 ) );obj &lt;&lt; Ratio Comparison for Pooled Variance( 1, Ratio Matrix( state=0|1 ) )
 
 **Description:** Shows or hides a table of all differences of means. 
 
@@ -4662,7 +6747,10 @@ Each Pair is equivalent to Student&apos;s t. All Pairs is equivalent to Tukey HS
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age ) );obj << Ratios with Pooled Variance( 1, Ratio Matrix( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Oneway( Y( :Height ), X( :Age ) );
+obj << Ratios with Pooled Variance( 1, Ratio Matrix( 1 ) );
 
 ```
 
@@ -4680,7 +6768,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Oneway( Y( :Height ), X( :Age )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );obj = dt << Oneway( Y( :Y ), X( :Soil ), Block( :Block ) );obj << Friedman Rank Test( 1, Nemenyi Test( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );
+obj = dt << Oneway( Y( :Y ), X( :Soil ), Block( :Block ) );
+obj << Friedman Rank Test( 1, Nemenyi Test( 1 ) );
 
 ```
 
@@ -4696,7 +6787,9 @@ dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );obj = dt << Oneway( Y( :Y ), X( :Soi
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ```
 
@@ -4710,7 +6803,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );obj = dt << Oneway( Y( :Y ), X( :Soil ), Block( :Block ) );obj << Friedman Rank Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );
+obj = dt << Oneway( Y( :Y ), X( :Soil ), Block( :Block ) );
+obj << Friedman Rank Test( 1 );
 
 ```
 
@@ -4722,7 +6818,19 @@ dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );obj = dt << Oneway( Y( :Y ), X( :Soi
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Oneway(
+	Y( :Height ),
+	X( :Age ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -4734,7 +6842,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Oneway( Y( :Height ), X( :Age ), Freq( :_freqcol ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Oneway( Y( :Height ), X( :Age ), Freq( :_freqcol ) );
 
 ```
 
@@ -4746,7 +6857,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_freqcol", Numeric
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ```
 
@@ -4758,7 +6871,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ```
 
@@ -4770,7 +6885,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Oneway( Y( :Height ), X( :Age ), Weight( :_weightcol ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = dt << Oneway( Y( :Height ), X( :Age ), Weight( :_weightcol ) );
 
 ```
 
@@ -4782,7 +6900,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_weightcol", Numer
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ```
 
@@ -4794,7 +6914,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ```
 
@@ -4808,7 +6930,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM( 1 );
 
 ```
 
@@ -4820,7 +6945,10 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Ranges( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Ranges( 1 );
 
 ```
 
@@ -4832,7 +6960,10 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM for Variances( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM for Variances( 1 );
 
 ```
 
@@ -4844,7 +6975,10 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << "ANOM for Variances with Levene(ADM)"n( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << "ANOM for Variances with Levene(ADM)"n( 1 );
 
 ```
 
@@ -4856,7 +6990,10 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );obj << ANOM with Transformed Ranks( 1 );
+
+dt = Open( "$SAMPLE_DATA/Drug.jmp" );
+obj = dt << Oneway( Y( :y ), X( :Drug ) );
+obj << ANOM with Transformed Ranks( 1 );
 
 ```
 
@@ -4868,7 +7005,11 @@ dt = Open( "$SAMPLE_DATA/Drug.jmp" );obj = dt << Oneway( Y( :y ), X( :Drug ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );Wait( 2 );obj << All Graphs( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+Wait( 2 );
+obj << All Graphs( 0 );
 
 ```
 
@@ -4882,7 +7023,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << All Pairs( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << All Pairs( 1 );
 
 ```
 
@@ -4890,7 +7034,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Tukey HSD( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Tukey HSD( 1 );
 
 ```
 
@@ -4902,7 +7049,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Box Plots( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Box Plots( 1 );
 
 ```
 
@@ -4914,7 +7064,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << CDF Plot( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << CDF Plot( 1 );
 
 ```
 
@@ -4926,7 +7079,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Cauchy Fit( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Cauchy Fit( 1 );
 
 ```
 
@@ -4938,7 +7094,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Compare Densities( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Compare Densities( 1 );
 
 ```
 
@@ -4950,7 +7109,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << All Pairs( 1 );Wait( 2 );obj << Comparison Circles( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << All Pairs( 1 );
+Wait( 2 );
+obj << Comparison Circles( 0 );
 
 ```
 
@@ -4962,7 +7126,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Composition of Densities( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Composition of Densities( 1 );
 
 ```
 
@@ -4974,7 +7141,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Connect Means( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Connect Means( 1 );
 
 ```
 
@@ -4986,7 +7156,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Dunn All Pairs for Joint Ranks( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Dunn All Pairs for Joint Ranks( 1 );
 
 ```
 
@@ -4998,7 +7171,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Dunn With Control for Joint Ranks( 1, {12} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Dunn With Control for Joint Ranks( 1, {12} );
 
 ```
 
@@ -5012,7 +7188,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << With Control( 1, {15} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << With Control( 1, {15} );
 
 ```
 
@@ -5020,7 +7199,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Dunnett's"n( 1, {15} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Dunnett's"n( 1, {15} );
 
 ```
 
@@ -5034,7 +7216,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1 );
 
 ```
 
@@ -5042,7 +7227,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Student's t"n( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Student's t"n( 1 );
 
 ```
 
@@ -5058,7 +7246,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Each Pair Stepwise( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair Stepwise( 1 );
 
 ```
 
@@ -5066,7 +7257,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Newman-Keuls"n( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Newman-Keuls"n( 1 );
 
 ```
 
@@ -5080,7 +7274,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Equivalence Tests( 4, 0.1, "Unequal Variances" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Equivalence Tests( 4, 0.1, "Unequal Variances" );
 
 ```
 
@@ -5094,7 +7291,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Equivalence Tests of Std Dev( 0.8, 0.05, "Equivalence" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Equivalence Tests of Std Dev( 0.8, 0.05, "Equivalence" );
 
 ```
 
@@ -5108,7 +7308,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );obj = dt << Oneway( Y( :Y ), X( :Soil ), Block( :Block ) );obj << Friedman Rank Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );
+obj = dt << Oneway( Y( :Y ), X( :Soil ), Block( :Block ) );
+obj << Friedman Rank Test( 1 );
 
 ```
 
@@ -5120,7 +7323,10 @@ dt = Open( "$SAMPLE_DATA/Snapdragon.jmp" );obj = dt << Oneway( Y( :Y ), X( :Soi
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Games-Howell"n( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Games-Howell"n( 1 );
 
 ```
 
@@ -5132,7 +7338,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ), Grand Mean( 0 ) );Wait( 2 );obj << Grand Mean( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ), Grand Mean( 0 ) );
+Wait( 2 );
+obj << Grand Mean( 1 );
 
 ```
 
@@ -5144,7 +7354,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Histograms( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Histograms( 1 );
 
 ```
 
@@ -5158,7 +7371,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << With Best( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << With Best( 1 );
 
 ```
 
@@ -5166,7 +7382,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Hsu MCB( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Hsu MCB( 1 );
 
 ```
 
@@ -5178,7 +7397,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.JMP" );obj = dt << Oneway( Y( :Height ), X( :age ) );obj << Jonckheere Terpstra Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.JMP" );
+obj = dt << Oneway( Y( :Height ), X( :age ) );
+obj << Jonckheere Terpstra Test( 1 );
 
 ```
 
@@ -5190,7 +7412,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.JMP" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :sex ) );obj << Kolmogorov Smirnov Exact Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :sex ) );
+obj << Kolmogorov Smirnov Exact Test( 1 );
 
 ```
 
@@ -5202,7 +7427,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :sex ) );obj << Kolmogorov Smirnov Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :sex ) );
+obj << Kolmogorov Smirnov Test( 1 );
 
 ```
 
@@ -5214,7 +7442,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ), Plot Quantile by Actual( 1 ), Legend( 0 ) );Wait( 2 );obj << Legend( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ), Plot Quantile by Actual( 1 ), Legend( 0 ) );
+Wait( 2 );
+obj << Legend( 1 );
 
 ```
 
@@ -5226,7 +7458,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Plot Quantile by Actual( 1 );Wait( 2 );obj << Line of Fit( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Plot Quantile by Actual( 1 );
+Wait( 2 );
+obj << Line of Fit( 0 );
 
 ```
 
@@ -5238,7 +7475,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Weight ), X( :Age, :sex ) );Wait( 2 );obj[1] << Matching Column( :sex );obj[2] << Matching Column( :Age );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Weight ), X( :Age, :sex ) );
+Wait( 2 );
+obj[1] << Matching Column( :sex );
+obj[2] << Matching Column( :Age );
 
 ```
 
@@ -5250,7 +7492,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Weight ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );:sex[6 :: 8] = "";obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Matching Column( :sex );Wait( 2 );obj << Matching Dotted Lines( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+:sex[6 :: 8] = "";
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Matching Column( :sex );
+Wait( 2 );
+obj << Matching Dotted Lines( 1 );
 
 ```
 
@@ -5262,7 +7510,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );:sex[6 :: 8] = "";obj = dt << Oneway
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Dogs.jmp" );obj = dt << Oneway( Y( :LogHist0 ), X( :drug ) );obj << Matching Column( :LogHist1 );Wait( 2 );obj << Matching Lines( 0 );
+
+dt = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj = dt << Oneway( Y( :LogHist0 ), X( :drug ) );
+obj << Matching Column( :LogHist1 );
+Wait( 2 );
+obj << Matching Lines( 0 );
 
 ```
 
@@ -5274,7 +7527,10 @@ dt = Open( "$SAMPLE_DATA/Dogs.jmp" );obj = dt << Oneway( Y( :LogHist0 ), X( :dr
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Mean CI Lines( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Mean CI Lines( 1 );
 
 ```
 
@@ -5286,7 +7542,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Mean Diamonds( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Mean Diamonds( 1 );
 
 ```
 
@@ -5298,7 +7557,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Mean Error Bars( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Mean Error Bars( 1 );
 
 ```
 
@@ -5310,7 +7572,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Mean Lines( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Mean Lines( 1 );
 
 ```
 
@@ -5322,7 +7587,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Mean of Means( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Mean of Means( 1 );
 
 ```
 
@@ -5334,7 +7602,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Means and Std Dev( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Means and Std Dev( 1 );
 
 ```
 
@@ -5346,7 +7617,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Means( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Means( 1 );
 
 ```
 
@@ -5358,7 +7632,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :sex ) );obj << Means( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :sex ) );
+obj << Means( 1 );
 
 ```
 
@@ -5370,7 +7647,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :sex ) );obj << Median Exact Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :sex ) );
+obj << Median Exact Test( 1 );
 
 ```
 
@@ -5382,7 +7662,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Median Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Median Test( 1 );
 
 ```
 
@@ -5398,7 +7681,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Each Pair Stepwise( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair Stepwise( 1 );
 
 ```
 
@@ -5406,7 +7692,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Newman-Keuls"n( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Newman-Keuls"n( 1 );
 
 ```
 
@@ -5420,7 +7709,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Plot Quantile by Actual( 1 );Wait( 2 );obj << Normal Quantile Label( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Plot Quantile by Actual( 1 );
+Wait( 2 );
+obj << Normal Quantile Label( 0 );
 
 ```
 
@@ -5432,7 +7726,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Plot Actual by Quantile( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Plot Actual by Quantile( 1 );
 
 ```
 
@@ -5444,7 +7741,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Plot Quantile by Actual( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Plot Quantile by Actual( 1 );
 
 ```
 
@@ -5456,7 +7756,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );Wait( 2 );obj << Points( 0 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+Wait( 2 );
+obj << Points( 0 );
 
 ```
 
@@ -5468,7 +7772,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Oneway( Y( :Sepal length ), X( :Species ) );obj << Points Jittered( "Binned" );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Oneway( Y( :Sepal length ), X( :Species ) );
+obj << Points Jittered( "Binned" );
 
 ```
 
@@ -5480,7 +7787,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Oneway( Y( :Sepal length ), X(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Points Spread( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Points Spread( 1 );
 
 ```
 
@@ -5492,7 +7802,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Ratios with Pooled Variance( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Ratios with Pooled Variance( 1 );
 
 ```
 
@@ -5504,7 +7817,18 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ), All Graphs( 0 ) );obj << Power(	Alpha( 0.05 ),	Sigma( 3.382, 3.73 ),	Delta( 2.79679 ),	Number( 10, 90, 5 ),	Solve for Power,	Power Plot,	Done);
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ), All Graphs( 0 ) );
+obj << Power(
+	Alpha( 0.05 ),
+	Sigma( 3.382, 3.73 ),
+	Delta( 2.79679 ),
+	Number( 10, 90, 5 ),
+	Solve for Power,
+	Power Plot,
+	Done
+);
 
 ```
 
@@ -5516,7 +7840,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Proportion of Densities( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Proportion of Densities( 1 );
 
 ```
 
@@ -5528,7 +7855,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Quantiles( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Quantiles( 1 );
 
 ```
 
@@ -5540,7 +7870,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Robust Fit( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Robust Fit( 1 );
 
 ```
 
@@ -5552,7 +7885,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Robust Fit( 1 );obj << Robust Means Lines( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Robust Fit( 1 );
+obj << Robust Means Lines( 1 );
 
 ```
 
@@ -5564,7 +7901,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Normal Quantiles;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Normal Quantiles;
 
 ```
 
@@ -5576,7 +7916,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Predicted;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Predicted;
 
 ```
 
@@ -5588,7 +7931,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Residuals;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Residuals;
 
 ```
 
@@ -5600,7 +7946,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Standardized;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Standardized;
 
 ```
 
@@ -5612,7 +7961,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Weight ), X( :Age ), Each Pair );Wait( 2 );obj << Select Group( 14 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Weight ), X( :Age ), Each Pair );
+Wait( 2 );
+obj << Select Group( 14 );
 
 ```
 
@@ -5624,7 +7977,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Weight ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Means( 1 );Wait( 2 );obj << Set Alpha Level( 0.01 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Means( 1 );
+Wait( 2 );
+obj << Set Alpha Level( 0.01 );
 
 ```
 
@@ -5636,7 +7994,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Means( 1 );Wait( 2 );obj << Set Alpha Level( 0.01 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Means( 1 );
+Wait( 2 );
+obj << Set Alpha Level( 0.01 );
 
 ```
 
@@ -5654,7 +8017,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Std Dev Lines( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Std Dev Lines( 1 );
 
 ```
 
@@ -5666,7 +8032,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Steel With Control( 1, {12} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Steel With Control( 1, {12} );
 
 ```
 
@@ -5678,7 +8047,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Steel-Dwass All Pairs"n( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Steel-Dwass All Pairs"n( 1 );
 
 ```
 
@@ -5692,7 +8064,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Each Pair( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Each Pair( 1 );
 
 ```
 
@@ -5700,7 +8075,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Student's t"n( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Student's t"n( 1 );
 
 ```
 
@@ -5714,7 +8092,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << All Pairs( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << All Pairs( 1 );
 
 ```
 
@@ -5722,7 +8103,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Tukey HSD( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Tukey HSD( 1 );
 
 ```
 
@@ -5734,7 +8118,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Unequal Variances( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Unequal Variances( 1 );
 
 ```
 
@@ -5746,7 +8133,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Ratios with Unpooled Variance( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Ratios with Unpooled Variance( 1 );
 
 ```
 
@@ -5758,7 +8148,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :sex ) );obj << Van Der Waerden Exact Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :sex ) );
+obj << Van Der Waerden Exact Test( 1 );
 
 ```
 
@@ -5770,7 +8163,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Wilcoxon Each Pair( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Wilcoxon Each Pair( 1 );
 
 ```
 
@@ -5782,7 +8178,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :sex ) );obj << Wilcoxon Exact Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :sex ) );
+obj << Wilcoxon Exact Test( 1 );
 
 ```
 
@@ -5794,7 +8193,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Wilcoxon Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Wilcoxon Test( 1 );
 
 ```
 
@@ -5808,7 +8210,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << With Best( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << With Best( 1 );
 
 ```
 
@@ -5816,7 +8221,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Hsu MCB( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Hsu MCB( 1 );
 
 ```
 
@@ -5830,7 +8238,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << With Control( 1, {15} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << With Control( 1, {15} );
 
 ```
 
@@ -5838,7 +8249,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << "Dunnett's"n( 1, {15} );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << "Dunnett's"n( 1, {15} );
 
 ```
 
@@ -5850,7 +8264,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ), X Axis Proportional( 0 ) );Wait( 2 );obj << X Axis Proportional( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ), X Axis Proportional( 0 ) );
+Wait( 2 );
+obj << X Axis Proportional( 1 );
 
 ```
 
@@ -5862,7 +8280,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :sex ) );obj << t Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :sex ) );
+obj << t Test( 1 );
 
 ```
 
@@ -5874,7 +8295,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << van der Waerden Test( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << van der Waerden Test( 1 );
 
 ```
 
@@ -5888,7 +8312,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -5904,7 +8334,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -5912,7 +8349,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -5920,7 +8361,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -5932,7 +8377,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -5946,7 +8395,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -5958,7 +8413,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -5970,7 +8431,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Oneway(
+	Y( :Height ),
+	X( :Age ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -5982,7 +8456,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Copy Script;
 
 ```
 
@@ -5994,7 +8471,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Data Table Window;
 
 ```
 
@@ -6008,7 +8488,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -6020,7 +8503,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Oneway(
+	Y( :Height ),
+	X( :Age ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -6034,7 +8531,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -6042,7 +8543,28 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -6054,7 +8576,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -6066,7 +8592,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -6078,7 +8609,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -6090,7 +8625,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -6102,7 +8641,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -6114,7 +8657,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -6128,7 +8675,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -6140,7 +8691,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -6152,7 +8710,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -6166,7 +8732,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -6178,7 +8747,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -6190,7 +8768,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Redo Analysis;
 
 ```
 
@@ -6202,7 +8783,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -6214,7 +8798,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -6226,19 +8818,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 #### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -6250,7 +8857,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -6262,7 +8872,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Oneway(
+	Y( :Height ),
+	X( :Age ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -6274,7 +8897,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Oneway(
+	Y( :Height ),
+	X( :Age ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -6286,7 +8922,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Oneway(
+	Y( :Height ),
+	X( :Age ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -6298,7 +8947,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -6308,19 +8965,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
-**Example 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Oneway(	Y( :Height ),	X( :Age ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -6332,7 +8987,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << New Column( "_bycol",	Characte
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -6344,7 +9002,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -6356,7 +9017,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Script to Report;
 
 ```
 
@@ -6368,7 +9032,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -6380,7 +9047,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -6392,7 +9068,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -6404,7 +9094,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -6416,7 +9112,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -6428,7 +9129,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -6440,7 +9144,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( :Age ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -6454,7 +9163,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :Height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -6466,7 +9180,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -6478,7 +9195,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 

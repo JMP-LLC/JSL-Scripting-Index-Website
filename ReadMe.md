@@ -66,5 +66,5 @@ The JMP Data Tables that power this site are available in the JMP Scripting Inde
 This site was started when JMP 19.0 was published. The site will continue to be updated as versions of JMP are made available. For users using earlier versions of JMP, there is a "JMP Version Added" field that can be referenced in the documentation. 
 
 
-
-
+### Copyright
+© 2026 JMP Statistical Discovery LLC. All Rights Reserved.

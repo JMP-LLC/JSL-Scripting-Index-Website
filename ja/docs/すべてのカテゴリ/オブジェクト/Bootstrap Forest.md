@@ -12,7 +12,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -28,7 +34,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -36,7 +46,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -44,7 +61,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -56,7 +77,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -70,7 +104,13 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -82,7 +122,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -94,7 +140,26 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -106,7 +171,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Copy Script;
 
 ```
 
@@ -118,7 +195,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Data Table Window;
 
 ```
 
@@ -132,7 +221,10 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -144,7 +236,27 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -158,7 +270,28 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -166,7 +299,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -178,7 +324,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -190,7 +349,12 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -202,7 +366,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -214,7 +391,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -226,7 +416,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -238,7 +441,11 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -252,7 +459,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -264,7 +475,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -276,7 +494,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -290,7 +516,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -302,7 +531,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -314,7 +552,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Redo Analysis;
 
 ```
 
@@ -326,7 +576,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -338,7 +600,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -350,19 +620,43 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**構文:** obj &lt;&lt; Report; Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -374,7 +668,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -386,7 +692,26 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -398,7 +723,26 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -410,7 +754,26 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -422,7 +785,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -432,19 +803,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
-**例 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**例 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -456,7 +825,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -468,7 +849,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -480,7 +873,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Script to Report;
 
 ```
 
@@ -492,7 +897,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -504,7 +921,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -516,7 +942,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -528,7 +968,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -540,7 +986,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -552,7 +1003,19 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -564,7 +1027,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -578,7 +1055,12 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -590,7 +1072,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -602,7 +1087,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -616,7 +1108,25 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
 
 ```
 
@@ -626,7 +1136,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -638,7 +1159,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Freq( :_freqcol ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Freq( :_freqcol ),
+	Go
+);
 
 ```
 
@@ -648,7 +1182,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_freqcol", Numeric,
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -658,7 +1203,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -670,7 +1226,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Weight( :_weightcol ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Weight( :_weightcol ),
+	Go
+);
 
 ```
 
@@ -680,7 +1249,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_weightcol", Numeri
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -690,7 +1270,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -704,7 +1295,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -718,7 +1320,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Column Contributions( 1 );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Column Contributions( 1 );
 
 ```
 
@@ -730,7 +1344,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$Sample_Data/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Number Terms( 8 ),	Number Trees( 100 ),	Go);obj << Decision Threshold( 1 );
+
+dt = Open( "$Sample_Data/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Number Terms( 8 ),
+	Number Trees( 100 ),
+	Go
+);
+obj << Decision Threshold( 1 );
 
 ```
 
@@ -742,7 +1365,16 @@ dt = Open( "$Sample_Data/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Early Stopping( 1 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	validation( :Holdback1 ),
+	Early Stopping( 1 ),
+	Go
+);
 
 ```
 
@@ -756,7 +1388,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Test;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+dt << Make Validation Column(
+	Training Set( .6 ),
+	Validation Set( .2 ),
+	Test Set( .2 ),
+	New Column Name( "Valid1" ),
+	Go
+);
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Valid1 ),
+	Split Best( 2 )
+);
+aabs = obj << Get Average Absolute Error Test;
+Show( aabs );
 
 ```
 
@@ -764,7 +1413,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Test;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Split Best( 2 )
+);
+aabs = obj << Get Average Absolute Error Test;
+Show( aabs );
 
 ```
 
@@ -772,7 +1431,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);aabs = obj << Get Average Absolute Error Test;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+aabs = obj << Get Average Absolute Error Test;
+Show( aabs );
 
 ```
 
@@ -780,7 +1449,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);aabs = obj << Get Average Absolute Error Test;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+aabs = obj << Get Average Absolute Error Test;
+Show( aabs );
 
 ```
 
@@ -794,7 +1473,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Training;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Split Best( 2 )
+);
+aabs = obj << Get Average Absolute Error Training;
+Show( aabs );
 
 ```
 
@@ -802,7 +1490,15 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Training;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Split Best( 2 )
+);
+aabs = obj << Get Average Absolute Error Training;
+Show( aabs );
 
 ```
 
@@ -810,7 +1506,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);aabs = obj << Get Average Absolute Error Training;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+aabs = obj << Get Average Absolute Error Training;
+Show( aabs );
 
 ```
 
@@ -818,7 +1522,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);aabs = obj << Get Average Absolute Error Training;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+aabs = obj << Get Average Absolute Error Training;
+Show( aabs );
 
 ```
 
@@ -832,7 +1544,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Validation;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+aabs = obj << Get Average Absolute Error Validation;
+Show( aabs );
 
 ```
 
@@ -840,7 +1562,16 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Split Best( 2 ));aabs = obj << Get Average Absolute Error Validation;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Split Best( 2 )
+);
+aabs = obj << Get Average Absolute Error Validation;
+Show( aabs );
 
 ```
 
@@ -848,7 +1579,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);aabs = obj << Get Average Absolute Error Validation;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+aabs = obj << Get Average Absolute Error Validation;
+Show( aabs );
 
 ```
 
@@ -856,7 +1596,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);aabs = obj << Get Average Absolute Error Validation;Show( aabs );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+aabs = obj << Get Average Absolute Error Validation;
+Show( aabs );
 
 ```
 
@@ -870,7 +1619,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));avg = obj << Get Average Log Error Test;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+dt << Make Validation Column(
+	Training Set( .6 ),
+	Validation Set( .2 ),
+	Test Set( .2 ),
+	New Column Name( "Valid1" ),
+	Go
+);
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Valid1 ),
+	Split Best( 2 )
+);
+avg = obj << Get Average Log Error Test;
+Show( avg );
 
 ```
 
@@ -878,7 +1644,18 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Method( "Decision Tree" ),
+	Go
+);
+avg = obj << Get Average Log Error Test;
+Show( avg );
 
 ```
 
@@ -886,7 +1663,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+avg = obj << Get Average Log Error Test;
+Show( avg );
 
 ```
 
@@ -894,7 +1681,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);avg = obj << Get Average Log Error Test;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+avg = obj << Get Average Log Error Test;
+Show( avg );
 
 ```
 
@@ -908,7 +1705,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));avg = obj << Get Average Log Error Training;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Split Best( 2 )
+);
+avg = obj << Get Average Log Error Training;
+Show( avg );
 
 ```
 
@@ -916,7 +1722,15 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 3 ));avg = obj << Get Average Log Error Training;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Split Best( 3 )
+);
+avg = obj << Get Average Log Error Training;
+Show( avg );
 
 ```
 
@@ -924,7 +1738,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);avg = obj << Get Average Log Error Training;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+avg = obj << Get Average Log Error Training;
+Show( avg );
 
 ```
 
@@ -932,7 +1754,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);avg = obj << Get Average Log Error Training;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+avg = obj << Get Average Log Error Training;
+Show( avg );
 
 ```
 
@@ -946,7 +1776,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));avg = obj << Get Average Log Error Validation;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+avg = obj << Get Average Log Error Validation;
+Show( avg );
 
 ```
 
@@ -954,7 +1794,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Method( "Decision Tree" ),
+	Go
+);
+avg = obj << Get Average Log Error Validation;
+Show( avg );
 
 ```
 
@@ -962,7 +1812,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+avg = obj << Get Average Log Error Validation;
+Show( avg );
 
 ```
 
@@ -970,7 +1829,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);avg = obj << Get Average Log Error Validation;Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+avg = obj << Get Average Log Error Validation;
+Show( avg );
 
 ```
 
@@ -984,7 +1852,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Test;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+dt << Make Validation Column(
+	Training Set( .6 ),
+	Validation Set( .2 ),
+	Test Set( .2 ),
+	New Column Name( "Valid1" ),
+	Go
+);
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Valid1 ),
+	Split Best( 2 )
+);
+cm = obj << Get Confusion Matrix Test;
+Show( cm );
 
 ```
 
@@ -992,7 +1877,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Test;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cm = obj << Get Confusion Matrix Test;
+Show( cm );
 
 ```
 
@@ -1000,7 +1895,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Test;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :marital status ),
+	X( :sex, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cm = obj << Get Confusion Matrix Test;
+Show( cm );
 
 ```
 
@@ -1008,7 +1913,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Test;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cm = obj << Get Confusion Matrix Test;
+Show( cm );
 
 ```
 
@@ -1022,7 +1937,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Training;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Split Best( 2 )
+);
+cm = obj << Get Confusion Matrix Training;
+Show( cm );
 
 ```
 
@@ -1030,7 +1954,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Training;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cm = obj << Get Confusion Matrix Training;
+Show( cm );
 
 ```
 
@@ -1038,7 +1972,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Training;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :marital status ),
+	X( :sex, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cm = obj << Get Confusion Matrix Training;
+Show( cm );
 
 ```
 
@@ -1046,7 +1990,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Training;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cm = obj << Get Confusion Matrix Training;
+Show( cm );
 
 ```
 
@@ -1060,7 +2014,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Validation;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cm = obj << Get Confusion Matrix Validation;
+Show( cm );
 
 ```
 
@@ -1068,7 +2032,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cm = obj << Get Confusion Matrix Validation;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cm = obj << Get Confusion Matrix Validation;
+Show( cm );
 
 ```
 
@@ -1076,7 +2050,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Validation;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :marital status ),
+	X( :sex, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cm = obj << Get Confusion Matrix Validation;
+Show( cm );
 
 ```
 
@@ -1084,7 +2068,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cm = obj << Get Confusion Matrix Validation;Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cm = obj << Get Confusion Matrix Validation;
+Show( cm );
 
 ```
 
@@ -1098,7 +2092,24 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));cr = obj << Get Confusion Rates Test;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+dt << Make Validation Column(
+	Training Set( .6 ),
+	Validation Set( .2 ),
+	Test Set( .2 ),
+	New Column Name( "Valid1" ),
+	Go
+);
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Valid1 ),
+	Split Best( 2 )
+);
+cr = obj << Get Confusion Rates Test;
+Show( cr );
 
 ```
 
@@ -1106,7 +2117,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Test;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cr = obj << Get Confusion Rates Test;
+Show( cr );
 
 ```
 
@@ -1114,7 +2135,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Test;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :marital status ),
+	X( :sex, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cr = obj << Get Confusion Rates Test;
+Show( cr );
 
 ```
 
@@ -1122,7 +2153,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Test;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cr = obj << Get Confusion Rates Test;
+Show( cr );
 
 ```
 
@@ -1136,7 +2177,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));cr = obj << Get Confusion Rates Training;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Split Best( 2 )
+);
+cr = obj << Get Confusion Rates Training;
+Show( cr );
 
 ```
 
@@ -1144,7 +2194,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Training;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cr = obj << Get Confusion Rates Training;
+Show( cr );
 
 ```
 
@@ -1152,7 +2212,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Training;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :marital status ),
+	X( :sex, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cr = obj << Get Confusion Rates Training;
+Show( cr );
 
 ```
 
@@ -1160,7 +2230,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Training;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cr = obj << Get Confusion Rates Training;
+Show( cr );
 
 ```
 
@@ -1174,7 +2254,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Validation;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cr = obj << Get Confusion Rates Validation;
+Show( cr );
 
 ```
 
@@ -1182,7 +2272,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));cr = obj << Get Confusion Rates Validation;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+cr = obj << Get Confusion Rates Validation;
+Show( cr );
 
 ```
 
@@ -1190,7 +2290,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :age, :country, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Validation;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :marital status ),
+	X( :sex, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cr = obj << Get Confusion Rates Validation;
+Show( cr );
 
 ```
 
@@ -1198,7 +2308,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);cr = obj << Get Confusion Rates Validation;Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+cr = obj << Get Confusion Rates Validation;
+Show( cr );
 
 ```
 
@@ -1212,7 +2332,24 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));r = obj << Get Gen RSquare Test;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+dt << Make Validation Column(
+	Training Set( .6 ),
+	Validation Set( .2 ),
+	Test Set( .2 ),
+	New Column Name( "Valid1" ),
+	Go
+);
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Valid1 ),
+	Split Best( 2 )
+);
+r = obj << Get Gen RSquare Test;
+Show( r );
 
 ```
 
@@ -1220,7 +2357,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Test;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+r = obj << Get Gen RSquare Test;
+Show( r );
 
 ```
 
@@ -1228,7 +2375,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Test;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :sex ),
+	X( :marital status, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+r = obj << Get Gen RSquare Test;
+Show( r );
 
 ```
 
@@ -1236,7 +2393,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Test;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+r = obj << Get Gen RSquare Test;
+Show( r );
 
 ```
 
@@ -1250,7 +2417,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));r = obj << Get Gen RSquare Training;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Split Best( 2 )
+);
+r = obj << Get Gen RSquare Training;
+Show( r );
 
 ```
 
@@ -1258,7 +2434,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Training;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+r = obj << Get Gen RSquare Training;
+Show( r );
 
 ```
 
@@ -1266,7 +2452,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Training;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :sex ),
+	X( :marital status, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+r = obj << Get Gen RSquare Training;
+Show( r );
 
 ```
 
@@ -1274,7 +2470,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Training;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+r = obj << Get Gen RSquare Training;
+Show( r );
 
 ```
 
@@ -1288,7 +2494,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Validation;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+r = obj << Get Gen RSquare Validation;
+Show( r );
 
 ```
 
@@ -1296,7 +2512,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Split Best( 2 ));r = obj << Get Gen RSquare Validation;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+r = obj << Get Gen RSquare Validation;
+Show( r );
 
 ```
 
@@ -1304,7 +2530,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :sex ),	X( :marital status, :age, :country, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Validation;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :sex ),
+	X( :marital status, :age, :country, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+r = obj << Get Gen RSquare Validation;
+Show( r );
 
 ```
 
@@ -1312,7 +2548,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation( :Validation ),	Go);r = obj << Get Gen RSquare Validation;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation( :Validation ),
+	Go
+);
+r = obj << Get Gen RSquare Validation;
+Show( r );
 
 ```
 
@@ -1324,7 +2570,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);code = obj << Get MM SAS Data Step;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+code = obj << Get MM SAS Data Step;
 
 ```
 
@@ -1336,7 +2594,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);code = obj << Get MM Tolerant SAS Data Step;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+code = obj << Get MM Tolerant SAS Data Step;
 
 ```
 
@@ -1350,7 +2620,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Get Measures;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Get Measures;
 
 ```
 
@@ -1362,7 +2644,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);time = obj << Get Microseconds;Show( time );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+time = obj << Get Microseconds;
+Show( time );
 
 ```
 
@@ -1376,7 +2671,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(	Training Set( .6 ),	Validation Set( .2 ),	Test Set( .2 ),	New Column Name( "Valid1" ),	Go);obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Valid1 ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Test;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+dt << Make Validation Column(
+	Training Set( .6 ),
+	Validation Set( .2 ),
+	Test Set( .2 ),
+	New Column Name( "Valid1" ),
+	Go
+);
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Valid1 ),
+	Split Best( 2 )
+);
+rate = obj << Get Misclassification Rate Test;
+Show( rate );
 
 ```
 
@@ -1384,7 +2696,17 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt << Make Validation Column(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Test;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Split Best( 2 )
+);
+rate = obj << Get Misclassification Rate Test;
+Show( rate );
 
 ```
 
@@ -1392,7 +2714,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);rate = obj << Get Misclassification Rate Test;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+rate = obj << Get Misclassification Rate Test;
+Show( rate );
 
 ```
 
@@ -1400,7 +2732,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);rate = obj << Get Misclassification Rate Test;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+rate = obj << Get Misclassification Rate Test;
+Show( rate );
 
 ```
 
@@ -1414,7 +2756,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Training;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Split Best( 2 )
+);
+rate = obj << Get Misclassification Rate Training;
+Show( rate );
 
 ```
 
@@ -1422,7 +2773,16 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Method( "Decision Tree" ));obj << Split Best( 2 );rate = obj << Get Misclassification Rate Training;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Method( "Decision Tree" )
+);
+obj << Split Best( 2 );
+rate = obj << Get Misclassification Rate Training;
+Show( rate );
 
 ```
 
@@ -1430,7 +2790,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);rate = obj << Get Misclassification Rate Training;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+rate = obj << Get Misclassification Rate Training;
+Show( rate );
 
 ```
 
@@ -1438,7 +2806,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);rate = obj << Get Misclassification Rate Training;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+rate = obj << Get Misclassification Rate Training;
+Show( rate );
 
 ```
 
@@ -1452,7 +2828,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation( :Validation ),	Split Best( 2 ));rate = obj << Get Misclassification Rate Validation;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation( :Validation ),
+	Split Best( 2 )
+);
+rate = obj << Get Misclassification Rate Validation;
+Show( rate );
 
 ```
 
@@ -1460,7 +2846,18 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Method( "Decision Tree" ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	validation( :Holdback1 ),
+	Method( "Decision Tree" ),
+	Go
+);
+rate = obj << Get Misclassification Rate Validation;
+Show( rate );
 
 ```
 
@@ -1468,7 +2865,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	validation( :Holdback1 ),
+	Go
+);
+rate = obj << Get Misclassification Rate Validation;
+Show( rate );
 
 ```
 
@@ -1476,7 +2883,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	validation( :Holdback1 ),	Go);rate = obj << Get Misclassification Rate Validation;Show( rate );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "Holdback1", formula( Random Integer( 1, 3 ) ) );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	validation( :Holdback1 ),
+	Go
+);
+rate = obj << Get Misclassification Rate Validation;
+Show( rate );
 
 ```
 
@@ -1490,7 +2907,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "Holdback1", formula
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Method( "Decision Tree" ),
+	Go
+);
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Test;
+Show( area );
 
 ```
 
@@ -1498,7 +2927,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Test;
+Show( area );
 
 ```
 
@@ -1506,7 +2946,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Test;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Test;
+Show( area );
 
 ```
 
@@ -1520,7 +2971,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Split Best( 2 )
+);
+obj << Show Tree( 0 );
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Training;
+Show( area );
 
 ```
 
@@ -1528,7 +2989,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Show Tree( 0 );
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Training;
+Show( area );
 
 ```
 
@@ -1536,7 +3007,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << Precision Recall Curve;area = obj << Get Precision Recall Area Training;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Show Tree( 0 );
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Training;
+Show( area );
 
 ```
 
@@ -1550,7 +3031,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Method( "Decision Tree" ),
+	Go
+);
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Validation;
+Show( area );
 
 ```
 
@@ -1558,7 +3050,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Validation;
+Show( area );
 
 ```
 
@@ -1566,7 +3068,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << Precision Recall Curve;area = obj << Get Precision Recall Area Validation;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+obj << Precision Recall Curve;
+area = obj << Get Precision Recall Area Validation;
+Show( area );
 
 ```
 
@@ -1578,7 +3090,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Get Prediction Formula;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Get Prediction Formula;
 
 ```
 
@@ -1590,7 +3114,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);rms = obj << Get RMS Error Test;Show( rms );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+rms = obj << Get RMS Error Test;
+Show( rms );
 
 ```
 
@@ -1602,7 +3139,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);rms = obj << Get RMS Error Training;Show( rms );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+rms = obj << Get RMS Error Training;
+Show( rms );
 
 ```
 
@@ -1614,7 +3164,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);rms = obj << Get RMS Error Validation;Show( rms );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+rms = obj << Get RMS Error Validation;
+Show( rms );
 
 ```
 
@@ -1628,7 +3191,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Method( "Decision Tree" ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Method( "Decision Tree" ),
+	Go
+);
+obj << ROC Curve;
+area = obj << Get ROC Area Test;
+Show( area );
 
 ```
 
@@ -1636,7 +3211,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+obj << ROC Curve;
+area = obj << Get ROC Area Test;
+Show( area );
 
 ```
 
@@ -1644,7 +3230,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation 2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Test;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << Make Validation Column( Training Set( .6 ), Validation Set( .2 ), Test Set( .2 ), Go );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation 2 ),
+	Go
+);
+obj << ROC Curve;
+area = obj << Get ROC Area Test;
+Show( area );
 
 ```
 
@@ -1658,7 +3255,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << Make Validation Column( Training
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Split Best( 2 ));obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Split Best( 2 )
+);
+obj << Show Tree( 0 );
+obj << ROC Curve;
+area = obj << Get ROC Area Training;
+Show( area );
 
 ```
 
@@ -1666,7 +3273,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Show Tree( 0 );
+obj << ROC Curve;
+area = obj << Get ROC Area Training;
+Show( area );
 
 ```
 
@@ -1674,7 +3291,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Show Tree( 0 );obj << ROC Curve;area = obj << Get ROC Area Training;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Show Tree( 0 );
+obj << ROC Curve;
+area = obj << Get ROC Area Training;
+Show( area );
 
 ```
 
@@ -1688,7 +3315,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Method( "Decision Tree" ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Method( "Decision Tree" ),
+	Go
+);
+obj << ROC Curve;
+area = obj << Get ROC Area Validation;
+Show( area );
 
 ```
 
@@ -1696,7 +3334,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+obj << ROC Curve;
+area = obj << Get ROC Area Validation;
+Show( area );
 
 ```
 
@@ -1704,7 +3352,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Portion( 0.2 ),	Go);obj << ROC Curve;area = obj << Get ROC Area Validation;Show( area );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Portion( 0.2 ),
+	Go
+);
+obj << ROC Curve;
+area = obj << Get ROC Area Validation;
+Show( area );
 
 ```
 
@@ -1716,7 +3374,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);r = obj << Get RSquare Test;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+r = obj << Get RSquare Test;
+Show( r );
 
 ```
 
@@ -1728,7 +3399,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);r = obj << Get RSquare Training;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+r = obj << Get RSquare Training;
+Show( r );
 
 ```
 
@@ -1740,7 +3424,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);r = obj << Get RSquare Validation;Show( r );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+r = obj << Get RSquare Validation;
+Show( r );
 
 ```
 
@@ -1752,7 +3449,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);code = obj << Get SAS Data Step;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+code = obj << Get SAS Data Step;
 
 ```
 
@@ -1764,7 +3473,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);time = obj << Get Seconds;Show( time );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+time = obj << Get Seconds;
+Show( time );
 
 ```
 
@@ -1776,7 +3498,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Get Tolerant Prediction Formula;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Get Tolerant Prediction Formula;
 
 ```
 
@@ -1788,7 +3522,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);code = obj << Get Tolerant SAS Data Step;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+code = obj << Get Tolerant SAS Data Step;
 
 ```
 
@@ -1800,7 +3546,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -1814,7 +3571,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt:Age[3] = .;obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Informative Missing( 0 ),	Split Best( 3 ));
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+dt:Age[3] = .;
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Informative Missing( 0 ),
+	Split Best( 3 )
+);
 
 ```
 
@@ -1822,7 +3588,11 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );dt:Age[3] = .;obj = dt << Up
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );obj << Split Best( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt:age[3] = .;
+obj = dt << Partition( Y( :height ), X( :age ), Informative Missing( 0 ) );
+obj << Split Best( 1 );
 
 ```
 
@@ -1830,7 +3600,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Partition(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt:age[3] = .;
+obj = dt << Boosted Tree( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
@@ -1838,7 +3611,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Boosted Tr
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt:age[3] = .;
+obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Informative Missing( 0 ), Go );
 
 ```
 
@@ -1850,7 +3626,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Bootstrap 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Go);obj << Lift Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Go
+);
+obj << Lift Curve( 1 );
 
 ```
 
@@ -1862,7 +3645,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :cou
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Make SAS Data Step;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Make SAS Data Step;
 
 ```
 
@@ -1874,7 +3669,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Make Tolerant SAS Data Step;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Make Tolerant SAS Data Step;
 
 ```
 
@@ -1886,7 +3693,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Minimum Size Split( 10 ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Maximum Number of Terms( 5 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Minimum Size Split( 10 ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Maximum Number of Terms( 5 ),
+	Go
+);
 
 ```
 
@@ -1898,7 +3715,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Minimum Size Split( 10 ),	Portion Bootstrap( 1 ),	Maximum Splits Per Tree( 5 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Minimum Size Split( 10 ),
+	Portion Bootstrap( 1 ),
+	Maximum Splits Per Tree( 5 ),
+	Go
+);
 
 ```
 
@@ -1910,7 +3736,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -1922,7 +3759,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Minimum Size Split( 10 ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Minimum Size Split( 10 ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -1934,7 +3782,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -1948,7 +3807,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Split Best( 2 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Multithreading( 1 ),
+	Split Best( 2 )
+);
 
 ```
 
@@ -1956,7 +3822,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Multithreading( 1 ),
+	Go
+);
 
 ```
 
@@ -1964,7 +3837,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 1 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Multithreading( 1 ),
+	Go
+);
 
 ```
 
@@ -1976,7 +3856,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -1988,7 +3879,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -2002,7 +3904,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Ordinal Restricts Order( 1 ),	Split Best( 2 ));
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Ordinal Restricts Order( 1 ),
+	Split Best( 2 )
+);
 
 ```
 
@@ -2010,7 +3920,10 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );obj << Split Best( 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Partition( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ) );
+obj << Split Best( 3 );
 
 ```
 
@@ -2018,7 +3931,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Partition( Y( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Boosted Tree( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
@@ -2026,7 +3941,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Boosted Tree( Y( :height 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bootstrap Forest( Y( :height ), X( :age ), Ordinal Restricts Order( 1 ), Go );
 
 ```
 
@@ -2038,7 +3955,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bootstrap Forest( Y( :hei
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Plot Actual by Predicted( 1 );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Plot Actual by Predicted( 1 );
 
 ```
 
@@ -2050,7 +3979,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
 
 ```
 
@@ -2062,7 +4002,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Go);obj << Precision Recall Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Go
+);
+obj << Precision Recall Curve( 1 );
 
 ```
 
@@ -2074,7 +4021,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :cou
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Go);obj << Split Best( 5 );obj << Profiler( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Go
+);
+obj << Split Best( 5 );
+obj << Profiler( 1 );
 
 ```
 
@@ -2086,7 +4041,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :cou
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Publish Prediction Formula;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Publish Prediction Formula;
 
 ```
 
@@ -2098,7 +4065,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Publish Tolerant Prediction Formula;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Publish Tolerant Prediction Formula;
 
 ```
 
@@ -2110,7 +4089,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Go);obj << ROC Curve( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Go
+);
+obj << ROC Curve( 1 );
 
 ```
 
@@ -2122,7 +4108,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :cou
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Cumulative Details;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Cumulative Details;
 
 ```
 
@@ -2134,7 +4132,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Predicteds;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Predicteds;
 
 ```
 
@@ -2146,7 +4156,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Prediction Formula;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Prediction Formula;
 
 ```
 
@@ -2158,7 +4180,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Residuals;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Residuals;
 
 ```
 
@@ -2170,7 +4204,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Save Tolerant Prediction Formula;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Save Tolerant Prediction Formula;
 
 ```
 
@@ -2184,7 +4230,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Set Random Seed( 1234 ),	Split Best( 2 ));
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Set Random Seed( 1234 ),
+	Split Best( 2 )
+);
 
 ```
 
@@ -2192,7 +4246,14 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Split Best( 2 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Partition(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Set Random Seed( 1234 ),
+	Split Best( 2 )
+);
 
 ```
 
@@ -2200,7 +4261,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Partition(	Y( :Y Binary )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Boosted Tree(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Set Random Seed( 1234 ),
+	Go
+);
 
 ```
 
@@ -2208,7 +4276,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Boosted Tree(	Y( :Y Binar
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Set Random Seed( 1234 ),
+	Go
+);
 
 ```
 
@@ -2220,7 +4295,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Number Trees( 25 ),	Go);obj << Show Trees( Show names categories );(obj << Report)["Tree Views"] << Close( 0 );(obj << Report)["Tree12"] << Close( 0 );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Number Trees( 25 ),
+	Go
+);
+obj << Show Trees( Show names categories );
+(obj << Report)["Tree Views"] << Close( 0 );
+(obj << Report)["Tree12"] << Close( 0 );
 
 ```
 
@@ -2232,7 +4321,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Specify Profit Matrix(		[1 -1 -1, -1 1 -1, -1 -1 1, . . .],		"American",		"European",		"Japanese",		"Undecided"	),	Go);
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Specify Profit Matrix(
+		[1 -1 -1, -1 1 -1, -1 -1 1, . . .],
+		"American",
+		"European",
+		"Japanese",
+		"Undecided"
+	),
+	Go
+);
 
 ```
 
@@ -2244,7 +4346,18 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :cou
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Minimum Size Split( 10 ),	Minimum Splits Per Tree( 5 ),	Portion Bootstrap( 1 ),	Number Terms( 3 ),	Time Limit( 10 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Minimum Size Split( 10 ),
+	Minimum Splits Per Tree( 5 ),
+	Portion Bootstrap( 1 ),
+	Number Terms( 3 ),
+	Time Limit( 10 ),
+	Go
+);
 
 ```
 
@@ -2266,7 +4379,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Bootstrap Forest(	Y( :Y )
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Use Excluded Rows for Validation( 1 ),	Split Best( 2 ));
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Use Excluded Rows for Validation( 1 ),
+	Split Best( 2 )
+);
 
 ```
 
@@ -2274,7 +4396,15 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );For Each( {i}, 10 :: 200 :: 1
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Partition(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ));obj << Split Best( 5 );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
+obj = dt << Partition(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Use Excluded Rows for Validation( 1 )
+);
+obj << Split Best( 5 );
 
 ```
 
@@ -2282,7 +4412,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row St
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Boosted Tree(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
+obj = dt << Boosted Tree(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Use Excluded Rows for Validation( 1 ),
+	Go
+);
 
 ```
 
@@ -2290,7 +4428,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row St
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );obj = dt << Bootstrap Forest(	Y( :Y ),	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Use Excluded Rows for Validation( 1 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+For Each( {i}, 10 :: 200 :: 10, Row State( i ) = Excluded State( 1 ) );
+obj = dt << Bootstrap Forest(
+	Y( :Y ),
+	X( :Age, :Gender, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Use Excluded Rows for Validation( 1 ),
+	Go
+);
 
 ```
 
@@ -2304,7 +4450,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );For Each( {i}, 10 :: 200 :: 10, Row St
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purchase ),	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),	Treatment( :Promotion ),	Validation Portion( 0.2 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );
+obj = dt << Uplift(
+	Y( :Purchase ),
+	X( :Gender, :Age, :Hair Color, :U.S. Region, :Residence ),
+	Treatment( :Promotion ),
+	Validation Portion( 0.2 ),
+	Go
+);
 
 ```
 
@@ -2312,7 +4466,14 @@ dt = Open( "$SAMPLE_DATA/Hair Care Product.jmp" );obj = dt << Uplift(	Y( :Purc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation Portion( 0.2 ));obj << Split Best( 2 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Partition(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation Portion( 0.2 )
+);
+obj << Split Best( 2 );
 
 ```
 
@@ -2320,7 +4481,14 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Partition(	Y( :country ),
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Boosted Tree(	Y( :marital status ),	X( :sex, :country, :age, :type, :size ),	Validation Portion( 0.2 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Boosted Tree(
+	Y( :marital status ),
+	X( :sex, :country, :age, :type, :size ),
+	Validation Portion( 0.2 ),
+	Go
+);
 
 ```
 
@@ -2328,7 +4496,14 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Boosted Tree(	Y( :marital
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Bootstrap Forest(	Y( :country ),	X( :sex, :marital status, :age, :type, :size ),	Validation Portion( 0.2 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Bootstrap Forest(
+	Y( :country ),
+	X( :sex, :marital status, :age, :type, :size ),
+	Validation Portion( 0.2 ),
+	Go
+);
 
 ```
 

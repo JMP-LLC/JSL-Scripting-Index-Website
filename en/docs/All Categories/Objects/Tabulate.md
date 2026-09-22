@@ -14,7 +14,15 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :gender, :goals ), Statistics( N, Column % ) ),		Row Table( Grouping Columns( :Grade, :Age ) )	));
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :gender, :goals ), Statistics( N, Column % ) ),
+		Row Table( Grouping Columns( :Grade, :Age ) )
+	)
+);
 
 ```
 
@@ -22,7 +30,12 @@ dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Sh
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) )
+);
 
 ```
 
@@ -30,7 +43,13 @@ dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Sh
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Freq( :Count ),	Add Table( Row Table( Grouping Columns( :Causes ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Freq( :Count ),
+	Add Table( Row Table( Grouping Columns( :Causes ) ) )
+);
 
 ```
 
@@ -38,7 +57,24 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	ID( :Division ),	Set Format( Uniform Format( 10, 2 ) ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name ) )	));
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	ID( :Division ),
+	Set Format( Uniform Format( 10, 2 ) ),
+	Add Table(
+		Column Table(
+			Statistics( Sum ),
+			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+			Pack(
+				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+				Template( "^FIRST  (^OTHERS)", "/" )
+			)
+		),
+		Row Table( Grouping Columns( :Mfr Name ) )
+	)
+);
 
 ```
 
@@ -46,7 +82,15 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$Sample_Data/Consumer Preferences.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :Floss Delimited ), Statistics( N, "% of Total"n ) ),		Row Table( Grouping Columns( :Frequency of Teeth Cleaning, :Brush Delimited ) )	));
+
+dt = Open( "$Sample_Data/Consumer Preferences.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :Floss Delimited ), Statistics( N, "% of Total"n ) ),
+		Row Table( Grouping Columns( :Frequency of Teeth Cleaning, :Brush Delimited ) )
+	)
+);
 
 ```
 
@@ -54,7 +98,16 @@ dt = Open( "$Sample_Data/Consumer Preferences.jmp" );obj = dt << Tabulate(	Sho
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = Tabulate(	Show Control Panel( 0 ),	Page Column( :family cars( "Jeep" ) ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( N, "% of Total"n ) ),		Row Table( Grouping Columns( :sex ) )	));
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );
+obj = Tabulate(
+	Show Control Panel( 0 ),
+	Page Column( :family cars( "Jeep" ) ),
+	Add Table(
+		Column Table( Analysis Columns( :height ), Statistics( N, "% of Total"n ) ),
+		Row Table( Grouping Columns( :sex ) )
+	)
+);
 
 ```
 
@@ -62,7 +115,17 @@ dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = Tabulate(	Show Contro
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :gender ) ),		Column Table( Grouping Columns( :race ) ),		Row Table( Grouping Columns( :goals ) ),		Row Table( Grouping Columns( :"Urban/Rural"n ) )	));
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :gender ) ),
+		Column Table( Grouping Columns( :race ) ),
+		Row Table( Grouping Columns( :goals ) ),
+		Row Table( Grouping Columns( :"Urban/Rural"n ) )
+	)
+);
 
 ```
 
@@ -70,7 +133,17 @@ dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Sh
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Row Table( Grouping Columns( :Grades ) ),		Row Table( Grouping Columns( :Sports ) ),		Row Table( Grouping Columns( :Looks ) ),		Row Table( Grouping Columns( :Money ) )	));
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Row Table( Grouping Columns( :Grades ) ),
+		Row Table( Grouping Columns( :Sports ) ),
+		Row Table( Grouping Columns( :Looks ) ),
+		Row Table( Grouping Columns( :Money ) )
+	)
+);
 
 ```
 
@@ -78,7 +151,15 @@ dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Sh
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
 
 ```
 
@@ -86,7 +167,22 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum, Max ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Statistics( Sum, Max ),
+			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+			Pack(
+				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+				Template( "^FIRST  (^OTHERS)", "/" )
+			)
+		),
+		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
+	)
+);
 
 ```
 
@@ -94,7 +190,16 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Page Column( :Engine( "Gas" ) ),	Add Table(		Column Table( Analysis Columns( :City MPG, :Hwy MPG ), Statistics( Max ) ),		Row Table( Grouping Columns( :Mfr Name ) )	));
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Page Column( :Engine( "Gas" ) ),
+	Add Table(
+		Column Table( Analysis Columns( :City MPG, :Hwy MPG ), Statistics( Max ) ),
+		Row Table( Grouping Columns( :Mfr Name ) )
+	)
+);
 
 ```
 
@@ -102,7 +207,24 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :marital status ),			Add Aggregate Statistics( :marital status ),			Analysis Columns( :age ),			Statistics( Min, Max )		),		Row Table(			Grouping Columns( :sex, :country, :size ),			Add Aggregate Statistics( :sex, :country, :size ),			Stack Grouping Columns( 1 )		)	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :marital status ),
+			Add Aggregate Statistics( :marital status ),
+			Analysis Columns( :age ),
+			Statistics( Min, Max )
+		),
+		Row Table(
+			Grouping Columns( :sex, :country, :size ),
+			Add Aggregate Statistics( :sex, :country, :size ),
+			Stack Grouping Columns( 1 )
+		)
+	)
+);
 
 ```
 
@@ -110,7 +232,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Weight( :Weight ),	Add Table(		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Type ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Weight( :Weight ),
+	Add Table(
+		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Type ) )
+	)
+);
 
 ```
 
@@ -126,7 +257,16 @@ dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Modify Table( Column Table( 1 ), Analysis Columns( :CO ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
+obj << Modify Table( Column Table( 1 ), Analysis Columns( :CO ) );
 
 ```
 
@@ -134,7 +274,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
 
 ```
 
@@ -146,7 +294,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :type ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	),
+	By( :type )
+);
 
 ```
 
@@ -160,7 +317,13 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks ) ) ));obj << Modify Table( Row Table( 1 ), Columns by Categories( :Money ) );
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks ) ) )
+);
+obj << Modify Table( Row Table( 1 ), Columns by Categories( :Money ) );
 
 ```
 
@@ -168,7 +331,12 @@ dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Sh
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Row Table( Columns by Categories( :Grades, :Sports, :Looks, :Money ) ) )
+);
 
 ```
 
@@ -182,7 +350,14 @@ dt = Open( "$SAMPLE_DATA/Children's Popularity.jmp" );obj = dt << Tabulate(	Sh
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :Causes ) ) ));Wait( 1 );obj << Freq( :Count );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Row Table( Grouping Columns( :Causes ) ) )
+);
+Wait( 1 );
+obj << Freq( :Count );
 
 ```
 
@@ -190,7 +365,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Freq( :Count ),	Add Table( Row Table( Grouping Columns( :Causes ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Freq( :Count ),
+	Add Table( Row Table( Grouping Columns( :Causes ) ) )
+);
 
 ```
 
@@ -204,7 +385,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Failures.jmp" );obj = dt << Tabulate(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Modify Table( Column Table( 1 ), Grouping Column( :age ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate( Show Control Panel( 0 ) );
+obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
+obj << Modify Table( Column Table( 1 ), Grouping Column( :age ) );
 
 ```
 
@@ -212,7 +397,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
 
 ```
 
@@ -220,7 +413,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Modify Table( Row Table( 1 ), Grouping Column( :age ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate( Show Control Panel( 0 ) );
+obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
+obj << Modify Table( Row Table( 1 ), Grouping Column( :age ) );
 
 ```
 
@@ -228,7 +425,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Column Table( Grouping Columns( :sex ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Column Table( Grouping Columns( :sex ) ) )
+);
 
 ```
 
@@ -242,7 +444,25 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Uniform Format( 10, 2 ) ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name ) )	));Wait( 1 );obj << ID( :Division );
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Set Format( Uniform Format( 10, 2 ) ),
+	Add Table(
+		Column Table(
+			Statistics( Sum ),
+			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+			Pack(
+				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+				Template( "^FIRST  (^OTHERS)", "/" )
+			)
+		),
+		Row Table( Grouping Columns( :Mfr Name ) )
+	)
+);
+Wait( 1 );
+obj << ID( :Division );
 
 ```
 
@@ -250,7 +470,24 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	ID( :Division ),	Set Format( Uniform Format( 10, 2 ) ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name ) )	));
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	ID( :Division ),
+	Set Format( Uniform Format( 10, 2 ) ),
+	Add Table(
+		Column Table(
+			Statistics( Sum ),
+			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+			Pack(
+				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+				Template( "^FIRST  (^OTHERS)", "/" )
+			)
+		),
+		Row Table( Grouping Columns( :Mfr Name ) )
+	)
+);
 
 ```
 
@@ -264,7 +501,16 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = Tabulate(	Show Control Panel( 0 ),	Page Column( :family cars( "Jeep" ) ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( N, "% of Total"n ) ),		Row Table( Grouping Columns( :sex ) )	));
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );
+obj = Tabulate(
+	Show Control Panel( 0 ),
+	Page Column( :family cars( "Jeep" ) ),
+	Add Table(
+		Column Table( Analysis Columns( :height ), Statistics( N, "% of Total"n ) ),
+		Row Table( Grouping Columns( :sex ) )
+	)
+);
 
 ```
 
@@ -272,7 +518,17 @@ dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = Tabulate(	Show Contro
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age ) )	));Wait( 1 );obj << Page Column( :sex( "F" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :age ) )
+	)
+);
+Wait( 1 );
+obj << Page Column( :sex( "F" ) );
 
 ```
 
@@ -280,7 +536,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Page Column( :sex( "F" ) ),	Add Table(		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age ) )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Page Column( :sex( "F" ) ),
+	Add Table(
+		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :age ) )
+	)
+);
 
 ```
 
@@ -288,7 +553,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Page Column( :sex ),	Add Table(		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age ) )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Page Column( :sex ),
+	Add Table(
+		Column Table( Analysis Columns( :height, :weight ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :age ) )
+	)
+);
 
 ```
 
@@ -302,7 +576,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Type ) )	));Wait( 1 );obj << Weight( :Weight );
+
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Type ) )
+	)
+);
+Wait( 1 );
+obj << Weight( :Weight );
 
 ```
 
@@ -310,7 +594,16 @@ dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Weight( :Weight ),	Add Table(		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Type ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Weight( :Weight ),
+	Add Table(
+		Column Table( Analysis Columns( :Horsepower ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Type ) )
+	)
+);
 
 ```
 
@@ -326,7 +619,17 @@ dt = Open( "$SAMPLE_DATA/Car Physical Data.jmp" );obj = dt << Tabulate(	Show C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Column Table( Analysis Columns( :weight ) ) ));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Add( Before( Analysis Columns( :weight ) ), Analysis Columns( :height ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Column Table( Analysis Columns( :weight ) ) )
+);
+Wait( 0 );
+obj << Modify Table(
+	Column Table( 1 ),
+	Add( Before( Analysis Columns( :weight ) ), Analysis Columns( :height ) )
+);
 
 ```
 
@@ -334,7 +637,23 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Add( After( Statistics( Max ) ), Statistics( Range ) ));
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table(
+	Column Table( 1 ),
+	Add( After( Statistics( Max ) ), Statistics( Range ) )
+);
 
 ```
 
@@ -342,7 +661,20 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Add( Before First, Statistics( N ) ) );
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table( Column Table( 1 ), Add( Before First, Statistics( N ) ) );
 
 ```
 
@@ -350,7 +682,23 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Add( Before( Statistics( 2 ) ), Statistics( Median ) ));
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table(
+	Column Table( 1 ),
+	Add( Before( Statistics( 2 ) ), Statistics( Median ) )
+);
 
 ```
 
@@ -364,7 +712,11 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Add Table( Row Table( Grouping Columns( :age ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate( Show Control Panel( 0 ) );
+obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
+obj << Add Table( Row Table( Grouping Columns( :age ) ) );
 
 ```
 
@@ -372,7 +724,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Add Table( Column Table( Grouping Columns( :type ) ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Add Table( Column Table( Grouping Columns( :type ) ) );
 
 ```
 
@@ -386,7 +747,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ) ));obj << Modify Table(	Row Table( 1 ),	Grouping Columns( :Region ),	Aggregate Statistics( :Region ));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ) )
+);
+obj << Modify Table(
+	Row Table( 1 ),
+	Grouping Columns( :Region ),
+	Aggregate Statistics( :Region )
+);
 
 ```
 
@@ -394,7 +765,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ), Aggregate Statistics( :Region ) )	));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Region ), Aggregate Statistics( :Region ) )
+	)
+);
 
 ```
 
@@ -406,7 +785,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Change Item Label( Statistics( Mean, "Average" ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
+obj << Change Item Label( Statistics( Mean, "Average" ) );
 
 ```
 
@@ -420,7 +808,20 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Delete( Analysis Columns( :Assets ) ) );
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table( Column Table( 1 ), Delete( Analysis Columns( :Assets ) ) );
 
 ```
 
@@ -428,13 +829,26 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Delete( Statistics( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table( Column Table( 1 ), Delete( Statistics( 1 ) ) );
 
 ```
 
 ### Display Column Width
 
-**Syntax:** obj &lt;&lt; Display Column Width( Data Column( &lt;Column Table(n)&gt;, path ), &lt;width&gt; ); obj &lt;&lt; Display Column Width( Row Label( &lt;Row Table(n)&gt;, path ), &lt;width&gt; )
+**Syntax:** obj &lt;&lt; Display Column Width( Data Column( &lt;Column Table(n)&gt;, path ), &lt;width&gt; );obj &lt;&lt; Display Column Width( Row Label( &lt;Row Table(n)&gt;, path ), &lt;width&gt; )
 
 **Description:** Sets or returns the display width of a column in a Tabulate report table. Path is a sequence of quoted column headings that traces the path of the column. Width is the width of a column in pixels. Use Data Column to define columns in the main body of the table or Row Label for columns in the row labels area. If there are multiple tables in the report, use Column Table(n) or Row Table(n) to specify which table the path applies to. If width is not specified, this option returns the current width of the specified column.
 
@@ -442,7 +856,23 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :sex, :marital status ),			Analysis Columns( :age ),			Statistics( Sum, "% of Total" )		),		Row Table( Grouping Columns( :type ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Display Column Width(	Column( Column Table( 1 ), "sex", "Female", "Marital status", "Single", "age", "Sum" ));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :sex, :marital status ),
+			Analysis Columns( :age ),
+			Statistics( Sum, "% of Total" )
+		),
+		Row Table( Grouping Columns( :type ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Display Column Width(
+	Column( Column Table( 1 ), "sex", "Female", "Marital status", "Single", "age", "Sum" )
+);
 
 ```
 
@@ -450,7 +880,26 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Mean( :OZONE( 6, 4 ) ) ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Min, Max, Mean, Std Dev ) ),		Row Table( Grouping Columns( :Region ) )	));stats = {"Min", "Max", "Mean", "Std Dev"};ns = N Items( stats );a = {};For( i = 1, i <= ns, i++,	a[i] = obj << Display Column Width( Data Column( "OZONE", stats[i] ) ));amax = Max( a );For( i = 1, i <= ns, i++,	obj << Display Column Width( Data Column( "OZONE", stats[i] ), amax ));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Set Format( Mean( :OZONE( 6, 4 ) ) ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Min, Max, Mean, Std Dev ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
+stats = {"Min", "Max", "Mean", "Std Dev"};
+ns = N Items( stats );
+a = {};
+For( i = 1, i <= ns, i++,
+	a[i] = obj << Display Column Width( Data Column( "OZONE", stats[i] ) )
+);
+amax = Max( a );
+For( i = 1, i <= ns, i++,
+	obj << Display Column Width( Data Column( "OZONE", stats[i] ), amax )
+);
 
 ```
 
@@ -458,7 +907,21 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :sex, :marital status ),			Analysis Columns( :age ),			Statistics( Sum, "% of Total" )		),		Row Table( Grouping Columns( :type ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Display Column Width( Row Label( Row Table( 2 ), "country" ), 150 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :sex, :marital status ),
+			Analysis Columns( :age ),
+			Statistics( Sum, "% of Total" )
+		),
+		Row Table( Grouping Columns( :type ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Display Column Width( Row Label( Row Table( 2 ), "country" ), 150 );
 
 ```
 
@@ -470,7 +933,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Full Path Column Name( 1 );obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Full Path Column Name( 1 );
+obj << Make Into Data Table;
 
 ```
 
@@ -484,7 +957,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));obj << Ignore Duplicate Responses( Grouping Columns( :family cars ), 1 );
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :family cars ) ),
+		Row Table( Grouping Columns( :sex, :age ) )
+	)
+);
+obj << Ignore Duplicate Responses( Grouping Columns( :family cars ), 1 );
 
 ```
 
@@ -492,7 +974,16 @@ dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Ignore Duplicate Responses( Grouping Columns( :family cars ), 1 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Ignore Duplicate Responses( Grouping Columns( :family cars ), 1 ),
+	Add Table(
+		Column Table( Grouping Columns( :family cars ) ),
+		Row Table( Grouping Columns( :sex, :age ) )
+	)
+);
 
 ```
 
@@ -508,7 +999,16 @@ dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));obj << Ignore Duplicates In Multiple Response Columns( 1 );
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :family cars ) ),
+		Row Table( Grouping Columns( :sex, :age ) )
+	)
+);
+obj << Ignore Duplicates In Multiple Response Columns( 1 );
 
 ```
 
@@ -516,7 +1016,16 @@ dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Ignore Duplicates In Multiple Response Columns( 1 ),	Add Table(		Column Table( Grouping Columns( :family cars ) ),		Row Table( Grouping Columns( :sex, :age ) )	));
+
+dt = Open( "$Sample_Data/Big Class Families.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Ignore Duplicates In Multiple Response Columns( 1 ),
+	Add Table(
+		Column Table( Grouping Columns( :family cars ) ),
+		Row Table( Grouping Columns( :sex, :age ) )
+	)
+);
 
 ```
 
@@ -530,7 +1039,13 @@ dt = Open( "$Sample_Data/Big Class Families.jmp" );obj = dt << Tabulate(	Show 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :Doors ) ) ));obj << Include Missing For Grouping Columns( 1 );
+
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Row Table( Grouping Columns( :Doors ) ) )
+);
+obj << Include Missing For Grouping Columns( 1 );
 
 ```
 
@@ -538,7 +1053,13 @@ dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Include Missing For Grouping Columns( 1 ),	Add Table( Row Table( Grouping Columns( :Doors ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Include Missing For Grouping Columns( 1 ),
+	Add Table( Row Table( Grouping Columns( :Doors ) ) )
+);
 
 ```
 
@@ -552,7 +1073,16 @@ dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Make Into Data Table;
 
 ```
 
@@ -560,7 +1090,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Make into Data Table( Invisible( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Make into Data Table( Invisible( 1 ) );
 
 ```
 
@@ -568,7 +1107,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Make into Data Table( Full Path Column Name( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Make into Data Table( Full Path Column Name( 1 ) );
 
 ```
 
@@ -584,7 +1132,18 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 1 );obj << Max Scroll Locked Columns( 2 );obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Scroll Lock Row Headers In Data Table Export( 1 );
+obj << Max Scroll Locked Columns( 2 );
+obj << Make Into Data Table;
 
 ```
 
@@ -592,7 +1151,18 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 1 );obj << Max Scroll Locked Columns( 1 );obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Scroll Lock Row Headers In Data Table Export( 1 );
+obj << Max Scroll Locked Columns( 1 );
+obj << Make Into Data Table;
 
 ```
 
@@ -606,7 +1176,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height ), Grouping Columns( :sex ) ),		Row Table( Grouping Columns( :name ) )	));obj << Missing Sum Is Zero( 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :height ), Grouping Columns( :sex ) ),
+		Row Table( Grouping Columns( :name ) )
+	)
+);
+obj << Missing Sum Is Zero( 1 );
 
 ```
 
@@ -614,7 +1193,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Missing Sum Is Zero( 1 ),	Add Table(		Column Table( Analysis Columns( :height ), Grouping Columns( :sex ) ),		Row Table( Grouping Columns( :name ) )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Missing Sum Is Zero( 1 ),
+	Add Table(
+		Column Table( Analysis Columns( :height ), Grouping Columns( :sex ) ),
+		Row Table( Grouping Columns( :name ) )
+	)
+);
 
 ```
 
@@ -628,7 +1216,19 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Panel( 0 ) );obj << Add Table( Column Table( Grouping Columns( :sex ) ) );obj << Add table( Row Table( Grouping Columns( :age ) ) );obj << Add Table( Column Table( Analysis Columns( :height ) ) );obj << Add Table( Column Table( Analysis Columns( :weight ) ) );obj << Modify Table( Column Table( 2 ), Statistics( Min, Max ) );obj << Modify Table( Column Table( 2 ), Grouping Columns( :sex ) );obj << Modify Table( Column Table( 2 ), Analysis Columns( :weight ) );Wait( 1 );obj << Modify Table( Column Table( 2 ), Delete( Analysis Columns( :weight ) ) );obj << Modify Table( Column Table( 2 ), Delete( Statistics( Sum ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate( Show Control Panel( 0 ) );
+obj << Add Table( Column Table( Grouping Columns( :sex ) ) );
+obj << Add table( Row Table( Grouping Columns( :age ) ) );
+obj << Add Table( Column Table( Analysis Columns( :height ) ) );
+obj << Add Table( Column Table( Analysis Columns( :weight ) ) );
+obj << Modify Table( Column Table( 2 ), Statistics( Min, Max ) );
+obj << Modify Table( Column Table( 2 ), Grouping Columns( :sex ) );
+obj << Modify Table( Column Table( 2 ), Analysis Columns( :weight ) );
+Wait( 1 );
+obj << Modify Table( Column Table( 2 ), Delete( Analysis Columns( :weight ) ) );
+obj << Modify Table( Column Table( 2 ), Delete( Statistics( Sum ) ) );
 
 ```
 
@@ -636,7 +1236,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate( Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table( Column Table( 1 ), Delete( Analysis Columns( :Assets ) ) );
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table( Column Table( 1 ), Delete( Analysis Columns( :Assets ) ) );
 
 ```
 
@@ -650,7 +1263,20 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age, :sex ), Stack Grouping Columns( 1 ) )	));obj << Modify Table(	Row Table( 1 ),	Modify Table Option( Change Stacked Group Label ),	"new label");
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :age, :sex ), Stack Grouping Columns( 1 ) )
+	)
+);
+obj << Modify Table(
+	Row Table( 1 ),
+	Modify Table Option( Change Stacked Group Label ),
+	"new label"
+);
 
 ```
 
@@ -658,7 +1284,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),		Row Table( Grouping Columns( :age, :sex ) )	));obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns( true ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :height ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :age, :sex ) )
+	)
+);
+obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns( true ) ) );
 
 ```
 
@@ -674,7 +1309,24 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Row Table( 1 ),	Move( Column Table( 1 ), Grouping Column( :Type ) ),	Before First);
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table(
+	Row Table( 1 ),
+	Move( Column Table( 1 ), Grouping Column( :Type ) ),
+	Before First
+);
 
 ```
 
@@ -682,7 +1334,24 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :Type ),			Analysis Columns( :"Sales ($M)"n, :Assets ),			Statistics( Min, Mean, Max )		)	));Wait( 0 );obj << Modify Table(	Column Table( 1 ),	Move( Column Table( 1 ), Statistics( Mean ) ),	After( Statistics( Max ) ));
+
+dt = Open( "$SAMPLE_DATA/Companies.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :Type ),
+			Analysis Columns( :"Sales ($M)"n, :Assets ),
+			Statistics( Min, Mean, Max )
+		)
+	)
+);
+Wait( 0 );
+obj << Modify Table(
+	Column Table( 1 ),
+	Move( Column Table( 1 ), Statistics( Mean ) ),
+	After( Statistics( Max ) )
+);
 
 ```
 
@@ -694,7 +1363,13 @@ dt = Open( "$SAMPLE_DATA/Companies.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :age ) ) ));obj << Order By Count( Grouping Columns( :age ), 1 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Row Table( Grouping Columns( :age ) ) )
+);
+obj << Order By Count( Grouping Columns( :age ), 1 );
 
 ```
 
@@ -702,7 +1377,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Order By Count( Grouping Columns( :age ), 1 ),	Add Table( Row Table( Grouping Columns( :age ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Order By Count( Grouping Columns( :age ), 1 ),
+	Add Table( Row Table( Grouping Columns( :age ) ) )
+);
 
 ```
 
@@ -716,7 +1397,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table( Row Table( Grouping Columns( :Make ) ) ));obj << Order by Count of Grouping Columns( 1 );
+
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table( Row Table( Grouping Columns( :Make ) ) )
+);
+obj << Order by Count of Grouping Columns( 1 );
 
 ```
 
@@ -724,7 +1411,13 @@ dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Order by Count of Grouping Columns( 1 ),	Add Table( Row Table( Grouping Columns( :Make ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Cars.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Order by Count of Grouping Columns( 1 ),
+	Add Table( Row Table( Grouping Columns( :Make ) ) )
+);
 
 ```
 
@@ -738,7 +1431,22 @@ dt = Open( "$SAMPLE_DATA/Cars.jmp" );obj = dt << Tabulate(	Show Control Panel(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( Sum ), Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ) ),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));obj << Modify Table(	Column Table( 1 ),	Pack(		Analysis Columns( City MPG, Hwy MPG, Comb MPG ),		Template( "^FIRST  (^OTHERS)", "/" )	));
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Statistics( Sum ), Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ) ),
+		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
+	)
+);
+obj << Modify Table(
+	Column Table( 1 ),
+	Pack(
+		Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+		Template( "^FIRST  (^OTHERS)", "/" )
+	)
+);
 
 ```
 
@@ -746,7 +1454,19 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack( Analysis Columns( City MPG, Hwy MPG, Comb MPG ) )		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Statistics( Sum ),
+			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+			Pack( Analysis Columns( City MPG, Hwy MPG, Comb MPG ) )
+		),
+		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
+	)
+);
 
 ```
 
@@ -754,7 +1474,22 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Statistics( Sum ),
+			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+			Pack(
+				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+				Template( "^FIRST  (^OTHERS)", "/" )
+			)
+		),
+		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
+	)
+);
 
 ```
 
@@ -766,7 +1501,18 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Chart( 1 );Wait( 2 );obj << Plot Scale( 0, 25 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Show Chart( 1 );
+Wait( 2 );
+obj << Plot Scale( 0, 25 );
 
 ```
 
@@ -778,7 +1524,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :Region ) ),		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )	));Wait( 2 );obj << Remove Column Label( Grouping Columns( :Region ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :Region ) ),
+		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )
+	)
+);
+Wait( 2 );
+obj << Remove Column Label( Grouping Columns( :Region ) );
 
 ```
 
@@ -790,7 +1546,18 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :Region ) ),		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )	));obj << Remove Column Label( Grouping Columns( :Region ) );Wait( 2 );obj << Restore Column Label( Grouping Columns( :Region ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :Region ) ),
+		Row Table( Analysis Columns( :OZONE, :CO, :NO, :SO2 ), Statistics( Mean ) )
+	)
+);
+obj << Remove Column Label( Grouping Columns( :Region ) );
+Wait( 2 );
+obj << Restore Column Label( Grouping Columns( :Region ) );
 
 ```
 
@@ -806,7 +1573,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( N ), Analysis Columns( :age ) ),		Row Table( Grouping Columns( :sex ) )	));obj << Modify Table( Column Table( 1 ), Retype( Analysis Column( :age ) ), Grouping Column );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Statistics( N ), Analysis Columns( :age ) ),
+		Row Table( Grouping Columns( :sex ) )
+	)
+);
+obj << Modify Table( Column Table( 1 ), Retype( Analysis Column( :age ) ), Grouping Column );
 
 ```
 
@@ -814,7 +1590,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( N ), Grouping Columns( :age ) ),		Row Table( Grouping Columns( :sex ) )	));obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analysis Column );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Statistics( N ), Grouping Columns( :age ) ),
+		Row Table( Grouping Columns( :sex ) )
+	)
+);
+obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analysis Column );
 
 ```
 
@@ -830,7 +1615,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Grouping As Tags In Data Table Export( 0 );obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Save Grouping As Tags In Data Table Export( 0 );
+obj << Make Into Data Table;
 
 ```
 
@@ -838,7 +1633,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Grouping As Tags In Data Table Export( 1 );obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Save Grouping As Tags In Data Table Export( 1 );
+obj << Make Into Data Table;
 
 ```
 
@@ -854,7 +1659,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 0 );obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Scroll Lock Row Headers In Data Table Export( 0 );
+obj << Make Into Data Table;
 
 ```
 
@@ -862,7 +1677,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Scroll Lock Row Headers In Data Table Export( 1 );obj << Make Into Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Scroll Lock Row Headers In Data Table Export( 1 );
+obj << Make Into Data Table;
 
 ```
 
@@ -876,7 +1701,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Set Format( Mean( :OZONE( 6, 4 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
+obj << Set Format( Mean( :OZONE( 6, 4 ) ) );
 
 ```
 
@@ -884,7 +1718,37 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Tabulate(	Show Control Panel( 0 ),	Set Format(		Mean(			:height( 10, 1 ),			Analysis Column(				Transform Column( "Log[height]", Formula( Log( :height ) ) ),				Format( 10, "Best" )			)		),		"% of Total"n(			:height( 12, 2 ),			Analysis Column(				Transform Column( "Log[height]", Formula( Log( :height ) ) ),				Format( 12, 2 )			)		)	),	Add Table(		Column Table(			Analysis Columns(				:height,				Transform Column( "Log[height]", Formula( Log( :height ) ) )			),			Statistics( Mean, "% of Total"n )		),		Row Table( Grouping Columns( :sex ) )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Tabulate(
+	Show Control Panel( 0 ),
+	Set Format(
+		Mean(
+			:height( 10, 1 ),
+			Analysis Column(
+				Transform Column( "Log[height]", Formula( Log( :height ) ) ),
+				Format( 10, "Best" )
+			)
+		),
+		"% of Total"n(
+			:height( 12, 2 ),
+			Analysis Column(
+				Transform Column( "Log[height]", Formula( Log( :height ) ) ),
+				Format( 12, 2 )
+			)
+		)
+	),
+	Add Table(
+		Column Table(
+			Analysis Columns(
+				:height,
+				Transform Column( "Log[height]", Formula( Log( :height ) ) )
+			),
+			Statistics( Mean, "% of Total"n )
+		),
+		Row Table( Grouping Columns( :sex ) )
+	)
+);
 
 ```
 
@@ -892,7 +1756,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );Tabulate(	Show Control Panel( 0 ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Mean( :OZONE( 6, 4 ) ) ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),		Row Table( Grouping Columns( :Region ) )	));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Set Format( Mean( :OZONE( 6, 4 ) ) ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
 
 ```
 
@@ -900,7 +1773,13 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Set Format( Row %( Format( 9, 1, "Percent" ) ) ),	Add Table( Column Table( Grouping Columns( :age ), Statistics( Row % ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Set Format( Row %( Format( 9, 1, "Percent" ) ) ),
+	Add Table( Column Table( Grouping Columns( :age ), Statistics( Row % ) ) )
+);
 
 ```
 
@@ -912,7 +1791,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Chart( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Show Chart( 1 );
 
 ```
 
@@ -924,7 +1812,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Control Panel( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Show Control Panel( 1 );
 
 ```
 
@@ -936,7 +1833,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Shading( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Show Shading( 1 );
 
 ```
 
@@ -948,7 +1854,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Table( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Show Table( 1 );
 
 ```
 
@@ -962,7 +1877,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 1 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));obj << Show Test Build Panel( 1 );
+
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 1 ),
+	Add Table(
+		Column Table( Statistics( Mean, Std Dev ) ),
+		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
+	)
+);
+obj << Show Test Build Panel( 1 );
 
 ```
 
@@ -970,7 +1894,16 @@ dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 1 ),	Show Test Build Panel( 1 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));
+
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 1 ),
+	Show Test Build Panel( 1 ),
+	Add Table(
+		Column Table( Statistics( Mean, Std Dev ) ),
+		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
+	)
+);
 
 ```
 
@@ -982,7 +1915,16 @@ dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Tool Tip( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Show Tool Tip( 1 );
 
 ```
 
@@ -996,7 +1938,24 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :marital status ),			Add Aggregate Statistics( :marital status ),			Analysis Columns( :age ),			Statistics( Min, Max )		),		Row Table(			Grouping Columns( :sex, :country, :size ),			Add Aggregate Statistics( :sex, :country, :size )		)	));obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns( 1 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :marital status ),
+			Add Aggregate Statistics( :marital status ),
+			Analysis Columns( :age ),
+			Statistics( Min, Max )
+		),
+		Row Table(
+			Grouping Columns( :sex, :country, :size ),
+			Add Aggregate Statistics( :sex, :country, :size )
+		)
+	)
+);
+obj << Modify Table( Row Table( 1 ), Modify Table Option( Stack Grouping Columns( 1 ) ) );
 
 ```
 
@@ -1004,7 +1963,24 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Grouping Columns( :marital status ),			Add Aggregate Statistics( :marital status ),			Analysis Columns( :age ),			Statistics( Min, Max )		),		Row Table(			Grouping Columns( :sex, :country, :size ),			Add Aggregate Statistics( :sex, :country, :size ),			Stack Grouping Columns( 1 )		)	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Grouping Columns( :marital status ),
+			Add Aggregate Statistics( :marital status ),
+			Analysis Columns( :age ),
+			Statistics( Min, Max )
+		),
+		Row Table(
+			Grouping Columns( :sex, :country, :size ),
+			Add Aggregate Statistics( :sex, :country, :size ),
+			Stack Grouping Columns( 1 )
+		)
+	)
+);
 
 ```
 
@@ -1018,7 +1994,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean, Max ) ),		Row Table( Grouping Columns( :Region ) )	));obj << Modify Table( Column Table( 1 ), Statistics( Min ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean, Max ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
+obj << Modify Table( Column Table( 1 ), Statistics( Min ) );
 
 ```
 
@@ -1026,7 +2011,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Analysis Columns( :OZONE ), Statistics( Mean, Max ) ),		Row Table( Grouping Columns( :Region ) )	));
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Analysis Columns( :OZONE ), Statistics( Mean, Max ) ),
+		Row Table( Grouping Columns( :Region ) )
+	)
+);
 
 ```
 
@@ -1040,7 +2033,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );obj = dt << Tabulate(	Show Control Pane
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));obj << Test Build( Sample Size( 100 ) );
+
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Statistics( Mean, Std Dev ) ),
+		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
+	)
+);
+obj << Test Build( Sample Size( 100 ) );
 
 ```
 
@@ -1048,7 +2050,16 @@ dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Test Build( Sample Size( 100 ) ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));
+
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Test Build( Sample Size( 100 ) ),
+	Add Table(
+		Column Table( Statistics( Mean, Std Dev ) ),
+		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
+	)
+);
 
 ```
 
@@ -1060,7 +2071,17 @@ dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Statistics( Mean, Std Dev ) ),		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )	));obj << Test Build( Sample Size( 100 ) );obj << Test Data View;
+
+dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Statistics( Mean, Std Dev ) ),
+		Row Table( Analysis Columns( :ForSc, :SideSc, :CD3, :CD8, :CD4, :MCB ) )
+	)
+);
+obj << Test Build( Sample Size( 100 ) );
+obj << Test Data View;
 
 ```
 
@@ -1072,7 +2093,18 @@ dt = Open( "$SAMPLE_DATA/Cytometry.jmp" );obj = dt << Tabulate(	Show Control P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Add Table( Column Table( Grouping Columns( :type ) ) );Wait( 2 );obj << Undo;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Add Table( Column Table( Grouping Columns( :type ) ) );
+Wait( 2 );
+obj << Undo;
 
 ```
 
@@ -1084,7 +2116,18 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Show Chart( 1 );Wait( 2 );obj << Uniform Plot Scale( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Show Chart( 1 );
+Wait( 2 );
+obj << Uniform Plot Scale( 1 );
 
 ```
 
@@ -1096,7 +2139,23 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table(			Statistics( Sum ),			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),			Pack(				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),				Template( "^FIRST  (^OTHERS)", "/" )			)		),		Row Table( Grouping Columns( :Mfr Name, :Engine ) )	));obj << Modify Table( Column Table( 1 ), Unpack( Analysis Columns( :City MPG ) ) );
+
+dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table(
+			Statistics( Sum ),
+			Analysis Columns( :City MPG, :Hwy MPG, :Comb MPG ),
+			Pack(
+				Analysis Columns( City MPG, Hwy MPG, Comb MPG ),
+				Template( "^FIRST  (^OTHERS)", "/" )
+			)
+		),
+		Row Table( Grouping Columns( :Mfr Name, :Engine ) )
+	)
+);
+obj << Modify Table( Column Table( 1 ), Unpack( Analysis Columns( :City MPG ) ) );
 
 ```
 
@@ -1110,7 +2169,13 @@ dt = Open( "$SAMPLE_DATA/Hybrid Fuel Economy.jmp" );obj = dt << Tabulate(	Show
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1126,7 +2191,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -1134,7 +2206,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1142,7 +2218,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1154,7 +2234,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -1168,7 +2258,13 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1180,7 +2276,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -1192,7 +2294,23 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -1204,7 +2322,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Copy Script;
 
 ```
 
@@ -1216,7 +2343,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Data Table Window;
 
 ```
 
@@ -1230,7 +2366,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -1242,7 +2381,24 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -1256,7 +2412,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1264,7 +2430,28 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -1276,7 +2463,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -1288,7 +2485,12 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1300,7 +2502,17 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -1312,7 +2524,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -1324,7 +2546,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -1336,7 +2568,11 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -1350,7 +2586,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1362,7 +2602,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1374,7 +2621,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -1388,7 +2643,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -1400,7 +2658,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1412,7 +2679,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Redo Analysis;
 
 ```
 
@@ -1424,7 +2700,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -1436,7 +2721,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -1448,19 +2741,40 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1472,7 +2786,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -1484,7 +2807,23 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1496,7 +2835,23 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -1508,7 +2863,23 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1520,7 +2891,15 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -1530,19 +2909,17 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
-**Example 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -1554,7 +2931,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1566,7 +2952,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -1578,7 +2973,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Save Script to Report;
 
 ```
 
@@ -1590,7 +2994,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -1602,7 +3015,16 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -1614,7 +3036,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -1626,7 +3062,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -1638,7 +3080,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -1650,7 +3097,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -1662,7 +3118,18 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Panel( 0 ),	Add Table(		Column Table( Grouping Columns( :sex, :marital status ) ),		Row Table( Grouping Columns( :country, :size ) )	));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Tabulate(
+	Show Control Panel( 0 ),
+	Add Table(
+		Column Table( Grouping Columns( :sex, :marital status ) ),
+		Row Table( Grouping Columns( :country, :size ) )
+	)
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1676,7 +3143,12 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Tabulate(	Show Control Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -1688,7 +3160,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -1700,7 +3175,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 

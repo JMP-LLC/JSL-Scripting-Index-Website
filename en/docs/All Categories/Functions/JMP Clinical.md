@@ -28,7 +28,13 @@
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adverse Events Distribution",	["objRefNS:stkcb" => "AESER"]);
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
 
 ```
 
@@ -54,7 +60,14 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Current Data Table() << SelectWhere( :Serious Event == "Y" );Wait( 1 );JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );Wait( 1 );JMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Unique Subject Identifier" );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 1 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+Wait( 1 );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Unique Subject Identifier" );
 
 ```
 
@@ -96,7 +109,14 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Current Data Tabl
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Wait( 1 );JMPClinicalReviewAPI:changeReport(	.,	"Customized Adverse Events Distribution",	["objRefNS:stkcb" => "AESER"]);
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:changeReport(
+	.,
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
 
 ```
 
@@ -132,7 +152,11 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Wait( 1 );JMPCli
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );Wait( 1 );JMPClinicalReviewAPI:changeReportColumnSwitcherSelection( ., 1, "Glucose (mmol/L)" );
+
+JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );
+Wait( 1 );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Glucose (mmol/L)" );
 
 ```
 
@@ -166,7 +190,13 @@ JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );Wait( 1 );JMPClinicalRevi
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:changeReportFilterSelection(	.,	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50");
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
 
 ```
 
@@ -200,7 +230,10 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Wait( 1 );JMPClinicalReviewAPI:changeReportOptions( ., ["objRefNS:stkcb" => "AESER"] );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:changeReportOptions( ., ["objRefNS:stkcb" => "AESER"] );
 
 ```
 
@@ -222,7 +255,16 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Wait( 1 );JMPCli
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );//JMPClinicalReviewAPI:changeReviewSubjectFilter("My Saved Filter Name");Wait( 1 );JMPClinicalReviewAPI:changeReviewSubjectFilter(	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ), Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ), Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))");Wait( 1 );JMPClinicalReviewAPI:changeReviewSubjectFilter( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+//JMPClinicalReviewAPI:changeReviewSubjectFilter("My Saved Filter Name");
+Wait( 1 );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter(
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ), Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ), Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+Wait( 1 );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . );
 
 ```
 
@@ -248,7 +290,12 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );//JMPClinicalRevi
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );Wait( 1 );JMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex" );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Wait( 1 );
+JMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex" );
 
 ```
 
@@ -263,6 +310,7 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
  \* return - N/A
 
 ```jsl
+
 
 JMPClinicalReviewAPI:closeReviewBuilder();
 
@@ -330,7 +378,195 @@ JMPClinicalReviewAPI:closeReviewBuilder();
 
 ```jsl
 
-/* * Use the following environment variables to control elements of the batch execution:  * * set JMPClinicalBatchMode=true                    options include: true, debug * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used  * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)*/exitJMPClinicalBatch = Function( {},	{},	Save Log(		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||		"JMPClinicalBatchLog.log"	);	Exit(););Show( JMPClinicalReviewAPI:getCurrentStudy() );// Build a review templatern = JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adverse Events Distribution",	["objRefNS:stkcb" => "AESER"]);JMPClinicalReviewAPI:renameReport(	., "AESER Stack Adverse Events Distribution"); // . refers to the currently selected report tabJMPClinicalReviewAPI:changeReportOptions(	rn,	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]); // Can also use report namespace, reference, index, title, or nameShow( JMPClinicalReviewAPI:getReportOptions( . ) );Show( JMPClinicalReviewAPI:getAllReportReferences() );Show(	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )); // CAUTION: Report names are NOT guaranteed to be unique within a reviewShow(	JMPClinicalReviewAPI:getReportIndex(		"AESER Stack Adverse Events Distribution"	)); // Report titles are guaranteed to be unique within a reviewShow( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a reviewJMPClinicalReviewAPI:resetReport( . );JMPClinicalReviewAPI:renameReport( ., . );JMPClinicalReviewAPI:addReport(	"FindingsBoxPlots",	"Customized Findings Box Plots",	[=> ]);Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );JMPClinicalReviewAPI:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );JMPClinicalReviewAPI:changeReport( ., ., . );JMPClinicalReviewAPI:deleteReport( . );JMPClinicalReviewAPI:deleteReport( . );JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:changeReportFilterSelection(	.,	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50");JMPClinicalReviewAPI:changeReportFilterSelection(	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}");JMPClinicalReviewAPI:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );Current Data Table() << SelectWhere( :Serious Event == "Y" );Wait( 0 );JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );JMPClinicalReviewAPI:moveReport(	"DemographicsDistribution", "AdverseEventsDistribution");JMPClinicalReviewAPI:moveReport( 2, 1 );JMPClinicalReviewAPI:duplicateReport( 1 );JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );JMPClinicalReviewAPI:createStaticReportForReport( . );JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );JMPClinicalReviewAPI:selectReport( 1 );JMPClinicalReviewAPI:showReportTables( . );JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)JMPClinicalReviewAPI:changeReviewSubjectFilter( // Change the review subject filter to this definition	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))");JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filterJMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );JMPClinicalReviewAPI:resetAllReports();JMPClinicalReviewAPI:deleteAllReports();JMPClinicalReviewAPI:closeReviewBuilder();// Use an existing review templateJMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",	1, 0, 1, 0);If( !Directory Exists( "C:\JMPClinicalReviewManager" ),	Create Directory( "C:\JMPClinicalReviewManager" ));If( Directory Exists( "C:\JMPClinicalReviewManager" ),	JMPClinicalReviewAPI:createStaticReport(		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,		1	));JMPClinicalReviewAPI:createLiveReport(	["ConnectionName" => Empty(),	"Space" => "_PERSONAL_",	"Folder" => "",	"PublishData" => 0,	"PublishOptimization" => 1,	"PublishNotes" => 0,	"PatientProfilesPublishPopulation" => "SELECTED",	"PatientProfilesPublishGraphs" => 1,	"PatientProfilesPublishTables" => 1]);JMPClinicalReviewAPI:closeReviewBuilder();exitJMPClinicalBatch();/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+Show( JMPClinicalReviewAPI:getCurrentStudy() );
+// Build a review template
+rn = JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:renameReport(
+	., "AESER Stack Adverse Events Distribution"
+); // . refers to the currently selected report tab
+JMPClinicalReviewAPI:changeReportOptions(
+	rn,
+	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]
+); // Can also use report namespace, reference, index, title, or name
+Show( JMPClinicalReviewAPI:getReportOptions( . ) );
+Show( JMPClinicalReviewAPI:getAllReportReferences() );
+Show(
+	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )
+); // CAUTION: Report names are NOT guaranteed to be unique within a review
+Show(
+	JMPClinicalReviewAPI:getReportIndex(
+		"AESER Stack Adverse Events Distribution"
+	)
+); // Report titles are guaranteed to be unique within a review
+Show( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review 
+Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a review
+JMPClinicalReviewAPI:resetReport( . );
+JMPClinicalReviewAPI:renameReport( ., . );
+JMPClinicalReviewAPI:addReport(
+	"FindingsBoxPlots",
+	"Customized Findings Box Plots",
+	[=> ]
+);
+Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );
+JMPClinicalReviewAPI:changeReport( ., ., . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );
+Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 0 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+JMPClinicalReviewAPI:moveReport(
+	"DemographicsDistribution", "AdverseEventsDistribution"
+);
+JMPClinicalReviewAPI:moveReport( 2, 1 );
+JMPClinicalReviewAPI:duplicateReport( 1 );
+JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:createStaticReportForReport( . );
+JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );
+JMPClinicalReviewAPI:selectReport( 1 );
+JMPClinicalReviewAPI:showReportTables( . );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter( // Change the review subject filter to this definition
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),
+    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filter
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );
+JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );
+JMPClinicalReviewAPI:resetAllReports();
+JMPClinicalReviewAPI:deleteAllReports();
+JMPClinicalReviewAPI:closeReviewBuilder();
+
+// Use an existing review template
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	JMPClinicalReviewAPI:createStaticReport(
+		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,
+		1
+	)
+);
+JMPClinicalReviewAPI:createLiveReport(
+	["ConnectionName" => Empty(),
+	"Space" => "_PERSONAL_",
+	"Folder" => "",
+	"PublishData" => 0,
+	"PublishOptimization" => 1,
+	"PublishNotes" => 0,
+	"PatientProfilesPublishPopulation" => "SELECTED",
+	"PatientProfilesPublishGraphs" => 1,
+	"PatientProfilesPublishTables" => 1]
+);
+JMPClinicalReviewAPI:closeReviewBuilder();
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -338,7 +574,24 @@ JMPClinicalReviewAPI:closeReviewBuilder();
 
 ```jsl
 
-JMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",	1, 0, 1, 0);Web(	JMPClinicalReviewAPI:createLiveReport(		["ConnectionName" => Empty(),		"Space" => "_PERSONAL_",		"Folder" => "",		"PublishData" => 0,		"PublishOptimization" => 1,		"PublishNotes" => 0,		"PatientProfilesPublishPopulation" => "SELECTED",		"PatientProfilesPublishGraphs" => 1,		"PatientProfilesPublishTables" => 1]	));
+
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+Web(
+	JMPClinicalReviewAPI:createLiveReport(
+		["ConnectionName" => Empty(),
+		"Space" => "_PERSONAL_",
+		"Folder" => "",
+		"PublishData" => 0,
+		"PublishOptimization" => 1,
+		"PublishNotes" => 0,
+		"PatientProfilesPublishPopulation" => "SELECTED",
+		"PatientProfilesPublishGraphs" => 1,
+		"PatientProfilesPublishTables" => 1]
+	)
+);
 
 ```
 
@@ -408,7 +661,11 @@ JMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Cli
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );JMPClinicalReviewAPI:selectReport( 1 );Web( JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] ) );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:selectReport( 1 );
+Web( JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] ) );
 
 ```
 
@@ -444,7 +701,195 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-/* * Use the following environment variables to control elements of the batch execution:  * * set JMPClinicalBatchMode=true                    options include: true, debug * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used  * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)*/exitJMPClinicalBatch = Function( {},	{},	Save Log(		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||		"JMPClinicalBatchLog.log"	);	Exit(););Show( JMPClinicalReviewAPI:getCurrentStudy() );// Build a review templatern = JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adverse Events Distribution",	["objRefNS:stkcb" => "AESER"]);JMPClinicalReviewAPI:renameReport(	., "AESER Stack Adverse Events Distribution"); // . refers to the currently selected report tabJMPClinicalReviewAPI:changeReportOptions(	rn,	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]); // Can also use report namespace, reference, index, title, or nameShow( JMPClinicalReviewAPI:getReportOptions( . ) );Show( JMPClinicalReviewAPI:getAllReportReferences() );Show(	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )); // CAUTION: Report names are NOT guaranteed to be unique within a reviewShow(	JMPClinicalReviewAPI:getReportIndex(		"AESER Stack Adverse Events Distribution"	)); // Report titles are guaranteed to be unique within a reviewShow( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a reviewJMPClinicalReviewAPI:resetReport( . );JMPClinicalReviewAPI:renameReport( ., . );JMPClinicalReviewAPI:addReport(	"FindingsBoxPlots",	"Customized Findings Box Plots",	[=> ]);Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );JMPClinicalReviewAPI:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );JMPClinicalReviewAPI:changeReport( ., ., . );JMPClinicalReviewAPI:deleteReport( . );JMPClinicalReviewAPI:deleteReport( . );JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:changeReportFilterSelection(	.,	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50");JMPClinicalReviewAPI:changeReportFilterSelection(	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}");JMPClinicalReviewAPI:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );Current Data Table() << SelectWhere( :Serious Event == "Y" );Wait( 0 );JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );JMPClinicalReviewAPI:moveReport(	"DemographicsDistribution", "AdverseEventsDistribution");JMPClinicalReviewAPI:moveReport( 2, 1 );JMPClinicalReviewAPI:duplicateReport( 1 );JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );JMPClinicalReviewAPI:createStaticReportForReport( . );JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );JMPClinicalReviewAPI:selectReport( 1 );JMPClinicalReviewAPI:showReportTables( . );JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)JMPClinicalReviewAPI:changeReviewSubjectFilter( // Change the review subject filter to this definition	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))");JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filterJMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );JMPClinicalReviewAPI:resetAllReports();JMPClinicalReviewAPI:deleteAllReports();JMPClinicalReviewAPI:closeReviewBuilder();// Use an existing review templateJMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",	1, 0, 1, 0);If( !Directory Exists( "C:\JMPClinicalReviewManager" ),	Create Directory( "C:\JMPClinicalReviewManager" ));If( Directory Exists( "C:\JMPClinicalReviewManager" ),	JMPClinicalReviewAPI:createStaticReport(		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,		1	));JMPClinicalReviewAPI:createLiveReport(	["ConnectionName" => Empty(),	"Space" => "_PERSONAL_",	"Folder" => "",	"PublishData" => 0,	"PublishOptimization" => 1,	"PublishNotes" => 0,	"PatientProfilesPublishPopulation" => "SELECTED",	"PatientProfilesPublishGraphs" => 1,	"PatientProfilesPublishTables" => 1]);JMPClinicalReviewAPI:closeReviewBuilder();exitJMPClinicalBatch();/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+Show( JMPClinicalReviewAPI:getCurrentStudy() );
+// Build a review template
+rn = JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:renameReport(
+	., "AESER Stack Adverse Events Distribution"
+); // . refers to the currently selected report tab
+JMPClinicalReviewAPI:changeReportOptions(
+	rn,
+	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]
+); // Can also use report namespace, reference, index, title, or name
+Show( JMPClinicalReviewAPI:getReportOptions( . ) );
+Show( JMPClinicalReviewAPI:getAllReportReferences() );
+Show(
+	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )
+); // CAUTION: Report names are NOT guaranteed to be unique within a review
+Show(
+	JMPClinicalReviewAPI:getReportIndex(
+		"AESER Stack Adverse Events Distribution"
+	)
+); // Report titles are guaranteed to be unique within a review
+Show( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review 
+Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a review
+JMPClinicalReviewAPI:resetReport( . );
+JMPClinicalReviewAPI:renameReport( ., . );
+JMPClinicalReviewAPI:addReport(
+	"FindingsBoxPlots",
+	"Customized Findings Box Plots",
+	[=> ]
+);
+Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );
+JMPClinicalReviewAPI:changeReport( ., ., . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );
+Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 0 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+JMPClinicalReviewAPI:moveReport(
+	"DemographicsDistribution", "AdverseEventsDistribution"
+);
+JMPClinicalReviewAPI:moveReport( 2, 1 );
+JMPClinicalReviewAPI:duplicateReport( 1 );
+JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:createStaticReportForReport( . );
+JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );
+JMPClinicalReviewAPI:selectReport( 1 );
+JMPClinicalReviewAPI:showReportTables( . );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter( // Change the review subject filter to this definition
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),
+    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filter
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );
+JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );
+JMPClinicalReviewAPI:resetAllReports();
+JMPClinicalReviewAPI:deleteAllReports();
+JMPClinicalReviewAPI:closeReviewBuilder();
+
+// Use an existing review template
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	JMPClinicalReviewAPI:createStaticReport(
+		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,
+		1
+	)
+);
+JMPClinicalReviewAPI:createLiveReport(
+	["ConnectionName" => Empty(),
+	"Space" => "_PERSONAL_",
+	"Folder" => "",
+	"PublishData" => 0,
+	"PublishOptimization" => 1,
+	"PublishNotes" => 0,
+	"PatientProfilesPublishPopulation" => "SELECTED",
+	"PatientProfilesPublishGraphs" => 1,
+	"PatientProfilesPublishTables" => 1]
+);
+JMPClinicalReviewAPI:closeReviewBuilder();
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -452,7 +897,23 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",	1, 0, 1, 0);If( !Directory Exists( "C:\JMPClinicalReviewManager" ),	Create Directory( "C:\JMPClinicalReviewManager" ));If( Directory Exists( "C:\JMPClinicalReviewManager" ),	Open(		JMPClinicalReviewAPI		:createStaticReport(			"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf",			"SELECTED", 1, 1		)	));
+
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Open(
+		JMPClinicalReviewAPI
+		:createStaticReport(
+			"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf",
+			"SELECTED", 1, 1
+		)
+	)
+);
 
 ```
 
@@ -494,7 +955,11 @@ JMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Cli
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );JMPClinicalReviewAPI:selectReport( 1 );Open( JMPClinicalReviewAPI:createStaticReportForReport( . ) );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:selectReport( 1 );
+Open( JMPClinicalReviewAPI:createStaticReportForReport( . ) );
 
 ```
 
@@ -510,7 +975,11 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );Wait( 1 );JMPClinicalReviewAPI:deleteAllReports();
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:deleteAllReports();
 
 ```
 
@@ -536,7 +1005,10 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Wait( 1 );JMPClinicalReviewAPI:deleteReport( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+Wait( 1 );
+JMPClinicalReviewAPI:deleteReport( . );
 
 ```
 
@@ -562,7 +1034,9 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );Wait( 1 );JMPCli
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:duplicateReport( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:duplicateReport( . );
 
 ```
 
@@ -578,7 +1052,10 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );JMPClinicalReviewAPI:getAllReportReferences();
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:getAllReportReferences();
 
 ```
 
@@ -593,6 +1070,7 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
  \* return - if there is a current study, the study name (a string); otherwise Empty().
 
 ```jsl
+
 
 JMPClinicalReviewAPI:getCurrentStudy();
 
@@ -624,7 +1102,9 @@ JMPClinicalReviewAPI:getCurrentStudy();
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 );
+
+JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );
+JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 );
 
 ```
 
@@ -650,7 +1130,14 @@ JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );JMPClinicalReviewAPI:getRe
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:changeReportFilterSelection(	.,	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50");JMPClinicalReviewAPI:getReportFilterSelection( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI:getReportFilterSelection( . );
 
 ```
 
@@ -676,7 +1163,9 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:getReportIndex( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportIndex( . );
 
 ```
 
@@ -702,7 +1191,9 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:getReportName( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportName( . );
 
 ```
 
@@ -728,7 +1219,9 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:getReportOptions( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportOptions( . );
 
 ```
 
@@ -756,7 +1249,9 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:getReportReference( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportReference( . );
 
 ```
 
@@ -782,7 +1277,9 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:getReportTitle( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:getReportTitle( . );
 
 ```
 
@@ -804,6 +1301,7 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
+
 JMPClinicalReviewAPI:getReviewBuilder();
 
 ```
@@ -820,7 +1318,11 @@ JMPClinicalReviewAPI:getReviewBuilder();
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );JMPClinicalReviewAPI:getReviewSubjectFilterSelection();
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+JMPClinicalReviewAPI:getReviewSubjectFilterSelection();
 
 ```
 
@@ -854,7 +1356,15 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-r1 = JMPClinicalReviewAPI:getReportReference(	JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" ));r2 = JMPClinicalReviewAPI:getReportReference(	JMPClinicalReviewAPI:addReport( "DemographicsDistribution" ));Wait( 1 );JMPClinicalReviewAPI:moveReport( r1, r2 );
+
+r1 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" )
+);
+r2 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "DemographicsDistribution" )
+);
+Wait( 1 );
+JMPClinicalReviewAPI:moveReport( r1, r2 );
 
 ```
 
@@ -904,7 +1414,195 @@ r1 = JMPClinicalReviewAPI:getReportReference(	JMPClinicalReviewAPI:addReport( "
 
 ```jsl
 
-/* * Use the following environment variables to control elements of the batch execution:  * * set JMPClinicalBatchMode=true                    options include: true, debug * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used  * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)*/exitJMPClinicalBatch = Function( {},	{},	Save Log(		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||		"JMPClinicalBatchLog.log"	);	Exit(););Show( JMPClinicalReviewAPI:getCurrentStudy() );// Build a review templatern = JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adverse Events Distribution",	["objRefNS:stkcb" => "AESER"]);JMPClinicalReviewAPI:renameReport(	., "AESER Stack Adverse Events Distribution"); // . refers to the currently selected report tabJMPClinicalReviewAPI:changeReportOptions(	rn,	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]); // Can also use report namespace, reference, index, title, or nameShow( JMPClinicalReviewAPI:getReportOptions( . ) );Show( JMPClinicalReviewAPI:getAllReportReferences() );Show(	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )); // CAUTION: Report names are NOT guaranteed to be unique within a reviewShow(	JMPClinicalReviewAPI:getReportIndex(		"AESER Stack Adverse Events Distribution"	)); // Report titles are guaranteed to be unique within a reviewShow( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a reviewJMPClinicalReviewAPI:resetReport( . );JMPClinicalReviewAPI:renameReport( ., . );JMPClinicalReviewAPI:addReport(	"FindingsBoxPlots",	"Customized Findings Box Plots",	[=> ]);Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );JMPClinicalReviewAPI:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );JMPClinicalReviewAPI:changeReport( ., ., . );JMPClinicalReviewAPI:deleteReport( . );JMPClinicalReviewAPI:deleteReport( . );JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:changeReportFilterSelection(	.,	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50");JMPClinicalReviewAPI:changeReportFilterSelection(	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}");JMPClinicalReviewAPI:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );Current Data Table() << SelectWhere( :Serious Event == "Y" );Wait( 0 );JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );JMPClinicalReviewAPI:moveReport(	"DemographicsDistribution", "AdverseEventsDistribution");JMPClinicalReviewAPI:moveReport( 2, 1 );JMPClinicalReviewAPI:duplicateReport( 1 );JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );JMPClinicalReviewAPI:createStaticReportForReport( . );JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );JMPClinicalReviewAPI:selectReport( 1 );JMPClinicalReviewAPI:showReportTables( . );JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)JMPClinicalReviewAPI:changeReviewSubjectFilter( // Change the review subject filter to this definition	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))");JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filterJMPClinicalReviewAPI:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );JMPClinicalReviewAPI:resetAllReports();JMPClinicalReviewAPI:deleteAllReports();JMPClinicalReviewAPI:closeReviewBuilder();// Use an existing review templateJMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",	1, 0, 1, 0);If( !Directory Exists( "C:\JMPClinicalReviewManager" ),	Create Directory( "C:\JMPClinicalReviewManager" ));If( Directory Exists( "C:\JMPClinicalReviewManager" ),	JMPClinicalReviewAPI:createStaticReport(		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,		1	));JMPClinicalReviewAPI:createLiveReport(	["ConnectionName" => Empty(),	"Space" => "_PERSONAL_",	"Folder" => "",	"PublishData" => 0,	"PublishOptimization" => 1,	"PublishNotes" => 0,	"PatientProfilesPublishPopulation" => "SELECTED",	"PatientProfilesPublishGraphs" => 1,	"PatientProfilesPublishTables" => 1]);JMPClinicalReviewAPI:closeReviewBuilder();exitJMPClinicalBatch();/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+Show( JMPClinicalReviewAPI:getCurrentStudy() );
+// Build a review template
+rn = JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:renameReport(
+	., "AESER Stack Adverse Events Distribution"
+); // . refers to the currently selected report tab
+JMPClinicalReviewAPI:changeReportOptions(
+	rn,
+	["objRefNS:eventcb_AdverseEvents_AE" => "PRE"]
+); // Can also use report namespace, reference, index, title, or name
+Show( JMPClinicalReviewAPI:getReportOptions( . ) );
+Show( JMPClinicalReviewAPI:getAllReportReferences() );
+Show(
+	JMPClinicalReviewAPI:getReportReference( "AdverseEventsDistribution" )
+); // CAUTION: Report names are NOT guaranteed to be unique within a review
+Show(
+	JMPClinicalReviewAPI:getReportIndex(
+		"AESER Stack Adverse Events Distribution"
+	)
+); // Report titles are guaranteed to be unique within a review
+Show( JMPClinicalReviewAPI:getReportTitle( 1 ) ); // Report indicies are guaranteed to be unique within a review 
+Show( JMPClinicalReviewAPI:getReportName( . ) ); // The currently selected report tab is guaranteed to be unique within a review
+JMPClinicalReviewAPI:resetReport( . );
+JMPClinicalReviewAPI:renameReport( ., . );
+JMPClinicalReviewAPI:addReport(
+	"FindingsBoxPlots",
+	"Customized Findings Box Plots",
+	[=> ]
+);
+Show( JMPClinicalReviewAPI:getReportColumnSwitcherSelection( ., 1 ) );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Calcium (mmol/L)" );
+JMPClinicalReviewAPI:changeReport( ., ., . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:deleteReport( . );
+JMPClinicalReviewAPI:addReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	.,
+	":Overall Percent Occurrence >= 10 & :Overall Percent Occurrence <= 50"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection(
+	., ":\!"Toxicity Grade/Severity\!"n == {\!"MODERATE\!"}"
+);
+JMPClinicalReviewAPI
+:changeReportFilterSelection( ., ":Serious Event == {\!"N\!"}" );
+Show( JMPClinicalReviewAPI:getReportFilterSelection( . ) );
+Current Data Table() << SelectWhere( :Serious Event == "Y" );
+Wait( 0 );
+JMPClinicalReviewAPI:applyReportSubjectSelectionToReviewSubjectFilter( . );
+JMPClinicalReviewAPI:moveReport(
+	"DemographicsDistribution", "AdverseEventsDistribution"
+);
+JMPClinicalReviewAPI:moveReport( 2, 1 );
+JMPClinicalReviewAPI:duplicateReport( 1 );
+JMPClinicalReviewAPI:selectReport( "DemographicsDistribution" );
+JMPClinicalReviewAPI:createStaticReportForReport( . );
+JMPClinicalReviewAPI:createLiveReportForReport( ., [=> ] );
+JMPClinicalReviewAPI:selectReport( 1 );
+JMPClinicalReviewAPI:showReportTables( . );
+JMPClinicalReviewAPI:changeReviewSubjectFilter( "My Saved Filter Name" ); // Change the review subject filter to a saved one (by name)
+JMPClinicalReviewAPI
+:changeReviewSubjectFilter( // Change the review subject filter to this definition
+	"Current Data Table() << Data Filter(Title( \!"Review Subject Filter\!" ),
+    Conditional, Mode( Select( 0 ), Show( 1 ), Include( 1 ) ),
+	Add Filter(columns(:Age, :Sex, :Race, :Unique Subject Identifier)))"
+);
+JMPClinicalReviewAPI:changeReviewSubjectFilter( . ); // Reset the review subject filter
+JMPClinicalReviewAPI
+:changeReviewSubjectFilterSelection( ":Sex == {\!"F\!"}" );
+Show( JMPClinicalReviewAPI:getReviewSubjectFilterSelection() );
+JMPClinicalReviewAPI:saveReviewTemplate( "ReviewManagementExamples", 1 );
+JMPClinicalReviewAPI:resetAllReports();
+JMPClinicalReviewAPI:deleteAllReports();
+JMPClinicalReviewAPI:closeReviewBuilder();
+
+// Use an existing review template
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
+If( !Directory Exists( "C:\JMPClinicalReviewManager" ),
+	Create Directory( "C:\JMPClinicalReviewManager" )
+);
+If( Directory Exists( "C:\JMPClinicalReviewManager" ),
+	JMPClinicalReviewAPI:createStaticReport(
+		"PDF", 0, "C:\JMPClinicalReviewManager\APIReview.pdf", "SELECTED", 1,
+		1
+	)
+);
+JMPClinicalReviewAPI:createLiveReport(
+	["ConnectionName" => Empty(),
+	"Space" => "_PERSONAL_",
+	"Folder" => "",
+	"PublishData" => 0,
+	"PublishOptimization" => 1,
+	"PublishNotes" => 0,
+	"PatientProfilesPublishPopulation" => "SELECTED",
+	"PatientProfilesPublishGraphs" => 1,
+	"PatientProfilesPublishTables" => 1]
+);
+JMPClinicalReviewAPI:closeReviewBuilder();
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -912,7 +1610,11 @@ r1 = JMPClinicalReviewAPI:getReportReference(	JMPClinicalReviewAPI:addReport( "
 
 ```jsl
 
-JMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",	1, 0, 1, 0);
+
+JMPClinicalReviewAPI:openReviewTemplate(
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\ReviewTemplates\Medical Monitoring.jmpcrt",
+	1, 0, 1, 0
+);
 
 ```
 
@@ -942,7 +1644,18 @@ JMPClinicalReviewAPI:openReviewTemplate(	"C:\ProgramData\JMP\JMPClinical\19\Cli
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	.,	["objRefNS:stkcb" => "AESER"]);Wait( 1 );JMPClinicalReviewAPI:renameReport(	., "Customized Adverse Events Distribution");Wait( 1 );JMPClinicalReviewAPI:renameReport( ., . );
+
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	.,
+	["objRefNS:stkcb" => "AESER"]
+);
+Wait( 1 );
+JMPClinicalReviewAPI:renameReport(
+	., "Customized Adverse Events Distribution"
+);
+Wait( 1 );
+JMPClinicalReviewAPI:renameReport( ., . );
 
 ```
 
@@ -958,7 +1671,17 @@ JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	.,	["objRefNS:st
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adverse Events Distribution",	["objRefNS:stkcb" => "AESER"]);JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );JMPClinicalReviewAPI:changeReportColumnSwitcherSelection( ., 1, "Glucose (mmol/L)" );Wait( 1 );JMPClinicalReviewAPI:resetAllReports();
+
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+JMPClinicalReviewAPI:addReport( "FindingsBoxPlots" );
+JMPClinicalReviewAPI
+:changeReportColumnSwitcherSelection( ., 1, "Glucose (mmol/L)" );
+Wait( 1 );
+JMPClinicalReviewAPI:resetAllReports();
 
 ```
 
@@ -984,7 +1707,14 @@ JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adver
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adverse Events Distribution",	["objRefNS:stkcb" => "AESER"]);Wait( 1 );JMPClinicalReviewAPI:resetReport( . );
+
+JMPClinicalReviewAPI:addReport(
+	"AdverseEventsDistribution",
+	"Customized Adverse Events Distribution",
+	["objRefNS:stkcb" => "AESER"]
+);
+Wait( 1 );
+JMPClinicalReviewAPI:resetReport( . );
 
 ```
 
@@ -1012,7 +1742,9 @@ JMPClinicalReviewAPI:addReport(	"AdverseEventsDistribution",	"Customized Adver
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:saveReviewTemplate( "ScriptingIndexExample", 1 );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:saveReviewTemplate( "ScriptingIndexExample", 1 );
 
 ```
 
@@ -1038,7 +1770,15 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-r1 = JMPClinicalReviewAPI:getReportReference(	JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" ));r2 = JMPClinicalReviewAPI:getReportReference(	JMPClinicalReviewAPI:addReport( "DemographicsDistribution" ));Wait( 1 );JMPClinicalReviewAPI:selectReport( r1 );
+
+r1 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" )
+);
+r2 = JMPClinicalReviewAPI:getReportReference(
+	JMPClinicalReviewAPI:addReport( "DemographicsDistribution" )
+);
+Wait( 1 );
+JMPClinicalReviewAPI:selectReport( r1 );
 
 ```
 
@@ -1059,6 +1799,7 @@ r1 = JMPClinicalReviewAPI:getReportReference(	JMPClinicalReviewAPI:addReport( "
  \* return - if the current study was succesfully set, 1; otherwise 0.
 
 ```jsl
+
 
 JMPClinicalReviewAPI:setCurrentStudy( "Nicardipine" );
 
@@ -1086,7 +1827,9 @@ JMPClinicalReviewAPI:setCurrentStudy( "Nicardipine" );
 
 ```jsl
 
-JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReviewAPI:showReportTables( . );
+
+JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );
+JMPClinicalReviewAPI:showReportTables( . );
 
 ```
 
@@ -1108,7 +1851,16 @@ JMPClinicalReviewAPI:addReport( "AdverseEventsDistribution" );JMPClinicalReview
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:addStudies(	{{"Nicardipine",	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",	{},	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",	{}, 1}, {"NicardipineAbbr",	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",	{}, "", {}, 1}});
+
+JMPClinicalStudyManagerAPI:addStudies(
+	{{"Nicardipine",
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{},
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+	{}, 1}, {"NicardipineAbbr",
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{}, "", {}, 1}}
+);
 
 ```
 
@@ -1152,7 +1904,95 @@ JMPClinicalStudyManagerAPI:addStudies(	{{"Nicardipine",	"C:\ProgramData\JMP\JM
 
 ```jsl
 
-/* * Use the following environment variables to control elements of the batch execution:  * * set JMPClinicalBatchMode=true                    options include: true, debug * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used  * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)*/exitJMPClinicalBatch = Function( {},	{},	Save Log(		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||		"JMPClinicalBatchLog.log"	);	Exit(););JMPClinicalStudyManagerAPI:addStudy(	"APIStudyName",	Convert File Path( "$CLINICAL_HOME" || "/Sample Data/Nicardipine/SDTM" ),	{},	Convert File Path( "$CLINICAL_HOME" || "/Sample Data/Nicardipine/ADaM" ),	{},	1);exitJMPClinicalBatch();/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+/*
+ * Use the following environment variables to control elements of the batch execution: 
+ *
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:addStudy(
+	"APIStudyName",
+	Convert File Path( "$CLINICAL_HOME" || "/Sample Data/Nicardipine/SDTM" ),
+	{},
+	Convert File Path( "$CLINICAL_HOME" || "/Sample Data/Nicardipine/ADaM" ),
+	{},
+	1
+);
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -1160,7 +2000,14 @@ JMPClinicalStudyManagerAPI:addStudies(	{{"Nicardipine",	"C:\ProgramData\JMP\JM
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:addStudy(	"Nicardipine",	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",	{},	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",	{}, 1);
+
+JMPClinicalStudyManagerAPI:addStudy(
+	"Nicardipine",
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{},
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+	{}, 1
+);
 
 ```
 
@@ -1188,7 +2035,9 @@ JMPClinicalStudyManagerAPI:addStudy(	"Nicardipine",	"C:\ProgramData\JMP\JMPCli
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:addValueOrderDomain( "Nicardipine", "ZZ" );JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
+
+JMPClinicalStudyManagerAPI:addValueOrderDomain( "Nicardipine", "ZZ" );
+JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
 
 ```
 
@@ -1222,7 +2071,16 @@ JMPClinicalStudyManagerAPI:addValueOrderDomain( "Nicardipine", "ZZ" );JMPClinic
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:addValueOrderVariable(	"Nicardipine",	"ZZ",	"ZZVAR",	{"ZZ VALUE 1", "ZZ VALUE 2"});JMPClinicalStudyManagerAPI:getValueOrderDomainVariables( "Nicardipine", "ZZ" );
+
+JMPClinicalStudyManagerAPI
+:addValueOrderVariable(
+	"Nicardipine",
+	"ZZ",
+	"ZZVAR",
+	{"ZZ VALUE 1", "ZZ VALUE 2"}
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderDomainVariables( "Nicardipine", "ZZ" );
 
 ```
 
@@ -1250,7 +2108,17 @@ JMPClinicalStudyManagerAPI:addValueOrderVariable(	"Nicardipine",	"ZZ",	"ZZVA
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:applyAllTreatmentValueOrder( "Nicardipine", "ADSL", "ARM", 1, 1 );Show(	JMPClinicalStudyManagerAPI	:getValueOrderVariableLegendPreview( "Nicardipine", "ADSL", "ARM", 2 ),	JMPClinicalStudyManagerAPI	:getValueOrderVariableLegendPreview(		"Nicardipine", "ADSL", "TRT01P", 2	));
+
+JMPClinicalStudyManagerAPI
+:applyAllTreatmentValueOrder( "Nicardipine", "ADSL", "ARM", 1, 1 );
+Show(
+	JMPClinicalStudyManagerAPI
+	:getValueOrderVariableLegendPreview( "Nicardipine", "ADSL", "ARM", 2 ),
+	JMPClinicalStudyManagerAPI
+	:getValueOrderVariableLegendPreview(
+		"Nicardipine", "ADSL", "TRT01P", 2
+	)
+);
 
 ```
 
@@ -1274,13 +2142,94 @@ JMPClinicalStudyManagerAPI:applyAllTreatmentValueOrder( "Nicardipine", "ADSL", 
 
 ```jsl
 
-/* * Use the following environment variables to control elements of the batch execution  * set JMPClinicalBatchMode=true                    options include: true, debug * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used  * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)*/exitJMPClinicalBatch = Function( {},	{},	Save Log(		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||		"JMPClinicalBatchLog.log"	);	Exit(););JMPClinicalStudyManagerAPI:deleteStudies( {"APIStudyName"} );exitJMPClinicalBatch();/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+/*
+ * Use the following environment variables to control elements of the batch execution 
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:deleteStudies( {"APIStudyName"} );
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
 #### Simple
 
 ```jsl
+
 
 JMPClinicalStudyManagerAPI:deleteStudies( "Nicardipine" );
 
@@ -1312,7 +2261,9 @@ JMPClinicalStudyManagerAPI:deleteStudies( "Nicardipine" );
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:deleteValueOrderDomain( "Nicardipine", "ZZ" );JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
+
+JMPClinicalStudyManagerAPI:deleteValueOrderDomain( "Nicardipine", "ZZ" );
+JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
 
 ```
 
@@ -1346,7 +2297,11 @@ JMPClinicalStudyManagerAPI:deleteValueOrderDomain( "Nicardipine", "ZZ" );JMPCli
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:deleteValueOrderVariable( "Nicardipine", "ZZ", "ZZVAR" );JMPClinicalStudyManagerAPI:getValueOrderDomainVariables( "Nicardipine", "ZZ" );
+
+JMPClinicalStudyManagerAPI
+:deleteValueOrderVariable( "Nicardipine", "ZZ", "ZZVAR" );
+JMPClinicalStudyManagerAPI
+:getValueOrderDomainVariables( "Nicardipine", "ZZ" );
 
 ```
 
@@ -1366,7 +2321,10 @@ JMPClinicalStudyManagerAPI:deleteValueOrderVariable( "Nicardipine", "ZZ", "ZZVA
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getADaMFolder(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI:getADaMFolder(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1386,7 +2344,9 @@ JMPClinicalStudyManagerAPI:getADaMFolder(	JMPClinicalStudyManagerAPI:getCurrent
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getAllStudyPreferences( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+JMPClinicalStudyManagerAPI
+:getAllStudyPreferences( JMPClinicalStudyManagerAPI:getCurrentStudy() );
 
 ```
 
@@ -1406,7 +2366,10 @@ JMPClinicalStudyManagerAPI:getAllStudyPreferences( JMPClinicalStudyManagerAPI:g
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getCreatedBy(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI:getCreatedBy(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1421,6 +2384,7 @@ JMPClinicalStudyManagerAPI:getCreatedBy(	JMPClinicalStudyManagerAPI:getCurrentS
  \* return - if there is a current study, the study name (a string); otherwise Empty().
 
 ```jsl
+
 
 JMPClinicalStudyManagerAPI:getCurrentStudy();
 
@@ -1442,7 +2406,10 @@ JMPClinicalStudyManagerAPI:getCurrentStudy();
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getDomainList(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI:getDomainList(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1462,7 +2429,12 @@ JMPClinicalStudyManagerAPI:getDomainList(	JMPClinicalStudyManagerAPI:getCurrent
 
 ```jsl
 
-As Date(	JMPClinicalStudyManagerAPI:getInitialDate(		JMPClinicalStudyManagerAPI:getCurrentStudy()	));
+
+As Date(
+	JMPClinicalStudyManagerAPI:getInitialDate(
+		JMPClinicalStudyManagerAPI:getCurrentStudy()
+	)
+);
 
 ```
 
@@ -1478,11 +2450,14 @@ As Date(	JMPClinicalStudyManagerAPI:getInitialDate(		JMPClinicalStudyManagerAP
 
  \*
 
- \* return - a String of the userid that lasy updated the study
+ \* return - a String of the userid that last updated the study
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getLastUpdatedBy(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI:getLastUpdatedBy(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1502,7 +2477,11 @@ JMPClinicalStudyManagerAPI:getLastUpdatedBy(	JMPClinicalStudyManagerAPI:getCurr
 
 ```jsl
 
-As Date(	JMPClinicalStudyManagerAPI	:getLastUpdatedDate( JMPClinicalStudyManagerAPI:getCurrentStudy() ));
+
+As Date(
+	JMPClinicalStudyManagerAPI
+	:getLastUpdatedDate( JMPClinicalStudyManagerAPI:getCurrentStudy() )
+);
 
 ```
 
@@ -1522,7 +2501,11 @@ As Date(	JMPClinicalStudyManagerAPI	:getLastUpdatedDate( JMPClinicalStudyManag
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getPartialDatesEndDateImputationMethod(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI
+:getPartialDatesEndDateImputationMethod(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1542,7 +2525,11 @@ JMPClinicalStudyManagerAPI:getPartialDatesEndDateImputationMethod(	JMPClinical
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getPartialDatesStartDateImputationMethod(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI
+:getPartialDatesStartDateImputationMethod(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1562,7 +2549,10 @@ JMPClinicalStudyManagerAPI:getPartialDatesStartDateImputationMethod(	JMPClinic
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getSDTMFolder(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI:getSDTMFolder(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1582,7 +2572,9 @@ JMPClinicalStudyManagerAPI:getSDTMFolder(	JMPClinicalStudyManagerAPI:getCurrent
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getSelectedADaMDomains( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+JMPClinicalStudyManagerAPI
+:getSelectedADaMDomains( JMPClinicalStudyManagerAPI:getCurrentStudy() );
 
 ```
 
@@ -1602,7 +2594,9 @@ JMPClinicalStudyManagerAPI:getSelectedADaMDomains( JMPClinicalStudyManagerAPI:g
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getSelectedSDTMDomains( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+JMPClinicalStudyManagerAPI
+:getSelectedSDTMDomains( JMPClinicalStudyManagerAPI:getCurrentStudy() );
 
 ```
 
@@ -1622,7 +2616,10 @@ JMPClinicalStudyManagerAPI:getSelectedSDTMDomains( JMPClinicalStudyManagerAPI:g
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getSizeOnDisk(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI:getSizeOnDisk(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1642,7 +2639,10 @@ JMPClinicalStudyManagerAPI:getSizeOnDisk(	JMPClinicalStudyManagerAPI:getCurrent
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getSnapshotNumber(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI:getSnapshotNumber(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1662,7 +2662,11 @@ JMPClinicalStudyManagerAPI:getSnapshotNumber(	JMPClinicalStudyManagerAPI:getCur
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getStudyDayAnchorDateForStudyDayCalculation(	JMPClinicalStudyManagerAPI:getCurrentStudy());
+
+JMPClinicalStudyManagerAPI
+:getStudyDayAnchorDateForStudyDayCalculation(
+	JMPClinicalStudyManagerAPI:getCurrentStudy()
+);
 
 ```
 
@@ -1682,7 +2686,9 @@ JMPClinicalStudyManagerAPI:getStudyDayAnchorDateForStudyDayCalculation(	JMPCli
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getStudyDayValueDerivation( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+JMPClinicalStudyManagerAPI
+:getStudyDayValueDerivation( JMPClinicalStudyManagerAPI:getCurrentStudy() );
 
 ```
 
@@ -1702,6 +2708,7 @@ JMPClinicalStudyManagerAPI:getStudyDayValueDerivation( JMPClinicalStudyManagerA
 
 ```jsl
 
+
 JMPClinicalStudyManagerAPI:getStudyExists( "Nicardipine" );
 
 ```
@@ -1717,6 +2724,7 @@ JMPClinicalStudyManagerAPI:getStudyExists( "Nicardipine" );
  \* return - a List of the names of the studies
 
 ```jsl
+
 
 JMPClinicalStudyManagerAPI:getStudyList();
 
@@ -1740,7 +2748,10 @@ JMPClinicalStudyManagerAPI:getStudyList();
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getStudyPreference(	"Nicardipine", "objRefNS:treatcb");
+
+JMPClinicalStudyManagerAPI:getStudyPreference(
+	"Nicardipine", "objRefNS:treatcb"
+);
 
 ```
 
@@ -1760,7 +2771,9 @@ JMPClinicalStudyManagerAPI:getStudyPreference(	"Nicardipine", "objRefNS:treatcb
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getTestResultsLoadOnly( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+JMPClinicalStudyManagerAPI
+:getTestResultsLoadOnly( JMPClinicalStudyManagerAPI:getCurrentStudy() );
 
 ```
 
@@ -1781,6 +2794,7 @@ JMPClinicalStudyManagerAPI:getTestResultsLoadOnly( JMPClinicalStudyManagerAPI:g
  \* return - a String of the domain label
 
 ```jsl
+
 
 JMPClinicalStudyManagerAPI:getValueOrderDomainLabel( "Nicardipine", "LB" );
 
@@ -1804,7 +2818,9 @@ JMPClinicalStudyManagerAPI:getValueOrderDomainLabel( "Nicardipine", "LB" );
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderDomainVariables( "Nicardipine", "LB" );
+
+JMPClinicalStudyManagerAPI
+:getValueOrderDomainVariables( "Nicardipine", "LB" );
 
 ```
 
@@ -1823,6 +2839,7 @@ JMPClinicalStudyManagerAPI:getValueOrderDomainVariables( "Nicardipine", "LB" );
  \* return - a list of domains
 
 ```jsl
+
 
 JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
 
@@ -1852,7 +2869,11 @@ JMPClinicalStudyManagerAPI:getValueOrderDomains( "Nicardipine" );
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderValueColorOverride(	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2);
+
+JMPClinicalStudyManagerAPI
+:getValueOrderValueColorOverride(
+	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
+);
 
 ```
 
@@ -1878,7 +2899,9 @@ JMPClinicalStudyManagerAPI:getValueOrderValueColorOverride(	"Nicardipine", "AD
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderVariableColorOverrides( "Nicardipine", "ADSL", "TRT01P", 2 );
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorOverrides( "Nicardipine", "ADSL", "TRT01P", 2 );
 
 ```
 
@@ -1902,7 +2925,9 @@ JMPClinicalStudyManagerAPI:getValueOrderVariableColorOverrides( "Nicardipine", 
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderVariableColorTheme( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorTheme( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -1926,7 +2951,9 @@ JMPClinicalStudyManagerAPI:getValueOrderVariableColorTheme( "Nicardipine", "LB"
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderVariableLabel( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLabel( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -1952,7 +2979,9 @@ JMPClinicalStudyManagerAPI:getValueOrderVariableLabel( "Nicardipine", "LB", "JM
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderVariableLegendPreview( "Nicardipine", "LB", "JMPC_ANRIND", 2 );
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLegendPreview( "Nicardipine", "LB", "JMPC_ANRIND", 2 );
 
 ```
 
@@ -1976,7 +3005,9 @@ JMPClinicalStudyManagerAPI:getValueOrderVariableLegendPreview( "Nicardipine", "
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderVariableSortState( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableSortState( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -2000,7 +3031,9 @@ JMPClinicalStudyManagerAPI:getValueOrderVariableSortState( "Nicardipine", "LB",
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:getValueOrderVariableValueOrder( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableValueOrder( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -2024,7 +3057,9 @@ JMPClinicalStudyManagerAPI:getValueOrderVariableValueOrder( "Nicardipine", "LB"
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:loadStudyADSLDataTable( JMPClinicalStudyManagerAPI:getCurrentStudy() );
+
+JMPClinicalStudyManagerAPI
+:loadStudyADSLDataTable( JMPClinicalStudyManagerAPI:getCurrentStudy() );
 
 ```
 
@@ -2046,13 +3081,94 @@ JMPClinicalStudyManagerAPI:loadStudyADSLDataTable( JMPClinicalStudyManagerAPI:g
 
 ```jsl
 
-/* * Use the following environment variables to control elements of the batch execution  * set JMPClinicalBatchMode=true                    options include: true, debug * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used  * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)*/exitJMPClinicalBatch = Function( {},	{},	Save Log(		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||		"JMPClinicalBatchLog.log"	);	Exit(););JMPClinicalStudyManagerAPI:refreshStudies( {"APIStudyName"} );exitJMPClinicalBatch();/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+/*
+ * Use the following environment variables to control elements of the batch execution 
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:refreshStudies( {"APIStudyName"} );
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
 #### Simple
 
 ```jsl
+
 
 JMPClinicalStudyManagerAPI:refreshStudies( {"Nicardipine"} );
 
@@ -2080,6 +3196,7 @@ JMPClinicalStudyManagerAPI:refreshStudies( {"Nicardipine"} );
 
 ```jsl
 
+
 JMPClinicalStudyManagerAPI:resetAllValueOrderInfo( "Nicardipine" );
 
 ```
@@ -2102,7 +3219,11 @@ JMPClinicalStudyManagerAPI:resetAllValueOrderInfo( "Nicardipine" );
 
 ```jsl
 
-studyPreferences = JMPClinicalStudyManagerAPI:getAllStudyPreferences( "Nicardipine" );JMPClinicalStudyManagerAPI:setAllStudyPreferences( "Nicardipine", studyPreferences );
+
+studyPreferences = JMPClinicalStudyManagerAPI
+:getAllStudyPreferences( "Nicardipine" );
+JMPClinicalStudyManagerAPI
+:setAllStudyPreferences( "Nicardipine", studyPreferences );
 
 ```
 
@@ -2124,7 +3245,9 @@ studyPreferences = JMPClinicalStudyManagerAPI:getAllStudyPreferences( "Nicardip
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setCurrentStudy( "Nicardipine" );JMPClinicalStudyManagerAPI:getCurrentStudy();
+
+JMPClinicalStudyManagerAPI:setCurrentStudy( "Nicardipine" );
+JMPClinicalStudyManagerAPI:getCurrentStudy();
 
 ```
 
@@ -2148,7 +3271,13 @@ JMPClinicalStudyManagerAPI:setCurrentStudy( "Nicardipine" );JMPClinicalStudyMan
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setStudyPreference(	"Nicardipine", "objRefNS:treatcb", "ARM");JMPClinicalStudyManagerAPI:getStudyPreference(	"Nicardipine", "objRefNS:treatcb");
+
+JMPClinicalStudyManagerAPI:setStudyPreference(
+	"Nicardipine", "objRefNS:treatcb", "ARM"
+);
+JMPClinicalStudyManagerAPI:getStudyPreference(
+	"Nicardipine", "objRefNS:treatcb"
+);
 
 ```
 
@@ -2180,7 +3309,10 @@ JMPClinicalStudyManagerAPI:setStudyPreference(	"Nicardipine", "objRefNS:treatcb
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setValueOrderDomainLabel( "Nicardipine", "LB", "Labs" );JMPClinicalStudyManagerAPI:getValueOrderDomainLabel( "Nicardipine", "LB" );
+
+JMPClinicalStudyManagerAPI
+:setValueOrderDomainLabel( "Nicardipine", "LB", "Labs" );
+JMPClinicalStudyManagerAPI:getValueOrderDomainLabel( "Nicardipine", "LB" );
 
 ```
 
@@ -2208,7 +3340,19 @@ JMPClinicalStudyManagerAPI:setValueOrderDomainLabel( "Nicardipine", "LB", "Labs
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setValueOrderValueColorOverride(	"Nicardipine",	"ADSL",	"TRT01P",	"Placebo",	{200, 0, 0});JMPClinicalStudyManagerAPI:getValueOrderValueColorOverride(	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2);
+
+JMPClinicalStudyManagerAPI
+:setValueOrderValueColorOverride(
+	"Nicardipine",
+	"ADSL",
+	"TRT01P",
+	"Placebo",
+	{200, 0, 0}
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderValueColorOverride(
+	"Nicardipine", "ADSL", "TRT01P", "Placebo", 2
+);
 
 ```
 
@@ -2234,7 +3378,16 @@ JMPClinicalStudyManagerAPI:setValueOrderValueColorOverride(	"Nicardipine",	"A
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setValueOrderVariableColorOverrides(	"Nicardipine",	"ADSL",	"TRT01P",	["Placebo" => {200, 0, 0}]);JMPClinicalStudyManagerAPI:getValueOrderVariableColorOverrides( "Nicardipine", "ADSL", "TRT01P", 2 );
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableColorOverrides(
+	"Nicardipine",
+	"ADSL",
+	"TRT01P",
+	["Placebo" => {200, 0, 0}]
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorOverrides( "Nicardipine", "ADSL", "TRT01P", 2 );
 
 ```
 
@@ -2260,7 +3413,13 @@ JMPClinicalStudyManagerAPI:setValueOrderVariableColorOverrides(	"Nicardipine",
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setValueOrderVariableColorTheme(	"Nicardipine", "LB", "JMPC_ANRIND", "JMP Dark");JMPClinicalStudyManagerAPI:getValueOrderVariableColorTheme( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableColorTheme(
+	"Nicardipine", "LB", "JMPC_ANRIND", "JMP Dark"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableColorTheme( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -2294,7 +3453,13 @@ JMPClinicalStudyManagerAPI:setValueOrderVariableColorTheme(	"Nicardipine", "LB
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setValueOrderVariableLabel(	"Nicardipine", "LB", "JMPC_ANRIND", "Indicator for Reference Range");JMPClinicalStudyManagerAPI:getValueOrderVariableLabel( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableLabel(
+	"Nicardipine", "LB", "JMPC_ANRIND", "Indicator for Reference Range"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLabel( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -2322,7 +3487,13 @@ JMPClinicalStudyManagerAPI:setValueOrderVariableLabel(	"Nicardipine", "LB", "J
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setValueOrderVariableSortState(	"Nicardipine", "LB", "JMPC_ANRIND", "Natural Descending");JMPClinicalStudyManagerAPI:getValueOrderVariableSortState( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableSortState(
+	"Nicardipine", "LB", "JMPC_ANRIND", "Natural Descending"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableSortState( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -2350,7 +3521,16 @@ JMPClinicalStudyManagerAPI:setValueOrderVariableSortState(	"Nicardipine", "LB"
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:setValueOrderVariableValueOrder(	"Nicardipine",	"LB",	"JMPC_ANRIND",	{"HIGH", "NORMAL", "LOW"});JMPClinicalStudyManagerAPI:getValueOrderVariableValueOrder( "Nicardipine", "LB", "JMPC_ANRIND" );
+
+JMPClinicalStudyManagerAPI
+:setValueOrderVariableValueOrder(
+	"Nicardipine",
+	"LB",
+	"JMPC_ANRIND",
+	{"HIGH", "NORMAL", "LOW"}
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableValueOrder( "Nicardipine", "LB", "JMPC_ANRIND" );
 
 ```
 
@@ -2378,7 +3558,12 @@ JMPClinicalStudyManagerAPI:setValueOrderVariableValueOrder(	"Nicardipine",	"L
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:swapValueColor(	"Nicardipine", "LB", "JMPC_ANRIND", "LOW", "HIGH");JMPClinicalStudyManagerAPI:getValueOrderVariableLegendPreview( "Nicardipine", "LB", "JMPC_ANRIND", 2 );
+
+JMPClinicalStudyManagerAPI:swapValueColor(
+	"Nicardipine", "LB", "JMPC_ANRIND", "LOW", "HIGH"
+);
+JMPClinicalStudyManagerAPI
+:getValueOrderVariableLegendPreview( "Nicardipine", "LB", "JMPC_ANRIND", 2 );
 
 ```
 
@@ -2426,7 +3611,96 @@ JMPClinicalStudyManagerAPI:swapValueColor(	"Nicardipine", "LB", "JMPC_ANRIND", 
 
 ```jsl
 
-/* * Use the following environment variables to control elements of the batch execution  * set JMPClinicalBatchMode=true                    options include: true, debug * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used  * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)*/exitJMPClinicalBatch = Function( {},	{},	Save Log(		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||		"JMPClinicalBatchLog.log"	);	Exit(););JMPClinicalStudyManagerAPI:updateSnapStudy(	"APIStudyName",	JMPClinicalStudyManagerAPI:getSnapshotNumber( "APIStudyName" ) + 1,	Convert File Path(		"$CLINICAL_HOME" || "/Sample Data/NicardipineAbbr/SDTM"	),	{},	"",	{});exitJMPClinicalBatch();/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+/*
+ * Use the following environment variables to control elements of the batch execution 
+ * set JMPClinicalBatchMode=true                    options include: true, debug
+ * set JMPClinicalBatchLogPath=%CD%\                the path where the log file should be written
+ * set JMPClinicalBatchConfiguration=Default        the configuration to use. if not specified, the last configuration used interactively will be used 
+ * set JMPClinicalBatchCurrentStudy=                the study to use for Review Builder operations (not used by the JMPClinicalStudyManagerAPI)
+*/
+
+exitJMPClinicalBatch = Function( {},
+	{},
+	Save Log(
+		Get Environment Variable( "JMPClinicalBatchLogPath" ) ||
+		"JMPClinicalBatchLog.log"
+	);
+	Exit();
+);
+
+JMPClinicalStudyManagerAPI:updateSnapStudy(
+	"APIStudyName",
+	JMPClinicalStudyManagerAPI:getSnapshotNumber( "APIStudyName" ) + 1,
+	Convert File Path(
+		"$CLINICAL_HOME" || "/Sample Data/NicardipineAbbr/SDTM"
+	),
+	{},
+	"",
+	{}
+);
+exitJMPClinicalBatch();
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -2434,7 +3708,15 @@ JMPClinicalStudyManagerAPI:swapValueColor(	"Nicardipine", "LB", "JMPC_ANRIND", 
 
 ```jsl
 
-JMPClinicalStudyManagerAPI:updateSnapStudy(	"Nicardipine",	JMPClinicalStudyManagerAPI:getSnapshotNumber( "Nicardipine" ) + 1,	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",	{},	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",	{}, 1);
+
+JMPClinicalStudyManagerAPI:updateSnapStudy(
+	"Nicardipine",
+	JMPClinicalStudyManagerAPI:getSnapshotNumber( "Nicardipine" ) + 1,
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\SDTM",
+	{},
+	"C:\ProgramData\JMP\JMPClinical\19\Clinical\Sample Data\Nicardipine\ADaM",
+	{}, 1
+);
 
 ```
 
@@ -2445,6 +3727,7 @@ JMPClinicalStudyManagerAPI:updateSnapStudy(	"Nicardipine",	JMPClinicalStudyMan
 **Description:** Creates a new JMP Clinical domain object.
 
 ```jsl
+
 
 dom = jg:domain( Empty(), "dom", "Domain" );
 
@@ -2458,6 +3741,7 @@ dom = jg:domain( Empty(), "dom", "Domain" );
 
 ```jsl
 
+
 notebook = jg:notebook( Empty() );
 
 ```
@@ -2470,6 +3754,7 @@ notebook = jg:notebook( Empty() );
 
 ```jsl
 
+
 s = jg:study( "study" );
 
 ```
@@ -2481,6 +3766,7 @@ s = jg:study( "study" );
 **Description:** Creates a new JMP Clinical variable object.
 
 ```jsl
+
 
 var = jg:variable( Empty(), "var", "Variable" );
 
@@ -2496,7 +3782,78 @@ var = jg:variable( Empty(), "var", "Variable" );
 
 ```jsl
 
-// The header section for report title and category.processNS:label = "Custom Report Example 1";processNS:cdiscClass = "Custom Reports";// The main report code.processNS:runReport = Function( {},	{Default Local}, 	// Surfaces a built-in JMP platform on the current data table (tadsl) and opens in a new window.	Graph Builder());/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+// The header section for report title and category.
+processNS:label = "Custom Report Example 1";
+processNS:cdiscClass = "Custom Reports";
+
+// The main report code.
+processNS:runReport = Function( {},
+	{Default Local}, 
+	// Surfaces a built-in JMP platform on the current data table (tadsl) and opens in a new window.
+	Graph Builder()
+);
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -2504,7 +3861,104 @@ var = jg:variable( Empty(), "var", "Variable" );
 
 ```jsl
 
-// The header section for report title and category.processNS:label = "Custom Report Example 2";processNS:cdiscClass = "Custom Reports";// The main report code.processNS:runReport = Function( {},	{Default Local}, 	// Obtain the path to the study's ADSL data set.	path = jg:getPath( "/user/clinical/data/adam", "ADSL.jmp" );	If( !File Exists( path ), 		// A custom error check.		processNS:fatalError(			"This report requires an ARM variable in the ADSL dataset.", 1		)	, 		// Open the study's ADSL data set.		objRefNS:dt = Open( path, invisible );		// Send content to the output pane.		processNS:setReportOutput(			V List Box(				// Create a Graph Builder object, hiding the control panel, using ARM as an X variable, displayed as a pie ring.				objRefNS:gb = Graph Builder(					Show Control Panel( 0 ),					Variables( X( :ARM ) ),					Elements( Pie( X, Legend( 3 ), Pie Style( "Ring" ) ) )				)			)		);		// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.		processNS:addDataTableReference(			"Custom Report Example Data", "objRefNS:dt"		);	););0;/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+// The header section for report title and category.
+processNS:label = "Custom Report Example 2";
+processNS:cdiscClass = "Custom Reports";
+
+// The main report code.
+processNS:runReport = Function( {},
+	{Default Local}, 
+	// Obtain the path to the study's ADSL data set.
+	path = jg:getPath( "/user/clinical/data/adam", "ADSL.jmp" );
+	If( !File Exists( path ), 
+		// A custom error check.
+		processNS:fatalError(
+			"This report requires an ARM variable in the ADSL dataset.", 1
+		)
+	, 
+		// Open the study's ADSL data set.
+		objRefNS:dt = Open( path, invisible );
+		// Send content to the output pane.
+		processNS:setReportOutput(
+			V List Box(
+				// Create a Graph Builder object, hiding the control panel, using ARM as an X variable, displayed as a pie ring.
+				objRefNS:gb = Graph Builder(
+					Show Control Panel( 0 ),
+					Variables( X( :ARM ) ),
+					Elements( Pie( X, Legend( 3 ), Pie Style( "Ring" ) ) )
+				)
+			)
+		);
+		// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
+		processNS:addDataTableReference(
+			"Custom Report Example Data", "objRefNS:dt"
+		);
+	);
+);
+
+0;
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -2512,7 +3966,138 @@ var = jg:variable( Empty(), "var", "Variable" );
 
 ```jsl
 
-// The header section for report title, category, and icon.processNS:label = "Custom Report Example 3";processNS:cdiscClass = "Custom Reports";processNS:icon ="/install/clinical/documentation/icons/clinical/DonutGraph3d.gif";processNS:description ="This report creates a pie chart of values from the selected ADSL variable.";// The main report code.processNS:runReport = Function( {},	{Default Local}, 	// Including functions shared across reports.	Include(		Convert File Path(			"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",			absolute,			windows		)	);	objRefNS:in_adsl = prepADSL();		// Change JMP names to SAS Labels.	jg:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );		// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.	reportRefNS:linkAnalysisTableToADSLTable( objRefNS:in_adsl );		// Apply value order and color preferences to an analysis data table.	jg:ApplyValueOrderToTables(		Eval List( {objRefNS:in_adsl} ),		objRefNS:StudyName	);		// Retrieve the column names.	objRefNS:columnNames = objRefNS:in_adsl << getColumnNames( "string" );		// Send content to the output pane.	processNS:setReportOutput(		V List Box(			// Create a Graph Builder object, hiding the control panel, using the first column in the			//  data table as the initially selected column, displayed as a pie ring, offering a			//  column switcher to choose from any column in the data table.			objRefNS:gb = Graph Builder(				Show Control Panel( 0 ),				Variables( X( Eval( objRefNS:columnNames[1] ) ) ),				Elements( Pie( X, Legend( 3 ), Pie Style( "Ring" ) ) ),				Column Switcher(					Eval( objRefNS:columnNames[1] ),					Eval( objRefNS:columnNames )				)			)		)	);		// Collapse empty Options panel.	objRefNS:mainhlb << ClosePanel( 1 );		// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.	processNS:addDataTableReference(		"Custom Report Example Data", "objRefNS:in_adsl"	);		// Send these objects to JMP Live.	processNS:defineStaticReportContent( {objRefNS:gb} );		// Send these objects to the static report.	processNS:defineLiveReportContent( {{objRefNS:gb}} ););0;/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+// The header section for report title, category, and icon.
+processNS:label = "Custom Report Example 3";
+processNS:cdiscClass = "Custom Reports";
+processNS:icon =
+"/install/clinical/documentation/icons/clinical/DonutGraph3d.gif";
+processNS:description =
+"This report creates a pie chart of values from the selected ADSL variable.";
+
+// The main report code.
+processNS:runReport = Function( {},
+	{Default Local}, 
+	// Including functions shared across reports.
+	Include(
+		Convert File Path(
+			"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",
+			absolute,
+			windows
+		)
+	);
+	objRefNS:in_adsl = prepADSL();
+	
+	// Change JMP names to SAS Labels.
+	jg:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );
+	
+	// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.
+	reportRefNS:linkAnalysisTableToADSLTable( objRefNS:in_adsl );
+	
+	// Apply value order and color preferences to an analysis data table.
+	jg:ApplyValueOrderToTables(
+		Eval List( {objRefNS:in_adsl} ),
+		objRefNS:StudyName
+	);
+	
+	// Retrieve the column names.
+	objRefNS:columnNames = objRefNS:in_adsl << getColumnNames( "string" );
+	
+	// Send content to the output pane.
+	processNS:setReportOutput(
+		V List Box(
+			// Create a Graph Builder object, hiding the control panel, using the first column in the
+			//  data table as the initially selected column, displayed as a pie ring, offering a
+			//  column switcher to choose from any column in the data table.
+			objRefNS:gb = Graph Builder(
+				Show Control Panel( 0 ),
+				Variables( X( Eval( objRefNS:columnNames[1] ) ) ),
+				Elements( Pie( X, Legend( 3 ), Pie Style( "Ring" ) ) ),
+				Column Switcher(
+					Eval( objRefNS:columnNames[1] ),
+					Eval( objRefNS:columnNames )
+				)
+			)
+		)
+	);
+	
+	// Collapse empty Options panel.
+	objRefNS:mainhlb << ClosePanel( 1 );
+	
+	// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
+	processNS:addDataTableReference(
+		"Custom Report Example Data", "objRefNS:in_adsl"
+	);
+	
+	// Send these objects to JMP Live.
+	processNS:defineStaticReportContent( {objRefNS:gb} );
+	
+	// Send these objects to the static report.
+	processNS:defineLiveReportContent( {{objRefNS:gb}} );
+);
+
+0;
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 
@@ -2520,7 +4105,460 @@ var = jg:variable( Empty(), "var", "Variable" );
 
 ```jsl
 
-// The header section for report title, category, icon, and help.processNS:label = "Custom Report Example 4";processNS:labelSkeleton = "Custom Report with Variables {{^1}}, Example 4"; // For dynamically renaming the report with a substring. See the 'renameReport' examples.processNS:reportSelectorTab = 1; // 1: Display on report selector; 0: Do not display on report selector.processNS:drillDown = 0; // 1: This report can also be used as a drilldown; 0: This report cannot also be used as a drilldown.processNS:cdiscClass = "Custom Reports";processNS:icon ="/install/clinical/documentation/icons/clinical/DistributionAnalysis.gif";processNS:documentation = "https://www.jmp.com/";processNS:description ="This report demonstrates a basic requirements declaration, switches data table columns names to SAS Labels, " ||"applies value order and color preferences, adds a drill down button, writes notes to the JMP log, checks for a custom error " ||"condition, declares a function for use within a widget script, defines an assortment of custom widgets, creates a report filter, " ||"tracks data tables so that they are automatically closed when the report is closed, and defines content to publish to Create Static " || "Report and Create Live Report.";// Specify any variable requirements here. Those requirements not met will automatically prevent the report from running.processNS:requirements = ["_ONE_OR_MORE_DEMOGRAPHICS_" => {{"ARM"}}];// The main report code.processNS:runReport = Function( {},	{Default Local}, 	// Including functions shared across reports.	Include(		Convert File Path(			"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",			absolute,			windows		)	);	objRefNS:in_adsl = prepADSL();		// Change JMP names to SAS Labels.	jg:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );		// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.	reportRefNS:linkAnalysisTableToADSLTable( objRefNS:in_adsl );		// Apply value order and color preferences to an analysis data table.	jg:ApplyValueOrderToTables(		Eval List( {objRefNS:in_adsl} ),		objRefNS:StudyName	);		// Add predefined drill downs to the report.	processNS:addDrillDowns( {"ShowSubjects"} );		// Working with requirements return. (Not necessary for this report.)	processNS:note(		"Datasets in _ONE_OR_MORE_DEMOGRAPHICS_: " ||		Char(			objRefNS:requirementsReturn["domains_wild"][			"_ONE_OR_MORE_DEMOGRAPHICS_"]["present"]		)	);	processNS:note(		"Datasets passing requirements for _ONE_OR_MORE_DEMOGRAPHICS_: " ||		Char(			objRefNS:requirementsReturn["domains_wild"][			"_ONE_OR_MORE_DEMOGRAPHICS_"]["pass"]		)	);	domainsPass = objRefNS:requirementsReturn["domains_wild"][	"_ONE_OR_MORE_DEMOGRAPHICS_"]["pass"];	For( i = 1, i <= N Items( domainsPass ), i++,		processNS:note(			"Required chosen variables in " || domainsPass[i] || ": " ||			Char(				objRefNS:requirementsReturn["domains"][domainsPass[i]][				"required_chosen"]			)		)	);		// A custom error check. (Not necessary for this report. Set to 1 to simulate an error.)	If( 0,		processNS:fatalError(			"Cannot run this report because condition X was not met.", 1		)	);		// Creating a function for use within this report only.	objRefNS:createResults = Function( {cols = {}},		{Default Local},		distCode = "objRefNS:in_adsl << Distribution(";		For( i = 1, i <= N Items( cols ), i++,			If( i > 1, distCode ||= "," );			distCode ||= Eval Insert(				"\[				Nominal Distribution(Column(:Name("^cols[i]^")))			]\"			);		);		distCode ||= ")";		Eval(			Parse(				Eval Insert(					"\[			// Send content to the output pane.			processNS:setReportOutput(				VListBox(					// Create a Distribution object using the code built in distCode.					objRefNS:db = ^distCode^				)			);		]\"				)			)		);	);		// Calling a widget constructor (in non-inline form, with a script that runs after the user changes the value, running the script initially).	processNS	:makeCreateAdditionalDistributionsForSelectedVariablesWidget(		0, // 0 is non-inline form; use 1 for inline form		// script		Expr(			Expr(				Expr(			// Retrieve the current values this widget, convert them into JMP names, and store these in objRefNS:tadslCols.					objRefNS:tadslCols = jg					:getColumnJMPNames(						jg:getWidgetValue(							"objRefNS:CreateAdditionalDistributionsForSelectedVariablesolb"						), objRefNS:in_adsl					);						// Call the function defined in this report.					objRefNS:createResults( objRefNS:tadslCols );						// Renaming a report.					//processNS:renameReportTitleDomain("ADSL"); // Honors configuration display preferences for domains.					processNS					:renameReportTitleSubstring(						Char( objRefNS:tadslCols )					);			//processNS:renameReportTitle("This entirely replaces the original report title."); // Freeform -- does not use processNS:labelSkeleton.								// When a widget value change requires the entire report to rerun, issue the following, but be sure to set the runScriptInitial					//  argument in the widget constructor to 0 to prevent an endless loop.					//processNS:rerunReport();				)			)		),		1 // 0 is do not run the script initially; 1 is run the script initially	);		// Example custom widget creation.	processNS:makeWidget(		["ref" => "objRefNS:w1", "class" => "ComboBoxClass"]	);	processNS:makeWidget(		["ref" => "objRefNS:w2",		"class" => "ComboBoxClass",		"label" => "ComboBoxClass Widget 2",		"values" => {"A~a", "B~b", "C~c"}, "initialvalue" => "B"]	);	processNS:makeWidget(		["ref" => "objRefNS:w3",		"class" => "ComboBoxClass",		"label" => "ComboBoxClass Widget 3",		"valuesdataref" => "objRefNS:in_adsl"]	);	processNS:makeWidget(		["ref" => "objRefNS:w4",		"class" => "CalendarFieldClass",		"label" => "CalendarFieldClass Widget",		"initialvalue" => "01/01/2015",		"selectedformat" => "d/m/y"]	);	processNS:makeWidget(		["ref" => "objRefNS:w5",		"class" => "CheckboxClass",		"label" => "CheckboxClass Widget",		"initialvalue" => "No",		"scriptd" => Expr(			Expr(				Expr(					If( !((objRefNS:w5):isChecked()),						Try(							(objRefNS:w6):inputContainer <<							Visibility( "collapse" )						),						Try(							(objRefNS:w6):inputContainer <<							Visibility( "visible" )						)					)				)			)		)]	);	processNS:makeWidget(		["ref" => "objRefNS:w6",		"class" => "FileAndFolderFieldClass",		"label" => "FileAndFolderFieldClass Widget",		"selectionoptions" => ["selectDirectory" => 1], "scriptd" =>		Expr(			Expr(				Expr(					If( !((objRefNS:w5):isChecked()),						Try(							(objRefNS:w6):inputContainer <<							Visibility( "collapse" )						),						Try(							(objRefNS:w6):inputContainer <<							Visibility( "visible" )						)					)				)			)		), "script" => Expr(			Expr(				Expr(					processNS:rerunReport()				)			)		)]	);	processNS:makeWidget(		["ref" => "objRefNS:w7",		"class" => "ListBoxClass",		"label" => "ListBoxClass Widget",		"maxselected" => 2,		"values" => {"A~a", "B~b", "C~c"}, "initialvalue" => {"B", "C"},		"script" => Expr(			Expr(				Expr(					processNS:rerunReport()				)			)		)]	);	processNS:makeWidget(		["ref" => "objRefNS:w8",		"class" => "ManualEntryListBoxClass",		"label" => "ManualEntryListBoxClass Widget"]	);	processNS:makeWidget(		["ref" => "objRefNS:w9",		"class" => "ManualEntryOrderedListBoxClass",		"label" => "ManualEntryOrderedListboxClass Widget",		"initialvalue" => {"a", "b", "c"}, "script" =>		Expr(			Expr(				Expr(					processNS:rerunReport()				)			)		)]	);	processNS:makeWidget(		["ref" => "objRefNS:w10",		"class" => "OrderedListBoxClass",		"label" => "OrderedListBoxClass Widget",		"values" => {"A~a", "B~b", "C~c"}, "displayoption" => 2,		"initialvalue" => {"B"}]	);	processNS:makeWidget(		["ref" => "objRefNS:w11",		"class" => "RadioBoxClass",		"label" => "RadioBoxClass Widget",		"values" => {"a", "b", "c"}, "initialvalue" => "b",		"script" => Expr(			Expr(				Expr(					processNS:rerunReport()				)			)		)]	);	processNS:makeWidget(		["ref" => "objRefNS:w12",		"class" => "SliderFieldClass",		"label" => "SliderFieldClass Widget",		"min" => 10,		"max" => 20,		"script" => Expr(			Expr(				Expr(					processNS:rerunReport()				)			)		)]	);	processNS:makeWidget(		["ref" => "objRefNS:w13",		"class" => "SpinnerFieldClass",		"label" => "SpinnerFieldClass Widget",		"min" => 10,		"max" => 20,		"increment" => 2]	);	processNS:makeWidget(		["ref" => "objRefNS:w14",		"class" => "TextFieldClass",		"label" => "TextFieldClass Widget",		"initialvalue" => "Test",		"script" => Expr(			Expr(				Expr(					processNS:rerunReport()				)			)		)]	);	processNS:makeWidget(		["ref" => "objRefNS:w16",		"class" => "OrderedListBoxClass",		"label" => "OrderedListBoxClass Widget 2",		"valuesdataref" => "objRefNS:in_adsl",		"initialvalue" => {"AGE"}]	);		// Obtain the current internal value from a widget.	processNS:note(		"objRefNS:w2's value is " || Char(			jg:getWidgetValue( "objRefNS:w2" )		) || "."	);		// Obtain the current display value from a widget.	processNS:note(		"objRefNS:w2's value is " || Char(			jg:getWidgetValueAlternate( "objRefNS:w2" )		) || "."	);		// Place the above widget into the Options Data panel.	processNS:appendDataOptions(		V List Box(			// Paste the inputContainer (displaybox) of the widgets in the display tree.			(objRefNS:CreateAdditionalDistributionsForSelectedVariablesolb)			:inputContainer, 			// Example custom widgets created above.			(objRefNS:w1):inputContainer,			(objRefNS:w2):inputContainer,			(objRefNS:w3):inputContainer,			(objRefNS:w4):inputContainer,			(objRefNS:w5):inputContainer,			(objRefNS:w6):inputContainer,			(objRefNS:w7):inputContainer,			(objRefNS:w8):inputContainer,			(objRefNS:w9):inputContainer,			(objRefNS:w10):inputContainer,			(objRefNS:w11):inputContainer,			(objRefNS:w12):inputContainer,			(objRefNS:w13):inputContainer,			(objRefNS:w14):inputContainer, 			// Example custom widget created inline.			processNS:makeWidget(				["ref" => "objRefNS:w15",				"class" => "CheckboxClass",				"label" => "CheckboxClass Widget 2",				"inline" => 1]			),			(objRefNS:w16):inputContainer		),		0	);		// Create a Report Filter.	If( Length( objRefNS:tadslCols ),		objRefNS:ReportDataFilterReferenceList = reportRefNS		:createReportFilter( objRefNS:in_adsl, objRefNS:tadslCols );		// Do not display the filter histograms and bars.		objRefNS:rptfilter = objRefNS:ReportDataFilterReferenceList[2];		objRefNS:rptfilter << Show Histograms and Bars( 0 );	);		// Place the Report Filter in the Options Display panel.	processNS:appendDisplayOptions(		objRefNS:ReportDataFilterReferenceList[1]	);		// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.	processNS:addDataTableReference(		"Custom Report Example ADSL Data", "objRefNS:in_adsl"	);		// Send these objects to JMP Live.	processNS:defineStaticReportContent( {objRefNS:db} );		// Send these objects to the static report.	processNS:defineLiveReportContent( {{objRefNS:db}} ););0;/*===================================================================================Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARECODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TOTHE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USEOF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OFMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,WITH RESPECT TO THE CODE.You may use the Code solely as part of a software product you currently havelicensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or oneof SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the"Software"), and not for any other purpose. The Code is designed to eithercorrect an error in the Software or to add functionality to the Software buthas not necessarily been tested. Accordingly, JMP makes no representation orwarranty that the Code (1) will operate error-free or (2) will not contain anyviruses or other applications or executables (including, without limitation,any "trap doors," "worms" and "time bombs") that will degrade or infect anysoftware product that you license from JMP or any other software or yournetwork or systems. JMP is under no obligation to maintain, support, orcontinue to distribute the Code.Neither JMP nor its licensors shall be liable to you or any third party for anygeneral, special, direct, indirect, consequential, incidental, or other damageswhatsoever arising out of or related to your use or inability to use the Code,even if JMP has been advised of the possibility of such damages. Except asotherwise provided above, the Code is governed by the same agreement thatgoverns the Software. If you do not have an existing agreement with JMP or SASgoverning the Software, you may not use the Code.US export laws and regulations apply to the Code and any other JMP-providedtechnology ("Controlled Material"). The Controlled Material originates from theUnited States. Customer agrees to comply with these and other applicable exportand import laws and regulations, except as prohibited or penalized by law("Trade Law"). Customer warrants that Customer and its users are not: (a)prohibited by Trade Law from accessing Controlled Material without USgovernment approval; (b) located in or under control of any country or otherterritory subject to general export or trade embargo under Trade Law; or (c)engaged in any of the following end-uses: nuclear, chemical or biologicalweapons; nuclear facilities not under International Atomic Energy Agencysafeguards; missiles or unmanned aerial vehicles capable of long-range use orweapons delivery, military training or assistance, military or intelligenceend-use in Russia or in any country in Country Group D:5 of the United StatesExport Administration Regulations; deep water, Arctic offshore or shale oil orgas exploration involving Russia or Russian companies, or Russian energy exportpipelines. Customer will not import or use any data within the System that issubject to the US International Traffic Arms Regulations. United States exportclassification information for JMP software and its affiliates is available atjmp.com/export.JMP and all other JMP Statistical Discovery LLC product or service names areregistered trademarks or trademarks of SAS Institute Inc. in the USA and othercountries. ® indicates USA registration. Other brand and product names areregistered trademarks or trademarks of their respective companies.==============================================================================*/
+
+// The header section for report title, category, icon, and help.
+processNS:label = "Custom Report Example 4";
+processNS:labelSkeleton = "Custom Report with Variables {{^1}}, Example 4"; // For dynamically renaming the report with a substring. See the 'renameReport' examples.
+processNS:reportSelectorTab = 1; // 1: Display on report selector; 0: Do not display on report selector.
+processNS:drillDown = 0; // 1: This report can also be used as a drilldown; 0: This report cannot also be used as a drilldown.
+processNS:cdiscClass = "Custom Reports";
+processNS:icon =
+"/install/clinical/documentation/icons/clinical/DistributionAnalysis.gif";
+processNS:documentation = "https://www.jmp.com/";
+processNS:description =
+"This report demonstrates a basic requirements declaration, switches data table columns names to SAS Labels, "
+ ||
+"applies value order and color preferences, adds a drill down button, writes notes to the JMP log, checks for a custom error "
+ ||
+"condition, declares a function for use within a widget script, defines an assortment of custom widgets, creates a report filter, "
+ ||
+"tracks data tables so that they are automatically closed when the report is closed, and defines content to publish to Create Static "
+ || "Report and Create Live Report.";
+
+// Specify any variable requirements here. Those requirements not met will automatically prevent the report from running.
+processNS:requirements = ["_ONE_OR_MORE_DEMOGRAPHICS_" => {{"ARM"}}];
+
+// The main report code.
+processNS:runReport = Function( {},
+	{Default Local}, 
+	// Including functions shared across reports.
+	Include(
+		Convert File Path(
+			"$CLINICAL_HOME/JSLFiles/DataPrep.JSL",
+			absolute,
+			windows
+		)
+	);
+	objRefNS:in_adsl = prepADSL();
+	
+	// Change JMP names to SAS Labels.
+	jg:setColumnJMPNamesToSASLabels( objRefNS:in_adsl );
+	
+	// Linking an analysis data table to adsl. This allows the Review Subject Filter to filter the report.
+	reportRefNS:linkAnalysisTableToADSLTable( objRefNS:in_adsl );
+	
+	// Apply value order and color preferences to an analysis data table.
+	jg:ApplyValueOrderToTables(
+		Eval List( {objRefNS:in_adsl} ),
+		objRefNS:StudyName
+	);
+	
+	// Add predefined drill downs to the report.
+	processNS:addDrillDowns( {"ShowSubjects"} );
+	
+	// Working with requirements return. (Not necessary for this report.)
+	processNS:note(
+		"Datasets in _ONE_OR_MORE_DEMOGRAPHICS_: " ||
+		Char(
+			objRefNS:requirementsReturn["domains_wild"][
+			"_ONE_OR_MORE_DEMOGRAPHICS_"]["present"]
+		)
+	);
+	processNS:note(
+		"Datasets passing requirements for _ONE_OR_MORE_DEMOGRAPHICS_: " ||
+		Char(
+			objRefNS:requirementsReturn["domains_wild"][
+			"_ONE_OR_MORE_DEMOGRAPHICS_"]["pass"]
+		)
+	);
+	domainsPass = objRefNS:requirementsReturn["domains_wild"][
+	"_ONE_OR_MORE_DEMOGRAPHICS_"]["pass"];
+	For( i = 1, i <= N Items( domainsPass ), i++,
+		processNS:note(
+			"Required chosen variables in " || domainsPass[i] || ": " ||
+			Char(
+				objRefNS:requirementsReturn["domains"][domainsPass[i]][
+				"required_chosen"]
+			)
+		)
+	);
+	
+	// A custom error check. (Not necessary for this report. Set to 1 to simulate an error.)
+	If( 0,
+		processNS:fatalError(
+			"Cannot run this report because condition X was not met.", 1
+		)
+	);
+	
+	// Creating a function for use within this report only.
+	objRefNS:createResults = Function( {cols = {}},
+		{Default Local},
+		distCode = "objRefNS:in_adsl << Distribution(";
+		For( i = 1, i <= N Items( cols ), i++,
+			If( i > 1, distCode ||= "," );
+			distCode ||= Eval Insert(
+				"\[
+				Nominal Distribution(Column(:Name("^cols[i]^")))
+			]\"
+			);
+		);
+		distCode ||= ")";
+		Eval(
+			Parse(
+				Eval Insert(
+					"\[
+			// Send content to the output pane.
+			processNS:setReportOutput(
+				VListBox(
+					// Create a Distribution object using the code built in distCode.
+					objRefNS:db = ^distCode^
+				)
+			);
+		]\"
+				)
+			)
+		);
+	);
+	
+	// Calling a widget constructor (in non-inline form, with a script that runs after the user changes the value, running the script initially).
+	processNS
+	:makeCreateAdditionalDistributionsForSelectedVariablesWidget(
+		0, // 0 is non-inline form; use 1 for inline form
+		// script
+		Expr(
+			Expr(
+				Expr(
+			// Retrieve the current values this widget, convert them into JMP names, and store these in objRefNS:tadslCols.
+					objRefNS:tadslCols = jg
+					:getColumnJMPNames(
+						jg:getWidgetValue(
+							"objRefNS:CreateAdditionalDistributionsForSelectedVariablesolb"
+						), objRefNS:in_adsl
+					);
+			
+			// Call the function defined in this report.
+					objRefNS:createResults( objRefNS:tadslCols );
+			
+			// Renaming a report.
+					//processNS:renameReportTitleDomain("ADSL"); // Honors configuration display preferences for domains.
+					processNS
+					:renameReportTitleSubstring(
+						Char( objRefNS:tadslCols )
+					);
+			//processNS:renameReportTitle("This entirely replaces the original report title."); // Freeform -- does not use processNS:labelSkeleton.
+			
+					// When a widget value change requires the entire report to rerun, issue the following, but be sure to set the runScriptInitial
+					//  argument in the widget constructor to 0 to prevent an endless loop.
+					//processNS:rerunReport();
+				)
+			)
+		),
+		1 // 0 is do not run the script initially; 1 is run the script initially
+	);
+	
+	// Example custom widget creation.
+	processNS:makeWidget(
+		["ref" => "objRefNS:w1", "class" => "ComboBoxClass"]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w2",
+		"class" => "ComboBoxClass",
+		"label" => "ComboBoxClass Widget 2",
+		"values" => {"A~a", "B~b", "C~c"}, "initialvalue" => "B"]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w3",
+		"class" => "ComboBoxClass",
+		"label" => "ComboBoxClass Widget 3",
+		"valuesdataref" => "objRefNS:in_adsl"]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w4",
+		"class" => "CalendarFieldClass",
+		"label" => "CalendarFieldClass Widget",
+		"initialvalue" => "01/01/2015",
+		"selectedformat" => "d/m/y"]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w5",
+		"class" => "CheckboxClass",
+		"label" => "CheckboxClass Widget",
+		"initialvalue" => "No",
+		"scriptd" => Expr(
+			Expr(
+				Expr(
+					If( !((objRefNS:w5):isChecked()),
+						Try(
+							(objRefNS:w6):inputContainer <<
+							Visibility( "collapse" )
+						),
+						Try(
+							(objRefNS:w6):inputContainer <<
+							Visibility( "visible" )
+						)
+					)
+				)
+			)
+		)]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w6",
+		"class" => "FileAndFolderFieldClass",
+		"label" => "FileAndFolderFieldClass Widget",
+		"selectionoptions" => ["selectDirectory" => 1], "scriptd" =>
+		Expr(
+			Expr(
+				Expr(
+					If( !((objRefNS:w5):isChecked()),
+						Try(
+							(objRefNS:w6):inputContainer <<
+							Visibility( "collapse" )
+						),
+						Try(
+							(objRefNS:w6):inputContainer <<
+							Visibility( "visible" )
+						)
+					)
+				)
+			)
+		), "script" => Expr(
+			Expr(
+				Expr(
+					processNS:rerunReport()
+				)
+			)
+		)]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w7",
+		"class" => "ListBoxClass",
+		"label" => "ListBoxClass Widget",
+		"maxselected" => 2,
+		"values" => {"A~a", "B~b", "C~c"}, "initialvalue" => {"B", "C"},
+		"script" => Expr(
+			Expr(
+				Expr(
+					processNS:rerunReport()
+				)
+			)
+		)]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w8",
+		"class" => "ManualEntryListBoxClass",
+		"label" => "ManualEntryListBoxClass Widget"]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w9",
+		"class" => "ManualEntryOrderedListBoxClass",
+		"label" => "ManualEntryOrderedListboxClass Widget",
+		"initialvalue" => {"a", "b", "c"}, "script" =>
+		Expr(
+			Expr(
+				Expr(
+					processNS:rerunReport()
+				)
+			)
+		)]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w10",
+		"class" => "OrderedListBoxClass",
+		"label" => "OrderedListBoxClass Widget",
+		"values" => {"A~a", "B~b", "C~c"}, "displayoption" => 2,
+		"initialvalue" => {"B"}]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w11",
+		"class" => "RadioBoxClass",
+		"label" => "RadioBoxClass Widget",
+		"values" => {"a", "b", "c"}, "initialvalue" => "b",
+		"script" => Expr(
+			Expr(
+				Expr(
+					processNS:rerunReport()
+				)
+			)
+		)]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w12",
+		"class" => "SliderFieldClass",
+		"label" => "SliderFieldClass Widget",
+		"min" => 10,
+		"max" => 20,
+		"script" => Expr(
+			Expr(
+				Expr(
+					processNS:rerunReport()
+				)
+			)
+		)]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w13",
+		"class" => "SpinnerFieldClass",
+		"label" => "SpinnerFieldClass Widget",
+		"min" => 10,
+		"max" => 20,
+		"increment" => 2]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w14",
+		"class" => "TextFieldClass",
+		"label" => "TextFieldClass Widget",
+		"initialvalue" => "Test",
+		"script" => Expr(
+			Expr(
+				Expr(
+					processNS:rerunReport()
+				)
+			)
+		)]
+	);
+	processNS:makeWidget(
+		["ref" => "objRefNS:w16",
+		"class" => "OrderedListBoxClass",
+		"label" => "OrderedListBoxClass Widget 2",
+		"valuesdataref" => "objRefNS:in_adsl",
+		"initialvalue" => {"AGE"}]
+	);
+	
+	// Obtain the current internal value from a widget.
+	processNS:note(
+		"objRefNS:w2's value is " || Char(
+			jg:getWidgetValue( "objRefNS:w2" )
+		) || "."
+	);
+	
+	// Obtain the current display value from a widget.
+	processNS:note(
+		"objRefNS:w2's value is " || Char(
+			jg:getWidgetValueAlternate( "objRefNS:w2" )
+		) || "."
+	);
+	
+	// Place the above widget into the Options Data panel.
+	processNS:appendDataOptions(
+		V List Box(
+			// Paste the inputContainer (displaybox) of the widgets in the display tree.
+			(objRefNS:CreateAdditionalDistributionsForSelectedVariablesolb)
+			:inputContainer, 
+			// Example custom widgets created above.
+			(objRefNS:w1):inputContainer,
+			(objRefNS:w2):inputContainer,
+			(objRefNS:w3):inputContainer,
+			(objRefNS:w4):inputContainer,
+			(objRefNS:w5):inputContainer,
+			(objRefNS:w6):inputContainer,
+			(objRefNS:w7):inputContainer,
+			(objRefNS:w8):inputContainer,
+			(objRefNS:w9):inputContainer,
+			(objRefNS:w10):inputContainer,
+			(objRefNS:w11):inputContainer,
+			(objRefNS:w12):inputContainer,
+			(objRefNS:w13):inputContainer,
+			(objRefNS:w14):inputContainer, 
+			// Example custom widget created inline.
+			processNS:makeWidget(
+				["ref" => "objRefNS:w15",
+				"class" => "CheckboxClass",
+				"label" => "CheckboxClass Widget 2",
+				"inline" => 1]
+			),
+			(objRefNS:w16):inputContainer
+		),
+		0
+	);
+	
+	// Create a Report Filter.
+	If( Length( objRefNS:tadslCols ),
+		objRefNS:ReportDataFilterReferenceList = reportRefNS
+		:createReportFilter( objRefNS:in_adsl, objRefNS:tadslCols );
+		// Do not display the filter histograms and bars.
+		objRefNS:rptfilter = objRefNS:ReportDataFilterReferenceList[2];
+		objRefNS:rptfilter << Show Histograms and Bars( 0 );
+	);
+	
+	// Place the Report Filter in the Options Display panel.
+	processNS:appendDisplayOptions(
+		objRefNS:ReportDataFilterReferenceList[1]
+	);
+	
+	// Keep track of data sets created in this report so that they are automatically closed when the report tab is closed.
+	processNS:addDataTableReference(
+		"Custom Report Example ADSL Data", "objRefNS:in_adsl"
+	);
+	
+	// Send these objects to JMP Live.
+	processNS:defineStaticReportContent( {objRefNS:db} );
+	
+	// Send these objects to the static report.
+	processNS:defineLiveReportContent( {{objRefNS:db}} );
+);
+
+0;
+/*
+===================================================================================
+
+Copyright © 2025 JMP Statistical Discovery LLC, Cary, NC, USA. All rights reserved.
+
+JMP STATISTICAL DISCOVERY LLC ("JMP") PERMITS THE USE OF THIS COMPUTER SOFTWARE
+CODE ("CODE") ON AN AS-IS BASIS AND AUTHORIZES YOU TO USE THE CODE SUBJECT TO
+THE TERMS LISTED HEREIN. BY USING THE CODE, YOU AGREE TO THESE TERMS. YOUR USE
+OF THE CODE IS AT YOUR OWN RISK. JMP MAKES NO REPRESENTATION OR WARRANTY,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE,
+WITH RESPECT TO THE CODE.
+
+You may use the Code solely as part of a software product you currently have
+licensed from JMP, JMP's parent company, SAS Institute Inc. ("SAS US") or one
+of SAS' subsidiaries (together with SAS US, "SAS") or authorized agents (the
+"Software"), and not for any other purpose. The Code is designed to either
+correct an error in the Software or to add functionality to the Software but
+has not necessarily been tested. Accordingly, JMP makes no representation or
+warranty that the Code (1) will operate error-free or (2) will not contain any
+viruses or other applications or executables (including, without limitation,
+any "trap doors," "worms" and "time bombs") that will degrade or infect any
+software product that you license from JMP or any other software or your
+network or systems. JMP is under no obligation to maintain, support, or
+continue to distribute the Code.
+
+Neither JMP nor its licensors shall be liable to you or any third party for any
+general, special, direct, indirect, consequential, incidental, or other damages
+whatsoever arising out of or related to your use or inability to use the Code,
+even if JMP has been advised of the possibility of such damages. Except as
+otherwise provided above, the Code is governed by the same agreement that
+governs the Software. If you do not have an existing agreement with JMP or SAS
+governing the Software, you may not use the Code.
+
+US export laws and regulations apply to the Code and any other JMP-provided
+technology ("Controlled Material"). The Controlled Material originates from the
+United States. Customer agrees to comply with these and other applicable export
+and import laws and regulations, except as prohibited or penalized by law
+("Trade Law"). Customer warrants that Customer and its users are not: (a)
+prohibited by Trade Law from accessing Controlled Material without US
+government approval; (b) located in or under control of any country or other
+territory subject to general export or trade embargo under Trade Law; or (c)
+engaged in any of the following end-uses: nuclear, chemical or biological
+weapons; nuclear facilities not under International Atomic Energy Agency
+safeguards; missiles or unmanned aerial vehicles capable of long-range use or
+weapons delivery, military training or assistance, military or intelligence
+end-use in Russia or in any country in Country Group D:5 of the United States
+Export Administration Regulations; deep water, Arctic offshore or shale oil or
+gas exploration involving Russia or Russian companies, or Russian energy export
+pipelines. Customer will not import or use any data within the System that is
+subject to the US International Traffic Arms Regulations. United States export
+classification information for JMP software and its affiliates is available at
+jmp.com/export.
+
+JMP and all other JMP Statistical Discovery LLC product or service names are
+registered trademarks or trademarks of SAS Institute Inc. in the USA and other
+countries. ® indicates USA registration. Other brand and product names are
+registered trademarks or trademarks of their respective companies.
+
+==============================================================================
+*/
 
 ```
 

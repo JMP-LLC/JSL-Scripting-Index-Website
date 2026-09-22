@@ -14,7 +14,20 @@
 
 ```jsl
 
-/*Simple Example*/f = Expr(	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2);A = [1 1, 1 5];b = [2, 5];minFun = Constrained Maximize(	f,	{x1( 0, 5 ), x2( 0, 5 )},	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	<<StartingValues( [1, .5] ));Eval List( {x1, x2, minFun} );
+
+/*Simple Example*/
+f = Expr(
+	-2 * x1 ^ 2 - 2 * x2 ^ 2 + 2 * x1 * x2 + 4 * x1 + 6 * x2
+);
+A = [1 1, 1 5];
+b = [2, 5];
+minFun = Constrained Maximize(
+	f,
+	{x1( 0, 5 ), x2( 0, 5 )},
+	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,
+	<<StartingValues( [1, .5] )
+);
+Eval List( {x1, x2, minFun} );
 
 ```
 
@@ -22,7 +35,25 @@
 
 ```jsl
 
-/*Simple Example with optional parameters included*/ x = [., .];f = Expr(	-2 * x[1] ^ 2 - 2 * x[2] ^ 2 + 2 * x[1] * x[2] + 4 * x[1] + 6 * x[2]);A = [1 1, 1 5];b = [2, 5];{objVal, iters, gradient, hessian} = Constrained Maximize(	f,	{x},	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	MaxIter( 250 ),	<<tolerance( 1e-5 ),	<<showDetails( True ),	<<StartingValues( [1, .5] ),	<<setVariableLimit( {[0, 0], [5, 5]} ));Show( x, objVal, iters, gradient, hessian );
+
+/*Simple Example with optional parameters included*/ 
+x = [., .];
+f = Expr(
+	-2 * x[1] ^ 2 - 2 * x[2] ^ 2 + 2 * x[1] * x[2] + 4 * x[1] + 6 * x[2]
+);
+A = [1 1, 1 5];
+b = [2, 5];
+{objVal, iters, gradient, hessian} = Constrained Maximize(
+	f,
+	{x},
+	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,
+	MaxIter( 250 ),
+	<<tolerance( 1e-5 ),
+	<<showDetails( True ),
+	<<StartingValues( [1, .5] ),
+	<<setVariableLimit( {[0, 0], [5, 5]} )
+);
+Show( x, objVal, iters, gradient, hessian );
 
 ```
 
@@ -38,7 +69,20 @@
 
 ```jsl
 
-/*Simple Example*/f = Expr(	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2);A = [1 1, 1 5];b = [2, 5];minFun = Constrained Minimize(	f,	{x1( 0, 5 ), x2( 0, 5 )},	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	<<StartingValues( [1, .5] ));Eval List( {x1, x2, minFun} );
+
+/*Simple Example*/
+f = Expr(
+	2 * x1 ^ 2 + 2 * x2 ^ 2 - 2 * x1 * x2 - 4 * x1 - 6 * x2
+);
+A = [1 1, 1 5];
+b = [2, 5];
+minFun = Constrained Minimize(
+	f,
+	{x1( 0, 5 ), x2( 0, 5 )},
+	<<lessthanEQ( {A, b} )/*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,
+	<<StartingValues( [1, .5] )
+);
+Eval List( {x1, x2, minFun} );
 
 ```
 
@@ -46,7 +90,25 @@
 
 ```jsl
 
-/*Simple Example with optional parameters included*/ x = [., .];f = Expr(	2 * x[1] ^ 2 + 2 * x[2] ^ 2 - 2 * x[1] * x[2] - 4 * x[1] - 6 * x[2]);A = [1 1, 1 5];b = [2, 5];{objVal, iters, gradient, hessian} = Constrained Minimize(	f,	{x},	<<lessthanEQ( {A, b} ) /*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,	MaxIter( 250 ),	<<tolerance( 1e-5 ),	<<showDetails( True ),	<<StartingValues( [1, .5] ),	<<setVariableLimit( {[0, 0], [5, 5]} ));Show( x, objVal, iters, gradient, hessian );
+
+/*Simple Example with optional parameters included*/ 
+x = [., .];
+f = Expr(
+	2 * x[1] ^ 2 + 2 * x[2] ^ 2 - 2 * x[1] * x[2] - 4 * x[1] - 6 * x[2]
+);
+A = [1 1, 1 5];
+b = [2, 5];
+{objVal, iters, gradient, hessian} = Constrained Minimize(
+	f,
+	{x},
+	<<lessthanEQ( {A, b} ) /*and/or <<GreaterThanEQ({A,b}) and/or <<EqualTo({A,b})*/,
+	MaxIter( 250 ),
+	<<tolerance( 1e-5 ),
+	<<showDetails( True ),
+	<<StartingValues( [1, .5] ),
+	<<setVariableLimit( {[0, 0], [5, 5]} )
+);
+Show( x, objVal, iters, gradient, hessian );
 
 ```
 
@@ -60,7 +122,18 @@
 
 ```jsl
 
-dvec = [0.1 0.9 0.1];yvec = [1 5 10];New Window( "Desirability",	Graph Box(		X Scale( 0, 12 ),		Y Scale( 0, 1 ),		Frame Size( 500, 400 ),		Drag Marker( yvec, dvec );		Y Function( Desirability( yvec, dvec, x ), x );	));
+
+dvec = [0.1 0.9 0.1];
+yvec = [1 5 10];
+New Window( "Desirability",
+	Graph Box(
+		X Scale( 0, 12 ),
+		Y Scale( 0, 1 ),
+		Frame Size( 500, 400 ),
+		Drag Marker( yvec, dvec );
+		Y Function( Desirability( yvec, dvec, x ), x );
+	)
+);
 
 ```
 
@@ -74,13 +147,20 @@ dvec = [0.1 0.9 0.1];yvec = [1 5 10];New Window( "Desirability",	Graph Box(	
 
 ```jsl
 
-A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0 . .];{x, z} = LPSolve( A, b, c, L, U, 1, 1, 1, 1 );Show( x, z );
+
+A = [5 -2 6, 2 4 0, 3 8 -4];
+b = [17, 19, 14];
+c = [9 6 -4];
+L = [. 0 .];
+U = [0 . .];
+{x, z} = LPSolve( A, b, c, L, U, 1, 1, 1, 1 );
+Show( x, z );
 
 ```
 
 ### Maximize
 
-**Syntaxe :** Maximize( expr, {x1, x2, ...} ); Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntaxe :** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui maximisent l&apos;expression expr. Vous pouvez spécifier des limites inférieures et supérieures pour chaque argument entre parenthèses à la suite du nom de l&apos;argument. Si expr n&apos;est pas une fonction concave, Maximize pourrait trouver un maximum local au lieu du maximum global. Si cela pose problème, essayez plusieurs valeurs de départ. Maximize fonctionne également mieux pour les fonctions avec une dérivée seconde continue. Les arguments supplémentaires de la fonction Maximize vous permettent de définir le nombre maximum d&apos;itérations, la tolérance pour la convergence, et d&apos;afficher davantage de détails sur l&apos;optimisation. Cliquez sur le bouton de la rubrique Aide pour davantage d&apos;informations sur les arguments facultatifs.
 
@@ -90,7 +170,12 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Simple example*/ x = 0;y = 0;maxf = Maximize( ((2 * x ^ 2 + 12 * x * y - y * 3)), {x, y} );Eval List( {x, y, maxf} );
+
+/*Simple example*/ 
+x = 0;
+y = 0;
+maxf = Maximize( ((2 * x ^ 2 + 12 * x * y - y * 3)), {x, y} );
+Eval List( {x, y, maxf} );
 
 ```
 
@@ -98,7 +183,21 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Find the MLE for a Normal Distribution with a random sample of 3 observations*/x = [3 4 5]; /* observed values*/ n = 3;logDens = Expr(	(-n / 2) * Log( 2 * Pi() * sigSq ) - Summation( i = 1, 3, ((x[i] - mu) ^ 2) ) / (2 *	sigSq));mu = 3;sigSq = 1;/*initial values*/ {maxReached, iters, gradient, hessian} = Maximize(	logDens,	{mu, sigSq( 0, . )},	<<details( both ));
+
+/*Find the MLE for a Normal Distribution with a random sample of 3 observations*/
+x = [3 4 5]; /* observed values*/ 
+n = 3;
+logDens = Expr(
+	(-n / 2) * Log( 2 * Pi() * sigSq ) - Summation( i = 1, 3, ((x[i] - mu) ^ 2) ) / (2 *
+	sigSq)
+);
+mu = 3;
+sigSq = 1;/*initial values*/ 
+{maxReached, iters, gradient, hessian} = Maximize(
+	logDens,
+	{mu, sigSq( 0, . )},
+	<<details( both )
+);
 
 ```
 
@@ -106,13 +205,23 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Simple example with all optional arguments*/ x = 0;y = 0;{objVal, iters, gradient, hessian} = Maximize(	((2 * x ^ 2 + 12 * x * y - y * 3)),	{x( -1, 1 ), y( -1, 1 )},	<<maxIter( 200 ),	<<tolerance( 10 ^ -6 ),	<<details( both ));
+
+/*Simple example with all optional arguments*/ 
+x = 0;
+y = 0;
+{objVal, iters, gradient, hessian} = Maximize(
+	((2 * x ^ 2 + 12 * x * y - y * 3)),
+	{x( -1, 1 ), y( -1, 1 )},
+	<<maxIter( 200 ),
+	<<tolerance( 10 ^ -6 ),
+	<<details( both )
+);
 
 ```
 
 ### Minimize
 
-**Syntaxe :** Minimize( expr, {x1, x2, ...} ); Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
+**Syntaxe :** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui minimisent l&apos;expression expr. Vous pouvez spécifier des limites inférieures et supérieures pour chaque argument entre parenthèses à la suite du nom de l&apos;argument. Si expr n&apos;est pas une fonction convexe, Minimize pourrait trouver un minimum local au lieu du minimum global. Si cela pose problème, essayez plusieurs valeurs de départ. Minimize fonctionne également mieux pour les fonctions avec une dérivée seconde continue. Les arguments supplémentaires de la fonction Minimize vous permettent de définir le nombre maximum d&apos;itérations, la tolérance pour la convergence, et d&apos;afficher davantage de détails sur l&apos;optimisation. Cliquez sur le bouton de la rubrique Aide pour davantage d&apos;informations sur les arguments facultatifs.
 
@@ -122,7 +231,12 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Simple Example*/x = 0;y = 0;minFun = Minimize( (y * 3 - 2 * x ^ 2 - 12 * x * y), {x, y} );Eval List( {x, y, minFun} );
+
+/*Simple Example*/
+x = 0;
+y = 0;
+minFun = Minimize( (y * 3 - 2 * x ^ 2 - 12 * x * y), {x, y} );
+Eval List( {x, y, minFun} );
 
 ```
 
@@ -130,7 +244,21 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Nonlinear Sums of Squares Example*/x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];sseExpr = Expr(	Summation( i = 1, 6, (y[i] - b1 * x[i] ^ b2) ^ 2 ));b1 = 1;b2 = 5;{objVal, iters, gradient, hessian} = Minimize(	sseExpr,	{b1, b2},	<<details( both ),	<<tolerance( 10 ^ -16 ));
+
+/*Nonlinear Sums of Squares Example*/
+x = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
+y = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
+sseExpr = Expr(
+	Summation( i = 1, 6, (y[i] - b1 * x[i] ^ b2) ^ 2 )
+);
+b1 = 1;
+b2 = 5;
+{objVal, iters, gradient, hessian} = Minimize(
+	sseExpr,
+	{b1, b2},
+	<<details( both ),
+	<<tolerance( 10 ^ -16 )
+);
 
 ```
 
@@ -138,7 +266,17 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Simple example with some optional arguments*/x = 0;y = 0;{objVal, iters, gradient, hessian} = Minimize(	((2 * x ^ 2 + 12 * x * y - y * 3)),	{x( -1, 1 ), y( -1, 1 )},	<<maxIter( 200 ),	<<tolerance( 10 ^ -6 ),	<<details( both ));
+
+/*Simple example with some optional arguments*/
+x = 0;
+y = 0;
+{objVal, iters, gradient, hessian} = Minimize(
+	((2 * x ^ 2 + 12 * x * y - y * 3)),
+	{x( -1, 1 ), y( -1, 1 )},
+	<<maxIter( 200 ),
+	<<tolerance( 10 ^ -6 ),
+	<<details( both )
+);
 
 ```
 
@@ -146,7 +284,39 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Example with gradient, hessian, and method(nr) options*/xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];tmp3 = Expr(	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 ));b1 = 1;b2 = 5;Minimize(	tmp3,	{b1, b2},	<<details( both ),	<<tolerance( 10 ^ -10 ),	<<Method( nr ),	<<gradient(		{Summation( i = 1, 6, -2 * xx[i] ^ b2 * (yy[i] - b1 * xx[i] ^ b2) ),		Summation(			i = 1,			6,			2 * (b1 * Ln( xx[i] ) * xx[i] ^ b2) * (b1 * xx[i] ^ b2 - yy[i])		)}	),	<<hessian(		{{Summation( i = 1, 6, 2 * xx[i] ^ (2 * b2) ),		Summation( i = 1, 6, 2 * Ln( xx[i] ) * xx[i] ^ b2 * (2 * b1 * xx[i] ^ b2 - yy[i]) )},		{Summation(			i = 1,			6,			2 * b1 * Ln( xx[i] ) ^ 2 * xx[i] ^ b2 * (2 * b1 * xx[i] ^ b2 - yy[i])		)}}	));
+
+/*Example with gradient, hessian, and method(nr) options*/
+xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
+yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
+tmp3 = Expr(
+	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 )
+);
+b1 = 1;
+b2 = 5;
+Minimize(
+	tmp3,
+	{b1, b2},
+	<<details( both ),
+	<<tolerance( 10 ^ -10 ),
+	<<Method( nr ),
+	<<gradient(
+		{Summation( i = 1, 6, -2 * xx[i] ^ b2 * (yy[i] - b1 * xx[i] ^ b2) ),
+		Summation(
+			i = 1,
+			6,
+			2 * (b1 * Ln( xx[i] ) * xx[i] ^ b2) * (b1 * xx[i] ^ b2 - yy[i])
+		)}
+	),
+	<<hessian(
+		{{Summation( i = 1, 6, 2 * xx[i] ^ (2 * b2) ),
+		Summation( i = 1, 6, 2 * Ln( xx[i] ) * xx[i] ^ b2 * (2 * b1 * xx[i] ^ b2 - yy[i]) )},
+		{Summation(
+			i = 1,
+			6,
+			2 * b1 * Ln( xx[i] ) ^ 2 * xx[i] ^ b2 * (2 * b1 * xx[i] ^ b2 - yy[i])
+		)}}
+	)
+);
 
 ```
 
@@ -154,7 +324,23 @@ A = [5 -2 6, 2 4 0, 3 8 -4];b = [17, 19, 14];c = [9 6 -4];L = [. 0 .];U = [0
 
 ```jsl
 
-/*Example with usNumericDeriv and method(sr1) options*/xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];tmp3 = Expr(	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 ));b1 = 1;b2 = 5;{objValue, iter, gradient, hessian} = Minimize(	tmp3,	{b1, b2},	<<details( both ),	<<tolerance( 10 ^ -16 ),	<<Method( sr1 ),	<<useNumericDeriv( True ));
+
+/*Example with usNumericDeriv and method(sr1) options*/
+xx = [1.309, 1.471, 1.49, 1.565, 1.611, 1.68];
+yy = [2.138, 3.421, 3.597, 4.34, 4.882, 5.66];
+tmp3 = Expr(
+	Summation( i = 1, 6, (yy[i] - b1 * xx[i] ^ b2) ^ 2 )
+);
+b1 = 1;
+b2 = 5;
+{objValue, iter, gradient, hessian} = Minimize(
+	tmp3,
+	{b1, b2},
+	<<details( both ),
+	<<tolerance( 10 ^ -16 ),
+	<<Method( sr1 ),
+	<<useNumericDeriv( True )
+);
 
 ```
 

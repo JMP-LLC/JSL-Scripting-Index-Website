@@ -12,7 +12,18 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -22,7 +33,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
 
 ```
 
@@ -32,7 +47,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
 
 ```
 
@@ -50,7 +69,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
 
 ```
 
@@ -58,7 +81,18 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );/* Parameters can be changed according to data features */obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Maximum Iterations( 1500 ),	Perplexity( 15 ),	Initial Principal Component Dimensions( 55 ),	Random Seed( 2022 ),	Output Dimensions( 3 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+/* Parameters can be changed according to data features */
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Maximum Iterations( 1500 ),
+	Perplexity( 15 ),
+	Initial Principal Component Dimensions( 55 ),
+	Random Seed( 2022 ),
+	Output Dimensions( 3 )
+);
 
 ```
 
@@ -66,7 +100,18 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );/* Parameters can be changed according to 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );/* by group example */dt << New Column( "_bycol",	Character,	Nominal,	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( _bycol ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+/* by group example */
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( _bycol )
+);
 
 ```
 
@@ -74,127 +119,178 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );/* by group example */dt << New Column( "
 
 ### Batch Mode if N Greater Than
 
-**Sintaxis:** Batch Mode if N greater than( number = 4096 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Batch Mode if N greater than( number = 4096 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se utilizan múltiples subprocesos para optimizar las coordenadas de incrustación cuando el tamaño muestral es mayor que el número especificado. "4096" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Batch Mode if N greater than( 100 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Batch Mode if N greater than( 100 )
+);
 
 ```
 
 ### Convergence Criterion
 
-**Sintaxis:** Convergence Criterion( number = 1e-8 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Convergence Criterion( number = 1e-8 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** "1e-8" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Convergence Criterion( 1e-8 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Convergence Criterion( 1e-8 )
+);
 
 ```
 
 ### Distance Metric
 
-**Sintaxis:** Distance Metric( "Euclidean" | "Angular" | "Hamming" | "Manhattan") &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Distance Metric( "Euclidean" | "Angular" | "Hamming" | "Manhattan")&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la métrica que se utiliza para calcular las distancias entre los vecinos más cercanos. Las opciones para la métrica de distancia son Euclidiana (opción predeterminada), Angular, Hamming y Manhattan. Esta opción solo es aplicable cuando se especifica ANNOY como Método de vecinos más cercanos.
 
 ### Eta
 
-**Sintaxis:** Eta( number = 200 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Eta( number = 200 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la tasa de aprendizaje. "200" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Eta( 200 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Eta( 200 )
+);
 
 ```
 
 ### Gradient Descent Method
 
-**Sintaxis:** Gradient Descent Method( "SGD" | "ADAM") &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Gradient Descent Method( "SGD" | "ADAM")&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método del descenso del gradiente que se utiliza para optimizar el diseño de incrustación. Puede elegir entre el descenso del gradiente estocástico (SGD) o la estimación adaptativa de momentos (ADAM). El método predeterminado es el SGD. La opción ADAM solo está disponible en el modo por lotes.
 
 ### Inflate Iterations
 
-**Sintaxis:** Inflate Iterations( number = 250 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Inflate Iterations( number = 250 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la iteración tras la cual las perplejidades ya no se exageran. "250" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Inflate Iterations( 250 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Inflate Iterations( 250 )
+);
 
 ```
 
 ### Initial Principal Component Dimensions
 
-**Sintaxis:** Initial Principal Component Dimensions( number = 50 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Initial Principal Component Dimensions( number = 50 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de dimensiones que se deben conservar en el paso PCA inicial. "50" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Initial Principal Component Dimensions( 50 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Initial Principal Component Dimensions( 50 )
+);
 
 ```
 
 ### Initial Scale
 
-**Sintaxis:** Initial Scale( number = 0.0001 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Initial Scale( number = 0.0001 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la escala inicial que se utiliza para los componentes derivados. ".0001" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Initial Scale( 0.001 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Initial Scale( 0.001 )
+);
 
 ```
 
 ### Learning Rate
 
-**Sintaxis:** Learning Rate( number = 1.0 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Learning Rate( number = 1.0 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el valor de la tasa de aprendizaje en los cálculos, lo que repercute en la rapidez con la que el modelo se adapta al problema. "1.0" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Learning Rate( 1.0 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Learning Rate( 1.0 )
+);
 
 ```
 
 ### Local Connectivity
 
-**Sintaxis:** Local Connectivity( number = 1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Local Connectivity( number = 1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de vecinos más cercanos que se supone que están conectados a nivel local. El valor predeterminado es 1, lo que asume que cada punto del espacio de alta dimensionalidad tiene al menos otro vecino con el que está conectado. "1" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Local Connectivity( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Local Connectivity( 1 )
+);
 
 ```
 
 ### Maximum Iterations
 
-**Sintaxis:** Maximum Iterations( number = 1000 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Maximum Iterations( number = 1000 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número máximo de iteraciones que se utilizan al calcular los componentes incrustados. "1000" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Maximum Iterations( 1500 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Maximum Iterations( 1500 )
+);
 
 ```
 
 ### Method
 
-**Sintaxis:** Method( "t-SNE" | "UMAP" ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Method( "t-SNE" | "UMAP" )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método de reducción de la dimensión.
 
@@ -202,7 +298,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" )
+);
 
 ```
 
@@ -210,37 +311,52 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "UMAP" ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "UMAP" )
+);
 
 ```
 
 ### Minimum Distance
 
-**Sintaxis:** Minimum Distance( number = 0.01 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Minimum Distance( number = 0.01 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la distancia mínima estandarizada a la que pueden estar los puntos en el espacio de baja dimensionalidad. "0.01" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Minimum Distance( 0.001 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Minimum Distance( 0.001 )
+);
 
 ```
 
 ### Missing Value Imputation
 
-**Sintaxis:** Missing Value Imputation( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Missing Value Imputation( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que los valores faltantes en los datos se imputan mediante una técnica de descomposición en valores singulares (SVD) multivariantes. Opción activada de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Missing Value Imputation( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Missing Value Imputation( 0 )
+);
 
 ```
 
 ### Nearest Neighbor Method
 
-**Sintaxis:** Nearest Neighbor Method( "Default" | "VPTree (Exact)" | "ANNOY (Approximate)") &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Nearest Neighbor Method( "Default" | "VPTree (Exact)" | "ANNOY (Approximate)")&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método que se utiliza para encontrar los vecinos más cercanos. Puede elegir entre una atalaya (VPTree) o el método de los vecinos más cercanos aproximados (ANNOY). La opción predeterminada elige el método de los vecinos más cercanos en función del tamaño muestral y del número de variables.
 
@@ -248,7 +364,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Method( "UMAP" ),	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Nearest Neighbor Method( "VPTree (Exact)" ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Method( "UMAP" ),
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Nearest Neighbor Method( "VPTree (Exact)" )
+);
 
 ```
 
@@ -256,79 +378,118 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Metho
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Method( "UMAP" ),	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Nearest Neighbor Method( "ANNOY (Approximate)" ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Method( "UMAP" ),
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Nearest Neighbor Method( "ANNOY (Approximate)" )
+);
 
 ```
 
 ### Negative Sample Rate
 
-**Sintaxis:** Negative Sample Rate( number = 5 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Negative Sample Rate( number = 5 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de muestras 1-simplex negativas que se utilizan por muestra 1-simplex positiva en la búsqueda de la representación de baja dimensionalidad de los datos. El valor Tasa de muestreo negativa puede oscilar entre 2 y 20. "5" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Negative Sample Rate( 5 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Negative Sample Rate( 5 )
+);
 
 ```
 
 ### Number of Epochs
 
-**Sintaxis:** Number of Epochs( number = 500 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Number of Epochs( number = 500 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de ciclos de entrenamiento que se utilizan al optimizar la representación de baja dimensionalidad. Es el número de veces que el algoritmo examina los datos de entrenamiento completos. "500" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Epochs( 500 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Number of Epochs( 500 )
+);
 
 ```
 
 ### Number of Neighbors
 
-**Sintaxis:** Number of Neighbors( number = 15 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Number of Neighbors( number = 15 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de vecinos cercanos que se encuentran para cada punto de datos. Cuanto menor sea el número de vecinos cercanos especificado, más se concentra el algoritmo UMAP en la estructura local de los datos. A medida que aumenta el número de vecinos cercanos, el algoritmo UMAP captura en mayor medida la estructura global de los datos. "15" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Method( "UMAP" ),	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Number of Neighbors( 20 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Method( "UMAP" ),
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Number of Neighbors( 20 )
+);
 
 ```
 
 ### Output Dimensions
 
-**Sintaxis:** Output Dimensions( number = 2 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Output Dimensions( number = 2 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de componentes que se derivan mediante el método seleccionado. Este número debe ser >=2. "2" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Output Dimensions( 3 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Output Dimensions( 3 )
+);
 
 ```
 
 ### Perplexity
 
-**Sintaxis:** Perplexity( number = 30 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Perplexity( number = 30 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el valor del parámetro de perplejidad, que está relacionado con el cálculo de las similitudes de las muestras. El valor del parámetro de perplejidad debe estar entre 5 y 50 y no debe ser mayor que un octavo del tamaño muestral. El valor predeterminado es el menor de 30 o un octavo del tamaño muestral. "30" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Perplexity( 20 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Perplexity( 20 )
+);
 
 ```
 
 ### Random Seed
 
-**Sintaxis:** Random Seed( number = 1234 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Random Seed( number = 1234 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de semillas aleatorias que se utilizan para obtener resultados reproducibles. "123" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Random Seed( 1234 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Random Seed( 1234 )
+);
 
 ```
 
@@ -340,7 +501,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Random Seed( 1234 ));obj << Save Embedding Component Values;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Random Seed( 1234 )
+);
+obj << Save Embedding Component Values;
 
 ```
 
@@ -352,55 +519,85 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Perplexity( 15 ),	Sparse( 0 ));obj << Save PQ Matrices;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Perplexity( 15 ),
+	Sparse( 0 )
+);
+obj << Save PQ Matrices;
 
 ```
 
 ### Sparse
 
-**Sintaxis:** Sparse( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Sparse( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica si se utiliza el modo disperso. El modo disperso permite el cálculo de conjuntos de datos de alta dimensionalidad. Opción activada de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Sparse( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Sparse( 1 )
+);
 
 ```
 
 ### Standardize
 
-**Sintaxis:** Standardize( state =0|1 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** Standardize( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica si los datos se estandarizan internamente antes de los cálculos de distancia. Opción activada de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Method( "t-SNE" ),	Standardize( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Method( "t-SNE" ),
+	Standardize( 1 )
+);
 
 ```
 
 ### a
 
-**Sintaxis:** a( number = 0 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** a( number = 0 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica uno de los parámetros que controlan el algoritmo de optimización de la incrustación. Si este valor se establece en 0 o en un número negativo, a se calcula en el algoritmo mediante un procedimiento de mínimos cuadrados no lineales. "0" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	a( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	a( 0 )
+);
 
 ```
 
 ### b
 
-**Sintaxis:** b( number = 0 ) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** b( number = 0 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica uno de los parámetros que controlan el algoritmo de optimización de la incrustación. Si este valor se establece en 0 o en un número negativo, b se calcula en el algoritmo mediante un procedimiento de mínimos cuadrados no lineales. "0" de forma predeterminada.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	b( 0 ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	b( 0 )
+);
 
 ```
 
@@ -414,7 +611,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -430,7 +633,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -438,7 +645,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -446,7 +657,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -458,7 +676,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -472,7 +696,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -484,7 +714,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -496,7 +732,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -508,7 +756,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Copy Script;
 
 ```
 
@@ -520,7 +773,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Data Table Window;
 
 ```
 
@@ -534,7 +792,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -546,7 +807,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -560,7 +834,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -568,7 +848,28 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -580,7 +881,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -592,7 +899,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -604,7 +916,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -616,7 +934,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -628,7 +952,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -640,7 +970,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -654,7 +988,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -666,7 +1004,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -678,7 +1023,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -692,7 +1045,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -704,7 +1060,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -716,7 +1081,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Redo Analysis;
 
 ```
 
@@ -728,7 +1098,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -740,7 +1115,15 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -752,19 +1135,36 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintaxis:** obj &lt;&lt; Report; Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -776,7 +1176,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -788,7 +1193,19 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -800,7 +1217,19 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -812,7 +1241,19 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -824,7 +1265,15 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -834,19 +1283,17 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
-**Ejemplo 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Ejemplo 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -858,7 +1305,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -870,7 +1322,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -882,7 +1339,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Save Script to Report;
 
 ```
 
@@ -894,7 +1356,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -906,7 +1373,16 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -918,7 +1394,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -930,7 +1420,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -942,7 +1438,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -954,7 +1455,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -966,7 +1472,14 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Multivariate Embedding(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width )
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -982,7 +1495,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Multivariate Embedding(	Y( :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -994,19 +1512,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintaxis:** obj = Multivariate Embedding(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
+**Sintaxis:** obj = Multivariate Embedding(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 

@@ -16,7 +16,26 @@
 
 ```jsl
 
-/* Import actual (raw) data *//* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  tag set = {"TI8045", "TI8058", "TI8064"};end time = Today();start time = end time - In Days( 1 );client = New IP21 Client(	URL( "https://myserver.com/" ),	Authentication Method( "NTLM" ),	Username( "%_UID_%" ),	Password( "%_PWD_%" ));importer = client << Importer(	Data Source( "My-Data-Source" ),	Tag Set( tag set ),	Start Time( start time ),	End Time( end time ),	Retrieval Type( "Actual" ));importer << Run;
+
+/* Import actual (raw) data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Actual" )
+);
+importer << Run;
 
 ```
 
@@ -24,7 +43,27 @@
 
 ```jsl
 
-/* Import interpolated data *//* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  tag set = {"TI8045", "TI8058", "TI8064"};end time = Today();start time = end time - In Days( 1 );client = New IP21 Client(	URL( "https://myserver.com/" ),	Authentication Method( "NTLM" ),	Username( "%_UID_%" ),	Password( "%_PWD_%" ));importer = client << Importer(	Data Source( "My-Data-Source" ),	Tag Set( tag set ),	Start Time( start time ),	End Time( end time ),	Retrieval Type( "Interpolated" ),	Period( Minute( 30 ) ), 	/* Every half hour */);importer << Run;
+
+/* Import interpolated data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Interpolated" ),
+	Period( Minute( 30 ) ), 	/* Every half hour */
+);
+importer << Run;
 
 ```
 
@@ -40,7 +79,26 @@
 
 ```jsl
 
-/* Import actual (raw) data *//* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  tag set = {"TI8045", "TI8058", "TI8064"};end time = Today();start time = end time - In Days( 1 );client = New IP21 Client(	URL( "https://myserver.com/" ),	Authentication Method( "NTLM" ),	Username( "%_UID_%" ),	Password( "%_PWD_%" ));importer = client << Importer(	Data Source( "My-Data-Source" ),	Tag Set( tag set ),	Start Time( start time ),	End Time( end time ),	Retrieval Type( "Actual" ));importer << Run;
+
+/* Import actual (raw) data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Actual" )
+);
+importer << Run;
 
 ```
 
@@ -48,7 +106,27 @@
 
 ```jsl
 
-/* Import interpolated data *//* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  tag set = {"TI8045", "TI8058", "TI8064"};end time = Today();start time = end time - In Days( 1 );client = New IP21 Client(	URL( "https://myserver.com/" ),	Authentication Method( "NTLM" ),	Username( "%_UID_%" ),	Password( "%_PWD_%" ));importer = client << Importer(	Data Source( "My-Data-Source" ),	Tag Set( tag set ),	Start Time( start time ),	End Time( end time ),	Retrieval Type( "Interpolated" ),	Period( Minute( 30 ) ), 	/* Every half hour */);importer << Run;
+
+/* Import interpolated data */
+/* Note: URL() and Authentication Method() use example values. Please supply a working URL and authentication credentials. */  
+tag set = {"TI8045", "TI8058", "TI8064"};
+end time = Today();
+start time = end time - In Days( 1 );
+client = New IP21 Client(
+	URL( "https://myserver.com/" ),
+	Authentication Method( "NTLM" ),
+	Username( "%_UID_%" ),
+	Password( "%_PWD_%" )
+);
+importer = client << Importer(
+	Data Source( "My-Data-Source" ),
+	Tag Set( tag set ),
+	Start Time( start time ),
+	End Time( end time ),
+	Retrieval Type( "Interpolated" ),
+	Period( Minute( 30 ) ), 	/* Every half hour */
+);
+importer << Run;
 
 ```
 

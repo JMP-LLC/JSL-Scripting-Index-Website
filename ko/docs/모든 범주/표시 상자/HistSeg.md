@@ -6,25 +6,57 @@
 
 ### Enabled
 
-**구문:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "", <<Password Style( 1 ), <<Set Width( 20 ), <<Enabled( 0 ) )		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "", <<Password Style( 1 ), <<Set Width( 20 ), <<Enabled( 0 ) )
+		)
+	)
+);
 
 ```
 
 ### Get Enabled
 
-**구문:** obj &lt;&lt; Enabled( state=0|1 ); state = obj &lt;&lt; Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
 ```jsl
 
-//This message applies to all display objectsNew Window( "enabled",	V List Box(		check = Check Box(			{"Use Password"},			ptext << Enabled( check << Get( 1 ) );			pvalue << Enabled( check << Get( 1 ) );		),		Lineup Box( N Col( 2 ),			Text Box( "Username:" ),			Text Edit Box( "", <<Set Width( 100 ) ),			ptext = Text Box( "Password:", <<Enabled( 0 ) ),			pvalue = Text Edit Box( "", <<Password Style( 1 ), <<Set Width( 20 ), <<Enabled( 0 ) )		)	));
+
+//This message applies to all display objects
+New Window( "enabled",
+	V List Box(
+		check = Check Box(
+			{"Use Password"},
+			ptext << Enabled( check << Get( 1 ) );
+			pvalue << Enabled( check << Get( 1 ) );
+		),
+		Lineup Box( N Col( 2 ),
+			Text Box( "Username:" ),
+			Text Edit Box( "", <<Set Width( 100 ) ),
+			ptext = Text Box( "Password:", <<Enabled( 0 ) ),
+			pvalue = Text Edit Box( "", <<Password Style( 1 ), <<Set Width( 20 ), <<Enabled( 0 ) )
+		)
+	)
+);
 
 ```
 
@@ -36,7 +68,13 @@
 
 ```jsl
 
-//This message applies to all display objectsx = 1;w = New Window( "Test", b = Button Box( "Press me" ) );b:x = 2;ns = b << GetNamespace();Show( ns:x, x );
+
+//This message applies to all display objects
+x = 1;
+w = New Window( "Test", b = Button Box( "Press me" ) );
+b:x = 2;
+ns = b << GetNamespace();
+Show( ns:x, x );
 
 ```
 
@@ -48,7 +86,9 @@
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Properties;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Properties;
 
 ```
 
@@ -60,7 +100,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property( "Enabled" );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property( "Enabled" );
 
 ```
 
@@ -72,7 +114,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Get Property List;
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Get Property List;
 
 ```
 
@@ -84,7 +128,9 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb << Set Property( "Enabled", 0 );
+
+New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );
+bb << Set Property( "Enabled", 0 );
 
 ```
 
@@ -98,7 +144,19 @@ New Window( "Example", bb = Button Box( "Press Me", Print( "Pressed" ) ) );bb <
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
 
 ```
 
@@ -112,7 +170,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Child; // not many segs support children
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Child; // not many segs support children
 
 ```
 
@@ -124,7 +195,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Class Name;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Class Name;
 
 ```
 
@@ -138,7 +222,22 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ), Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );Wait( 2 );cs << Clip Shape( Boundaries( "US States" ) );
+
+Open( "$SAMPLE_DATA/Cities.jmp" );
+gb = Graph Builder(
+	Size( 653, 396 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Longitude ), Y( :Latitude ) ),
+	Elements( Contour( X, Y, Legend( 2 ) ) ),
+	SendToReport(
+		Dispatch( {}, "Graph Builder", FrameBox,
+			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ), Reference Line Order( 3 )}
+		)
+	)
+);
+cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
+Wait( 2 );
+cs << Clip Shape( Boundaries( "US States" ) );
 
 ```
 
@@ -150,7 +249,20 @@ Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Delete;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Delete;
 
 ```
 
@@ -162,7 +274,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Frame;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Frame;
 
 ```
 
@@ -176,7 +301,23 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show Control Panel( 0 ),	Variables( X( :Longitude ), Y( :Latitude ) ),	Elements( Contour( X, Y, Legend( 2 ) ) ),	SendToReport(		Dispatch( {}, "Graph Builder", FrameBox,			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ), Reference Line Order( 3 )}		)	));cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );cs << Clip Shape( Boundaries( "US States" ) );Wait( 2 );cs << Get Clip Shape();
+
+Open( "$SAMPLE_DATA/Cities.jmp" );
+gb = Graph Builder(
+	Size( 653, 396 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Longitude ), Y( :Latitude ) ),
+	Elements( Contour( X, Y, Legend( 2 ) ) ),
+	SendToReport(
+		Dispatch( {}, "Graph Builder", FrameBox,
+			{Background Map( Boundaries( "US States" ) ), Grid Line Order( 2 ), Reference Line Order( 3 )}
+		)
+	)
+);
+cs = (gb << Report)[FrameBox( 1 )] << Find Seg( Contour Seg( 1 ) );
+cs << Clip Shape( Boundaries( "US States" ) );
+Wait( 2 );
+cs << Get Clip Shape();
 
 ```
 
@@ -188,7 +329,20 @@ Open( "$SAMPLE_DATA/Cities.jmp" );gb = Graph Builder(	Size( 653, 396 ),	Show 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << get description();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << get description();
 
 ```
 
@@ -198,7 +352,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Get Fill Pattern;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Get Fill Pattern;
 
 ```
 
@@ -210,7 +377,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Get Line Color;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Get Line Color;
 
 ```
 
@@ -222,7 +402,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Get Line Style;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Get Line Style;
 
 ```
 
@@ -234,7 +427,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Get Line Width;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Get Line Width;
 
 ```
 
@@ -246,7 +452,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Get Transparency;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Get Transparency;
 
 ```
 
@@ -258,7 +477,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Histogram Color( "Red" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Histogram Color( "Red" );
 
 ```
 
@@ -270,7 +502,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Line Color( "Green" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Line Color( "Green" );
 
 ```
 
@@ -282,7 +527,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Line Style( "dashed" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Line Style( "dashed" );
 
 ```
 
@@ -294,7 +552,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Line Width( 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Line Width( 3 );
 
 ```
 
@@ -306,7 +577,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Parent;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Parent;
 
 ```
 
@@ -318,7 +602,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Save Color Preference;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Save Color Preference;
 
 ```
 
@@ -330,7 +627,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << set description( "my seg" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << set description( "my seg" );
 
 ```
 
@@ -340,7 +650,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Fill Pattern( "h wave medium" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Fill Pattern( "h wave medium" );
 
 ```
 
@@ -352,7 +675,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Line Color( "Green" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Line Color( "Green" );
 
 ```
 
@@ -364,7 +700,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Line Style( "dashed" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Line Style( "dashed" );
 
 ```
 
@@ -376,7 +725,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Line Width( 3 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Line Width( 3 );
 
 ```
 
@@ -388,7 +750,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Transparency( .5 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Transparency( .5 );
 
 ```
 
@@ -400,7 +775,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Sib;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Sib;
 
 ```
 
@@ -412,7 +800,33 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180, 180 ),		Y Scale( -90, 90 ),		<<Background Map( Images( "Simple Earth" ) )	));imgBox = win[framebox( 1 )];mapSeg = imgBox << FindSeg( MapSeg( 1 ) );mapSeg << Transparency( 0.5 );Try(	xAxis = gb[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = gb[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+
+
+win = New Window( "World",
+	gb = Graph(
+		FrameSize( 800, 400 ),
+		X Scale( -180, 180 ),
+		Y Scale( -90, 90 ),
+		<<Background Map( Images( "Simple Earth" ) )
+	)
+);
+imgBox = win[framebox( 1 )];
+mapSeg = imgBox << FindSeg( MapSeg( 1 ) );
+mapSeg << Transparency( 0.5 );
+Try(
+	xAxis = gb[AxisBox( 2 )];
+	xMin = (xAxis << get min);
+	xMax = (xAxis << get max);
+,
+	xMin = 0;
+	xMax = 100;
+);
+yAxis = gb[AxisBox( 1 )];
+yMin = (yAxis << get min);
+yMax = (yAxis << get max);
+xval = Matrix( {xmin, xmax} );
+yval = Matrix( {ymin, ymax} );
+mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -424,7 +838,33 @@ win = New Window( "World",	gb = Graph(		FrameSize( 800, 400 ),		X Scale( -180
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));Try(	xAxis = g[AxisBox( 2 )];	xMin = (xAxis << get min);	xMax = (xAxis << get max);,	xMin = 0;	xMax = 100;);yAxis = g[AxisBox( 1 )];yMin = (yAxis << get min);yMax = (yAxis << get max);xval = Matrix( {xmin, xmax} );yval = Matrix( {ymin, ymax} );seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+Try(
+	xAxis = g[AxisBox( 2 )];
+	xMin = (xAxis << get min);
+	xMax = (xAxis << get max);
+,
+	xMin = 0;
+	xMax = 100;
+);
+yAxis = g[AxisBox( 1 )];
+yMin = (yAxis << get min);
+yMax = (yAxis << get max);
+xval = Matrix( {xmin, xmax} );
+yval = Matrix( {ymin, ymax} );
+seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width( 3 ) ) );
 
 ```
 
@@ -436,7 +876,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Subset;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Subset;
 
 ```
 
@@ -448,7 +901,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );xx = Column( "height" ) << Get Values;rows = N Row( xx );New Window( "Hist Seg Example",	g = Graph Box(		Frame Size( 300, 120 ),		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )	));frame = g[FrameBox( 1 )];seg = (frame << Find Seg( Hist Seg( 1 ) ));seg << Set Transparency( .5 );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+xx = Column( "height" ) << Get Values;
+rows = N Row( xx );
+New Window( "Hist Seg Example",
+	g = Graph Box(
+		Frame Size( 300, 120 ),
+		X Scale( Min( xx ) - 5, Max( xx ) + 5 ),
+		Hist Seg( xx, J( rows, 1 ), J( rows, 1 ), 1, Row States( dt ) )
+	)
+);
+frame = g[FrameBox( 1 )];
+seg = (frame << Find Seg( Hist Seg( 1 ) ));
+seg << Set Transparency( .5 );
 
 ```
 

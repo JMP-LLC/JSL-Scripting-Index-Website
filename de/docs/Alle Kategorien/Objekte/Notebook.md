@@ -12,7 +12,12 @@
 
 ```jsl
 
-nb = Notebook();nb << Enable Inline Logging( 0 );
+
+
+
+nb = Notebook();
+
+nb << Enable Inline Logging( 0 );
 
 ```
 
@@ -24,7 +29,16 @@
 
 ```jsl
 
-nb = Notebook();nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );nb << Add New Block(	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )");nb << Export to a Workflow;
+
+
+
+nb = Notebook();
+
+nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+nb << Add New Block(
+	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )"
+);
+nb << Export to a Workflow;
 
 ```
 
@@ -36,7 +50,12 @@
 
 ```jsl
 
-nb = Notebook();nb << Get Window;
+
+
+
+nb = Notebook();
+
+nb << Get Window;
 
 ```
 
@@ -48,7 +67,12 @@
 
 ```jsl
 
-nb = Notebook();nb << Import .ipynb File( NOTEBOOKPATH );
+
+
+
+nb = Notebook();
+
+nb << Import .ipynb File( NOTEBOOKPATH );
 
 ```
 
@@ -60,7 +84,17 @@
 
 ```jsl
 
-nb = Notebook();nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );nb << Add New Block(	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )");Wait( 1 );nb << Run All Scripts;
+
+
+
+nb = Notebook();
+
+nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+nb << Add New Block(
+	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )"
+);
+Wait( 1 );
+nb << Run All Scripts;
 
 ```
 
@@ -72,7 +106,12 @@
 
 ```jsl
 
-nb = Notebook();nb << Show Embedded Log( 1 );
+
+
+
+nb = Notebook();
+
+nb << Show Embedded Log( 1 );
 
 ```
 
@@ -84,7 +123,13 @@
 
 ```jsl
 
-nb = Notebook();nb << Title( "Example Title" );Show( nb << Title );
+
+
+
+nb = Notebook();
+
+nb << Title( "Example Title" );
+Show( nb << Title );
 
 ```
 
@@ -98,7 +143,9 @@
 
 ```jsl
 
-nb = Notebook();
+
+
+nb = Notebook();
 
 ```
 
@@ -114,7 +161,13 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block << Block Name( "Test Block Name" );
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block << Block Name( "Test Block Name" );
 
 ```
 
@@ -126,7 +179,13 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block << Duplicate Block;
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block << Duplicate Block;
 
 ```
 
@@ -138,7 +197,13 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );Show( block << Get Content );
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+Show( block << Get Content );
 
 ```
 
@@ -150,7 +215,18 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block2 = nb << Add New Block(	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )");Wait( 1 );nb << Run All Scripts;block2 << Get Output;
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block2 = nb << Add New Block(
+	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )"
+);
+Wait( 1 );
+nb << Run All Scripts;
+block2 << Get Output;
 
 ```
 
@@ -162,7 +238,11 @@
 
 ```jsl
 
-nb = Notebook();section = nb << Add New Block( "Section" );section << Import .ipynb File( NOTEBOOKPATH );
+
+
+nb = Notebook();
+section = nb << Add New Block( "Section" );
+section << Import .ipynb File( NOTEBOOKPATH );
 
 ```
 
@@ -174,7 +254,13 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block << Line Count( 1 );
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block << Line Count( 1 );
 
 ```
 
@@ -186,7 +272,16 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block2 = nb << Add New Block(	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )");block << Move Block Down;
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block2 = nb << Add New Block(
+	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )"
+);
+block << Move Block Down;
 
 ```
 
@@ -198,7 +293,16 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block2 = nb << Add New Block(	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )");block2 << Move Block Up;
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block2 = nb << Add New Block(
+	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )"
+);
+block2 << Move Block Up;
 
 ```
 
@@ -210,7 +314,18 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block2 = nb << Add New Block(	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )");Wait( 1 );nb << Run All Scripts;block2 << Popout Results;
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block2 = nb << Add New Block(
+	"JSL", "Data Table ( \!"Big Class\!" ) << Distribution ( Y(:age, :sex) )"
+);
+Wait( 1 );
+nb << Run All Scripts;
+block2 << Popout Results;
 
 ```
 
@@ -222,7 +337,13 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block << Remove Block;
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block << Remove Block;
 
 ```
 
@@ -234,7 +355,11 @@
 
 ```jsl
 
-nb = Notebook();section = nb << Add New Block( "Section" );section << Remove Section;
+
+
+nb = Notebook();
+section = nb << Add New Block( "Section" );
+section << Remove Section;
 
 ```
 
@@ -246,7 +371,14 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );Wait( 1 );block << Run Script;
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+Wait( 1 );
+block << Run Script;
 
 ```
 
@@ -258,7 +390,13 @@
 
 ```jsl
 
-nb = Notebook();section = nb << Add New Block( "Section" );section << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );Wait( 1 );section << Run Section;
+
+
+nb = Notebook();
+section = nb << Add New Block( "Section" );
+section << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+Wait( 1 );
+section << Run Section;
 
 ```
 
@@ -270,7 +408,13 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );block << Set Content( "Print(Char(Pi(), 10))" );
+
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+block << Set Content( "Print(Char(Pi(), 10))" );
 
 ```
 
@@ -282,7 +426,10 @@
 
 ```jsl
 
-nb = Notebook();block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
+
+
+nb = Notebook();
+block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
 
 ```
 

@@ -14,7 +14,12 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Set Text Filter( "t" );obj << Clear All Filters;
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Set Text Filter( "t" );
+obj << Clear All Filters;
 
 ```
 
@@ -36,7 +41,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager( Include Extended Statistics( 1 ) );obj << Extended Statistics( {"Median Absolute Deviation", "Q1"} );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager( Include Extended Statistics( 1 ) );
+obj << Extended Statistics( {"Median Absolute Deviation", "Q1"} );
 
 ```
 
@@ -48,7 +57,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Columns Manager;obj << Force calculations for all categorical columns( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Columns Manager;
+obj << Force calculations for all categorical columns( 1 );
 
 ```
 
@@ -60,7 +73,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Force calculations for all numeric columns( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Force calculations for all numeric columns( 1 );
 
 ```
 
@@ -72,7 +89,12 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;tab = obj << Get Summary table;tab << Sort By Column( "n unique" );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+tab = obj << Get Summary table;
+tab << Sort By Column( "n unique" );
 
 ```
 
@@ -84,7 +106,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Hide Excluded Columns( 0 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Hide Excluded Columns( 0 );
 
 ```
 
@@ -96,7 +122,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Hide Hidden Columns( 0 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Hide Hidden Columns( 0 );
 
 ```
 
@@ -108,7 +138,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Include Extended Statistics( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Include Extended Statistics( 1 );
 
 ```
 
@@ -122,7 +156,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Select Rows( :age, :height );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Select Rows( :age, :height );
 
 ```
 
@@ -136,7 +174,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Set Columns( {:height, :weight} );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Set Columns( {:height, :weight} );
 
 ```
 
@@ -150,7 +192,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Set Modeling Type Filter( "Continuous", "Ordinal" );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Set Modeling Type Filter( "Continuous", "Ordinal" );
 
 ```
 
@@ -164,7 +210,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );obj = dt << Columns Manager;obj << Set Property Filter( "Matrix Column Names", "Value colors" );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+obj = dt << Columns Manager;
+obj << Set Property Filter( "Matrix Column Names", "Value colors" );
 
 ```
 
@@ -178,7 +228,12 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Select Rows( :age, :height );obj << Set Selection Filter( "Keep" );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Select Rows( :age, :height );
+obj << Set Selection Filter( "Keep" );
 
 ```
 
@@ -192,7 +247,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Set Text Filter( "me" );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Set Text Filter( "me" );
 
 ```
 
@@ -204,7 +263,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Show Attributes( 0 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Show Attributes( 0 );
 
 ```
 
@@ -216,7 +279,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Show Properties( 0 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Show Properties( 0 );
 
 ```
 
@@ -228,7 +295,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Columns Manager;obj << Show Statistics( 0 );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Columns Manager;
+obj << Show Statistics( 0 );
 
 ```
 

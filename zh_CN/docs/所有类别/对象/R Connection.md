@@ -12,7 +12,10 @@
 
 ```jsl
 
-RConnection = R Connect();x = RConnection << Is Connected;Show( x );
+
+RConnection = R Connect();
+x = RConnection << Is Connected;
+Show( x );
 
 ```
 
@@ -26,7 +29,10 @@ RConnection = R Connect();x = RConnection << Is Connected;Show( x );
 
 ```jsl
 
-RConnection = R Connect();RConnection << Control( Echo( 0 ) );RConnection << Submit( "rnorm(10)" );
+
+RConnection = R Connect();
+RConnection << Control( Echo( 0 ) );
+RConnection << Submit( "rnorm(10)" );
 
 ```
 
@@ -38,7 +44,9 @@ RConnection = R Connect();RConnection << Control( Echo( 0 ) );RConnection << S
 
 ```jsl
 
-RConnection = R Connect();RConnection << Disconnect;
+
+RConnection = R Connect();
+RConnection << Disconnect;
 
 ```
 
@@ -50,7 +58,20 @@ RConnection = R Connect();RConnection << Disconnect;
 
 ```jsl
 
-RConnection = R Connect();a = "abcdef";d = 3.1415927;x = 0;z = 0;v = [9 8 7, 6 5 4, 3 2 1];m = [1 2 3, 4 5 6, 7 8 9];rc = RConnection << Execute( {v, m, a, d}, {x, z, a, d}, "\[x <- rnorm(5)z <- v * m]\" );Show( v, m, rc, x, z, a, d );
+
+
+RConnection = R Connect();
+a = "abcdef";
+d = 3.1415927;
+x = 0;
+z = 0;
+v = [9 8 7, 6 5 4, 3 2 1];
+m = [1 2 3, 4 5 6, 7 8 9];
+rc = RConnection << Execute( {v, m, a, d}, {x, z, a, d}, "\[
+x <- rnorm(5)
+z <- v * m
+]\" );
+Show( v, m, rc, x, z, a, d );
 
 ```
 
@@ -62,7 +83,16 @@ RConnection = R Connect();RConnection << Disconnect;
 
 ```jsl
 
-RConnection = R Connect();x1 = [1, 2, 3];RConnection << Set( x1 );x2 = RConnection << Get( x1 );Show( x1, x2 );dt1 = New Table( "Test", New Column( "Col", Values( [10, 20, 30] ) ) );RConnection << Set( dt1 );dt2 = RConnection << Get( dt1 );Close( dt1, No Save );
+
+RConnection = R Connect();
+x1 = [1, 2, 3];
+RConnection << Set( x1 );
+x2 = RConnection << Get( x1 );
+Show( x1, x2 );
+dt1 = New Table( "Test", New Column( "Col", Values( [10, 20, 30] ) ) );
+RConnection << Set( dt1 );
+dt2 = RConnection << Get( dt1 );
+Close( dt1, No Save );
 
 ```
 
@@ -74,7 +104,25 @@ RConnection = R Connect();x1 = [1, 2, 3];RConnection << Set( x1 );x2 = RConne
 
 ```jsl
 
-RConnection = R Connect();img_path = Get Path Variable( "TEMP" ) || "r_plot.png";RConnection << Execute( {img_path}, {}, "\[png(img_path)plot(1:10)dev.off()]\" );plot = Open( img_path );rc = Delete File( img_path );
+
+RConnection = R Connect();
+tmp_path = Get Path Variable( "TEMP" );
+If( Host is( "Windows" ),
+	tmp_path = Substr( tmp_path, 2 )
+);  // remove leading '/' from path
+RConnection << Execute(
+	{tmp_path},
+	{},
+	"\[
+output_path <- file.path(tmp_path, "r_plot.png")
+png(filename=output_path)
+plot(1:10)
+dev.off()
+]\"
+);
+img_path = tmp_path || "r_plot.png";
+plot = Open( img_path );
+rc = Delete File( img_path );
 
 ```
 
@@ -86,7 +134,10 @@ RConnection = R Connect();img_path = Get Path Variable( "TEMP" ) || "r_plot.png
 
 ```jsl
 
-RConnection = R Connect();version = RConnection << Get Version;Show( version );
+
+RConnection = R Connect();
+version = RConnection << Get Version;
+Show( version );
 
 ```
 
@@ -98,7 +149,10 @@ RConnection = R Connect();version = RConnection << Get Version;Show( version )
 
 ```jsl
 
-RConnection = R Connect();x = RConnection << Is Connected;Show( x );
+
+RConnection = R Connect();
+x = RConnection << Is Connected;
+Show( x );
 
 ```
 
@@ -110,7 +164,10 @@ RConnection = R Connect();x = RConnection << Is Connected;Show( x );
 
 ```jsl
 
-RConnection = R Connect();RName = RConnection << JMP Name To R Name( a b c );Show( RName );
+
+RConnection = R Connect();
+RName = RConnection << JMP Name To R Name( a b c );
+Show( RName );
 
 ```
 
@@ -122,7 +179,14 @@ RConnection = R Connect();RName = RConnection << JMP Name To R Name( a b c );S
 
 ```jsl
 
-RConnection = R Connect();x = [1, 2, 3];RConnection << Send( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );RConnection << Send( dt );Close( dt );RConnection << Submit( "dt" );
+
+RConnection = R Connect();
+x = [1, 2, 3];
+RConnection << Send( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+RConnection << Send( dt );
+Close( dt );
+RConnection << Submit( "dt" );
 
 ```
 
@@ -134,7 +198,12 @@ RConnection = R Connect();x = [1, 2, 3];RConnection << Send( x );dt = Open( "
 
 ```jsl
 
-RConnection = R Connect();RConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );RConnection << Disconnect;dtname = "$SAMPLE_DATA/Baseball.jmp";RConnection << Send File( dtname );
+
+RConnection = R Connect();
+RConnection << Send File( "$SAMPLE_DATA/Big Class.jmp" );
+RConnection << Disconnect;
+dtname = "$SAMPLE_DATA/Baseball.jmp";
+RConnection << Send File( dtname );
 
 ```
 
@@ -146,7 +215,14 @@ RConnection = R Connect();RConnection << Send File( "$SAMPLE_DATA/Big Class.jmp
 
 ```jsl
 
-RConnection = R Connect();x = [1, 2, 3];RConnection << Set( x );dt = Open( "$SAMPLE_DATA/Big Class.jmp" );RConnection << Set( dt );Close( dt );RConnection << Submit( "dt" );
+
+RConnection = R Connect();
+x = [1, 2, 3];
+RConnection << Set( x );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+RConnection << Set( dt );
+Close( dt );
+RConnection << Submit( "dt" );
 
 ```
 
@@ -158,7 +234,27 @@ RConnection = R Connect();x = [1, 2, 3];RConnection << Set( x );dt = Open( "$
 
 ```jsl
 
-RConnection = R Connect();img_path = Get Path Variable( "TEMP" ) || "r_plot.png";code ="\[x <- rnorm(1000)hx <- hist(x, breaks=100, plot=FALSE)png("IMG_PATH")plot(hx, col=ifelse(abs(hx$breaks) < 1.669, 4, 2))dev.off()x <- rnorm (100)y <- x**2 + rnorm (100)summary(y)]\";// substitue portable path into R coder_code = Substitute( code, "IMG_PATH", img_path );RConnection << Submit( r_code );Wait( 3 );plot = Open( img_path );rc = Delete File( img_path );
+
+
+RConnection = R Connect();
+img_path = Get Path Variable( "TEMP" ) || "r_plot.png";
+code =
+"\[
+x <- rnorm(1000)
+hx <- hist(x, breaks=100, plot=FALSE)
+png("IMG_PATH")
+plot(hx, col=ifelse(abs(hx$breaks) < 1.669, 4, 2))
+dev.off()
+x <- rnorm (100)
+y <- x**2 + rnorm (100)
+summary(y)
+]\";
+// substitue portable path into R code
+r_code = Substitute( code, "IMG_PATH", img_path );
+RConnection << Submit( r_code );
+Wait( 3 );
+plot = Open( img_path );
+rc = Delete File( img_path );
 
 ```
 
@@ -170,7 +266,9 @@ RConnection = R Connect();x = [1, 2, 3];RConnection << Set( x );dt = Open( "$
 
 ```jsl
 
-RConnection = R Connect();RConnection << Submit File( "file containing R source." );
+
+RConnection = R Connect();
+RConnection << Submit File( "file containing R source." );
 
 ```
 

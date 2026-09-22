@@ -14,13 +14,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
 
 ```
 
 **示例 2**
 
 ```jsl
+
 
 tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
@@ -36,7 +39,10 @@ tri = Triangulation( X( [0 0 1 1], [0 1 0 1] ), Y( [0 1 2 3] ) );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Edges;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get Edges;
 
 ```
 
@@ -48,7 +54,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Hull Edges;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get Hull Edges;
 
 ```
 
@@ -60,7 +69,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Hull Path;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get Hull Path;
 
 ```
 
@@ -72,7 +84,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Hull Points;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get Hull Points;
 
 ```
 
@@ -84,7 +99,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get NEdges;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get NEdges;
 
 ```
 
@@ -96,7 +114,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Hull Edges;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get N Hull Edges;
 
 ```
 
@@ -108,7 +129,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Hull Points;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get N Hull Points;
 
 ```
 
@@ -120,7 +144,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Points;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get N Points;
 
 ```
 
@@ -132,7 +159,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get N Triangles;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get N Triangles;
 
 ```
 
@@ -144,7 +174,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Points;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get Points;
 
 ```
 
@@ -156,7 +189,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Triangles;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get Triangles;
 
 ```
 
@@ -168,7 +204,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Get Y;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Get Y;
 
 ```
 
@@ -180,7 +219,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );Show( tri << Get N Triangles );tri2 = tri << Peel;Show( tri2 << Get N Triangles );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+Show( tri << Get N Triangles );
+tri2 = tri << Peel;
+Show( tri2 << Get N Triangles );
 
 ```
 
@@ -192,7 +236,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );Show( tri << Get N Triangles );tri2 = tri << Subset( tri << Get Hull Points );Show( tri2 << Get N Triangles );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+Show( tri << Get N Triangles );
+tri2 = tri << Subset( tri << Get Hull Points );
+Show( tri2 << Get N Triangles );
 
 ```
 
@@ -204,7 +253,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :PO
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );tri = Triangulation( X( :X, :Y ), Y( :POP ) );tri << Transform( "Range Normalized" );
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+tri = Triangulation( X( :X, :Y ), Y( :POP ) );
+tri << Transform( "Range Normalized" );
 
 ```
 

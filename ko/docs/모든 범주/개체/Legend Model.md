@@ -14,7 +14,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Overlay( :sex ) ),	Elements( Points( X, Y, Legend( 1 ) ), Ellipse( X, Y, Legend( 3 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 3, 1 );Show( item << Get Fill Color );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Overlay( :sex ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Ellipse( X, Y, Legend( 3 ) ) )
+);
+server = gb << Get Legend Server;
+item = server << Get Legend Item( 3, 1 );
+Show( item << Get Fill Color );
 
 ```
 
@@ -28,7 +37,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Color( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 1, 1 );Print( item << Get Gradient Settings );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Color( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
+);
+server = gb << Get Legend Server;
+item = server << Get Legend Item( 1, 1 );
+Print( item << Get Gradient Settings );
 
 ```
 
@@ -42,7 +60,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 2, 1 );Print( item << Get Label );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
+);
+server = gb << Get Legend Server;
+item = server << Get Legend Item( 2, 1 );
+Print( item << Get Label );
 
 ```
 
@@ -56,7 +83,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Size( :height ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 1, 1 );Print( item << Get Marker Size Settings );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Size( :height ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
+);
+server = gb << Get Legend Server;
+item = server << Get Legend Item( 1, 1 );
+Print( item << Get Marker Size Settings );
 
 ```
 
@@ -70,7 +106,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 1, 7 );Print( item << Get Pen Settings );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
+);
+server = gb << Get Legend Server;
+item = server << Get Legend Item( 1, 7 );
+Print( item << Get Pen Settings );
 
 ```
 
@@ -84,7 +129,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 2, 1 );Print( item << Get Type );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
+);
+server = gb << Get Legend Server;
+item = server << Get Legend Item( 2, 1 );
+Print( item << Get Type );
 
 ```
 
@@ -98,7 +152,16 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));server = gb << Get Legend Server;items = server << Get Legend Items;For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) ) );
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Overlay( :sex ), Color( :age ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
+);
+server = gb << Get Legend Server;
+items = server << Get Legend Items;
+For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) ) );
 
 ```
 
@@ -112,7 +175,18 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Variables( X( :height ), Y( :weight ), Size( :height ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ));server = gb << Get Legend Server;item = server << Get Legend Item( 1, 1 );item << Set Properties(	{Marker Size( 5 ), Marker Scale( {Marker Size Minimum( "Dot" ), Style( "Nested Full" )} )});
+
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Variables( X( :height ), Y( :weight ), Size( :height ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) )
+);
+server = gb << Get Legend Server;
+item = server << Get Legend Item( 1, 1 );
+item << Set Properties(
+	{Marker Size( 5 ), Marker Scale( {Marker Size Minimum( "Dot" ), Style( "Nested Full" )} )}
+);
 
 ```
 

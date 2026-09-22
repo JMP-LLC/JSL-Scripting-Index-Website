@@ -6,31 +6,41 @@
 
 ### By
 
-**Sintassi:** obj = Variability Chart(...&lt;By( column(s) )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Produce report multipli, uno per ogni livello delle variabili.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :new Y ),	X( :Operator, :part ),	Model( "Crossed" ),	By( :Instrument ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :new Y ),
+	X( :Operator, :part ),
+	Model( "Crossed" ),
+	By( :Instrument )
+);
 
 ```
 
 ### Freq
 
-**Sintassi:** obj = Variability Chart(...&lt;Freq( column )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...&lt;Freq( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna i cui valori assegnano una frequenza a ogni riga per l&apos;analisi.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Freq( :_freqcol ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Freq( :_freqcol ) );
 
 ```
 
 ### Grouping
 
-**Sintassi:** obj = Variability Chart(...&lt;Grouping( column(s) )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne categoriche come variabili di raggruppamento. L&apos;ultima colonna dell&apos;elenco deve essere la parte o l&apos;unità da misurare.
 
@@ -38,7 +48,9 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ```
 
@@ -46,13 +58,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), Grouping( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), Grouping( :Operator, :part# ) );
 
 ```
 
 ### Response
 
-**Sintassi:** obj = Variability Chart(...Response( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Response( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne continue delle misurazioni.
 
@@ -60,7 +74,9 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ```
 
@@ -68,25 +84,34 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) );
 
 ```
 
 ### Standard
 
-**Sintassi:** obj = Variability Chart(...&lt;Standard( column )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...&lt;Standard( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna standard o di riferimento che contiene i valori noti per la parte misurata.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Variability Chart(	Y( :Response ),	X( :Part ),	Standard( :Standard ),	Variability Analysis( :Response, Std Dev Chart( 0 ), Linearity Study( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
+obj = dt << Variability Chart(
+	Y( :Response ),
+	X( :Part ),
+	Standard( :Standard ),
+	Variability Analysis( :Response, Std Dev Chart( 0 ), Linearity Study( 1 ) )
+);
 
 ```
 
 ### X
 
-**Sintassi:** obj = Variability Chart(...&lt;X( column(s) )&gt;...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...&lt;X( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne categoriche come variabili di raggruppamento. L&apos;ultima colonna dell&apos;elenco deve essere la parte o l&apos;unità da misurare.
 
@@ -94,7 +119,9 @@ dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Varia
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ```
 
@@ -102,13 +129,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), Grouping( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), Grouping( :Operator, :part# ) );
 
 ```
 
 ### Y
 
-**Sintassi:** obj = Variability Chart(...Y( column(s) )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Y( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne continue delle misurazioni.
 
@@ -116,7 +145,9 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ```
 
@@ -124,7 +155,9 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) );
 
 ```
 
@@ -140,7 +173,9 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ```
 
@@ -148,7 +183,14 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	Model( "Crossed" ),	X( :Operator, :part# ),	Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	Model( "Crossed" ),
+	X( :Operator, :part# ),
+	Variance Components( 1 )
+);
 
 ```
 
@@ -156,7 +198,71 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = New Table( "3 Factors Crossed then Nested",	Add Rows( 81 ),	New Column( "Operator",		Character( 7 ),		"Nominal",		Set Values(			{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",			"Jane", "Jane", "Jane", "Jane", "Jane"}		),		Set Display Width( 0 )	),	New Column( "Instrument",		Character( 1 ),		"Nominal",		Set Values(			{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",			"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",			"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",			"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",			"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",			"C"}		),		Set Display Width( 0 )	),	New Column( "Part",		Numeric,		"Nominal",		Format( "Best", 8 ),		Set Values(			[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,			10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,			16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,			23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]		),		Set Display Width( 0 )	),	New Column( "Y",		Numeric,		"Continuous",		Format( "Best", 8 ),		Set Values(			[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,			0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,			0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,			1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,			0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]		),		Set Display Width( 68 )	));obj = dt << Variability Chart(	Y( :Y ),	X( :Operator, :Instrument, :Part ),	Model( "Crossed then Nested" ),	Variance Components( 1 ));
+
+dt = New Table( "3 Factors Crossed then Nested",
+	Add Rows( 81 ),
+	New Column( "Operator",
+		Character( 7 ),
+		"Nominal",
+		Set Values(
+			{"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+			"Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara", "Clara",
+			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo",
+			"Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Eduardo", "Jane", "Jane",
+			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+			"Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane", "Jane",
+			"Jane", "Jane", "Jane", "Jane", "Jane"}
+		),
+		Set Display Width( 0 )
+	),
+	New Column( "Instrument",
+		Character( 1 ),
+		"Nominal",
+		Set Values(
+			{"A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B",
+			"B", "B", "C", "C", "C", "C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A",
+			"A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C",
+			"C", "C", "C", "C", "C", "C", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B",
+			"B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C", "C",
+			"C"}
+		),
+		Set Display Width( 0 )
+	),
+	New Column( "Part",
+		Numeric,
+		"Nominal",
+		Format( "Best", 8 ),
+		Set Values(
+			[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,
+			10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 16, 16,
+			16, 17, 17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 20, 21, 21, 21, 22, 22, 22, 23,
+			23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 26, 27, 27, 27]
+		),
+		Set Display Width( 0 )
+	),
+	New Column( "Y",
+		Numeric,
+		"Continuous",
+		Format( "Best", 8 ),
+		Set Values(
+			[0.5, 0.6, 0.2, 0.8, 0.6, 0.6, 1.6, 1.1, 1, 0.4, 0.2, 0.1, 0.1, 0.5, 0, 0.3, 0.6,
+			0.8, 0.1, 0.1, 0.2, 0.4, 0.9, 1.8, 0.1, 0.3, 0.4, 0.1, 0.3, 0.1, 0.9, 0.4, 0, 0.6,
+			0.7, 0.7, 0.3, 0.1, 0.2, 0.3, 0.6, 0.2, 0.2, 0.4, 0.4, 0.8, 0.3, 0.3, 2.6, 0.4,
+			1.6, 0.5, 0.3, 2.9, 0, 0, 0.5, 0.1, 0, 0.3, 0.5, 0, 0, 0.4, 0, 0.4, 0.3, 0.2, 0,
+			0, 0.5, 0.1, 0.1, 0.2, 0.3, 1.1, 0.2, 0.1, 0.6, 0.3, 0.6]
+		),
+		Set Display Width( 68 )
+	)
+);
+obj = dt << Variability Chart(
+	Y( :Y ),
+	X( :Operator, :Instrument, :Part ),
+	Model( "Crossed then Nested" ),
+	Variance Components( 1 )
+);
 
 ```
 
@@ -164,7 +270,14 @@ dt = New Table( "3 Factors Crossed then Nested",	Add Rows( 81 ),	New Column( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );obj = dt << Variability Chart(	Y( :Y ),	Model( "Nested" ),	X( :Operator, :Part ),	Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );
+obj = dt << Variability Chart(
+	Y( :Y ),
+	Model( "Nested" ),
+	X( :Operator, :Part ),
+	Variance Components( 1 )
+);
 
 ```
 
@@ -172,7 +285,14 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Nested.jmp" );obj = dt << V
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );obj = dt << Variability Chart(	Y( :Y ),	Model( "Nested then Crossed" ),	X( :Operator, :Instrument, :Part ),	Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Y ),
+	Model( "Nested then Crossed" ),
+	X( :Operator, :Instrument, :Part ),
+	Variance Components( 1 )
+);
 
 ```
 
@@ -180,7 +300,14 @@ dt = Open( "$SAMPLE_DATA/Variability Data/3 Factors Nested & Crossed.jmp" );obj
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/Wafer.jmp" );obj = dt << Variability Chart(	Y( :Y ),	Model( "Main Effect" ),	X( :Operator, :Wafer ),	Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/Wafer.jmp" );
+obj = dt << Variability Chart(
+	Y( :Y ),
+	Model( "Main Effect" ),
+	X( :Operator, :Wafer ),
+	Variance Components( 1 )
+);
 
 ```
 
@@ -194,19 +321,33 @@ dt = Open( "$SAMPLE_DATA/Variability Data/Wafer.jmp" );obj = dt << Variability 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
 ### Analysis Type
 
-**Sintassi:** obj = Variability Chart(...Analysis Type( "Scegli analisi migliore (EMS REML Bayesiana)"|"Scegli analisi migliore (EMS REML)"|"Utilizza analisi REML"|"Utilizza analisi bayesiana" )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Analysis Type( "Scegli analisi migliore (EMS REML Bayesiana)"|"Scegli analisi migliore (EMS REML)"|"Utilizza analisi REML"|"Utilizza analisi bayesiana" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Identifica il metodo utilizzato per calcolare le componenti della varianza.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Use REML analysis" ));obj << (Variability Analysis[1] << Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Use REML analysis" )
+);
+obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ```
 
@@ -222,7 +363,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -230,7 +375,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -238,7 +390,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -250,7 +406,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -264,7 +424,13 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -276,19 +442,34 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
 ### Conv Limit
 
-**Sintassi:** obj = Variability Chart(...Conv Limit( number )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Conv Limit( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Imposta il limite di convergenza utilizzato per il calcolo delle componenti della varianza. Questa opzione influisce solo sulle analisi REML.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Use REML analysis" ),	Conv Limit( 0.0000001 ));obj << (Variability Analysis[1] << Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Use REML analysis" ),
+	Conv Limit( 0.0000001 )
+);
+obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ```
 
@@ -300,7 +481,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -312,7 +506,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Copy Script;
 
 ```
 
@@ -324,7 +521,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Data Table Window;
 
 ```
 
@@ -336,7 +536,17 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	MSA Metadata( :Measurement( Lower Tolerance( .2 ), Upper Tolerance( 1.3 ) ) ),	Variability Analysis( "Measurement", Misclassification Probabilities( 1 ) ));Wait( 1 );obj << Edit MSA Metadata( :Measurement( Lower Tolerance( .1 ), Upper Tolerance( 1.4 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	MSA Metadata( :Measurement( Lower Tolerance( .2 ), Upper Tolerance( 1.3 ) ) ),
+	Variability Analysis( "Measurement", Misclassification Probabilities( 1 ) )
+);
+Wait( 1 );
+obj << Edit MSA Metadata( :Measurement( Lower Tolerance( .1 ), Upper Tolerance( 1.4 ) ) );
 
 ```
 
@@ -350,7 +560,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -362,7 +575,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -376,7 +603,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -384,7 +615,28 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -396,7 +648,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -408,7 +664,12 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -420,7 +681,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -432,7 +697,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -444,7 +713,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -456,7 +729,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -470,7 +747,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -482,7 +763,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -494,19 +782,36 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
 ### Max Iter
 
-**Sintassi:** obj = Variability Chart(...Max Iter( number )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Max Iter( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Imposta il numero massimo di iterazioni utilizzate per il calcolo delle componenti della varianza. Questa opzione influisce solo sulle analisi REML.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Use REML analysis" ),	Max Iter( 50 ));obj << (Variability Analysis[1] << Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Use REML analysis" ),
+	Max Iter( 50 )
+);
+obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ```
 
@@ -522,31 +827,52 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
 ### Number Function Evals
 
-**Sintassi:** obj = Variability Chart(...Number Function Evals( number )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Number Function Evals( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Imposta il numero massimo di valutazioni di funzione utilizzate per il calcolo delle componenti della varianza. Questa opzione influisce solo sulle analisi bayesiane.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Use Bayesian analysis" ),	Number Function Evals( 10000 ));obj << (Variability Analysis[1] << Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Use Bayesian analysis" ),
+	Number Function Evals( 10000 )
+);
+obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ```
 
 ### Number Integration Abscissas
 
-**Sintassi:** obj = Variability Chart(...Number Integration Abscissas( number )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Number Integration Abscissas( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Imposta il numero di ascisse di integrazione utilizzate per il calcolo delle componenti della varianza. Questa opzione influisce solo sulle analisi bayesiane.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Use Bayesian analysis" ),	Number Integration Abscissas( 90 ));obj << (Variability Analysis[1] << Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Use Bayesian analysis" ),
+	Number Integration Abscissas( 90 )
+);
+obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ```
 
@@ -558,7 +884,16 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -570,7 +905,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Redo Analysis;
 
 ```
 
@@ -582,7 +920,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -594,7 +935,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -606,19 +955,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Sintassi:** obj &lt;&lt; Report; Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -630,7 +994,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -642,7 +1009,22 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	MSA Metadata(		:Measurement(			Lower Tolerance( 0.2 ),			Upper Tolerance( 1.3 ),			Historical Process Sigma( 0.2 )		)	),	Model( "Crossed" ),	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) ));obj << Save All Metadata to Table;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	MSA Metadata(
+		:Measurement(
+			Lower Tolerance( 0.2 ),
+			Upper Tolerance( 1.3 ),
+			Historical Process Sigma( 0.2 )
+		)
+	),
+	Model( "Crossed" ),
+	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) )
+);
+obj << Save All Metadata to Table;
 
 ```
 
@@ -654,7 +1036,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -666,7 +1061,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -678,7 +1086,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -690,7 +1111,22 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	MSA Metadata(		:Measurement(			Lower Tolerance( 0.2 ),			Upper Tolerance( 1.3 ),			Historical Process Sigma( 0.2 )		)	),	Model( "Crossed" ),	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) ));obj << Save Metadata as Column Properties;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	MSA Metadata(
+		:Measurement(
+			Lower Tolerance( 0.2 ),
+			Upper Tolerance( 1.3 ),
+			Historical Process Sigma( 0.2 )
+		)
+	),
+	Model( "Crossed" ),
+	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) )
+);
+obj << Save Metadata as Column Properties;
 
 ```
 
@@ -702,7 +1138,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -712,19 +1156,17 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
-**Esempio 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Esempio 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -736,7 +1178,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );dt << New Co
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -748,7 +1193,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -760,7 +1208,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Save Script to Report;
 
 ```
 
@@ -772,7 +1223,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -784,7 +1238,16 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -796,7 +1259,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -808,43 +1285,72 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
 ### Set Alpha Level
 
-**Sintassi:** obj = Variability Chart(...Set Alpha Level( number )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Set Alpha Level( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Cambia il livello alfa utilizzato per gli intervalli di confidenza e le stime intervallari della media. Questa opzione corrisponde all&apos;opzione Specifica livello alfa nella finestra di avvio Grafico di variabilità.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Set Alpha Level( .1 ));obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Set Alpha Level( .1 )
+);
+obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
 
 ```
 
 ### Set Random Seed
 
-**Sintassi:** obj = Variability Chart(...Set Random Seed( number )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Set Random Seed( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Imposta il seme casuale su un valore specifico; in questo modo tutte le esecuzioni successive che utilizzano lo stesso seme saranno riproducibili.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Set Random Seed( 1234 ));obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Set Random Seed( 1234 )
+);
+obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
 
 ```
 
 ### Sigma Multiplier
 
-**Sintassi:** obj = Variability Chart(...Sigma Multiplier( number=6 )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Sigma Multiplier( number=6 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica un valore costante che viene moltiplicato per sigma. "6", per impostazione predefinita.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Sigma Multiplier( 5.15 ),	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Sigma Multiplier( 5.15 ),
+	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) )
+);
 
 ```
 
@@ -856,7 +1362,12 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -868,7 +1379,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -880,7 +1394,12 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -896,7 +1415,12 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -908,7 +1432,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Variability Analysis( "Measurement", Variance Components( 1 ), "Gauge R&R Report"n( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Variability Analysis( "Measurement", Variance Components( 1 ), "Gauge R&R Report"n( 1 ) )
+);
 
 ```
 
@@ -920,19 +1451,29 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Sintassi:** obj = Variability Chart(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
+**Sintassi:** obj = Variability Chart(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -948,7 +1489,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Variability Chart(	Y( :Response ),	X( :Part ),	Standard( :Standard ),	Std Dev Chart( 0 ));obj << (Variability Analysis[1] << Bias Report( Confidence Intervals( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
+obj = dt << Variability Chart(
+	Y( :Response ),
+	X( :Part ),
+	Standard( :Standard ),
+	Std Dev Chart( 0 )
+);
+obj << (Variability Analysis[1] << Bias Report( Confidence Intervals( 1 ) ));
 
 ```
 
@@ -960,7 +1509,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Varia
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Variability Chart(	Y( :Response ),	X( :Part ),	Standard( :Standard ),	Std Dev Chart( 0 ));obj << (Variability Analysis[1] << Bias Report( Measurement Error Graphs( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
+obj = dt << Variability Chart(
+	Y( :Response ),
+	X( :Part ),
+	Standard( :Standard ),
+	Std Dev Chart( 0 )
+);
+obj << (Variability Analysis[1] << Bias Report( Measurement Error Graphs( 1 ) ));
 
 ```
 
@@ -976,7 +1533,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Varia
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );obj << (Variability Analysis[1] <<Heterogeneity of Variance Tests( 1, Point Options( Show Only Points ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );
+obj << (Variability Analysis[1] <<
+Heterogeneity of Variance Tests( 1, Point Options( Show Only Points ) ));
 
 ```
 
@@ -988,7 +1549,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variab
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );obj << (Variability Analysis[1] <<Heterogeneity of Variance Tests( 1, Set Alpha Level( 0.1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );
+obj << (Variability Analysis[1] <<
+Heterogeneity of Variance Tests( 1, Set Alpha Level( 0.1 ) ));
 
 ```
 
@@ -1000,7 +1565,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variab
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );obj << (Variability Analysis[1] <<Heterogeneity of Variance Tests( 1, Show Center Line( 0 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );
+obj << (Variability Analysis[1] <<
+Heterogeneity of Variance Tests( 1, Show Center Line( 0 ) ));
 
 ```
 
@@ -1012,7 +1581,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variab
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );obj << (Variability Analysis[1] <<Heterogeneity of Variance Tests( 1, Show Decision Limit Shading( 0 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );
+obj << (Variability Analysis[1] <<
+Heterogeneity of Variance Tests( 1, Show Decision Limit Shading( 0 ) ));
 
 ```
 
@@ -1024,7 +1597,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variab
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );obj << (Variability Analysis[1] <<Heterogeneity of Variance Tests( 1, Show Decision Limits( 0 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );
+obj << (Variability Analysis[1] <<
+Heterogeneity of Variance Tests( 1, Show Decision Limits( 0 ) ));
 
 ```
 
@@ -1036,7 +1613,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variab
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );obj << (Variability Analysis[1] <<Heterogeneity of Variance Tests( 1, Show Summary Report( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Model( "Crossed" ) );
+obj << (Variability Analysis[1] <<
+Heterogeneity of Variance Tests( 1, Show Summary Report( 1 ) ));
 
 ```
 
@@ -1052,7 +1633,16 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = Variab
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	MSA Metadata( :Response( Historical Process Sigma( .6 ) ) ),	Standard( :Standard ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Linearity Study( 1, Linearity By Groups( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	MSA Metadata( :Response( Historical Process Sigma( .6 ) ) ),
+	Standard( :Standard ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1, Linearity By Groups( 1 ) ));
 
 ```
 
@@ -1064,7 +1654,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Variability Chart(	Y( :Response ),	X( :Part ),	MSA Metadata( :Response( Historical Process Sigma( .6 ) ) ),	Standard( :Standard ));obj << (Variability Analysis[1] << Linearity Study( 1, Set Alpha Level( .01 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
+obj = dt << Variability Chart(
+	Y( :Response ),
+	X( :Part ),
+	MSA Metadata( :Response( Historical Process Sigma( .6 ) ) ),
+	Standard( :Standard )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1, Set Alpha Level( .01 ) ));
 
 ```
 
@@ -1076,7 +1674,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Varia
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	MSA Metadata( :Response( Historical Process Sigma( .6 ) ) ),	Standard( :Standard ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 1 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 0 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	MSA Metadata( :Response( Historical Process Sigma( .6 ) ) ),
+	Standard( :Standard ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 1 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 0 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 1 ) ));
 
 ```
 
@@ -1088,7 +1699,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Metadata( :Response( Historical Process Sigma( .6 ) ) ),	Standard( :Standard ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 1 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 0 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Metadata( :Response( Historical Process Sigma( .6 ) ) ),
+	Standard( :Standard ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 1 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 0 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 1 ) ));
 
 ```
 
@@ -1100,7 +1724,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Metadata( :Response( Historical Process Sigma( .6 ) ) ),	Standard( :Standard ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curves( 1 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curves( 0 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curves( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Metadata( :Response( Historical Process Sigma( .6 ) ) ),
+	Standard( :Standard ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curves( 1 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curves( 0 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curves( 1 ) ));
 
 ```
 
@@ -1112,7 +1749,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Metadata( :Response( Historical Process Sigma( .6 ) ) ),	Standard( :Standard ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 1 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 0 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Metadata( :Response( Historical Process Sigma( .6 ) ) ),
+	Standard( :Standard ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 1 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 0 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 1 ) ));
 
 ```
 
@@ -1124,7 +1774,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Metadata( :Response( Historical Process Sigma( .6 ) ) ),	Standard( :Standard ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Line( 1 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Line( 0 ) ));Wait( 1 );obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Line( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Metadata( :Response( Historical Process Sigma( .6 ) ) ),
+	Standard( :Standard ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Line( 1 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Line( 0 ) ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Line( 1 ) ));
 
 ```
 
@@ -1140,7 +1803,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Choose best analysis(EMS REML)" ),	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) ),);Wait( 1 );obj << (Variability Analysis[1] << AIAG Labels( 0 ));Wait( 1 );obj << (Variability Analysis[1] << AIAG Labels( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Choose best analysis(EMS REML)" ),
+	Variability Analysis( "Measurement", "Gauge R&R Report"n( 1 ) ),
+
+);
+Wait( 1 );
+obj << (Variability Analysis[1] << AIAG Labels( 0 ));
+Wait( 1 );
+obj << (Variability Analysis[1] << AIAG Labels( 1 ));
 
 ```
 
@@ -1152,7 +1828,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Variability Chart(	Y( :Response ),	X( :Part ),	Standard( :Standard ),	Std Dev Chart( 0 ));obj << (Variability Analysis[1] << Bias Report( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
+obj = dt << Variability Chart(
+	Y( :Response ),
+	X( :Part ),
+	Standard( :Standard ),
+	Std Dev Chart( 0 )
+);
+obj << (Variability Analysis[1] << Bias Report( 1 ));
 
 ```
 
@@ -1164,7 +1848,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Varia
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Connect Cell Means( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Connect Cell Means( 1 ));
 
 ```
 
@@ -1176,7 +1863,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Choose best analysis(EMS REML)" ));obj << (Variability Analysis[1] << Discrimination Ratio( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Choose best analysis(EMS REML)" )
+);
+obj << (Variability Analysis[1] << Discrimination Ratio( 1 ));
 
 ```
 
@@ -1188,7 +1883,20 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	MSA Metadata( :Measurement( Lower Tolerance( .2 ), Upper Tolerance( 1.3 ) ) ),	Model( "Crossed" ),	Variability Analysis( "Measurement", Misclassification Probabilities( 1 ) ));Wait( 1 );obj << (Variability Analysis[1] << Edit MSA Metadata(	Lower Tolerance( .1 ),	Upper Tolerance( 1.2 )));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	MSA Metadata( :Measurement( Lower Tolerance( .2 ), Upper Tolerance( 1.3 ) ) ),
+	Model( "Crossed" ),
+	Variability Analysis( "Measurement", Misclassification Probabilities( 1 ) )
+);
+Wait( 1 );
+obj << (Variability Analysis[1] << Edit MSA Metadata(
+	Lower Tolerance( .1 ),
+	Upper Tolerance( 1.2 )
+));
 
 ```
 
@@ -1200,7 +1908,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Group Means of Std Dev( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Group Means of Std Dev( 1 ));
 
 ```
 
@@ -1212,7 +1923,14 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
 
 ```
 
@@ -1224,7 +1942,16 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Variability Chart(	Y( :Response ),	X( :Part ),	MSA Metadata( :Response( Historical Process Sigma( 1.1 ) ) ),	Standard( :Standard ),	Std Dev Chart( 0 ));obj << (Variability Analysis[1] << Linearity Study( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
+obj = dt << Variability Chart(
+	Y( :Response ),
+	X( :Part ),
+	MSA Metadata( :Response( Historical Process Sigma( 1.1 ) ) ),
+	Standard( :Standard ),
+	Std Dev Chart( 0 )
+);
+obj << (Variability Analysis[1] << Linearity Study( 1 ));
 
 ```
 
@@ -1236,7 +1963,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Varia
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
 
 ```
 
@@ -1248,7 +1978,14 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Mean Plots( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Mean Plots( 1 ));
 
 ```
 
@@ -1260,7 +1997,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Mean of Std Dev( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Mean of Std Dev( 1 ));
 
 ```
 
@@ -1272,7 +2012,16 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	MSA Metadata( :Measurement( Lower Tolerance( 0.2 ), Upper Tolerance( 1.3 ) ) ),	Model( "Crossed" ),	Analysis Type( "Choose best analysis(EMS REML)" ));obj << (Variability Analysis[1] << Misclassification Probabilities( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	MSA Metadata( :Measurement( Lower Tolerance( 0.2 ), Upper Tolerance( 1.3 ) ) ),
+	Model( "Crossed" ),
+	Analysis Type( "Choose best analysis(EMS REML)" )
+);
+obj << (Variability Analysis[1] << Misclassification Probabilities( 1 ));
 
 ```
 
@@ -1284,7 +2033,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Points Jittered( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Points Jittered( 1 ));
 
 ```
 
@@ -1296,7 +2048,17 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	MSA Metadata( :Measurement( Lower Tolerance( 0.2 ), Upper Tolerance( 1.3 ) ) ),	Model( "Crossed" ),	Analysis Type( "Choose best analysis(EMS REML)" ),);obj << (Variability Analysis[1] << "Gauge R&R Report"n( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	MSA Metadata( :Measurement( Lower Tolerance( 0.2 ), Upper Tolerance( 1.3 ) ) ),
+	Model( "Crossed" ),
+	Analysis Type( "Choose best analysis(EMS REML)" ),
+
+);
+obj << (Variability Analysis[1] << "Gauge R&R Report"n( 1 ));
 
 ```
 
@@ -1308,7 +2070,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << S Control Limits( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << S Control Limits( 1 ));
 
 ```
 
@@ -1320,7 +2085,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Show Box Plots( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Show Box Plots( 1 ));
 
 ```
 
@@ -1332,7 +2100,13 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );Wait( 1 );obj << (Variability Analysis[1] << Show Cell Means( 0 ));Wait( 1 );obj << (Variability Analysis[1] << Show Cell Means( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Cell Means( 0 ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Cell Means( 1 ));
 
 ```
 
@@ -1344,7 +2118,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Show Grand Mean( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Show Grand Mean( 1 ));
 
 ```
 
@@ -1356,7 +2133,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Show Grand Median( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Show Grand Median( 1 ));
 
 ```
 
@@ -1368,7 +2148,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Show Group Means( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Show Group Means( 1 ));
 
 ```
 
@@ -1380,7 +2163,13 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );Wait( 1 );obj << (Variability Analysis[1] << Show Points( 0 ));Wait( 1 );obj << (Variability Analysis[1] << Show Points( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Points( 0 ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Points( 1 ));
 
 ```
 
@@ -1392,7 +2181,13 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );Wait( 1 );obj << (Variability Analysis[1] << Show Range Bars( 0 ));Wait( 1 );obj << (Variability Analysis[1] << Show Range Bars( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Range Bars( 0 ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Range Bars( 1 ));
 
 ```
 
@@ -1404,7 +2199,13 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );Wait( 1 );obj << (Variability Analysis[1] << Show Separators( 0 ));Wait( 1 );obj << (Variability Analysis[1] << Show Separators( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Separators( 0 ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Separators( 1 ));
 
 ```
 
@@ -1416,7 +2217,11 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Variability Chart( Y( :Response ), X( :Part ), Standard( :Standard ) );Wait( 1 );obj << (Variability Analysis[1] << Show Standard Mean( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );
+obj = dt << Variability Chart( Y( :Response ), X( :Part ), Standard( :Standard ) );
+Wait( 1 );
+obj << (Variability Analysis[1] << Show Standard Mean( 1 ));
 
 ```
 
@@ -1428,7 +2233,13 @@ dt = Open( "$SAMPLE_DATA/Variability Data/MSALinearity.jmp" );obj = dt << Varia
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );Wait( 1 );obj << (Variability Analysis[1] << Std Dev Chart( 0 ));Wait( 1 );obj << (Variability Analysis[1] << Std Dev Chart( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+Wait( 1 );
+obj << (Variability Analysis[1] << Std Dev Chart( 0 ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Std Dev Chart( 1 ));
 
 ```
 
@@ -1440,7 +2251,14 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ));obj << (Variability Analysis[1] << Std Dev Plots( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" )
+);
+obj << (Variability Analysis[1] << Std Dev Plots( 1 ));
 
 ```
 
@@ -1452,7 +2270,13 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );Wait( 1 );obj << (Variability Analysis[1] << Variability Chart( 0 ));Wait( 1 );obj << (Variability Analysis[1] << Variability Chart( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+Wait( 1 );
+obj << (Variability Analysis[1] << Variability Chart( 0 ));
+Wait( 1 );
+obj << (Variability Analysis[1] << Variability Chart( 1 ));
 
 ```
 
@@ -1464,7 +2288,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Variability Summary Report( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Variability Summary Report( 1 ));
 
 ```
 
@@ -1476,7 +2303,15 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart(	Y( :Measurement ),	X( :Operator, :part# ),	Model( "Crossed" ),	Analysis Type( "Use REML analysis" ));obj << (Variability Analysis[1] << Variance Components( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart(
+	Y( :Measurement ),
+	X( :Operator, :part# ),
+	Model( "Crossed" ),
+	Analysis Type( "Use REML analysis" )
+);
+obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ```
 
@@ -1488,7 +2323,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << Vertical Charts( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << Vertical Charts( 1 ));
 
 ```
 
@@ -1500,7 +2338,10 @@ dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );obj << (Variability Analysis[1] << XBar Control Limits( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Variability Data/2 Factors Crossed.jmp" );
+obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
+obj << (Variability Analysis[1] << XBar Control Limits( 1 ));
 
 ```
 

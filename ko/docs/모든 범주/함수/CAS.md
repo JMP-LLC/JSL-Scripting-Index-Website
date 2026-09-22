@@ -12,7 +12,10 @@
 
 ```jsl
 
-url = "http://myCasURL";cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ), Certificates( "c:\mycerts.crt" ) );
+
+
+url = "http://myCasURL";
+cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ), Certificates( "c:\mycerts.crt" ) );
 
 ```
 
@@ -26,7 +29,11 @@
 
 ```jsl
 
-CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );CAS Delete Table( "Casuser", "Big Class" );
+
+
+CAS Connect( Prompt( ifNeeded ) );
+CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
+CAS Delete Table( "Casuser", "Big Class" );
 
 ```
 
@@ -40,7 +47,11 @@
 
 ```jsl
 
-url = "http://myCasURL";cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ) );CAS Disconnect();
+
+
+url = "http://myCasURL";
+cas = CAS Connect( URL( url ), Username( "myCas_user" ), Prompt( Always ) );
+CAS Disconnect();
 
 ```
 
@@ -54,7 +65,10 @@
 
 ```jsl
 
-CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
+
+
+CAS Connect( Prompt( ifNeeded ) );
+CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
 ```
 
@@ -68,7 +82,15 @@
 
 ```jsl
 
-cas = Current CAS Connection();cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );datasets = CAS Get Data Sets( "casuser" );Show( datasets );cas << Delete Table( "Casuser", "Big Class" );datasets = CAS Get Data Sets( "casuser" );Show( datasets );
+
+
+cas = Current CAS Connection();
+cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class", Save( 1 ) );
+datasets = CAS Get Data Sets( "casuser" );
+Show( datasets );
+cas << Delete Table( "Casuser", "Big Class" );
+datasets = CAS Get Data Sets( "casuser" );
+Show( datasets );
 
 ```
 
@@ -82,7 +104,11 @@
 
 ```jsl
 
-CAS Connect( Prompt( ifNeeded ) );libraries = CAS Get Libraries();Show( libraries );
+
+
+CAS Connect( Prompt( ifNeeded ) );
+libraries = CAS Get Libraries();
+Show( libraries );
 
 ```
 
@@ -96,7 +122,11 @@
 
 ```jsl
 
-CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );CAS Import Data( "Casuser.Big Class" );
+
+
+CAS Connect( Prompt( ifNeeded ) );
+CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
+CAS Import Data( "Casuser.Big Class" );
 
 ```
 
@@ -110,7 +140,10 @@
 
 ```jsl
 
-connected = CAS Is Connected();Show( connected );
+
+
+connected = CAS Is Connected();
+Show( connected );
 
 ```
 
@@ -124,7 +157,11 @@
 
 ```jsl
 
-CAS Connect( Prompt( ifNeeded ) );CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );CAS Remove Table( "Casuser", "Big Class" );
+
+
+CAS Connect( Prompt( ifNeeded ) );
+CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class" );
+CAS Remove Table( "Casuser", "Big Class" );
 
 ```
 
@@ -138,7 +175,224 @@
 
 ```jsl
 
-json ="\[{  "_ctb": true,  "label": "Selected Rows from Table BIG CLASS",  "name": "Fetch",  "title": "Selected Rows from Table BIG CLASS",  "schema": [    {      "format": "",      "label": "",      "name": "_Index_",      "type": "int",      "width": 4    },    {      "format": "",      "label": "",      "name": "name",      "type": "string",      "width": 9    },    {      "format": "",      "label": "",      "name": "age",      "type": "double",      "width": 8    },    {      "format": "",      "label": "",      "name": "sex",      "type": "string",      "width": 1    },    {      "format": "",      "label": "",      "name": "height",      "type": "double",      "width": 8    },    {      "format": "",      "label": "",      "name": "weight",      "type": "double",      "width": 8    }  ],  "rows": [    [      1,      "KATIE",      12,      "F",      59,      95    ],    [      2,      "LOUISE",      12,      "F",      61,      123    ],    [      3,      "JANE",      12,      "F",      55,      74    ],    [      4,      "JACLYN",      12,      "F",      66,      145    ],    [      5,      "LILLIE",      12,      "F",      52,      64    ],    [      6,      "TIM",      12,      "M",      60,      84    ],    [      7,      "JAMES",      12,      "M",      61,      128    ],    [      8,      "ROBERT",      12,      "M",      51,      79    ],    [      9,      "BARBARA",      13,      "F",      60,      112    ],    [      10,      "ALICE",      13,      "F",      61,      107    ],    [      11,      "SUSAN",      13,      "F",      56,      67    ],    [      12,      "JOHN",      13,      "M",      65,      98    ],    [      13,      "JOE",      13,      "M",      63,      105    ],    [      14,      "MICHAEL",      13,      "M",      58,      95    ],    [      15,      "DAVID",      13,      "M",      59,      79    ],    [      16,      "JUDY",      14,      "F",      61,      81    ],    [      17,      "ELIZABETH",      14,      "F",      62,      91    ],    [      18,      "LESLIE",      14,      "F",      65,      142    ],    [      19,      "CAROL",      14,      "F",      63,      84    ],    [      20,      "PATTY",      14,      "F",      62,      85    ]  ]}]\";dt = CAS Table To Data Table( json );
+
+
+json =
+"\[
+{
+  "_ctb": true,
+  "label": "Selected Rows from Table BIG CLASS",
+  "name": "Fetch",
+  "title": "Selected Rows from Table BIG CLASS",
+  "schema": [
+    {
+      "format": "",
+      "label": "",
+      "name": "_Index_",
+      "type": "int",
+      "width": 4
+    },
+    {
+      "format": "",
+      "label": "",
+      "name": "name",
+      "type": "string",
+      "width": 9
+    },
+    {
+      "format": "",
+      "label": "",
+      "name": "age",
+      "type": "double",
+      "width": 8
+    },
+    {
+      "format": "",
+      "label": "",
+      "name": "sex",
+      "type": "string",
+      "width": 1
+    },
+    {
+      "format": "",
+      "label": "",
+      "name": "height",
+      "type": "double",
+      "width": 8
+    },
+    {
+      "format": "",
+      "label": "",
+      "name": "weight",
+      "type": "double",
+      "width": 8
+    }
+  ],
+  "rows": [
+    [
+      1,
+      "KATIE",
+      12,
+      "F",
+      59,
+      95
+    ],
+    [
+      2,
+      "LOUISE",
+      12,
+      "F",
+      61,
+      123
+    ],
+    [
+      3,
+      "JANE",
+      12,
+      "F",
+      55,
+      74
+    ],
+    [
+      4,
+      "JACLYN",
+      12,
+      "F",
+      66,
+      145
+    ],
+    [
+      5,
+      "LILLIE",
+      12,
+      "F",
+      52,
+      64
+    ],
+    [
+      6,
+      "TIM",
+      12,
+      "M",
+      60,
+      84
+    ],
+    [
+      7,
+      "JAMES",
+      12,
+      "M",
+      61,
+      128
+    ],
+    [
+      8,
+      "ROBERT",
+      12,
+      "M",
+      51,
+      79
+    ],
+    [
+      9,
+      "BARBARA",
+      13,
+      "F",
+      60,
+      112
+    ],
+    [
+      10,
+      "ALICE",
+      13,
+      "F",
+      61,
+      107
+    ],
+    [
+      11,
+      "SUSAN",
+      13,
+      "F",
+      56,
+      67
+    ],
+    [
+      12,
+      "JOHN",
+      13,
+      "M",
+      65,
+      98
+    ],
+    [
+      13,
+      "JOE",
+      13,
+      "M",
+      63,
+      105
+    ],
+    [
+      14,
+      "MICHAEL",
+      13,
+      "M",
+      58,
+      95
+    ],
+    [
+      15,
+      "DAVID",
+      13,
+      "M",
+      59,
+      79
+    ],
+    [
+      16,
+      "JUDY",
+      14,
+      "F",
+      61,
+      81
+    ],
+    [
+      17,
+      "ELIZABETH",
+      14,
+      "F",
+      62,
+      91
+    ],
+    [
+      18,
+      "LESLIE",
+      14,
+      "F",
+      65,
+      142
+    ],
+    [
+      19,
+      "CAROL",
+      14,
+      "F",
+      63,
+      84
+    ],
+    [
+      20,
+      "PATTY",
+      14,
+      "F",
+      62,
+      85
+    ]
+  ]
+}
+]\";
+dt = CAS Table To Data Table( json );
 
 ```
 
@@ -152,7 +406,10 @@
 
 ```jsl
 
-CAS Connect( Prompt( ifNeeded ) );CAS Terminate Sessions();
+
+
+CAS Connect( Prompt( ifNeeded ) );
+CAS Terminate Sessions();
 
 ```
 
@@ -166,7 +423,10 @@
 
 ```jsl
 
-connection = Current CAS Connection();Show( connection );
+
+
+connection = Current CAS Connection();
+Show( connection );
 
 ```
 
@@ -180,7 +440,13 @@
 
 ```jsl
 
-echo = [=> ];echo["a"] = 1;echo["b"] = JSON Literal( true );echo["c"] = 3.141559;action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
+
+
+echo = [=> ];
+echo["a"] = 1;
+echo["b"] = JSON Literal( true );
+echo["c"] = 3.141559;
+action = New CAS Action( Action( "builtins.echo" ), JSON( echo ) );
 
 ```
 
@@ -194,7 +460,19 @@
 
 ```jsl
 
-cas = Current CAS Connection();code ="\[	data temp;	x = 9.1; y = 6; z = sqrt(x**2 + y**2);	A = "SAS"; B = "Statistics";	put _ALL_;              /* display all variables and values */	run;]\";action = New CAS DATA Step action( Code( code ) );cas << Submit( action );
+
+
+cas = Current CAS Connection();
+code =
+"\[
+	data temp;
+	x = 9.1; y = 6; z = sqrt(x**2 + y**2);
+	A = "SAS"; B = "Statistics";
+	put _ALL_;              /* display all variables and values */
+	run;
+]\";
+action = New CAS DATA Step action( Code( code ) );
+cas << Submit( action );
 
 ```
 
@@ -208,7 +486,10 @@
 
 ```jsl
 
-url = "http://myCasURL";cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
+
+
+url = "http://myCasURL";
+cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
 ```
 

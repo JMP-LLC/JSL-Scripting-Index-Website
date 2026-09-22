@@ -12,7 +12,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -28,7 +34,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -36,7 +49,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -44,7 +61,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -58,7 +79,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -70,7 +97,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -82,7 +115,21 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -94,7 +141,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Copy Script;
 
 ```
 
@@ -106,7 +160,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Data Table Window;
 
 ```
 
@@ -120,7 +181,10 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -132,7 +196,22 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -146,7 +225,28 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -154,7 +254,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -166,7 +274,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -178,7 +294,12 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -190,7 +311,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -202,7 +331,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -214,7 +351,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -226,7 +371,11 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -240,7 +389,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -252,7 +405,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -264,7 +424,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -278,7 +446,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -290,7 +461,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -302,7 +482,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Redo Analysis;
 
 ```
 
@@ -314,7 +501,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -326,7 +520,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -338,19 +540,38 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**语法:** obj &lt;&lt; Report; Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -362,7 +583,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -374,7 +602,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -386,7 +628,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -398,7 +654,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -410,7 +680,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -420,19 +698,17 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**示例 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -444,7 +720,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -456,7 +739,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -468,7 +758,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Report;
 
 ```
 
@@ -480,7 +777,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -492,7 +796,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -504,7 +817,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -516,7 +843,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -528,7 +861,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -540,7 +878,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -552,7 +897,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -568,7 +922,12 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -580,19 +939,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**语法:** obj = Neural(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -606,7 +975,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
@@ -614,85 +989,137 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ### By
 
-**语法:** obj = Neural(...&lt;By( column(s) )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...&lt;By( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 为指定列的每个水平执行单独的分析。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	By( :_bycol ),	Group Options( Return Group( 1 ) ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) ),
+	Go
+);
 
 ```
 
 ### Factor
 
-**语法:** obj = Neural(...Factor( column(s) )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...Factor( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定预测变量。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
 ### Freq
 
-**语法:** obj = Neural(...&lt;Freq( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...&lt;Freq( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个频数。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Freq( :_freqcol ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Freq( :_freqcol ),
+	Go
+);
 
 ```
 
 ### Response
 
-**语法:** obj = Neural(...Response( column(s) )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...Response( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定您想要分析的一个或多个响应变量。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
 ### Validation
 
-**语法:** obj = Neural(...&lt;Validation( column )&gt;...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...&lt;Validation( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定定义验证集的数值列。该列应包含最多三个非重复值。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ));obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation )
+);
+obj << Go;
 
 ```
 
 ### X
 
-**语法:** obj = Neural(...X( column(s) )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...X( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定预测变量。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
 ### Y
 
-**语法:** obj = Neural(...Y( column(s) )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...Y( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定您想要分析的一个或多个响应变量。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Go
+);
 
 ```
 
@@ -706,7 +1133,13 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Fit( NTanH( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Fit( NTanH( 4 ) );
 
 ```
 
@@ -718,27 +1151,37 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));Wait( 1 );obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+Wait( 1 );
+obj << Go;
 
 ```
 
 ### Informative Missing
 
-**语法:** obj = Neural(...Informative Missing( state=0|1 )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...Informative Missing( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
-**说明:** Habilita la codificación e imputación de valores faltantes. Cuando no se selecciona esta opción, se ignoran las filas con valores faltantes.
-
-
-
-En el caso de las variables continuas, los valores faltantes se sustituyen por la media de la variable. Además, se crea una variable indicadora de valores faltantes y se incluye en el modelo.
+**说明:** 启用缺失值插补和编码。当未选择该选项时，将忽略带有缺失值的行。
 
 
 
-En el caso de las variables categóricas, no se imputan los valores faltantes, pero se tratan como si fueran otro nivel de la variable en el modelo. Esta opción solo está disponible en JMP Pro.
+对于连续变量，缺失值由变量的均值代替。此外，将创建缺失指示变量并将其包含在模型中。
+
+
+
+对于分类变量，不会插补缺失值，但会将其视为模型中变量的另一个水平。 该选项仅限于 JMP Pro。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), Go );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt:age[3] = .;
+obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), Go );
 
 ```
 
@@ -746,23 +1189,39 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt:age[3] = .;obj = dt << Neural( Y(
 
 **语法:** obj &lt;&lt; Learning Rate( fraction )
 
-**说明:** Especifica el factor de escala para el impulso. Una tasa de aprendizaje cercana a 1 da como resultado una convergencia más rápida en un modelo final, pero también tiene una mayor tendencia a sobreajustar los datos. Esta opción solo está disponible en JMP Pro.
+**说明:** 指定用于提升的尺度因子。学习率接近 1 会导致最终模型更快收敛，但也会使过度拟合数据的趋势更高。 该选项仅限于 JMP Pro。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	N Boost( 2 ));obj << Learning Rate( 0.2 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	N Boost( 2 )
+);
+obj << Learning Rate( 0.2 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
 ### Multithreading
 
-**语法:** obj = Neural(...Multithreading( state=0|1 )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...Multithreading( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在机器的可用线程间分配计算任务。 默认开启。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Multithreading( 0 ));obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Multithreading( 0 )
+);
+obj << Go;
 
 ```
 
@@ -770,11 +1229,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 **语法:** obj &lt;&lt; N Boost( number )
 
-**说明:** Especifica el número máximo de modelos que se utilizan para el impulso. Esta opción solo está disponible en JMP Pro.
+**说明:** 指定用于提升的最大模型数。 该选项仅限于 JMP Pro。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << N Boost( 2 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << N Boost( 2 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -786,7 +1253,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Penalty Method( "Absolute" );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Penalty Method( "Absolute" );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -798,19 +1273,35 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Robust Fit( 1 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Robust Fit( 1 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
 ### Set Random Seed
 
-**语法:** obj = Neural(...Set Random Seed( number )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Neural(...Set Random Seed( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于重现开始值和验证分配的随机种子。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Set Random Seed( 1234 ));Wait( 1 );obj << Go;
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Set Random Seed( 1234 )
+);
+Wait( 1 );
+obj << Go;
 
 ```
 
@@ -818,11 +1309,19 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 **语法:** obj &lt;&lt; Transform Covariates( state=0|1 )
 
-**说明:** Transforma todas las variables continuas hasta la casi normalidad mediante la distribución de Johnson Su o de Johnson Sb. Transformar las variables continuas contribuye a mitigar los efectos negativos de los valores atípicos o de las distribuciones muy asimétricas. Esta opción solo está disponible en JMP Pro.
+**说明:** 使用 Johnson Su 或 Johnson Sb 分布将所有连续变量变换为接近正态性。变换连续变量有助于减轻离群值或高偏斜分布的不利影响。 该选项仅限于 JMP Pro。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ));obj << Transform Covariates( 1 );obj << Go;obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose )
+);
+obj << Transform Covariates( 1 );
+obj << Go;
+obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ```
 
@@ -834,7 +1333,14 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation Method( "Holdback", 0.4 ),	Go);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation Method( "Holdback", 0.4 ),
+	Go
+);
 
 ```
 
@@ -850,7 +1356,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Categorical Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Categorical Profiler( 1 ));
 
 ```
 
@@ -862,7 +1376,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Contour Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Contour Profiler( 1 ));
 
 ```
 
@@ -876,7 +1398,18 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));Wait( 0 );obj << (Fit[1] << Decision Threshold( 1 ));Wait( 1 );obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+Wait( 0 );
+obj << (Fit[1] << Decision Threshold( 1 ));
+Wait( 1 );
+obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
 
 ```
 
@@ -888,7 +1421,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Diagram( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Diagram( 1 ));
 
 ```
 
@@ -896,11 +1437,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Test)
 
-**说明:** Devuelve el estadístico Desviación absoluta media para el conjunto de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的绝对偏差的均值统计量。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));ae = obj << (Fit[1] << Get Average Absolute Error Test);Show( ae );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+ae = obj << (Fit[1] << Get Average Absolute Error Test);
+Show( ae );
 
 ```
 
@@ -912,7 +1466,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));ae = obj << (Fit[1] << Get Average Absolute Error Training);Show( ae );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+ae = obj << (Fit[1] << Get Average Absolute Error Training);
+Show( ae );
 
 ```
 
@@ -920,11 +1483,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Validation)
 
-**说明:** Devuelve el estadístico Desviación absoluta media para el conjunto de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的绝对偏差的均值统计量。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));ae = obj << (Fit[1] << Get Average Absolute Error Validation);Show( ae );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+ae = obj << (Fit[1] << Get Average Absolute Error Validation);
+Show( ae );
 
 ```
 
@@ -932,11 +1504,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Test)
 
-**说明:** Devuelve la media de -log(p), donde p equivale a la probabilidad de respuesta atribuida por el modelo que la respuesta realmente se produjo para el conjunto de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的 -log(p) 均值，其中 p 等于归因于模型的响应实际发生的概率。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));avg = obj << (Fit[1] << Get Average Log Error Test);Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+avg = obj << (Fit[1] << Get Average Log Error Test);
+Show( avg );
 
 ```
 
@@ -948,7 +1533,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));avg = obj << (Fit[1] << Get Average Log Error Training);Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+avg = obj << (Fit[1] << Get Average Log Error Training);
+Show( avg );
 
 ```
 
@@ -956,11 +1550,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Validation)
 
-**说明:** Devuelve la media de -log(p), donde p equivale a la probabilidad de respuesta atribuida por el modelo que la respuesta realmente se produjo, para el conjunto de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的 -log(p) 均值，其中 p 等于模型归因的响应实际发生的概率。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));avg = obj << (Fit[1] << Get Average Log Error Validation);Show( avg );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+avg = obj << (Fit[1] << Get Average Log Error Validation);
+Show( avg );
 
 ```
 
@@ -968,11 +1571,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Test)
 
-**说明:** Devuelve la matriz de confusión para el conjunto de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的混淆矩阵。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cm = obj << (Fit[1] << Get Confusion Matrix Test);Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cm = obj << (Fit[1] << Get Confusion Matrix Test);
+Show( cm );
 
 ```
 
@@ -984,7 +1600,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cm = obj << (Fit[1] << Get Confusion Matrix Training);Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cm = obj << (Fit[1] << Get Confusion Matrix Training);
+Show( cm );
 
 ```
 
@@ -992,11 +1617,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Validation)
 
-**说明:** Devuelve la matriz de confusión para el conjunto de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的混淆矩阵。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cm = obj << (Fit[1] << Get Confusion Matrix Validation);Show( cm );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cm = obj << (Fit[1] << Get Confusion Matrix Validation);
+Show( cm );
 
 ```
 
@@ -1004,11 +1638,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Test)
 
-**说明:** Devuelve las tasas de confusión para el conjunto de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的混淆率。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cr = obj << (Fit[1] << Get Confusion Rates Test);Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cr = obj << (Fit[1] << Get Confusion Rates Test);
+Show( cr );
 
 ```
 
@@ -1020,7 +1667,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cr = obj << (Fit[1] << Get Confusion Rates Training);Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cr = obj << (Fit[1] << Get Confusion Rates Training);
+Show( cr );
 
 ```
 
@@ -1028,11 +1684,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Validation)
 
-**说明:** Devuelve las tasas de confusión para el conjunto de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的混淆率。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));cr = obj << (Fit[1] << Get Confusion Rates Validation);Show( cr );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+cr = obj << (Fit[1] << Get Confusion Rates Validation);
+Show( cr );
 
 ```
 
@@ -1040,11 +1705,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Test)
 
-**说明:** Devuelve el estadístico R cuadrado generalizado para el conjunto de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的广义 R 方统计量。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get Gen RSquare Test);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get Gen RSquare Test);
+Show( rt );
 
 ```
 
@@ -1056,7 +1734,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get Gen RSquare Training);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get Gen RSquare Training);
+Show( rt );
 
 ```
 
@@ -1064,11 +1751,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Validation)
 
-**说明:** Devuelve el estadístico R cuadrado generalizado para el conjunto de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的广义 R 方统计量。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get Gen RSquare Validation);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get Gen RSquare Validation);
+Show( rt );
 
 ```
 
@@ -1080,7 +1776,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));code = obj << (Fit[1] << Get MM SAS Data Step);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+code = obj << (Fit[1] << Get MM SAS Data Step);
 
 ```
 
@@ -1092,7 +1796,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Diagram( 1 ));obj << (Fit[1] << Get Measures);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Diagram( 1 ));
+obj << (Fit[1] << Get Measures);
 
 ```
 
@@ -1100,11 +1813,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Test)
 
-**说明:** Devuelve la tasa de clasificación errónea para el conjunto de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的误分类率。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));mr = obj << (Fit[1] << Get Misclassification Rate Test);Show( mr );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+mr = obj << (Fit[1] << Get Misclassification Rate Test);
+Show( mr );
 
 ```
 
@@ -1116,7 +1842,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));mrt = obj << (Fit[1] << Get Misclassification Rate Training);Show( mrt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+mrt = obj << (Fit[1] << Get Misclassification Rate Training);
+Show( mrt );
 
 ```
 
@@ -1124,11 +1859,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Validation)
 
-**说明:** Devuelve la tasa de clasificación errónea para el conjunto de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的误分类率。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));mrt = obj << (Fit[1] << Get Misclassification Rate Validation);Show( mrt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+mrt = obj << (Fit[1] << Get Misclassification Rate Validation);
+Show( mrt );
 
 ```
 
@@ -1140,7 +1884,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	N Boost( 2 ),	Go);n = obj << (fit[1] << Get NBoost);Show( n );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	N Boost( 2 ),
+	Go
+);
+n = obj << (fit[1] << Get NBoost);
+Show( n );
 
 ```
 
@@ -1148,11 +1901,25 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Test)
 
-**说明:** Devuelve el área situada debajo de la curva de Precisión-Recuerdo para el conjunto de pruebas. Debe mostrarse la curva de Precisión-Recuerdo antes de que se calcule el área. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));ra = obj << (Fit[1] << Get Precision Recall Area Test);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
+ra = obj << (Fit[1] << Get Precision Recall Area Test);
+Show( ra );
 
 ```
 
@@ -1164,7 +1931,17 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));ra = obj << (Fit[1] << Get Precision Recall Area Training);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
+ra = obj << (Fit[1] << Get Precision Recall Area Training);
+Show( ra );
 
 ```
 
@@ -1172,11 +1949,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Validation)
 
-**说明:** Devuelve el área situada debajo de la curva de Precisión-Recuerdo para el conjunto de validación. Debe mostrarse la curva de Precisión-Recuerdo antes de que se calcule el área. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));ra = obj << (Fit[1] << Get Precision Recall Area Validation);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
+ra = obj << (Fit[1] << Get Precision Recall Area Validation);
+Show( ra );
 
 ```
 
@@ -1188,7 +1975,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Get Prediction Formula);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Get Prediction Formula);
 
 ```
 
@@ -1196,11 +1991,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Test)
 
-**说明:** Devuelve la raíz cuadrada de la media de los cuadrados de los errores de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回检验误差的均方平方根。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));re = obj << (Fit[1] << Get RMS Error Test);Show( re );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+re = obj << (Fit[1] << Get RMS Error Test);
+Show( re );
 
 ```
 
@@ -1212,7 +2020,16 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));re = obj << (Fit[1] << Get RMS Error Training);Show( re );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+re = obj << (Fit[1] << Get RMS Error Training);
+Show( re );
 
 ```
 
@@ -1220,11 +2037,20 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Validation)
 
-**说明:** Devuelve la raíz cuadrada de la media de los cuadrados de los errores de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证误差的均方平方根。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));re = obj << (Fit[1] << Get RMS Error Validation);Show( re );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+re = obj << (Fit[1] << Get RMS Error Validation);
+Show( re );
 
 ```
 
@@ -1232,11 +2058,25 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Test)
 
-**说明:** Devuelve el área bajo la curva Característica operativa del receptor (ROC) correspondiente a los datos de la prueba. Es necesario mostrar la curva ROC antes de calcular el área. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试数据的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));ra = obj << (Fit[1] << Get ROC Area Test);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
+ra = obj << (Fit[1] << Get ROC Area Test);
+Show( ra );
 
 ```
 
@@ -1248,7 +2088,17 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));ra = obj << (Fit[1] << Get ROC Area Training);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
+ra = obj << (Fit[1] << Get ROC Area Training);
+Show( ra );
 
 ```
 
@@ -1256,11 +2106,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Validation)
 
-**说明:** Devuelve el área bajo la curva Característica operativa del receptor (ROC) correspondiente al conjunto de datos de validación. Es necesario mostrar la curva ROC antes de calcular el área. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证数据集的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));ra = obj << (Fit[1] << Get ROC Area Validation);Show( ra );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
+ra = obj << (Fit[1] << Get ROC Area Validation);
+Show( ra );
 
 ```
 
@@ -1268,11 +2128,24 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Test)
 
-**说明:** Devuelve el estadístico R cuadrado de entropía para el conjunto de prueba. Esta opción solo está disponible si se utiliza un conjunto de validación en JMP Pro.
+**说明:** 返回测试集的熵 R 方统计量。 该选项仅在 JMP Pro 中使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,		:DEBTINC	),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get RSquare Test);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Equity.jmp" );
+obj = dt << Neural(
+	Y( :BAD ),
+	X(
+		:LOAN, :MORTDUE, :VALUE, :REASON, :JOB, :YOJ, :DEROG, :DELINQ, :CLAGE, :NINQ, :CLNO,
+		:DEBTINC
+	),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get RSquare Test);
+Show( rt );
 
 ```
 
@@ -1284,7 +2157,17 @@ dt = Open( "$SAMPLE_DATA/Equity.jmp" );obj = dt << Neural(	Y( :BAD ),	X(		:L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get RSquare Training);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get RSquare Training);
+Show( rt );
 
 ```
 
@@ -1292,11 +2175,21 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 **语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Validation)
 
-**说明:** Devuelve el estadístico R cuadrado de entropía para el conjunto de validación. Esta opción solo está disponible si se utiliza un conjunto de validación.
+**说明:** 返回验证集的熵 R 方统计量。 该选项仅在使用验证集时可用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Validation( :Validation ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));rt = obj << (Fit[1] << Get RSquare Validation);Show( rt );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Validation( :Validation ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+rt = obj << (Fit[1] << Get RSquare Validation);
+Show( rt );
 
 ```
 
@@ -1308,7 +2201,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));code = obj << (Fit[1] << Get SAS Data Step);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+code = obj << (Fit[1] << Get SAS Data Step);
 
 ```
 
@@ -1320,7 +2221,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));s = obj << (Fit[1] << Get Seconds);Show( s );
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+s = obj << (Fit[1] << Get Seconds);
+Show( s );
 
 ```
 
@@ -1332,7 +2242,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Lift Curve( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Lift Curve( 1 ));
 
 ```
 
@@ -1344,7 +2262,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Make SAS Data Step);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Make SAS Data Step);
 
 ```
 
@@ -1356,7 +2282,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Plot Actual By Predicted( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Plot Actual By Predicted( 1 ));
 
 ```
 
@@ -1368,7 +2302,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Plot Residual By Predicted( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Plot Residual By Predicted( 1 ));
 
 ```
 
@@ -1380,7 +2322,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Precision Recall Curve( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Precision Recall Curve( 1 ));
 
 ```
 
@@ -1392,7 +2342,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Profiler( 1 ));
 
 ```
 
@@ -1404,7 +2362,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Publish Prediction Formula);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Publish Prediction Formula);
 
 ```
 
@@ -1416,7 +2382,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << ROC Curve( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y Binary ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << ROC Curve( 1 ));
 
 ```
 
@@ -1428,7 +2402,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y Binary ),	
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));Wait( 2 );obj << (Fit[1] << Remove Fit);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+Wait( 2 );
+obj << (Fit[1] << Remove Fit);
 
 ```
 
@@ -1440,7 +2423,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Fast Formulas);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Fast Formulas);
 
 ```
 
@@ -1452,7 +2443,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Formulas);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Formulas);
 
 ```
 
@@ -1464,7 +2463,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Profile Formulas);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Profile Formulas);
 
 ```
 
@@ -1476,7 +2483,16 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Transform Covariates( 1 ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Transformed Covariates);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Transform Covariates( 1 ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Transformed Covariates);
 
 ```
 
@@ -1488,7 +2504,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Save Validation);
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Save Validation);
 
 ```
 
@@ -1500,7 +2524,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Show Estimates( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Show Estimates( 1 ));
 
 ```
 
@@ -1512,7 +2544,15 @@ dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );obj = dt << Neural(	Y( :Y ),	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),	Fit( NTanH( 2 ) ),	Fit( NGaussian( 3 ) ));obj << (Fit[1] << Surface Profiler( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Diabetes.jmp" );
+obj = dt << Neural(
+	Y( :Y ),
+	X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL, :TCH, :LTG, :Glucose ),
+	Fit( NTanH( 2 ) ),
+	Fit( NGaussian( 3 ) )
+);
+obj << (Fit[1] << Surface Profiler( 1 ));
 
 ```
 

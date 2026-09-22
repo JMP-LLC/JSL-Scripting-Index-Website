@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Abs( -5 );
 
 ```
@@ -25,6 +26,7 @@ Abs( -5 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Ceiling( 1.2 );
 
@@ -40,6 +42,7 @@ Ceiling( 1.2 );
 
 ```jsl
 
+
 Derivative( Sin( x ), x );
 
 ```
@@ -53,6 +56,7 @@ Derivative( Sin( x ), x );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Floor( 1.2 );
 
@@ -70,6 +74,7 @@ Floor( 1.2 );
 
 ```jsl
 
+
 Integrate( Exp( -x ), x, 0, . );
 
 ```
@@ -78,7 +83,9 @@ Integrate( Exp( -x ), x, 0, . );
 
 ```jsl
 
-x = 100;Integrate( Normal Density( x - 100 ), x, ., . );
+
+x = 100;
+Integrate( Normal Density( x - 100 ), x, ., . );
 
 ```
 
@@ -91,6 +98,7 @@ x = 100;Integrate( Normal Density( x - 100 ), x, ., . );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Invert Expr( Sqrt( Log( x ) ), x, y );
 
@@ -106,6 +114,7 @@ Invert Expr( Sqrt( Log( x ) ), x, y );
 
 ```jsl
 
+
 Modulo( 10, 3 );
 
 ```
@@ -119,6 +128,7 @@ Modulo( 10, 3 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Modulo( 10, 3 );
 
@@ -134,7 +144,15 @@ Modulo( 10, 3 );
 
 ```jsl
 
-Normal Integrate(	J( 3, 1, 0 ),	Identity( 3 ),	ex[1] ^ 4 * ex[2] ^ 2 * ex[3] ^ 2,	ex,	2,	5000);
+
+Normal Integrate(
+	J( 3, 1, 0 ),
+	Identity( 3 ),
+	ex[1] ^ 4 * ex[2] ^ 2 * ex[3] ^ 2,
+	ex,
+	2,
+	5000
+);
 
 ```
 
@@ -148,7 +166,10 @@ Normal Integrate(	J( 3, 1, 0 ),	Identity( 3 ),	ex[1] ^ 4 * ex[2] ^ 2 * ex[3] 
 
 ```jsl
 
-f = Function( {x, y}, x ^ 2 + y );Num Deriv( f( 2, 1 ) );Num Deriv( f( 2, 1 ), 2 );
+
+f = Function( {x, y}, x ^ 2 + y );
+Num Deriv( f( 2, 1 ) );
+Num Deriv( f( 2, 1 ), 2 );
 
 ```
 
@@ -162,7 +183,9 @@ f = Function( {x, y}, x ^ 2 + y );Num Deriv( f( 2, 1 ) );Num Deriv( f( 2, 1 ),
 
 ```jsl
 
-f = Function( {x}, x ^ 3 );Num Deriv2( f( 2 ) );
+
+f = Function( {x}, x ^ 3 );
+Num Deriv2( f( 2 ) );
 
 ```
 
@@ -175,6 +198,7 @@ f = Function( {x}, x ^ 3 );Num Deriv2( f( 2 ) );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Round( 213, -1 );
 
@@ -189,6 +213,7 @@ Round( 213, -1 );
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
+
 
 Simplify Expr( Expr( 2 * 3 * a + b * (a + 3 - c) - a * b ) );
 

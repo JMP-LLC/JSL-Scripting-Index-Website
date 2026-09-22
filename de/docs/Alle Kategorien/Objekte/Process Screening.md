@@ -16,7 +16,16 @@
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Alert Lower Quantile Prob( 0.05 ),	Action Lower Quantile Prob( 0.01 ));
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Alert Lower Quantile Prob( 0.05 ),
+	Action Lower Quantile Prob( 0.01 )
+);
 
 ```
 
@@ -32,7 +41,16 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Alert Upper Quantile Prob( 0.95 ),	Action Upper Quantile Prob( 0.99 ));
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Alert Upper Quantile Prob( 0.95 ),
+	Action Upper Quantile Prob( 0.99 )
+);
 
 ```
 
@@ -46,7 +64,15 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Alarm Graph( 1 ));
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Alarm Graph( 1 )
+);
 
 ```
 
@@ -62,7 +88,16 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Alert Lower Quantile Prob( 0.05 ),	Action Lower Quantile Prob( 0.01 ));
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Alert Lower Quantile Prob( 0.05 ),
+	Action Lower Quantile Prob( 0.01 )
+);
 
 ```
 
@@ -78,7 +113,16 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Alert Upper Quantile Prob( 0.95 ),	Action Upper Quantile Prob( 0.99 ));
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Alert Upper Quantile Prob( 0.95 ),
+	Action Upper Quantile Prob( 0.99 )
+);
 
 ```
 
@@ -92,7 +136,16 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Select All,	Drift Graph Selected);Wait( 1 );obj << Chart Options Drift Graph( Show Markers( 1 ), Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Select All,
+	Drift Graph Selected
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Markers( 1 ), Connect Points( 0 ) );
 
 ```
 
@@ -106,7 +159,29 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( :NPN1, :PNP1, :PNP2, :NPN2, :PNP3 ),	Subgroup( :lot_id, :wafer ),	Control Chart Type( "XBar and R" ),	Process Performance Graph( 1 ),	Chart Options Graphlet( Show Markers( 1 ) ),	SendToReport(		Dispatch( {"Process Performance Graph"}, "ProcessScreening Graph", FrameBox,			Add Pin Annotation(				Seg( Marker Seg( 1 ) ),				Index( 4 ),				Index Row( 4 ),				UniqueID( 4 ),				FoundPt( {320, 564} ),				Origin( {1, 0.24} ),				RightOfCenter( 0 ),				Tag Line( 1 )			)		)	));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :NPN1, :PNP1, :PNP2, :NPN2, :PNP3 ),
+	Subgroup( :lot_id, :wafer ),
+	Control Chart Type( "XBar and R" ),
+	Process Performance Graph( 1 ),
+	Chart Options Graphlet( Show Markers( 1 ) ),
+	SendToReport(
+		Dispatch( {"Process Performance Graph"}, "ProcessScreening Graph", FrameBox,
+			Add Pin Annotation(
+				Seg( Marker Seg( 1 ) ),
+				Index( 4 ),
+				Index Row( 4 ),
+				UniqueID( 4 ),
+				FoundPt( {320, 564} ),
+				Origin( {1, 0.24} ),
+				RightOfCenter( 0 ),
+				Tag Line( 1 )
+			)
+		)
+	)
+);
 
 ```
 
@@ -120,7 +195,16 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Select All,	Show Charts as Selected);Wait( 1 );obj << Chart Options as Selected( Show Markers( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Select All,
+	Show Charts as Selected
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```
 
@@ -134,7 +218,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Select All,	Show Charts for Selected);Wait( 1 );obj << Chart Options for Selected( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Select All,
+	Show Charts for Selected
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```
 
@@ -148,7 +241,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :PNP3, :IVP1, :IVP2 ) );obj << Color Out of Spec Values;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :PNP3, :IVP1, :IVP2 ) );
+obj << Color Out of Spec Values;
 
 ```
 
@@ -160,7 +256,16 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Find and Select( "PNP1" ),	Color Selected Items( "Blue" ));obj << Find and Select( "NPN1" );obj << Color Selected Items( "Red" );obj << Find and Select( "NPN2" );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Find and Select( "PNP1" ),
+	Color Selected Items( "Blue" )
+);
+obj << Find and Select( "NPN1" );
+obj << Color Selected Items( "Red" );
+obj << Find and Select( "NPN2" );
 
 ```
 
@@ -172,19 +277,32 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Select All,	Control Chart Builder);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Select All,
+	Control Chart Builder
+);
 
 ```
 
 ### Control Chart Type
 
-**Syntax:** obj = Process Screening(...Control Chart Type( "Indiv and MR"|"XBar and R"|"XBar and S"|"XBar MR and R"|"XBar MR and S"|"Count"|"Nonnegative Continuous"|"Proportion" )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Control Chart Type( "Indiv and MR"|"XBar and R"|"XBar and S"|"XBar MR and R"|"XBar MR and S"|"Count"|"Nonnegative Continuous"|"Proportion" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine von fünf Arten von Qualitätsregelkartenberechnungen an. Standardmäßig „EinzeIwerte und MR“.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Control Chart Type( "XBar and R" ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Control Chart Type( "XBar and R" )
+);
 
 ```
 
@@ -198,7 +316,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );Wait( 1 );obj << Count( 0 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
+Wait( 1 );
+obj << Count( 0 );
 
 ```
 
@@ -212,7 +334,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cp( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cp( 1 ) );
 
 ```
 
@@ -226,7 +350,11 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cpk( 0 ) );Wait( 1 );obj << Cpk( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cpk( 0 ) );
+Wait( 1 );
+obj << Cpk( 1 );
 
 ```
 
@@ -240,7 +368,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Alpha( .6 ),	Select All,	Drift Graph Selected);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Alpha( .6 ),
+	Select All,
+	Drift Graph Selected
+);
 
 ```
 
@@ -256,7 +392,15 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Beta( .1 ),	Select All,	Drift Graph Selected);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Beta( .1 ),
+	Select All,
+	Drift Graph Selected
+);
 
 ```
 
@@ -272,7 +416,14 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Select All,	Drift Graph Selected);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Select All,
+	Drift Graph Selected
+);
 
 ```
 
@@ -280,7 +431,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), );Wait( 1 );obj << Drift Graph Selected( {{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}} );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), );
+Wait( 1 );
+obj << Drift Graph Selected( {{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}} );
 
 ```
 
@@ -294,7 +449,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Summaries( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Summaries( 1 )
+);
 
 ```
 
@@ -306,7 +467,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Enable All Tests);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Enable All Tests
+);
 
 ```
 
@@ -320,7 +487,12 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Expected Out of Spec Rate( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Expected Out of Spec Rate( 1 )
+);
 
 ```
 
@@ -334,7 +506,16 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Filter Where( Alarm Rate > 0 ));Wait( 1 );obj << Reset Filter;obj << Filter Where( Stability Index > 1.3 | Mean <= 4.3 );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Filter Where( Alarm Rate > 0 )
+);
+Wait( 1 );
+obj << Reset Filter;
+obj << Filter Where( Stability Index > 1.3 | Mean <= 4.3 );
 
 ```
 
@@ -346,7 +527,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Find and Select( "DIAMETER", {"C334", "A455"}, 2 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Find and Select( "DIAMETER", {"C334", "A455"}, 2 )
+);
 
 ```
 
@@ -360,7 +547,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Goal Plot( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Goal Plot( 1 ) );
 
 ```
 
@@ -376,7 +565,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( X( :Process ), Y( Eval( 5 :: 132 ) ), K Sigma( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( X( :Process ), Y( Eval( 5 :: 132 ) ), K Sigma( 4 ) );
 
 ```
 
@@ -392,7 +583,19 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );dt << Process Screening(	Process Variables( :N Defective ),	n Trials( :N Units ),	Time( :Day ),	Control Chart Type( "Proportion" ),	Show Charts as Selected( 1 ),	RowStates( [0 1] ),	K Sigma for Proportion( 2.5 ),	Use Upper Limit( 1 ),	Use Lower Limit( 1 ));
+
+dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
+dt << Process Screening(
+	Process Variables( :N Defective ),
+	n Trials( :N Units ),
+	Time( :Day ),
+	Control Chart Type( "Proportion" ),
+	Show Charts as Selected( 1 ),
+	RowStates( [0 1] ),
+	K Sigma for Proportion( 2.5 ),
+	Use Upper Limit( 1 ),
+	Use Lower Limit( 1 )
+);
 
 ```
 
@@ -408,7 +611,25 @@ dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.j
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Keep Distribution Details( 1 ),	SendToReport(		Dispatch( {}, "Poisson λ", NumberColBox, {Visibility( "Visible" )} ),		Dispatch( {}, "NegBin λ", NumberColBox, {Visibility( "Visible" )} ),		Dispatch( {}, "NegBin σ", NumberColBox, {Visibility( "Visible" )} ),		Dispatch( {}, "ZIP π", NumberColBox, {Visibility( "Visible" )} ),		Dispatch( {}, "ZIP λ", NumberColBox, {Visibility( "Visible" )} ),		Dispatch( {}, "ZINB π", NumberColBox, {Visibility( "Visible" )} ),		Dispatch( {}, "ZINB λ", NumberColBox, {Visibility( "Visible" )} ),		Dispatch( {}, "ZINB σ", NumberColBox, {Visibility( "Visible" )} )	));
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Keep Distribution Details( 1 ),
+	SendToReport(
+		Dispatch( {}, "Poisson λ", NumberColBox, {Visibility( "Visible" )} ),
+		Dispatch( {}, "NegBin λ", NumberColBox, {Visibility( "Visible" )} ),
+		Dispatch( {}, "NegBin σ", NumberColBox, {Visibility( "Visible" )} ),
+		Dispatch( {}, "ZIP π", NumberColBox, {Visibility( "Visible" )} ),
+		Dispatch( {}, "ZIP λ", NumberColBox, {Visibility( "Visible" )} ),
+		Dispatch( {}, "ZINB π", NumberColBox, {Visibility( "Visible" )} ),
+		Dispatch( {}, "ZINB λ", NumberColBox, {Visibility( "Visible" )} ),
+		Dispatch( {}, "ZINB σ", NumberColBox, {Visibility( "Visible" )} )
+	)
+);
 
 ```
 
@@ -420,7 +641,13 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Largest Downshift( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Largest Downshift( 1 )
+);
 
 ```
 
@@ -432,7 +659,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Largest Upshift( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Largest Upshift( 1 )
+);
 
 ```
 
@@ -446,7 +679,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Latest Out of Spec( 0 ) );Wait( 1 );obj << Latest Out of Spec( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Latest Out of Spec( 0 ) );
+Wait( 1 );
+obj << Latest Out of Spec( 1 );
 
 ```
 
@@ -458,7 +695,16 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt << Process Screening(	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),	Control Chart Type( "Indiv and MR" ),	RowStates( [5 1] ),	Shift Graph( 1 ),	Make Detailed Shift Data( 1 ));obj << Save Shift Table;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+	Control Chart Type( "Indiv and MR" ),
+	RowStates( [5 1] ),
+	Shift Graph( 1 ),
+	Make Detailed Shift Data( 1 )
+);
+obj << Save Shift Table;
 
 ```
 
@@ -472,7 +718,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt 
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ));Wait( 1 );obj << Maximum( 0 );
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time )
+);
+Wait( 1 );
+obj << Maximum( 0 );
 
 ```
 
@@ -486,7 +741,11 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );Wait( 1 );obj << Mean( 0 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
+Wait( 1 );
+obj << Mean( 0 );
 
 ```
 
@@ -502,7 +761,13 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Minimum Process Length( 40 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Minimum Process Length( 40 )
+);
 
 ```
 
@@ -514,7 +779,14 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );obj = dt << Process Screening(	Y( :Fill Weight ),	Subgroup( :Sample ),	Control Chart Type( "XBar MR and R" ),	Moving Range Limit Exceeded( 1 ));
+
+dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
+obj = dt << Process Screening(
+	Y( :Fill Weight ),
+	Subgroup( :Sample ),
+	Control Chart Type( "XBar MR and R" ),
+	Moving Range Limit Exceeded( 1 )
+);
 
 ```
 
@@ -528,7 +800,14 @@ dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );obj = dt << P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Control Chart Type( "XBar and R" ));Wait( 1 );obj << N Subgroups( 0 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Control Chart Type( "XBar and R" )
+);
+Wait( 1 );
+obj << N Subgroups( 0 );
 
 ```
 
@@ -542,7 +821,11 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Count( 0 ) );Wait( 1 );obj << Out of Spec Count( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Count( 0 ) );
+Wait( 1 );
+obj << Out of Spec Count( 1 );
 
 ```
 
@@ -556,19 +839,31 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Rate( 0 ) );Wait( 1 );obj << Out of Spec Rate( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Out of Spec Rate( 0 ) );
+Wait( 1 );
+obj << Out of Spec Rate( 1 );
 
 ```
 
 ### Outlier Threshold
 
-**Syntax:** obj = Process Screening(...Outlier Threshold( number=5 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Outlier Threshold( number=5 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Anzahl von Innerhalb-Sigma-Einheiten an, die eine Beobachtung mindestens von seinen beiden Nachbarn entfernt sein muss, um als Ausreißer behandelt zu werden. Standardmäßig „5“.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Shift Threshold( 2 ),	Outlier Threshold( 1.1 ),	Shift Graph( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Shift Threshold( 2 ),
+	Outlier Threshold( 1.1 ),
+	Shift Graph( 1 )
+);
 
 ```
 
@@ -582,7 +877,11 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );Wait( 1 );obj << Overall Sigma( 0 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
+Wait( 1 );
+obj << Overall Sigma( 0 );
 
 ```
 
@@ -594,7 +893,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Select All,	Process Performance Graph( 1 ));Wait( 1 );obj << Performance Graph Boundaries( 1.7, 1.2 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Select All,
+	Process Performance Graph( 1 )
+);
+Wait( 1 );
+obj << Performance Graph Boundaries( 1.7, 1.2 );
 
 ```
 
@@ -608,7 +915,11 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Ppk( 0 ) );Wait( 1 );obj << Ppk( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Ppk( 0 ) );
+Wait( 1 );
+obj << Ppk( 1 );
 
 ```
 
@@ -620,7 +931,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Select All,	Ppk Capability Boundary( 1.7 ),	Process Performance Graph( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Select All,
+	Ppk Capability Boundary( 1.7 ),
+	Process Performance Graph( 1 )
+);
 
 ```
 
@@ -632,7 +950,13 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Select All,	Process Capability);
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Select All,
+	Process Capability
+);
 
 ```
 
@@ -644,7 +968,13 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Select All,	Process Performance Graph( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Select All,
+	Process Performance Graph( 1 )
+);
 
 ```
 
@@ -656,7 +986,22 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );Column( "Weight" ) << Set Property(	"Process Screening",	{Centerline( 20.5 ), Specified Sigma( 1.5 ), Measurement Sigma( .8 )});Column( "Weight" ) << Set Property( "Spec Limits", {LSL( 17 ), USL( 24 )} );obj = dt << Process Screening(	Process Variables( :Weight ),	Subgroup( :Sample ),	Control Chart Type( "XBar and R" ),	Out of Spec Count( 0 ),	Out of Spec Rate( 0 ),	Latest Out of Spec( 0 ),	Process Potential Graph( 1 ));
+
+dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );
+Column( "Weight" ) << Set Property(
+	"Process Screening",
+	{Centerline( 20.5 ), Specified Sigma( 1.5 ), Measurement Sigma( .8 )}
+);
+Column( "Weight" ) << Set Property( "Spec Limits", {LSL( 17 ), USL( 24 )} );
+obj = dt << Process Screening(
+	Process Variables( :Weight ),
+	Subgroup( :Sample ),
+	Control Chart Type( "XBar and R" ),
+	Out of Spec Count( 0 ),
+	Out of Spec Rate( 0 ),
+	Latest Out of Spec( 0 ),
+	Process Potential Graph( 1 )
+);
 
 ```
 
@@ -668,7 +1013,13 @@ dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );Column( "Weight" ) << S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Range Limit Exceeded( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Range Limit Exceeded( 1 )
+);
 
 ```
 
@@ -682,7 +1033,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Show Charts as Selected( 1 ),	RowStates( [51 1, 52 1, 66 1, 85 1] ));Wait( 1 );obj << Relaunch Selected Processes;
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Show Charts as Selected( 1 ),
+	RowStates( [51 1, 52 1, 66 1, 85 1] )
+);
+Wait( 1 );
+obj << Relaunch Selected Processes;
 
 ```
 
@@ -696,7 +1058,13 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( dt << get Column Group( "Processes" ) ),	Remove( :NPN2 ),	Process Performance Graph( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( dt << get Column Group( "Processes" ) ),
+	Remove( :NPN2 ),
+	Process Performance Graph( 1 )
+);
 
 ```
 
@@ -710,7 +1078,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Find and Select( "DIAMETER", {"C334", "A455"}, 2 ));Wait( 1 );obj << Remove Selected Items;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Find and Select( "DIAMETER", {"C334", "A455"}, 2 )
+);
+Wait( 1 );
+obj << Remove Selected Items;
 
 ```
 
@@ -724,7 +1100,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );Wait( 1 );obj << Filter Where( Alarm Rate > 0 );Wait( 3 );obj << Reset Filter;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );
+Wait( 1 );
+obj << Filter Where( Alarm Rate > 0 );
+Wait( 3 );
+obj << Reset Filter;
 
 ```
 
@@ -738,7 +1120,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Process Variables( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Control Chart Type( "XBar and R" ),	RowStates( [0 1, 5 768] ) //Select first and Color Red the sixth of original order);Wait( 1 );// sort columns to show original orderobj << SendToReport( Dispatch( {}, "", TableBox, {Sort By Column( 3, 1 )} ) );obj << SendToReport( Dispatch( {}, "", TableBox, {Sort By Column( 2, 1 )} ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Control Chart Type( "XBar and R" ),
+	RowStates( [0 1, 5 768] ) //Select first and Color Red the sixth of original order
+);
+Wait( 1 );
+// sort columns to show original order
+obj << SendToReport( Dispatch( {}, "", TableBox, {Sort By Column( 3, 1 )} ) );
+obj << SendToReport( Dispatch( {}, "", TableBox, {Sort By Column( 2, 1 )} ) );
 
 ```
 
@@ -750,7 +1143,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );obj << Save Details Table;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
+obj << Save Details Table;
 
 ```
 
@@ -762,7 +1158,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Find and Select( "DIAMETER", {"C334", "A455"}, 2 ));obj << Save Selected Details;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Find and Select( "DIAMETER", {"C334", "A455"}, 2 )
+);
+obj << Save Selected Details;
 
 ```
 
@@ -774,7 +1177,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt << Process Screening(	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),	Control Chart Type( "Indiv and MR" ),	RowStates( [5 1] ),	Shift Graph( 1 ),	Make Detailed Shift Data( 1 ));obj << Save Shift Table;
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+	Control Chart Type( "Indiv and MR" ),
+	RowStates( [5 1] ),
+	Shift Graph( 1 ),
+	Make Detailed Shift Data( 1 )
+);
+obj << Save Shift Table;
 
 ```
 
@@ -786,7 +1198,10 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );obj << Save Summary Table;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
+obj << Save Summary Table;
 
 ```
 
@@ -800,7 +1215,10 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );obj << Save Summary Table with Graphs;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( Eval( 5 :: 132 ) ), Subgroup Sample Size( 6 ) );
+obj << Save Summary Table with Graphs;
 
 ```
 
@@ -812,7 +1230,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Select All );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Select All );
 
 ```
 
@@ -826,7 +1246,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Select Where( Alarm Rate > 0 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Select Where( Alarm Rate > 0 )
+);
 
 ```
 
@@ -840,7 +1266,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Set Scrolling( 3 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Set Scrolling( 3 )
+);
 
 ```
 
@@ -852,31 +1284,53 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt << Process Screening(	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),	Control Chart Type( "Indiv and MR" ));obj << Shift Graph( 1 );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Shift Graph( 1 );
 
 ```
 
 ### Shift Lambda
 
-**Syntax:** obj = Process Screening(...Shift Lambda( number=.3 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Shift Lambda( number=.3 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Gewichtung an, die im exponentiell gewichteten gleitenden Mittelwert (EWMA) für die Verschiebungserkennung verwendet wird. Standardmäßig „.3“.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt << Process Screening(	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),	Control Chart Type( "Indiv and MR" ),	Show Charts as Selected( 1 ),	RowStates( [5 1] ),	Shift Lambda( 0.2 ),	Shift Graph( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+	Control Chart Type( "Indiv and MR" ),
+	Show Charts as Selected( 1 ),
+	RowStates( [5 1] ),
+	Shift Lambda( 0.2 ),
+	Shift Graph( 1 )
+);
 
 ```
 
 ### Shift Threshold
 
-**Syntax:** obj = Process Screening(...Shift Threshold( number=3 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Shift Threshold( number=3 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Anzahl von Innerhalb-Sigma-Einheiten an, die eine Verschiebung überschreiten muss, um im Verschiebungsgraphen angezeigt zu werden. Standardmäßig „3“.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Shift Threshold( 2 ),	Shift Graph( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Shift Threshold( 2 ),
+	Shift Graph( 1 )
+);
 
 ```
 
@@ -890,7 +1344,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );obj << Select Where( :MACHINE == "C334" );obj << Show Charts as Selected( 1 );Wait( 2 );obj << Select Where( :MACHINE == "A455" );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ) );
+obj << Select Where( :MACHINE == "C334" );
+obj << Show Charts as Selected( 1 );
+Wait( 2 );
+obj << Select Where( :MACHINE == "A455" );
 
 ```
 
@@ -904,7 +1364,14 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Select All,	Show Charts for Selected);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Select All,
+	Show Charts for Selected
+);
 
 ```
 
@@ -912,7 +1379,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :OPERATOR, :MACHINE ),	Show Charts for Selected( {{:DIAMETER, "DRJ", "C334"}, {:DIAMETER, "MKS", "A386"}} ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :OPERATOR, :MACHINE ),
+	Show Charts for Selected( {{:DIAMETER, "DRJ", "C334"}, {:DIAMETER, "MKS", "A386"}} )
+);
 
 ```
 
@@ -920,7 +1393,12 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :IVP7, :B1, :IVP8 ),	Show Charts for Selected( {:IVP7, :IVP8} ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :IVP7, :B1, :IVP8 ),
+	Show Charts for Selected( {:IVP7, :IVP8} )
+);
 
 ```
 
@@ -932,7 +1410,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt << Process Screening(	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),	Control Chart Type( "Indiv and MR" ),	Select All,	Show Charts for Selected,	Show Shifts in Graphs( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+	Y( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+	Control Chart Type( "Indiv and MR" ),
+	Select All,
+	Show Charts for Selected,
+	Show Shifts in Graphs( 1 )
+);
 
 ```
 
@@ -944,7 +1430,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Test 2( 1 ),	Test 3( 1 ));Wait( 1 );obj << Show Tests( 0 );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Test 2( 1 ),
+	Test 3( 1 )
+);
+Wait( 1 );
+obj << Show Tests( 0 );
 
 ```
 
@@ -960,7 +1455,14 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( Eval( 5 :: 132 ) ),	Control Chart Type( "XBar and R" ),	Subgroup( :wafer ),	Sort by Subgroup( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( Eval( 5 :: 132 ) ),
+	Control Chart Type( "XBar and R" ),
+	Subgroup( :wafer ),
+	Sort by Subgroup( 1 )
+);
 
 ```
 
@@ -974,7 +1476,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Centered Mean( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Centered Mean( 1 ) );
 
 ```
 
@@ -988,7 +1492,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Limits( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Limits( 1 ) );
 
 ```
 
@@ -1002,7 +1508,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Scaled Std Dev( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Scaled Std Dev( 1 ) );
 
 ```
 
@@ -1016,7 +1524,11 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );Wait( 1 );obj << Stability Index( 0 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
+Wait( 1 );
+obj << Stability Index( 0 );
 
 ```
 
@@ -1030,7 +1542,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),	Select All,	Process Performance Graph( 1 ));Wait( 1 );obj << Stability Index Boundary( 1.5 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( :NPN1, :PNP1, :PNP2, :NPN2 ),
+	Select All,
+	Process Performance Graph( 1 )
+);
+Wait( 1 );
+obj << Stability Index Boundary( 1.5 );
 
 ```
 
@@ -1044,19 +1564,28 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );obj << Stability Ratio( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ) );
+obj << Stability Ratio( 1 );
 
 ```
 
 ### Subgroup Sample Size
 
-**Syntax:** obj = Process Screening(...Subgroup Sample Size( number=5 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Subgroup Sample Size( number=5 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Anzahl der Beobachtungen in jeder Untergruppe an. Die minimale Untergruppengröße ist 2. Standardmäßig „5“.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( Eval( 5 :: 132 ) ),	Control Chart Type( "XBar and R" ),	Subgroup Sample Size( 6 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( Eval( 5 :: 132 ) ),
+	Control Chart Type( "XBar and R" ),
+	Subgroup Sample Size( 6 )
+);
 
 ```
 
@@ -1068,7 +1597,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( Eval( 5 :: 132 ) ),	Subgroup Sample Size( 6 ),	Summary( 0 ));Wait( 1 );obj << Summary( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( Eval( 5 :: 132 ) ),
+	Subgroup Sample Size( 6 ),
+	Summary( 0 )
+);
+Wait( 1 );
+obj << Summary( 1 );
 
 ```
 
@@ -1082,7 +1619,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Target Index( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Target Index( 1 ) );
 
 ```
 
@@ -1094,7 +1633,9 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 1( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 1( 0 ) );
 
 ```
 
@@ -1106,7 +1647,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 2( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 2( 1 ) );
 
 ```
 
@@ -1118,7 +1661,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 3( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 3( 1 ) );
 
 ```
 
@@ -1130,7 +1675,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 4( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 4( 1 ) );
 
 ```
 
@@ -1142,7 +1689,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 5( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 5( 1 ) );
 
 ```
 
@@ -1154,7 +1703,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 6( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 6( 1 ) );
 
 ```
 
@@ -1166,7 +1717,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 7( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 7( 1 ) );
 
 ```
 
@@ -1178,7 +1731,9 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 8( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Test 8( 1 ) );
 
 ```
 
@@ -1192,7 +1747,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Alarm Graph( 1 ));Wait( 1 );obj << Test Action( 0 );
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Alarm Graph( 1 )
+);
+Wait( 1 );
+obj << Test Action( 0 );
 
 ```
 
@@ -1206,7 +1771,17 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Alarm Graph( 1 ));Wait( 1 );obj << Test Alert( 1 );
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Alarm Graph( 1 )
+);
+Wait( 1 );
+obj << Test Alert( 1 );
 
 ```
 
@@ -1220,19 +1795,44 @@ dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj =
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Show Charts as Selected( 1 ),	Alarm Graph( 1 ));Wait( 1 );obj << Test Alert Increasing( 0 );
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Show Charts as Selected( 1 ),
+	Alarm Graph( 1 )
+);
+Wait( 1 );
+obj << Test Alert Increasing( 0 );
 
 ```
 
 ### Use Limits Table
 
-**Syntax:** obj = Process Screening(...Use Limits Table( state=0|1, data table, &lt;options&gt;)...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Use Limits Table( state=0|1, data table, &lt;options&gt;)...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Importiert historische Eingriffsgrenzen und Spezifikationsgrenzen aus einer Datentabelle.
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	));
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	)
+);
 
 ```
 
@@ -1248,19 +1848,35 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );dt << Process Screening(	Process Variables( :N Defective ),	n Trials( :N Units ),	Time( :Day ),	Control Chart Type( "Proportion" ),	Show Charts as Selected( 1 ),	RowStates( [0 1] ),	Use Lower Limit( 1 ));
+
+dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
+dt << Process Screening(
+	Process Variables( :N Defective ),
+	n Trials( :N Units ),
+	Time( :Day ),
+	Control Chart Type( "Proportion" ),
+	Show Charts as Selected( 1 ),
+	RowStates( [0 1] ),
+	Use Lower Limit( 1 )
+);
 
 ```
 
 ### Use Medians instead of Means
 
-**Syntax:** obj = Process Screening(...Use Medians instead of Means( state=0|1 )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Use Medians instead of Means( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Schätzt die Mittellinie anhand des Medians der Beobachtungen, um den Effekt von Ausreißern auf die Tests zu verringern.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Use Medians instead of Means( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Use Medians instead of Means( 1 )
+);
 
 ```
 
@@ -1276,7 +1892,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );dt << Process Screening(	Process Variables( :N Defective ),	n Trials( :N Units ),	Time( :Day ),	Control Chart Type( "Proportion" ),	Show Charts as Selected( 1 ),	RowStates( [0 1] ),	Use Upper Limit( 0 ),	Use Lower Limit( 1 ));
+
+dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
+dt << Process Screening(
+	Process Variables( :N Defective ),
+	n Trials( :N Units ),
+	Time( :Day ),
+	Control Chart Type( "Proportion" ),
+	Show Charts as Selected( 1 ),
+	RowStates( [0 1] ),
+	Use Upper Limit( 0 ),
+	Use Lower Limit( 1 )
+);
 
 ```
 
@@ -1290,7 +1917,11 @@ dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.j
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Within Sigma( 0 ) );Wait( 1 );obj << Within Sigma( 1 );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Within Sigma( 0 ) );
+Wait( 1 );
+obj << Within Sigma( 1 );
 
 ```
 
@@ -1304,7 +1935,13 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1320,7 +1957,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -1328,7 +1972,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -1336,7 +1984,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -1348,7 +2000,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -1362,7 +2022,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -1374,7 +2040,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -1386,7 +2058,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -1398,7 +2083,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Copy Script;
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Copy Script;
 
 ```
 
@@ -1410,7 +2102,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Data Table Window;
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Data Table Window;
 
 ```
 
@@ -1424,7 +2123,10 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -1436,7 +2138,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -1450,7 +2166,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -1458,7 +2182,28 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -1470,7 +2215,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));t = obj << Get Datatable;Show( N Rows( t ) );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -1482,7 +2235,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -1494,7 +2252,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));t = obj << Get Script;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -1506,7 +2272,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));t = obj << Get Script With Data Table;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -1518,7 +2292,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));t = obj << Get Timing;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -1530,7 +2312,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -1544,7 +2330,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -1556,7 +2346,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -1568,7 +2365,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -1582,7 +2387,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -1594,7 +2402,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -1606,7 +2423,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Redo Analysis;
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Redo Analysis;
 
 ```
 
@@ -1618,7 +2442,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Relaunch Analysis;
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Relaunch Analysis;
 
 ```
 
@@ -1630,7 +2461,15 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -1642,19 +2481,38 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1666,7 +2524,14 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Di
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Report View( "Summary" );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Report View( "Summary" );
 
 ```
 
@@ -1678,7 +2543,20 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Di
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -1690,7 +2568,20 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -1702,7 +2593,20 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -1714,7 +2618,15 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -1724,19 +2636,17 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
-**Beispiel 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Beispiel 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -1748,7 +2658,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -1760,7 +2677,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Save Script to Journal;
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Save Script to Journal;
 
 ```
 
@@ -1772,7 +2696,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Save Script to Report;
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Save Script to Report;
 
 ```
 
@@ -1784,7 +2715,14 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Save Script to Script Window;
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Save Script to Script Window;
 
 ```
 
@@ -1796,7 +2734,16 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -1808,7 +2755,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -1820,7 +2781,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -1832,7 +2799,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -1844,7 +2816,14 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));obj << Title( "My Platform" );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+obj << Title( "My Platform" );
 
 ```
 
@@ -1856,7 +2835,16 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1872,7 +2860,12 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -1884,19 +2877,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**Syntax:** obj = Process Screening(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -1904,73 +2907,120 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ### By
 
-**Syntax:** obj = Process Screening(...&lt;By( column(s) )&gt;...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...&lt;By( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Führt eine separate Analyse für jede Stufe der angegebenen Spalte durch.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
 ### Grouping
 
-**Syntax:** obj = Process Screening(...&lt;Grouping( column(s) )&gt;...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Analysiert jede Prozessvariable in jeder Kombination von Stufen der angegebenen Gruppierungsspalten.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
 
 ```
 
 ### Process Variables
 
-**Syntax:** obj = Process Screening(...Process Variables( column(s) )...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...Process Variables( column(s) )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Spalten der Prozessdaten an, die die zu analysierenden Messungen enthalten.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
 
 ```
 
 ### Subgroup
 
-**Syntax:** obj = Process Screening(...&lt;Subgroup( column(s) )&gt;...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...&lt;Subgroup( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Weist eine oder mehr Untergruppenvariablen zu.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Y( Eval( 5 :: 132 ) ),	Control Chart Type( "XBar and R" ),	Subgroup( :wafer ),	Sort by Subgroup( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Y( Eval( 5 :: 132 ) ),
+	Control Chart Type( "XBar and R" ),
+	Subgroup( :wafer ),
+	Sort by Subgroup( 1 )
+);
 
 ```
 
 ### Time
 
-**Syntax:** obj = Process Screening(...&lt;Time( column )&gt;...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...&lt;Time( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Weist eine Spalte zu, die die zeitliche Reihenfolge für die Daten angibt. Die Prozessdaten werden vor der Durchführung von Berechnungen nach der Zeitvariablen sortiert.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Consumer Prices.jmp" );obj = dt << Process Screening(	Process Variables( :Price ),	Grouping( :Series ),	Control Chart Type( "XBar and R" ),	Time( :Date ),	Subgroup Sample Size( 3 ));
+
+dt = Open( "$SAMPLE_DATA/Consumer Prices.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Price ),
+	Grouping( :Series ),
+	Control Chart Type( "XBar and R" ),
+	Time( :Date ),
+	Subgroup Sample Size( 3 )
+);
 
 ```
 
 ### n Trials
 
-**Syntax:** obj = Process Screening(...&lt;n Trials( column )&gt;...) &lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
+**Syntax:** obj = Process Screening(...&lt;n Trials( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Weist eine Spalte zu, die die Anzahl der Versuche enthält. Diese Zahl wird als Nenner des Anteils der Defekten bei einem P-Diagramm verwendet.
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening(	Process Variables( :"# defective"n ),	Control Chart Type( "Proportion" ),	n Trials( :Lot Size 2 ),	Show Charts as Selected( 1 ),	RowStates( [0 1] ));
+
+dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );
+dt << Process Screening(
+	Process Variables( :"# defective"n ),
+	Control Chart Type( "Proportion" ),
+	n Trials( :Lot Size 2 ),
+	Show Charts as Selected( 1 ),
+	RowStates( [0 1] )
+);
 
 ```
 
@@ -1986,7 +3036,16 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );obj = dt << Process Screening(	Process Variables( :N Defective ),	Control Chart Type( "Proportion" ),	n Trials( :N Units ),	Show Charts as Selected( 1 ),	RowStates( [0 1] ));
+
+
+dt = Open( "$Sample_Data/Quality Control/Electrical Component Defect Screening.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :N Defective ),
+	Control Chart Type( "Proportion" ),
+	n Trials( :N Units ),
+	Show Charts as Selected( 1 ),
+	RowStates( [0 1] )
+);
 
 ```
 
@@ -1994,7 +3053,18 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );obj = dt << Process Screening(	Process Variables( :Fill Weight ),	Subgroup( :Sample ),	Control Chart Type( "XBar MR and R" ),	Moving Range Limit Exceeded( 1 ),	Chart Options as Selected( Dispersion Chart( 1 ) ),	Show Charts as Selected( 1 ),	RowStates( [0 1] ));
+
+
+dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Fill Weight ),
+	Subgroup( :Sample ),
+	Control Chart Type( "XBar MR and R" ),
+	Moving Range Limit Exceeded( 1 ),
+	Chart Options as Selected( Dispersion Chart( 1 ) ),
+	Show Charts as Selected( 1 ),
+	RowStates( [0 1] )
+);
 
 ```
 
@@ -2002,7 +3072,17 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );obj = dt << Process Screening(	Process Variables( :Fill Weight ),	Subgroup( :Sample ),	Control Chart Type( "XBar MR and S" ),	Moving Range Limit Exceeded( 1 ),	Show Charts as Selected( 1 ),	RowStates( [0 1] ));
+
+
+dt = Open( "$Sample_Data/Quality Control/Vial Fill Weights.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Fill Weight ),
+	Subgroup( :Sample ),
+	Control Chart Type( "XBar MR and S" ),
+	Moving Range Limit Exceeded( 1 ),
+	Show Charts as Selected( 1 ),
+	RowStates( [0 1] )
+);
 
 ```
 
@@ -2010,7 +3090,23 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );Column( "Weight" ) << Set Property(	"Process Screening",	{Centerline( 20.5 ), Specified Sigma( 1.5 ), Measurement Sigma( .8 )});Column( "Weight" ) << Set Property( "Spec Limits", {LSL( 17 ), USL( 24 )} );obj = dt << Process Screening(	Process Variables( :Weight ),	Subgroup( :Sample ),	Control Chart Type( "XBar and R" ),	Out of Spec Count( 0 ),	Out of Spec Rate( 0 ),	Latest Out of Spec( 0 ),	Process Potential Graph( 1 ));
+
+
+dt = Open( "$Sample_Data/Quality Control/Coating.jmp" );
+Column( "Weight" ) << Set Property(
+	"Process Screening",
+	{Centerline( 20.5 ), Specified Sigma( 1.5 ), Measurement Sigma( .8 )}
+);
+Column( "Weight" ) << Set Property( "Spec Limits", {LSL( 17 ), USL( 24 )} );
+obj = dt << Process Screening(
+	Process Variables( :Weight ),
+	Subgroup( :Sample ),
+	Control Chart Type( "XBar and R" ),
+	Out of Spec Count( 0 ),
+	Out of Spec Rate( 0 ),
+	Latest Out of Spec( 0 ),
+	Process Potential Graph( 1 )
+);
 
 ```
 
@@ -2018,7 +3114,18 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Nonnegative Continuous" ),	Time( :Time ),	Set Scrolling( 10 ), // table shows only the first 10 processes	Alarm Graph( 1 ),	Show Charts as Selected( 1 ));
+
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Nonnegative Continuous" ),
+	Time( :Time ),
+	Set Scrolling( 10 ), // table shows only the first 10 processes
+	Alarm Graph( 1 ),
+	Show Charts as Selected( 1 )
+);
 
 ```
 
@@ -2026,7 +3133,15 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Set Scrolling( 10 ), // table shows only the first 10 processes	Process Performance Graph( 1 ));
+
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Set Scrolling( 10 ), // table shows only the first 10 processes
+	Process Performance Graph( 1 )
+);
 
 ```
 
@@ -2034,7 +3149,22 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	));
+
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	)
+);
 
 ```
 
@@ -2042,7 +3172,16 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );obj = dt << Process Screening(	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),	Control Chart Type( "Indiv and MR" ),	Shift Graph( 1 ),	Show Charts as Selected( 1 ),	Select Where( Stability Index > 2 ));
+
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Steam Turbine Current.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Fuel, :Steam Flow, :Steam Temp, :MW, :Cool Temp, :Pressure ),
+	Control Chart Type( "Indiv and MR" ),
+	Shift Graph( 1 ),
+	Show Charts as Selected( 1 ),
+	Select Where( Stability Index > 2 )
+);
 
 ```
 
@@ -2050,7 +3189,15 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Set Scrolling( 10 ), // table shows only the first 10 processes	Goal Plot( 1 ));
+
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Set Scrolling( 10 ), // table shows only the first 10 processes
+	Goal Plot( 1 )
+);
 
 ```
 
@@ -2058,7 +3205,16 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ),	Show Charts as Selected( 1 ),	Select Where( Alarm Rate > 0.006 ), 	// what selects in the table	Filter Where( Alarm Rate > 0.005 )	// what shows in the table);
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" ),
+	Show Charts as Selected( 1 ),
+	Select Where( Alarm Rate > 0.006 ), 	// what selects in the table
+	Filter Where( Alarm Rate > 0.005 )	// what shows in the table
+);
 
 ```
 
@@ -2066,7 +3222,13 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Grouping( :Site ));
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Grouping( :Site )
+);
 
 ```
 
@@ -2074,7 +3236,13 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "Indiv and MR" ));
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "Indiv and MR" )
+);
 
 ```
 
@@ -2082,7 +3250,13 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Control Chart Type( "XBar and R" ));
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Control Chart Type( "XBar and R" )
+);
 
 ```
 
@@ -2090,7 +3264,14 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Process Screening(	Process Variables( Column Group( "Processes" ) ),	Subgroup( :wafer ),	Control Chart Type( "XBar and S" ));
+
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Process Screening(
+	Process Variables( Column Group( "Processes" ) ),
+	Subgroup( :wafer ),
+	Control Chart Type( "XBar and S" )
+);
 
 ```
 
@@ -2098,7 +3279,19 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );obj = dt << Process Screening(	Process Variables( :Count ),	Grouping( :Type, :Grade, :Site ),	Control Chart Type( "Count" ),	Time( :Time ),	Set Scrolling( 10 ), // table shows only the first 10 processes	Alarm Graph( 1 ),	Show Charts as Selected( 1 ),	Select Where( Action >= 1 ));
+
+
+dt = Open( "$Sample_Data/Quality Control/Environmental Monitor Sim.jmp" );
+obj = dt << Process Screening(
+	Process Variables( :Count ),
+	Grouping( :Type, :Grade, :Site ),
+	Control Chart Type( "Count" ),
+	Time( :Time ),
+	Set Scrolling( 10 ), // table shows only the first 10 processes
+	Alarm Graph( 1 ),
+	Show Charts as Selected( 1 ),
+	Select Where( Action >= 1 )
+);
 
 ```
 
@@ -2118,7 +3311,19 @@ dt = Open( "$Sample_Data/Quality Control/Washers.jmp" );dt << Process Screening
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -2126,7 +3331,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All,	Chart Options as Selected( Circle Alarm Points( 0 ) ));Wait( 1 );obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All,
+	Chart Options as Selected( Circle Alarm Points( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -2142,7 +3357,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options Drift Graph( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```
 
@@ -2150,7 +3377,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options for Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```
 
@@ -2158,7 +3397,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```
 
@@ -2174,7 +3422,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -2182,7 +3442,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -2198,7 +3467,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Frame Size( 600, 200 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Frame Size( 600, 200 ) )
+);
 
 ```
 
@@ -2206,7 +3485,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Frame Size( 300, 100 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```
 
@@ -2214,7 +3504,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Frame Size( 500, 400 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```
 
@@ -2230,7 +3529,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Number of Plots Across( 2 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Number of Plots Across( 2 ) )
+);
 
 ```
 
@@ -2238,7 +3547,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Number of Plots Across( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```
 
@@ -2246,7 +3566,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Number of Plots Across( 2 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```
 
@@ -2262,7 +3591,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Remove );
 
 ```
 
@@ -2270,7 +3610,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Remove );
 
 ```
 
@@ -2278,7 +3629,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Remove );
 
 ```
 
@@ -2294,7 +3654,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```
 
@@ -2302,7 +3673,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Centerline( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Centerline( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```
 
@@ -2310,7 +3693,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Centerline( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```
 
@@ -2326,7 +3718,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```
 
@@ -2334,7 +3737,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Control Limits( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Control Limits( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Control Limits( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```
 
@@ -2342,7 +3757,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```
 
@@ -2356,7 +3780,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options Drift Graph( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```
 
@@ -2364,7 +3800,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```
 
@@ -2372,7 +3820,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Markers( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```
 
@@ -2388,7 +3845,24 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```
 
@@ -2396,7 +3870,24 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options for Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -2404,7 +3895,25 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Select All,	Show Charts as Selected);Wait( 1 );obj << Chart Options as Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Select All,
+	Show Charts as Selected
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -2420,7 +3929,17 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));obj << Chart Options for Selected( Show Zones( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```
 
@@ -2428,7 +3947,15 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( Show Zones( 1 ) ),	Select All);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( Show Zones( 1 ) ),
+	Select All
+);
 
 ```
 
@@ -2444,7 +3971,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```
 
@@ -2452,7 +3990,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( V Axis Label( 0 ) ));Wait( 1 );obj << Chart Options for Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( V Axis Label( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```
 
@@ -2460,7 +4010,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( V Axis Label( 0 ) ),	Select All);Wait( 1 );obj << Chart Options as Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( V Axis Label( 0 ) ),
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```
 
@@ -2480,7 +4040,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -2488,7 +4060,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All,	Chart Options as Selected( Circle Alarm Points( 0 ) ));Wait( 1 );obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All,
+	Chart Options as Selected( Circle Alarm Points( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -2504,7 +4086,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options Drift Graph( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```
 
@@ -2512,7 +4106,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options for Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```
 
@@ -2520,7 +4126,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```
 
@@ -2536,7 +4151,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -2544,7 +4171,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -2560,7 +4196,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Frame Size( 600, 200 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Frame Size( 600, 200 ) )
+);
 
 ```
 
@@ -2568,7 +4214,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Frame Size( 300, 100 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```
 
@@ -2576,7 +4233,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Frame Size( 500, 400 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```
 
@@ -2592,7 +4258,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Number of Plots Across( 2 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Number of Plots Across( 2 ) )
+);
 
 ```
 
@@ -2600,7 +4276,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Number of Plots Across( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```
 
@@ -2608,7 +4295,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Number of Plots Across( 2 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```
 
@@ -2624,7 +4320,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Remove );
 
 ```
 
@@ -2632,7 +4339,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Remove );
 
 ```
 
@@ -2640,7 +4358,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Remove );
 
 ```
 
@@ -2656,7 +4383,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```
 
@@ -2664,7 +4402,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Centerline( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Centerline( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```
 
@@ -2672,7 +4422,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Centerline( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```
 
@@ -2688,7 +4447,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```
 
@@ -2696,7 +4466,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Control Limits( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Control Limits( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Control Limits( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```
 
@@ -2704,7 +4486,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```
 
@@ -2718,7 +4509,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options Drift Graph( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```
 
@@ -2726,7 +4529,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```
 
@@ -2734,7 +4549,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Markers( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```
 
@@ -2750,7 +4574,24 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```
 
@@ -2758,7 +4599,24 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options for Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -2766,7 +4624,25 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Select All,	Show Charts as Selected);Wait( 1 );obj << Chart Options as Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Select All,
+	Show Charts as Selected
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -2782,7 +4658,17 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));obj << Chart Options for Selected( Show Zones( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```
 
@@ -2790,7 +4676,15 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( Show Zones( 1 ) ),	Select All);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( Show Zones( 1 ) ),
+	Select All
+);
 
 ```
 
@@ -2806,7 +4700,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```
 
@@ -2814,7 +4719,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( V Axis Label( 0 ) ));Wait( 1 );obj << Chart Options for Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( V Axis Label( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```
 
@@ -2822,7 +4739,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( V Axis Label( 0 ) ),	Select All);Wait( 1 );obj << Chart Options as Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( V Axis Label( 0 ) ),
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```
 
@@ -2842,7 +4769,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -2850,7 +4789,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All,	Chart Options as Selected( Circle Alarm Points( 0 ) ));Wait( 1 );obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All,
+	Chart Options as Selected( Circle Alarm Points( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -2866,7 +4815,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options Drift Graph( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```
 
@@ -2874,7 +4835,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options for Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```
 
@@ -2882,7 +4855,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```
 
@@ -2898,7 +4880,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -2906,7 +4900,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -2922,7 +4925,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Frame Size( 600, 200 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Frame Size( 600, 200 ) )
+);
 
 ```
 
@@ -2930,7 +4943,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Frame Size( 300, 100 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```
 
@@ -2938,7 +4962,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Frame Size( 500, 400 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```
 
@@ -2954,7 +4987,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Number of Plots Across( 2 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Number of Plots Across( 2 ) )
+);
 
 ```
 
@@ -2962,7 +5005,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Number of Plots Across( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```
 
@@ -2970,7 +5024,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Number of Plots Across( 2 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```
 
@@ -2986,7 +5049,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Remove );
 
 ```
 
@@ -2994,7 +5068,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Remove );
 
 ```
 
@@ -3002,7 +5087,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Remove );
 
 ```
 
@@ -3018,7 +5112,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```
 
@@ -3026,7 +5131,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Centerline( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Centerline( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```
 
@@ -3034,7 +5151,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Centerline( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```
 
@@ -3050,7 +5176,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```
 
@@ -3058,7 +5195,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Control Limits( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Control Limits( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Control Limits( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```
 
@@ -3066,7 +5215,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```
 
@@ -3080,7 +5238,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options Drift Graph( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```
 
@@ -3088,7 +5258,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```
 
@@ -3096,7 +5278,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Markers( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```
 
@@ -3112,7 +5303,24 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```
 
@@ -3120,7 +5328,24 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options for Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -3128,7 +5353,25 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Select All,	Show Charts as Selected);Wait( 1 );obj << Chart Options as Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Select All,
+	Show Charts as Selected
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -3144,7 +5387,17 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));obj << Chart Options for Selected( Show Zones( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```
 
@@ -3152,7 +5405,15 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( Show Zones( 1 ) ),	Select All);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( Show Zones( 1 ) ),
+	Select All
+);
 
 ```
 
@@ -3168,7 +5429,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```
 
@@ -3176,7 +5448,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( V Axis Label( 0 ) ));Wait( 1 );obj << Chart Options for Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( V Axis Label( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```
 
@@ -3184,7 +5468,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( V Axis Label( 0 ) ),	Select All);Wait( 1 );obj << Chart Options as Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( V Axis Label( 0 ) ),
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```
 
@@ -3204,7 +5498,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -3212,7 +5518,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All,	Chart Options as Selected( Circle Alarm Points( 0 ) ));Wait( 1 );obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All,
+	Chart Options as Selected( Circle Alarm Points( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 ```
 
@@ -3228,7 +5544,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options Drift Graph( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Connect Points( 0 ) );
 
 ```
 
@@ -3236,7 +5564,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Markers( 1 ) ));Wait( 1 );obj << Chart Options for Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Markers( 1 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Connect Points( 0 ) );
 
 ```
 
@@ -3244,7 +5584,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Connect Points( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Connect Points( 0 ) );
 
 ```
 
@@ -3260,7 +5609,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -3268,7 +5629,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Dispersion Chart( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 ```
 
@@ -3284,7 +5654,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Frame Size( 600, 200 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Frame Size( 600, 200 ) )
+);
 
 ```
 
@@ -3292,7 +5672,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Frame Size( 300, 100 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Frame Size( 300, 100 ) );
 
 ```
 
@@ -3300,7 +5691,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Frame Size( 500, 400 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 ```
 
@@ -3316,7 +5716,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options Drift Graph( Number of Plots Across( 2 ) ));
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options Drift Graph( Number of Plots Across( 2 ) )
+);
 
 ```
 
@@ -3324,7 +5734,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Number of Plots Across( 4 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Number of Plots Across( 4 ) );
 
 ```
 
@@ -3332,7 +5753,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Number of Plots Across( 2 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 ```
 
@@ -3348,7 +5778,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Remove );
 
 ```
 
@@ -3356,7 +5797,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options for Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options for Selected( Remove );
 
 ```
 
@@ -3364,7 +5816,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Remove );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Remove );
 
 ```
 
@@ -3380,7 +5841,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Centerline( 1 ) );
 
 ```
 
@@ -3388,7 +5860,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Centerline( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Centerline( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Centerline( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Centerline( 1 ) );
 
 ```
 
@@ -3396,7 +5880,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Centerline( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 ```
 
@@ -3412,7 +5905,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Control Limits( 0 ) );
 
 ```
 
@@ -3420,7 +5924,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( Show Control Limits( 0 ) ));Wait( 1 );obj << Chart Options for Selected( Show Control Limits( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( Show Control Limits( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Control Limits( 1 ) );
 
 ```
 
@@ -3428,7 +5944,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Control Limits( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 ```
 
@@ -3442,7 +5967,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options Drift Graph( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Markers( 1 ) );
 
 ```
 
@@ -3450,7 +5987,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),);Wait( 1 );obj << Chart Options for Selected( Show Markers( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ```
 
@@ -3458,7 +6007,16 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Select All);Wait( 1 );obj << Chart Options as Selected( Show Markers( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ```
 
@@ -3474,7 +6032,24 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Drift Graph Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( Show Spec Limits( 1 ) );
 
 ```
 
@@ -3482,7 +6057,24 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} ));Wait( 1 );obj << Chart Options for Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Show Charts for Selected( {:NO, :OZONE, :CO, :SO2} )
+);
+Wait( 1 );
+obj << Chart Options for Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -3490,7 +6082,25 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );obj = dt1 << Process Screening(	Y( :OZONE, :CO, :SO2, :NO ),	Use Limits Table(		1,		dt2,		Process Variables( :Column 1 ),		LSL( :_LSL ),		USL( :_USL ),		Target( :_Target ),		Go	),	Select All,	Show Charts as Selected);Wait( 1 );obj << Chart Options as Selected( Show Spec Limits( 1 ) );
+
+dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );
+dt2 = Open( "$SAMPLE_DATA/CitySpecLimits.jmp" );
+obj = dt1 << Process Screening(
+	Y( :OZONE, :CO, :SO2, :NO ),
+	Use Limits Table(
+		1,
+		dt2,
+		Process Variables( :Column 1 ),
+		LSL( :_LSL ),
+		USL( :_USL ),
+		Target( :_Target ),
+		Go
+	),
+	Select All,
+	Show Charts as Selected
+);
+Wait( 1 );
+obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 ```
 
@@ -3506,7 +6116,17 @@ dt1 = Open( "$SAMPLE_DATA/Cities.jmp" );dt2 = Open( "$SAMPLE_DATA/CitySpecLimit
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));obj << Chart Options for Selected( Show Zones( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+obj << Chart Options for Selected( Show Zones( 1 ) );
 
 ```
 
@@ -3514,7 +6134,15 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( Show Zones( 1 ) ),	Select All);
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( Show Zones( 1 ) ),
+	Select All
+);
 
 ```
 
@@ -3530,7 +6158,18 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Drift Graph Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	));Wait( 1 );obj << Chart Options Drift Graph( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Drift Graph Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	)
+);
+Wait( 1 );
+obj << Chart Options Drift Graph( V Axis Label( 1 ) );
 
 ```
 
@@ -3538,7 +6177,19 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts for Selected(		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}	),	Chart Options for Selected( V Axis Label( 0 ) ));Wait( 1 );obj << Chart Options for Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts for Selected(
+		{{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}, {:DIAMETER, "A455", 2}, {:DIAMETER,
+		"A386", 2}, {:DIAMETER, "A386", 1}, {:DIAMETER, "C334", 1}}
+	),
+	Chart Options for Selected( V Axis Label( 0 ) )
+);
+Wait( 1 );
+obj << Chart Options for Selected( V Axis Label( 1 ) );
 
 ```
 
@@ -3546,7 +6197,17 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Sc
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );obj = dt << Process Screening(	Y( :DIAMETER ),	Grouping( :MACHINE, :Phase ),	Show Charts as Selected,	Chart Options as Selected( V Axis Label( 0 ) ),	Select All);Wait( 1 );obj << Chart Options as Selected( V Axis Label( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+obj = dt << Process Screening(
+	Y( :DIAMETER ),
+	Grouping( :MACHINE, :Phase ),
+	Show Charts as Selected,
+	Chart Options as Selected( V Axis Label( 0 ) ),
+	Select All
+);
+Wait( 1 );
+obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 ```
 

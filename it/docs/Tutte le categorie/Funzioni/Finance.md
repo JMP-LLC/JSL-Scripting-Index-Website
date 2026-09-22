@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -25,6 +26,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Future Value( .03, 12, 100, 0, 1 );
 
@@ -40,7 +42,9 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -54,13 +58,14 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
 
 ### Internal Rate of Return
 
-**Sintassi:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il tasso di ritorno interno per una serie di flussi di cassa rappresentati dai numeri nell&apos;argomento values. Equivalente alla funzione IRR in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
@@ -68,13 +73,15 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```jsl
 
-Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .01, -10000, 1000, 900, 950 );
+
+Internal Rate of Return( [-10000, 1000, 900, 950] );
+Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**Sintassi:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il tasso di ritorno interno modificato per una serie di flussi di cassa periodici prendendo in considerazione sia il costo dell&apos;investimento sia l&apos;interesse ricevuto sul reinvestimento di cassa. Equivalente alla funzione MIRR in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
@@ -82,13 +89,15 @@ Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .0
 
 ```jsl
 
-Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
+
+Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
+Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```
 
 ### Net Present Value
 
-**Sintassi:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**Sintassi:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Descrizione:** Restituisce il valore attuale netto di un investimento mediante un tasso di sconto e una serie di pagamenti (valori negativi) e reddito (valori positivi) futuri. L&apos;argomento values è una matrice monodimensionale. Equivalente alla funzione NPV in Microsoft Excel. Il secondo prototipo della funzione accetta tutti gli argomenti scalari.
 
@@ -96,7 +105,9 @@ Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified
 
 ```jsl
 
-Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10000, 1000, 900, 9500 );
+
+Net Present Value( .05, [-10000, 1000, 900, 9500] );
+Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```
 
@@ -109,6 +120,7 @@ Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Number of Periods( .05 / 12, -2000, 100000 );
 
@@ -124,7 +136,9 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -137,6 +151,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Present Value( .05 / 12, 30 * 12, 1000 );
 
@@ -152,7 +167,9 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -165,6 +182,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Straight Line Depreciation( 1000, 100, 3 );
 
@@ -179,6 +197,7 @@ Straight Line Depreciation( 1000, 100, 3 );
 **JMP Versione aggiunta:** prima della versione 14
 
 ```jsl
+
 
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 

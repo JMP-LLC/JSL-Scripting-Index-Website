@@ -12,7 +12,11 @@
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Run Script( "Bivariate" );w << Bring Window To Front;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Run Script( "Bivariate" );
+w << Bring Window To Front;
 
 ```
 
@@ -24,7 +28,11 @@
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Close Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Close Window;
 
 ```
 
@@ -36,7 +44,11 @@
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Content Size();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Content Size();
+Show( c );
 
 ```
 
@@ -48,7 +60,20 @@
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);Show( w << Get On Close );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
+Show( w << Get On Close );
 
 ```
 
@@ -60,7 +85,10 @@
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Page Setup Test" ) );w << get page setup();
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Page Setup Test" ) );
+w << get page setup();
 
 ```
 
@@ -74,7 +102,11 @@
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );c = w << Get Project();Show( c );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Project();
+Show( c );
 
 ```
 
@@ -86,7 +118,13 @@
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );Print( w << Get Show Window() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+Print( w << Get Show Window() );
 
 ```
 
@@ -98,7 +136,11 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -110,7 +152,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Icon;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Icon;
+Show( t );
 
 ```
 
@@ -122,7 +168,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );p = w << Get Window Position();Show( p );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+p = w << Get Window Position();
+Show( p );
 
 ```
 
@@ -134,7 +184,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );s = w << Get Window Size();Show( s );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+s = w << Get Window Size();
+Show( s );
 
 ```
 
@@ -146,7 +200,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );t = w << Get Window Title;Show( t );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Title;
+Show( t );
 
 ```
 
@@ -158,7 +216,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Print( w << Get Window View() );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Print( w << Get Window View() );
 
 ```
 
@@ -170,7 +231,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = Bivariate( Y( :Weight ), X( :He
 
 ```jsl
 
-With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},		Print( win << Is Modal Dialog() );		win << close window();	));
+
+With Window Handler(
+	New Window( "Modal Window", <<Modal ),
+	Function( {win},
+		Print( win << Is Modal Dialog() );
+		win << close window();
+	)
+);
 
 ```
 
@@ -182,7 +250,13 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Maximize Window( 1 );Wait( 1 );w << Maximize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Maximize Window( 1 );
+Wait( 1 );
+w << Maximize Window( 0 );
 
 ```
 
@@ -194,7 +268,13 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Minimize Window( 1 );Wait( 1 );w << Minimize Window( 0 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Minimize Window( 1 );
+Wait( 1 );
+w << Minimize Window( 0 );
 
 ```
 
@@ -206,7 +286,11 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 2 );w << Move Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Move Window( 500, 500 );
 
 ```
 
@@ -220,7 +304,21 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(	Function( {this},         // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled		New Window( "Are you sure?",			<<modal,			V List Box(				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )			)		)["button"] == 1	));
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	Function( {this}, 
+        // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled
+		New Window( "Are you sure?",
+			<<modal,
+			V List Box(
+				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),
+				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+			)
+		)["button"] == 1
+	)
+);
 
 ```
 
@@ -228,7 +326,19 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << On Close(    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled	New Window( "Are you sure?",		<<modal,		V List Box(			Text Box( "Press OK to allow the window to close" ),			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )		)	)["button"] == 1);
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
 
 ```
 
@@ -242,7 +352,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to Data Table objectsdt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Optimize Display;
+
+//This message applies to Data Table objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Optimize Display;
 
 ```
 
@@ -254,7 +367,12 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );r = d << report;r << Pad Window( 0 );
+
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+r = d << report;
+r << Pad Window( 0 );
 
 ```
 
@@ -266,7 +384,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Print Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Print Window;
 
 ```
 
@@ -280,7 +401,11 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message can be sent to any display box object but will be applied to the report windowOpen( "$SAMPLE_DATA/Big Class.jmp" );d = distribution( Column( :height ) );d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
+
+//This message can be sent to any display box object but will be applied to the report window
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ```
 
@@ -292,7 +417,21 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Test",	lb = List Box( {"a", "b", "c", "d"} ),	Button Box( "Enable 2nd item",		lb << enable item( 2, 1 );		Show( lb << item enabled( 2 ) );	),	Button Box( "Disable 2nd item",		lb << enable item( 2, 0 );		Show( lb << item enabled( 2 ) );	));Wait( 2 );w << Set Content Size( 400, 300 );
+
+//This message applies to all display box objects
+w = New Window( "Test",
+	lb = List Box( {"a", "b", "c", "d"} ),
+	Button Box( "Enable 2nd item",
+		lb << enable item( 2, 1 );
+		Show( lb << item enabled( 2 ) );
+	),
+	Button Box( "Disable 2nd item",
+		lb << enable item( 2, 0 );
+		Show( lb << item enabled( 2 ) );
+	)
+);
+Wait( 2 );
+w << Set Content Size( 400, 300 );
 
 ```
 
@@ -304,7 +443,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Main Window", Text Box( "Main JMP Window" ) );w << Set Main Window;
+
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Set Main Window;
 
 ```
 
@@ -316,7 +458,17 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );w << Set page setup(	margins( 1, 1, 1, 1 ),	scale( 1 ),	portrait( 1 ),	paper size( "Letter" ),	Table of Contents( "always" ));w << Save pdf( "$DOCUMENTS\test.pdf" );
+
+//This message applies to all display box objects
+w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
+w << Set page setup(
+	margins( 1, 1, 1, 1 ),
+	scale( 1 ),
+	portrait( 1 ),
+	paper size( "Letter" ),
+	Table of Contents( "always" )
+);
+w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ```
 
@@ -328,7 +480,14 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Footer Test" ) );w << Set Print Footers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Footer Test" ) );
+w << Set Print Footers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -340,7 +499,14 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Window", Text Box( "Header Test" ) );w << Set Print Headers(	"Today is: &d;"/*left*/, "&wt;"/*center*/,	"Page &pn; of &pc;"/*right*/);w << Print Window;
+
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Header Test" ) );
+w << Set Print Headers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
 
 ```
 
@@ -352,7 +518,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = New Window( "Example", ex = Button Box( "New Analysis" ) );w << Set Window Icon( "Scatter3D" );
+
+//This message applies to all display box objects
+w = New Window( "Example", ex = Button Box( "New Analysis" ) );
+w << Set Window Icon( "Scatter3D" );
 
 ```
 
@@ -364,7 +533,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 800, 1200 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 800, 1200 );
 
 ```
 
@@ -376,7 +548,13 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );Wait( 1 );w << Show Window( 0 );Wait( 2 );w << Show Window( 1 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+w << Show Window( 1 );
 
 ```
 
@@ -388,7 +566,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Size Window( 500, 500 );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Size Window( 500, 500 );
 
 ```
 
@@ -400,7 +581,12 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Size( 80, 120 );Wait( 2 );w << Zoom Window;
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 80, 120 );
+Wait( 2 );
+w << Zoom Window;
 
 ```
 
@@ -414,7 +600,10 @@ With Window Handler(	New Window( "Modal Window", <<Modal ),	Function( {win},	
 
 ```jsl
 
-//This message applies to all display box objectsw = Open( "$SAMPLE_DATA/Big Class.jmp" );w << Set Window Title( "New Title" );
+
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Title( "New Title" );
 
 ```
 

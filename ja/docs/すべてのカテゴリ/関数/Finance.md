@@ -12,6 +12,7 @@
 
 ```jsl
 
+
 Double Declining Balance( 10000, 100, 3, 2 );
 
 ```
@@ -25,6 +26,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Future Value( .03, 12, 100, 0, 1 );
 
@@ -40,7 +42,9 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -54,13 +58,14 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ```jsl
 
+
 Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```
 
 ### Internal Rate of Return
 
-**構文:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; ); x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
+**構文:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **説明:** 一連の定期的なキャッシュフローに対して、内部収益率を戻す。一連のキャッシュフローは、引数valuesによって指定する。Microsoft ExcelのIRR関数に相当。別の指定方法として、すべての引数をスカラーで指定することも可能。
 
@@ -68,13 +73,15 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ```jsl
 
-Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .01, -10000, 1000, 900, 950 );
+
+Internal Rate of Return( [-10000, 1000, 900, 950] );
+Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ```
 
 ### Modified Internal Rate of Return
 
-**構文:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate ); x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
+**構文:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **説明:** 一連の定期的なキャッシュフローに対して、修正内部収益率を戻す。その際、投資コストと、現金の再投資によって得た利子の両方を考慮する。Microsoft ExcelのMIRR関数に相当。別の指定方法として、すべての引数をスカラーで指定することも可能。
 
@@ -82,13 +89,15 @@ Internal Rate of Return( [-10000, 1000, 900, 950] );Internal Rate of Return( .0
 
 ```jsl
 
-Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
+
+Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );
+Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ```
 
 ### Net Present Value
 
-**構文:** x = Net Present Value( rate, values ); x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
+**構文:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **説明:** 割引率、および、一連の将来の支払(負の値)と収入(正の値)を考慮して、投資の正味現在価値を戻す。引数valuesは1次元の行列。Microsoft ExcelのNPV関数に相当。別の指定方法として、すべての引数をスカラーで指定することも可能。
 
@@ -96,7 +105,9 @@ Modified Internal Rate of Return( [-10000, 1000, 900, 950], .1, -.12 );Modified
 
 ```jsl
 
-Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10000, 1000, 900, 9500 );
+
+Net Present Value( .05, [-10000, 1000, 900, 9500] );
+Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ```
 
@@ -109,6 +120,7 @@ Net Present Value( .05, [-10000, 1000, 900, 9500] );Net Present Value( .05, -10
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Number of Periods( .05 / 12, -2000, 100000 );
 
@@ -124,7 +136,9 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -137,6 +151,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Present Value( .05 / 12, 30 * 12, 1000 );
 
@@ -152,7 +167,9 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ```jsl
 
-Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
+
+Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 100000 )
+-Principal Payment( .05 / 12, 13, 30 * 12, 100000 );
 
 ```
 
@@ -165,6 +182,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Straight Line Depreciation( 1000, 100, 3 );
 
@@ -179,6 +197,7 @@ Straight Line Depreciation( 1000, 100, 3 );
 **JMP追加されたバージョン:** バージョン14より前
 
 ```jsl
+
 
 Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 

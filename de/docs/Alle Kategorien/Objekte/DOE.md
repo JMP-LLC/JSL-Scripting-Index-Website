@@ -14,7 +14,16 @@
 
 ```jsl
 
-DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ), Add Term( {1, 0} ), Add Term( {1, 1} ),	Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ),	Add Term( {1, 1}, {3, 1} ), Add Term( {2, 1}, {3, 1} ), Set Sample Size( 14 ),	Optimality Criterion( "Make A-Optimal Design"n ),	"A-Optimality Parameter Weights"n( [1 1 1 1 0.1 0.1 0.1] )});
+
+DOE(
+	Custom Design,
+	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ), Add Term( {1, 0} ), Add Term( {1, 1} ),
+	Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ),
+	Add Term( {1, 1}, {3, 1} ), Add Term( {2, 1}, {3, 1} ), Set Sample Size( 14 ),
+	Optimality Criterion( "Make A-Optimal Design"n ),
+	"A-Optimality Parameter Weights"n( [1 1 1 1 0.1 0.1 0.1] )}
+);
 
 ```
 
@@ -26,7 +35,18 @@ DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Con
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -38,7 +58,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -50,7 +81,14 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ));d << Add Alias Term( {1, 1}, {2, 1} );d << Add Alias Term( {1, 2} );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 )
+);
+d << Add Alias Term( {1, 1}, {2, 1} );
+d << Add Alias Term( {1, 2} );
 
 ```
 
@@ -62,7 +100,15 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor(
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Add Constraint( [1 1 0 1, 1 0 1 1] ),	Add Term( {1, 0} ));
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Add Constraint( [1 1 0 1, 1 0 1 1] ),
+	Add Term( {1, 0} )
+);
 
 ```
 
@@ -74,7 +120,13 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE( Custom Design );d << Add Factor( Continuous, -1, 1, "X1", 0 );d << Add Factor( Discrete Numeric, {1, 2, 3}, "X2", 0 );d << Add Factor( Categorical, {"L1", "L2"}, "X3", 0 );d << Add Factor( Blocking, 8, "X4" );d << Add Factor( Constant, 3, "X5" );
+
+d = DOE( Custom Design );
+d << Add Factor( Continuous, -1, 1, "X1", 0 );
+d << Add Factor( Discrete Numeric, {1, 2, 3}, "X2", 0 );
+d << Add Factor( Categorical, {"L1", "L2"}, "X3", 0 );
+d << Add Factor( Blocking, 8, "X4" );
+d << Add Factor( Constant, 3, "X5" );
 
 ```
 
@@ -88,7 +140,15 @@ d = DOE( Custom Design );d << Add Factor( Continuous, -1, 1, "X1", 0 );d << Ad
 
 ```jsl
 
-DOE(	Custom Design,	Add Response( Maximize, "Y", ., ., . ),	Add Functional Response( "Y", 5, {1, 2, 3, 4, 5} ),	Set Random Seed( 46055034 ),	Simulate Responses( 0 ),	Save X Matrix( 0 ));
+
+DOE(
+	Custom Design,
+	Add Response( Maximize, "Y", ., ., . ),
+	Add Functional Response( "Y", 5, {1, 2, 3, 4, 5} ),
+	Set Random Seed( 46055034 ),
+	Simulate Responses( 0 ),
+	Save X Matrix( 0 )
+);
 
 ```
 
@@ -100,7 +160,14 @@ DOE(	Custom Design,	Add Response( Maximize, "Y", ., ., . ),	Add Functional Re
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ));d << Add Potential Term( {1, 1}, {2, 1} );d << Add Potential Term( {1, 2} );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 )
+);
+d << Add Potential Term( {1, 1}, {2, 1} );
+d << Add Potential Term( {1, 2} );
 
 ```
 
@@ -114,6 +181,7 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor(
 
 ```jsl
 
+
 DOE( Custom Design, Add Response( Match Target, "Y", 10, 30, 1 ) );
 
 ```
@@ -121,6 +189,7 @@ DOE( Custom Design, Add Response( Match Target, "Y", 10, 30, 1 ) );
 **Beispiel 2**
 
 ```jsl
+
 
 DOE( Custom Design, Add Response( Match Target, "Y", ., ., 1, 10, 30 ) );
 
@@ -134,7 +203,14 @@ DOE( Custom Design, Add Response( Match Target, "Y", ., ., 1, 10, 30 ) );
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ));d << Add Term( {1, 1}, {2, 1} );d << Add Term( {1, 2} );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 )
+);
+d << Add Term( {1, 1}, {2, 1} );
+d << Add Term( {1, 2} );
 
 ```
 
@@ -148,7 +224,36 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor(
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor,	Add Factor,	Add Factor,	Set Sample Size( 12 ),	Make Design,	Make Table);DOE( Custom Design, Add Factor, Add Factor, Add Factor, Make Design, Make Table );DOE(	Custom Design,	Add Factor,	Add Factor,	Add Factor,	Set Sample Size( 4 ),	Make Design,	Make Table);DOE(	Compare Designs,	Reference Design( "Custom Design", X( :X1, :X2, :X3 ) ),	Additional Designs(		"Custom Design 2",		X( :X1, :X2, :X3 ),		"Custom Design 3",		X( :X1, :X2, :X3 )	));
+
+DOE(
+	Custom Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Set Sample Size( 12 ),
+	Make Design,
+	Make Table
+);
+DOE( Custom Design, Add Factor, Add Factor, Add Factor, Make Design, Make Table );
+DOE(
+	Custom Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Set Sample Size( 4 ),
+	Make Design,
+	Make Table
+);
+DOE(
+	Compare Designs,
+	Reference Design( "Custom Design", X( :X1, :X2, :X3 ) ),
+	Additional Designs(
+		"Custom Design 2",
+		X( :X1, :X2, :X3 ),
+		"Custom Design 3",
+		X( :X1, :X2, :X3 )
+	)
+);
 
 ```
 
@@ -162,7 +267,23 @@ DOE(	Custom Design,	Add Factor,	Add Factor,	Add Factor,	Set Sample Size( 12
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );DOE(	Custom Design,	Add Response( Maximize, "Y", ., ., . ),	Add Factor( Covariate, :sex, 0 ),	Add Factor( Covariate, :height, 0 ),	Add Factor( Covariate, :weight, 0 ),	Add Term( {1, 0} ),	Add Term( {1, 1} ),	Add Term( {2, 1} ),	Add Term( {3, 1} ),	Enforce Use of Selected Covariate Rows( 1 ),	Allow covariate rows to be repeated( 1 ),	Select Covariate Rows( [1 2 3 4] ),	Set Sample Size( 24 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+DOE(
+	Custom Design,
+	Add Response( Maximize, "Y", ., ., . ),
+	Add Factor( Covariate, :sex, 0 ),
+	Add Factor( Covariate, :height, 0 ),
+	Add Factor( Covariate, :weight, 0 ),
+	Add Term( {1, 0} ),
+	Add Term( {1, 1} ),
+	Add Term( {2, 1} ),
+	Add Term( {3, 1} ),
+	Enforce Use of Selected Covariate Rows( 1 ),
+	Allow covariate rows to be repeated( 1 ),
+	Select Covariate Rows( [1 2 3 4] ),
+	Set Sample Size( 24 )
+);
 
 ```
 
@@ -176,7 +297,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );DOE(	Custom Design,	Add Response( M
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Augment Method( Augment );d << Set Sample Size( 24 );d << Make Design;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Augment Method( Augment );
+d << Set Sample Size( 24 );
+d << Make Design;
 
 ```
 
@@ -184,7 +310,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/2x3x4 Factorial.jmp" );d = DOE( Augment Design, X( :X1, :X2, :X3 ), Y( :Y ) );d << Augment Method( Replicate, 2 );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/2x3x4 Factorial.jmp" );
+d = DOE( Augment Design, X( :X1, :X2, :X3 ), Y( :Y ) );
+d << Augment Method( Replicate, 2 );
 
 ```
 
@@ -192,7 +321,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/2x3x4 Factorial.jmp" );d = DOE( Augm
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Augment Method( Centerpoints, 3 );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Augment Method( Centerpoints, 3 );
 
 ```
 
@@ -200,7 +332,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Augment Method( Fold Over, [1 2] );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Augment Method( Fold Over, [1 2] );
 
 ```
 
@@ -208,7 +343,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Augment Method( Add Axial, 1, 2 );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Augment Method( Add Axial, 1, 2 );
 
 ```
 
@@ -222,7 +360,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment 
 
 ```jsl
 
-d = DOE( Balanced Incomplete Block Design, Treatments( 3, {"L1", "L2", "L3"} ) );d << Blocks( 2 );d << Make Design;
+
+d = DOE( Balanced Incomplete Block Design, Treatments( 3, {"L1", "L2", "L3"} ) );
+d << Blocks( 2 );
+d << Make Design;
 
 ```
 
@@ -236,7 +377,14 @@ d = DOE( Balanced Incomplete Block Design, Treatments( 3, {"L1", "L2", "L3"} ) )
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ));d << Make Model( Linear );d << Center Points( 2 );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 )
+);
+d << Make Model( Linear );
+d << Center Points( 2 );
 
 ```
 
@@ -244,7 +392,19 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor(
 
 ```jsl
 
-DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Show Blocking Options( 1, 2 ),	Number of Extra Runs( 4 ),	Center Points( 1 ));
+
+DOE(
+	Definitive Screening Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Show Blocking Options( 1, 2 ),
+	Number of Extra Runs( 4 ),
+	Center Points( 1 )
+);
 
 ```
 
@@ -256,7 +416,10 @@ DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add F
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Change Anticipated Coefficients( [1 2 3 4 2 2 2 3 3 3] );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Change Anticipated Coefficients( [1 2 3 4 2 2 2 3 3 3] );
 
 ```
 
@@ -270,7 +433,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-d = DOE( Response Surface Design );d << Change Factor Settings( 1, 2, 3, "A" );d << Change Factor Settings( 2, 0, 4 );
+
+d = DOE( Response Surface Design );
+d << Change Factor Settings( 1, 2, 3, "A" );
+d << Change Factor Settings( 2, 0, 4 );
 
 ```
 
@@ -278,7 +444,10 @@ d = DOE( Response Surface Design );d << Change Factor Settings( 1, 2, 3, "A" );
 
 ```jsl
 
-d = DOE( Mixture Design );d << Change Factor Settings( 1, 0.1, 0.4, "A" );d << Change Factor Settings( 3, 0, 0.8, "C" );
+
+d = DOE( Mixture Design );
+d << Change Factor Settings( 1, 0.1, 0.4, "A" );
+d << Change Factor Settings( 3, 0, 0.8, "C" );
 
 ```
 
@@ -290,7 +459,10 @@ d = DOE( Mixture Design );d << Change Factor Settings( 1, 0.1, 0.4, "A" );d <<
 
 ```jsl
 
-d = DOE( Response Surface Design, Make Design( 2 ) );d << Set Axial Choice( 2 );d << Check Inscribe;
+
+d = DOE( Response Surface Design, Make Design( 2 ) );
+d << Set Axial Choice( 2 );
+d << Check Inscribe;
 
 ```
 
@@ -302,7 +474,17 @@ d = DOE( Response Surface Design, Make Design( 2 ) );d << Set Axial Choice( 2 )
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Set Prior Mean Choice( [0 0] ), Set Prior Variance Matrix( [1 0, 0 1] ),	Set Number of Attributes( 2 ), Set Number of Profiles( 2 ),	Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 ), Make Design,	Choice Design Table Output( Combined )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Set Prior Mean Choice( [0 0] ), Set Prior Variance Matrix( [1 0, 0 1] ),
+	Set Number of Attributes( 2 ), Set Number of Profiles( 2 ),
+	Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 ), Make Design,
+	Choice Design Table Output( Combined )}
+);
 
 ```
 
@@ -314,7 +496,14 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	D Efficiency Weight( 0.5 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	D Efficiency Weight( 0.5 ),
+	Make Design
+);
 
 ```
 
@@ -326,7 +515,12 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),	Set Sample Size( 7 ), Design Search Time( 8 ), Make Design});
+
+DOE(
+	Custom Design,
+	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Set Sample Size( 7 ), Design Search Time( 8 ), Make Design}
+);
 
 ```
 
@@ -338,7 +532,15 @@ DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ),	Number of Starts( 100 ),	Disallowed Combinations( X1 > 0.5 & X2 == 2 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ),
+	Number of Starts( 100 ),
+	Disallowed Combinations( X1 > 0.5 & X2 == 2 ),
+	Make Design
+);
 
 ```
 
@@ -350,7 +552,14 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Cat
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Discrete Numeric, {1, 2, 3}, "X1", 0 ),	Add Factor( Discrete Numeric, {1, 2, 3}, "X2", 0 ),	Discrete Numeric Powers Set to Necessary( 1 ),	Make Model( Linear ));
+
+DOE(
+	Custom Design,
+	Add Factor( Discrete Numeric, {1, 2, 3}, "X1", 0 ),
+	Add Factor( Discrete Numeric, {1, 2, 3}, "X2", 0 ),
+	Discrete Numeric Powers Set to Necessary( 1 ),
+	Make Model( Linear )
+);
 
 ```
 
@@ -362,7 +571,18 @@ DOE(	Custom Design,	Add Factor( Discrete Numeric, {1, 2, 3}, "X1", 0 ),	Add F
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -376,7 +596,23 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );DOE(	Custom Design,	Add Response( Maximize, "Y", ., ., . ),	Add Factor( Covariate, :sex, 0 ),	Add Factor( Covariate, :height, 0 ),	Add Factor( Covariate, :weight, 0 ),	Add Term( {1, 0} ),	Add Term( {1, 1} ),	Add Term( {2, 1} ),	Add Term( {3, 1} ),	Enforce Use of Selected Covariate Rows( 1 ),	Allow covariate rows to be repeated( 1 ),	Select Covariate Rows( [1 2 3 4] ),	Set Sample Size( 24 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+DOE(
+	Custom Design,
+	Add Response( Maximize, "Y", ., ., . ),
+	Add Factor( Covariate, :sex, 0 ),
+	Add Factor( Covariate, :height, 0 ),
+	Add Factor( Covariate, :weight, 0 ),
+	Add Term( {1, 0} ),
+	Add Term( {1, 1} ),
+	Add Term( {2, 1} ),
+	Add Term( {3, 1} ),
+	Enforce Use of Selected Covariate Rows( 1 ),
+	Allow covariate rows to be repeated( 1 ),
+	Select Covariate Rows( [1 2 3 4] ),
+	Set Sample Size( 24 )
+);
 
 ```
 
@@ -390,7 +626,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );DOE(	Custom Design,	Add Response( M
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Optimality Criterion( "Make I-optimal Design" ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Optimality Criterion( "Make I-optimal Design" ),
+	Make Design
+);
 
 ```
 
@@ -398,7 +642,15 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Optimality Criterion( 2 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Optimality Criterion( 2 ),
+	Make Design
+);
 
 ```
 
@@ -410,7 +662,10 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE( Mixture Design, Add Factor( Mixture, 0.1, 1, "X4", 0 ) );d << Mixture Design Type( Extreme Vertices, 3 );d << Find Subset( 10 );
+
+d = DOE( Mixture Design, Add Factor( Mixture, 0.1, 1, "X4", 0 ) );
+d << Mixture Design Type( Extreme Vertices, 3 );
+d << Find Subset( 10 );
 
 ```
 
@@ -424,7 +679,9 @@ d = DOE( Mixture Design, Add Factor( Mixture, 0.1, 1, "X4", 0 ) );d << Mixture 
 
 ```jsl
 
-d = DOE( Group Orthogonal Supersaturated Design );Show( d << GOSSDDetails );
+
+d = DOE( Group Orthogonal Supersaturated Design );
+Show( d << GOSSDDetails );
 
 ```
 
@@ -438,7 +695,9 @@ d = DOE( Group Orthogonal Supersaturated Design );Show( d << GOSSDDetails );
 
 ```jsl
 
-d = DOE( Group Orthogonal Supersaturated Design );d << GOSSDStructure( 6, 8 );
+
+d = DOE( Group Orthogonal Supersaturated Design );
+d << GOSSDStructure( 6, 8 );
 
 ```
 
@@ -450,7 +709,10 @@ d = DOE( Group Orthogonal Supersaturated Design );d << GOSSDStructure( 6, 8 );
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Get Alias Matrix;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Get Alias Matrix;
 
 ```
 
@@ -462,7 +724,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Get Design Diagnostics;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Get Design Diagnostics;
 
 ```
 
@@ -474,7 +739,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/2x3x4 Factorial.jmp" );d = DOE( Evaluate Design, X( :X1, :X2, :X3 ), Y( :Y ) );d << Get Effect Power;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/2x3x4 Factorial.jmp" );
+d = DOE( Evaluate Design, X( :X1, :X2, :X3 ), Y( :Y ) );
+d << Get Effect Power;
 
 ```
 
@@ -486,7 +754,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/2x3x4 Factorial.jmp" );d = DOE( Eval
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Get Estimation Efficiencies;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Get Estimation Efficiencies;
 
 ```
 
@@ -500,7 +771,15 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-d = DOE(	Space Filling Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Categorical, {"L1", "L2", "L3", "L4"}, "X3", 0 ),	FFF Optimality Criterion( MaxPro ), MaxPro Categorical Weight( 4 ),	Space Filling Design Type( Fast Flexible Filling, 100 )});d << Get MaxPro Values;
+
+d = DOE(
+	Space Filling Design,
+	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Categorical, {"L1", "L2", "L3", "L4"}, "X3", 0 ),
+	FFF Optimality Criterion( MaxPro ), MaxPro Categorical Weight( 4 ),
+	Space Filling Design Type( Fast Flexible Filling, 100 )}
+);
+d << Get MaxPro Values;
 
 ```
 
@@ -520,7 +799,10 @@ d = DOE(	Space Filling Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Get Power;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Get Power;
 
 ```
 
@@ -534,7 +816,14 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-d = DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),	Set Sample Size( 7 ), Design Search Time( 8 ), Set Number of FDS points( 20000 ),	Make Design});d << Get Prediction Variances;
+
+d = DOE(
+	Custom Design,
+	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Set Sample Size( 7 ), Design Search Time( 8 ), Set Number of FDS points( 20000 ),
+	Make Design}
+);
+d << Get Prediction Variances;
 
 ```
 
@@ -546,7 +835,10 @@ d = DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Get X Matrix;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Get X Matrix;
 
 ```
 
@@ -558,7 +850,10 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Group New Runs Into Separate Block;
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Augment Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Group New Runs Into Separate Block;
 
 ```
 
@@ -570,7 +865,15 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Augment 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Diamond Constraints.jmp" );d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Term( {1, 0} ),	Load Constraints);
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Diamond Constraints.jmp" );
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Term( {1, 0} ),
+	Load Constraints
+);
 
 ```
 
@@ -582,7 +885,9 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Diamond Constraints.jmp" );d = DOE(
 
 ```jsl
 
-d = DOE( Custom Design );d << Load Design();
+
+d = DOE( Custom Design );
+d << Load Design();
 
 ```
 
@@ -594,7 +899,9 @@ d = DOE( Custom Design );d << Load Design();
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Factors.jmp" );DOE( Custom Design, Load Factors );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Factors.jmp" );
+DOE( Custom Design, Load Factors );
 
 ```
 
@@ -606,7 +913,9 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Factors.jmp" );DOE( Custom De
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Response.jmp" );DOE( Custom Design, Load Responses );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Response.jmp" );
+DOE( Custom Design, Load Responses );
 
 ```
 
@@ -618,7 +927,19 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Response.jmp" );DOE( Custom D
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 2, {5, 200, 200} ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Local Design( 0 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( 2, {5, 200, 200} ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Local Design( 0 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),
+	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )}
+);
 
 ```
 
@@ -630,7 +951,10 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Model( RSM );d << Make Design;
+
+d = DOE( Custom Design, Add factor, Add factor, Add factor );
+d << Make Model( RSM );
+d << Make Design;
 
 ```
 
@@ -644,7 +968,9 @@ d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Model( R
 
 ```jsl
 
-d = DOE( Custom Design, Add Factor, Add Factor, Add Factor );d << Make Model( RSM );
+
+d = DOE( Custom Design, Add Factor, Add Factor, Add Factor );
+d << Make Model( RSM );
 
 ```
 
@@ -652,7 +978,9 @@ d = DOE( Custom Design, Add Factor, Add Factor, Add Factor );d << Make Model( R
 
 ```jsl
 
-d = DOE( Custom Design, Add Factor, Add Factor, Add Factor );d << Make Model( Interactions );
+
+d = DOE( Custom Design, Add Factor, Add Factor, Add Factor );
+d << Make Model( Interactions );
 
 ```
 
@@ -664,7 +992,15 @@ d = DOE( Custom Design, Add Factor, Add Factor, Add Factor );d << Make Model( I
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 2 ),	Add Factor( Continuous, -1, 1, "X2", 1 ),	Add Factor( Continuous, -1, 1, "X3", 0 ));d << Set N Whole Plots( 4 );d << Make Strip Plot Design;
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 2 ),
+	Add Factor( Continuous, -1, 1, "X2", 1 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 )
+);
+d << Set N Whole Plots( 4 );
+d << Make Strip Plot Design;
 
 ```
 
@@ -676,7 +1012,10 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 2 ),	Add Factor(
 
 ```jsl
 
-d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Design;d << Make Table;
+
+d = DOE( Custom Design, Add factor, Add factor, Add factor );
+d << Make Design;
+d << Make Table;
 
 ```
 
@@ -688,7 +1027,20 @@ d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Design;
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] ),	Make Design, Make Test Plan});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),
+	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] ),
+	Make Design, Make Test Plan}
+);
 
 ```
 
@@ -702,7 +1054,14 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Space Filling Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Categorical, {"L1", "L2", "L3", "L4"}, "X3", 0 ),	FFF Optimality Criterion( MaxPro ), MaxPro Categorical Weight( 4 ),	Space Filling Design Type( Fast Flexible Filling, 100 )});
+
+DOE(
+	Space Filling Design,
+	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Categorical, {"L1", "L2", "L3", "L4"}, "X3", 0 ),
+	FFF Optimality Criterion( MaxPro ), MaxPro Categorical Weight( 4 ),
+	Space Filling Design Type( Fast Flexible Filling, 100 )}
+);
 
 ```
 
@@ -716,7 +1075,9 @@ DOE(	Space Filling Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Fact
 
 ```jsl
 
-d = doe( Mixture Design );d << Mixture Design Type( Simplex Centroid, 2 );
+
+d = doe( Mixture Design );
+d << Mixture Design Type( Simplex Centroid, 2 );
 
 ```
 
@@ -724,7 +1085,9 @@ d = doe( Mixture Design );d << Mixture Design Type( Simplex Centroid, 2 );
 
 ```jsl
 
-d = doe( Mixture Design );d << Mixture Design Type( Simplex Lattice, 4 );
+
+d = doe( Mixture Design );
+d << Mixture Design Type( Simplex Lattice, 4 );
 
 ```
 
@@ -732,7 +1095,9 @@ d = doe( Mixture Design );d << Mixture Design Type( Simplex Lattice, 4 );
 
 ```jsl
 
-d = doe( Mixture Design );d << Mixture Design Type( ABCD );
+
+d = doe( Mixture Design );
+d << Mixture Design Type( ABCD );
 
 ```
 
@@ -740,7 +1105,10 @@ d = doe( Mixture Design );d << Mixture Design Type( ABCD );
 
 ```jsl
 
-d = doe( Mixture Design );d << Change Factor Settings( 1, .05, .25 );d << Mixture Design Type( Extreme Vertices, 3 );
+
+d = doe( Mixture Design );
+d << Change Factor Settings( 1, .05, .25 );
+d << Mixture Design Type( Extreme Vertices, 3 );
 
 ```
 
@@ -748,7 +1116,9 @@ d = doe( Mixture Design );d << Change Factor Settings( 1, .05, .25 );d << Mixt
 
 ```jsl
 
-d = doe( Mixture Design );d << Mixture Design Type( Space Filling, 25 );
+
+d = doe( Mixture Design );
+d << Mixture Design Type( Space Filling, 25 );
 
 ```
 
@@ -760,7 +1130,15 @@ d = doe( Mixture Design );d << Mixture Design Type( Space Filling, 25 );
 
 ```jsl
 
-DOE(	Custom Design,	Mixture Sum( 50 ),	Add Factor( Mixture, 10, 25, "X1", 0 ),	Add Factor( Mixture, 0, 15, "X2", 0 ),	Add Factor( Mixture, 25, 40, "X3", 0 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Mixture Sum( 50 ),
+	Add Factor( Mixture, 10, 25, "X1", 0 ),
+	Add Factor( Mixture, 0, 15, "X2", 0 ),
+	Add Factor( Mixture, 25, 40, "X3", 0 ),
+	Make Design
+);
 
 ```
 
@@ -772,7 +1150,14 @@ DOE(	Custom Design,	Mixture Sum( 50 ),	Add Factor( Mixture, 10, 25, "X1", 0 )
 
 ```jsl
 
-DOE(	MSA Design,	Add Factor( Categorical, {"L1", "L2"}, "X1", MSA( 4, 1, 1 ) ),	Add Factor( Categorical, {"L1", "L2"}, "X2", MSA( 4, 1, 1 ) ),	Add Factor( Categorical, {"L1", "L2"}, "X3", MSA( 4, 1, 1 ) ),	Nesting Structure( {"X1", {"X2"}} || "X3" ));
+
+DOE(
+	MSA Design,
+	Add Factor( Categorical, {"L1", "L2"}, "X1", MSA( 4, 1, 1 ) ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", MSA( 4, 1, 1 ) ),
+	Add Factor( Categorical, {"L1", "L2"}, "X3", MSA( 4, 1, 1 ) ),
+	Nesting Structure( {"X1", {"X2"}} || "X3" )
+);
 
 ```
 
@@ -784,7 +1169,17 @@ DOE(	MSA Design,	Add Factor( Categorical, {"L1", "L2"}, "X1", MSA( 4, 1, 1 ) )
 
 ```jsl
 
-DOE(	Screening Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Screening Type( 1 ),	Number of Column Starts( 100 ),	Set Sample Size( 12 ),	Make Design);
+
+DOE(
+	Screening Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Screening Type( 1 ),
+	Number of Column Starts( 100 ),
+	Set Sample Size( 12 ),
+	Make Design
+);
 
 ```
 
@@ -796,7 +1191,18 @@ DOE(	Screening Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( 
 
 ```jsl
 
-DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Show Blocking Options( 1, 2 ),	Number of Extra Runs( 4 ));
+
+DOE(
+	Definitive Screening Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Show Blocking Options( 1, 2 ),
+	Number of Extra Runs( 4 )
+);
 
 ```
 
@@ -808,7 +1214,15 @@ DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add F
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Number of Starts( 1000 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Number of Starts( 1000 ),
+	Make Design
+);
 
 ```
 
@@ -822,7 +1236,15 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Optimality Criterion( "Make I-optimal Design" ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Optimality Criterion( "Make I-optimal Design" ),
+	Make Design
+);
 
 ```
 
@@ -830,7 +1252,15 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Optimality Criterion( 2 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Optimality Criterion( 2 ),
+	Make Design
+);
 
 ```
 
@@ -844,7 +1274,11 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE( Balanced Incomplete Block Design );d << Treatments( 3, {"L1", "L2", "L3"} );d << Make Design;d << OrderColumn( 1 );
+
+d = DOE( Balanced Incomplete Block Design );
+d << Treatments( 3, {"L1", "L2", "L3"} );
+d << Make Design;
+d << OrderColumn( 1 );
 
 ```
 
@@ -856,7 +1290,17 @@ d = DOE( Balanced Incomplete Block Design );d << Treatments( 3, {"L1", "L2", "L
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Potential Term( {1, 1} ),	Add Potential Term( {2, 1} ),	Add Potential Term( {1, 1}, {2, 1} ),	Prior Parameter Variance( [0, 1, 2, 6] ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Potential Term( {1, 1} ),
+	Add Potential Term( {2, 1} ),
+	Add Potential Term( {1, 1}, {2, 1} ),
+	Prior Parameter Variance( [0, 1, 2, 6] ),
+	Make Design
+);
 
 ```
 
@@ -868,7 +1312,19 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Prior Specification Choice( 1 ), Set Prior Mean ALT( [-40 1.5 2] ),	Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Prior Specification Choice( 1 ), Set Prior Mean ALT( [-40 1.5 2] ),
+	Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -882,7 +1338,36 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor,	Add Factor,	Add Factor,	Set Sample Size( 12 ),	Make Design,	Make Table);DOE( Custom Design, Add Factor, Add Factor, Add Factor, Make Design, Make Table );DOE(	Custom Design,	Add Factor,	Add Factor,	Add Factor,	Set Sample Size( 4 ),	Make Design,	Make Table);DOE(	Compare Designs,	Reference Design( "Custom Design", X( :X1, :X2, :X3 ) ),	Additional Designs(		"Custom Design 2",		X( :X1, :X2, :X3 ),		"Custom Design 3",		X( :X1, :X2, :X3 )	));
+
+DOE(
+	Custom Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Set Sample Size( 12 ),
+	Make Design,
+	Make Table
+);
+DOE( Custom Design, Add Factor, Add Factor, Add Factor, Make Design, Make Table );
+DOE(
+	Custom Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Set Sample Size( 4 ),
+	Make Design,
+	Make Table
+);
+DOE(
+	Compare Designs,
+	Reference Design( "Custom Design", X( :X1, :X2, :X3 ) ),
+	Additional Designs(
+		"Custom Design 2",
+		X( :X1, :X2, :X3 ),
+		"Custom Design 3",
+		X( :X1, :X2, :X3 )
+	)
+);
 
 ```
 
@@ -894,7 +1379,10 @@ DOE(	Custom Design,	Add Factor,	Add Factor,	Add Factor,	Set Sample Size( 12
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Remove Alias Term( {1, 1}, {3, 1} );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Remove Alias Term( {1, 1}, {3, 1} );
 
 ```
 
@@ -906,7 +1394,14 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ));d << Make Model( Linear );d << Remove All Alias Terms;
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 )
+);
+d << Make Model( Linear );
+d << Remove All Alias Terms;
 
 ```
 
@@ -918,7 +1413,11 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor(
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Remove Term( {1, 1}, {3, 1} );d << Remove Term( {3, 2} );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Remove Term( {1, 1}, {3, 1} );
+d << Remove Term( {3, 2} );
 
 ```
 
@@ -932,7 +1431,14 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ));d << Make Model( Linear );d << Replicates( 2 );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 )
+);
+d << Make Model( Linear );
+d << Replicates( 2 );
 
 ```
 
@@ -940,7 +1446,18 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor(
 
 ```jsl
 
-d = DOE(	MSA Design,	{Add Response( None, "Y", ., ., . ), Add Factor(		Categorical,		{"L1", "L2"},		"X1",		MSA( 4, 1 )	), Add Factor( Categorical, {"L1", "L2"}, "X2", MSA( 4, 1 ) ),	Add Factor( Categorical, {"L1", "L2"}, "X3", MSA( 4, 1 ) ), Set Random Seed( 3983347 ),	Replicates( 2, 0 ), Simulate Responses( 0 )});
+
+d = DOE(
+	MSA Design,
+	{Add Response( None, "Y", ., ., . ), Add Factor(
+		Categorical,
+		{"L1", "L2"},
+		"X1",
+		MSA( 4, 1 )
+	), Add Factor( Categorical, {"L1", "L2"}, "X2", MSA( 4, 1 ) ),
+	Add Factor( Categorical, {"L1", "L2"}, "X3", MSA( 4, 1 ) ), Set Random Seed( 3983347 ),
+	Replicates( 2, 0 ), Simulate Responses( 0 )}
+);
 
 ```
 
@@ -952,7 +1469,11 @@ d = DOE(	MSA Design,	{Add Response( None, "Y", ., ., . ), Add Factor(		Catego
 
 ```jsl
 
-d = DOE( Custom Design );r = d << report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+d = DOE( Custom Design );
+r = d << report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -964,7 +1485,17 @@ d = DOE( Custom Design );r = d << report;t = r[Outline Box( 1 )] << Get Title;
 
 ```jsl
 
-DOE(	Custom Design,	Add Response( Maximize, "Y", ., ., . ),	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Add Constraint( [1 1 0 1, 1 0 1 1] ),	Add Term( {1, 0} ),	Save Constraints);
+
+DOE(
+	Custom Design,
+	Add Response( Maximize, "Y", ., ., . ),
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Add Constraint( [1 1 0 1, 1 0 1 1] ),
+	Add Term( {1, 0} ),
+	Save Constraints
+);
 
 ```
 
@@ -976,7 +1507,15 @@ DOE(	Custom Design,	Add Response( Maximize, "Y", ., ., . ),	Add Factor( Conti
 
 ```jsl
 
-DOE(	Custom Design,	Add Response( Match Target, "Stretch", 350, 550, 1 ),	Add Factor( Continuous, 0.7, 1.7, "Silica", 0 ),	Add Factor( Continuous, 1.8, 2.8, "Sulfur", 0 ),	Add Factor( Continuous, 40, 60, "Silane", 0 ),	Save Factors);
+
+DOE(
+	Custom Design,
+	Add Response( Match Target, "Stretch", 350, 550, 1 ),
+	Add Factor( Continuous, 0.7, 1.7, "Silica", 0 ),
+	Add Factor( Continuous, 1.8, 2.8, "Sulfur", 0 ),
+	Add Factor( Continuous, 40, 60, "Silane", 0 ),
+	Save Factors
+);
 
 ```
 
@@ -988,7 +1527,15 @@ DOE(	Custom Design,	Add Response( Match Target, "Stretch", 350, 550, 1 ),	Add
 
 ```jsl
 
-DOE(	Custom Design,	Add Response( Match Target, "Stretch", 350, 550, 1 ),	Add Factor( Continuous, 0.7, 1.7, "Silica", 0 ),	Add Factor( Continuous, 1.8, 2.8, "Sulfur", 0 ),	Add Factor( Continuous, 40, 60, "Silane", 0 ),	Save Responses);
+
+DOE(
+	Custom Design,
+	Add Response( Match Target, "Stretch", 350, 550, 1 ),
+	Add Factor( Continuous, 0.7, 1.7, "Silica", 0 ),
+	Add Factor( Continuous, 1.8, 2.8, "Sulfur", 0 ),
+	Add Factor( Continuous, 40, 60, "Silane", 0 ),
+	Save Responses
+);
 
 ```
 
@@ -1006,7 +1553,14 @@ DOE(	Custom Design,	Add Response( Match Target, "Stretch", 350, 550, 1 ),	Add
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Make Design,	Save Script to Script Window);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Make Design,
+	Save Script to Script Window
+);
 
 ```
 
@@ -1018,7 +1572,15 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Save X Matrix,	Make Design,	Make Table);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Save X Matrix,
+	Make Design,
+	Make Table
+);
 
 ```
 
@@ -1030,7 +1592,16 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE(	Screening Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ));d << Screening Type( 1 );d << Set Sample Size( 12 );d << Make Design;
+
+d = DOE(
+	Screening Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 )
+);
+d << Screening Type( 1 );
+d << Set Sample Size( 12 );
+d << Make Design;
 
 ```
 
@@ -1044,7 +1615,23 @@ d = DOE(	Screening Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Fact
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );DOE(	Custom Design,	Add Response( Maximize, "Y", ., ., . ),	Add Factor( Covariate, :sex, 0 ),	Add Factor( Covariate, :height, 0 ),	Add Factor( Covariate, :weight, 0 ),	Add Term( {1, 0} ),	Add Term( {1, 1} ),	Add Term( {2, 1} ),	Add Term( {3, 1} ),	Enforce Use of Selected Covariate Rows( 1 ),	Allow covariate rows to be repeated( 1 ),	Select Covariate Rows( [1 2 3 4] ),	Set Sample Size( 24 ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+DOE(
+	Custom Design,
+	Add Response( Maximize, "Y", ., ., . ),
+	Add Factor( Covariate, :sex, 0 ),
+	Add Factor( Covariate, :height, 0 ),
+	Add Factor( Covariate, :weight, 0 ),
+	Add Term( {1, 0} ),
+	Add Term( {1, 1} ),
+	Add Term( {2, 1} ),
+	Add Term( {3, 1} ),
+	Enforce Use of Selected Covariate Rows( 1 ),
+	Allow covariate rows to be repeated( 1 ),
+	Select Covariate Rows( [1 2 3 4] ),
+	Set Sample Size( 24 )
+);
 
 ```
 
@@ -1056,7 +1643,18 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );DOE(	Custom Design,	Add Response( M
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1068,7 +1666,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Failure Probability Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Failure Probability Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1080,7 +1689,14 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Space Filling Design,	Change Factor Settings( 1, -1, 1, "X1" ),	Change Factor Settings( 2, -1, 1, "X2" ),	Set Average Cluster Size( 100 ),	Space Filling Design Type( Fast Flexible Filling, 50 ));
+
+DOE(
+	Space Filling Design,
+	Change Factor Settings( 1, -1, 1, "X1" ),
+	Change Factor Settings( 2, -1, 1, "X2" ),
+	Set Average Cluster Size( 100 ),
+	Space Filling Design Type( Fast Flexible Filling, 50 )
+);
 
 ```
 
@@ -1092,7 +1708,9 @@ DOE(	Space Filling Design,	Change Factor Settings( 1, -1, 1, "X1" ),	Change F
 
 ```jsl
 
-d = DOE( Response Surface Design, Make Design( 2 ) );d << Set Axial Choice( 2 );
+
+d = DOE( Response Surface Design, Make Design( 2 ) );
+d << Set Axial Choice( 2 );
 
 ```
 
@@ -1104,7 +1722,9 @@ d = DOE( Response Surface Design, Make Design( 2 ) );d << Set Axial Choice( 2 )
 
 ```jsl
 
-d = DOE( Response Surface Design, Make Design( 2 ) );d << Set Axial Value( 2 );
+
+d = DOE( Response Surface Design, Make Design( 2 ) );
+d << Set Axial Value( 2 );
 
 ```
 
@@ -1116,7 +1736,19 @@ d = DOE( Response Surface Design, Make Design( 2 ) );d << Set Axial Value( 2 );
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),
+	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )}
+);
 
 ```
 
@@ -1128,7 +1760,14 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Set Delta For Power( 3 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Set Delta For Power( 3 ),
+	Make Design
+);
 
 ```
 
@@ -1140,7 +1779,16 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 )}
+);
 
 ```
 
@@ -1152,7 +1800,11 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Screening Design,	{Add Factor, Add Factor, Add Factor, Make Design( 1 ), Set Generators( [1, 1, 0] )});
+
+DOE(
+	Screening Design,
+	{Add Factor, Add Factor, Add Factor, Make Design( 1 ), Set Generators( [1, 1, 0] )}
+);
 
 ```
 
@@ -1164,7 +1816,19 @@ DOE(	Screening Design,	{Add Factor, Add Factor, Add Factor, Make Design( 1 ), 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),
+	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )}
+);
 
 ```
 
@@ -1176,7 +1840,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1188,7 +1863,19 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Monitoring at Intervals", {5, 200, 200} ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),
+	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )}
+);
 
 ```
 
@@ -1200,7 +1887,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1212,7 +1910,15 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 2 ),	Add Factor( Continuous, -1, 1, "X2", 1 ),	Add Factor( Continuous, -1, 1, "X3", 0 ));d << Set N Whole Plots( 4 );d << Set N Subplots( 8 );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 2 ),
+	Add Factor( Continuous, -1, 1, "X2", 1 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 )
+);
+d << Set N Whole Plots( 4 );
+d << Set N Subplots( 8 );
 
 ```
 
@@ -1224,7 +1930,13 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 2 ),	Add Factor(
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 1 ),	Add Factor( Continuous, -1, 1, "X2", 0 ));d << Set N Whole Plots( 6 );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 1 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 )
+);
+d << Set N Whole Plots( 6 );
 
 ```
 
@@ -1236,7 +1948,16 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 1 ),	Add Factor(
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 )}
+);
 
 ```
 
@@ -1248,7 +1969,16 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 )}
+);
 
 ```
 
@@ -1262,7 +1992,13 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),	Set Sample Size( 7 ), Design Search Time( 8 ), Set Number of FDS points( 20000 ),	Make Design});
+
+DOE(
+	Custom Design,
+	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Set Sample Size( 7 ), Design Search Time( 8 ), Set Number of FDS points( 20000 ),
+	Make Design}
+);
 
 ```
 
@@ -1274,7 +2010,16 @@ DOE(	Custom Design,	{Add Factor( Continuous, -1, 1, "X1", 0 ), Add Factor( Con
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 )}
+);
 
 ```
 
@@ -1286,7 +2031,16 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 )}
+);
 
 ```
 
@@ -1298,7 +2052,18 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1312,7 +2077,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1324,7 +2100,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1336,7 +2123,16 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 )}
+);
 
 ```
 
@@ -1348,7 +2144,19 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Prior Specification Choice( 2 ), Set Prior Quantile ALT( {[1.5 2], 0.065, 2642, 45} ),	Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Prior Specification Choice( 2 ), Set Prior Quantile ALT( {[1.5 2], 0.065, 2642, 45} ),
+	Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1362,7 +2170,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1374,7 +2193,18 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Variance ALT( [0.1 0 0, 0 0.1 0, 0 0 0.1] ),	Use Prior Uncertainty( 1 ), Set ALT Time Range( 10000, 20000 ),	Set ALT Probability of Interest( 0.1 ), Set Length of Test( 1000 ),	Set Number of Units( 150 )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( "Continuous Monitoring" ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Variance ALT( [0.1 0 0, 0 0.1 0, 0 0 0.1] ),
+	Use Prior Uncertainty( 1 ), Set ALT Time Range( 10000, 20000 ),
+	Set ALT Probability of Interest( 0.1 ), Set Length of Test( 1000 ),
+	Set Number of Units( 150 )}
+);
 
 ```
 
@@ -1386,7 +2216,16 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 )}
+);
 
 ```
 
@@ -1398,7 +2237,10 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Set RMSE( 1.5 );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Set RMSE( 1.5 );
 
 ```
 
@@ -1410,7 +2252,14 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Set Random Seed( 34067086 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Set Random Seed( 34067086 ),
+	Make Design
+);
 
 ```
 
@@ -1422,7 +2271,11 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Design;d << Set Run Order( Sort Left to Right );d << Make Table;
+
+d = DOE( Custom Design, Add factor, Add factor, Add factor );
+d << Make Design;
+d << Set Run Order( Sort Left to Right );
+d << Make Table;
 
 ```
 
@@ -1434,7 +2287,14 @@ d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Design;
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Make Model( Linear ));d << Set Runs Per Random Block( 4 );
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Make Model( Linear )
+);
+d << Set Runs Per Random Block( 4 );
 
 ```
 
@@ -1446,7 +2306,10 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor(
 
 ```jsl
 
-d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Model( Linear );d << Set Sample Size( 12 );
+
+d = DOE( Custom Design, Add factor, Add factor, Add factor );
+d << Make Model( Linear );
+d << Set Sample Size( 12 );
 
 ```
 
@@ -1458,7 +2321,10 @@ d = DOE( Custom Design, Add factor, Add factor, Add factor );d << Make Model( L
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );d << Set Significance Level( 0.10 );
+
+dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );
+d = DOE( Evaluate Design, X( :Silica, :Sulfur, :Silane ), Y( :Stretch ) );
+d << Set Significance Level( 0.10 );
 
 ```
 
@@ -1470,7 +2336,15 @@ dt = Open( "$SAMPLE_DATA/Design Experiment/Bounce Data.jmp" );d = DOE( Evaluate
 
 ```jsl
 
-d = DOE(	Covering Array,	Add factor( Categorical ),	Add factor( Categorical ),	Add factor( Categorical ));d << Set Strength( 3 );d << Make Table;
+
+d = DOE(
+	Covering Array,
+	Add factor( Categorical ),
+	Add factor( Categorical ),
+	Add factor( Categorical )
+);
+d << Set Strength( 3 );
+d << Make Table;
 
 ```
 
@@ -1484,7 +2358,18 @@ d = DOE(	Covering Array,	Add factor( Categorical ),	Add factor( Categorical )
 
 ```jsl
 
-DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Show Blocking Options( 0, 0 ),	Number of Extra Runs( 4 ));
+
+DOE(
+	Definitive Screening Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Show Blocking Options( 0, 0 ),
+	Number of Extra Runs( 4 )
+);
 
 ```
 
@@ -1492,7 +2377,18 @@ DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add F
 
 ```jsl
 
-DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Add Factor,	Show Blocking Options( 1, 2 ),	Number of Extra Runs( 4 ));
+
+DOE(
+	Definitive Screening Design,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Add Factor,
+	Show Blocking Options( 1, 2 ),
+	Number of Extra Runs( 4 )
+);
 
 ```
 
@@ -1504,7 +2400,15 @@ DOE(	Definitive Screening Design,	Add Factor,	Add Factor,	Add Factor,	Add F
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Make Design,	Simulate Responses,	Make Table);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Make Design,
+	Simulate Responses,
+	Make Table
+);
 
 ```
 
@@ -1518,7 +2422,14 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Make Design,	Solve for Power( 0.8 ));
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Make Design,
+	Solve for Power( 0.8 )
+);
 
 ```
 
@@ -1532,7 +2443,9 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE( Space Filling Design );d << Space Filling Design Type( Sphere Packing, 30 );
+
+d = DOE( Space Filling Design );
+d << Space Filling Design Type( Sphere Packing, 30 );
 
 ```
 
@@ -1540,7 +2453,9 @@ d = DOE( Space Filling Design );d << Space Filling Design Type( Sphere Packing,
 
 ```jsl
 
-d = DOE( Space Filling Design );d << Space Filling Design Type( Latin Hypercube, 100 );
+
+d = DOE( Space Filling Design );
+d << Space Filling Design Type( Latin Hypercube, 100 );
 
 ```
 
@@ -1548,7 +2463,9 @@ d = DOE( Space Filling Design );d << Space Filling Design Type( Latin Hypercube
 
 ```jsl
 
-d = DOE( Space Filling Design );d << Space Filling Design Type( Uniform, 20 );
+
+d = DOE( Space Filling Design );
+d << Space Filling Design Type( Uniform, 20 );
 
 ```
 
@@ -1556,7 +2473,9 @@ d = DOE( Space Filling Design );d << Space Filling Design Type( Uniform, 20 );
 
 ```jsl
 
-d = DOE( Space Filling Design );d << Space Filling Design Type( Fast Flexible Filling, 100 );
+
+d = DOE( Space Filling Design );
+d << Space Filling Design Type( Fast Flexible Filling, 100 );
 
 ```
 
@@ -1564,7 +2483,10 @@ d = DOE( Space Filling Design );d << Space Filling Design Type( Fast Flexible F
 
 ```jsl
 
-d = DOE( Space Filling Design, Space Filling Design Type( IMSE Optimal, 20 ) );d << Theta( [2, 3] );d << Make Design;
+
+d = DOE( Space Filling Design, Space Filling Design Type( IMSE Optimal, 20 ) );
+d << Theta( [2, 3] );
+d << Make Design;
 
 ```
 
@@ -1576,7 +2498,14 @@ d = DOE( Space Filling Design, Space Filling Design Type( IMSE Optimal, 20 ) );
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Sphere Radius( 1 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Sphere Radius( 1 ),
+	Make Design
+);
 
 ```
 
@@ -1590,7 +2519,15 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 1 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Set N Whole Plots( 4 ),	Split Plot Variance Ratio( 2 ),	Make Design);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 1 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Set N Whole Plots( 4 ),
+	Split Plot Variance Ratio( 2 ),
+	Make Design
+);
 
 ```
 
@@ -1598,7 +2535,16 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 1 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 2 ),	Add Factor( Continuous, -1, 1, "X2", 1 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Set N Whole Plots( 4 ));d << Split Plot Variance Ratio( [3, 2] );d << Make Design;
+
+d = DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 2 ),
+	Add Factor( Continuous, -1, 1, "X2", 1 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Set N Whole Plots( 4 )
+);
+d << Split Plot Variance Ratio( [3, 2] );
+d << Make Design;
 
 ```
 
@@ -1610,7 +2556,15 @@ d = DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 2 ),	Add Factor(
 
 ```jsl
 
-DOE(	Screening Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Factor( Continuous, -1, 1, "X3", 0 ),	Suppress Cotter Designs,	Make Design( 5 ));
+
+DOE(
+	Screening Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Suppress Cotter Designs,
+	Make Design( 5 )
+);
 
 ```
 
@@ -1624,7 +2578,14 @@ DOE(	Screening Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( 
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Make Design,	Table of Correlations);
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Make Design,
+	Table of Correlations
+);
 
 ```
 
@@ -1636,7 +2597,9 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-d = DOE( Space Filling Design, Space Filling Design Type( IMSE Optimal, 20 ) );d << Theta( [2, 3] );
+
+d = DOE( Space Filling Design, Space Filling Design Type( IMSE Optimal, 20 ) );
+d << Theta( [2, 3] );
 
 ```
 
@@ -1650,7 +2613,10 @@ d = DOE( Space Filling Design, Space Filling Design Type( IMSE Optimal, 20 ) );
 
 ```jsl
 
-d = DOE( Balanced Incomplete Block Design );d << Treatments( 3, {"L1", "L2", "L3"} );d << Make Design;
+
+d = DOE( Balanced Incomplete Block Design );
+d << Treatments( 3, {"L1", "L2", "L3"} );
+d << Make Design;
 
 ```
 
@@ -1664,7 +2630,18 @@ d = DOE( Balanced Incomplete Block Design );d << Treatments( 3, {"L1", "L2", "L
 
 ```jsl
 
-DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ),	Add Term( {1, 1} ),	Add Term( {2, 1} ),	Add Potential Term( {1, 1}, {2, 1} ),	Number of Starts( 10 ),	Make Design,	Use Bayesian Information( 1 ));
+
+DOE(
+	Custom Design,
+	Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ),
+	Add Term( {1, 1} ),
+	Add Term( {2, 1} ),
+	Add Potential Term( {1, 1}, {2, 1} ),
+	Number of Starts( 10 ),
+	Make Design,
+	Use Bayesian Information( 1 )
+);
 
 ```
 
@@ -1686,7 +2663,19 @@ DOE(	Custom Design,	Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Con
 
 ```jsl
 
-DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 2, {5, 200, 200} ),	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )});
+
+DOE(
+	Accelerated Life Test Plan,
+	{ALT Plan Setup( 1 ), Set Monitoring Choice( 2, {5, 200, 200} ),
+	ALT Optimality Criterion( "Make Quantile Estimate Optimal" ),
+	ALT Factor Settings( 1, {"X1", 3, 1, 20, 30, 90, 110} ),
+	Set Level Values( 1, [90 100 110] ), Distribution Choice( LogNormal ),
+	Set Prior Mean ALT( [-40 1.5 2] ), Set Prior Std Error ALT( [10, 0.2, 0.5] ),
+	Set Prior Correlation ALT( [1 -0.99 0, -0.99 1 0, 0 0 1] ), Use Prior Uncertainty( 1 ),
+	Set ALT Time Range( 10000, 20000 ), Set ALT Probability of Interest( 0.1 ),
+	Set Length of Test( 1000 ), Set Inspection Times( [200 400 600 800 1000] ),
+	Set Number of Units( 150 ), Set Candidate Runs( [90 0 150, 100 0 150, 110 0 150] )}
+);
 
 ```
 
@@ -1698,7 +2687,16 @@ DOE(	Accelerated Life Test Plan,	{ALT Plan Setup( 1 ), Set Monitoring Choice( 
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 1 ), Utility Neutral Design( 1 )});
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X2", 0 ), Set Random Seed( 1245253625 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Set Prior Mean Choice( [0 0] ),
+	Set Prior Variance Matrix( [1 0, 0 1] ), Set Number of Attributes( 2 ),
+	Set Number of Profiles( 2 ), Set Number of Choice Sets( 8 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 1 ), Utility Neutral Design( 1 )}
+);
 
 ```
 
@@ -1710,7 +2708,23 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),	Add Factor( Continuous, 195, 205, "Temperature", 0 ),	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(		Continuous, 1.6, 2.4, "Charge", 0	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),	Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),
+	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),
+	Add Factor( Continuous, 195, 205, "Temperature", 0 ),
+	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(
+		Continuous, 1.6, 2.4, "Charge", 0
+	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),
+	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),
+	Make Design}
+);
 
 ```
 
@@ -1720,7 +2734,23 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),	Add Factor( Continuous, 195, 205, "Temperature", 0 ),	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(		Continuous, 1.6, 2.4, "Charge", 0	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),	Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),
+	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),
+	Add Factor( Continuous, 195, 205, "Temperature", 0 ),
+	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(
+		Continuous, 1.6, 2.4, "Charge", 0
+	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),
+	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),
+	Make Design}
+);
 
 ```
 
@@ -1730,7 +2760,23 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),	Add Factor( Continuous, 195, 205, "Temperature", 0 ),	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(		Continuous, 1.6, 2.4, "Charge", 0	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),	Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),
+	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),
+	Add Factor( Continuous, 195, 205, "Temperature", 0 ),
+	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(
+		Continuous, 1.6, 2.4, "Charge", 0
+	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),
+	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),
+	Make Design}
+);
 
 ```
 
@@ -1740,7 +2786,23 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),	Add Factor( Continuous, 195, 205, "Temperature", 0 ),	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(		Continuous, 1.6, 2.4, "Charge", 0	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),	Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),
+	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),
+	Add Factor( Continuous, 195, 205, "Temperature", 0 ),
+	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(
+		Continuous, 1.6, 2.4, "Charge", 0
+	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),
+	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),
+	Make Design}
+);
 
 ```
 
@@ -1754,7 +2816,29 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Choice Design,	{Add Factor( Categorical, {"Medium", "Coarse"}, "Grind", 0 ),	Add Factor( Categorical, {"195", "200", "205"}, "Temperature", 0 ),	Add Factor( Categorical, {"3", "3.5", "4"}, "Time", 0 ),	Add Factor( Categorical, {"1.6", "2", "2.4"}, "Charge", 0 ), Set Random Seed( 12345 ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),	Set Prior Mean Choice( [0 0 0 0 0 0 0] ),	Set Prior Variance Matrix(		[1 0 0 0 0 0 0,		0 1 0 0 0 0 0,		0 0 1 0 0 0 0,		0 0 0 1 0 0 0,		0 0 0 0 1 0 0,		0 0 0 0 0 1 0,		0 0 0 0 0 0 1]	), Set Number of Attributes( 4 ), Set Number of Profiles( 2 ),	Set Number of Choice Sets( 12 ), Set Number of Surveys( 1 ),	Set Expected Number of Respondents( 10 ), Make Design,	Choice Design Table Output( Separate )});
+
+
+DOE(
+	Choice Design,
+	{Add Factor( Categorical, {"Medium", "Coarse"}, "Grind", 0 ),
+	Add Factor( Categorical, {"195", "200", "205"}, "Temperature", 0 ),
+	Add Factor( Categorical, {"3", "3.5", "4"}, "Time", 0 ),
+	Add Factor( Categorical, {"1.6", "2", "2.4"}, "Charge", 0 ), Set Random Seed( 12345 ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+	Set Prior Mean Choice( [0 0 0 0 0 0 0] ),
+	Set Prior Variance Matrix(
+		[1 0 0 0 0 0 0,
+		0 1 0 0 0 0 0,
+		0 0 1 0 0 0 0,
+		0 0 0 1 0 0 0,
+		0 0 0 0 1 0 0,
+		0 0 0 0 0 1 0,
+		0 0 0 0 0 0 1]
+	), Set Number of Attributes( 4 ), Set Number of Profiles( 2 ),
+	Set Number of Choice Sets( 12 ), Set Number of Surveys( 1 ),
+	Set Expected Number of Respondents( 10 ), Make Design,
+	Choice Design Table Output( Separate )}
+);
 
 ```
 
@@ -1762,7 +2846,19 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Definitive Screening Design,	{Add Response( Maximize, "Yield", ., ., . ), Add Factor(		Continuous, 0, 10, "Methanol", 0	), Add Factor( Continuous, 0, 10, "Ethanol", 0 ),	Add Factor( Continuous, 0, 10, "Propanol", 0 ), Add Factor(		Continuous, 0, 10, "Butanol", 0	), Add Factor( Continuous, 6, 9, "pH", 0 ), Add Factor( Continuous, 1, 2, "Time", 0 ),	Show Blocking Options( 0, 0 ), Number of Extra Runs( 4 ), Set Random Seed( 880596769 ),	Make Design, Simulate Responses( 0 ), Save X Matrix( 0 )});
+
+
+DOE(
+	Definitive Screening Design,
+	{Add Response( Maximize, "Yield", ., ., . ), Add Factor(
+		Continuous, 0, 10, "Methanol", 0
+	), Add Factor( Continuous, 0, 10, "Ethanol", 0 ),
+	Add Factor( Continuous, 0, 10, "Propanol", 0 ), Add Factor(
+		Continuous, 0, 10, "Butanol", 0
+	), Add Factor( Continuous, 6, 9, "pH", 0 ), Add Factor( Continuous, 1, 2, "Time", 0 ),
+	Show Blocking Options( 0, 0 ), Number of Extra Runs( 4 ), Set Random Seed( 880596769 ),
+	Make Design, Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
 
 ```
 
@@ -1770,7 +2866,19 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Definitive Screening Design,	{Add Response( Maximize, "Yield", ., ., . ), Add Factor( Blocking, 0, "Lot" ),	Add Factor( Continuous, 0, 10, "Methanol", 0 ), Add Factor(		Continuous, 0, 10, "Ethanol", 0	), Add Factor( Continuous, 0, 10, "Propanol", 0 ),	Add Factor( Continuous, 0, 10, "Butanol", 0 ), Add Factor( Continuous, 6, 9, "pH", 0 ),	Add Factor( Continuous, 1, 2, "Time", 0 ), Show Blocking Options( 1, 2 ),	Number of Extra Runs( 0 ), Set Random Seed( 1146016221 ), Make Design,	Simulate Responses( 0 ), Save X Matrix( 0 )});
+
+
+DOE(
+	Definitive Screening Design,
+	{Add Response( Maximize, "Yield", ., ., . ), Add Factor( Blocking, 0, "Lot" ),
+	Add Factor( Continuous, 0, 10, "Methanol", 0 ), Add Factor(
+		Continuous, 0, 10, "Ethanol", 0
+	), Add Factor( Continuous, 0, 10, "Propanol", 0 ),
+	Add Factor( Continuous, 0, 10, "Butanol", 0 ), Add Factor( Continuous, 6, 9, "pH", 0 ),
+	Add Factor( Continuous, 1, 2, "Time", 0 ), Show Blocking Options( 1, 2 ),
+	Number of Extra Runs( 0 ), Set Random Seed( 1146016221 ), Make Design,
+	Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
 
 ```
 
@@ -1778,7 +2886,23 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );Wait( 0 );DOE(	Augment Design,	X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),	Y( :Percent Reacted ),	{Augment Method( Augment ), Set Random Seed( 282322901 ), Number of Starts( 800 ),	Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),	Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {1, 1}, {2, 1} ),	Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ),	Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ),	Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {4, 1}, {5, 1} ),	Set Sample Size( 16 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design,	Save X Matrix( 0 ), Simulate Responses( 0 )});
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );
+Wait( 0 );
+DOE(
+	Augment Design,
+	X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),
+	Y( :Percent Reacted ),
+	{Augment Method( Augment ), Set Random Seed( 282322901 ), Number of Starts( 800 ),
+	Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+	Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {1, 1}, {2, 1} ),
+	Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ),
+	Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ),
+	Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {4, 1}, {5, 1} ),
+	Set Sample Size( 16 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design,
+	Save X Matrix( 0 ), Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1786,7 +2910,17 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );Wait( 0 );DOE(	Augment Design,	X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),	Y( :Percent Reacted ),	{Group new runs into separate block, Augment Method( Replicate, 2 ), Save X Matrix( 0 ),	Simulate Responses( 0 )});
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );
+Wait( 0 );
+DOE(
+	Augment Design,
+	X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),
+	Y( :Percent Reacted ),
+	{Group new runs into separate block, Augment Method( Replicate, 2 ), Save X Matrix( 0 ),
+	Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1794,7 +2928,17 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );Wait( 0 );DOE(	Augment Design,	X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),	Y( :Percent Reacted ),	{Group new runs into separate block, Augment Method( Centerpoints, 2 ),	Save X Matrix( 0 ), Simulate Responses( 0 )});
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Reactor 8 Runs.jmp" );
+Wait( 0 );
+DOE(
+	Augment Design,
+	X( :Feed Rate, :Catalyst, :Stir Rate, :Temperature, :Concentration ),
+	Y( :Percent Reacted ),
+	{Group new runs into separate block, Augment Method( Centerpoints, 2 ),
+	Save X Matrix( 0 ), Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1802,7 +2946,17 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),	Add Factor( Blocking, 3, "X4" ), Set Random Seed( 12345 ), Number of Starts( 5 ),	Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),	Add Term( {4, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),	Add Term( {2, 1}, {3, 1} ), Set Sample Size( 18 ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Add Factor( Blocking, 3, "X4" ), Set Random Seed( 12345 ), Number of Starts( 5 ),
+	Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+	Add Term( {4, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+	Add Term( {2, 1}, {3, 1} ), Set Sample Size( 18 ), Make Design}
+);
 
 ```
 
@@ -1810,7 +2964,32 @@ DOE(	Choice Design,	{Add Factor( Categorical, {"L1", "L2"}, "X1", 0 ),	Add Fa
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Design Experiment/Thermoplastic.jmp" );Wait( 0 );DOE(	Custom Design,	{Add Response( Minimize, "Shrinkage", ., ., . ),	Add Factor( Covariate, Specific Gravity, 0 ), Add Factor(		Covariate, Tensile Strength, 0	), Add Factor( Covariate, Supplier, 0 ), Add Factor(		Continuous, -1, 1, "Temperature", 0	), Add Factor( Continuous, -1, 1, "Speed", 0 ), Add Factor(		Continuous, -1, 1, "Time", 0	), Set Random Seed( 84951 ), Number of Starts( 40 ), Add Term( {1, 0} ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),	Add Term( {5, 1} ), Add Term( {6, 1} ), Add Alias Term( {1, 1}, {2, 1} ),	Add Alias Term( {1, 1}, {3, 1} ), Add Alias Term( {1, 1}, {4, 1} ),	Add Alias Term( {1, 1}, {5, 1} ), Add Alias Term( {1, 1}, {6, 1} ),	Add Alias Term( {2, 1}, {3, 1} ), Add Alias Term( {2, 1}, {4, 1} ),	Add Alias Term( {2, 1}, {5, 1} ), Add Alias Term( {2, 1}, {6, 1} ),	Add Alias Term( {3, 1}, {4, 1} ), Add Alias Term( {3, 1}, {5, 1} ),	Add Alias Term( {3, 1}, {6, 1} ), Add Alias Term( {4, 1}, {5, 1} ),	Add Alias Term( {4, 1}, {6, 1} ), Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 12 ),	Make Design});
+
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Thermoplastic.jmp" );
+Wait( 0 );
+DOE(
+	Custom Design,
+	{Add Response( Minimize, "Shrinkage", ., ., . ),
+	Add Factor( Covariate, Specific Gravity, 0 ), Add Factor(
+		Covariate, Tensile Strength, 0
+	), Add Factor( Covariate, Supplier, 0 ), Add Factor(
+		Continuous, -1, 1, "Temperature", 0
+	), Add Factor( Continuous, -1, 1, "Speed", 0 ), Add Factor(
+		Continuous, -1, 1, "Time", 0
+	), Set Random Seed( 84951 ), Number of Starts( 40 ), Add Term( {1, 0} ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+	Add Term( {5, 1} ), Add Term( {6, 1} ), Add Alias Term( {1, 1}, {2, 1} ),
+	Add Alias Term( {1, 1}, {3, 1} ), Add Alias Term( {1, 1}, {4, 1} ),
+	Add Alias Term( {1, 1}, {5, 1} ), Add Alias Term( {1, 1}, {6, 1} ),
+	Add Alias Term( {2, 1}, {3, 1} ), Add Alias Term( {2, 1}, {4, 1} ),
+	Add Alias Term( {2, 1}, {5, 1} ), Add Alias Term( {2, 1}, {6, 1} ),
+	Add Alias Term( {3, 1}, {4, 1} ), Add Alias Term( {3, 1}, {5, 1} ),
+	Add Alias Term( {3, 1}, {6, 1} ), Add Alias Term( {4, 1}, {5, 1} ),
+	Add Alias Term( {4, 1}, {6, 1} ), Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 12 ),
+	Make Design}
+);
 
 ```
 
@@ -1818,7 +2997,34 @@ Open( "$SAMPLE_DATA/Design Experiment/Thermoplastic.jmp" );Wait( 0 );DOE(	Cus
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(	Custom Design,	{Add Response( Minimize, "Wear", ., ., . ), Add Factor( Covariate, Miles, 1 ),	Add Factor( Covariate, Weight, 1 ), Add Factor( Covariate, Strike Point, 1 ),	Add Factor( Continuous, 5, 20, "Thickness", 0 ),	Add Factor( Continuous, 1, 10, "Gel", 0 ), Add Factor(		Categorical,		{"L1", "L2", "L3"},		"Outsole",		0	), Add Factor( Categorical, {"L1", "L2", "L3"}, "Midsole", 0 ), Set Random Seed( 12345 ),	Number of Starts( 1 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),	Add Term( {7, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),	Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ), Add Term( {1, 1}, {6, 1} ),	Add Term( {1, 1}, {7, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),	Add Term( {2, 1}, {5, 1} ), Add Term( {2, 1}, {6, 1} ), Add Term( {2, 1}, {7, 1} ),	Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {3, 1}, {6, 1} ),	Add Term( {3, 1}, {7, 1} ), Add Term( {4, 1}, {5, 1} ), Add Term( {4, 1}, {6, 1} ),	Add Term( {4, 1}, {7, 1} ), Add Term( {5, 1}, {6, 1} ), Add Term( {5, 1}, {7, 1} ),	Add Term( {6, 1}, {7, 1} ), Set N Whole Plots( 32 ), Set Sample Size( 64 ),	Simulate Responses( 0 ), Save X Matrix( 0 ), Make Design});
+
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );
+Wait( 0 );
+DOE(
+	Custom Design,
+	{Add Response( Minimize, "Wear", ., ., . ), Add Factor( Covariate, Miles, 1 ),
+	Add Factor( Covariate, Weight, 1 ), Add Factor( Covariate, Strike Point, 1 ),
+	Add Factor( Continuous, 5, 20, "Thickness", 0 ),
+	Add Factor( Continuous, 1, 10, "Gel", 0 ), Add Factor(
+		Categorical,
+		{"L1", "L2", "L3"},
+		"Outsole",
+		0
+	), Add Factor( Categorical, {"L1", "L2", "L3"}, "Midsole", 0 ), Set Random Seed( 12345 ),
+	Number of Starts( 1 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),
+	Add Term( {7, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+	Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ), Add Term( {1, 1}, {6, 1} ),
+	Add Term( {1, 1}, {7, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),
+	Add Term( {2, 1}, {5, 1} ), Add Term( {2, 1}, {6, 1} ), Add Term( {2, 1}, {7, 1} ),
+	Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {3, 1}, {6, 1} ),
+	Add Term( {3, 1}, {7, 1} ), Add Term( {4, 1}, {5, 1} ), Add Term( {4, 1}, {6, 1} ),
+	Add Term( {4, 1}, {7, 1} ), Add Term( {5, 1}, {6, 1} ), Add Term( {5, 1}, {7, 1} ),
+	Add Term( {6, 1}, {7, 1} ), Set N Whole Plots( 32 ), Set Sample Size( 64 ),
+	Simulate Responses( 0 ), Save X Matrix( 0 ), Make Design}
+);
 
 ```
 
@@ -1826,7 +3032,23 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),	Add Factor( Continuous, 195, 205, "Temperature", 0 ),	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(		Continuous, 1.6, 2.4, "Charge", 0	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),	Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Match Target, "Strength", 1.2, 1.4, . ),
+	Add Factor( Categorical, {"Coarse", "Medium"}, "Grind", 0 ),
+	Add Factor( Continuous, 195, 205, "Temperature", 0 ),
+	Add Factor( Continuous, 3, 4, "Time", 0 ), Add Factor(
+		Continuous, 1.6, 2.4, "Charge", 0
+	), Add Factor( Blocking, 4, "Station " ), Set Random Seed( 569534903 ),
+	Number of Starts( 100 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {3, 1}, {4, 1} ), Set Sample Size( 12 ),
+	Make Design}
+);
 
 ```
 
@@ -1834,7 +3056,26 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Taste", 0, 10, . ), Add Factor( Mixture, 0.1, 0.2, "Cocoa", 0 ),	Add Factor( Mixture, 0, 0.15, "Sugar", 0 ), Add Factor( Mixture, 0.2, 0.3, "Flour", 0 ),	Add Factor( Mixture, 0.1, 0.2, "Butter", 0 ), Add Factor(		Mixture, 0.25, 0.35, "Milk", 0	), Add Factor( Mixture, 0.05, 0.2, "Eggs", 0 ), Set Random Seed( 12345 ),	Number of Starts( 40 ), Add Constraint( [1 1 1 0 0 0 0.45, -1 -1 -1 0 0 0 -0.45] ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),	Add Term( {5, 1} ), Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {1, 1}, {5, 1} ),	Add Alias Term( {1, 1}, {6, 1} ), Add Alias Term( {2, 1}, {3, 1} ),	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {2, 1}, {5, 1} ),	Add Alias Term( {2, 1}, {6, 1} ), Add Alias Term( {3, 1}, {4, 1} ),	Add Alias Term( {3, 1}, {5, 1} ), Add Alias Term( {3, 1}, {6, 1} ),	Add Alias Term( {4, 1}, {5, 1} ), Add Alias Term( {4, 1}, {6, 1} ),	Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 10 ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Taste", 0, 10, . ), Add Factor( Mixture, 0.1, 0.2, "Cocoa", 0 ),
+	Add Factor( Mixture, 0, 0.15, "Sugar", 0 ), Add Factor( Mixture, 0.2, 0.3, "Flour", 0 ),
+	Add Factor( Mixture, 0.1, 0.2, "Butter", 0 ), Add Factor(
+		Mixture, 0.25, 0.35, "Milk", 0
+	), Add Factor( Mixture, 0.05, 0.2, "Eggs", 0 ), Set Random Seed( 12345 ),
+	Number of Starts( 40 ), Add Constraint( [1 1 1 0 0 0 0.45, -1 -1 -1 0 0 0 -0.45] ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+	Add Term( {5, 1} ), Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {1, 1}, {5, 1} ),
+	Add Alias Term( {1, 1}, {6, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {2, 1}, {5, 1} ),
+	Add Alias Term( {2, 1}, {6, 1} ), Add Alias Term( {3, 1}, {4, 1} ),
+	Add Alias Term( {3, 1}, {5, 1} ), Add Alias Term( {3, 1}, {6, 1} ),
+	Add Alias Term( {4, 1}, {5, 1} ), Add Alias Term( {4, 1}, {6, 1} ),
+	Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 10 ), Make Design}
+);
 
 ```
 
@@ -1842,7 +3083,19 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( None, "Damping", ., ., . ), Add Factor( Mixture, 0.2, 0.8, "CuSO4", 0 ),	Add Factor( Mixture, 0.2, 0.8, "Na2S2O3", 0 ), Add Factor(		Mixture, 0, 0.6, "Glyoxal", 0	), Add Factor( Categorical, {"L1", "L2", "L3"}, "Wavelength", 0 ),	Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),	Add Term( {1, 1}, {4, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),	Add Term( {3, 1}, {4, 1} ), Set Sample Size( 18 ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( None, "Damping", ., ., . ), Add Factor( Mixture, 0.2, 0.8, "CuSO4", 0 ),
+	Add Factor( Mixture, 0.2, 0.8, "Na2S2O3", 0 ), Add Factor(
+		Mixture, 0, 0.6, "Glyoxal", 0
+	), Add Factor( Categorical, {"L1", "L2", "L3"}, "Wavelength", 0 ),
+	Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+	Add Term( {1, 1}, {4, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),
+	Add Term( {3, 1}, {4, 1} ), Set Sample Size( 18 ), Make Design}
+);
 
 ```
 
@@ -1850,7 +3103,25 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),	Add Factor( Continuous, -1, 1, "X6", 0 ), Set Random Seed( 12345 ), Number of Starts( 1 ),	Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),	Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {1, 1}, {5, 1} ),	Add Alias Term( {1, 1}, {6, 1} ), Add Alias Term( {2, 1}, {3, 1} ),	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {2, 1}, {5, 1} ),	Add Alias Term( {2, 1}, {6, 1} ), Add Alias Term( {3, 1}, {4, 1} ),	Add Alias Term( {3, 1}, {5, 1} ), Add Alias Term( {3, 1}, {6, 1} ),	Add Alias Term( {4, 1}, {5, 1} ), Add Alias Term( {4, 1}, {6, 1} ),	Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 12 ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+	Add Factor( Continuous, -1, 1, "X6", 0 ), Set Random Seed( 12345 ), Number of Starts( 1 ),
+	Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+	Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),
+	Add Alias Term( {1, 1}, {2, 1} ), Add Alias Term( {1, 1}, {3, 1} ),
+	Add Alias Term( {1, 1}, {4, 1} ), Add Alias Term( {1, 1}, {5, 1} ),
+	Add Alias Term( {1, 1}, {6, 1} ), Add Alias Term( {2, 1}, {3, 1} ),
+	Add Alias Term( {2, 1}, {4, 1} ), Add Alias Term( {2, 1}, {5, 1} ),
+	Add Alias Term( {2, 1}, {6, 1} ), Add Alias Term( {3, 1}, {4, 1} ),
+	Add Alias Term( {3, 1}, {5, 1} ), Add Alias Term( {3, 1}, {6, 1} ),
+	Add Alias Term( {4, 1}, {5, 1} ), Add Alias Term( {4, 1}, {6, 1} ),
+	Add Alias Term( {5, 1}, {6, 1} ), Set Sample Size( 12 ), Make Design}
+);
 
 ```
 
@@ -1858,7 +3129,21 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "thickness", 10, ., . ),	Add Factor( Continuous, -1, 1, "extrusion rate", 1 ),	Add Factor( Continuous, -1, 1, "temperature", 1 ), Add Factor( Mixture, 0, 1, "m1", 0 ),	Add Factor( Mixture, 0, 1, "m2", 0 ), Add Factor( Mixture, 0, 1, "m3", 0 ),	Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {3, 1} ), Add Term( {4, 1} ),	Add Term( {5, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),	Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ), Add Term( {2, 1}, {3, 1} ),	Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ), Add Term( {3, 1}, {4, 1} ),	Add Term( {3, 1}, {5, 1} ), Add Term( {4, 1}, {5, 1} ), Set N Whole Plots( 7 ),	Set Sample Size( 28 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "thickness", 10, ., . ),
+	Add Factor( Continuous, -1, 1, "extrusion rate", 1 ),
+	Add Factor( Continuous, -1, 1, "temperature", 1 ), Add Factor( Mixture, 0, 1, "m1", 0 ),
+	Add Factor( Mixture, 0, 1, "m2", 0 ), Add Factor( Mixture, 0, 1, "m3", 0 ),
+	Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {3, 1} ), Add Term( {4, 1} ),
+	Add Term( {5, 1} ), Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ),
+	Add Term( {1, 1}, {4, 1} ), Add Term( {1, 1}, {5, 1} ), Add Term( {2, 1}, {3, 1} ),
+	Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ), Add Term( {3, 1}, {4, 1} ),
+	Add Term( {3, 1}, {5, 1} ), Add Term( {4, 1}, {5, 1} ), Set N Whole Plots( 7 ),
+	Set Sample Size( 28 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
 
 ```
 
@@ -1866,7 +3151,24 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),	Add Factor( Continuous, -1, 1, "X6", 0 ), Add Factor( Continuous, -1, 1, "X7", 0 ),	Add Factor( Continuous, -1, 1, "X8", 0 ), Add Factor( Continuous, -1, 1, "X9", 0 ),	Add Factor( Continuous, -1, 1, "X10", 0 ), Add Factor( Continuous, -1, 1, "X11", 0 ),	Add Factor( Continuous, -1, 1, "X12", 0 ), Set Random Seed( 12345 ),	Number of Starts( 5 ), Add Term( {1, 0} ), Add Potential Term( {1, 1} ),	Add Potential Term( {2, 1} ), Add Potential Term( {3, 1} ), Add Potential Term( {4, 1} ),	Add Potential Term( {5, 1} ), Add Potential Term( {6, 1} ), Add Potential Term( {7, 1} ),	Add Potential Term( {8, 1} ), Add Potential Term( {9, 1} ), Add Potential Term( {10, 1} ),	Add Potential Term( {11, 1} ), Add Potential Term( {12, 1} ), Set Sample Size( 8 ),	Simulate Responses( 1 ), Save X Matrix( 0 ), Set Run Order( Randomize ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+	Add Factor( Continuous, -1, 1, "X6", 0 ), Add Factor( Continuous, -1, 1, "X7", 0 ),
+	Add Factor( Continuous, -1, 1, "X8", 0 ), Add Factor( Continuous, -1, 1, "X9", 0 ),
+	Add Factor( Continuous, -1, 1, "X10", 0 ), Add Factor( Continuous, -1, 1, "X11", 0 ),
+	Add Factor( Continuous, -1, 1, "X12", 0 ), Set Random Seed( 12345 ),
+	Number of Starts( 5 ), Add Term( {1, 0} ), Add Potential Term( {1, 1} ),
+	Add Potential Term( {2, 1} ), Add Potential Term( {3, 1} ), Add Potential Term( {4, 1} ),
+	Add Potential Term( {5, 1} ), Add Potential Term( {6, 1} ), Add Potential Term( {7, 1} ),
+	Add Potential Term( {8, 1} ), Add Potential Term( {9, 1} ), Add Potential Term( {10, 1} ),
+	Add Potential Term( {11, 1} ), Add Potential Term( {12, 1} ), Set Sample Size( 8 ),
+	Simulate Responses( 1 ), Save X Matrix( 0 ), Set Run Order( Randomize ), Make Design}
+);
 
 ```
 
@@ -1874,7 +3176,21 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),	Set Random Seed( 12345 ), Number of Starts( 10 ), Add Term( {1, 0} ), Add Term( {1, 1} ),	Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),	Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ),	Add Term( {1, 1}, {5, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),	Add Term( {2, 1}, {5, 1} ), Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ),	Add Term( {4, 1}, {5, 1} ), Set Sample Size( 16 ),	Optimality Criterion( "Make D-Optimal Design" ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+	Set Random Seed( 12345 ), Number of Starts( 10 ), Add Term( {1, 0} ), Add Term( {1, 1} ),
+	Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ),
+	Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ),
+	Add Term( {1, 1}, {5, 1} ), Add Term( {2, 1}, {3, 1} ), Add Term( {2, 1}, {4, 1} ),
+	Add Term( {2, 1}, {5, 1} ), Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ),
+	Add Term( {4, 1}, {5, 1} ), Set Sample Size( 16 ),
+	Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
 
 ```
 
@@ -1882,7 +3198,43 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Rating", 0, 20, . ), Add Factor( Blocking, 8, "Rater" ),	Add Factor( Categorical, {"Bernard", "Dijon"}, "Variety", 0 ),	Add Factor( Categorical, {"1", "2", "3", "4"}, "Field", 0 ),	Add Factor( Categorical, {"No", "Yes"}, "De-Stem", 0 ),	Add Factor( Categorical, {"Cultured", "Wild"}, "Yeast", 0 ),	Add Factor( Categorical, {"High", "Low"}, "Temperature", 0 ),	Add Factor( Categorical, {"Hard", "Soft"}, "Press", 0 ),	Add Factor( Categorical, {"New", "2 Years"}, "Barrel Age", 0 ),	Add Factor( Categorical, {"Air", "Kiln"}, "Barrel Seasoning", 0 ),	Add Factor( Categorical, {"No", "Yes"}, "Filtering", 0 ), Set Random Seed( 1234 ),	Number of Starts( 2 ), Add Term( {1, 0} ), Add Term( {2, 1} ), Add Term( {3, 1} ),	Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ), Add Term( {7, 1} ),	Add Term( {8, 1} ), Add Term( {9, 1} ), Add Term( {10, 1} ), Add Term( {1, 1} ),	Add Alias Term( {2, 1}, {3, 1} ), Add Alias Term( {2, 1}, {4, 1} ),	Add Alias Term( {2, 1}, {5, 1} ), Add Alias Term( {2, 1}, {6, 1} ),	Add Alias Term( {2, 1}, {7, 1} ), Add Alias Term( {2, 1}, {8, 1} ),	Add Alias Term( {2, 1}, {9, 1} ), Add Alias Term( {2, 1}, {10, 1} ),	Add Alias Term( {3, 1}, {4, 1} ), Add Alias Term( {3, 1}, {5, 1} ),	Add Alias Term( {3, 1}, {6, 1} ), Add Alias Term( {3, 1}, {7, 1} ),	Add Alias Term( {3, 1}, {8, 1} ), Add Alias Term( {3, 1}, {9, 1} ),	Add Alias Term( {3, 1}, {10, 1} ), Add Alias Term( {4, 1}, {5, 1} ),	Add Alias Term( {4, 1}, {6, 1} ), Add Alias Term( {4, 1}, {7, 1} ),	Add Alias Term( {4, 1}, {8, 1} ), Add Alias Term( {4, 1}, {9, 1} ),	Add Alias Term( {4, 1}, {10, 1} ), Add Alias Term( {5, 1}, {6, 1} ),	Add Alias Term( {5, 1}, {7, 1} ), Add Alias Term( {5, 1}, {8, 1} ),	Add Alias Term( {5, 1}, {9, 1} ), Add Alias Term( {5, 1}, {10, 1} ),	Add Alias Term( {6, 1}, {7, 1} ), Add Alias Term( {6, 1}, {8, 1} ),	Add Alias Term( {6, 1}, {9, 1} ), Add Alias Term( {6, 1}, {10, 1} ),	Add Alias Term( {7, 1}, {8, 1} ), Add Alias Term( {7, 1}, {9, 1} ),	Add Alias Term( {7, 1}, {10, 1} ), Add Alias Term( {8, 1}, {9, 1} ),	Add Alias Term( {8, 1}, {10, 1} ), Add Alias Term( {9, 1}, {10, 1} ),	Set Sample Size( 40 ), Simulate Responses( 0 ), Save X Matrix( 0 ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Rating", 0, 20, . ), Add Factor( Blocking, 8, "Rater" ),
+	Add Factor( Categorical, {"Bernard", "Dijon"}, "Variety", 0 ),
+	Add Factor( Categorical, {"1", "2", "3", "4"}, "Field", 0 ),
+	Add Factor( Categorical, {"No", "Yes"}, "De-Stem", 0 ),
+	Add Factor( Categorical, {"Cultured", "Wild"}, "Yeast", 0 ),
+	Add Factor( Categorical, {"High", "Low"}, "Temperature", 0 ),
+	Add Factor( Categorical, {"Hard", "Soft"}, "Press", 0 ),
+	Add Factor( Categorical, {"New", "2 Years"}, "Barrel Age", 0 ),
+	Add Factor( Categorical, {"Air", "Kiln"}, "Barrel Seasoning", 0 ),
+	Add Factor( Categorical, {"No", "Yes"}, "Filtering", 0 ), Set Random Seed( 1234 ),
+	Number of Starts( 2 ), Add Term( {1, 0} ), Add Term( {2, 1} ), Add Term( {3, 1} ),
+	Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ), Add Term( {7, 1} ),
+	Add Term( {8, 1} ), Add Term( {9, 1} ), Add Term( {10, 1} ), Add Term( {1, 1} ),
+	Add Alias Term( {2, 1}, {3, 1} ), Add Alias Term( {2, 1}, {4, 1} ),
+	Add Alias Term( {2, 1}, {5, 1} ), Add Alias Term( {2, 1}, {6, 1} ),
+	Add Alias Term( {2, 1}, {7, 1} ), Add Alias Term( {2, 1}, {8, 1} ),
+	Add Alias Term( {2, 1}, {9, 1} ), Add Alias Term( {2, 1}, {10, 1} ),
+	Add Alias Term( {3, 1}, {4, 1} ), Add Alias Term( {3, 1}, {5, 1} ),
+	Add Alias Term( {3, 1}, {6, 1} ), Add Alias Term( {3, 1}, {7, 1} ),
+	Add Alias Term( {3, 1}, {8, 1} ), Add Alias Term( {3, 1}, {9, 1} ),
+	Add Alias Term( {3, 1}, {10, 1} ), Add Alias Term( {4, 1}, {5, 1} ),
+	Add Alias Term( {4, 1}, {6, 1} ), Add Alias Term( {4, 1}, {7, 1} ),
+	Add Alias Term( {4, 1}, {8, 1} ), Add Alias Term( {4, 1}, {9, 1} ),
+	Add Alias Term( {4, 1}, {10, 1} ), Add Alias Term( {5, 1}, {6, 1} ),
+	Add Alias Term( {5, 1}, {7, 1} ), Add Alias Term( {5, 1}, {8, 1} ),
+	Add Alias Term( {5, 1}, {9, 1} ), Add Alias Term( {5, 1}, {10, 1} ),
+	Add Alias Term( {6, 1}, {7, 1} ), Add Alias Term( {6, 1}, {8, 1} ),
+	Add Alias Term( {6, 1}, {9, 1} ), Add Alias Term( {6, 1}, {10, 1} ),
+	Add Alias Term( {7, 1}, {8, 1} ), Add Alias Term( {7, 1}, {9, 1} ),
+	Add Alias Term( {7, 1}, {10, 1} ), Add Alias Term( {8, 1}, {9, 1} ),
+	Add Alias Term( {8, 1}, {10, 1} ), Add Alias Term( {9, 1}, {10, 1} ),
+	Set Sample Size( 40 ), Simulate Responses( 0 ), Save X Matrix( 0 ), Make Design}
+);
 
 ```
 
@@ -1890,7 +3242,18 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Match Target, "Y", 54, 56, . ), Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),	Set Random Seed( 929281409 ), Number of Starts( 40 ), Add Term( {1, 0} ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 2} ),	Add Term( {1, 1}, {2, 1} ), Add Term( {2, 2} ), Add Term( {1, 1}, {3, 1} ),	Add Term( {2, 1}, {3, 1} ), Add Term( {3, 2} ), Set Sample Size( 16 ),	Optimality Criterion( 2 ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Match Target, "Y", 54, 56, . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Set Random Seed( 929281409 ), Number of Starts( 40 ), Add Term( {1, 0} ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 2} ),
+	Add Term( {1, 1}, {2, 1} ), Add Term( {2, 2} ), Add Term( {1, 1}, {3, 1} ),
+	Add Term( {2, 1}, {3, 1} ), Add Term( {3, 2} ), Set Sample Size( 16 ),
+	Optimality Criterion( 2 ), Make Design}
+);
 
 ```
 
@@ -1898,7 +3261,16 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Blocking, 4, "X3" ),	Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {1, 0} ), Add Term( {1, 1} ),	Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 2} ), Add Term( {1, 1}, {2, 1} ),	Add Term( {2, 2} ), Set Sample Size( 12 ), Optimality Criterion( 2 ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Blocking, 4, "X3" ),
+	Set Random Seed( 12345 ), Number of Starts( 5 ), Add Term( {1, 0} ), Add Term( {1, 1} ),
+	Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 2} ), Add Term( {1, 1}, {2, 1} ),
+	Add Term( {2, 2} ), Set Sample Size( 12 ), Optimality Criterion( 2 ), Make Design}
+);
 
 ```
 
@@ -1906,7 +3278,24 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Minimize, "OCV", ., ., . ), Add Factor( Continuous, -1, 1, "A1", 2 ),	Add Factor( Continuous, -1, 1, "A2", 2 ), Add Factor( Continuous, -1, 1, "A3", 2 ),	Add Factor( Continuous, -1, 1, "A4", 2 ), Add Factor( Continuous, -1, 1, "C1", 1 ),	Add Factor( Continuous, -1, 1, "C2", 1 ), Set Random Seed( 1866762673 ),	Number of Starts( 21 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),	Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ),	Add Term( {1, 1}, {5, 1} ), Add Term( {1, 1}, {6, 1} ), Add Term( {2, 1}, {3, 1} ),	Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ), Add Term( {2, 1}, {6, 1} ),	Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {3, 1}, {6, 1} ),	Add Term( {4, 1}, {5, 1} ), Add Term( {4, 1}, {6, 1} ), Add Term( {5, 1}, {6, 1} ),	Make Strip Plot Design, Set N Whole Plots( 16 ), Set N Subplots( 6 ),	Set Sample Size( 48 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Minimize, "OCV", ., ., . ), Add Factor( Continuous, -1, 1, "A1", 2 ),
+	Add Factor( Continuous, -1, 1, "A2", 2 ), Add Factor( Continuous, -1, 1, "A3", 2 ),
+	Add Factor( Continuous, -1, 1, "A4", 2 ), Add Factor( Continuous, -1, 1, "C1", 1 ),
+	Add Factor( Continuous, -1, 1, "C2", 1 ), Set Random Seed( 1866762673 ),
+	Number of Starts( 21 ), Add Term( {1, 0} ), Add Term( {1, 1} ), Add Term( {2, 1} ),
+	Add Term( {3, 1} ), Add Term( {4, 1} ), Add Term( {5, 1} ), Add Term( {6, 1} ),
+	Add Term( {1, 1}, {2, 1} ), Add Term( {1, 1}, {3, 1} ), Add Term( {1, 1}, {4, 1} ),
+	Add Term( {1, 1}, {5, 1} ), Add Term( {1, 1}, {6, 1} ), Add Term( {2, 1}, {3, 1} ),
+	Add Term( {2, 1}, {4, 1} ), Add Term( {2, 1}, {5, 1} ), Add Term( {2, 1}, {6, 1} ),
+	Add Term( {3, 1}, {4, 1} ), Add Term( {3, 1}, {5, 1} ), Add Term( {3, 1}, {6, 1} ),
+	Add Term( {4, 1}, {5, 1} ), Add Term( {4, 1}, {6, 1} ), Add Term( {5, 1}, {6, 1} ),
+	Make Strip Plot Design, Set N Whole Plots( 16 ), Set N Subplots( 6 ),
+	Set Sample Size( 48 ), Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
 
 ```
 
@@ -1914,7 +3303,27 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Group Orthogonal Supersaturated Design,	{GOSSDStructure( 12, 16, 4, 4 ), ChangeFactorSettings( 1, Continuous, -1, 1, "Fake 1" ),	ChangeFactorSettings( 2, Continuous, -1, 1, "Fake 2" ),	ChangeFactorSettings( 3, Continuous, -1, 1, "Fake 3" ),	ChangeFactorSettings( 4, Continuous, -1, 1, "X4" ),	ChangeFactorSettings( 5, Continuous, -1, 1, "X5" ),	ChangeFactorSettings( 6, Continuous, -1, 1, "X6" ),	ChangeFactorSettings( 7, Continuous, -1, 1, "X7" ),	ChangeFactorSettings( 8, Continuous, -1, 1, "X8" ),	ChangeFactorSettings( 9, Continuous, -1, 1, "X9" ),	ChangeFactorSettings( 10, Continuous, -1, 1, "X10" ),	ChangeFactorSettings( 11, Continuous, -1, 1, "X11" ),	ChangeFactorSettings( 12, Continuous, -1, 1, "X12" ),	ChangeFactorSettings( 13, Continuous, -1, 1, "X13" ),	ChangeFactorSettings( 14, Continuous, -1, 1, "X14" ),	ChangeFactorSettings( 15, Continuous, -1, 1, "X15" ), Make Design,	Simulate Responses( 0 )});
+
+
+DOE(
+	Group Orthogonal Supersaturated Design,
+	{GOSSDStructure( 12, 16, 4, 4 ), ChangeFactorSettings( 1, Continuous, -1, 1, "Fake 1" ),
+	ChangeFactorSettings( 2, Continuous, -1, 1, "Fake 2" ),
+	ChangeFactorSettings( 3, Continuous, -1, 1, "Fake 3" ),
+	ChangeFactorSettings( 4, Continuous, -1, 1, "X4" ),
+	ChangeFactorSettings( 5, Continuous, -1, 1, "X5" ),
+	ChangeFactorSettings( 6, Continuous, -1, 1, "X6" ),
+	ChangeFactorSettings( 7, Continuous, -1, 1, "X7" ),
+	ChangeFactorSettings( 8, Continuous, -1, 1, "X8" ),
+	ChangeFactorSettings( 9, Continuous, -1, 1, "X9" ),
+	ChangeFactorSettings( 10, Continuous, -1, 1, "X10" ),
+	ChangeFactorSettings( 11, Continuous, -1, 1, "X11" ),
+	ChangeFactorSettings( 12, Continuous, -1, 1, "X12" ),
+	ChangeFactorSettings( 13, Continuous, -1, 1, "X13" ),
+	ChangeFactorSettings( 14, Continuous, -1, 1, "X14" ),
+	ChangeFactorSettings( 15, Continuous, -1, 1, "X15" ), Make Design,
+	Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1922,7 +3331,15 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-Open( "$SAMPLE_DATA/Design Experiment/Candy Profiles.jmp" );DOE(	MaxDiff Design,	X( :Candy ),	{Set Number of Profiles( 4 ), Set Number of Choice Sets( 7 ), Make Design,	Simulate Responses( 0 )});
+
+
+Open( "$SAMPLE_DATA/Design Experiment/Candy Profiles.jmp" );
+DOE(
+	MaxDiff Design,
+	X( :Candy ),
+	{Set Number of Profiles( 4 ), Set Number of Choice Sets( 7 ), Make Design,
+	Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1930,7 +3347,16 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Mixture Design,	{Add Response( Maximize, "Y", ., ., . ), Change Factor Settings( 1, 0.05, 0.25, "X1" ),	Change Factor Settings( 2, 0.1, 0.3, "X2" ), Change Factor Settings( 3, 0.1, 0.3, "X3" ),	Add Factor( Mixture, 0.1, 0.4, "X4", 0 ), Add Factor( Mixture, 0.05, 0.25, "X5", 0 ),	Set Random Seed( 1409 ), Mixture Design Type( Extreme Vertices, 4 ), Find Subset( 10 ),	Simulate Responses( 0 )});
+
+
+DOE(
+	Mixture Design,
+	{Add Response( Maximize, "Y", ., ., . ), Change Factor Settings( 1, 0.05, 0.25, "X1" ),
+	Change Factor Settings( 2, 0.1, 0.3, "X2" ), Change Factor Settings( 3, 0.1, 0.3, "X3" ),
+	Add Factor( Mixture, 0.1, 0.4, "X4", 0 ), Add Factor( Mixture, 0.05, 0.25, "X5", 0 ),
+	Set Random Seed( 1409 ), Mixture Design Type( Extreme Vertices, 4 ), Find Subset( 10 ),
+	Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1938,7 +3364,18 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Custom Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Mixture, 0, 1, "X1", 0 ),	Add Factor( Mixture, 0, 1, "X2", 0 ), Add Factor( Mixture, 0, 1, "X3", 0 ),	Set Random Seed( 1409 ), Number of Starts( 2 ), Add Constraint( [1 1 0 0.8] ),	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ),	Add Term( {1, 1}, {3, 1} ), Add Term( {2, 1}, {3, 1} ), Center Points( 2 ),	Set Sample Size( 12 ), Simulate Responses( 0 ), Save X Matrix( 0 ),	Optimality Criterion( "Make D-Optimal Design" ), Make Design});
+
+
+DOE(
+	Custom Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Mixture, 0, 1, "X1", 0 ),
+	Add Factor( Mixture, 0, 1, "X2", 0 ), Add Factor( Mixture, 0, 1, "X3", 0 ),
+	Set Random Seed( 1409 ), Number of Starts( 2 ), Add Constraint( [1 1 0 0.8] ),
+	Add Term( {1, 1} ), Add Term( {2, 1} ), Add Term( {3, 1} ), Add Term( {1, 1}, {2, 1} ),
+	Add Term( {1, 1}, {3, 1} ), Add Term( {2, 1}, {3, 1} ), Center Points( 2 ),
+	Set Sample Size( 12 ), Simulate Responses( 0 ), Save X Matrix( 0 ),
+	Optimality Criterion( "Make D-Optimal Design" ), Make Design}
+);
 
 ```
 
@@ -1946,7 +3383,21 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	MSA Design,	{Add Response( None, "Y", ., ., . ), Add Factor(		Categorical,		{"1", "2", "3", "4", "5"},		"Part",		MSA( 2, 1 )	), Add Factor( Categorical, {"1", "2", "3"}, "Operator", MSA( 1, 1 ) ),	Add Factor( Categorical, {"Lab A", "Lab B", "Lab C"}, "Lab", MSA( 3, 1 ) ),	Set Random Seed( 123 ), Replicates( 5, 0 ),	Nesting Structure( {"Lab", {"Operator" || "Part"}} ), Make Design,	Simulate Responses( 0 )});
+
+
+DOE(
+	MSA Design,
+	{Add Response( None, "Y", ., ., . ), Add Factor(
+		Categorical,
+		{"1", "2", "3", "4", "5"},
+		"Part",
+		MSA( 2, 1 )
+	), Add Factor( Categorical, {"1", "2", "3"}, "Operator", MSA( 1, 1 ) ),
+	Add Factor( Categorical, {"Lab A", "Lab B", "Lab C"}, "Lab", MSA( 3, 1 ) ),
+	Set Random Seed( 123 ), Replicates( 5, 0 ),
+	Nesting Structure( {"Lab", {"Operator" || "Part"}} ), Make Design,
+	Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1954,7 +3405,15 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Space Filling Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, 0, 1, "X1", 0 ),	Add Factor( Continuous, 0, 1, "X2", 0 ), Set Random Seed( 765 ),	Add Constraint( [1 1 0.8] ), FFF Optimality Criterion( MaxPro ),	Space Filling Design Type( Fast Flexible Filling, 200 ), Simulate Responses( 0 )});
+
+
+DOE(
+	Space Filling Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, 0, 1, "X1", 0 ),
+	Add Factor( Continuous, 0, 1, "X2", 0 ), Set Random Seed( 765 ),
+	Add Constraint( [1 1 0.8] ), FFF Optimality Criterion( MaxPro ),
+	Space Filling Design Type( Fast Flexible Filling, 200 ), Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1962,7 +3421,14 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Space Filling Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, 0, 1, "X1", 0 ),	Add Factor( Continuous, 0, 1, "X2", 0 ), Set Random Seed( 765 ),	Space Filling Design Type( Sphere Packing, 8 ), Simulate Responses( 0 )});
+
+
+DOE(
+	Space Filling Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, 0, 1, "X1", 0 ),
+	Add Factor( Continuous, 0, 1, "X2", 0 ), Set Random Seed( 765 ),
+	Space Filling Design Type( Sphere Packing, 8 ), Simulate Responses( 0 )}
+);
 
 ```
 
@@ -1970,7 +3436,20 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Screening Design,	{Add Response( Match Target, "Depth", 0.12, 0.22, . ),	Add Factor( Continuous, 3, 5, "Speed", 0 ), Add Factor(		Continuous, 150, 165, "Current", 0	), Add Factor( Continuous, 20, 30, "Wall Size", 0 ),	Add Factor( Categorical, {"John", "Mary"}, "Operator", 0 ),	Add Factor( Categorical, {"Conductance", "Keyhole"}, "Mode", 0 ),	Add Factor( Categorical, {"Double", "Single"}, "Geometry", 0 ),	Add Factor( Categorical, {"Aluminum", "Magnesium"}, "Material", 0 ),	Set Random Seed( 12345 ), Make Design( 1 ), Simulate Responses( 0 ), Save X Matrix( 0 )});
+
+
+DOE(
+	Screening Design,
+	{Add Response( Match Target, "Depth", 0.12, 0.22, . ),
+	Add Factor( Continuous, 3, 5, "Speed", 0 ), Add Factor(
+		Continuous, 150, 165, "Current", 0
+	), Add Factor( Continuous, 20, 30, "Wall Size", 0 ),
+	Add Factor( Categorical, {"John", "Mary"}, "Operator", 0 ),
+	Add Factor( Categorical, {"Conductance", "Keyhole"}, "Mode", 0 ),
+	Add Factor( Categorical, {"Double", "Single"}, "Geometry", 0 ),
+	Add Factor( Categorical, {"Aluminum", "Magnesium"}, "Material", 0 ),
+	Set Random Seed( 12345 ), Make Design( 1 ), Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
 
 ```
 
@@ -1978,7 +3457,22 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Screening Design,	{Add Response( Match Target, "Depth", 0.12, 0.22, . ),	Add Factor( Continuous, 3, 5, "Speed", 0 ), Add Factor(		Continuous, 150, 165, "Current", 0	), Add Factor( Continuous, 20, 30, "Wall Size", 0 ),	Add Factor( Categorical, {"John", "Mary"}, "Operator", 0 ),	Add Factor( Categorical, {"Conductance", "Keyhole"}, "Mode", 0 ),	Add Factor( Categorical, {"Double", "Single"}, "Geometry", 0 ),	Add Factor( Categorical, {"Aluminum", "Magnesium"}, "Material", 0 ),	Set Random Seed( 12345 ), Screening Type( 1 ), Number of Starts( 1 ),	Number of Column Starts( 50 ), Set Sample Size( 12 ), Make Design,	Simulate Responses( 0 ), Save X Matrix( 0 )});
+
+
+DOE(
+	Screening Design,
+	{Add Response( Match Target, "Depth", 0.12, 0.22, . ),
+	Add Factor( Continuous, 3, 5, "Speed", 0 ), Add Factor(
+		Continuous, 150, 165, "Current", 0
+	), Add Factor( Continuous, 20, 30, "Wall Size", 0 ),
+	Add Factor( Categorical, {"John", "Mary"}, "Operator", 0 ),
+	Add Factor( Categorical, {"Conductance", "Keyhole"}, "Mode", 0 ),
+	Add Factor( Categorical, {"Double", "Single"}, "Geometry", 0 ),
+	Add Factor( Categorical, {"Aluminum", "Magnesium"}, "Material", 0 ),
+	Set Random Seed( 12345 ), Screening Type( 1 ), Number of Starts( 1 ),
+	Number of Column Starts( 50 ), Set Sample Size( 12 ), Make Design,
+	Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
 
 ```
 
@@ -1986,7 +3480,18 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Screening Design,	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X6", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X7", 0 ),	Add Factor( Categorical, {"L1", "L2"}, "X8", 0 ), Set Random Seed( 12345 ),	Screening Type( 2, 2, 16 ), Make Design, Simulate Responses( 0 ), Save X Matrix( 0 )});
+
+
+DOE(
+	Screening Design,
+	{Add Response( Maximize, "Y", ., ., . ), Add Factor( Continuous, -1, 1, "X1", 0 ),
+	Add Factor( Continuous, -1, 1, "X2", 0 ), Add Factor( Continuous, -1, 1, "X3", 0 ),
+	Add Factor( Continuous, -1, 1, "X4", 0 ), Add Factor( Continuous, -1, 1, "X5", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X6", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X7", 0 ),
+	Add Factor( Categorical, {"L1", "L2"}, "X8", 0 ), Set Random Seed( 12345 ),
+	Screening Type( 2, 2, 16 ), Make Design, Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
 
 ```
 
@@ -1994,7 +3499,18 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Full Factorial Design,	{Add Response( Maximize, "Percent Reacted", 90, 100, 1 ),	Add Factor( Continuous, {10, 15}, "Feed Rate", 0 ),	Add Factor( Continuous, {1, 2}, "Catalyst", 0 ),	Add Factor( Continuous, {100, 120}, "Stir Rate", 0 ),	Add Factor( Continuous, {140, 180}, "Temperature", 0 ),	Add Factor( Continuous, {3, 6}, "Concentration", 0 ), Set Random Seed( 12345 ),	Make Design});
+
+
+DOE(
+	Full Factorial Design,
+	{Add Response( Maximize, "Percent Reacted", 90, 100, 1 ),
+	Add Factor( Continuous, {10, 15}, "Feed Rate", 0 ),
+	Add Factor( Continuous, {1, 2}, "Catalyst", 0 ),
+	Add Factor( Continuous, {100, 120}, "Stir Rate", 0 ),
+	Add Factor( Continuous, {140, 180}, "Temperature", 0 ),
+	Add Factor( Continuous, {3, 6}, "Concentration", 0 ), Set Random Seed( 12345 ),
+	Make Design}
+);
 
 ```
 
@@ -2002,7 +3518,16 @@ Open( "$SAMPLE_DATA/Design Experiment/Runners Covariates.jmp" );Wait( 0 );DOE(
 
 ```jsl
 
-DOE(	Response Surface Design,	{Add Response( Match Target, "Stretch", 350, 550, 1 ),	Change Factor Settings( 1, 0.7, 1.7, "Silica" ),	Change Factor Settings( 2, 1.8, 2.8, "Sulfur" ),	Add Factor( Continuous, 40, 60, "Silane", 0 ), Set Random Seed( 12345 ), Make Design( 1 ),	Center Points( 3 ), Simulate Responses( 0 ), Save X Matrix( 0 )});
+
+
+DOE(
+	Response Surface Design,
+	{Add Response( Match Target, "Stretch", 350, 550, 1 ),
+	Change Factor Settings( 1, 0.7, 1.7, "Silica" ),
+	Change Factor Settings( 2, 1.8, 2.8, "Sulfur" ),
+	Add Factor( Continuous, 40, 60, "Silane", 0 ), Set Random Seed( 12345 ), Make Design( 1 ),
+	Center Points( 3 ), Simulate Responses( 0 ), Save X Matrix( 0 )}
+);
 
 ```
 

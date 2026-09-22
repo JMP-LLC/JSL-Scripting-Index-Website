@@ -12,7 +12,9 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
 
 ```
 
@@ -28,7 +30,9 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ), By( :SITEID ) );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ), By( :SITEID ) );
 
 ```
 
@@ -40,7 +44,9 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
 
 ```
 
@@ -56,7 +62,16 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Rows for Linear Relationship( 3 ),	Linear Relationships( 1 ));obj << Colorize Linear Relationships;Wait( 2 );obj << Clear Cell Colors;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Rows for Linear Relationship( 3 ),
+	Linear Relationships( 1 )
+);
+obj << Colorize Linear Relationships;
+Wait( 2 );
+obj << Clear Cell Colors;
 
 ```
 
@@ -70,7 +85,13 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Duplicates Across Columns( 1 ));obj << Colorize Duplicates Across Columns;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Duplicates Across Columns( 1 )
+);
+obj << Colorize Duplicates Across Columns;
 
 ```
 
@@ -84,7 +105,14 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Rows for Linear Relationship( 3 ),	Linear Relationships( 1 ));obj << Colorize Linear Relationships;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Rows for Linear Relationship( 3 ),
+	Linear Relationships( 1 )
+);
+obj << Colorize Linear Relationships;
 
 ```
 
@@ -98,7 +126,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Processes" ) ),	Distribution wrt Spec Limits( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Processes" ) ),
+	Distribution wrt Spec Limits( 1 )
+);
 
 ```
 
@@ -112,7 +145,12 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Duplicates Across Columns( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Duplicates Across Columns( 1 )
+);
 
 ```
 
@@ -126,7 +164,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Formatted Widths( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Formatted Widths( 1 )
+);
 
 ```
 
@@ -140,7 +183,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Fraction Length( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Fraction Length( 1 )
+);
 
 ```
 
@@ -154,7 +202,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Include Missing( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Include Missing( 1 )
+);
 
 ```
 
@@ -168,7 +221,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Leading and Trailing Digits( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Leading and Trailing Digits( 1 )
+);
 
 ```
 
@@ -182,7 +240,13 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Rows for Linear Relationship( 3 ),	Linear Relationships( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Rows for Linear Relationship( 3 ),
+	Linear Relationships( 1 )
+);
 
 ```
 
@@ -196,7 +260,14 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Longest Duplicated Sequences( 0 ));Wait( 2 );obj << Longest Duplicated Sequences( 1 );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Longest Duplicated Sequences( 0 )
+);
+Wait( 2 );
+obj << Longest Duplicated Sequences( 1 );
 
 ```
 
@@ -210,7 +281,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ), Longest Runs( 0 ) );Wait( 2 );obj << Longest Runs( 1 );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ), Longest Runs( 0 ) );
+Wait( 2 );
+obj << Longest Runs( 1 );
 
 ```
 
@@ -224,7 +299,13 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Cross Column Duplicate Run Size( 3 ),	Duplicates Across Columns( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Cross Column Duplicate Run Size( 3 ),
+	Duplicates Across Columns( 1 )
+);
 
 ```
 
@@ -238,7 +319,13 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Longest Duplicate Size( 5 ),);
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Longest Duplicate Size( 5 ),
+
+);
 
 ```
 
@@ -252,7 +339,13 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Rows for Linear Relationship( 3 ),	Linear Relationships( 1 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Rows for Linear Relationship( 3 ),
+	Linear Relationships( 1 )
+);
 
 ```
 
@@ -266,7 +359,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Run Size( 3 ));
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Run Size( 3 )
+);
 
 ```
 
@@ -280,7 +378,14 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Most Duplicated Values( 0 ));Wait( 2 );obj << Most Duplicated Values( 1 );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Most Duplicated Values( 0 )
+);
+Wait( 2 );
+obj << Most Duplicated Values( 1 );
 
 ```
 
@@ -294,7 +399,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );Wait( 2 );obj << Order by Column Name;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+Wait( 2 );
+obj << Order by Column Name;
 
 ```
 
@@ -308,7 +417,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );Wait( 2 );obj << Order by Runs Rarity;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+Wait( 2 );
+obj << Order by Runs Rarity;
 
 ```
 
@@ -322,7 +435,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );Wait( 2 );obj << Order by Sequence Rarity;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+Wait( 2 );
+obj << Order by Sequence Rarity;
 
 ```
 
@@ -336,7 +453,14 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Order by Sequence Rarity);Wait( 2 );obj << Original Order;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Order by Sequence Rarity
+);
+Wait( 2 );
+obj << Original Order;
 
 ```
 
@@ -350,7 +474,13 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Duplicates Across Columns( 1 ));obj << Save Duplicates Across Columns;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Duplicates Across Columns( 1 )
+);
+obj << Save Duplicates Across Columns;
 
 ```
 
@@ -364,7 +494,14 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	Minimum Rows for Linear Relationship( 3 ),	Linear Relationships( 1 ));obj << Save Linear Relationships;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	Minimum Rows for Linear Relationship( 3 ),
+	Linear Relationships( 1 )
+);
+obj << Save Linear Relationships;
 
 ```
 
@@ -378,7 +515,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Save Table of Duplicate Sequences;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Save Table of Duplicate Sequences;
 
 ```
 
@@ -392,7 +532,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Save Table of Runs;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Save Table of Runs;
 
 ```
 
@@ -406,7 +549,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Select Columns( {:BUN, :Creatinine, :Glucose} );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Select Columns( {:BUN, :Creatinine, :Glucose} );
 
 ```
 
@@ -420,7 +566,9 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Processes" ) ), Spec Limit Matches( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Processes" ) ), Spec Limit Matches( 1 ) );
 
 ```
 
@@ -434,7 +582,13 @@ dt = Open( "$SAMPLE_DATA/Semiconductor Capability.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -450,7 +604,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -458,7 +619,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -466,7 +631,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -478,7 +647,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -492,7 +665,13 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -504,7 +683,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -516,7 +701,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -528,7 +725,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Copy Script;
 
 ```
 
@@ -540,7 +740,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Data Table Window;
 
 ```
 
@@ -554,7 +757,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -566,7 +772,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -580,7 +799,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -588,7 +811,28 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -600,7 +844,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -612,7 +860,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -624,7 +877,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -636,7 +893,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -648,7 +909,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -660,7 +925,11 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -674,7 +943,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -686,7 +959,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -698,7 +978,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -712,7 +1000,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -724,7 +1015,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -736,7 +1036,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Redo Analysis;
 
 ```
 
@@ -748,7 +1051,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -760,7 +1066,15 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -772,19 +1086,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**Syntax:** obj &lt;&lt; Report; Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -796,7 +1125,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -808,7 +1140,19 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -820,7 +1164,19 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -832,7 +1188,19 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Explore Patterns(
+	Y( Column Group( "Laboratory Results" ) ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -844,7 +1212,15 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -854,19 +1230,17 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
-**Example 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**Example 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Explore Patterns(	Y( Column Group( "Laboratory Results" ) ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -878,7 +1252,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );dt << New Column( "_by
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -890,7 +1267,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -902,7 +1282,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Save Script to Report;
 
 ```
 
@@ -914,7 +1297,10 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -926,7 +1312,16 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -938,7 +1333,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -950,7 +1359,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -962,7 +1377,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -974,7 +1394,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -986,7 +1409,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );
+obj = dt << Explore Patterns( Y( Column Group( "Laboratory Results" ) ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -1000,7 +1428,12 @@ dt = Open( "$SAMPLE_DATA/Nicardipine Lab Patterns.jmp" );obj = dt << Explore Pa
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -1012,7 +1445,10 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
@@ -1024,7 +1460,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 

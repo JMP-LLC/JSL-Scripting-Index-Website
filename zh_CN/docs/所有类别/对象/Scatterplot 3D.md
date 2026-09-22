@@ -12,7 +12,13 @@
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -28,7 +34,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Y( :height ),	X( :
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );Wait( 1 );obj2 << Apply Preset( preset );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
 
 ```
 
@@ -36,7 +49,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ```
 
@@ -44,7 +61,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ) );Wait( 1 );obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ```
 
@@ -56,7 +77,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Automatic Recalc( 1 );dt << Select Rows( 5 ) << Exclude( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
 
 ```
 
@@ -70,7 +95,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart Builder(	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),	By( :OPERATOR ));objs[1] << Broadcast( Save Summaries );
+
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
 
 ```
 
@@ -82,7 +113,13 @@ dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );objs = Control Chart B
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
 
 ```
 
@@ -94,7 +131,19 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Copy ByGroup Script;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Copy ByGroup Script;
 
 ```
 
@@ -106,7 +155,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Copy Script;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Copy Script;
 
 ```
 
@@ -118,7 +170,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Data Table Window;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Data Table Window;
 
 ```
 
@@ -132,7 +187,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv << Get By Levels;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
 
 ```
 
@@ -144,7 +202,20 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));t = obj[1] << Get ByGroup Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+t = obj << Get ByGroup Script;
+Show( t );
 
 ```
 
@@ -158,7 +229,28 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Panel( 0 ),	Variables( X( :height ), Y( :weight ) ),	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),	Local Data Filter(		Add Filter(			columns( :age, :sex, :height ),			Where( :age == {12, 13, 14} ),			Where( :sex == "F" ),			Where( :height >= 55 ),			Display( :age, N Items( 6 ) )		)	));New Window( "platform boxes",	H List Box(		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )	));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
 
 ```
 
@@ -166,7 +258,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );gb = Graph Builder(	Show Control Pan
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Container;Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ```
 
@@ -178,7 +274,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Datatable;Show( N Rows( t ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+t = obj << Get Datatable;
+Show( N Rows( t ) );
 
 ```
 
@@ -190,7 +290,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );group = biv[1] << Get Group Platform;Wait( 1 );group << Layout( "Arrange in Tabs" );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
 
 ```
 
@@ -202,7 +307,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Y( :weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Script;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+t = obj << Get Script;
+Show( t );
 
 ```
 
@@ -214,7 +323,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Script With Data Table;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+t = obj << Get Script With Data Table;
+Show( t );
 
 ```
 
@@ -226,7 +339,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Get Timing;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+t = obj << Get Timing;
+Show( t );
 
 ```
 
@@ -238,7 +355,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );s = obj << Get Web Support();Show( s );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
 
 ```
 
@@ -252,7 +373,11 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ```
 
@@ -264,7 +389,14 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( X( :height ), 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Preferences( 1 ),	Y( :height ),	X( :weight ),	Action( Distribution( Y( :height, :weight ), Histograms Only ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
 
 ```
 
@@ -276,7 +408,15 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Bivariate(	Ignore Platform Pre
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
 
 ```
 
@@ -290,7 +430,10 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dt << Distribution(	Nominal Distribut
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );preset = obj << New Preset();
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
 
 ```
 
@@ -302,7 +445,16 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Oneway( Y( :height ), X( 
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );filter = dist << Local Data Filter(	Add Filter( columns( :Region ), Where( :Region == "MW" ) ));filter << Copy Local Data Filter;dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );Wait( 1 );dist2 << Paste Local Data Filter;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
 
 ```
 
@@ -314,7 +466,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Redo Analysis;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Redo Analysis;
 
 ```
 
@@ -326,7 +481,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Relaunch Analysis;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Relaunch Analysis;
 
 ```
 
@@ -338,7 +496,15 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X( :marital status ) );ColumnSwitcherObject = obj << Column Switcher(	:marital status,	{:sex, :country, :marital status});Wait( 2 );obj << Remove Column Switcher;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
 
 ```
 
@@ -350,19 +516,34 @@ dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );obj = dt << Contingency( Y( :size ), X
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );dist = dt << Distribution(	Nominal Distribution( Column( :country ) ),	Local Data Filter(		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),		Mode( Show( 1 ), Include( 1 ) )	));Wait( 2 );dist << remove local data filter;
+
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
 
 ```
 
 ### Report
 
-**语法:** obj &lt;&lt; Report; Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );r = obj << Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -374,7 +555,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Report View( "Summary" );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Report View( "Summary" );
 
 ```
 
@@ -386,7 +570,19 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Data Table;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Data Table;
 
 ```
 
@@ -398,7 +594,19 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Journal;
 
 ```
 
@@ -410,7 +618,19 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save ByGroup Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
+obj << Save ByGroup Script to Script Window;
 
 ```
 
@@ -422,7 +642,15 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script for All Objects;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects;
 
 ```
 
@@ -432,19 +660,17 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
-**示例 1**
-
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table;
 
-```
-
-**示例 2**
-
-```jsl
-
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));obj[1] << Save Script for All Objects To Data Table( "My Script" );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "report",
+	H List Box(
+		biv = dt << Run Script( "Bivariate" ),
+		dist = dt << Run Script( "Distribution" )
+	)
+);
+biv << Save Script for All Objects To Data Table;
 
 ```
 
@@ -456,7 +682,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
 
 ```
 
@@ -468,7 +697,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Journal;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Save Script to Journal;
 
 ```
 
@@ -480,7 +712,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Report;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Save Script to Report;
 
 ```
 
@@ -492,7 +727,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Save Script to Script Window;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Save Script to Script Window;
 
 ```
 
@@ -504,7 +742,16 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	SendToByGroup(		{:sex == "F"},		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )	),	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
 
 ```
 
@@ -516,7 +763,21 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );dt << Life Distribution(	Y( :Time ),	Censor( :Censor ),	Censor Code( 1 ),	<<Fit Weibull,	SendToEmbeddedScriptable(		Dispatch(			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}		)	));
+
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
 
 ```
 
@@ -528,7 +789,13 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	By( :Sex ),	Sen
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribution( Column( :age ) ),	Continuous Distribution( Column( :weight ) ),	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
 
 ```
 
@@ -540,7 +807,12 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Nominal Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribution( Column( :POP ) ) );Wait( 1 );dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );dist << Sync To Data Table Changes;
+
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
 
 ```
 
@@ -552,7 +824,10 @@ dt = Open( "$SAMPLE_DATA/Cities.jmp" );dist = Distribution( Continuous Distribu
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Title( "My Platform" );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Title( "My Platform" );
 
 ```
 
@@ -564,7 +839,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );r = obj << Top Report;t = r[Outline Box( 1 )] << Get Title;Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
 
 ```
 
@@ -580,7 +860,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),	Continuous Distribution( Column( :"age^2"n ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
 
 ```
 
@@ -592,19 +877,29 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );dt << Distribution(	Transform Column
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );obj = dt << Bivariate( Y( :Weight ), X( :Height ) );xml = obj << View Web XML;
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
 
 ```
 
 ### Window View
 
-**语法:** obj = Scatterplot 3D(...Window View( "Visible"|"Invisible"|"Private" )...) &lt;b&gt;启动窗口项: 是&lt;/b&gt;
+**语法:** obj = Scatterplot 3D(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;biv << Close Window;New Window( "Bivariate Equation",	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) ));
+
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
 
 ```
 
@@ -618,7 +913,9 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );biv = dt << Bivariate( Window View( "
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
 ```
 
@@ -632,7 +929,18 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	Nominal,	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] ));obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	By( :_bycol ),	Group Options( Return Group( 1 ) ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	Set Values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	By( :_bycol ),
+	Group Options( Return Group( 1 ) )
+);
 
 ```
 
@@ -644,7 +952,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_bycol",	Character,	N
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Coloring( :Sepal length ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Coloring( :Sepal length )
+);
 
 ```
 
@@ -656,7 +969,9 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D(	Y( :Sepal len
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
 ```
 
@@ -668,7 +983,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Freq( :_freqcol ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_freqcol", Numeric, Continuous, Set Each Value( Random Integer( 1, 5 ) ) );
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Freq( :_freqcol )
+);
 
 ```
 
@@ -680,7 +1001,13 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_freqcol", Numeric, Con
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),	Weight( :_weightcol ));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+dt << New Column( "_weightcol", Numeric, Continuous, Set Each Value( Random Beta( 1, 1 ) ) );
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length, :Petal width ),
+	Weight( :_weightcol )
+);
 
 ```
 
@@ -692,7 +1019,9 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );dt << New Column( "_weightcol", Numeric, C
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
 ```
 
@@ -706,7 +1035,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Principal Components( 1 );obj << Biplot Rays( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Principal Components( 1 );
+obj << Biplot Rays( 1 );
 
 ```
 
@@ -720,7 +1053,14 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-// slightly larger circlesdt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D(	Y( :Sepal length, :Sepal width, :Petal length ),	Weight( :Petal width ),	Circle Size( .3 ));
+
+// slightly larger circles
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D(
+	Y( :Sepal length, :Sepal width, :Petal length ),
+	Weight( :Petal width ),
+	Circle Size( .3 )
+);
 
 ```
 
@@ -732,7 +1072,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Connect Points( 1, :Species );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Connect Points( 1, :Species );
 
 ```
 
@@ -744,7 +1087,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Drop Lines( 1 );Wait( 2 );obj << Drop Line Thickness( 0.8 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Drop Lines( 1 );
+Wait( 2 );
+obj << Drop Line Thickness( 0.8 );
 
 ```
 
@@ -756,7 +1104,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Drop Lines( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Drop Lines( 1 );
 
 ```
 
@@ -768,7 +1119,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Ellipsoid Coverage( 0.8 );obj << Normal Contour Ellipsoids( 1, :Species );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Ellipsoid Coverage( 0.8 );
+obj << Normal Contour Ellipsoids( 1, :Species );
 
 ```
 
@@ -780,7 +1135,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Ellipsoid Transparency( 0.4 );obj << Normal Contour Ellipsoids( 1, :Species );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Ellipsoid Transparency( 0.4 );
+obj << Normal Contour Ellipsoids( 1, :Species );
 
 ```
 
@@ -792,7 +1151,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set View Zoom( 0.9075 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set View Zoom( 0.9075 ) );
 
 ```
 
@@ -804,7 +1166,9 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
 
 ```
 
@@ -820,7 +1184,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Petal length, :P
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Nonpar Density Contour( 1, :Species );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Nonpar Density Contour( 1, :Species );
 
 ```
 
@@ -832,7 +1199,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Nonpar Density Contour( 1 );obj << Nonpar Density Contour Settings( 1, 1, .5, .6, Green );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Nonpar Density Contour( 1 );
+obj << Nonpar Density Contour Settings( 1, 1, .5, .6, Green );
 
 ```
 
@@ -844,7 +1215,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Normal Contour Ellipsoids( 1, :Species );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Normal Contour Ellipsoids( 1, :Species );
 
 ```
 
@@ -856,7 +1230,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Principal Components;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Principal Components;
 
 ```
 
@@ -868,7 +1245,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Principal Components( 1 );Wait( 2 );obj << Remove Prin Comp;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Principal Components( 1 );
+Wait( 2 );
+obj << Remove Prin Comp;
 
 ```
 
@@ -880,7 +1262,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Rotated Components( PC, ONE, 3, Varimax );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Rotated Components( PC, ONE, 3, Varimax );
 
 ```
 
@@ -892,7 +1277,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Principal Components( 1 );obj << Save Prin Components( 3 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Principal Components( 1 );
+obj << Save Prin Components( 3 );
 
 ```
 
@@ -904,7 +1293,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Rotated Components( PC, ONE, 3, Varimax );obj << Save Rotated Components;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Rotated Components( PC, ONE, 3, Varimax );
+obj << Save Rotated Components;
 
 ```
 
@@ -916,7 +1309,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Show Controls( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Show Controls( 1 );
 
 ```
 
@@ -928,7 +1324,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Show Points( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Show Points( 1 );
 
 ```
 
@@ -940,7 +1339,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Principal Components( 1 );obj << Biplot Rays( 1 );obj << Show Ray Labels( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Principal Components( 1 );
+obj << Biplot Rays( 1 );
+obj << Show Ray Labels( 1 );
 
 ```
 
@@ -952,7 +1356,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Sized Points( 1 );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Sized Points( 1 );
 
 ```
 
@@ -964,7 +1371,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Std Prin Components;
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Std Prin Components;
 
 ```
 
@@ -980,7 +1390,9 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = dt << Scatterplot 3D( Y( :Sepal leng
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
 
 ```
 
@@ -988,7 +1400,7 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 #### Add Ellipsoid
 
-**语法:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix ) obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means) obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**语法:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **说明:** 在图上绘制椭圆。
 
@@ -996,7 +1408,16 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D(	Add Ellipsoid(		[1 0.42632 0.85183, 0.42632 1 0.34418, 0.85183 0.34418 1],		[6.55099 2.96919 5.5066],		[0.57829 0.29087 0.53668]	));
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D(
+	Add Ellipsoid(
+		[1 0.42632 0.85183, 0.42632 1 0.34418, 0.85183 0.34418 1],
+		[6.55099 2.96919 5.5066],
+		[0.57829 0.29087 0.53668]
+	)
+);
 
 ```
 
@@ -1010,7 +1431,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 ```
 
@@ -1024,7 +1448,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "Point" ) ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "Point" ) ) );
 
 ```
 
@@ -1038,7 +1465,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Axes );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Axes );
+Show( s );
 
 ```
 
@@ -1052,7 +1483,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Box );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Box );
+Show( s );
 
 ```
 
@@ -1066,7 +1501,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Box );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Box );
+Show( s );
 
 ```
 
@@ -1080,7 +1519,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Graph Size );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Graph Size );
+Show( s );
 
 ```
 
@@ -1094,7 +1537,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Grids );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Grids );
+Show( s );
 
 ```
 
@@ -1108,7 +1555,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );state = obj << Frame3D( Get Hide Lights Border );Show( state );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+state = obj << Frame3D( Get Hide Lights Border );
+Show( state );
 
 ```
 
@@ -1122,7 +1573,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );w = obj << Frame3D( Get Line Scale );Show( w );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+w = obj << Frame3D( Get Line Scale );
+Show( w );
 
 ```
 
@@ -1136,7 +1591,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );q = obj << Frame3D( Get Marker Quality );Show( q );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+q = obj << Frame3D( Get Marker Quality );
+Show( q );
 
 ```
 
@@ -1150,7 +1609,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Marker Scale );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Marker Scale );
+Show( s );
 
 ```
 
@@ -1164,7 +1627,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );t = obj << Frame3D( Get Marker Transparency );Show( t );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+t = obj << Frame3D( Get Marker Transparency );
+Show( t );
 
 ```
 
@@ -1178,7 +1645,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );r = obj << Frame3D( Get Rotation() );Show( r );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+r = obj << Frame3D( Get Rotation() );
+Show( r );
 
 ```
 
@@ -1192,7 +1663,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Text Scale );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Text Scale );
+Show( s );
 
 ```
 
@@ -1206,7 +1681,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );o = obj << Frame3D( Get View Ortho );Show( o );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+o = obj << Frame3D( Get View Ortho );
+Show( o );
 
 ```
 
@@ -1220,7 +1699,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );p = obj << Frame3D( Get View Perspective );Show( p );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+p = obj << Frame3D( Get View Perspective );
+Show( p );
 
 ```
 
@@ -1234,7 +1717,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );z = obj << Frame3D( Get View Zoom );Show( z );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+z = obj << Frame3D( Get View Zoom );
+Show( z );
 
 ```
 
@@ -1248,7 +1735,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );c = obj << Frame3D( Get Wall Color );Show( c );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+c = obj << Frame3D( Get Wall Color );
+Show( c );
 
 ```
 
@@ -1262,7 +1753,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );s = obj << Frame3D( Get Walls );Show( s );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+s = obj << Frame3D( Get Walls );
+Show( s );
 
 ```
 
@@ -1276,7 +1771,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );c = obj << Frame3D( Get X Axis Color );Show( c );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+c = obj << Frame3D( Get X Axis Color );
+Show( c );
 
 ```
 
@@ -1290,7 +1789,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );label = obj << Frame3D( Get X Axis Label );Show( label );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+label = obj << Frame3D( Get X Axis Label );
+Show( label );
 
 ```
 
@@ -1304,7 +1807,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );c = obj << Frame3D( Get Y Axis Color );Show( c );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+c = obj << Frame3D( Get Y Axis Color );
+Show( c );
 
 ```
 
@@ -1318,7 +1825,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );label = obj << Frame3D( Get Y Axis Label );Show( label );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+label = obj << Frame3D( Get Y Axis Label );
+Show( label );
 
 ```
 
@@ -1332,7 +1843,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );c = obj << Frame3D( Get Z Axis Color );Show( c );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+c = obj << Frame3D( Get Z Axis Color );
+Show( c );
 
 ```
 
@@ -1346,7 +1861,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );label = obj << Frame3D( Get Z Axis Label );Show( label );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+label = obj << Frame3D( Get Z Axis Label );
+Show( label );
 
 ```
 
@@ -1360,7 +1879,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Axes( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Axes( 1 ) );
 
 ```
 
@@ -1374,7 +1896,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Box( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Box( 1 ) );
 
 ```
 
@@ -1388,7 +1913,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Graph Size( 700, 800 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 ```
 
@@ -1402,7 +1930,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Grids( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Grids( 1 ) );
 
 ```
 
@@ -1416,7 +1947,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Hide Lights Border( 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 ```
 
@@ -1430,7 +1964,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Line Scale( 6.5 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Line Scale( 6.5 ) );
 
 ```
 
@@ -1444,7 +1981,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 ```
 
@@ -1458,7 +1998,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Marker Scale( 3.5 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 ```
 
@@ -1472,7 +2015,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Marker Transparency( 0.4125 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 ```
 
@@ -1486,7 +2032,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) );
 
 ```
 
@@ -1500,7 +2049,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Rotation( -60, -3, 35 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 ```
 
@@ -1514,7 +2066,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 ```
 
@@ -1528,7 +2083,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Text Scale( 1.4 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Text Scale( 1.4 ) );
 
 ```
 
@@ -1542,7 +2100,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set View Ortho( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set View Ortho( 1 ) );
 
 ```
 
@@ -1556,7 +2117,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set View Perspective( 0.275 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set View Perspective( 0.275 ) );
 
 ```
 
@@ -1570,7 +2134,12 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set View Zoom( 0.5 ) );Wait( 2 );obj << Frame3D( Set View Zoom( 2 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set View Zoom( 0.5 ) );
+Wait( 2 );
+obj << Frame3D( Set View Zoom( 2 ) );
 
 ```
 
@@ -1584,7 +2153,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Wall Color( -16775543 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Wall Color( -16775543 ) );
 
 ```
 
@@ -1598,7 +2170,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Walls( 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Walls( 1 ) );
 
 ```
 
@@ -1612,7 +2187,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set X Axis Color( 5 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set X Axis Color( 5 ) );
 
 ```
 
@@ -1626,7 +2204,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 ```
 
@@ -1640,7 +2221,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Y Axis Color( 11 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Y Axis Color( 11 ) );
 
 ```
 
@@ -1654,7 +2238,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 ```
 
@@ -1668,7 +2255,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Z Axis Color( "Green" ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 ```
 
@@ -1682,7 +2272,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 ```
 
@@ -1696,7 +2289,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 ```
 
@@ -1710,7 +2306,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 ```
 
@@ -1724,7 +2323,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 ```
 
@@ -1738,7 +2340,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );p = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Active( 2 ) );Show( p );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+p = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Active( 2 ) );
+Show( p );
 
 ```
 
@@ -1752,7 +2358,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );c = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Color( 1 ) );Show( c );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+c = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Color( 1 ) );
+Show( c );
 
 ```
 
@@ -1766,7 +2376,11 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );p = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Position( 2 ) );Show( p );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+p = obj << Frame3D( Set Hide Lights Border( 0 ), Get Light Position( 2 ) );
+Show( p );
 
 ```
 
@@ -1780,7 +2394,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 ```
 
@@ -1794,7 +2411,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) );
 
 ```
 
@@ -1808,7 +2428,10 @@ dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :S
 
 ```jsl
 
-dt = Open( "$SAMPLE_DATA/Iris.jmp" );obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Position( 2, -1.5833, 10, 0 ) );
+
+dt = Open( "$SAMPLE_DATA/Iris.jmp" );
+obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal width ) );
+obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Position( 2, -1.5833, 10, 0 ) );
 
 ```
 
